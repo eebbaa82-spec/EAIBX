@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Note, PageHero, Section, Tbc } from "@/components/ui";
 
 const intro =
@@ -9,9 +10,10 @@ export const metadata: Metadata = {
   description: "Investment professionals, turnaround specialists, technologists and educators building world-class infrastructure for Ethiopian business.",
 };
 
-// Names, titles and bios from the Erudite Africa Investments PLC corporate profile (2026).
+// Names, titles, bios and photos from the Erudite Africa Investments PLC corporate profile (2026).
 const leader = {
   name: "Befikadu Eba",
+  photo: "/team/befikadu-eba.jpg",
   title: "Managing Director and Founder",
   bio: "A strategic economist and investment leader with a background in banking and credit risk. He holds an M.Sc. in Financial Economics and an MA in Public Financial Management, and is a PhD candidate. His work spans corporate finance, mergers and acquisitions, investment advisory, due diligence and strategic partnerships.",
 };
@@ -19,55 +21,52 @@ const leader = {
 const managers = [
   {
     name: "Ephrem Tekle (PhD)",
+    photo: "/team/ephrem-tekle.jpg",
     title: "Research and Consulting Manager",
     bio: "A research and consultancy leader who designs and manages high-impact, multi-stakeholder projects, notably in education, from diagnostic studies to scalable, evidence-based interventions.",
   },
   {
     name: "Belayneh Bogale",
+    photo: "/team/belayneh-bogale.jpg",
     title: "Manager, Training and Development Division",
     bio: "Over a decade in higher education, organizational development and leadership training. Holds a Master's in Public Management and Policy, with certifications in project management and financial markets.",
   },
   {
     name: "Isa Abraham",
+    photo: "/team/isa-abraham.jpg",
     title: "Manager, Turnaround Management & Investments Division",
     bio: "A business transformation and investment professional focused on corporate turnaround, restructuring, venture incubation and investment facilitation, including impact investment and Islamic finance.",
   },
   {
     name: "Esayas Ayele",
+    photo: "/team/esayas-ayele.jpg",
     title: "Investment Manager",
     bio: "A senior consultant with over a decade of hands-on experience in logistics and supply chain, project management and policy formulation, with a background in Economics and Supply Chain Management.",
   },
   {
     name: "Hiwot Belachew",
+    photo: "/team/hiwot-belachew.jpg",
     title: "Manager, Corporate Services",
     bio: "Manages the firm's operational backbone across organizational management, compliance, finance and human resources, and is the liaison with the professionals in our network.",
   },
   {
     name: "Ashenafi Mengistu",
+    photo: "/team/ashenafi-mengistu.jpg",
     title: "Manager, Market Intelligence",
     bio: "Leads the Market Intelligence practice. An MBA holder specializing in due diligence support, sector-wide opportunity scanning and competitive benchmarking for investors and corporations.",
   },
 ];
 
-function initials(name: string) {
-  return name
-    .replace(/\(.*\)/, "")
-    .trim()
-    .split(/\s+/)
-    .map((part) => part[0])
-    .join("")
-    .slice(0, 2);
-}
-
 function Profile({ person, large = false }: { person: typeof leader; large?: boolean }) {
   return (
     <article className={`flex gap-5 rounded-xl border border-line bg-white p-6 shadow-sm ${large ? "md:p-8" : ""}`}>
-      <div
-        aria-hidden
-        className={`flex flex-none items-center justify-center rounded-full bg-brand-600 font-bold text-white ${large ? "h-20 w-20 text-2xl" : "h-14 w-14 text-lg"}`}
-      >
-        {initials(person.name)}
-      </div>
+      <Image
+        src={person.photo}
+        alt={`Photo of ${person.name}`}
+        width={480}
+        height={480}
+        className={`flex-none rounded-xl object-cover object-top ${large ? "h-32 w-32" : "h-24 w-24"}`}
+      />
       <div>
         <h3 className={`font-semibold text-ink ${large ? "text-xl" : "text-lg"}`}>{person.name}</h3>
         <p className="text-sm font-medium text-brand-700">{person.title}</p>
@@ -97,7 +96,7 @@ export default function TeamPage() {
       </Section>
       <Section>
         <Note>
-          <Tbc>photos and LinkedIn links for each profile, plus board and advisory council members if they will be listed</Tbc>
+          <Tbc>LinkedIn links for each profile, plus board and advisory council members if they will be listed</Tbc>
         </Note>
       </Section>
     </>
