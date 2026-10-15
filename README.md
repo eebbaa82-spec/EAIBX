@@ -21,6 +21,10 @@ npm run lint
 npm run build
 ```
 
+## Hosting
+
+The public site is exported as static files (`apps/web/out`) and deployed to Azure Static Web Apps by `.github/workflows/web.yml`. Deployment starts once the repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN` is set: pushes to `main` update the preview site, and each pull request gets its own temporary preview URL.
+
 ## Status of the public site
 
 - Every public page from the approved website copy (EABIX Website Content v1.0) is built, in US English.

@@ -23,7 +23,7 @@ export default function HelpPage() {
   return (
     <>
       <PageHero title="How can we help?">
-        <form action="/help" role="search" className="flex w-full max-w-2xl gap-2">
+        <form action="/help/" role="search" className="flex w-full max-w-2xl gap-2">
           <label htmlFor="help-search" className="sr-only">
             Search help articles
           </label>

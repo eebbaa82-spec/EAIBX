@@ -57,7 +57,7 @@ export default function HomePage() {
               EABIX is Ethiopia&apos;s first complete business and investment exchange. Raise capital, sell or buy a business,
               join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.
             </p>
-            <form action="/marketplace" className="mt-8 flex max-w-2xl gap-2" role="search">
+            <form action="/marketplace/" className="mt-8 flex max-w-2xl gap-2" role="search">
               <label htmlFor="hero-search" className="sr-only">
                 Search EABIX
               </label>
