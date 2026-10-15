@@ -128,7 +128,7 @@ export default function AcademyPage() {
       <Section
         id="catalog"
         title="Course catalog"
-        intro="Four schools, offered at Foundational, Intermediate and Advanced levels where shown. Each course card shows: Title · School · Level · Duration · Language · Format (self-paced, live online or classroom) · Price in ETB · Certificate badge."
+        intro="Four schools, all delivered in a hybrid format that combines online learning with live or classroom sessions, and offered at Foundational, Intermediate and Advanced levels where shown. Each course card shows: Title · School · Level · Duration · Language · Format · Price in ETB · Certificate badge."
       >
         <div className="space-y-12">
           {schools.map((school) => (
@@ -140,7 +140,7 @@ export default function AcademyPage() {
           ))}
           <Note>
             Levels shown are a proposed default except where the topic list names them.{" "}
-            <Tbc>confirm levels, durations, formats and prices per course</Tbc>
+            <Tbc>confirm levels, durations and prices per course</Tbc>
           </Note>
         </div>
       </Section>
