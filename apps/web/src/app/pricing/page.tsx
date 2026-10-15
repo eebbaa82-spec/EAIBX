@@ -168,7 +168,7 @@ export default function PricingPage() {
               q: "Can I pay from abroad?",
               a: (
                 <>
-                  Yes. Diaspora investors can pay by international card. <Tbc>confirm gateway</Tbc>
+                  Yes. Diaspora investors can pay by international card on request. Contact us and we will set up payment for you.
                 </>
               ),
             },
