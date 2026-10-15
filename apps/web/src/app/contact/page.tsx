@@ -53,7 +53,7 @@ export default function ContactPage() {
             <div className="mt-6">
               <Note>
                 EABIX staff will never ask for your password or ask you to send money to a personal account. Report suspicious
-                messages to <Tbc>trust email</Tbc>.
+                messages to <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>.
               </Note>
             </div>
           </div>

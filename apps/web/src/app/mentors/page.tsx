@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, CtaBand, EmptyState, Note, PageHero, Section, Steps, Tbc } from "@/components/ui";
+import { ButtonLink, CtaBand, EmptyState, Note, PageHero, Section, Steps } from "@/components/ui";
 import { PreviewForm } from "@/components/forms";
 import { CardAnatomy, FilterGroup, FilterPanel } from "@/components/group-b/Filters";
 
@@ -67,7 +67,7 @@ export default function MentorsPage() {
           <div>
             <Note>
               Mentors give their time for free and never ask for payment, equity or confidential information in return.
-              Report any concern to <Tbc>trust email</Tbc>.
+              Report any concern to <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>.
             </Note>
           </div>
         </div>
