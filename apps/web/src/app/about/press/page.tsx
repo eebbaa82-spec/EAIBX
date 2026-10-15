@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Card, CardGrid, PageHero, Section, Tbc } from "@/components/ui";
+import { Card, CardGrid, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Press and Media · EABIX",
@@ -15,7 +15,7 @@ export default function PressPage() {
           EABIX, the Erudite Africa Business &amp; Investment Exchange, is a digital platform that connects Ethiopian
           entrepreneurs, businesses and investors across the full business lifecycle, from incubation and investment to
           diagnostics, recovery and exit. EABIX is operated by Erudite Africa Investments PLC, headquartered in Addis Ababa.
-          Learn more at <Tbc>domain</Tbc>.
+          Learn more at ebba.et.
         </blockquote>
       </Section>
       <Section tone="canvas">
