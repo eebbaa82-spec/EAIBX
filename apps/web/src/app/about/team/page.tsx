@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Note, PageHero, Section, Tbc } from "@/components/ui";
+import { PageHero, Section } from "@/components/ui";
 
 const intro =
   "Our team brings together investment professionals, turnaround specialists, technologists and educators who share one belief: Ethiopian business deserves world-class infrastructure.";
@@ -93,11 +93,6 @@ export default function TeamPage() {
           The management team is supported by a wider network of associate consultants and subject specialists engaged as each
           assignment requires.
         </p>
-      </Section>
-      <Section>
-        <Note>
-          <Tbc>LinkedIn links for each profile, plus board and advisory council members if they will be listed</Tbc>
-        </Note>
       </Section>
     </>
   );
