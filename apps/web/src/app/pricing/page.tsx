@@ -20,12 +20,8 @@ const businessRows = [
   ["Health Check", "Free self-assessment", "One verified Health Check a year", "Verified Health Check plus analyst call"],
   [
     "Investor contacts",
-    <>
-      <Tbc /> a month
-    </>,
-    <>
-      <Tbc /> a month
-    </>,
+    "Set by your Health Check grade",
+    "Set by your Health Check grade",
     "Unlimited",
   ],
   ["Data room", "5 documents", "Full data room", "Full data room with view analytics"],
