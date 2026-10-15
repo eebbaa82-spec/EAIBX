@@ -21,7 +21,7 @@ export default function PressPage() {
       <Section tone="canvas">
         <CardGrid cols={2}>
           <Card title="Media contact">
-            <Tbc>name, email, phone</Tbc>
+            <a href="mailto:contact@eruditeafrica.com" className="text-brand-700 hover:underline">contact@eruditeafrica.com</a>
           </Card>
           <Card title="Download">Brand kit (logos, colors, photos)</Card>
         </CardGrid>
