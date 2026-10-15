@@ -151,7 +151,8 @@ export default function PricingPage() {
               q: "Do you take a share of my business?",
               a: (
                 <>
-                  No. EABIX never takes equity in businesses on the platform. <Tbc>confirm</Tbc>
+                  Not by joining or using EABIX. EABIX takes equity in a business only when this is agreed in writing in advance with
+                  the business and its investors, as payment for advisory or capital-raising services.
                 </>
               ),
             },
