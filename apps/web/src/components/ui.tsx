@@ -136,7 +136,7 @@ export function CardGrid({ children, cols = 3 }: { children: ReactNode; cols?: 2
 
 export function Steps({ steps }: { steps: { title: string; body?: ReactNode }[] }) {
   return (
-    <ol className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <ol className={`grid gap-6 md:grid-cols-2 ${steps.length === 4 ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
       {steps.map((step, i) => (
         <li key={step.title} className="relative rounded-xl border border-line bg-white p-6">
           <span className="mb-3 flex h-9 w-9 items-center justify-center rounded-full bg-brand-600 text-sm font-bold text-white">

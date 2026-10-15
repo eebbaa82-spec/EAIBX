@@ -18,7 +18,7 @@ function PreviewNotice({ children }: { children: ReactNode }) {
 
 export type Field = {
   name: string;
-  label: string;
+  label: ReactNode;
   type?: "text" | "email" | "tel" | "password" | "textarea" | "select" | "date" | "file" | "checkbox";
   options?: string[];
   helper?: string;
