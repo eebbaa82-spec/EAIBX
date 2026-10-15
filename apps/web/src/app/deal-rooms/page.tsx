@@ -70,7 +70,7 @@ export default function DealRoomsPage() {
       <Section id="for-businesses" eyebrow="For businesses" title="Get your business into a Deal Room">
         <p className="max-w-3xl text-lg text-muted">
           Deal Rooms are selective. To be considered, complete your listing, achieve a verified Health Check grade of{" "}
-          <Tbc>minimum grade</Tbc> or better, and upload the core documents in your data room.
+          C or better, and upload the core documents in your data room.
         </p>
         <div className="mt-6">
           <ButtonLink href="/join">Check my eligibility</ButtonLink>
