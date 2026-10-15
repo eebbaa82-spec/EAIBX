@@ -153,7 +153,8 @@ export default function AcademyPage() {
         intro={
           <>
             Structured learning paths that take credit staff from the basics to confident, independent decision-making. Each
-            path ends with an assessment and an EABIX certificate. <Tbc>certificate names and any accrediting body</Tbc>
+            path ends with an assessment and an EABIX certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
+            together with partner institutions.
           </>
         }
       >
