@@ -13,12 +13,8 @@ const businessRows = [
   [
     "Price",
     "Free",
-    <>
-      <Tbc /> ETB / month
-    </>,
-    <>
-      <Tbc /> ETB / month
-    </>,
+    "Announced after the launch period",
+    "Announced after the launch period",
   ],
   ["Profile and listing", "Basic listing", "Featured listing", "Top placement and homepage feature"],
   ["Health Check", "Free self-assessment", "One verified Health Check a year", "Verified Health Check plus analyst call"],
@@ -55,9 +51,7 @@ const investorRows = [
   [
     "Price",
     "Free",
-    <>
-      <Tbc /> ETB / month
-    </>,
+    "Announced after the launch period",
     "Custom",
   ],
   ["Browse listings", "Teasers only", "Full listing details", "Full listing details"],
@@ -104,7 +98,8 @@ export default function PricingPage() {
       <div className="border-b border-line bg-white py-4">
         <Container>
           <p className="text-center text-sm text-muted">
-            Billing: Monthly | Yearly (save <Tbc>%</Tbc>)
+            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after EABIX launches.
+            Prices in ETB, with monthly and yearly billing, will be announced before the launch period ends.
           </p>
         </Container>
       </div>
@@ -124,18 +119,18 @@ export default function PricingPage() {
       >
         <ul className="space-y-3 text-muted">
           <li className="rounded-lg border border-line bg-white p-4">
-            <strong className="text-ink">Verified Health Check (pay-as-you-go):</strong> <Tbc /> ETB
+            <strong className="text-ink">Verified Health Check (pay-as-you-go):</strong> announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
             <strong className="text-ink">Success fee on completed transactions introduced through EABIX:</strong>{" "}
-            <Tbc>rate and whether it applies</Tbc>
+            announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
             <strong className="text-ink">
               Program hosting for partner institutions, and Academy enterprise subscriptions for banks and MFIs (per seat,
               billed annually):
             </strong>{" "}
-            Custom <Tbc />
+            Custom
           </li>
         </ul>
       </Section>

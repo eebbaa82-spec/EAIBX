@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, CardGrid, CtaBand, DataTable, Note, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, Card, CardGrid, CtaBand, DataTable, Note, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Free Business Health Check · EABIX",
@@ -55,7 +55,7 @@ export default function DiagnosticsPage() {
           <Card
             title={
               <>
-                Verified Health Check (<Tbc>price</Tbc> ETB)
+                Verified Health Check (price announced after the launch period)
               </>
             }
           >
