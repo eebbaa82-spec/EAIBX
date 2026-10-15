@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, CtaBand, Note, PageHero, Section, Steps, Tbc } from "@/components/ui";
+import { ButtonLink, CtaBand, Note, PageHero, Section, Steps } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "List your business · EABIX",
@@ -31,7 +31,7 @@ export default function NewListingPage() {
         />
         <div className="mt-8">
           <Note>
-            Our team reviews every listing within <Tbc>number</Tbc> working days. We may ask you for more information. You
+            Our team reviews every listing within 5 working days. We may ask you for more information. You
             will get an email when your listing goes live.
           </Note>
         </div>
