@@ -12,7 +12,7 @@ export const company = {
   poBox: "P.O. Box 25378/1000",
   phoneOffice: "+251 11 668 7093",
   phoneMobile: "+251 911 249 844",
-  email: "contact@eruditeafrica.com",
+  email: "contact@ebba.et",
   careersEmail: "career@eruditeafrica.com",
   website: "www.eruditeafrica.com",
   registrationNo: "MT/AA/2/0063282/2018",
