@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, CtaBand, EmptyState, Note, PageHero, Section, Tbc, TagList } from "@/components/ui";
+import { ButtonLink, CtaBand, EmptyState, Note, PageHero, Section, TagList } from "@/components/ui";
 import { PreviewForm } from "@/components/forms";
 import { CardAnatomy } from "@/components/group-b/Filters";
 
@@ -67,7 +67,8 @@ export default function AdvisorsPage() {
           <div>
             <Note>
               EABIX checks each advisor&apos;s licenses and references before listing. Engagements are agreed directly
-              between you and the advisor. <Tbc>confirm whether EABIX takes a referral fee and disclose it here if so</Tbc>
+              between you and the advisor. EABIX receives a referral fee from the advisor for engagements introduced through the
+              platform.
             </Note>
           </div>
         </div>
