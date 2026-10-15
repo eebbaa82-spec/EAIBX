@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { brand, footerColumns, legalLinks, socialLinks } from "@/lib/site";
+import { brand, company, footerColumns, legalLinks, socialLinks } from "@/lib/site";
 import { NewsletterForm } from "./forms";
 import { Container, Tbc } from "./ui";
 
@@ -43,10 +43,11 @@ export function Footer() {
       <div className="border-t border-white/10 py-8">
         <Container className="space-y-4">
           <p>
-            <Tbc>office address, Addis Ababa</Tbc> · <Tbc>phone</Tbc> · <Tbc>email</Tbc> · {socialLinks.join(" · ")}
+            {company.address} · <a href={`tel:${company.phoneOffice.replace(/ /g, "")}`} className="hover:text-white">{company.phoneOffice}</a> ·{" "}
+            <a href={`mailto:${company.email}`} className="hover:text-white">{company.email}</a> · {socialLinks.join(" · ")}
           </p>
           <p>
-            © <Tbc>year</Tbc> {brand.operator}. Registered in Ethiopia, <Tbc>registration number</Tbc>. EABIX is a business
+            © 2026 {brand.operator}. Registered in Ethiopia, <Tbc>registration number</Tbc>. EABIX is a business
             matching and information platform. It does not provide investment advice and is not a securities exchange.
           </p>
           <ul className="flex flex-wrap gap-4">

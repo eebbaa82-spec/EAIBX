@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, CardGrid, DataTable, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, Card, CardGrid, DataTable, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "About EABIX · Erudite Africa Investments",
@@ -30,6 +30,18 @@ const values = [
   ["Resilience", "Setbacks are part of business. We help people recover, learn and go again."],
 ];
 
+const company = [
+  ["Registered name", "Erudite Africa Investments PLC"],
+  ["Registration", "Ministry of Trade and Regional Integration, Federal Democratic Republic of Ethiopia"],
+  ["Founded", "May 2020 as an advisory practice; incorporated as a private limited company in February 2026"],
+  ["Managing Director", "Befikadu Eba"],
+  ["Registered office", "Bole Sub City, Woreda 03, Addis Ababa"],
+  [
+    "Divisions",
+    "Foreign investment facilitation · Management consultancy and corporate re-engineering · Professional project management · Capacity training, human capital and financial inclusion · Applied market research and B2B corporate systems",
+  ],
+];
+
 export default function AboutPage() {
   return (
     <>
@@ -42,8 +54,19 @@ export default function AboutPage() {
       <Section title="Our story">
         <p className="max-w-3xl text-lg text-muted">
           EABIX, the Erudite Africa Business &amp; Investment Exchange, was founded by Erudite Africa Investments PLC to close
-          the gap between Ethiopian enterprise and the capital, skills and networks it needs.{" "}
-          <Tbc>founding year and one or two sentences on the founders&apos; background and why they started EABIX.</Tbc>
+          the gap between Ethiopian enterprise and the capital, skills and networks it needs.
+        </p>
+        <p className="mt-4 max-w-3xl text-lg text-muted">
+          Erudite Africa was established in May 2020 by Befikadu Eba, a corporate banker and macro-advisory professional with
+          over 16 years of experience in capital allocation, risk assessment and financial inclusion. It began as an advisory
+          practice working closely with investors, regulators and financial institutions, and in February 2026 it was
+          incorporated as Erudite Africa Investments PLC, with a management team of specialist division heads.
+        </p>
+        <p className="mt-4 max-w-3xl text-lg text-muted">
+          Through that work, the firm saw the same gaps again and again: good businesses that could not reach investors,
+          investors who could not find reliable information, and struggling businesses that asked for help too late. EABIX
+          brings Erudite Africa&apos;s investment facilitation, turnaround, market intelligence and training expertise onto one
+          platform, so many more businesses can reach it.
         </p>
       </Section>
 
@@ -74,7 +97,16 @@ export default function AboutPage() {
         <DataTable head={["Value", "What it means on EABIX"]} rows={values} />
       </Section>
 
-      <Section>
+      <Section title="The company behind EABIX" intro="EABIX is operated by Erudite Africa Investments PLC, a strategic advisory, investment facilitation and capacity-building firm based in Addis Ababa.">
+        <DataTable head={["Item", "Details"]} rows={company} />
+        <div className="mt-6">
+          <ButtonLink href="/about/team" variant="secondary">
+            Meet the team
+          </ButtonLink>
+        </div>
+      </Section>
+
+      <Section tone="canvas">
         <div className="flex flex-wrap gap-3">
           <ButtonLink href="/join">Join EABIX free</ButtonLink>
           <ButtonLink href="/partners" variant="secondary">

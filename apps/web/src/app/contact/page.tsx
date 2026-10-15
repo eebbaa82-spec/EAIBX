@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PreviewForm } from "@/components/forms";
 import { Note, PageHero, Section, Tbc } from "@/components/ui";
+import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact EABIX · Addis Ababa",
@@ -8,11 +9,18 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  { label: "General inquiries", value: <Tbc>email</Tbc> },
+  { label: "General inquiries", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
   { label: "Partnerships", value: <Tbc>email</Tbc> },
   { label: "Press", value: <Tbc>email</Tbc> },
-  { label: "Phone", value: <Tbc /> },
-  { label: "Office", value: <Tbc>address, Addis Ababa</Tbc> },
+  { label: "Phone", value: <>Office {company.phoneOffice} · Mobile {company.phoneMobile}</> },
+  {
+    label: "Office",
+    value: (
+      <>
+        Rehobot Apartment Building, 1st Floor, Bole Medhanealem (in front of Kebe Cake), Addis Ababa · {company.poBox}
+      </>
+    ),
+  },
   { label: "Office hours", value: <Tbc /> },
 ];
 

@@ -5,6 +5,18 @@ export const brand = {
   tagline: "Where Ideas Grow, Investments Flow, and Businesses Recover.",
 };
 
+/** From the Erudite Africa Investments PLC corporate profile (2026). */
+export const company = {
+  address: "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia",
+  addressDetail: "In front of Kebe Cake, Bole Medhanealem",
+  poBox: "P.O. Box 25378/1000",
+  phoneOffice: "+251 11 668 7093",
+  phoneMobile: "+251 911 249 844",
+  email: "contact@eruditeafrica.com",
+  careersEmail: "career@eruditeafrica.com",
+  website: "www.eruditeafrica.com",
+};
+
 export type NavItem = { label: string; href: string; description?: string };
 export type NavMenu = { label: string; href?: string; items?: NavItem[] };
 

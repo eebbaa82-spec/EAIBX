@@ -32,7 +32,11 @@ export default function CareersPage() {
           <Tbc>list</Tbc>
         </p>
         <EmptyState>
-          No open roles right now. Send your resume to <Tbc>careers email</Tbc> and we will keep you in mind.
+          No open roles right now. Send your resume to{" "}
+          <a href="mailto:career@eruditeafrica.com" className="text-brand-700 hover:underline">
+            career@eruditeafrica.com
+          </a>{" "}
+          and we will keep you in mind.
         </EmptyState>
       </Section>
     </>
