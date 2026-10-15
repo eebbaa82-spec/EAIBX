@@ -58,9 +58,7 @@ const investorRows = [
     "Team seats",
     "1",
     "1",
-    <>
-      Multiple <Tbc />
-    </>,
+    "Multiple, as agreed with your institution",
   ],
   [
     "",
