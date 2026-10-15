@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ButtonLink, Container, DataTable, Faq, Note, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, Container, DataTable, Faq, Note, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "EABIX Pricing · Plans for Businesses and Investors",
@@ -149,7 +149,7 @@ export default function PricingPage() {
               q: "Is there a discount for startups in programs?",
               a: (
                 <>
-                  Yes. Program participants get <Tbc /> months of Growth free.
+                  Yes. Program participants get one month of the Growth plan free.
                 </>
               ),
             },
