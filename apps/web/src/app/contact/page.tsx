@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const options = [
   { label: "General inquiries", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
   { label: "Partnerships", value: <Tbc>email</Tbc> },
-  { label: "Press", value: <a href="mailto:contact@eruditeafrica.com" className="text-brand-700 hover:underline">contact@eruditeafrica.com</a> },
+  { label: "Press", value: <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a> },
   { label: "Phone", value: <>Office {company.phoneOffice} · Mobile {company.phoneMobile}</> },
   {
     label: "Office",
