@@ -204,7 +204,7 @@ export default function AcademyPage() {
               title: "Custom content.",
               body: (
                 <>
-                  Add your institution&apos;s own policies and procedures alongside EABIX courses. <Tbc>confirm availability</Tbc>
+                  Add your institution&apos;s own policies and procedures alongside EABIX courses.
                 </>
               ),
             },
