@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, Note, PageHero, Section, Tbc, TagList } from "@/components/ui";
+import { ButtonLink, Note, PageHero, Section, TagList } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Become a verified investor · EABIX",
@@ -30,7 +30,7 @@ export default function InvestorVerifyPage() {
         />
         <div className="mt-8">
           <Note>
-            Most verifications are completed within <Tbc>number</Tbc> working days.
+            Most verifications are completed within 10 working days.
           </Note>
         </div>
       </Section>
