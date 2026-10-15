@@ -35,7 +35,7 @@ export default function FaqPage() {
               q: "Which languages are supported?",
               a: (
                 <>
-                  English and Amharic at launch. <Tbc>further languages</Tbc>
+                  English and Amharic at launch, with Afaan Oromo and Tigrinya planned next.
                 </>
               ),
             },
