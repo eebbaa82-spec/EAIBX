@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, CtaBand, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "How can we help? · EABIX",
@@ -54,7 +54,7 @@ export default function HelpPage() {
         title="Still need help?"
         body={
           <>
-            Our support team is available <Tbc>hours</Tbc> East Africa Time.
+            Our support team is available Monday to Friday, 8:30 a.m. to 5:30 p.m. East Africa Time.
           </>
         }
       >

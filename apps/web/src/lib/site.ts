@@ -15,6 +15,8 @@ export const company = {
   email: "contact@eruditeafrica.com",
   careersEmail: "career@eruditeafrica.com",
   website: "www.eruditeafrica.com",
+  registrationNo: "MT/AA/2/0063282/2018",
+  officeHours: "Monday to Friday, 8:30 a.m. to 5:30 p.m.",
 };
 
 export type NavItem = { label: string; href: string; description?: string };

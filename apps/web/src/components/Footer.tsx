@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { brand, company, footerColumns, legalLinks, socialLinks } from "@/lib/site";
 import { NewsletterForm } from "./forms";
-import { Container, Tbc } from "./ui";
+import { Container } from "./ui";
 
 export function Footer() {
   return (
@@ -47,7 +47,7 @@ export function Footer() {
             <a href={`mailto:${company.email}`} className="hover:text-white">{company.email}</a> · {socialLinks.join(" · ")}
           </p>
           <p>
-            © 2026 {brand.operator}. Registered in Ethiopia, <Tbc>registration number</Tbc>. EABIX is a business
+            © 2026 {brand.operator}. Registered in Ethiopia, registration no. {company.registrationNo}. EABIX is a business
             matching and information platform. It does not provide investment advice and is not a securities exchange.
           </p>
           <ul className="flex flex-wrap gap-4">

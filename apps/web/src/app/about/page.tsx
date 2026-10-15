@@ -32,7 +32,7 @@ const values = [
 
 const company = [
   ["Registered name", "Erudite Africa Investments PLC"],
-  ["Registration", "Ministry of Trade and Regional Integration, Federal Democratic Republic of Ethiopia"],
+  ["Registration", "No. MT/AA/2/0063282/2018, Ministry of Trade and Regional Integration, Federal Democratic Republic of Ethiopia"],
   ["Founded", "May 2020 as an advisory practice; incorporated as a private limited company in February 2026"],
   ["Managing Director", "Befikadu Eba"],
   ["Registered office", "Bole Sub City, Woreda 03, Addis Ababa"],

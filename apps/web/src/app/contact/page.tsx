@@ -21,7 +21,7 @@ const options = [
       </>
     ),
   },
-  { label: "Office hours", value: <Tbc /> },
+  { label: "Office hours", value: <>{company.officeHours} (East Africa Time)</> },
 ];
 
 const roles = [
