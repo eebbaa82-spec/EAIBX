@@ -13,7 +13,7 @@ export const company = {
   phoneOffice: "+251 11 668 7093",
   phoneMobile: "+251 911 249 844",
   email: "contact@ebba.et",
-  careersEmail: "career@eruditeafrica.com",
+  careersEmail: "career@ebba.et",
   website: "www.eruditeafrica.com",
   registrationNo: "MT/AA/2/0063282/2018",
   officeHours: "Monday to Friday, 8:30 a.m. to 5:30 p.m.",

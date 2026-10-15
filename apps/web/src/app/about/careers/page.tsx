@@ -33,8 +33,8 @@ export default function CareersPage() {
         </p>
         <EmptyState>
           No open roles right now. Send your resume to{" "}
-          <a href="mailto:career@eruditeafrica.com" className="text-brand-700 hover:underline">
-            career@eruditeafrica.com
+          <a href="mailto:career@ebba.et" className="text-brand-700 hover:underline">
+            career@ebba.et
           </a>{" "}
           and we will keep you in mind.
         </EmptyState>
