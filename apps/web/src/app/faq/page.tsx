@@ -87,7 +87,7 @@ export default function FaqPage() {
               a: (
                 <>
                   No. Payments for investments or acquisitions are made directly between the parties, through their banks or
-                  advisors. <Tbc>confirm model</Tbc>
+                  advisors.
                 </>
               ),
             },
