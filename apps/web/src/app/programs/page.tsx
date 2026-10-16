@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, CardGrid, EmptyState, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, Card, CardGrid, EmptyState, PageHero, Section } from "@/components/ui";
 import { CardAnatomy, FilterGroup, FilterPanel } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
@@ -22,26 +22,18 @@ export default function ProgramsPage() {
       <Section title="Our flagship programs">
         <CardGrid cols={2}>
           <Card
-            title={
-              <>
-                EABIX Launchpad <Tbc>confirm program name</Tbc>
-              </>
-            }
+            title="EABIX Launchpad"
             footer={<ButtonLink href="/join" variant="secondary">Get notified</ButtonLink>}
           >
-            Our own <Tbc>number</Tbc>-week incubation program for early-stage Ethiopian founders. Validate your idea, build
-            your first financial model, meet mentors every week and pitch to investors on Demo Day.
+            Our own incubation program for early-stage Ethiopian founders. Validate your idea, build your first financial
+            model, meet mentors every week and pitch to investors on Demo Day. Dates for the first cohort are announced soon.
           </Card>
           <Card
-            title={
-              <>
-                EABIX Scale <Tbc>confirm program name</Tbc>
-              </>
-            }
+            title="EABIX Scale"
             footer={<ButtonLink href="/join" variant="secondary">Get notified</ButtonLink>}
           >
-            A <Tbc>number</Tbc>-month acceleration program for businesses with revenue that are ready to grow. Sharpen
-            strategy, fix systems, get investor-ready and enter a curated deal room.
+            An acceleration program for businesses with revenue that are ready to grow. Sharpen strategy, fix systems, get
+            investor-ready and enter a curated deal room. Dates for the first cohort are announced soon.
           </Card>
         </CardGrid>
       </Section>

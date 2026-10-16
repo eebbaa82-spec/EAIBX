@@ -9,7 +9,6 @@ import {
   FeatureList,
   Section,
   Steps,
-  Tbc,
   TrustBar,
 } from "@/components/ui";
 
@@ -90,12 +89,8 @@ export default function HomePage() {
 
       <div className="border-b border-line bg-white py-6">
         <Container>
-          <p className="text-center text-sm text-muted">
-            <Tbc>number</Tbc> businesses listed · <Tbc>ETB amount</Tbc> in opportunities · <Tbc>number</Tbc> verified investors ·{" "}
-            <Tbc>number</Tbc> mentors and advisors
-          </p>
-          <p className="mt-2 text-center text-sm italic text-muted">
-            Launch fallback: Founding members now joining from Addis Ababa, Hawassa, Bahir Dar, Mekelle, Dire Dawa and beyond.
+          <p className="text-center text-sm font-medium text-muted">
+            Founding members now joining from Addis Ababa, Hawassa, Bahir Dar, Mekelle, Dire Dawa and beyond.
           </p>
         </Container>
       </div>
@@ -182,19 +177,17 @@ export default function HomePage() {
         </EmptyState>
       </Section>
 
-      <Section title="Built with the people it serves" tone="canvas">
-        <p className="text-muted">
-          <Tbc>three real testimonials with name, role, company and photo, collected from pilot users. Do not publish until approved in writing.</Tbc>
+      <Section title="Partner with EABIX" tone="canvas">
+        <p className="max-w-3xl text-lg text-muted">
+          We are working with banks, MFIs, development partners and universities to bring their programs and services to
+          Ethiopian businesses. Partner announcements are coming soon.
         </p>
+        <div className="mt-6">
+          <ButtonLink href="/partners" variant="secondary">Become a partner</ButtonLink>
+        </div>
       </Section>
 
-      <Section title="In partnership with">
-        <p className="text-muted">
-          <Tbc>partner logos and written permission to display them</Tbc>
-        </p>
-      </Section>
-
-      <Section title="Training that builds careers and businesses" tone="canvas">
+      <Section title="Training that builds careers and businesses">
         <p className="max-w-3xl text-lg text-muted">
           Professional courses and certifications in banking, credit, capital markets and investment banking, plus practical
           courses for founders, in Amharic and English. Banks and MFIs can enroll whole teams.

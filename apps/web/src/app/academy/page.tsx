@@ -7,7 +7,6 @@ import {
   Note,
   PageHero,
   Section,
-  Tbc,
 } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -139,8 +138,7 @@ export default function AcademyPage() {
             </div>
           ))}
           <Note>
-            Levels shown are a proposed default except where the topic list names them.{" "}
-            <Tbc>confirm levels, durations and prices per course</Tbc>
+            Course durations, schedules and fees are shared when enrollment opens, or on request.
           </Note>
         </div>
       </Section>

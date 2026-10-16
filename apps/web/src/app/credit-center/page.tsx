@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ButtonLink, FeatureList, Note, PageHero, Section, Steps, Tbc } from "@/components/ui";
+import { ButtonLink, FeatureList, Note, PageHero, Section, Steps } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Credit Management Center · EABIX",
@@ -81,8 +81,8 @@ export default function CreditCenterPage() {
               body: (
                 <>
                   Request, receive and review know-your-customer (KYC) and know-your-business (KYB) documents through a
-                  secure data room, with a standard checklist your team can adapt.{" "}
-                  <Tbc>align checklist with National Bank of Ethiopia directives</Tbc>
+                  secure data room, with a standard checklist your team can adapt to its own policies and regulatory
+                  requirements.
                 </>
               ),
             },
@@ -137,7 +137,7 @@ export default function CreditCenterPage() {
           </Note>
           <Note>
             EABIX is not a lender or a credit reference bureau. Every credit decision is made by the bank or MFI under its
-            own policies. <Tbc>legal review against National Bank of Ethiopia rules on credit information sharing</Tbc>
+            own policies and the applicable National Bank of Ethiopia directives.
           </Note>
         </div>
       </Section>

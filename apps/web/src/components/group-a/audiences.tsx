@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ButtonLink, Card, CardGrid, FeatureList, Section, Steps, TagList, Tbc } from "@/components/ui";
+import { ButtonLink, Card, CardGrid, FeatureList, Section, Steps, TagList } from "@/components/ui";
 
 /**
  * Shared copy for the four audience pages (copy section 4). Used by
@@ -138,8 +138,8 @@ export const audiences: Record<AudienceKey, Audience> = {
             title: "Diaspora friendly.",
             body: (
               <>
-                Invest from abroad with clear guidance on Ethiopian rules and processes.{" "}
-                <Tbc>confirm legal scope of diaspora investment support</Tbc>
+                Invest from abroad with clear guidance on Ethiopian rules and processes. Our team confirms what applies to you
+                before you commit.
               </>
             ),
           },

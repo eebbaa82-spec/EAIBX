@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PreviewForm } from "@/components/forms";
-import { Note, PageHero, Section, Tbc } from "@/components/ui";
+import { Note, PageHero, Section } from "@/components/ui";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const options = [
   { label: "General inquiries", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
-  { label: "Partnerships", value: <Tbc>email</Tbc> },
+  { label: "Partnerships", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
   { label: "Press", value: <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a> },
   { label: "Phone", value: <>Office {company.phoneOffice} · Mobile {company.phoneMobile}</> },
   {

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { PageHero, Section, Tbc } from "@/components/ui";
+import { PageHero, Section } from "@/components/ui";
 
 export type LegalDocKey = "terms" | "privacy" | "investor-disclaimer" | "cookies" | "community" | "nda";
 
@@ -37,7 +37,7 @@ export const legalDocs: Record<LegalDocKey, LegalDoc> = {
       "Your rights",
       "Security",
       <>
-        Compliance with Ethiopia&apos;s personal data protection law <Tbc>counsel to cite proclamation</Tbc>
+        Compliance with Ethiopia&apos;s Personal Data Protection Proclamation No. 1321/2024
       </>,
       "Contact for privacy requests",
     ],

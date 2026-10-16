@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, DataTable, FeatureList, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, DataTable, FeatureList, PageHero, Section } from "@/components/ui";
 import { PreviewForm } from "@/components/forms";
 
 export const metadata: Metadata = {
@@ -48,7 +48,7 @@ const ways = [
     title: "Integrate.",
     body: (
       <>
-        Connect your systems to EABIX through our API for referrals and reporting. <Tbc>confirm availability</Tbc>
+        Connect your systems to EABIX for referrals and reporting. API access for partners is planned after launch.
       </>
     ),
   },
@@ -109,7 +109,11 @@ export default function PartnersPage() {
           <div>
             <h3 className="font-semibold text-ink">Download</h3>
             <p className="mt-2 text-muted">
-              Partner brochure (PDF) <Tbc>produce brochure</Tbc>
+              The partner brochure is available on request. Email{" "}
+              <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">
+                contact@ebba.et
+              </a>
+              .
             </p>
           </div>
         </div>

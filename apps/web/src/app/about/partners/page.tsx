@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, CardGrid, EmptyState, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, Card, CardGrid, EmptyState, PageHero, Section } from "@/components/ui";
 
 const intro =
   "EABIX works with banks, development finance institutions, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.";
@@ -35,7 +35,7 @@ export default function AboutPartnersPage() {
       </Section>
       <Section tone="canvas">
         <EmptyState action={<ButtonLink href="/partners">Become a partner</ButtonLink>}>
-          <Tbc>partner names, logos and one line each on the partnership, with written approval</Tbc>
+          Partner announcements are coming soon. We are working with banks, MFIs, development partners and universities to bring their programs and services to EABIX.
         </EmptyState>
       </Section>
     </>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, EmptyState, FeatureList, PageHero, Section, Steps, Tbc } from "@/components/ui";
+import { ButtonLink, EmptyState, FeatureList, PageHero, Section, Steps } from "@/components/ui";
 import { CardAnatomy } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
@@ -50,7 +50,7 @@ export default function DealRoomsPage() {
       <Section tone="canvas" title="Upcoming and open rooms">
         <div className="space-y-6">
           <EmptyState action={<ButtonLink href="/join" variant="secondary">Register interest</ButtonLink>}>
-            <Tbc>first deal room themes and dates</Tbc>
+            The first deal rooms open after launch. Register your interest and we will tell you when a room matches what you are looking for.
           </EmptyState>
           <CardAnatomy
             title="Each room card shows"

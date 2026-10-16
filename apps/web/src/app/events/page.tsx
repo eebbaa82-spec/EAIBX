@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, CtaBand, EmptyState, PageHero, Section, TagList, Tbc } from "@/components/ui";
+import { ButtonLink, Card, CtaBand, EmptyState, PageHero, Section, TagList } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "Business Events and Funding Calls in Ethiopia",
@@ -16,14 +16,10 @@ export default function EventsPage() {
 
       <Section title="Signature event" tone="canvas">
         <Card
-          title={
-            <>
-              EABIX Investment Forum <Tbc>confirm name and date</Tbc>
-            </>
-          }
+          title="EABIX Investment Forum"
         >
           Our flagship gathering of founders, investors, lenders and policymakers, featuring live deal room pitches and sector
-          panels.
+          panels. The date of the first forum is announced soon.
         </Card>
       </Section>
 

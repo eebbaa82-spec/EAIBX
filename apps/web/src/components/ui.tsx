@@ -242,9 +242,7 @@ export function TrustBar() {
         <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-muted">
           <li>Verified profiles</li>
           <li>Secure deal rooms</li>
-          <li>
-            Data hosted to <Tbc>hosting standard</Tbc>
-          </li>
+          <li>Data hosted on secure cloud infrastructure</li>
           <li>Built in Ethiopia for Ethiopia</li>
         </ul>
       </Container>

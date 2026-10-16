@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonLink, CtaBand, Faq, PageHero, Section, Tbc } from "@/components/ui";
+import { ButtonLink, CtaBand, Faq, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
   title: "EABIX FAQ · Answers for Businesses and Investors",
@@ -74,7 +74,7 @@ export default function FaqPage() {
               a: (
                 <>
                   Individuals and organizations that complete our investor verification. Foreign and diaspora investors must also
-                  follow Ethiopian investment rules for their sector. <Tbc>legal review</Tbc>
+                  follow Ethiopian investment rules for their sector. Our team will guide you on what applies to you.
                 </>
               ),
             },
