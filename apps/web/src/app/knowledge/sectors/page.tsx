@@ -20,16 +20,16 @@ export default function SectorReportsPage() {
       />
       <Section
         title="Download a report"
-        intro={latest ? `Last updated ${formatDate(latest)}. Each report is a free PDF with its sources listed.` : undefined}
+        intro={`${latest ? `Last updated ${formatDate(latest)}. ` : ""}The public edition of each report is free to download. The member edition, with the full list of sources, page references and links, is available to registered EABIX members.`}
       >
         <ul className="grid gap-5 md:grid-cols-2">
           {reports.map((r) => (
             <li key={r.slug} className="flex flex-col rounded-xl border border-line bg-white p-6 shadow-sm">
               <h3 className="text-lg font-semibold text-ink">{r.name}</h3>
               <p className="mt-1 text-xs text-muted">
-                Updated {formatDate(r.asOf)} · {r.sources.length} sources
+                Updated {formatDate(r.asOf)} · Fully referenced ({r.sources.length} sources, for members)
               </p>
-              <p className="mt-3 flex-1 text-sm text-muted">{r.summary}</p>
+              <p className="mt-3 flex-1 text-justify text-sm text-muted">{r.summary}</p>
               <p className="mt-3 text-sm text-ink">
                 {r.returns.length > 0
                   ? `Published returns and yields: ${r.returns.length} figure${r.returns.length > 1 ? "s" : ""}`
@@ -47,7 +47,7 @@ export default function SectorReportsPage() {
         </ul>
       </Section>
       <Section tone="canvas" title="How we prepare these reports">
-        <div className="max-w-3xl space-y-4 text-muted">
+        <div className="max-w-3xl space-y-4 text-justify text-muted">
           <p>
             We use only reports and official pages published by international institutions, such as the World Bank, IFC,
             IMF, African Development Bank and UN agencies, and by the Ethiopian government, such as the Ethiopian

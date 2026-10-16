@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Note, PageHero, Section } from "@/components/ui";
+import { ButtonLink, Note, PageHero, Section } from "@/components/ui";
 import { getLibrary, libraryPdfHref } from "@/lib/library";
 import { formatDate } from "@/lib/sectors";
 
@@ -19,9 +19,16 @@ export default function RegulationsPage() {
       <PageHero
         eyebrow="Knowledge Hub"
         title="Regulations and research"
-        subhead="Short, plain-English summaries of the rules and research that shape investing in Ethiopia, each with a direct link to the original document. Updated every month."
-      />
-      <Section title="In this library" intro={latest ? `Last updated ${formatDate(latest)}.` : undefined}>
+        subhead="Short, plain-English summaries of the rules and research that shape investing in Ethiopia. Updated every month."
+      >
+        <ButtonLink href="/join" variant="light">
+          Join free for full references
+        </ButtonLink>
+      </PageHero>
+      <Section
+        title="In this library"
+        intro={`${latest ? `Last updated ${formatDate(latest)}. ` : ""}Summaries are open to everyone. Direct links to every original document, and the fully referenced PDF digests, are available to registered EABIX members.`}
+      >
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {library.map((c) => (
             <li key={c.slug} className="flex flex-col rounded-xl border border-line bg-white p-5 shadow-sm">
@@ -40,7 +47,7 @@ export default function RegulationsPage() {
         <Section key={c.slug} id={c.slug} title={c.name} intro={c.intro} tone={i % 2 === 0 ? "canvas" : undefined}>
           <ul className="space-y-4">
             {c.documents.map((d) => (
-              <li key={d.url + d.title} className="rounded-xl border border-line bg-white p-5 shadow-sm">
+              <li key={d.title + d.number + d.date} className="rounded-xl border border-line bg-white p-5 shadow-sm">
                 <div className="flex flex-wrap items-center gap-2 text-xs">
                   <span className="rounded-full bg-brand-50 px-2 py-0.5 font-semibold text-brand-700">{d.topic}</span>
                   <span className="rounded-full bg-gold-100 px-2 py-0.5 font-semibold text-ink">{d.status}</span>
@@ -49,19 +56,14 @@ export default function RegulationsPage() {
                 <p className="mt-1 text-sm text-muted">
                   {[d.number, d.issuer, displayDate(d.date)].filter(Boolean).join(" · ")}
                 </p>
-                <p className="mt-3 text-sm text-ink">{d.summary}</p>
-                <p className="mt-2 text-sm text-muted">
+                <p className="mt-3 text-justify text-sm text-ink">{d.summary}</p>
+                <p className="mt-2 text-justify text-sm text-muted">
                   <strong className="text-ink">Why it matters: </strong>
                   {d.relevance}
                 </p>
-                <a
-                  href={d.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm font-semibold text-brand-700 hover:underline"
-                >
-                  Open the original document ↗
-                </a>
+                <p className="mt-3 text-sm font-semibold text-brand-700">
+                  Link to the original document: available to members
+                </p>
               </li>
             ))}
           </ul>
