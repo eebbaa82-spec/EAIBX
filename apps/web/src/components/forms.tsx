@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent, type ReactNode } from "react";
+import { translator } from "@/i18n/chrome";
+import type { Locale } from "@/i18n/config";
 
 /**
  * The platform back end (NestJS API) is not built yet, so forms do not send
@@ -99,12 +101,13 @@ export function PreviewForm({
   );
 }
 
-export function NewsletterForm() {
+export function NewsletterForm({ locale = "en" }: { locale?: Locale }) {
+  const t = translator(locale);
   const [sent, setSent] = useState(false);
   if (sent) {
     return (
       <p role="status" className="text-sm text-brand-100">
-        Thanks for subscribing. (Preview only: not connected yet.)
+        {t("Thanks for subscribing. (Preview only: not connected yet.)")}
       </p>
     );
   }
@@ -118,7 +121,7 @@ export function NewsletterForm() {
     >
       <div className="flex gap-2">
         <label htmlFor="newsletter-email" className="sr-only">
-          Email address
+          {t("Email address")}
         </label>
         <input
           id="newsletter-email"
@@ -128,10 +131,10 @@ export function NewsletterForm() {
           className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-white placeholder:text-slate-400 focus:outline-none"
         />
         <button type="submit" className="rounded-lg bg-gold-500 px-4 py-2 font-semibold text-ink hover:bg-gold-400">
-          Subscribe
+          {t("Subscribe")}
         </button>
       </div>
-      <p className="mt-2 text-xs text-slate-400">No spam. Unsubscribe any time.</p>
+      <p className="mt-2 text-xs text-slate-400">{t("No spam. Unsubscribe any time.")}</p>
     </form>
   );
 }

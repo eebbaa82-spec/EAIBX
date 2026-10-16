@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { translator } from "@/i18n/chrome";
+import type { Locale } from "@/i18n/config";
 
 /**
  * Marks copy that still needs a real fact before launch. Rendered visibly so
@@ -235,15 +237,22 @@ export function CtaBand({ title, body, children }: { title: ReactNode; body?: Re
   );
 }
 
-export function TrustBar() {
+const trustItems = [
+  "Verified profiles",
+  "Secure deal rooms",
+  "Data hosted on secure cloud infrastructure",
+  "Built in Ethiopia for Ethiopia",
+];
+
+export function TrustBar({ locale = "en" }: { locale?: Locale }) {
+  const t = translator(locale);
   return (
     <div className="border-y border-line bg-canvas py-4">
       <Container>
         <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm font-medium text-muted">
-          <li>Verified profiles</li>
-          <li>Secure deal rooms</li>
-          <li>Data hosted on secure cloud infrastructure</li>
-          <li>Built in Ethiopia for Ethiopia</li>
+          {trustItems.map((item) => (
+            <li key={item}>{t(item)}</li>
+          ))}
         </ul>
       </Container>
     </div>
