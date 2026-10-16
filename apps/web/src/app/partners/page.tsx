@@ -109,11 +109,16 @@ export default function PartnersPage() {
           <div>
             <h3 className="font-semibold text-ink">Download</h3>
             <p className="mt-2 text-muted">
-              The partner brochure is available on request. Email{" "}
-              <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">
-                contact@ebba.et
+              A four-page overview of EABIX for banks, development partners, government agencies, universities and corporates.
+            </p>
+            <p className="mt-4">
+              <a
+                href="/downloads/EABIX-Partner-Brochure.pdf"
+                download
+                className="inline-flex rounded-lg bg-brand-700 px-4 py-2 font-semibold text-white hover:bg-brand-600"
+              >
+                Download the partner brochure (PDF)
               </a>
-              .
             </p>
           </div>
         </div>
