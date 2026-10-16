@@ -1,0 +1,284 @@
+{
+  "slug": "manufacturing",
+  "name": "Manufacturing",
+  "asOf": "2026-10-16",
+  "summary": "The Ministry of Industry reports that manufacturing export earnings reached 607 million USD in the 2018 Ethiopian fiscal year (2025/26), and it targets 1 billion USD in the year that follows. The government reports industrial capacity utilization of 69.2 percent and about 5.9 billion USD in import substitution over the past fiscal year. Ethiopia remains ineligible for US AGOA trade preferences, though, and the World Bank says firms in industrial parks import more than 95 percent of their inputs.",
+  "indicators": [
+    {
+      "label": "Manufacturing export earnings",
+      "value": "607 million USD (385 million USD before the Made in Ethiopia initiative); target 1 billion USD for 2019 EFY",
+      "period": "2018 Ethiopian fiscal year (2025/26)",
+      "source": "S1"
+    },
+    {
+      "label": "Manufacturing employment",
+      "value": "More than 433,000, up from about 162,000 at the start of the reform program",
+      "period": "As reported 2026-07-30",
+      "source": "S1"
+    },
+    {
+      "label": "Industrial capacity utilization",
+      "value": "69.2 percent",
+      "period": "As reported 2026-10-03 (no period stated)",
+      "source": "S2"
+    },
+    {
+      "label": "Import substitution (foreign exchange saved)",
+      "value": "Nearly 5.9 billion USD",
+      "period": "Past fiscal year (2018 EFY, 2025/26), reported 2026-10-03",
+      "source": "S2"
+    },
+    {
+      "label": "Manufacturing, value added",
+      "value": "4.20246448198783 percent of GDP",
+      "period": "2025",
+      "source": "S3"
+    },
+    {
+      "label": "IPDC-managed parks",
+      "value": "13 special economic zones/parks; 100,000+ jobs created; 200+ investors; $1.8 billion revenue generated",
+      "period": "Cumulative, IPDC website as of 2026-10",
+      "source": "S4"
+    },
+    {
+      "label": "Manufacturing share of commercial banks' outstanding loans",
+      "value": "16.2 percent, down from 23 percent",
+      "period": "June 2025 vs. June 2024",
+      "source": "S8"
+    },
+    {
+      "label": "Textile and apparel exports",
+      "value": "Over USD 140 million; sector grown four-fold since 2020",
+      "period": "Not stated (EIC page last modified 2023-02)",
+      "source": "S11"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Agricultural machinery and irrigation equipment manufacturing investment case",
+      "value": "IRR 24%; NPV USD 121.3M on USD 350.8M investment",
+      "period": "Hand-in-Hand Investment Forum 2026",
+      "basis": "Projected internal rate of return for a proposed mechanization manufacturing investment case (FAO-hosted); not an observed return",
+      "source": "S15"
+    },
+    {
+      "label": "Commercial banks' weighted average long-term lending rate",
+      "value": "17.9 percent (18 percent at end-June 2025)",
+      "period": "End-September 2025",
+      "basis": "Economy-wide lending rate, not specific to manufacturing",
+      "source": "S8"
+    },
+    {
+      "label": "91-day Treasury bill weighted average yield (benchmark)",
+      "value": "12.4 percent",
+      "period": "February 2026",
+      "basis": "Risk-free local-currency benchmark yield",
+      "source": "S9"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an observed average return on investment for manufacturing as a whole. The figures above are the closest published indicators: a projected IRR for one FAO-hosted machinery manufacturing investment case, the economy-wide commercial bank lending rate, and the 91-day Treasury bill yield.",
+  "opportunities": [
+    {
+      "title": "Integrated textile value chain",
+      "detail": "EIC promotes investment across cotton cultivation, ginning, spinning, weaving, dyeing and garment production, plus trims and accessories, in plug-and-play textile parks. Its page still cites AGOA access, which is out of date (see risks).",
+      "source": "S11"
+    },
+    {
+      "title": "Leather and leather products",
+      "detail": "EIC cites capacity of over 500 million square feet of finished leather a year, over USD 120 million a year from leather products, and specialized leather parks with zero-liquid-discharge treatment facilities.",
+      "source": "S12"
+    },
+    {
+      "title": "IPDC industrial parks and SEZs",
+      "detail": "IPDC offers serviced land and pre-built factory sheds with one-stop-shop services across 13 sites, including Bole Lemi, Hawassa, Kombolcha, Adama, Dire Dawa and Debre Birhan.",
+      "source": "S4"
+    },
+    {
+      "title": "Import substitution",
+      "detail": "The Ministry of Industry pairs the Made in Ethiopia initiative with an import substitution program and reports about 5.9 billion USD in import substitution within a single year.",
+      "source": "S2"
+    },
+    {
+      "title": "Pharmaceuticals (brief)",
+      "detail": "EIC cites an 85 percent import share in pharmaceutical supply and the 279-hectare Kilinto Industrial Park for pharmaceutical manufacturing; these figures come from a 2019 study.",
+      "source": "S13"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Up to 10 years income-tax holiday for enterprises producing inside industrial parks, and up to 15 years for industrial park developers.",
+      "source": "S14"
+    },
+    {
+      "detail": "Exemption from duties and other taxes on imports of machinery, equipment and construction material (also spare parts, raw materials and vehicles), a duty-free privilege for exporters, and bonded-export-factory schemes.",
+      "source": "S14"
+    },
+    {
+      "detail": "The Ethiopian Pharmaceutical Supply Agency gives local manufacturers 25 percent price protection against foreign suppliers and 30 percent advance payment under long-term agreements.",
+      "source": "S13"
+    },
+    {
+      "detail": "EIC cites preferential trade access under Everything But Arms, the African Continental Free Trade Area and COMESA for Ethiopia-based investors.",
+      "source": "S10"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Ethiopia's AGOA eligibility was terminated in 2022 on human rights grounds, and Ethiopia is listed as ineligible for calendar year 2026.",
+      "source": "S5"
+    },
+    {
+      "detail": "AGOA itself is authorized only through December 31, 2026 (Consolidated Appropriations Act, 2026, P.L. 119-75), so extending it beyond that date would require new legislation.",
+      "source": "S6"
+    },
+    {
+      "detail": "The World Bank says manufacturing employment has been declining since 2018, partly influenced by the AGOA delisting, with job losses in apparel and textiles. Firms in industrial parks import more than 95 percent of their inputs.",
+      "source": "S7"
+    },
+    {
+      "detail": "The World Bank says liquidity shortages and lending caps restrict exporters' ability to fulfill international orders and expand operations, and smaller exporters are being excluded from bank financing.",
+      "source": "S7"
+    },
+    {
+      "detail": "Manufacturing's share of commercial banks' outstanding loans fell from 23 to 16.2 percent between June 2024 and June 2025.",
+      "source": "S8"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Ethiopia Targets 1 billion USD in Manufacturing Exports as Sector Gains Momentum (statement of Industry Minister Melaku Alebel)",
+      "publisher": "Ethiopian News Agency",
+      "date": "2026-07",
+      "url": "https://www.ena.et/web/eng/w/eng_9299514",
+      "location": "Article body, dated July 30, 2026",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopia's Industrial Capacity Utilization Exceeds 69 Percent Following Targeted Policy Measures (statement of State Minister of Industry Hassan Muhammed)",
+      "publisher": "Ethiopian News Agency",
+      "date": "2026-10",
+      "url": "https://www.ena.et/web/eng/w/eng_9669603",
+      "location": "Article body, dated October 3, 2026",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "World Development Indicators: Manufacturing, value added (% of GDP), Ethiopia (NV.IND.MANF.ZS)",
+      "publisher": "World Bank",
+      "date": "2026-10",
+      "url": "https://api.worldbank.org/v2/country/ETH/indicator/NV.IND.MANF.ZS?format=json&mrnev=2",
+      "location": "2025 data point (series last updated 2026-10-08)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Industrial Parks Development Corporation home page",
+      "publisher": "Industrial Parks Development Corporation",
+      "date": "2026-10",
+      "url": "https://www.ipdc.gov.et/",
+      "location": "Statistics panel and 'Our Parks' list (the page also says '11 special economic zones, and 3 industrial parks' and '14 parks')",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "African Growth and Opportunity Act (AGOA), CRS Report R49187",
+      "publisher": "US Congressional Research Service",
+      "date": "2026-08",
+      "url": "https://www.congress.gov/crs-product/R49187",
+      "location": "Table 1 (countries ineligible in 2026) and eligibility section",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Request for Comments on the Modernization of the African Growth and Opportunity Act (Docket USTR-2026-0166)",
+      "publisher": "Office of the United States Trade Representative (Federal Register)",
+      "date": "2026-04",
+      "url": "https://public-inspection.federalregister.gov/2026-08347.pdf",
+      "location": "Background section",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "Ethiopia - Building Opportunities for Optimized Trade and Investment for Growth (P515564), Project Information Document, Concept Stage",
+      "publisher": "World Bank",
+      "date": "2026-06",
+      "url": "https://documents1.worldbank.org/curated/en/099060926031036358/pdf/P515564-9ba292c1-c82d-4fcb-bd66-4e3a0557fe6d.pdf",
+      "location": "p. 3 (manufacturing employment), p. 4 (AGOA delisting), p. 6 (industrial park inputs; exporter financing)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Financial Stability Report, March 2026",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/FInancial-Stability-Report_MARCH_2026_.pdf",
+      "location": "p. 9 and Figure 4, p. 10 (lending rate); p. 17 (sectoral loan shares)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "Press Release: Monetary Policy Committee Meeting No. 6",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
+      "location": "p. 2 (T-bill yields)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Manufacturing (key sectors)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-09",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/",
+      "location": "Sector overview and market access section; page last modified 2023-09-06",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "Textile & Garment (key sectors: manufacturing)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-02",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/textile-garment/",
+      "location": "Sector overview and opportunities; page last modified 2023-02-02",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S12",
+      "title": "Leather and Leather Products (key sectors: manufacturing)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-02",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/leather-and-leather-products/",
+      "location": "Sector overview and opportunities; page last modified 2023-02-02",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S13",
+      "title": "Pharmaceuticals (key sectors: manufacturing)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-03",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/pharmaceuticals/",
+      "location": "Key figures and incentives sections; page last modified 2023-03-08 (figures cite a 2019 study)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S14",
+      "title": "Why Ethiopia",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-09",
+      "url": "https://investethiopia.gov.et/why-ethiopia/",
+      "location": "Dynamic Policy / incentives section; page last modified 2023-09-06",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S15",
+      "title": "Hand-in-Hand Investment Forum 2026: Ethiopia investment cases",
+      "publisher": "FAO",
+      "date": "2026-09",
+      "url": "https://www.fao.org/hand-in-hand/investment-forum-2026/eth/en",
+      "location": "Mechanization investment case summary card",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

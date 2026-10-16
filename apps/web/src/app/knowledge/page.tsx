@@ -37,7 +37,17 @@ export default function KnowledgePage() {
         <TagList items={contentTypes} />
       </Section>
 
-      <Section tone="canvas" title="Featured guides">
+      <Section title="Sector investment reports" tone="canvas">
+        <p className="max-w-3xl text-lg text-muted">
+          Monthly reports on opportunities, published returns and incentives in each Ethiopian sector, sourced only from
+          international institutions and the Ethiopian government.
+        </p>
+        <div className="mt-6">
+          <ButtonLink href="/knowledge/sectors">Download sector reports</ButtonLink>
+        </div>
+      </Section>
+
+      <Section title="Featured guides">
         <ul className="grid gap-4 md:grid-cols-2">
           {featuredGuides.map((g) => (
             <li key={g} className="flex flex-col rounded-xl border border-line bg-white p-6 shadow-sm">
@@ -48,7 +58,7 @@ export default function KnowledgePage() {
         </ul>
       </Section>
 
-      <Section title="Template library">
+      <Section tone="canvas" title="Template library">
         <EmptyState action={<ButtonLink href="/join">Join free</ButtonLink>}>
           Free, editable templates reviewed by Ethiopian professionals. Download, adapt and use.
         </EmptyState>

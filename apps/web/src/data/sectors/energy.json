@@ -1,0 +1,221 @@
+{
+  "slug": "energy",
+  "name": "Energy and renewables",
+  "asOf": "2026-10-16",
+  "summary": "Ethiopia had 9,761 MW of installed generating capacity in 2025, more than 95% of it renewable, and targets up to 14,000 MW by 2030, including the 5,150 MW Grand Ethiopian Renaissance Dam. The government's National Energy Compact calls for at least US$3.06 billion of private investment in 2026 to 2030, with solar, wind and off-grid power open to independent power producers. Tariffs are being raised toward full cost recovery by 2028, and power exports to neighboring countries earned 366 million USD in the first nine months of the current fiscal year.",
+  "indicators": [
+    {
+      "label": "Installed generating capacity",
+      "value": "9,761 MW (hydro 9,212 MW, wind 524 MW, waste-to-energy 25 MW)",
+      "period": "2025",
+      "source": "S1"
+    },
+    {
+      "label": "Grand Ethiopian Renaissance Dam (GERD) capacity",
+      "value": "5,150 MW; about 15,760 GWh average annual energy",
+      "period": "As stated in January 2026 brief",
+      "source": "S2"
+    },
+    {
+      "label": "Household electricity access (any source)",
+      "value": "65% (29.3% grid, 35.7% off-grid)",
+      "period": "January 2025",
+      "source": "S1"
+    },
+    {
+      "label": "2030 capacity target",
+      "value": "Up to 14,000 MW; non-hydro share from about 5.6% to at least 15%",
+      "period": "2030 target",
+      "source": "S1"
+    },
+    {
+      "label": "Total investment need, of which private",
+      "value": "US$9,646.04 million total; US$3,061.8 million private",
+      "period": "2026-2030",
+      "source": "S1"
+    },
+    {
+      "label": "Electricity exports",
+      "value": "1,671 GWh",
+      "period": "2024",
+      "source": "S2"
+    },
+    {
+      "label": "Electricity export revenue",
+      "value": "366 million USD, up 138 million USD from the previous year",
+      "period": "First nine months of the current fiscal year (reported 2026-05-02)",
+      "source": "S3"
+    },
+    {
+      "label": "Utility cost recovery (OPEX plus debt service)",
+      "value": "Below 60%; target 100% by 2028",
+      "period": "Baseline 2025; target 2028",
+      "source": "S1"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Financial internal rate of return, Eastern Ethiopia Electricity Grid Reinforcement Project",
+      "value": "27.1% (base case); FNPV USD 695 million at 9% discount rate",
+      "period": "Appraisal 2023",
+      "basis": "AfDB project-level financial IRR of a public transmission project, computed by AfDB using a current average bulk tariff of USD 0.045/kWh (Section 3A, para. 28)",
+      "source": "S4"
+    },
+    {
+      "label": "Average bulk electricity tariff",
+      "value": "USD 0.045/kWh",
+      "period": "2023 (appraisal)",
+      "basis": "Bulk tariff used by AfDB in the project financial analysis (para. 28)",
+      "source": "S4"
+    },
+    {
+      "label": "Electricity export sale price",
+      "value": "US cents 5.0 to 6.5 per kWh",
+      "period": "2022",
+      "basis": "Price at which Ethiopia's 2022 power exports were sold, as reported by AfDB (para. 7)",
+      "source": "S4"
+    },
+    {
+      "label": "Average local retail tariff vs production cost",
+      "value": "US cents 3/kWh tariff vs estimated production cost of US cents 3.2/kWh",
+      "period": "2023 (appraisal)",
+      "basis": "AfDB statement that the local average tariff is low and insufficient to cover costs (para. 7 and footnote 7)",
+      "source": "S4"
+    },
+    {
+      "label": "Economic IRR, Geothermal Sector Development Project (Aluto)",
+      "value": "30% at appraisal; 8% at completion (14% for appraisal adjusted for a three-year delay)",
+      "period": "ICR dated 2024-07-18",
+      "basis": "World Bank economic (not financial or equity) IRR for the public geothermal project (Table 5, Section II.C, paras. 39-42)",
+      "source": "S5"
+    },
+    {
+      "label": "91-day Treasury bill weighted average yield (benchmark)",
+      "value": "12.4 percent (from 15.2 percent in February 2025)",
+      "period": "February 2026",
+      "basis": "National Bank of Ethiopia risk-free benchmark, not a sector return",
+      "source": "S6"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment or a private IPP equity return for this sector; the figures above are project-level IRRs from AfDB and World Bank appraisal and completion documents, published tariff and export price levels, and the Treasury bill benchmark.",
+  "opportunities": [
+    {
+      "title": "Solar and wind IPPs",
+      "detail": "A 225 MW solar IPP/PPP is in procurement, and 802 MW of wind and 625 MW of solar are listed as unfunded projects seeking finance.",
+      "source": "S1"
+    },
+    {
+      "title": "Aysha I wind farm",
+      "detail": "The 300 MW Aisha 1 wind project has a signed PPA with AMEA and is awaiting financial close.",
+      "source": "S2"
+    },
+    {
+      "title": "Off-grid and last-mile access",
+      "detail": "About 9.23 million connections are targeted by 2030, leaving a gap of 6.25 million (about 1.25 million per year) beyond existing programs, with 30% of 2030 access planned off-grid.",
+      "source": "S1"
+    },
+    {
+      "title": "Regional power trade",
+      "detail": "Exports of about 1,500 GWh/year are targeted to exceed 5,000 GWh/year by 2030, with PPAs to be finalized with South Sudan and Somalia.",
+      "source": "S1"
+    },
+    {
+      "title": "Geothermal development",
+      "detail": "Geothermal potential is about 10 GW with less than 1% exploited, while the Aluto-Langano expansion, Corbetti and Tulu Moye projects have stalled.",
+      "source": "S2"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "The Compact offers currency risk mitigation through MIGA and IDA guarantees, blended finance and results-based financing, standardized PPA models and an IPP helpdesk at the Ministry of Finance.",
+      "source": "S1"
+    },
+    {
+      "detail": "Investment Proclamation 1180/2020 encourages IPPs through long-term PPAs and standardized renewable auctions, and allows private investors to develop off-grid solar, small hydro, wind, biomass and hybrid systems.",
+      "source": "S2"
+    },
+    {
+      "detail": "The World Bank approved a US$400 million IDA credit plus a US$24 million Denmark grant for the ASCENT program, which seeks to incentivize private sector participation in electricity access.",
+      "source": "S7"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Key risks named by the government and World Bank include IPP delays, payment risk, foreign exchange availability, non-cost-recovery tariffs, and hydrological risk.",
+      "source": "S1"
+    },
+    {
+      "detail": "Utility finances are weak: tariffs are below cost recovery, technical and commercial losses exceed 20%, and metering coverage is below 10%.",
+      "source": "S1"
+    },
+    {
+      "detail": "The World Bank-financed Aluto geothermal project confirmed 28.6 MW against 70 MW planned at appraisal and did not mobilize private capital.",
+      "source": "S5"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Ethiopia National Energy Compact (Mission 300)",
+      "publisher": "Government of Ethiopia / World Bank (Mission 300)",
+      "date": "2025",
+      "url": "https://thedocs.worldbank.org/en/doc/48d14fadc2878533e02e3aa56066cb73-0010012025/original/Ethiopia-National-Energy-Compact-Mission-300.pdf",
+      "location": "Declaration; Sec. 2.1-2.4; Pillars I-V; Annex IV",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopian Energy Sector Brief 2026",
+      "publisher": "Ministry of Water and Energy (Energy Information Administration and Modeling Desk)",
+      "date": "2026-01",
+      "url": "https://mowe.gov.et/sites/default/files/resource/Ethiopian%20Energy%20Sector%20Brief%202026.pdf",
+      "location": "pp. 9-10, 14, 17-18, 25, 31-32, 43",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Ethiopia Doubles Power Generation in Seven Years, Moves to Africa's Leading Energy Hub: EEP",
+      "publisher": "Ethiopian News Agency (statement by Ethiopian Electric Power)",
+      "date": "2026-05",
+      "url": "https://www.ena.et/web/eng/w/eng_8762790",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Eastern Ethiopia Electricity Grid Reinforcement Project, Project Appraisal Report (P-ET-FA0-020)",
+      "publisher": "African Development Bank",
+      "date": "2023",
+      "url": "https://www.afdb.org/sites/default/files/documents/projects-and-operations/ethiopia_-_eastern_ethiopia_electricity_grid_reinforcement_project_-_project_appraisal_report.pdf",
+      "location": "Para. 7 and footnote 7; Section 3A, para. 28, Table 5",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Implementation Completion and Results Report, Ethiopia Geothermal Sector Development Project (P133613)",
+      "publisher": "World Bank",
+      "date": "2024-07",
+      "url": "https://documents1.worldbank.org/curated/en/099071824134038025/text/BOSIB-84b55360-e360-4d3f-b202-10b9954b37ed.txt",
+      "location": "Section II.C, Table 5, paras. 28, 34, 39-42",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Press Release, Monetary Policy Committee Meeting No. 6",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
+      "location": "Financial markets section",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "New World Bank Program to Expand Electricity Access to Six Million People Across Ethiopia",
+      "publisher": "World Bank",
+      "date": "2025-08",
+      "url": "https://www.worldbank.org/en/news/press-release/2025/08/04/new-world-bank-program-to-expand-electricity-access-to-six-million-people-across-ethiopia",
+      "location": "Press release",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

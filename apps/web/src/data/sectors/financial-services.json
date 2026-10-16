@@ -1,0 +1,241 @@
+{
+  "slug": "financial-services",
+  "name": "Financial services",
+  "asOf": "2026-10-16",
+  "summary": "Ethiopia's 32 banks held deposits of ETB 3.5 trillion at end-June 2025 and earned a return on equity of 27.4 percent, while microfinance institutions posted a 27.5 percent return on equity. The 2025 Banking Business Proclamation opens banking to foreign investors through subsidiaries, branches or stakes in domestic banks, and the Ethiopian Securities Exchange has listed seven companies since January 2025. Insurance penetration is only 0.3 percent, and 135.9 million mobile money accounts point to a fast-growing digital payments market.",
+  "indicators": [
+    {
+      "label": "Number of banks",
+      "value": "32 banks, of which 31 are commercial banks",
+      "period": "End-June 2025",
+      "source": "S1"
+    },
+    {
+      "label": "Banking sector size",
+      "value": "Commercial bank assets over ETB 4.7 trillion; deposits ETB 3.5 trillion (up 40.7 percent); loans and bonds ETB 3 trillion (up 38.6 percent)",
+      "period": "End-June 2025",
+      "source": "S1"
+    },
+    {
+      "label": "Bank soundness",
+      "value": "Capital adequacy ratio 19.1 percent; NPL ratio 3.1 percent (regulatory maximum 5 percent)",
+      "period": "End-June 2025",
+      "source": "S1"
+    },
+    {
+      "label": "Commercial Bank of Ethiopia market share",
+      "value": "49.1 percent of banking assets; 48.1 percent of deposits",
+      "period": "End-June 2025",
+      "source": "S1"
+    },
+    {
+      "label": "Microfinance",
+      "value": "59 MFIs with 1,238 branches; total assets ETB 81.7 billion (up 35.9 percent); NPL ratio 3.3 percent",
+      "period": "End-June 2025",
+      "source": "S1"
+    },
+    {
+      "label": "Insurance",
+      "value": "19 insurers; gross written premium ETB 41.1 billion (up 43.1 percent); total assets ETB 84.9 billion; penetration 0.3 percent",
+      "period": "FY ending June 2025",
+      "source": "S1"
+    },
+    {
+      "label": "Digital payments",
+      "value": "135.9 million mobile money accounts, 540,421 agents, 54.0 million mobile banking accounts; digital payments worth more than ETB 18.5 trillion; 21 licensed non-bank entities (15 payment system operators, 6 payment instrument issuers)",
+      "period": "FY2024/25 (end-June 2025)",
+      "source": "S1"
+    },
+    {
+      "label": "Capital market",
+      "value": "7 companies listed on the ESX (Wegagen Bank, Gadaa Bank, Awash Bank, Ethio Telecom, Abay Bank, Bank of Abyssinia, Sidama Bank); 21 licensed capital market service providers including 8 investment banks and 11 securities investment advisors",
+      "period": "Listings January 2025 to September 2026; CMSP count July 2026",
+      "source": "S5"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Bank return on equity",
+      "value": "27.4 percent (up from 24.6 percent)",
+      "period": "FY ending June 30, 2025",
+      "basis": "Banking sector return on equity (RoE)",
+      "source": "S1"
+    },
+    {
+      "label": "Bank return on assets",
+      "value": "2.5 percent (up from 2 percent)",
+      "period": "FY ending June 30, 2025",
+      "basis": "Banking sector return on assets (RoA)",
+      "source": "S1"
+    },
+    {
+      "label": "Microfinance return on equity and assets",
+      "value": "RoE 27.5 percent; RoA 5.3 percent",
+      "period": "End-June 2025",
+      "basis": "MFI sector profitability ratios, the highest in five years",
+      "source": "S1"
+    },
+    {
+      "label": "Insurance sector profitability",
+      "value": "Net income before tax ETB 8.3 billion; combined ratio 86.4 percent",
+      "period": "FY ending June 2025",
+      "basis": "Insurance sector aggregate results",
+      "source": "S1"
+    },
+    {
+      "label": "Insurers' investment return",
+      "value": "10.6 percent five-year average, lower than the inflation rate",
+      "period": "Five years to June 2025",
+      "basis": "Average return on insurers' investments; NBE attributes the low level to the requirement to hold over 50 percent of assets in bank deposits",
+      "source": "S1"
+    },
+    {
+      "label": "Commercial bank long-term lending rate",
+      "value": "18 percent (June 2025); 17.9 percent (September 2025)",
+      "period": "June and September 2025",
+      "basis": "Weighted average long-term lending interest rate",
+      "source": "S1"
+    },
+    {
+      "label": "Treasury bill benchmark",
+      "value": "All T-bills weighted average 12.3 percent; 91-day 11.0 percent",
+      "period": "May 2026",
+      "basis": "Weighted average Treasury bill yields",
+      "source": "S6"
+    }
+  ],
+  "returnsNote": "Profitability ratios are sector aggregates published by the National Bank of Ethiopia for the fiscal year ending June 2025; no permitted source publishes returns for individual new entrants or for ESX-listed equities.",
+  "opportunities": [
+    {
+      "title": "Foreign entry into banking",
+      "detail": "The Banking Business Proclamation lets foreign banks enter through a subsidiary or branch or by buying shares in domestic banks. NBE draft directives cap aggregate foreign ownership of a domestic bank at 49 percent and a strategic investor at 40 percent.",
+      "source": "S2"
+    },
+    {
+      "title": "New bank licenses",
+      "detail": "Under the NBE draft licensing directive, a new domestic bank or foreign bank subsidiary needs minimum paid-up capital of Birr 5 billion, and a foreign bank branch needs Birr 5 billion in branch capital remitted in foreign currency.",
+      "source": "S4"
+    },
+    {
+      "title": "Capital market services",
+      "detail": "ECMA has licensed 21 capital market service providers, and the ESX has listed seven companies since January 2025, including six banks and Ethio Telecom.",
+      "source": "S5"
+    },
+    {
+      "title": "Underpenetrated insurance",
+      "detail": "Insurance penetration is 0.3 percent, yet gross written premium grew 43.1 percent to ETB 41.1 billion in FY2024/25.",
+      "source": "S1"
+    },
+    {
+      "title": "Digital payments and fintech",
+      "detail": "Mobile money reached 135.9 million accounts and digital payments nearly doubled to more than ETB 18.5 trillion, with 21 licensed non-bank payment entities. The proclamation also creates a regulatory sandbox for innovative financial services.",
+      "source": "S1"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "The Banking Business Proclamation provides a regulatory sandbox for new and innovative financial services and brings representatives of foreign banks under NBE regulation.",
+      "source": "S2"
+    },
+    {
+      "detail": "Deposit and lending rates are freely set by each bank under Interest Rates Directive No. NBE/INT/13/2026, effective January 9, 2026, with no floors or caps.",
+      "source": "S7"
+    },
+    {
+      "detail": "Capital repatriation and remittance of dividends and interest are guaranteed to foreign investors; EIC lists financial services as an emerging sector.",
+      "source": "S8"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Concentration: the state-owned Commercial Bank of Ethiopia holds 49.1 percent of banking assets, and trade accounts for 41.5 percent of loans.",
+      "source": "S1"
+    },
+    {
+      "detail": "Financial sector stakeholders rank exchange rate movements and inflation as the most significant short-term risks; operational risk is rising with financial fraud and crime.",
+      "source": "S1"
+    },
+    {
+      "detail": "The IMF says foreign bank entry 'will take time', and flags particularly fast private credit growth at the Commercial Bank of Ethiopia, whose asset quality review was due by June 2026.",
+      "source": "S3"
+    },
+    {
+      "detail": "The foreign equity and licensing directives we reviewed are NBE drafts with blank numbers and effective dates, so the final rules may differ.",
+      "source": "S4"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Financial Stability Report, March 2026",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/FInancial-Stability-Report_MARCH_2026_.pdf",
+      "location": "pp. 3, 9-10 (rates), 15-20 (banking), 24-25 (risks), 26-28 (microfinance), 31-33 (insurance), 33-35 (capital market), 37-38 (payments, Table 14)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Press Release: Council of Ministers approves draft NBE Proclamation and Banking Business Proclamation",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2024-06",
+      "url": "https://nbe.gov.et/wp-content/uploads/2024/06/Press-Release_Proclamation.pdf",
+      "location": "Press release, 14 June 2024",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "The Federal Democratic Republic of Ethiopia: Fifth Review Under the ECF Arrangement, Staff Report (IMF Country Report No. 26/174)",
+      "publisher": "International Monetary Fund",
+      "date": "2026-07",
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ethea2026002.pdf",
+      "location": "Para. 14 (p. 12), Box 3 (p. 15), paras. 37-40 (pp. 21-22)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Requirements for Licensing and Renewal of Banking Business and Representative Office Directive No. SBB/XX/2025 (draft); Equity Investment by Foreign Nationals Directive No. SBB/XXX/2025 (zero draft)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025",
+      "url": "https://www.nbe.gov.et/wp-content/uploads/2025/03/Requirements-for-Licensing-and-Renewal-of-Banking-Business-and-Representative-Office-Directive-No.-SBBXx2025.pdf",
+      "location": "Arts. 6.2.2 and 7.2.2; foreign equity draft Art. 5 at https://nbe.gov.et/wp-content/uploads/2025/10/Equity-Investment-By-Foreign-Nationals-NBE-Directive-Draft.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Listed Companies; ECMA Grants Licenses to Three New Capital Market Service Providers",
+      "publisher": "Ethiopian Securities Exchange; Ethiopian Capital Market Authority",
+      "date": "2026-07",
+      "url": "https://esx.et/equity-market/listed-companies/",
+      "location": "ESX listed companies table; ECMA release of 13 July 2026 at https://ecma.gov.et/2026/07/ethiopian-capital-market-authority-ecma-grants-licenses-to-three-new-capital-market-service-providers/",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Monetary Policy Committee Meeting No. 7 (press release)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/mpc7/",
+      "location": "Money market and T-bill section",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "Interest Rates (As Amended) Directive No. NBE/INT/13/2026",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-01",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/01/DIRECTIVE-NO.NBE-INT-13-2026-INTEREST-RATES-AS-AMENDED-.pdf",
+      "location": "Arts. 3.2, 4.1, 6",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "FAQs",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2026",
+      "url": "https://investethiopia.gov.et/resources/faqs/",
+      "location": "Repatriation and emerging sectors answers",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

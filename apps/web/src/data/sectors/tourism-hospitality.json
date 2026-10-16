@@ -1,0 +1,240 @@
+{
+  "slug": "tourism-hospitality",
+  "name": "Tourism and hospitality",
+  "asOf": "2026-10-16",
+  "summary": "The Ministry of Tourism reported more than 1.2 million international tourists and upwards of 2 billion US dollars in revenue over the nine months reported on April 1, 2026, alongside over 30 million domestic travelers. Ethiopian Airlines carried 19.0 million passengers and earned $7.6 billion in the fiscal year to June 2025, and the African Development Bank is lead arranger for nearly $8 billion of the $10 billion Bishoftu airport for a project it describes as set to be Africa's largest airport by 2029. Star-rated hotels, lodges, MICE facilities and tourist transport are open to foreign investors, while large parts of the north are under official travel warnings.",
+  "indicators": [
+    {
+      "label": "International tourist arrivals",
+      "value": "More than 1.2 million",
+      "period": "Past nine months, reported April 1, 2026 (Ministry of Tourism)",
+      "source": "S1"
+    },
+    {
+      "label": "International tourism revenue",
+      "value": "Upwards of 2 billion US dollars",
+      "period": "Past nine months, reported April 1, 2026 (Ministry of Tourism)",
+      "source": "S1"
+    },
+    {
+      "label": "Domestic tourism",
+      "value": "Over 30 million local travelers, more than 60 billion Birr",
+      "period": "Past nine months, reported April 1, 2026",
+      "source": "S1"
+    },
+    {
+      "label": "International conferences hosted",
+      "value": "Over 150 (double the previous fiscal period), bringing about 1.3 million foreign visitors",
+      "period": "Ethiopian fiscal year 2017 (2024/25), per the Prime Minister",
+      "source": "S2"
+    },
+    {
+      "label": "Hotels and restaurants share of GDP",
+      "value": "2.5 percent",
+      "period": "2023/24",
+      "source": "S4"
+    },
+    {
+      "label": "Hotels and restaurants real growth",
+      "value": "9.1 percent (10.3 percent in 2022/23)",
+      "period": "2023/24",
+      "source": "S4"
+    },
+    {
+      "label": "Ethiopian Airlines passengers and revenue",
+      "value": "19.0 million passengers (15.1 million international, 3.9 million domestic); revenue $7.6 billion, up 8 percent",
+      "period": "Fiscal year ending June 30, 2025",
+      "source": "S3"
+    },
+    {
+      "label": "Ethiopian Airlines network",
+      "value": "Fleet of 180 aircraft (13 added); 136 destinations (six international routes added)",
+      "period": "Ethiopian fiscal year 2017 (2024/25), per the Prime Minister",
+      "source": "S2"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Treasury bill weighted average yield, all tenors (benchmark)",
+      "value": "12.3 percent (down from 15.5 percent a year earlier)",
+      "period": "May 2026",
+      "basis": "Monthly weighted average yield on all Treasury bills, NBE Monetary Policy Committee No. 7 press release",
+      "source": "S9"
+    },
+    {
+      "label": "91-day Treasury bill yield (benchmark)",
+      "value": "11.0 percent (down from 16.1 percent a year earlier)",
+      "period": "May 2026",
+      "basis": "Weighted average yield on 91-day Treasury bills",
+      "source": "S9"
+    },
+    {
+      "label": "Bank lending interest rate (all sectors)",
+      "value": "Simple average 14.25 percent; range 7.00 to 21.50 percent",
+      "period": "2023/24",
+      "basis": "Commercial bank lending rates across the economy (Table 4.4), not specific to tourism or hotels",
+      "source": "S4"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are National Bank of Ethiopia Treasury bill yields (12.3 percent for all tenors and 11.0 percent for 91-day bills in May 2026) and the economy-wide bank lending rate (average 14.25 percent, range 7.00 to 21.50 percent, in 2023/24).",
+  "opportunities": [
+    {
+      "title": "Star-rated hotels and lodges",
+      "detail": "The Ministry of Tourism lists star-rated tourist hotels and lodges, entertainment and shopping centers, food and beverage, leisure and sports, and tourism medical services as open to foreign investors.",
+      "source": "S5"
+    },
+    {
+      "title": "MICE and conference tourism",
+      "detail": "The Ministry of Tourism promotes Addis Ababa venues for events from ten to a few thousand delegates, including the AU Conference Centre and the Addis Ababa International Convention and Exhibition Center, which is under development on 11 hectares.",
+      "source": "S7"
+    },
+    {
+      "title": "New destination projects",
+      "detail": "The investment commission invites investors to join government-launched destination projects at Gorgora, Wonchi and Koisha, and lists hotels and resorts, convention centers, duty-free centers and cultural villages as opportunities.",
+      "source": "S6"
+    },
+    {
+      "title": "Bishoftu airport hub",
+      "detail": "The $10 billion Bishoftu International Airport, 40 km south of Addis Ababa, is planned for 60 million passengers initially and 110 million eventually, with Phase I completion expected in November 2029; AfDB is mandated lead arranger for nearly $8 billion and plans $500 million of its own financing, subject to Board approval.",
+      "source": "S3"
+    },
+    {
+      "title": "Heritage and urban tourism",
+      "detail": "The Ministry of Tourism cites the Dine for Nation destinations and restoration of Harar Jugol and Fasil Ghebbi as government priorities.",
+      "source": "S1"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Tourism is listed among Ethiopia's priority economic sectors, and investors establishing a new enterprise are entitled to an income tax exemption that depends on the investment sub-sector.",
+      "source": "S8"
+    },
+    {
+      "detail": "Investors may import duty-free capital goods and construction materials to establish a new enterprise; in sectors other than manufacturing and agriculture, investors with at least USD 200,000 and 50 permanent Ethiopian jobs may import duty-free capital goods for up to 5 years.",
+      "source": "S8"
+    },
+    {
+      "detail": "The Ministry of Tourism offers pre- and post-bid assistance, convention planning support and on-site services to organizers bringing international events to Ethiopia.",
+      "source": "S7"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "The UK government advises against all travel to all of Tigray, Amhara and Gambela regions and parts of Oromia, Afar, Somali and Benishangul-Gumuz; all civilian flights to and from Tigray were suspended on September 22, 2026.",
+      "source": "S10"
+    },
+    {
+      "detail": "Non-star hotels, lodges, guest houses, restaurants, travel agencies, ticket sales and tour operation are reserved for domestic investors, and foreign investors may hold no more than 49 percent in domestic air transport.",
+      "source": "S5"
+    },
+    {
+      "detail": "Institutional change: a draft proclamation discussed in parliament in October 2026 would re-establish the Ministry of Tourism as the Ministry of Culture and Tourism.",
+      "source": "S11"
+    },
+    {
+      "detail": "The Bishoftu airport's AfDB financing remained subject to Board approval at signing, and the project carries a $350 million resettlement and livelihood restoration allocation.",
+      "source": "S3"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Ethiopia Attracts 1.2 Million Foreign Visitors in Nine Months as Landmark Projects Fuel Tourism Growth",
+      "publisher": "Ethiopian News Agency (Ministry of Tourism statement)",
+      "date": "2026-04",
+      "url": "https://www.ena.et/web/eng/w/eng_8583415",
+      "location": "Article body, statements by Ministry of Tourism and Teshome Teklu, Lead Executive Officer for Promotion",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopia Records Highest-Ever Foreign Tourist Arrivals: PM Abiy Ahmed",
+      "publisher": "Ethiopian News Agency (Prime Minister's statement to parliament)",
+      "date": "2025-07",
+      "url": "https://www.ena.et/web/eng/w/eng_6881858",
+      "location": "Article body, PM remarks at 42nd regular session of the House of People's Representatives",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "The $10 Billion Mega-Airport Financing Partnership Between Ethiopian Airlines and African Development Bank Takes Off",
+      "publisher": "African Development Bank",
+      "date": "2025-08",
+      "url": "https://www.afdb.org/en/news-and-events/press-releases/10-billion-mega-airport-financing-partnership-between-ethiopian-airlines-and-african-development-bank-takes-85992",
+      "location": "Press release",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Annual Report 2023-2024",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025",
+      "url": "https://nbe.gov.et/wp-content/uploads/2025/06/Annual-Report-2023-2024.pdf",
+      "location": "p. 4 (GDP shares); p. 5, Table 1.2 (growth); p. 39, Table 4.4 (interest rates)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Investment Opportunities",
+      "publisher": "Ministry of Tourism",
+      "date": "2026",
+      "url": "https://mot.gov.et/investment-opportunities/",
+      "location": "Reserved, joint and open investment areas",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Tourism (sector page)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-09",
+      "url": "https://investethiopia.gov.et/?p=1870",
+      "location": "Tourism sector page, investment opportunities",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "MICE Ethiopia",
+      "publisher": "Ministry of Tourism",
+      "date": "2026",
+      "url": "https://mot.gov.et/mice-ethiopia/",
+      "location": "Venues and services",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Frequently Asked Questions",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-02",
+      "url": "https://investethiopia.gov.et/resources/faqs/",
+      "location": "FAQs: priority economic sectors; incentives available for investors",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "Monetary Policy Committee Meeting No. 7 (press release)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/mpc7/",
+      "location": "Financial market developments",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Foreign travel advice: Ethiopia",
+      "publisher": "UK Foreign, Commonwealth and Development Office",
+      "date": "2026-10",
+      "url": "https://www.gov.uk/foreign-travel-advice/ethiopia",
+      "location": "Warnings and insurance (updated October 7, 2026)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "HPR Discusses Draft Proclamation to Restructure Four Federal Ministries",
+      "publisher": "Ethiopian News Agency",
+      "date": "2026-10",
+      "url": "https://www.ena.et/web/eng/w/eng_9700633",
+      "location": "Article body",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

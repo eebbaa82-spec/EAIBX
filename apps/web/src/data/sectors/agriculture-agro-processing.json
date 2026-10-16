@@ -1,0 +1,354 @@
+{
+  "slug": "agriculture-agro-processing",
+  "name": "Agriculture and agro-processing",
+  "asOf": "2026-10-16",
+  "summary": "Agriculture made up 32.8 percent of Ethiopia's GDP and 60.1 percent of employment in 2025 (World Bank), and coffee export earnings reached a record 3 billion USD in the budget year that ended in July 2026. The Ethiopian Investment Commission promotes agro-processing in edible oil, juices, animal feed, tomato and poultry, where large shares of demand are now met by imports. FAO-hosted investment cases presented in 2025 and 2026 project internal rates of return of 20.8 to 32 percent for animal feed, ranching, poultry and coffee projects.",
+  "indicators": [
+    {
+      "label": "Coffee export earnings",
+      "value": "3 billion USD (government target achieved)",
+      "period": "Budget year ending July 2026 (2018 Ethiopian fiscal year), reported 2026-07-03",
+      "source": "S1"
+    },
+    {
+      "label": "Coffee exports, previous fiscal year",
+      "value": "2.65 billion USD from over 470,000 tons",
+      "period": "2017 Ethiopian fiscal year (2024/25)",
+      "source": "S2"
+    },
+    {
+      "label": "Horticulture exports (flowers, fruits, vegetables)",
+      "value": "288.48 million USD from 160,317.79 tons, 70.9 percent of the plan for the period",
+      "period": "First seven months of the 2018 Ethiopian fiscal year, reported 2026-02-27",
+      "source": "S3"
+    },
+    {
+      "label": "Pulses and oilseeds exports",
+      "value": "Over 610 million USD, 7.35 percent of 8.3 billion USD national export earnings",
+      "period": "2017 Ethiopian fiscal year (2024/25)",
+      "source": "S4"
+    },
+    {
+      "label": "Meat and slaughter by-product exports",
+      "value": "120 million USD; over 22,620 tons, up 53 percent from the previous year",
+      "period": "2017 Ethiopian fiscal year (2024/25)",
+      "source": "S5"
+    },
+    {
+      "label": "Agriculture, forestry and fishing, value added",
+      "value": "32.8186147009719 percent of GDP",
+      "period": "2025",
+      "source": "S6"
+    },
+    {
+      "label": "Employment in agriculture (modeled ILO estimate)",
+      "value": "60.1432419652977 percent of total employment",
+      "period": "2025",
+      "source": "S7"
+    },
+    {
+      "label": "Yirgalem integrated agro-industrial park",
+      "value": "About 17,000 jobs, market linkage for 130,000 farmers, some 24 investors with registered capital of 9.5 billion Birr, 16.7 million USD in exports",
+      "period": "Cumulative, reported 2024-09-23 (exports over the last four years)",
+      "source": "S10"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Coffee rejuvenation investment case",
+      "value": "IRR 32%; NPV USD 2 billion at a 7% discount rate",
+      "period": "Hand-in-Hand Investment Forum 2025",
+      "basis": "Projected internal rate of return for a proposed replanting and stumping program, from an FAO-hosted Ethiopia investment case; not an observed return",
+      "source": "S12"
+    },
+    {
+      "label": "Coffee processing (dry and wet mills) investment case",
+      "value": "IRR 30% for both dry and wet processing",
+      "period": "Hand-in-Hand Investment Forum 2025",
+      "basis": "Projected internal rate of return for proposed coffee processing factories (FAO-hosted investment case)",
+      "source": "S12"
+    },
+    {
+      "label": "Grandparent stock poultry farming investment case",
+      "value": "IRR 30%; NPV USD 4.2M on USD 9M investment",
+      "period": "Hand-in-Hand Investment Forum 2026",
+      "basis": "Projected internal rate of return for a proposed investment case (FAO-hosted)",
+      "source": "S11"
+    },
+    {
+      "label": "Extensive rangeland management (ranching) investment case",
+      "value": "IRR 25%; NPV USD 91.7M on USD 136.6M investment",
+      "period": "Hand-in-Hand Investment Forum 2026",
+      "basis": "Projected internal rate of return for a proposed investment case (FAO-hosted); the page's body text gives NPV USD 90.5M and investment USD 136.5M",
+      "source": "S11"
+    },
+    {
+      "label": "Animal feed investment case",
+      "value": "IRR 20.8%; NPV USD 95.5M on USD 248.2M investment",
+      "period": "Hand-in-Hand Investment Forum 2026",
+      "basis": "Projected internal rate of return for a proposed investment case (FAO-hosted)",
+      "source": "S11"
+    },
+    {
+      "label": "Ethiopia Hand-in-Hand investment portfolio, overall",
+      "value": "IRR 22.7%; total NPV USD 312.7M on USD 744.6M total investment",
+      "period": "Hand-in-Hand Investment Forum 2026",
+      "basis": "Projected portfolio internal rate of return across the four 2026 Ethiopia investment cases (FAO-hosted)",
+      "source": "S11"
+    },
+    {
+      "label": "Loan interest rates in the coffee value chain",
+      "value": "18-30%",
+      "period": "2025 study",
+      "basis": "Range of interest rates borrowers in the coffee value chain face (cost of capital, not a return)",
+      "source": "S13"
+    },
+    {
+      "label": "Commercial banks' weighted average long-term lending rate",
+      "value": "17.9 percent",
+      "period": "End-September 2025",
+      "basis": "Economy-wide lending rate, not specific to agriculture",
+      "source": "S15"
+    },
+    {
+      "label": "91-day Treasury bill weighted average yield (benchmark)",
+      "value": "12.4 percent",
+      "period": "February 2026",
+      "basis": "Risk-free local-currency benchmark yield",
+      "source": "S14"
+    }
+  ],
+  "returnsNote": "No source we reviewed publishes an observed average return on investment for the sector. The return figures above are projected IRRs for specific proposed investment cases in FAO Hand-in-Hand materials, plus cost-of-capital benchmarks (coffee-chain loan rates, the economy-wide lending rate, and the 91-day Treasury bill yield).",
+  "opportunities": [
+    {
+      "title": "Edible oil processing",
+      "detail": "Edible oil demand is above 850,000 MT against 550,000 MT of supply, with 95 percent of supply imported at over US$650 million per year; EIC lists sesame, soybean, niger seed, groundnut and linseed processing.",
+      "source": "S8"
+    },
+    {
+      "title": "Animal feed and poultry",
+      "detail": "EIC cites US$150 million of unmet domestic demand for animal feed. An FAO-hosted 2026 investment case for animal feed projects an IRR of 20.8 percent.",
+      "source": "S8"
+    },
+    {
+      "title": "Coffee processing and rejuvenation",
+      "detail": "FAO-hosted 2025 investment cases propose dry and wet coffee processing factories (USD 164.4 million and USD 97.2 million) and coffee rejuvenation, with projected IRRs of 30 and 32 percent.",
+      "source": "S12"
+    },
+    {
+      "title": "Integrated agro-industrial parks",
+      "detail": "Parks at Burie, Yirgalem and Bulbula offer ready-made sheds of 1,500 to 3,500 square meters at US$1.5 per square meter per month for foreign investors, and power at US$0.045/kWh.",
+      "source": "S9"
+    },
+    {
+      "title": "Tomato and tropical fruit processing",
+      "detail": "Processed tomato demand is growing 15 percent per year with 55 percent imported, and the local tropical juice market is over US$100 million, 40 percent unmet.",
+      "source": "S8"
+    },
+    {
+      "title": "Livestock-based industries and leather inputs",
+      "detail": "EIC lists 65,354,092 cows, 50,243,044 goats and 39,894,394 sheep and promotes animal ranches and the tanning of hides and skins.",
+      "source": "S17"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Integrated agro-industrial park investors get completed infrastructure, income tax exemption, export tax exemption, streamlined and expedited procedures, and access to an Export Credit Guarantee Scheme.",
+      "source": "S9"
+    },
+    {
+      "detail": "Exemption from duties and other taxes on imports of machinery, equipment and construction material (also spare parts, raw materials and vehicles), plus a duty-free privilege for exporters.",
+      "source": "S18"
+    },
+    {
+      "detail": "Up to 10 years income-tax holiday for enterprises producing inside industrial parks.",
+      "source": "S18"
+    },
+    {
+      "detail": "The World Bank reports a significant increase in agricultural machinery imports in FY26 that benefited from import duty waivers and forex availability.",
+      "source": "S16"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "The coffee value chain faces an overall financing gap of 95 percent, and interest rates of 18-30 percent make borrowing expensive.",
+      "source": "S13"
+    },
+    {
+      "detail": "About 80 percent of coffee trees are 50-70 years old; adoption of good agricultural practices is low, and climate change, pests and diseases are named risks.",
+      "source": "S13"
+    },
+    {
+      "detail": "FAO-hosted investment cases flag price volatility and inconsistent raw material supply for feed, climate and land-suitability risks for ranching, and high capital costs, FX shortages and disease outbreaks for poultry.",
+      "source": "S11"
+    },
+    {
+      "detail": "The World Bank notes that liquidity shortages and lending caps restrict exporters' ability to fulfill international orders, and smaller exporters are being excluded from bank financing.",
+      "source": "S16"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Ethiopia's Coffee Export Earnings Reach Historic 3 Billion USD Milestone (statement of Minister of Agriculture Addisu Arega)",
+      "publisher": "Ethiopian News Agency",
+      "date": "2026-07",
+      "url": "https://www.ena.et/web/eng/w/eng_9151027",
+      "location": "Article body, dated July 3, 2026",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopia Earns 2.6 billion USD from Coffee Exports in Concluded Fiscal Year (statement of ECTA Director General Adugna Debela)",
+      "publisher": "Ethiopian News Agency",
+      "date": "2025-07",
+      "url": "https://www.ena.et/web/eng/w/eng_6920963",
+      "location": "Article body, dated July 9, 2025",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Ethiopia Secures over 288 million USD from Horticulture Exports in Seven Months: Ministry",
+      "publisher": "Ethiopian News Agency (Ministry of Agriculture statement)",
+      "date": "2026-02",
+      "url": "https://www.ena.et/web/eng/w/eng_8396911",
+      "location": "Article body, dated February 27, 2026",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Ethiopia Strives to Become Global Leader in Pulses, Oilseeds Export Market: Ministry of Trade and Regional Integration",
+      "publisher": "Ethiopian News Agency (statement of Minister Kassahun Gofe)",
+      "date": "2025-11",
+      "url": "https://www.ena.et/web/eng/w/eng_7733105",
+      "location": "Article body, dated November 18, 2025",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Ethiopia Secures 120 Million USD from Meat, Offal Exports (statement of Livestock Development Institute Director General Asrat Tera)",
+      "publisher": "Ethiopian News Agency",
+      "date": "2025-08",
+      "url": "https://www.ena.et/web/eng/w/eng_7069208",
+      "location": "Article body, dated August 2, 2025",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "World Development Indicators: Agriculture, forestry, and fishing, value added (% of GDP), Ethiopia (NV.AGR.TOTL.ZS)",
+      "publisher": "World Bank",
+      "date": "2026-10",
+      "url": "https://api.worldbank.org/v2/country/ETH/indicator/NV.AGR.TOTL.ZS?format=json&mrnev=2",
+      "location": "2025 data point (series last updated 2026-10-08)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "World Development Indicators: Employment in agriculture (% of total employment) (modeled ILO estimate), Ethiopia (SL.AGR.EMPL.ZS)",
+      "publisher": "World Bank",
+      "date": "2026-10",
+      "url": "https://api.worldbank.org/v2/country/ETH/indicator/SL.AGR.EMPL.ZS?format=json&mrnev=3",
+      "location": "2025 data point (series last updated 2026-10-08)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Agro-processing (key sectors: manufacturing)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2026-08",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/agro-processing/",
+      "location": "Investment opportunities sections (edible oil, juice, animal feed, tomato); page last modified 2026-08-18",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "Integrated Agro-industrial Parks",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-01",
+      "url": "https://investethiopia.gov.et/key-sectors/special-economic-zones/integrated-agro-industrial-parks/",
+      "location": "Park facilities, costs and incentives sections; page last modified 2023-01-18",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Yirgalem Integrated-Agro Industrial Park Creates 17,000 Jobs, 130,000 Market Linkages",
+      "publisher": "Ethiopian News Agency (statement of Sidama IAIP CEO Hailu Yetera)",
+      "date": "2024-09",
+      "url": "https://www.ena.et/web/eng/w/eng_5187546",
+      "location": "Article body, dated September 23, 2024",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "Hand-in-Hand Investment Forum 2026: Ethiopia investment cases",
+      "publisher": "FAO",
+      "date": "2026-09",
+      "url": "https://www.fao.org/hand-in-hand/investment-forum-2026/eth/en",
+      "location": "Investment case summary cards (Mechanization, Animal Feed, Ranching, Grandparent Stock Poultry) and overall profile; risks from linked investment note sections 1.1, 2.1, 3.1, 4.2",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S12",
+      "title": "Hand-in-Hand Investment Forum 2025: Ethiopia investment cases",
+      "publisher": "FAO",
+      "date": "2025-10",
+      "url": "https://www.fao.org/hand-in-hand/previous-editions/hih-investment-forum-2025/Ethiopia/en",
+      "location": "Investment cases 4 (Coffee Rejuvenation) and 5 (Coffee Processing)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S13",
+      "title": "Coffee Value Chain Analysis: Ethiopia 2025",
+      "publisher": "UNIDO (with the Ethiopian Coffee and Tea Authority)",
+      "date": "2026-05",
+      "url": "https://www.unido.org/sites/default/files/unido-publications/2026-05/ETHIOPIA_Value-Chain-Analysis-2025_web.pdf",
+      "location": "p. 16, Importance of Finance and the Coffee Value Chain; tree age and constraints sections, approx. pp. 11, 28",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S14",
+      "title": "Press Release: Monetary Policy Committee Meeting No. 6",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
+      "location": "p. 2 (T-bill yields)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S15",
+      "title": "Financial Stability Report, March 2026",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/FInancial-Stability-Report_MARCH_2026_.pdf",
+      "location": "p. 9 and Figure 4, p. 10 (lending rates)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S16",
+      "title": "Ethiopia - Building Opportunities for Optimized Trade and Investment for Growth (P515564), Project Information Document, Concept Stage",
+      "publisher": "World Bank",
+      "date": "2026-06",
+      "url": "https://documents1.worldbank.org/curated/en/099060926031036358/pdf/P515564-9ba292c1-c82d-4fcb-bd66-4e3a0557fe6d.pdf",
+      "location": "p. 3 (agricultural machinery imports); p. 6 (exporter financing)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S17",
+      "title": "Leather and Leather Products (key sectors: manufacturing)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-02",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/leather-and-leather-products/",
+      "location": "Livestock figures and opportunities sections; page last modified 2023-02-02 (livestock counts undated)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S18",
+      "title": "Why Ethiopia",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-09",
+      "url": "https://investethiopia.gov.et/why-ethiopia/",
+      "location": "Dynamic Policy / incentives section; page last modified 2023-09-06",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

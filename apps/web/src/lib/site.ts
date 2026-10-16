@@ -59,6 +59,7 @@ export const mainNav: NavMenu[] = [
     label: "Learn",
     items: [
       { label: "Knowledge Hub", href: "/knowledge" },
+      { label: "Sector Reports", href: "/knowledge/sectors" },
       { label: "Events", href: "/events" },
       { label: "Blog", href: "/blog" },
     ],
@@ -84,6 +85,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: "Deal Rooms", href: "/deal-rooms" },
       { label: "Become a verified investor", href: "/investors/verify" },
       { label: "Valuation tools", href: "/tools" },
+      { label: "Sector reports", href: "/knowledge/sectors" },
       { label: "Investor FAQ", href: "/faq#investors" },
     ],
   },
