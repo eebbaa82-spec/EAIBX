@@ -60,6 +60,7 @@ export const mainNav: NavMenu[] = [
     items: [
       { label: "Knowledge Hub", href: "/knowledge" },
       { label: "Sector Reports", href: "/knowledge/sectors" },
+      { label: "Regulations and Research", href: "/knowledge/regulations" },
       { label: "Events", href: "/events" },
       { label: "Blog", href: "/blog" },
     ],

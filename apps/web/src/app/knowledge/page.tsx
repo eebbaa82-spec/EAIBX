@@ -47,7 +47,17 @@ export default function KnowledgePage() {
         </div>
       </Section>
 
-      <Section title="Featured guides">
+      <Section title="Regulations and research">
+        <p className="max-w-3xl text-lg text-muted">
+          Plain-English summaries of National Bank of Ethiopia directives, finance and investment laws, incentives and World
+          Bank research on Ethiopia, each linked to the original document.
+        </p>
+        <div className="mt-6">
+          <ButtonLink href="/knowledge/regulations">Browse the library</ButtonLink>
+        </div>
+      </Section>
+
+      <Section tone="canvas" title="Featured guides">
         <ul className="grid gap-4 md:grid-cols-2">
           {featuredGuides.map((g) => (
             <li key={g} className="flex flex-col rounded-xl border border-line bg-white p-6 shadow-sm">
@@ -58,7 +68,7 @@ export default function KnowledgePage() {
         </ul>
       </Section>
 
-      <Section tone="canvas" title="Template library">
+      <Section title="Template library">
         <EmptyState action={<ButtonLink href="/join">Join free</ButtonLink>}>
           Free, editable templates reviewed by Ethiopian professionals. Download, adapt and use.
         </EmptyState>
