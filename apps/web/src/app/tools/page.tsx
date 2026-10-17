@@ -23,9 +23,10 @@ const tools = [
     button: "Forecast my cash",
   },
   {
-    name: "Loan Repayment Calculator",
-    body: "See monthly repayments and total cost for different loan terms.",
-    button: "Calculate",
+    name: "Loan Calculator",
+    body: "Find the most you can borrow from what you can afford to pay, or see your installments for any loan, with flexible repayment frequency.",
+    button: "Open the calculator",
+    href: "/tools/loan-calculator",
   },
   {
     name: "EABIX AI Assistant",
@@ -58,7 +59,7 @@ export default function ToolsPage() {
               key={t.name}
               title={t.name}
               footer={
-                <ButtonLink href="/join" variant="secondary" className="w-full">
+                <ButtonLink href={("href" in t && t.href) || "/join"} variant="secondary" className="w-full">
                   {t.button}
                 </ButtonLink>
               }
