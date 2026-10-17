@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
-import { dimensions, questions, screening, type Answers, type Question } from "@/lib/ehira/model";
+import { businessTypes, dimensions, questions, screening, typeWeights, type Answers, type BusinessType, type DimensionId, type Question } from "@/lib/ehira/model";
 import { isVisible, score } from "@/lib/ehira/score";
 
-const STORAGE_KEY = "eabix-ehira-draft-v1";
-
-const businessTypes = ["Startup (under 3 years)", "SME", "Corporate", "Distressed business", "Borrower seeking finance"];
+const STORAGE_KEY = "eabix-ehira-draft-v2";
 
 type Step = { id: string; title: string; intro?: string; ids: string[] };
 
-const steps: Step[] = [
+const allSteps: Step[] = [
   ...dimensions.map((d) => ({
     id: d.id,
     title: d.name,
@@ -85,7 +83,17 @@ function QuestionField({ q, value, onChange }: { q: Question | { id: string; tex
           ))}
         </div>
       )}
-      {(q.type === "percent" || q.type === "number" || q.type === "money") && (
+      {q.type === "choice" && "options" in q && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {q.options?.map((o) => (
+            <label key={o.value} className={choice(value === o.value)}>
+              <input type="radio" name={q.id} className="sr-only" checked={value === o.value} onChange={() => onChange(o.value)} />
+              {o.label}
+            </label>
+          ))}
+        </div>
+      )}
+      {(q.type === "percent" || q.type === "number" || q.type === "money" || q.type === "months") && (
         <div className="flex items-center gap-2">
           <input
             aria-label={q.text}
@@ -98,7 +106,7 @@ function QuestionField({ q, value, onChange }: { q: Question | { id: string; tex
             }}
             className={inputClass}
           />
-          <span className="mt-2 text-sm text-muted">{q.type === "percent" ? "%" : q.type === "money" ? "ETB" : ""}</span>
+          <span className="mt-2 text-sm text-muted">{q.type === "percent" ? "%" : q.type === "money" ? "ETB" : q.type === "months" ? "months" : ""}</span>
         </div>
       )}
       {q.evidence && (
@@ -124,12 +132,15 @@ export function EhiraAssessment() {
   };
   const setAnswer = (id: string, v: Answers[string]) => update({ answers: { ...answers, [id]: v } });
 
-  const result = useMemo(() => score(answers), [answers]);
+  const bt = (businessTypes.some((b) => b.id === type) ? type : "sme") as BusinessType;
+  const result = useMemo(() => score(answers, bt), [answers, bt]);
 
+  // Dimensions with no weight for this business type are skipped.
+  const steps = allSteps.filter((s) => s.id === "screening" || typeWeights[bt][s.id as DimensionId] > 0);
   const current = steps[step];
   const visibleIds = current ? current.ids.filter((id) => {
     const q = questions.find((x) => x.id === id);
-    return !q || isVisible(q, answers);
+    return !q || isVisible(q, answers, bt);
   }) : [];
   const missing = visibleIds.filter((id) => {
     const q = questions.find((x) => x.id === id);
@@ -155,15 +166,13 @@ export function EhiraAssessment() {
           <legend className="text-sm font-medium text-ink">Which best describes the business?</legend>
           <div className="mt-2 flex flex-wrap gap-2">
             {businessTypes.map((t) => (
-              <label key={t} className={choice(type === t)}>
-                <input type="radio" name="type" className="sr-only" checked={type === t} onChange={() => update({ type: t })} />
-                {t}
+              <label key={t.id} className={choice(type === t.id)}>
+                <input type="radio" name="type" className="sr-only" checked={type === t.id} onChange={() => update({ type: t.id })} />
+                {t.label}
               </label>
             ))}
           </div>
-          {type && type !== "SME" && (
-            <p className="mt-2 text-xs text-muted">This version uses the standard SME weighting. Weightings tailored to each business type will follow.</p>
-          )}
+          {type && <p className="mt-2 text-sm text-muted">Focus for this version: {businessTypes.find((t) => t.id === type)?.focus}</p>}
         </fieldset>
         <div className="flex flex-wrap items-center gap-3">
           <button type="button" disabled={!type} onClick={() => go(0)} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
@@ -179,7 +188,7 @@ export function EhiraAssessment() {
       </div>
     );
 
-  if (step >= steps.length) return <Report result={result} name={name} type={type} onEdit={() => go(0)} onRestart={() => { update({ answers: {} }); go(-1); }} />;
+  if (step >= steps.length) return <Report result={result} name={name} type={businessTypes.find((t) => t.id === bt)!.label} onEdit={() => go(0)} onRestart={() => { update({ answers: {} }); go(-1); }} />;
 
   return (
     <div className="max-w-3xl">
@@ -287,7 +296,7 @@ function Report({ result, name, type, onEdit, onRestart }: { result: ReturnType<
       <section>
         <h4 className="text-lg font-bold text-ink">Scores by dimension</h4>
         <ul className="mt-3 space-y-3">
-          {result.dimensions.map((d) => (
+          {result.dimensions.filter((d) => d.weight > 0).map((d) => (
             <li key={d.id}>
               <div className="flex justify-between text-sm">
                 <span className="font-medium text-ink">

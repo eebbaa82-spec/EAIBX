@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { EhiraAssessment } from "@/components/tools/EhiraAssessment";
 import { ButtonLink, Card, CardGrid, DataTable, Note, PageHero, Section } from "@/components/ui";
-import { dimensions, gradeBands } from "@/lib/ehira/model";
+import { businessTypes, dimensions, gradeBands, typeWeights } from "@/lib/ehira/model";
 
 export const metadata: Metadata = {
   title: "EHIRA: Enterprise Health & Investment Readiness Assessment · EABIX",
@@ -10,14 +10,14 @@ export const metadata: Metadata = {
 };
 
 const covers: Record<string, string> = {
-  financial: "Financial statements, audit, profitability, liquidity, leverage and debt service",
-  market: "Customer base, retention, satisfaction and dependence on the largest customer",
-  operations: "On-time delivery, documented procedures and quality management",
-  people: "Staff turnover, training investment and succession planning",
-  governance: "Board, internal controls and tax compliance",
-  strategy: "Strategic plan and monthly KPI monitoring",
-  technology: "Accounting or ERP systems and cybersecurity",
-  investment: "Business plan, financial model and investor pitch deck",
+  financial: "Financial statements and audit, profitability, liquidity, leverage, debt service, cash reserves and loan arrears",
+  market: "Customer base, retention, satisfaction, customer concentration, written contracts and traceable payments",
+  operations: "On-time delivery, procedures, quality, dependence on imported inputs and on a single supplier",
+  people: "Staff turnover, training, succession, pension registration and employment contracts",
+  governance: "Board, internal controls, tax compliance, IFRS reporting and up-to-date company records",
+  strategy: "Strategic plan, monthly KPIs, budgeting and, for businesses under pressure, a turnaround plan",
+  technology: "Accounting or ERP systems, cybersecurity and system-issued invoices",
+  investment: "Business plan, financial model, pitch deck, funding needs, credit record and collateral",
 };
 
 export default function EhiraPage() {
@@ -36,17 +36,17 @@ export default function EhiraPage() {
         </PageHero>
 
         <Section title="Eight dimensions">
-          <DataTable
-            head={["Dimension", "Weight", "What we look at"]}
-            rows={dimensions.map((d) => [d.name, `${d.weight}%`, covers[d.id]])}
-          />
-          <p className="mt-4 text-sm text-muted">
-            Weights shown are for the standard SME model. Startup, corporate and distressed-business versions shift the emphasis to what
-            matters most at each stage.
-          </p>
+          <DataTable head={["Dimension", "What we look at"]} rows={dimensions.map((d) => [d.name, covers[d.id]])} />
         </Section>
 
-        <Section tone="canvas" title="What the grades mean">
+        <Section tone="canvas" title="Weighted for your type of business" intro="Each version puts the weight where it matters most at that stage.">
+          <DataTable
+            head={["Dimension", ...businessTypes.map((t) => t.label)]}
+            rows={dimensions.map((d) => [d.name, ...businessTypes.map((t) => (typeWeights[t.id][d.id] ? `${typeWeights[t.id][d.id]}%` : "–"))])}
+          />
+        </Section>
+
+        <Section title="What the grades mean">
           <DataTable
             head={["Grade", "Score", "Meaning"]}
             rows={gradeBands.map((b, i) => [
@@ -57,11 +57,11 @@ export default function EhiraPage() {
           />
           <p className="mt-4 text-ink">
             Some answers cap the grade however high the score: for example, no annual financial statements or overdue tax filings limit
-            the grade to C, and negative equity or debt service coverage below 1.0 limit it to D.
+            the grade to C, and negative equity, debt service coverage below 1.0 or a loan more than 90 days overdue limit it to D.
           </p>
         </Section>
 
-        <Section title="Two levels">
+        <Section tone="canvas" title="Two levels">
           <CardGrid cols={2}>
             <Card title="Free self-assessment">
               Answer the guided questions below and get an instant indicative grade, readiness rating and action list.
@@ -80,7 +80,7 @@ export default function EhiraPage() {
         </Section>
       </div>
 
-      <Section id="assessment" tone="canvas" title="Take the assessment">
+      <Section id="assessment" title="Take the assessment">
         <EhiraAssessment />
       </Section>
     </>

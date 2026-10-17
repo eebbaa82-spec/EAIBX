@@ -1,12 +1,15 @@
 import {
+  addedFlags,
   dimensions,
   gradeBands,
   questions,
   RATIO_WEIGHT,
   ratioBands,
   screening,
+  typeWeights,
   type Answers,
   type Band,
+  type BusinessType,
   type DimensionId,
   type Grade,
   type Question,
@@ -18,13 +21,14 @@ export function bandScore(value: number, bands: Band[]) {
   return bands[bands.length - 1].score;
 }
 
-export const isVisible = (q: Question, a: Answers) => !q.showIf || q.showIf(a);
+export const isVisible = (q: Question, a: Answers, type: BusinessType) => (!q.for || q.for.includes(type)) && (!q.showIf || q.showIf(a));
 
 /** Response score from 0 to 100, or null when the question is unscored or unanswered. */
 export function responseScore(q: Question, a: Answers): number | null {
   const v = a[q.id];
   if (q.unscored || v === undefined || v === "na") return null;
   if (q.type === "yesno") return v === "yes" ? 100 : 0;
+  if (q.type === "choice") return q.options?.find((o) => o.value === v)?.score ?? null;
   if (typeof v !== "number") return null;
   if (q.type === "scale") return ((Math.min(5, Math.max(1, v)) - 1) / 4) * 100;
   if (q.bands) return bandScore(v, q.bands);
@@ -81,6 +85,7 @@ export function redFlags(a: Answers, r: Ratio[]): RedFlag[] {
   const dscr = r.find((x) => x.id === "dscr");
   if (dscr?.value !== null && dscr?.value !== undefined && dscr.value < 1) flags.push({ flag: "DSCR below 1.0", cap: "D" });
   for (const s of screening) if (a[s.id] === s.flagIf) flags.push({ flag: s.flag, cap: s.cap });
+  for (const f of addedFlags) if (a[f.id] === f.is) flags.push({ flag: f.flag, cap: f.cap });
   return flags;
 }
 
@@ -102,11 +107,12 @@ export type Result = {
   actions: { dimension: string; text: string; gap: number }[];
 };
 
-export function score(a: Answers): Result {
+export function score(a: Answers, type: BusinessType = "sme"): Result {
   const r = ratios(a);
+  const weights = typeWeights[type];
   const dims: DimensionResult[] = dimensions.map((d) => {
     let got = 0, max = 0, answered = 0;
-    for (const q of questions.filter((q) => q.dimension === d.id && isVisible(q, a))) {
+    for (const q of questions.filter((q) => q.dimension === d.id && isVisible(q, a, type))) {
       const s = responseScore(q, a);
       if (s === null) continue;
       got += q.weight * s;
@@ -121,11 +127,11 @@ export function score(a: Answers): Result {
         max += RATIO_WEIGHT * 100;
         answered++;
       }
-    return { id: d.id, name: d.name, weight: d.weight, score: max ? (got / max) * 100 : null, answered };
+    return { id: d.id, name: d.name, weight: weights[d.id], score: max ? (got / max) * 100 : null, answered };
   });
 
-  // Dimensions with nothing scored are left out and the remaining weights are rescaled.
-  const scored = dims.filter((d) => d.score !== null);
+  // Dimensions with nothing scored (or no weight for this business type) are left out and the remaining weights rescaled.
+  const scored = dims.filter((d) => d.score !== null && d.weight > 0);
   const weightSum = scored.reduce((s, d) => s + d.weight, 0);
   const total = weightSum ? scored.reduce((s, d) => s + (d.score! * d.weight) / weightSum, 0) : 0;
 
@@ -140,13 +146,12 @@ export function score(a: Answers): Result {
       ? "A+ Investment Ready"
       : { A: "A Strong", B: "B Healthy", C: "C Developing", D: "D Vulnerable", E: "E Critical" }[grade];
 
-  const dimName = Object.fromEntries(dimensions.map((d) => [d.id, d]));
+  const dimName = Object.fromEntries(dimensions.map((d) => [d.id, d.name]));
   const actions = questions
-    .filter((q) => isVisible(q, a) && q.action)
+    .filter((q) => isVisible(q, a, type) && q.action)
     .map((q) => {
       const s = responseScore(q, a);
-      const d = dimName[q.dimension];
-      return { dimension: d.name, text: q.action, gap: s === null ? 0 : ((100 - s) * q.weight * d.weight) / 100 };
+      return { dimension: dimName[q.dimension], text: q.action, gap: s === null ? 0 : ((100 - s) * q.weight * weights[q.dimension]) / 100 };
     })
     .filter((x) => x.gap > 0)
     .sort((x, y) => y.gap - x.gap);
