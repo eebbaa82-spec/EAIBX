@@ -16,11 +16,13 @@ const tools = [
     name: "Investment Readiness Quiz",
     body: "Ten questions that tell you how close you are to being investor-ready.",
     button: "Take the quiz",
+    href: "/tools/readiness-quiz",
   },
   {
     name: "Cash Flow Forecaster",
     body: "Project your cash position for the next 12 months and spot gaps early.",
     button: "Forecast my cash",
+    href: "/tools/cash-flow-forecaster",
   },
   {
     name: "Loan Calculator",
