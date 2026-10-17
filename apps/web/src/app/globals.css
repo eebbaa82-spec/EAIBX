@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/*
+ * Kena design tokens. Brand colors are a working default until Erudite
+ * Africa confirms its brand guidelines.
+ */
+@theme {
+  --color-brand-50: #eef7f3;
+  --color-brand-100: #d5ece2;
+  --color-brand-200: #a9d8c4;
+  --color-brand-500: #1d7a5f;
+  --color-brand-600: #156550;
+  --color-brand-700: #0f5242;
+  --color-brand-900: #0a3329;
+  --color-gold-100: #fbf1db;
+  --color-gold-400: #e2b04a;
+  --color-gold-500: #cf9a2e;
+  --color-ink: #14212b;
+  --color-muted: #52606d;
+  --color-line: #e3e8ec;
+  --color-canvas: #f7f9fa;
+
+  --font-sans: var(--font-inter), var(--font-ethiopic), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-gold-400);
+  outline-offset: 2px;
+}

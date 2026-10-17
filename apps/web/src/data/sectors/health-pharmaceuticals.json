@@ -1,0 +1,216 @@
+{
+  "slug": "health-pharmaceuticals",
+  "name": "Health and pharmaceuticals",
+  "asOf": "2026-10-16",
+  "summary": "Ethiopia's government says local suppliers now cover more than 44 percent of national procurement of drugs and medical equipment, and it aims to raise the share of locally produced medicines and medical supplies above 50 percent by 2030. The World Bank reports that Ethiopia's regulator reached WHO Maturity Level 3 and that a dedicated pharmaceutical zone at Kilinto already hosts nearly 30 investors. On the services side, the Ethiopian Investment Commission points to a shortage of hospital capacity (0.3 beds per 1,000 people, only 17% of tertiary hospitals private) and more than $120 million a year spent by Ethiopians on treatment abroad.",
+  "indicators": [
+    {
+      "label": "Local suppliers' share of national procurement of drugs and medical equipment",
+      "value": "more than 44 percent (up from about 8 percent five or six years earlier)",
+      "period": "2026 (statement of May 25, 2026)",
+      "source": "S2"
+    },
+    {
+      "label": "Local production share of medicine supply",
+      "value": "more than 40% of medicine supply",
+      "period": "2026 (feature of May 26, 2026)",
+      "source": "S1"
+    },
+    {
+      "label": "Share of pharmaceutical supply that is imported",
+      "value": "85%",
+      "period": "Undated ('currently'); page last modified 2023; page cites Frost & Sullivan and World Bank (2019)",
+      "source": "S3"
+    },
+    {
+      "label": "Major local pharmaceutical manufacturers",
+      "value": "more than 20",
+      "period": "2026 (statement of May 25, 2026)",
+      "source": "S2"
+    },
+    {
+      "label": "Healthcare market, total imports vs total local production (US$ thousand)",
+      "value": "Imports 128,867; local production 4,740",
+      "period": "2024 (estimated); page published 2024-01-18; table source National Bank of Ethiopia",
+      "source": "S5"
+    },
+    {
+      "label": "Tertiary-level hospitals and private share",
+      "value": "364 hospitals; only 17% private; 85% of private hospitals in Addis Ababa",
+      "period": "Undated; page last modified 2023",
+      "source": "S4"
+    },
+    {
+      "label": "Government target: share of locally produced medicines and medical supplies",
+      "value": "more than 50 percent",
+      "period": "by 2030 (stated May 2026)",
+      "source": "S2"
+    },
+    {
+      "label": "Earlier medium-term target: local pharmaceutical industry market share",
+      "value": "47 percent (share stated at 36 percent, up from 8 percent)",
+      "period": "Medium-term health sector development and investment plan (stated June 22, 2024)",
+      "source": "S9"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Projected return on investment, cassava starch for pharmaceutical inputs (feasibility study)",
+      "value": "exceeds 50%",
+      "period": "2025 (study presented July 17, 2025)",
+      "basis": "Projected ROI from an AHRI and Industrial Projects Service feasibility study of a plant producing native starch, pre-gelatinized starch and dextrin (14,611 tons a year) as a local pharmaceutical input; one project, not a sector average",
+      "source": "S6"
+    },
+    {
+      "label": "364-day Treasury bill weighted average yield (benchmark)",
+      "value": "19.10% (annual)",
+      "period": "Auction 974th/25, April 2, 2025 (latest auction with complete weighted average results shown on the NBE page)",
+      "basis": "Weighted average annual yield on government 364-day Treasury bills; a risk-free birr benchmark, not a sector return",
+      "source": "S7"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for pharmaceutical manufacturing, medical devices or private hospitals in Ethiopia; the figures above are a single-project feasibility projection for a pharmaceutical input (cassava starch) and the Treasury bill yield as a benchmark.",
+  "opportunities": [
+    {
+      "title": "Kilinto pharmaceutical zone",
+      "detail": "The Kilinto Special Economic Zone covers 279 hectares (160 hectares leasable) and serves as a dedicated hub for pharmaceutical and medical equipment manufacturing; nearly 30 investors are present, at stages ranging from construction to active production.",
+      "source": "S1"
+    },
+    {
+      "title": "Finished drugs, vaccines and biologics",
+      "detail": "The Ethiopian Investment Commission lists finished dose forms, antisera, vaccines, toxins, cultures and glandular extracts as manufacturing opportunities, citing demand growth of an average of 15% over the past five years.",
+      "source": "S3"
+    },
+    {
+      "title": "Tertiary and specialty hospitals",
+      "detail": "The Commission promotes tertiary hospitals with a minimum of 300 beds serving local and inbound patients, to capture part of the more than $120 million Ethiopians spend annually on treatment abroad.",
+      "source": "S4"
+    },
+    {
+      "title": "Advanced diagnostics and laboratories",
+      "detail": "The Commission identifies advanced diagnostics and laboratories offering over 400 tests in Ethiopia, including the production of laboratory reagents, as an investment opportunity.",
+      "source": "S4"
+    },
+    {
+      "title": "Local pharmaceutical inputs",
+      "detail": "An AHRI feasibility study handed to the Ministry of Health found a cassava starch plant of 14,611 tons a year would have about 90% import substitution potential, with opportunities for regional export.",
+      "source": "S6"
+    },
+    {
+      "title": "Equipment and supplies for new facilities",
+      "detail": "The US Commercial Service lists equipment and services for new hospitals and health centers, cold storage, pharmaceutical warehouses and IT support among leading sub-sectors.",
+      "source": "S5"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Ethiopia has introduced tax holidays and price preferences of up to 50 percent for eligible domestic manufacturers of medicines and medical supplies (per the Ministry of Health report carried by ENA).",
+      "source": "S2"
+    },
+    {
+      "detail": "The Ethiopian Pharmaceutical Supply Agency gives local manufacturers 25% price protection when competing with foreign suppliers and a 30% advance payment with long-term agreements.",
+      "source": "S3"
+    },
+    {
+      "detail": "The national regulator's WHO Maturity Level 3 status, and mutual recognition agreements among ML3 countries, are described by the World Bank as opening new export opportunities for locally made medicines.",
+      "source": "S1"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "The US Commercial Service cites a lack of available foreign exchange for the private sector to import necessary equipment and supplies.",
+      "source": "S5"
+    },
+    {
+      "detail": "Buyers are price-sensitive, and imports of medical equipment and supplies are highly dominated by Chinese companies; bureaucracy and delays in the bidding process are also cited.",
+      "source": "S5"
+    },
+    {
+      "detail": "The IMF says the war in the Middle East disrupted trade and that global uncertainty and high commodity price volatility have increased risks to the economic outlook; it urges better functioning and transparency of the foreign exchange market.",
+      "source": "S8"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Building Ethiopia's Pharmaceutical Future: From Strong Regulation to Local Production",
+      "publisher": "World Bank",
+      "date": "2026-05",
+      "url": "https://www.worldbank.org/en/news/feature/2026/05/26/building-ethiopia-s-pharmaceutical-future-from-strong-regulation-to-local-production",
+      "location": "Introduction; sections '2. Kilinto Special Economic Zone' and 'Jobs, exports, and the next stage'",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopia Expands Local Production of Medicines, Vaccines and Medical Equipment: MoH",
+      "publisher": "Ethiopian News Agency (Ministry of Health statement)",
+      "date": "2026-05",
+      "url": "https://www.ena.et/web/eng/w/eng_8913198",
+      "location": "Article body (May 25, 2026)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Key Sectors / Pharmaceuticals",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023",
+      "url": "https://investethiopia.gov.et/key-sectors/manufacturing/pharmaceuticals",
+      "location": "Sector overview, opportunities and EPSA incentives sections",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Key Sectors / Healthcare",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023",
+      "url": "https://investethiopia.gov.et/key-sectors/emerging-sectors/health",
+      "location": "Healthcare supply, medical tourism and opportunities sections",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Ethiopia Country Commercial Guide: Healthcare",
+      "publisher": "US International Trade Administration (US Department of Commerce)",
+      "date": "2024-01",
+      "url": "https://trade.gov/country-commercial-guides/ethiopia-healthcare",
+      "location": "Overview (Healthcare Market table), Challenges, Leading Sub-Sectors",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Advancing Health Security through Local Pharmaceutical Input Production",
+      "publisher": "Armauer Hansen Research Institute (Ministry of Health)",
+      "date": "2025-07",
+      "url": "https://ahri.gov.et/2025/07/18/advancing-health-security-through-local-pharmaceutical-input-production/",
+      "location": "Article body, feasibility study key findings",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "Treasury Bills Auction",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025-04",
+      "url": "https://nbe.gov.et/treasury-bills/",
+      "location": "Auction results, 974th/25 (April 2, 2025), weighted average yield row",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "IMF Reaches Staff Level Agreement on the Fifth Review of the Extended Credit Facility for Ethiopia (Press Release No. 26/183)",
+      "publisher": "International Monetary Fund",
+      "date": "2026-06",
+      "url": "https://www.imf.org/en/news/articles/2026/06/03/pr26183-ethiopia-imf-reaches-staff-level-agreement-fifth-review-extended-credit-facility",
+      "location": "Press release body",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "Ethiopia Sets to Boost Local Pharmaceutical's Industry Market Share to 47 Percent",
+      "publisher": "Ethiopian News Agency (Ministry of Health statement)",
+      "date": "2024-06",
+      "url": "https://www.ena.et/web/eng/w/eng_4645648",
+      "location": "Article body (June 22, 2024): 36 percent current share, 47 percent target",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

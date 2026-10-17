@@ -1,0 +1,236 @@
+{
+  "slug": "mining",
+  "name": "Mining and minerals",
+  "asOf": "2026-10-16",
+  "summary": "Mining, led by gold, has become a major source of foreign exchange: the Minister of Mines reported over USD 5.7 billion in mining export earnings in the 2018 Ethiopian fiscal year, with 44 tons of gold generating USD 5.65 billion. The IMF reports gold export volumes rising from just over 4 metric tons in 2023/24 to nearly 39 metric tons in 2024/25. The government promotes untapped potash, iron ore, natural gas and gemstone resources, and signed US$4.2 billion of iron ore, potash and gold agreements in March 2026.",
+  "indicators": [
+    {
+      "label": "Mining export earnings",
+      "value": "Over USD 5.7 billion",
+      "period": "2018 Ethiopian fiscal year (2025/26)",
+      "source": "S1"
+    },
+    {
+      "label": "Gold output and revenue",
+      "value": "44 tons; USD 5.65 billion",
+      "period": "2018 Ethiopian fiscal year (2025/26)",
+      "source": "S1"
+    },
+    {
+      "label": "Gold export volume",
+      "value": "From just over 4 metric tons to nearly 39 metric tons",
+      "period": "2023/24 to 2024/25",
+      "source": "S2"
+    },
+    {
+      "label": "Gold contribution to real GDP growth",
+      "value": "1.0 percent (from 0.1 percent in FY 2023/24)",
+      "period": "FY 2024/25",
+      "source": "S5"
+    },
+    {
+      "label": "Mining sector revenue",
+      "value": "Over 3.5 billion USD",
+      "period": "Fiscal year before December 2025 (2024/25)",
+      "source": "S6"
+    },
+    {
+      "label": "Potash and iron ore reserves",
+      "value": "Potash 350 billion metric tons (untapped); iron ore more than 1.1 billion tons",
+      "period": "As stated on EIC page (modified 2026-08)",
+      "source": "S3"
+    },
+    {
+      "label": "Natural gas reserves",
+      "value": "198.2 billion m3, none exploited",
+      "period": "As stated in January 2026 brief",
+      "source": "S7"
+    },
+    {
+      "label": "Statutory royalty rates",
+      "value": "Precious minerals 7%; gemstones 6%; metallic 5%; industrial 4%; construction 3%; mining income tax 25%",
+      "period": "FY 2018/19 legal regime",
+      "source": "S8"
+    }
+  ],
+  "returns": [],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators we included are the statutory royalty and mining income tax rates and the reported gold export earnings. For a benchmark, the 91-day Treasury bill yielded a weighted average of 12.4 percent in February 2026 (National Bank of Ethiopia).",
+  "opportunities": [
+    {
+      "title": "Potash, iron ore and gold deals",
+      "detail": "In March 2026 the government signed US$4.2 billion of agreements covering iron ore (targeting two million metric tons annually), potash with Ethiopian Investment Holdings, and gold.",
+      "source": "S4"
+    },
+    {
+      "title": "Natural gas and LNG",
+      "detail": "Phase one of the Ogaden LNG project at Calub (111 million liters per year) was inaugurated in October 2025, and phase two adding 1.33 billion liters per year was launched.",
+      "source": "S9"
+    },
+    {
+      "title": "Gas-based fertilizer",
+      "detail": "Ethiopian Investment Holdings and the Dangote Group are developing a 3 million tons per year urea plant fed by Calub gas through a 108 km pipeline.",
+      "source": "S10"
+    },
+    {
+      "title": "Import substitution in industrial minerals",
+      "detail": "Ethiopia imported USD 688 million of fertilizers in 2021 and spends more than USD 8 billion a year on imports including coal, iron, fertilizer, marble, granite and petroleum.",
+      "source": "S3"
+    },
+    {
+      "title": "Gemstones",
+      "detail": "Ethiopia reports over 40 gem types, including opal, emerald and sapphire, and the Ministry states that the field is wide open for investors, including large-scale Afar opal mining.",
+      "source": "S11"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "The Ethiopian Investment Commission lists lower income tax, duty-free import of capital goods and favorable depreciation rates for mining investors.",
+      "source": "S3"
+    },
+    {
+      "detail": "The Ethiopian Investment Commission offers a one-stop service to simplify the investment process for mining investors.",
+      "source": "S12"
+    },
+    {
+      "detail": "Regional states now issue small-scale mining licenses, which the Minister of Mines credits with expanding activity.",
+      "source": "S1"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "The IMF projects gold exports could settle around 30 metric tons in 2025/26, down from 39 metric tons in 2024/25.",
+      "source": "S2"
+    },
+    {
+      "detail": "The premium above international prices that the National Bank of Ethiopia pays miners for gold will be phased out.",
+      "source": "S2"
+    },
+    {
+      "detail": "Ethiopia's EITI membership has been suspended since July 2022 for missing a reporting deadline and was placed under enhanced scrutiny in February 2026; its latest EITI data are from 2019.",
+      "source": "S13"
+    },
+    {
+      "detail": "Earlier attempts to develop Ethiopia's potash resource failed, according to the CEO of Ethiopian Investment Holdings.",
+      "source": "S4"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Ethiopia's Mining Sector Generates Over 5.7 Billion USD in Export Earnings",
+      "publisher": "Ethiopian News Agency (statement by Minister of Mines)",
+      "date": "2026-08",
+      "url": "https://www.ena.et/web/eng/w/eng_9357416",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopia: Fourth Review Under the ECF Arrangement, Staff Report (IMF Country Report No. 26/20)",
+      "publisher": "International Monetary Fund",
+      "date": "2026-01",
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ethea2026001-source-pdf.pdf",
+      "location": "p. 8 para. 8; p. 10 para. 9; p. 18 para. 25",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Mining",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2026-08",
+      "url": "https://investethiopia.gov.et/key-sectors/mining/",
+      "location": "Mining sector page (reserves, opportunities, incentives)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Ethiopia Signs 4.2 Billion USD Mining Investment Agreements with Three Companies",
+      "publisher": "Ethiopian News Agency (statements by Minister of Mines and EIH)",
+      "date": "2026-03",
+      "url": "https://www.ena.et/web/eng/w/eng_8481392",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Press Release, Monetary Policy Committee Meeting No. 6",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
+      "location": "Economic growth and external sector paragraphs",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Ethiopia Taps Mineral Wealth to Drive Economic Transformation Under 'Medemer State': Mines Minister",
+      "publisher": "Ethiopian News Agency (statement by Minister of Mines)",
+      "date": "2025-12",
+      "url": "https://www.ena.et/web/eng/w/eng_7984146",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "Ethiopian Energy Sector Brief 2026",
+      "publisher": "Ministry of Water and Energy",
+      "date": "2026-01",
+      "url": "https://mowe.gov.et/sites/default/files/resource/Ethiopian%20Energy%20Sector%20Brief%202026.pdf",
+      "location": "p. 30",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Ethiopia Extractive Industries Transparency Initiative Report 2018/19",
+      "publisher": "Ethiopia EITI (EEITI), Ministry of Finance",
+      "date": "2021-01",
+      "url": "https://eiti.org/sites/default/files/attachments/2019_eeiti_report_final.pdf",
+      "location": "Table 3.9 and p. 31",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "Prime Minister Abiy Inaugurates Ogaden Liquified Natural Gas Project",
+      "publisher": "Ethiopian News Agency (Prime Minister's statement)",
+      "date": "2025-10",
+      "url": "https://www.ena.et/web/eng/w/eng_7440977",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "PM Abiy Lays Cornerstone for Construction of Fertilizer Plant, Gode Oil Refinery",
+      "publisher": "Ethiopian News Agency (government statement)",
+      "date": "2025-10",
+      "url": "https://www.ena.et/web/eng/w/eng_7439069",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "Ethiopia's Gemstone Potential",
+      "publisher": "Ministry of Mines (formerly Ministry of Mines and Petroleum)",
+      "date": "undated",
+      "url": "http://www.mom.gov.et/index.php/mining/ethiopias-gemstone-potential/",
+      "location": "Gemstones page",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S12",
+      "title": "Ethiopia Showcases Mining Investment Opportunities to Japanese Investors in Tokyo",
+      "publisher": "Ethiopian News Agency (statements by Minister of Mines and EIC)",
+      "date": "2025-12",
+      "url": "https://www.ena.et/web/eng/w/eng_7959952",
+      "location": "Full article",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S13",
+      "title": "Ethiopia country page",
+      "publisher": "Extractive Industries Transparency Initiative (EITI International Secretariat)",
+      "date": "2026",
+      "url": "https://eiti.org/ethiopia",
+      "location": "Status and overview",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

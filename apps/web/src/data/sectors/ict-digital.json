@@ -1,0 +1,262 @@
+{
+  "slug": "ict-digital",
+  "name": "ICT and digital economy",
+  "asOf": "2026-10-16",
+  "summary": "Ethiopia ended its single-operator telecom market in 2021, and the World Bank reports that private investors committed more than $1 billion in license fees and a further $3 billion in investment, while telecom prices fell by around 70 percent. Mobile money accounts grew from 12.2 million in 2020 to 139.5 million in 2025 according to the National Bank of Ethiopia, yet only 15 percent were active in the last 30 days, leaving room for payments, fintech and data services. The government has approved a Digital Ethiopia 2030 strategy, parliament passed a Startup Proclamation in July 2025, and the investment commission promotes software, business process outsourcing and data centers.",
+  "indicators": [
+    {
+      "label": "Mobile money accounts",
+      "value": "139.5 million (up from 12.2 million in 2020)",
+      "period": "2025",
+      "source": "S3"
+    },
+    {
+      "label": "Mobile money accounts active in the last 30 days",
+      "value": "15 percent",
+      "period": "2025",
+      "source": "S3"
+    },
+    {
+      "label": "Mobile money agents",
+      "value": "Over 540,000",
+      "period": "2025 (strategy baseline)",
+      "source": "S3"
+    },
+    {
+      "label": "Digital transactions value",
+      "value": "9.7 trillion Birr, exceeding cash transactions",
+      "period": "Fiscal year 2023/24",
+      "source": "S2"
+    },
+    {
+      "label": "Internet users as share of population",
+      "value": "19 percent (up from 15 percent); at least 4 million new users",
+      "period": "2020 to 2024",
+      "source": "S1"
+    },
+    {
+      "label": "Mobile penetration (unique subscribers)",
+      "value": "33 percent (up from 26 percent); 7 million new unique subscribers",
+      "period": "2020 to 2024",
+      "source": "S1"
+    },
+    {
+      "label": "Fayda digital ID registrations",
+      "value": "30 million citizens",
+      "period": "December 2025 (statement by the National ID Program Coordinator)",
+      "source": "S5"
+    },
+    {
+      "label": "Mobile voice subscribers",
+      "value": "75.6 million (96.5 percent of total subscribers)",
+      "period": "2023/24",
+      "source": "S10"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Treasury bill weighted average yield, all tenors (benchmark)",
+      "value": "12.3 percent (down from 15.5 percent a year earlier)",
+      "period": "May 2026",
+      "basis": "Monthly weighted average yield on all Treasury bills, NBE Monetary Policy Committee No. 7 press release",
+      "source": "S9"
+    },
+    {
+      "label": "91-day Treasury bill yield (benchmark)",
+      "value": "11.0 percent (down from 16.1 percent a year earlier)",
+      "period": "May 2026",
+      "basis": "Weighted average yield on 91-day Treasury bills",
+      "source": "S9"
+    },
+    {
+      "label": "Bank lending interest rate (all sectors)",
+      "value": "Simple average 14.25 percent; range 7.00 to 21.50 percent",
+      "period": "2023/24",
+      "basis": "Commercial bank lending rates across the economy (Table 4.4), not specific to ICT",
+      "source": "S10"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are National Bank of Ethiopia Treasury bill yields (12.3 percent for all tenors and 11.0 percent for 91-day bills in May 2026) and the economy-wide bank lending rate (average 14.25 percent, range 7.00 to 21.50 percent, in 2023/24).",
+  "opportunities": [
+    {
+      "title": "Payments, fintech and agent networks",
+      "detail": "The draft National Digital Payments Strategy 2026-2030 plans a Fayda authentication service for payment providers, a consent-based data exchange framework, a private-sector-led credit reference bureau framework and a shared-agent platform. Digital credit, savings and insurance are under 1 percent of digital transaction value, against a 2030 target of 3 percent.",
+      "source": "S3"
+    },
+    {
+      "title": "Data centers",
+      "detail": "The investment commission lists data center establishment as an ICT opportunity and cites Red Fox's USD 130 million data center, which went live in 2022, and a Safaricom Ethiopia data center under construction since 2022.",
+      "source": "S7"
+    },
+    {
+      "title": "Software development and BPO",
+      "detail": "The investment commission promotes software development and business process outsourcing, and offers a 200-hectare ICT-dedicated industrial park in Addis Ababa.",
+      "source": "S7"
+    },
+    {
+      "title": "Telecom infrastructure",
+      "detail": "Safaricom made a long-term commitment of $8 billion in investment in addition to $1 billion in license fees, which led to 2,500 new cell towers; IFC contributed $1.5 billion in equity and MIGA around $1 billion in guarantees for its entry.",
+      "source": "S1"
+    },
+    {
+      "title": "Listed telecom equity",
+      "detail": "Ethio Telecom listed 10,690,149 shares on the Ethiopian Securities Exchange Main Market (ticker TELE) on May 26, 2026; the public offering drew more than 47,000 investors.",
+      "source": "S12"
+    },
+    {
+      "title": "Digital ID-linked services",
+      "detail": "World Bank support of over $630 million in IDA financing across three projects, including the $350 million Ethiopia Digital ID for Inclusion and Services project, targets Fayda coverage of 90 million people.",
+      "source": "S1"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Investors establishing a new enterprise are entitled to an income tax exemption that depends on the investment sub-sector; industrial park investors receive 2 years in Addis Ababa or the Oromia special zone and 4 years elsewhere.",
+      "source": "S8"
+    },
+    {
+      "detail": "Investors may import duty-free capital goods and construction materials to establish a new enterprise; in sectors other than manufacturing and agriculture, investors with at least USD 200,000 and 50 permanent Ethiopian jobs may import duty-free capital goods for up to 5 years.",
+      "source": "S8"
+    },
+    {
+      "detail": "The House of People's Representatives passed the Startup Proclamation in July 2025; the Minister described it as building a supportive environment for startups (specific incentive provisions were not stated in the government source reviewed).",
+      "source": "S4"
+    },
+    {
+      "detail": "The Council of Ministers approved the Digital Ethiopia 2030 strategy in November 2025, aimed at building technological capacity, expanding infrastructure, strengthening governance and accelerating growth.",
+      "source": "S6"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Low usage: only 15 percent of mobile money accounts were active in the last 30 days in 2025, about a quarter of registered agents actively operate, and merchant payments were 0.16 percent of digital transaction value in 2023/24.",
+      "source": "S3"
+    },
+    {
+      "detail": "Fraud losses reached ETB 1.3 billion in 2024 with no framework defining liability or compensation, and outbound cross-border payments are constrained by foreign currency shortages and capital account policies.",
+      "source": "S3"
+    },
+    {
+      "detail": "Market concentration and closed-loop systems may limit competition in digital payments, according to the NBE strategy.",
+      "source": "S3"
+    },
+    {
+      "detail": "Conflict caused about $600 million in damage to communications infrastructure between 2020 and 2022.",
+      "source": "S1"
+    },
+    {
+      "detail": "Demand remains thin: Ethiopia's data consumption per capita is 11.6 percent of the regional average, per the World Bank telecom market assessment benchmarking.",
+      "source": "S11"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Empowering Ethiopians by Laying the Digital Foundations for Economic Growth (Results Brief)",
+      "publisher": "World Bank",
+      "date": "2025-06",
+      "url": "https://www.worldbank.org/en/results/2025/06/30/empowering-ethiopians-by-laying-the-digital-foundations-for-afe-economic-growth",
+      "location": "Challenge, Approach, Key Highlights, Results, World Bank Group Contribution, Looking Ahead",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Ethiopia Launches Phase Two of National Digital Payments Strategy, Building on Strong Momentum from Phase One",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025-03",
+      "url": "https://nbe.gov.et/nbe_news/ethiopia-launches-phase-two-of-national-digital-payments-strategy-building-on-strong-momentum-from-phase-one/",
+      "location": "News release, Phase One results",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "National Digital Payments Strategy 2026-2030 (draft)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025-12",
+      "url": "https://nbe.gov.et/wp-content/uploads/2025/12/Ethiopia_NDPS_Draft_F.pdf",
+      "location": "pp. 9-13 (situation), 22-23 (targets), 34-37 (actions)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Startup Proclamation Will Transform Citizens' Creative Ideas into Tangible Results, Says Minister",
+      "publisher": "Ethiopian News Agency",
+      "date": "2025-07",
+      "url": "https://www.ena.et/web/eng/w/eng_6974548",
+      "location": "Article body",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Digital Ethiopia Drives Telecom Growth, Strengthened Cybersecurity, and AI Expansion: Officials",
+      "publisher": "Ethiopian News Agency",
+      "date": "2025-12",
+      "url": "https://www.ena.et/web/eng/w/eng_7968497",
+      "location": "Statement by National ID Program Coordinator",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Council of Ministers Approves Digital Ethiopia 2030 Strategy",
+      "publisher": "Ethiopian News Agency",
+      "date": "2025-11",
+      "url": "https://www.ena.et/web/eng/w/eng_7816242",
+      "location": "Article body",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "ICT (sector page)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-09",
+      "url": "https://investethiopia.gov.et/?p=1706",
+      "location": "ICT sector page",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Frequently Asked Questions",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023-02",
+      "url": "https://investethiopia.gov.et/resources/faqs/",
+      "location": "FAQ: What are the incentives available for investors?",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "Monetary Policy Committee Meeting No. 7 (press release)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/mpc7/",
+      "location": "Financial market developments",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Annual Report 2023-2024",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025",
+      "url": "https://nbe.gov.et/wp-content/uploads/2025/06/Annual-Report-2023-2024.pdf",
+      "location": "pp. 20-21 (Table 1.11, telecom); p. 39 (Table 4.4, interest rates)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "Ethiopia Telecom Market Assessment: Methodological Note",
+      "publisher": "World Bank",
+      "date": "2025-12",
+      "url": "https://documents1.worldbank.org/curated/en/099817412112522166/pdf/IDU-a77998b1-d61b-4244-845c-4ea80a6433ab.pdf",
+      "location": "p. 5 (benchmarking)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S12",
+      "title": "Ethiopian Securities Exchange Announces the Official Listing of Ethio Telecom on the ESX Main Market",
+      "publisher": "Ethiopian Securities Exchange",
+      "date": "2026-05",
+      "url": "https://esx.et/ethiopian-securities-exchange-announces-the-official-listing-of-ethio-telecom-on-the-esx-main-market/",
+      "location": "Announcement",
+      "accessed": "2026-10-16"
+    }
+  ]
+}
