@@ -34,7 +34,7 @@ const am: Record<string, string> = {
   "Deal Rooms": "የስምምነት ክፍሎች",
   "Curated, verified deal flow": "የተመረጡና የተረጋገጡ የኢንቨስትመንት ዕድሎች",
   "For Investors": "ለባለሀብቶች",
-  "How EABIX works for you": "EABIX ለእርስዎ እንዴት እንደሚሠራ",
+  "How Kena works for you": "Kena ለእርስዎ እንዴት እንደሚሠራ",
   "Valuation Tools": "የዋጋ ትመና መሣሪያዎች",
   "Price a business with confidence": "የንግድን ዋጋ በእርግጠኝነት ይገምቱ",
   "Knowledge Hub": "የዕውቀት ማዕከል",
@@ -44,21 +44,20 @@ const am: Record<string, string> = {
   Blog: "ብሎግ",
   // Header
   "Log in": "ይግቡ",
-  "Join EABIX": "EABIXን ይቀላቀሉ",
+  "Join Kena": "Kenaን ይቀላቀሉ",
   "Open menu": "ምናሌውን ክፈት",
   "Close menu": "ምናሌውን ዝጋ",
   "Skip to content": "ወደ ይዘቱ ይዝለሉ",
-  "EABIX home": "የEABIX መነሻ ገጽ",
+  "Kena home": "የKena መነሻ ገጽ",
   // Footer
-  "The EABIX Brief": "የEABIX ዜና መጽሔት",
+  "The Kena Brief": "የKena ዜና መጽሔት",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "ከኢትዮጵያ እያደገ ካለው ኢኮኖሚ የተገኙ ስምምነቶች፣ ፕሮግራሞችና ግንዛቤዎች፣ በየሁለት ሳምንቱ።",
   "Email address": "የኢሜይል አድራሻ",
   Subscribe: "ይመዝገቡ",
   "No spam. Unsubscribe any time.": "አላስፈላጊ መልዕክት አንልክም። በማንኛውም ጊዜ ምዝገባዎን ማቋረጥ ይችላሉ።",
   "Thanks for subscribing. (Preview only: not connected yet.)": "ስለተመዘገቡ እናመሰግናለን። (ቅድመ ዕይታ ብቻ፤ ገና አልተገናኘም።)",
-  "EABIX, the Erudite Africa Business & Investment Exchange. Where Ideas Grow, Investments Flow, and Businesses Recover.":
-    "EABIX፣ ኤሩዳይት አፍሪካ የንግድና የኢንቨስትመንት ልውውጥ። ሀሳቦች የሚያድጉበት፣ ኢንቨስትመንት የሚፈስበት፣ ንግዶች የሚያገግሙበት።",
+  "Building Trust in Every Deal.": "በእያንዳንዱ ስምምነት እምነትን እንገነባለን።",
   "A platform by Erudite Africa Investments PLC.": "በኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ. የቀረበ መድረክ።",
   "For Entrepreneurs": "ለሥራ ፈጣሪዎች",
   "For Partners": "ለአጋሮች",
@@ -74,10 +73,10 @@ const am: Record<string, string> = {
   "Sector reports": "የዘርፍ ሪፖርቶች",
   "Investor FAQ": "የባለሀብቶች ተደጋጋሚ ጥያቄዎች",
   "Partner with us": "ከእኛ ጋር ይተባበሩ",
-  "Run a program on EABIX": "በEABIX ላይ ፕሮግራም ያካሂዱ",
+  "Run a program on Kena": "በKena ላይ ፕሮግራም ያካሂዱ",
   "Sponsor a cohort": "የሥልጠና ቡድን ስፖንሰር ያድርጉ",
   "List as an advisor": "እንደ አማካሪ ይመዝገቡ",
-  "About EABIX": "ስለ EABIX",
+  "About Kena": "ስለ Kena",
   "Our team": "ቡድናችን",
   Careers: "የሥራ ዕድሎች",
   Press: "ለሚዲያ",
@@ -93,7 +92,7 @@ const am: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "ረሆቦት አፓርትመንት ሕንፃ፣ 1ኛ ፎቅ፣ ቦሌ መድኃኔዓለም፣ አዲስ አበባ፣ ኢትዮጵያ",
   footerLegal:
-    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። EABIX የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
+    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Kena የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
   // Trust bar
   "Verified profiles": "የተረጋገጡ መገለጫዎች",
   "Secure deal rooms": "ደህንነታቸው የተጠበቀ የስምምነት ክፍሎች",
@@ -136,7 +135,7 @@ const om: Record<string, string> = {
   "Deal Rooms": "Kutaalee Waliigaltee",
   "Curated, verified deal flow": "Carraawwan investimentii filatamanii fi mirkanaa'an",
   "For Investors": "Invastarootaaf",
-  "How EABIX works for you": "EABIX akkamitti isiniif hojjeta",
+  "How Kena works for you": "Kena akkamitti isiniif hojjeta",
   "Valuation Tools": "Meeshaalee Madaallii Gatii",
   "Price a business with confidence": "Gatii daldalaa amanamummaan tilmaamaa",
   "Knowledge Hub": "Giddugala Beekumsaa",
@@ -146,21 +145,20 @@ const om: Record<string, string> = {
   Blog: "Bloogii",
   // Header
   "Log in": "Seeni",
-  "Join EABIX": "EABIX Makami",
+  "Join Kena": "Kena Makami",
   "Open menu": "Baafata bani",
   "Close menu": "Baafata cufi",
   "Skip to content": "Gara qabiyyeetti darbi",
-  "EABIX home": "Fuula jalqabaa EABIX",
+  "Kena home": "Fuula jalqabaa Kena",
   // Footer
-  "The EABIX Brief": "Odeessa EABIX",
+  "The Kena Brief": "Odeessa Kena",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "Waliigaltee, sagantaalee fi hubannoo dinagdee guddachaa jiru Itoophiyaa irraa, torban lama lamaan.",
   "Email address": "Teessoo imeelii",
   Subscribe: "Galmaa'i",
   "No spam. Unsubscribe any time.": "Ergaa barbaachisaa hin taane hin erginu. Yeroo barbaaddanitti galmee dhaabuu ni dandeessu.",
   "Thanks for subscribing. (Preview only: not connected yet.)": "Galmaa'uu keessaniif galatoomaa. (Agarsiisa qofa: ammaaf hin walqabatne.)",
-  "EABIX, the Erudite Africa Business & Investment Exchange. Where Ideas Grow, Investments Flow, and Businesses Recover.":
-    "EABIX, Waljijjiirraa Daldalaa fi Investimentii Erudite Africa. Bakka yaadni itti guddatu, investimentiin itti yaa'uu fi daldalli itti deebi'ee dandamatu.",
+  "Building Trust in Every Deal.": "Waliigaltee hunda keessatti amanamummaa ijaarra.",
   "A platform by Erudite Africa Investments PLC.": "Waltajjii Erudite Africa Investments PLC'n dhiyaate.",
   "For Entrepreneurs": "Kalaqxota Daldalaatiif",
   "For Partners": "Michootaaf",
@@ -176,10 +174,10 @@ const om: Record<string, string> = {
   "Sector reports": "Gabaasa damee",
   "Investor FAQ": "Gaaffilee irra deddeebiin invastarootaa",
   "Partner with us": "Nu waliin hojjedhaa",
-  "Run a program on EABIX": "EABIX irratti sagantaa gaggeessaa",
+  "Run a program on Kena": "Kena irratti sagantaa gaggeessaa",
   "Sponsor a cohort": "Garee leenjii deggeraa",
   "List as an advisor": "Akka gorsaatti galmaa'aa",
-  "About EABIX": "Waa'ee EABIX",
+  "About Kena": "Waa'ee Kena",
   "Our team": "Garee keenya",
   Careers: "Carraa hojii",
   Press: "Miidiyaaf",
@@ -195,7 +193,7 @@ const om: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "Gamoo Apaartimantii Rehobot, Darbii 1ffaa, Boolee Medhaneealem, Finfinnee (Addis Ababa), Itoophiyaa",
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. EABIX waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
+    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Kena waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
   // Trust bar
   "Verified profiles": "Ibsa dhuunfaa mirkanaa'e",
   "Secure deal rooms": "Kutaalee waliigaltee nageenya qaban",
@@ -210,7 +208,7 @@ const om: Record<string, string> = {
 
 const en: Record<string, string> = {
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. EABIX is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
+    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Kena is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
 };
 
 const dictionaries: Record<Locale, Record<string, string>> = { en, am, om };

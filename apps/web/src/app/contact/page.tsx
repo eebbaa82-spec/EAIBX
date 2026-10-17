@@ -4,8 +4,8 @@ import { Note, PageHero, Section } from "@/components/ui";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact EABIX · Addis Ababa",
-  description: "Talk to the EABIX team about your business, investment or partnership.",
+  title: "Contact Kena · Addis Ababa",
+  description: "Talk to the Kena team about your business, investment or partnership.",
 };
 
 const options = [
@@ -52,7 +52,7 @@ export default function ContactPage() {
             </dl>
             <div className="mt-6">
               <Note>
-                EABIX staff will never ask for your password or ask you to send money to a personal account. Report suspicious
+                Kena staff will never ask for your password or ask you to send money to a personal account. Report suspicious
                 messages to <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>.
               </Note>
             </div>

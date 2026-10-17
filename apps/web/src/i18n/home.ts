@@ -39,10 +39,10 @@ export type HomeCopy = {
 };
 
 const en: HomeCopy = {
-  heroTitle: "Where Ideas Grow, Investments Flow, and Businesses Recover.",
+  heroTitle: "Building Trust in Every Deal.",
   heroBody:
-    "EABIX is Ethiopia's first complete business and investment exchange. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
-  searchLabel: "Search EABIX",
+    "Kena is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
+  searchLabel: "Search Kena",
   searchPlaceholder: 'Search businesses, sectors or investors, for example "agro-processing in Oromia"',
   searchButton: "Search",
   heroButtons: ["I'm raising capital", "I'm investing", "I need to turn my business around"],
@@ -79,7 +79,7 @@ const en: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "How EABIX works",
+  howTitle: "How Kena works",
   howSteps: [
     { title: "Create your profile.", body: "Tell us who you are and what you need. It takes about ten minutes." },
     {
@@ -88,7 +88,7 @@ const en: HomeCopy = {
     },
     {
       title: "Get matched.",
-      body: "EABIX introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
+      body: "Kena introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
     },
     {
       title: "Close and grow.",
@@ -116,10 +116,10 @@ const en: HomeCopy = {
     },
   ],
   programsTitle: "Programs accepting applications",
-  programsIntro: "Incubators, accelerators and competitions run on EABIX by leading institutions.",
+  programsIntro: "Incubators, accelerators and competitions run on Kena by leading institutions.",
   programsEmpty: "Open programs will be listed here with their organizer and deadline.",
   programsButton: "See all programs",
-  partnerTitle: "Partner with EABIX",
+  partnerTitle: "Partner with Kena",
   partnerBody:
     "We are working with banks, MFIs, development partners and universities to bring their programs and services to Ethiopian businesses. Partner announcements are coming soon.",
   partnerButton: "Become a partner",
@@ -128,17 +128,17 @@ const en: HomeCopy = {
     "Professional courses and certifications in banking, credit, capital markets and investment banking, plus practical courses for founders, in Amharic and English. Banks and MFIs can enroll whole teams.",
   academyButton: "Explore the Academy",
   ctaTitle: "Your next chapter starts here.",
-  ctaBody: "Whether you are starting, scaling, investing or recovering, EABIX gives you the people, data and tools to move forward.",
-  ctaJoin: "Join EABIX free",
+  ctaBody: "Whether you are starting, scaling, investing or recovering, Kena gives you the people, data and tools to move forward.",
+  ctaJoin: "Join Kena free",
   ctaTalk: "Talk to our team",
 };
 
 /** Draft translation, pending review by a native Amharic speaker. */
 const am: HomeCopy = {
-  heroTitle: "ሀሳቦች የሚያድጉበት፣ ኢንቨስትመንት የሚፈስበት፣ ንግዶች የሚያገግሙበት።",
+  heroTitle: "በእያንዳንዱ ስምምነት እምነትን እንገነባለን።",
   heroBody:
-    "EABIX የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት ልውውጥ መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
-  searchLabel: "EABIXን ይፈልጉ",
+    "Kena የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
+  searchLabel: "Kenaን ይፈልጉ",
   searchPlaceholder: "ንግዶችን፣ ዘርፎችን ወይም ባለሀብቶችን ይፈልጉ፤ ለምሳሌ «በኦሮሚያ የግብርና ምርት ማቀነባበር»",
   searchButton: "ፈልግ",
   heroButtons: ["ካፒታል እያሰባሰብኩ ነው", "ኢንቨስት እያደረግኩ ነው", "ንግዴን መልሼ ማቋቋም እፈልጋለሁ"],
@@ -175,7 +175,7 @@ const am: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "EABIX እንዴት ይሠራል",
+  howTitle: "Kena እንዴት ይሠራል",
   howSteps: [
     { title: "መገለጫዎን ይፍጠሩ።", body: "ማን እንደሆኑና ምን እንደሚፈልጉ ይንገሩን። አሥር ደቂቃ ገደማ ይወስዳል።" },
     {
@@ -184,7 +184,7 @@ const am: HomeCopy = {
     },
     {
       title: "ተገቢውን አጋር ያግኙ።",
-      body: "EABIX በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
+      body: "Kena በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
     },
     {
       title: "ስምምነቱን ያጠናቅቁና ያድጉ።",
@@ -212,10 +212,10 @@ const am: HomeCopy = {
     },
   ],
   programsTitle: "ማመልከቻ የሚቀበሉ ፕሮግራሞች",
-  programsIntro: "ግንባር ቀደም ተቋማት በEABIX ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
+  programsIntro: "ግንባር ቀደም ተቋማት በKena ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
   programsEmpty: "ክፍት ፕሮግራሞች ከአዘጋጃቸውና ከማመልከቻ ማብቂያ ቀናቸው ጋር እዚህ ይዘረዘራሉ።",
   programsButton: "ሁሉንም ፕሮግራሞች ይመልከቱ",
-  partnerTitle: "ከEABIX ጋር ይተባበሩ",
+  partnerTitle: "ከKena ጋር ይተባበሩ",
   partnerBody:
     "ፕሮግራሞቻቸውንና አገልግሎቶቻቸውን ለኢትዮጵያ ንግዶች ለማድረስ ከባንኮች፣ ከአነስተኛ የፋይናንስ ተቋማት፣ ከልማት አጋሮችና ከዩኒቨርሲቲዎች ጋር እየሠራን ነው። የአጋርነት ማስታወቂያዎች በቅርቡ ይወጣሉ።",
   partnerButton: "አጋር ይሁኑ",
@@ -224,17 +224,17 @@ const am: HomeCopy = {
     "በባንክ፣ በብድር፣ በካፒታል ገበያና በኢንቨስትመንት ባንኪንግ የሙያ ኮርሶችና ሰርተፊኬቶች፣ እንዲሁም ለሥራ ፈጣሪዎች ተግባራዊ ኮርሶች፣ በአማርኛና በእንግሊዝኛ። ባንኮችና አነስተኛ የፋይናንስ ተቋማት መላ ቡድኖቻቸውን ማስመዝገብ ይችላሉ።",
   academyButton: "አካዳሚውን ያስሱ",
   ctaTitle: "ቀጣዩ ምዕራፍዎ እዚህ ይጀምራል።",
-  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም EABIX ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
-  ctaJoin: "EABIXን በነፃ ይቀላቀሉ",
+  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Kena ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
+  ctaJoin: "Kenaን በነፃ ይቀላቀሉ",
   ctaTalk: "ቡድናችንን ያነጋግሩ",
 };
 
 /** Draft translation, pending review by a native Afaan Oromoo speaker. */
 const om: HomeCopy = {
-  heroTitle: "Bakka Yaadni Itti Guddatu, Investimentiin Itti Yaa'uu fi Daldalli Itti Deebi'ee Dandamatu.",
+  heroTitle: "Waliigaltee Hunda Keessatti Amanamummaa Ijaarra.",
   heroBody:
-    "EABIX waltajjii waljijjiirraa daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
-  searchLabel: "EABIX keessa barbaadaa",
+    "Kena waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
+  searchLabel: "Kena keessa barbaadaa",
   searchPlaceholder: "Daldaltoota, dameewwan ykn invastaroota barbaadaa; fakkeenyaaf \"qindaa'ina oomisha qonnaa Oromiyaa keessatti\"",
   searchButton: "Barbaadi",
   heroButtons: ["Kaappitaala walitti qabaan jira", "Invest gochaan jira", "Daldala koo deebisee dandamachiisuun barbaada"],
@@ -271,7 +271,7 @@ const om: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "EABIX akkamitti hojjeta",
+  howTitle: "Kena akkamitti hojjeta",
   howSteps: [
     { title: "Ibsa dhuunfaa keessan uumaa.", body: "Eenyu akka taatanii fi maal akka barbaaddan nutti himaa. Gara daqiiqaa kudhanii fudhata." },
     {
@@ -280,7 +280,7 @@ const om: HomeCopy = {
     },
     {
       title: "Wal-simsiifamaa.",
-      body: "EABIX ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
+      body: "Kena ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
     },
     {
       title: "Xumuraa fi guddadhaa.",
@@ -308,10 +308,10 @@ const om: HomeCopy = {
     },
   ],
   programsTitle: "Sagantaalee iyyannoo fudhachaa jiran",
-  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni EABIX irratti gaggeessan.",
+  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Kena irratti gaggeessan.",
   programsEmpty: "Sagantaaleen banaa ta'an qindeessaa fi guyyaa xumuraa isaanii waliin asitti tarreeffamu.",
   programsButton: "Sagantaalee hunda ilaalaa",
-  partnerTitle: "EABIX waliin hojjedhaa",
+  partnerTitle: "Kena waliin hojjedhaa",
   partnerBody:
     "Sagantaalee fi tajaajila isaanii daldaltoota Itoophiyaatiif dhiyeessuuf baankota, dhaabbilee maallaqaa xixiqqoo, michoota misoomaa fi yuunivarsiitiiwwan waliin hojjechaa jirra. Beeksisni michummaa dhiyootti ni dhufa.",
   partnerButton: "Michuu ta'aa",
@@ -320,8 +320,8 @@ const om: HomeCopy = {
     "Koorsiiwwan ogummaa fi ragaa baankii, liqii, gabaa kaappitaalaa fi baankii investimentii, akkasumas koorsiiwwan hojiirra oolan hundeessitootaaf, Afaan Amaaraa fi Ingiliziitiin. Baankonni fi dhaabbileen maallaqaa xixiqqoo gareewwan isaanii guutuu galmeessuu danda'u.",
   academyButton: "Akkaadamii qoradhaa",
   ctaTitle: "Boqonnaan keessan itti aanu asitti jalqaba.",
-  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, EABIX namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
-  ctaJoin: "EABIX bilisaan makamaa",
+  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Kena namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
+  ctaJoin: "Kena bilisaan makamaa",
   ctaTalk: "Garee keenya haasofsiisaa",
 };
 

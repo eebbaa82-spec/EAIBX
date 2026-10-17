@@ -17,7 +17,7 @@ export function Footer() {
       <div className="border-b border-white/10 py-10">
         <Container className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-lg font-semibold text-white">{t("The EABIX Brief")}</p>
+            <p className="text-lg font-semibold text-white">{t("The Kena Brief")}</p>
             <p className="mt-1 max-w-md">{t("Deals, programs and insights from Ethiopia's growth economy, every two weeks.")}</p>
           </div>
           <NewsletterForm locale={locale} />
@@ -26,8 +26,8 @@ export function Footer() {
 
       <Container className="grid gap-10 py-12 lg:grid-cols-[1.4fr_repeat(5,1fr)]">
         <div>
-          <p className="text-xl font-extrabold text-white">EABIX</p>
-          <p className="mt-2">{t(`EABIX, the ${brand.fullName}. ${brand.tagline}`)}</p>
+          <p className="text-xl font-extrabold text-white">Kena</p>
+          <p className="mt-2">{t(brand.tagline)}</p>
           <p className="mt-2">{t(`A platform by ${brand.operator}.`)}</p>
         </div>
         {footerColumns.map((col) => (

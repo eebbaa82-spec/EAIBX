@@ -20,7 +20,7 @@ export default function SectorReportsPage() {
       />
       <Section
         title="Download a report"
-        intro={`${latest ? `Last updated ${formatDate(latest)}. ` : ""}The public edition of each report is free to download. The member edition, with the full list of sources, page references and links, is available to registered EABIX members.`}
+        intro={`${latest ? `Last updated ${formatDate(latest)}. ` : ""}The public edition of each report is free to download. The member edition, with the full list of sources, page references and links, is available to registered Kena members.`}
       >
         <ul className="grid gap-5 md:grid-cols-2">
           {reports.map((r) => (

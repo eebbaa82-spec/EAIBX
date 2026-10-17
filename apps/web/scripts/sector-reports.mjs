@@ -66,7 +66,7 @@ for (const file of files) {
       asOf: r.asOf,
       body: body(r, edition),
     });
-    const base = `EABIX-Sector-Report-${r.slug}${edition === "member" ? "-member" : ""}`;
+    const base = `Kena-Sector-Report-${r.slug}${edition === "member" ? "-member" : ""}`;
     const htmlPath = path.join(outDirs[edition], `${base}.html`);
     await renderPdf(page, doc, htmlPath, path.join(outDirs[edition], `${base}.pdf`), `Sector Report · ${r.name}`, writeFileSync);
     rmSync(htmlPath);

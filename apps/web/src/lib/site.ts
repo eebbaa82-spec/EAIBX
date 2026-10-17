@@ -1,8 +1,8 @@
 export const brand = {
-  name: "EABIX",
-  fullName: "Erudite Africa Business & Investment Exchange",
+  name: "Kena",
+  fullName: "Kena by Erudite Africa",
   operator: "Erudite Africa Investments PLC",
-  tagline: "Where Ideas Grow, Investments Flow, and Businesses Recover.",
+  tagline: "Building Trust in Every Deal.",
 };
 
 /** From the Erudite Africa Investments PLC corporate profile (2026). */
@@ -51,7 +51,7 @@ export const mainNav: NavMenu[] = [
     label: "Invest",
     items: [
       { label: "Deal Rooms", href: "/deal-rooms", description: "Curated, verified deal flow" },
-      { label: "For Investors", href: "/for-investors", description: "How EABIX works for you" },
+      { label: "For Investors", href: "/for-investors", description: "How Kena works for you" },
       { label: "Valuation Tools", href: "/tools", description: "Price a business with confidence" },
     ],
   },
@@ -94,7 +94,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
     heading: "For Partners",
     links: [
       { label: "Partner with us", href: "/partners" },
-      { label: "Run a program on EABIX", href: "/for-partners" },
+      { label: "Run a program on Kena", href: "/for-partners" },
       { label: "Sponsor a cohort", href: "/partners#ways-to-partner" },
       { label: "List as an advisor", href: "/for-advisors" },
     ],
@@ -102,7 +102,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
   {
     heading: "Company",
     links: [
-      { label: "About EABIX", href: "/about" },
+      { label: "About Kena", href: "/about" },
       { label: "Our team", href: "/about/team" },
       { label: "Careers", href: "/about/careers" },
       { label: "Press", href: "/about/press" },

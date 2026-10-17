@@ -3,7 +3,7 @@ import { ButtonLink, Card, CardGrid, DataTable, Note, PageHero, Section } from "
 import { businessTypes, dimensions, gradeBands, typeWeights } from "@/lib/ehira/model";
 
 export const metadata: Metadata = {
-  title: "How EHIRA works · EABIX",
+  title: "How EHIRA works · Kena",
   description: "The dimensions, weights, grades and red flags behind the Enterprise Health & Investment Readiness Assessment.",
 };
 
@@ -64,7 +64,7 @@ export default function EhiraMethodPage() {
             Answer the guided questions one at a time and get an instant indicative grade, readiness rating and action list.
           </Card>
           <Card title="Verified EHIRA (price announced after the launch period)">
-            Upload your financial statements, tax clearance certificate and supporting documents. An EABIX analyst reviews them and issues a
+            Upload your financial statements, tax clearance certificate and supporting documents. A Kena analyst reviews them and issues a
             verified grade that investors and lenders can rely on, valid for 12 months.
           </Card>
         </CardGrid>

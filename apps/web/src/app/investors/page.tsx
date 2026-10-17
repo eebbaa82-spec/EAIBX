@@ -3,7 +3,7 @@ import { ButtonLink, CtaBand, EmptyState, PageHero, Section } from "@/components
 import { CardAnatomy, FilterGroup, FilterPanel } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Investors in Ethiopian Businesses · EABIX",
+  title: "Investors in Ethiopian Businesses · Kena",
   description: "Find angel investors, funds, banks and diaspora investors backing Ethiopian SMEs and startups.",
 };
 
@@ -12,7 +12,7 @@ export default function InvestorsPage() {
     <>
       <PageHero
         title="Meet the investors backing Ethiopian business"
-        subhead="Angel investors, venture and private equity funds, banks, family offices, corporates and diaspora investors, all verified by EABIX."
+        subhead="Angel investors, venture and private equity funds, banks, family offices, corporates and diaspora investors, all verified by Kena."
       >
         <ButtonLink href="/join" variant="light">
           Join free
@@ -44,7 +44,7 @@ export default function InvestorsPage() {
                 "Type",
                 "Sectors",
                 "Ticket range",
-                "Deals done on EABIX",
+                "Deals done on Kena",
                 "Verified badge",
                 "View profile",
               ]}

@@ -4,7 +4,7 @@ import { PreviewForm } from "@/components/forms";
 import { CardAnatomy } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Business Advisors in Ethiopia · EABIX",
+  title: "Business Advisors in Ethiopia · Kena",
   description:
     "Vetted valuers, lawyers, accountants and turnaround experts for Ethiopian deals. Request a quote today.",
 };
@@ -66,8 +66,8 @@ export default function AdvisorsPage() {
           />
           <div>
             <Note>
-              EABIX checks each advisor&apos;s licenses and references before listing. Engagements are agreed directly
-              between you and the advisor. EABIX receives a referral fee from the advisor for engagements introduced through the
+              Kena checks each advisor&apos;s licenses and references before listing. Engagements are agreed directly
+              between you and the advisor. Kena receives a referral fee from the advisor for engagements introduced through the
               platform.
             </Note>
           </div>

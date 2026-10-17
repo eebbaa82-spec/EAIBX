@@ -16,7 +16,7 @@ export default function EventsPage() {
 
       <Section title="Signature event" tone="canvas">
         <Card
-          title="EABIX Investment Forum"
+          title="Kena Investment Forum"
         >
           Our flagship gathering of founders, investors, lenders and policymakers, featuring live deal room pitches and sector
           panels. The date of the first forum is announced soon.
@@ -28,11 +28,11 @@ export default function EventsPage() {
           <TagList items={["Events", "Funding calls and grants", "Competitions and awards", "Tenders and partnerships"]} />
         </div>
         <EmptyState action={<ButtonLink href="/join">Submit an opportunity</ButtonLink>}>
-          Events and opportunities will appear here once they are listed on EABIX.
+          Events and opportunities will appear here once they are listed on Kena.
         </EmptyState>
       </Section>
 
-      <CtaBand title="Running an event or funding call for Ethiopian businesses?" body="List it on EABIX free.">
+      <CtaBand title="Running an event or funding call for Ethiopian businesses?" body="List it on Kena free.">
         <ButtonLink href="/join" variant="light">
           Submit an opportunity
         </ButtonLink>

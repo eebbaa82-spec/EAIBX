@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ButtonLink, Note, PageHero, Section, TagList } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Become a verified investor · EABIX",
+  title: "Become a verified investor · Kena",
   description:
-    "Verification protects everyone. Verified investors get priority access to curated deal rooms on EABIX.",
+    "Verification protects everyone. Verified investors get priority access to curated deal rooms on Kena.",
 };
 
 export default function InvestorVerifyPage() {

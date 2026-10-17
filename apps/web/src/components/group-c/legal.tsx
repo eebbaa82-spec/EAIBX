@@ -11,7 +11,7 @@ export const legalDocs: Record<LegalDocKey, LegalDoc> = {
   terms: {
     title: "Terms of Use",
     summary:
-      "These terms explain how you may use EABIX, what we are responsible for and what you are responsible for. By creating an account you agree to them.",
+      "These terms explain how you may use Kena, what we are responsible for and what you are responsible for. By creating an account you agree to them.",
     sections: [
       "Eligibility",
       "Accounts and verification",
@@ -27,7 +27,7 @@ export const legalDocs: Record<LegalDocKey, LegalDoc> = {
   },
   privacy: {
     title: "Privacy Policy",
-    summary: "We collect only what we need to run EABIX, we never sell your data, and you control what other users see.",
+    summary: "We collect only what we need to run Kena, we never sell your data, and you control what other users see.",
     sections: [
       "Data we collect",
       "How we use it",
@@ -45,7 +45,7 @@ export const legalDocs: Record<LegalDocKey, LegalDoc> = {
   "investor-disclaimer": {
     title: "Investor Disclaimer",
     summary:
-      "Investing in private businesses carries risk, including losing all of your money. EABIX does not give investment advice.",
+      "Investing in private businesses carries risk, including losing all of your money. Kena does not give investment advice.",
     sections: [
       "Nature of the platform",
       "No offer of securities",
@@ -57,7 +57,7 @@ export const legalDocs: Record<LegalDocKey, LegalDoc> = {
   },
   cookies: {
     title: "Cookie Policy",
-    summary: "We use cookies to keep you signed in and improve EABIX. You choose which ones we use.",
+    summary: "We use cookies to keep you signed in and improve Kena. You choose which ones we use.",
     sections: ["Essential, preference and analytics cookies", "Third-party cookies", "How to change settings"],
   },
   community: {
@@ -90,7 +90,7 @@ const order: LegalDocKey[] = ["terms", "privacy", "investor-disclaimer", "cookie
 
 export function legalMetadata(key: LegalDocKey): Metadata {
   const doc = legalDocs[key];
-  return { title: `${doc.title} · EABIX`, description: doc.summary };
+  return { title: `${doc.title} · Kena`, description: doc.summary };
 }
 
 export function LegalPage({ doc: key }: { doc: LegalDocKey }) {

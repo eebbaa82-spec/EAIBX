@@ -5,7 +5,7 @@ import { useMemo, useState, useSyncExternalStore } from "react";
 import { businessTypes, dimensions, questions, screening, typeWeights, type Answers, type BusinessType, type DimensionId, type Question } from "@/lib/ehira/model";
 import { isoDate, isVisible, score, taxClearance } from "@/lib/ehira/score";
 
-const STORAGE_KEY = "eabix-ehira-draft-v2";
+const STORAGE_KEY = "kena-ehira-draft-v2";
 
 type Step = { id: string; title: string; intro?: string; ids: string[] };
 
@@ -229,7 +229,7 @@ function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: Field
         <div className="mt-5 space-y-4">
           <p className="text-sm text-ink">
             Request your commercial credit report from the National Bank of Ethiopia&apos;s credit reference system, through NBE or your bank. Attach it
-            here; EABIX analysts review it as part of due diligence.
+            here; Kena analysts review it as part of due diligence.
           </p>
           <label className="block text-sm font-medium text-ink">
             Date of the report
@@ -253,7 +253,7 @@ function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: Field
           </div>
         </div>
       )}
-      <p className="mt-4 text-xs text-muted">Nothing here is sent to EABIX until the verified EHIRA, where an analyst reviews it.</p>
+      <p className="mt-4 text-xs text-muted">Nothing here is sent to Kena until the verified EHIRA, where an analyst reviews it.</p>
     </fieldset>
   );
 }
@@ -293,7 +293,7 @@ function TaxClearanceField({ q, answers, file, onAnswer, onFile }: FieldProps) {
         <p className="mt-4 rounded-lg bg-gold-100 p-3 text-sm text-ink">This certificate has expired. You can continue, but an expired certificate caps your grade at C.</p>
       )}
       <p className="mt-4 text-xs text-muted">
-        The file stays in this browser and is not sent to EABIX. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
+        The file stays in this browser and is not sent to Kena. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
       </p>
     </fieldset>
   );
@@ -396,7 +396,7 @@ export function EhiraAssessment() {
             </button>
           )}
         </div>
-        <p className="text-xs text-muted">One question at a time, about 15 minutes. Your report appears at the end. Your answers stay in this browser only and are not sent to EABIX.</p>
+        <p className="text-xs text-muted">One question at a time, about 15 minutes. Your report appears at the end. Your answers stay in this browser only and are not sent to Kena.</p>
       </div>
     );
 
@@ -534,7 +534,7 @@ function Report({ result, name, type, answers, files, onEdit, onRestart }: { res
           <div><dt className="text-muted">Valid until</dt><dd className="font-medium text-ink">{fmt(answers.G3_EXPIRY)}{tax === "expired" && <span className="text-red-700"> (expired)</span>}</dd></div>
           <div className="sm:col-span-2"><dt className="text-muted">File</dt><dd className="font-medium text-ink">{files.G3?.name ?? answers.G3_FILE ?? "–"}</dd></div>
         </dl>
-        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. EABIX verifies it with the issuing tax authority in the verified EHIRA.</p>
+        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. Kena verifies it with the issuing tax authority in the verified EHIRA.</p>
       </section>
 
       <section className="rounded-xl border border-line bg-white p-5">
@@ -553,7 +553,7 @@ function Report({ result, name, type, answers, files, onEdit, onRestart }: { res
             <div className="sm:col-span-2"><dt className="text-muted">Loan more than 90 days overdue</dt><dd className="font-medium text-ink">{answers.F8 === "yes" ? "Yes, reported" : "None reported"}</dd></div>
           </dl>
         )}
-        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. EABIX analysts review it in the verified EHIRA.</p>
+        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. Kena analysts review it in the verified EHIRA.</p>
       </section>
 
       <section>
@@ -619,7 +619,7 @@ function Report({ result, name, type, answers, files, onEdit, onRestart }: { res
       )}
 
       <section className="rounded-xl border border-line bg-canvas p-5 print:hidden">
-        <h4 className="font-bold text-ink">Next steps on EABIX</h4>
+        <h4 className="font-bold text-ink">Next steps on Kena</h4>
         <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-brand-700">
           <li><Link href="/advisors" className="hover:underline">Find an advisor</Link></li>
           <li><Link href="/programs" className="hover:underline">Join a program</Link></li>
@@ -631,7 +631,7 @@ function Report({ result, name, type, answers, files, onEdit, onRestart }: { res
 
       <p className="text-xs text-muted">
         EHIRA is a decision-support and readiness tool. It does not replace a credit rating, an audit, legal due diligence or a lender&apos;s
-        decision. This report is based on your own answers and has not been verified by EABIX.
+        decision. This report is based on your own answers and has not been verified by Kena.
       </p>
 
       <button type="button" onClick={onRestart} className="text-sm font-semibold text-brand-700 hover:underline print:hidden">

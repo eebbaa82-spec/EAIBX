@@ -4,7 +4,7 @@ import { PreviewForm } from "@/components/forms";
 import { CardAnatomy, FilterGroup, FilterPanel } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Find a Business Mentor in Ethiopia · EABIX",
+  title: "Find a Business Mentor in Ethiopia · Kena",
   description: "Book free sessions with experienced founders, executives and investors in Amharic or English.",
 };
 

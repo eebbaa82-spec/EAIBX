@@ -4,8 +4,8 @@ import { PreviewForm } from "@/components/forms";
 import { Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Log in · EABIX",
-  description: "Welcome back. Log in to your EABIX account for programs, investment, recovery and learning.",
+  title: "Log in · Kena",
+  description: "Welcome back. Log in to your Kena account for programs, investment, recovery and learning.",
 };
 
 export default function LoginPage() {
@@ -28,9 +28,9 @@ export default function LoginPage() {
               <p className="mt-1">Enter your email or phone and we will send you a reset link.</p>
             </div>
             <p className="mt-6 text-center text-sm text-muted">
-              New to EABIX?{" "}
+              New to Kena?{" "}
               <Link href="/join" className="font-semibold text-brand-700 hover:underline">
-                Join EABIX free
+                Join Kena free
               </Link>
             </p>
           </div>

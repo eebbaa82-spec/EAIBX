@@ -6,7 +6,7 @@ import { translator } from "@/i18n/chrome";
 import { homeCopy } from "@/i18n/home";
 
 export const metadata: Metadata = {
-  title: "EABIX · የኢትዮጵያ የንግድና የኢንቨስትመንት ልውውጥ",
+  title: "Kena · በእያንዳንዱ ስምምነት እምነትን እንገነባለን",
   description: "ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ፣ አክስለሬተር ይቀላቀሉ ወይም ከችግር ያገግሙ። የተረጋገጡ የኢትዮጵያ ንግዶችና ባለሀብቶች በአንድ ቦታ።",
   alternates: { languages: { en: "/", am: "/am/", om: "/om/" } },
 };

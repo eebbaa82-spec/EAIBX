@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ButtonLink, Container, DataTable, Faq, Note, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "EABIX Pricing · Plans for Businesses and Investors",
+  title: "Kena Pricing · Plans for Businesses and Investors",
   description:
     "Start free. Upgrade for featured listings, verified EHIRA assessments and full deal room access. Pay in Birr.",
 };
@@ -43,7 +43,7 @@ const businessRows = [
 ];
 
 const investorRows = [
-  ["Tagline", "See what is out there", "Act on the best deals", "Run your pipeline on EABIX"],
+  ["Tagline", "See what is out there", "Act on the best deals", "Run your pipeline on Kena"],
   [
     "Price",
     "Free",
@@ -79,7 +79,7 @@ export default function PricingPage() {
     <>
       <PageHero
         title="Simple plans. Start free."
-        subhead="Join EABIX at no cost, then upgrade when you are ready to reach more investors, buyers and experts. Pay in Birr with Chapa or Telebirr."
+        subhead="Join Kena at no cost, then upgrade when you are ready to reach more investors, buyers and experts. Pay in Birr with Chapa or Telebirr."
       >
         <ButtonLink href="#business-plans" variant="light">
           For businesses
@@ -92,7 +92,7 @@ export default function PricingPage() {
       <div className="border-b border-line bg-white py-4">
         <Container>
           <p className="text-center text-sm text-muted">
-            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after EABIX launches.
+            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after Kena launches.
             Prices in ETB, with monthly and yearly billing, will be announced before the launch period ends.
           </p>
         </Container>
@@ -116,7 +116,7 @@ export default function PricingPage() {
             <strong className="text-ink">Verified EHIRA (pay-as-you-go):</strong> announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
-            <strong className="text-ink">Success fee on completed transactions introduced through EABIX:</strong>{" "}
+            <strong className="text-ink">Success fee on completed transactions introduced through Kena:</strong>{" "}
             announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
@@ -140,7 +140,7 @@ export default function PricingPage() {
               q: "Do you take a share of my business?",
               a: (
                 <>
-                  Not by joining or using EABIX. EABIX takes equity in a business only when this is agreed in writing in advance with
+                  Not by joining or using Kena. Kena takes equity in a business only when this is agreed in writing in advance with
                   the business and its investors, as payment for advisory or capital-raising services.
                 </>
               ),
