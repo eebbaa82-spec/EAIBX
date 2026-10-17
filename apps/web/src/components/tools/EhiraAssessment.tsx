@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { businessTypes, dimensions, questions, screening, typeWeights, type Answers, type BusinessType, type DimensionId, type Question } from "@/lib/ehira/model";
-import { isVisible, score, taxClearance } from "@/lib/ehira/score";
+import { isoDate, isVisible, score, taxClearance } from "@/lib/ehira/score";
 
 const STORAGE_KEY = "eabix-ehira-draft-v2";
 
@@ -118,8 +118,8 @@ function QuestionField({ q, value, onChange }: { q: Question | { id: string; tex
   );
 }
 
-const TAX_TYPES = ["application/pdf", "image/jpeg", "image/png"];
-const TAX_MAX_BYTES = 5 * 1024 * 1024;
+const FILE_TYPES = ["application/pdf", "image/jpeg", "image/png"];
+const FILE_MAX_BYTES = 5 * 1024 * 1024;
 
 /** The certificate details are complete and the file is attached in this browser session. */
 function taxComplete(a: Answers, file: File | null) {
@@ -127,8 +127,138 @@ function taxComplete(a: Answers, file: File | null) {
   return /^\d{10}$/.test(s("G3_TIN")) && s("G3_NO") !== "" && s("G3_ISSUE") !== "" && s("G3_EXPIRY") !== "" && s("G3_EXPIRY") >= s("G3_ISSUE") && file !== null;
 }
 
-function TaxClearanceField({ q, answers, file, onAnswer, onFile }: { q: Question; answers: Answers; file: File | null; onAnswer: (id: string, v: string) => void; onFile: (f: File | null) => void }) {
+type FieldProps = { q: Question; answers: Answers; file: File | null; onAnswer: (id: string, v: string | undefined) => void; onFile: (f: File | null) => void };
+
+/** A PDF, JPG or PNG kept in memory only; the draft remembers just its name (answer `<id>_FILE`). */
+function FileField({ label, id, answers, file, onFile }: { label: string; id: string; answers: Answers; file: File | null; onFile: (f: File | null) => void }) {
   const [error, setError] = useState("");
+  const earlier = answers[`${id}_FILE`];
+  return (
+    <div className="mt-4">
+      <label className="block text-sm font-medium text-ink">
+        {label} <span className="font-normal text-muted">(PDF, JPG or PNG, up to 5 MB)</span>
+        <input
+          type="file"
+          accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+          onChange={(e) => {
+            const f = e.target.files?.[0] ?? null;
+            if (f && !FILE_TYPES.includes(f.type)) return setError("Please attach a PDF, JPG or PNG file.");
+            if (f && f.size > FILE_MAX_BYTES) return setError("The file is larger than 5 MB.");
+            setError("");
+            onFile(f);
+          }}
+          className="mt-2 block w-full text-sm text-ink file:mr-3 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:font-semibold file:text-brand-700"
+        />
+      </label>
+      {error && <p className="mt-1 text-xs text-red-700">{error}</p>}
+      {file && <p className="mt-2 text-sm text-ink">Attached: {file.name} ({Math.ceil(file.size / 1024).toLocaleString("en-US")} KB)</p>}
+      {!file && typeof earlier === "string" && earlier && <p className="mt-2 text-sm text-muted">You attached {earlier} earlier. Files are not kept after you leave the page, so please attach it again.</p>}
+    </div>
+  );
+}
+
+export const REPORT_MAX_AGE_DAYS = 90;
+const daysAgo = (iso: string) => (Date.now() - new Date(`${iso}T00:00:00`).getTime()) / 86_400_000;
+
+/** F8: either the signed declaration, or the business's own NBE credit report attached with its result. */
+function creditComplete(a: Answers, file: File | null) {
+  const s = (k: string) => (typeof a[k] === "string" ? (a[k] as string).trim() : "");
+  if (s("F8_ROUTE") === "declaration") return s("F8_AGREE") === "yes" && s("F8_SIGNER") !== "" && s("F8_POSITION") !== "";
+  if (s("F8_ROUTE") === "report") {
+    const age = s("F8_REPORT_DATE") ? daysAgo(s("F8_REPORT_DATE")) : NaN;
+    return file !== null && age >= -1 && age <= REPORT_MAX_AGE_DAYS && (a.F8 === "yes" || a.F8 === "no");
+  }
+  return false;
+}
+
+export const declarationText = (business: string) =>
+  `${business || "The business"} declares that it has no non-performing loan (a loan more than 90 days overdue) with any bank or microfinance institution in Ethiopia, and undertakes to take full responsibility should a lender obtain information stating otherwise.`;
+
+function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: FieldProps & { business: string }) {
+  const val = (k: string) => (typeof answers[k] === "string" ? (answers[k] as string) : "");
+  const route = val("F8_ROUTE");
+  const reportDate = val("F8_REPORT_DATE");
+  const age = reportDate ? daysAgo(reportDate) : null;
+  return (
+    <fieldset className="rounded-xl border border-line bg-white p-5">
+      <legend className="sr-only">{q.text}</legend>
+      <p className="font-semibold text-ink">{q.text}</p>
+      {q.help && <p className="mt-1 text-sm text-muted">{q.help}</p>}
+      <div className="mt-4 flex flex-wrap gap-2">
+        {[
+          { v: "declaration", label: "Sign the declaration" },
+          { v: "report", label: "Attach my NBE credit report" },
+        ].map((o) => (
+          <label key={o.v} className={choice(route === o.v)}>
+            <input type="radio" name="F8_ROUTE" className="sr-only" checked={route === o.v} onChange={() => onAnswer("F8_ROUTE", o.v)} />
+            {o.label}
+          </label>
+        ))}
+      </div>
+
+      {route === "declaration" && (
+        <div className="mt-5 space-y-4">
+          <blockquote className="rounded-lg border-l-4 border-brand-600 bg-canvas p-4 text-ink">{declarationText(business)}</blockquote>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="block text-sm font-medium text-ink">
+              Full name of the person signing
+              <input value={val("F8_SIGNER")} onChange={(e) => onAnswer("F8_SIGNER", e.target.value)} className={`${inputClass} max-w-none`} />
+            </label>
+            <label className="block text-sm font-medium text-ink">
+              Position (owner, general manager or authorized officer)
+              <input value={val("F8_POSITION")} onChange={(e) => onAnswer("F8_POSITION", e.target.value)} className={`${inputClass} max-w-none`} />
+            </label>
+          </div>
+          <label className="flex items-start gap-3 text-sm text-ink">
+            <input
+              type="checkbox"
+              className="mt-1 h-4 w-4"
+              checked={val("F8_AGREE") === "yes"}
+              onChange={(e) => {
+                onAnswer("F8_AGREE", e.target.checked ? "yes" : undefined);
+                onAnswer("F8_DATE", e.target.checked ? isoDate(new Date()) : undefined);
+              }}
+            />
+            <span>I am authorized to sign for the business, and I confirm this declaration is true.</span>
+          </label>
+          <p className="text-sm text-muted">If the business has a loan more than 90 days overdue, do not sign. Attach your NBE credit report instead.</p>
+        </div>
+      )}
+
+      {route === "report" && (
+        <div className="mt-5 space-y-4">
+          <p className="text-sm text-ink">
+            Request your commercial credit report from the National Bank of Ethiopia&apos;s credit reference system, through NBE or your bank. Attach it
+            here; EABIX analysts review it as part of due diligence.
+          </p>
+          <label className="block text-sm font-medium text-ink">
+            Date of the report
+            <input type="date" value={reportDate} onChange={(e) => onAnswer("F8_REPORT_DATE", e.target.value)} className={`${inputClass} max-w-none`} />
+            {age !== null && (age > REPORT_MAX_AGE_DAYS || age < -1) && (
+              <span className="mt-1 block text-xs font-normal text-red-700">The report must be dated within the last {REPORT_MAX_AGE_DAYS} days.</span>
+            )}
+          </label>
+          <FileField label="Credit report" id="F8" answers={answers} file={file} onFile={onFile} />
+          <div>
+            <p className="text-sm font-medium text-ink">Does the report show any loan more than 90 days overdue?</p>
+            <div className="mt-2 flex gap-2">
+              {(["no", "yes"] as const).map((v) => (
+                <label key={v} className={choice(answers.F8 === v)}>
+                  <input type="radio" name="F8" className="sr-only" checked={answers.F8 === v} onChange={() => onAnswer("F8", v)} />
+                  {v === "yes" ? "Yes" : "No"}
+                </label>
+              ))}
+            </div>
+            {answers.F8 === "yes" && <p className="mt-3 rounded-lg bg-gold-100 p-3 text-sm text-ink">You can continue, but a non-performing loan caps your grade at D.</p>}
+          </div>
+        </div>
+      )}
+      <p className="mt-4 text-xs text-muted">Nothing here is sent to EABIX until the verified EHIRA, where an analyst reviews it.</p>
+    </fieldset>
+  );
+}
+
+function TaxClearanceField({ q, answers, file, onAnswer, onFile }: FieldProps) {
   const val = (k: string) => (typeof answers[k] === "string" ? (answers[k] as string) : "");
   const status = taxClearance(answers);
   const tin = val("G3_TIN");
@@ -158,26 +288,7 @@ function TaxClearanceField({ q, answers, file, onAnswer, onFile }: { q: Question
           {dates && <span className="mt-1 block text-xs font-normal text-red-700">The expiry date is before the issue date.</span>}
         </label>
       </div>
-      <div className="mt-4">
-        <label className="block text-sm font-medium text-ink">
-          Certificate file <span className="font-normal text-muted">(PDF, JPG or PNG, up to 5 MB)</span>
-          <input
-            type="file"
-            accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
-            onChange={(e) => {
-              const f = e.target.files?.[0] ?? null;
-              if (f && !TAX_TYPES.includes(f.type)) return setError("Please attach a PDF, JPG or PNG file.");
-              if (f && f.size > TAX_MAX_BYTES) return setError("The file is larger than 5 MB.");
-              setError("");
-              onFile(f);
-            }}
-            className="mt-2 block w-full text-sm text-ink file:mr-3 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:font-semibold file:text-brand-700"
-          />
-        </label>
-        {error && <p className="mt-1 text-xs text-red-700">{error}</p>}
-        {file && <p className="mt-2 text-sm text-ink">Attached: {file.name} ({Math.ceil(file.size / 1024).toLocaleString("en-US")} KB)</p>}
-        {!file && val("G3_FILE") && <p className="mt-2 text-sm text-muted">You attached {val("G3_FILE")} earlier. Files are not kept after you leave the page, so please attach it again.</p>}
-      </div>
+      <FileField label="Certificate file" id="G3" answers={answers} file={file} onFile={onFile} />
       {status === "expired" && (
         <p className="mt-4 rounded-lg bg-gold-100 p-3 text-sm text-ink">This certificate has expired. You can continue, but an expired certificate caps your grade at C.</p>
       )}
@@ -193,7 +304,7 @@ export function EhiraAssessment() {
   const [own, setState] = useState<Draft | null>(null);
   const state = own ?? saved;
   const [pos, setPos] = useState(-1);
-  const [taxFile, setTaxFile] = useState<File | null>(null);
+  const [files, setFiles] = useState<Record<string, File | null>>({});
   const { answers, type, name } = state;
 
   const update = (patch: Partial<Draft>) => {
@@ -202,6 +313,18 @@ export function EhiraAssessment() {
     save(next);
   };
   const setAnswer = (id: string, v: Answers[string]) => update({ answers: { ...answers, [id]: v } });
+  // Several fields can change in one event (the declaration's tick and its date), so each builds on the latest draft.
+  const setField = (id: string, v: Answers[string]) =>
+    setState((prev) => {
+      const base = prev ?? saved;
+      const next = { ...base, answers: { ...base.answers, [id]: v } };
+      save(next);
+      return next;
+    });
+  const setFile = (id: string, f: File | null) => {
+    setFiles((x) => ({ ...x, [id]: f }));
+    setField(`${id}_FILE`, f?.name);
+  };
 
   const bt = (businessTypes.some((b) => b.id === type) ? type : "sme") as BusinessType;
   const result = useMemo(() => score(answers, bt), [answers, bt]);
@@ -220,7 +343,13 @@ export function EhiraAssessment() {
   const q: Question | undefined = item
     ? questions.find((x) => x.id === item.id) ?? { ...screening.find((s) => s.id === item.id)!, dimension: "governance", type: "yesno", required: true, weight: 0, action: "" }
     : undefined;
-  const answered = q ? (q.type === "taxclearance" ? taxComplete(answers, taxFile) : !q.required || answers[q.id] !== undefined) : false;
+  const answered = q
+    ? q.type === "taxclearance"
+      ? taxComplete(answers, files.G3 ?? null)
+      : q.type === "creditinfo"
+        ? creditComplete(answers, files.F8 ?? null)
+        : !q.required || answers[q.id] !== undefined
+    : false;
 
   const go = (to: number) => {
     setPos(to);
@@ -255,14 +384,14 @@ export function EhiraAssessment() {
           {type && <p className="mt-2 text-sm text-muted">Focus for this version: {businessTypes.find((t) => t.id === type)?.focus}</p>}
         </fieldset>
         <p className="rounded-lg bg-canvas p-3 text-sm text-ink">
-          Have your tax clearance certificate ready (PDF or photo). It is mandatory, and you will need your TIN, the certificate number and its dates.
+          Have your tax clearance certificate ready (PDF or photo), with your TIN, the certificate number and its dates. You will also either sign a declaration that the business has no non-performing loan or attach your own NBE credit report. Both are mandatory.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <button type="button" disabled={!type} onClick={() => go(0)} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
             {Object.keys(answers).length ? "Continue the assessment" : "Start the assessment"}
           </button>
           {Object.keys(answers).length > 0 && (
-            <button type="button" onClick={() => { update({ answers: {} }); setTaxFile(null); }} className="text-sm font-semibold text-brand-700 hover:underline">
+            <button type="button" onClick={() => { update({ answers: {} }); setFiles({}); }} className="text-sm font-semibold text-brand-700 hover:underline">
               Clear my answers and start over
             </button>
           )}
@@ -278,9 +407,9 @@ export function EhiraAssessment() {
         name={name}
         type={businessTypes.find((t) => t.id === bt)!.label}
         answers={answers}
-        taxFile={taxFile}
+        files={files}
         onEdit={() => go(0)}
-        onRestart={() => { update({ answers: {} }); setTaxFile(null); go(-1); }}
+        onRestart={() => { update({ answers: {} }); setFiles({}); go(-1); }}
       />
     );
 
@@ -308,16 +437,9 @@ export function EhiraAssessment() {
         {item.first && item.step.intro && <p className="mt-4 text-muted">{item.step.intro}</p>}
       </div>
       {q!.type === "taxclearance" ? (
-        <TaxClearanceField
-          q={q!}
-          answers={answers}
-          file={taxFile}
-          onAnswer={setAnswer}
-          onFile={(f) => {
-            setTaxFile(f);
-            setAnswer("G3_FILE", f?.name);
-          }}
-        />
+        <TaxClearanceField q={q!} answers={answers} file={files.G3 ?? null} onAnswer={setField} onFile={(f) => setFile("G3", f)} />
+      ) : q!.type === "creditinfo" ? (
+        <CreditInfoField q={q!} answers={answers} file={files.F8 ?? null} onAnswer={setField} onFile={(f) => setFile("F8", f)} business={name} />
       ) : (
         <QuestionField key={q!.id} q={q!} value={answers[q!.id]} onChange={q!.type === "yesno" || q!.type === "scale" || q!.type === "choice" ? choose : (v) => setAnswer(q!.id, v)} />
       )}
@@ -328,7 +450,7 @@ export function EhiraAssessment() {
         <button type="submit" disabled={!answered} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
           {last ? "Generate my report" : q!.required ? "Next" : answers[q!.id] === undefined ? "Skip" : "Next"}
         </button>
-        {!answered && <p className="text-sm text-muted">{q!.type === "taxclearance" ? "Fill in every field and attach the certificate to continue." : "Answer this question to continue."}</p>}
+        {!answered && <p className="text-sm text-muted">{q!.type === "taxclearance" ? "Fill in every field and attach the certificate to continue." : q!.type === "creditinfo" ? "Sign the declaration or attach your credit report to continue." : "Answer this question to continue."}</p>}
       </div>
     </form>
   );
@@ -342,7 +464,7 @@ const gradeTone: Record<string, string> = {
   E: "from-red-800 to-red-700 text-white",
 };
 
-function Report({ result, name, type, answers, taxFile, onEdit, onRestart }: { result: ReturnType<typeof score>; name: string; type: string; answers: Answers; taxFile: File | null; onEdit: () => void; onRestart: () => void }) {
+function Report({ result, name, type, answers, files, onEdit, onRestart }: { result: ReturnType<typeof score>; name: string; type: string; answers: Answers; files: Record<string, File | null>; onEdit: () => void; onRestart: () => void }) {
   const tax = taxClearance(answers);
   const fmt = (d: Answers[string]) => (typeof d === "string" && d ? new Date(`${d}T00:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "–");
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
@@ -410,9 +532,28 @@ function Report({ result, name, type, answers, taxFile, onEdit, onRestart }: { r
           <div><dt className="text-muted">Certificate number</dt><dd className="font-medium text-ink">{answers.G3_NO ?? "–"}</dd></div>
           <div><dt className="text-muted">Issued</dt><dd className="font-medium text-ink">{fmt(answers.G3_ISSUE)}</dd></div>
           <div><dt className="text-muted">Valid until</dt><dd className="font-medium text-ink">{fmt(answers.G3_EXPIRY)}{tax === "expired" && <span className="text-red-700"> (expired)</span>}</dd></div>
-          <div className="sm:col-span-2"><dt className="text-muted">File</dt><dd className="font-medium text-ink">{taxFile?.name ?? answers.G3_FILE ?? "–"}</dd></div>
+          <div className="sm:col-span-2"><dt className="text-muted">File</dt><dd className="font-medium text-ink">{files.G3?.name ?? answers.G3_FILE ?? "–"}</dd></div>
         </dl>
         <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. EABIX verifies it with the issuing tax authority in the verified EHIRA.</p>
+      </section>
+
+      <section className="rounded-xl border border-line bg-white p-5">
+        <h4 className="font-bold text-ink">Credit information</h4>
+        {answers.F8_ROUTE === "declaration" ? (
+          <>
+            <p className="mt-2 text-sm text-ink">{declarationText(name)}</p>
+            <p className="mt-2 text-sm text-muted">
+              Signed by {answers.F8_SIGNER} ({answers.F8_POSITION}) on {fmt(answers.F8_DATE)}.
+            </p>
+          </>
+        ) : (
+          <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+            <div><dt className="text-muted">NBE credit report dated</dt><dd className="font-medium text-ink">{fmt(answers.F8_REPORT_DATE)}</dd></div>
+            <div><dt className="text-muted">File</dt><dd className="font-medium text-ink">{files.F8?.name ?? answers.F8_FILE ?? "–"}</dd></div>
+            <div className="sm:col-span-2"><dt className="text-muted">Loan more than 90 days overdue</dt><dd className="font-medium text-ink">{answers.F8 === "yes" ? "Yes, reported" : "None reported"}</dd></div>
+          </dl>
+        )}
+        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. EABIX analysts review it in the verified EHIRA.</p>
       </section>
 
       <section>

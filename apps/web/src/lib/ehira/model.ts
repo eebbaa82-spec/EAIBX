@@ -49,7 +49,7 @@ export type Question = {
   dimension: DimensionId;
   text: string;
   help?: string;
-  type: "yesno" | "scale" | "percent" | "number" | "money" | "months" | "choice" | "taxclearance";
+  type: "yesno" | "scale" | "percent" | "number" | "money" | "months" | "choice" | "taxclearance" | "creditinfo";
   /** Answer options for `choice` questions; a null score means the option is not scored. */
   options?: { value: string; label: string; score: number | null }[];
   /** Business types the question applies to; all types when absent. */
@@ -91,7 +91,7 @@ export const questions: Question[] = [
 
   { id: "F6", dimension: "financial", added: true, text: "Do all sales and expenses go through a business bank account, separate from personal money?", type: "yesno", required: true, weight: 3, action: "Run all business income and spending through a business bank account. Mixed accounts make revenue impossible for a bank or investor to verify." },
   { id: "F7", dimension: "financial", added: true, text: "How many months of fixed costs could you cover from cash on hand today?", help: "Cash and bank balances divided by monthly rent, salaries and other overheads.", type: "months", required: true, weight: 4, bands: [{ min: 6, score: 100 }, { min: 3, score: 75 }, { min: 1, score: 50 }, { min: 0, score: 20 }], action: "Aim for a cash reserve of at least six months of fixed costs and forecast cash monthly. Try the EABIX cash flow forecaster." },
-  { id: "F8", dimension: "financial", added: true, text: "Is any loan repayment currently more than 90 days overdue?", help: "Banks treat loans over 90 days past due as non-performing.", type: "yesno", required: true, weight: 0, unscored: true, action: "" },
+  { id: "F8", dimension: "financial", added: true, text: "Credit information: declaration or NBE credit report", help: "Mandatory. EABIX cannot access the National Bank of Ethiopia's credit reference system, so either sign the declaration below or attach your own commercial credit report from NBE for our analysts to review.", type: "creditinfo", required: true, weight: 0, unscored: true, evidence: "Signed declaration or NBE commercial credit report", action: "" },
 
   // B. Market & Customer
   { id: "M1", dimension: "market", text: "How many active customers do you have?", type: "number", required: true, weight: 0, unscored: true, action: "" },
