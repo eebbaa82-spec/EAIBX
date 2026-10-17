@@ -390,8 +390,8 @@ export function EhiraAssessment() {
           <button type="button" disabled={!type} onClick={() => go(0)} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
             {Object.keys(answers).length ? "Continue the assessment" : "Start the assessment"}
           </button>
-          {Object.keys(answers).length > 0 && (
-            <button type="button" onClick={() => { update({ answers: {} }); setFiles({}); }} className="text-sm font-semibold text-brand-700 hover:underline">
+          {(Object.keys(answers).length > 0 || name !== "" || type !== "") && (
+            <button type="button" onClick={() => { update(EMPTY); setFiles({}); }} className="text-sm font-semibold text-brand-700 hover:underline">
               Clear my answers and start over
             </button>
           )}
@@ -409,7 +409,7 @@ export function EhiraAssessment() {
         answers={answers}
         files={files}
         onEdit={() => go(0)}
-        onRestart={() => { update({ answers: {} }); setFiles({}); go(-1); }}
+        onRestart={() => { update(EMPTY); setFiles({}); go(-1); }}
       />
     );
 
