@@ -23,8 +23,22 @@ export function bandScore(value: number, bands: Band[]) {
 
 export const isVisible = (q: Question, a: Answers, type: BusinessType) => (!q.for || q.for.includes(type)) && (!q.showIf || q.showIf(a));
 
+/** Local date as YYYY-MM-DD, to compare with date inputs. */
+export const isoDate = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+/** Tax clearance (G3): valid while today is on or before the expiry date given. */
+export function taxClearance(a: Answers, today = new Date()): "valid" | "expired" | "missing" {
+  const expiry = a.G3_EXPIRY;
+  if (typeof expiry !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(expiry)) return "missing";
+  return expiry >= isoDate(today) ? "valid" : "expired";
+}
+
 /** Response score from 0 to 100, or null when the question is unscored or unanswered. */
 export function responseScore(q: Question, a: Answers): number | null {
+  if (q.type === "taxclearance") {
+    const t = taxClearance(a);
+    return t === "missing" ? null : t === "valid" ? 100 : 0;
+  }
   const v = a[q.id];
   if (q.unscored || v === undefined || v === "na") return null;
   if (q.type === "yesno") return v === "yes" ? 100 : 0;
@@ -79,7 +93,7 @@ export type RedFlag = { flag: string; cap: Grade };
 export function redFlags(a: Answers, r: Ratio[]): RedFlag[] {
   const flags: RedFlag[] = [];
   if (a.F1 === "no") flags.push({ flag: "No annual financial statements", cap: "C" });
-  if (a.G3 === "no") flags.push({ flag: "Tax non-compliance", cap: "C" });
+  if (taxClearance(a) === "expired") flags.push({ flag: "Tax clearance certificate expired", cap: "C" });
   const equity = num(a.FR4);
   if (equity !== undefined && equity < 0) flags.push({ flag: "Negative equity", cap: "D" });
   const dscr = r.find((x) => x.id === "dscr");

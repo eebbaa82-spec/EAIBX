@@ -32,21 +32,28 @@ export default function EhiraPage() {
           <ButtonLink href="#assessment" variant="light">
             Start my free EHIRA
           </ButtonLink>
-          <p className="w-full text-sm text-brand-100">About 15 minutes. Free self-assessment with an instant report.</p>
+          <p className="w-full text-sm text-brand-100">About 15 minutes, one question at a time. Have your tax clearance certificate ready.</p>
         </PageHero>
+      </div>
 
-        <Section title="Eight dimensions">
+      <Section id="assessment" title="Take the assessment">
+        <EhiraAssessment />
+      </Section>
+
+      <div className="print:hidden">
+
+        <Section tone="canvas" title="How EHIRA is scored" intro="EHIRA looks at eight dimensions of the business.">
           <DataTable head={["Dimension", "What we look at"]} rows={dimensions.map((d) => [d.name, covers[d.id]])} />
         </Section>
 
-        <Section tone="canvas" title="Weighted for your type of business" intro="Each version puts the weight where it matters most at that stage.">
+        <Section title="Weighted for your type of business" intro="Each version puts the weight where it matters most at that stage.">
           <DataTable
             head={["Dimension", ...businessTypes.map((t) => t.label)]}
             rows={dimensions.map((d) => [d.name, ...businessTypes.map((t) => (typeWeights[t.id][d.id] ? `${typeWeights[t.id][d.id]}%` : "–"))])}
           />
         </Section>
 
-        <Section title="What the grades mean">
+        <Section tone="canvas" title="What the grades mean">
           <DataTable
             head={["Grade", "Score", "Meaning"]}
             rows={gradeBands.map((b, i) => [
@@ -56,18 +63,18 @@ export default function EhiraPage() {
             ])}
           />
           <p className="mt-4 text-ink">
-            Some answers cap the grade however high the score: for example, no annual financial statements or overdue tax filings limit
+            Some answers cap the grade however high the score: for example, no annual financial statements or an expired tax clearance certificate limit
             the grade to C, and negative equity, debt service coverage below 1.0 or a loan more than 90 days overdue limit it to D.
           </p>
         </Section>
 
-        <Section tone="canvas" title="Two levels">
+        <Section title="Two levels">
           <CardGrid cols={2}>
             <Card title="Free self-assessment">
               Answer the guided questions below and get an instant indicative grade, readiness rating and action list.
             </Card>
             <Card title="Verified EHIRA (price announced after the launch period)">
-              Upload your financial statements and supporting documents. An EABIX analyst reviews them and issues a verified grade
+              Upload your financial statements, tax clearance certificate and supporting documents. An EABIX analyst reviews them and issues a verified grade
               that investors and lenders can rely on, valid for 12 months.
             </Card>
           </CardGrid>
@@ -80,9 +87,6 @@ export default function EhiraPage() {
         </Section>
       </div>
 
-      <Section id="assessment" title="Take the assessment">
-        <EhiraAssessment />
-      </Section>
     </>
   );
 }

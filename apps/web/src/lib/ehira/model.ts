@@ -49,7 +49,7 @@ export type Question = {
   dimension: DimensionId;
   text: string;
   help?: string;
-  type: "yesno" | "scale" | "percent" | "number" | "money" | "months" | "choice";
+  type: "yesno" | "scale" | "percent" | "number" | "money" | "months" | "choice" | "taxclearance";
   /** Answer options for `choice` questions; a null score means the option is not scored. */
   options?: { value: string; label: string; score: number | null }[];
   /** Business types the question applies to; all types when absent. */
@@ -122,7 +122,7 @@ export const questions: Question[] = [
   // E. Governance
   { id: "G1", dimension: "governance", text: "Does the business have a Board of Directors?", type: "yesno", required: true, weight: 5, action: "Form a board, or at least an advisory board, that meets regularly with minutes." },
   { id: "G2", dimension: "governance", text: "How formal are your internal controls?", help: "1 = none, 3 = some approvals and reconciliations, 5 = documented and regularly reviewed.", type: "scale", required: true, weight: DEFAULT_WEIGHT, action: "Separate duties for cash handling, approvals and record keeping, and reconcile accounts monthly." },
-  { id: "G3", dimension: "governance", text: "Are your tax filings up to date?", type: "yesno", required: true, weight: DEFAULT_WEIGHT, action: "Bring all tax filings and payments up to date and keep the clearance. This caps your grade at C until fixed." },
+  { id: "G3", dimension: "governance", text: "Upload your current tax clearance certificate", help: "Mandatory. Issued by the Ministry of Revenues or your city or regional revenue bureau. EABIX checks it against the issuer's records in the verified EHIRA.", type: "taxclearance", required: true, weight: DEFAULT_WEIGHT, evidence: "Tax clearance certificate", action: "Bring all tax filings and payments up to date and renew your tax clearance certificate. An expired certificate caps your grade at C." },
 
   { id: "G4", dimension: "governance", added: true, text: "Are your accounts prepared under IFRS or IFRS for SMEs, as required by the Accounting and Auditing Board of Ethiopia?", type: "yesno", required: true, weight: 3, action: "Move your reporting to IFRS for SMEs (or full IFRS where required) with a qualified accountant." },
   { id: "G5", dimension: "governance", added: true, text: "Are the memorandum of association, shareholder records and any partner agreements up to date and registered?", type: "yesno", required: true, weight: 3, action: "Update and register your memorandum of association and shareholder records. Unclear ownership stops investment deals." },

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { businessTypes, dimensions, questions, screening, typeWeights, type Answers, type BusinessType, type DimensionId, type Question } from "@/lib/ehira/model";
-import { isVisible, score } from "@/lib/ehira/score";
+import { isVisible, score, taxClearance } from "@/lib/ehira/score";
 
 const STORAGE_KEY = "eabix-ehira-draft-v2";
 
@@ -118,11 +118,82 @@ function QuestionField({ q, value, onChange }: { q: Question | { id: string; tex
   );
 }
 
+const TAX_TYPES = ["application/pdf", "image/jpeg", "image/png"];
+const TAX_MAX_BYTES = 5 * 1024 * 1024;
+
+/** The certificate details are complete and the file is attached in this browser session. */
+function taxComplete(a: Answers, file: File | null) {
+  const s = (k: string) => (typeof a[k] === "string" ? (a[k] as string).trim() : "");
+  return /^\d{10}$/.test(s("G3_TIN")) && s("G3_NO") !== "" && s("G3_ISSUE") !== "" && s("G3_EXPIRY") !== "" && s("G3_EXPIRY") >= s("G3_ISSUE") && file !== null;
+}
+
+function TaxClearanceField({ q, answers, file, onAnswer, onFile }: { q: Question; answers: Answers; file: File | null; onAnswer: (id: string, v: string) => void; onFile: (f: File | null) => void }) {
+  const [error, setError] = useState("");
+  const val = (k: string) => (typeof answers[k] === "string" ? (answers[k] as string) : "");
+  const status = taxClearance(answers);
+  const tin = val("G3_TIN");
+  const dates = val("G3_ISSUE") && val("G3_EXPIRY") && val("G3_EXPIRY") < val("G3_ISSUE");
+  return (
+    <fieldset className="rounded-xl border border-line bg-white p-5">
+      <legend className="sr-only">{q.text}</legend>
+      <p className="font-semibold text-ink">{q.text}</p>
+      {q.help && <p className="mt-1 text-sm text-muted">{q.help}</p>}
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        <label className="block text-sm font-medium text-ink">
+          Taxpayer Identification Number (TIN)
+          <input inputMode="numeric" maxLength={10} value={tin} onChange={(e) => onAnswer("G3_TIN", e.target.value.replace(/\D/g, ""))} className={`${inputClass} max-w-none`} />
+          {tin && tin.length !== 10 && <span className="mt-1 block text-xs font-normal text-red-700">A TIN has 10 digits.</span>}
+        </label>
+        <label className="block text-sm font-medium text-ink">
+          Certificate number
+          <input value={val("G3_NO")} onChange={(e) => onAnswer("G3_NO", e.target.value)} className={`${inputClass} max-w-none`} />
+        </label>
+        <label className="block text-sm font-medium text-ink">
+          Date issued
+          <input type="date" value={val("G3_ISSUE")} onChange={(e) => onAnswer("G3_ISSUE", e.target.value)} className={`${inputClass} max-w-none`} />
+        </label>
+        <label className="block text-sm font-medium text-ink">
+          Valid until
+          <input type="date" value={val("G3_EXPIRY")} onChange={(e) => onAnswer("G3_EXPIRY", e.target.value)} className={`${inputClass} max-w-none`} />
+          {dates && <span className="mt-1 block text-xs font-normal text-red-700">The expiry date is before the issue date.</span>}
+        </label>
+      </div>
+      <div className="mt-4">
+        <label className="block text-sm font-medium text-ink">
+          Certificate file <span className="font-normal text-muted">(PDF, JPG or PNG, up to 5 MB)</span>
+          <input
+            type="file"
+            accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+            onChange={(e) => {
+              const f = e.target.files?.[0] ?? null;
+              if (f && !TAX_TYPES.includes(f.type)) return setError("Please attach a PDF, JPG or PNG file.");
+              if (f && f.size > TAX_MAX_BYTES) return setError("The file is larger than 5 MB.");
+              setError("");
+              onFile(f);
+            }}
+            className="mt-2 block w-full text-sm text-ink file:mr-3 file:rounded-lg file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:font-semibold file:text-brand-700"
+          />
+        </label>
+        {error && <p className="mt-1 text-xs text-red-700">{error}</p>}
+        {file && <p className="mt-2 text-sm text-ink">Attached: {file.name} ({Math.ceil(file.size / 1024).toLocaleString("en-US")} KB)</p>}
+        {!file && val("G3_FILE") && <p className="mt-2 text-sm text-muted">You attached {val("G3_FILE")} earlier. Files are not kept after you leave the page, so please attach it again.</p>}
+      </div>
+      {status === "expired" && (
+        <p className="mt-4 rounded-lg bg-gold-100 p-3 text-sm text-ink">This certificate has expired. You can continue, but an expired certificate caps your grade at C.</p>
+      )}
+      <p className="mt-4 text-xs text-muted">
+        The file stays in this browser and is not sent to EABIX. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
+      </p>
+    </fieldset>
+  );
+}
+
 export function EhiraAssessment() {
   const saved = useSyncExternalStore(subscribeNever, readSaved, () => EMPTY);
   const [own, setState] = useState<Draft | null>(null);
   const state = own ?? saved;
-  const [step, setStep] = useState(-1);
+  const [pos, setPos] = useState(-1);
+  const [taxFile, setTaxFile] = useState<File | null>(null);
   const { answers, type, name } = state;
 
   const update = (patch: Partial<Draft>) => {
@@ -135,25 +206,34 @@ export function EhiraAssessment() {
   const bt = (businessTypes.some((b) => b.id === type) ? type : "sme") as BusinessType;
   const result = useMemo(() => score(answers, bt), [answers, bt]);
 
-  // Dimensions with no weight for this business type are skipped.
+  // One question per screen. Dimensions with no weight for this business type are skipped.
   const steps = allSteps.filter((s) => s.id === "screening" || typeWeights[bt][s.id as DimensionId] > 0);
-  const current = steps[step];
-  const visibleIds = current ? current.ids.filter((id) => {
-    const q = questions.find((x) => x.id === id);
-    return !q || isVisible(q, answers, bt);
-  }) : [];
-  const missing = visibleIds.filter((id) => {
-    const q = questions.find((x) => x.id === id);
-    const required = q ? q.required : true;
-    return required && answers[id] === undefined;
-  });
+  const items = steps.flatMap((s, si) =>
+    s.ids
+      .filter((id) => {
+        const q = questions.find((x) => x.id === id);
+        return !q || isVisible(q, answers, bt);
+      })
+      .map((id, qi) => ({ id, step: s, stepIndex: si, first: qi === 0 })),
+  );
+  const item = items[pos];
+  const q: Question | undefined = item
+    ? questions.find((x) => x.id === item.id) ?? { ...screening.find((s) => s.id === item.id)!, dimension: "governance", type: "yesno", required: true, weight: 0, action: "" }
+    : undefined;
+  const answered = q ? (q.type === "taxclearance" ? taxComplete(answers, taxFile) : !q.required || answers[q.id] !== undefined) : false;
 
   const go = (to: number) => {
-    setStep(to);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setPos(to);
+    window.scrollTo({ top: document.getElementById("assessment")?.offsetTop ?? 0, behavior: "smooth" });
+  };
+  const choose = (v: Answers[string]) => {
+    const firstTime = answers[item.id] === undefined;
+    setAnswer(item.id, v);
+    // Move on by itself the first time a choice is picked; changing an answer stays put.
+    if (firstTime) window.setTimeout(() => go(pos + 1), 250);
   };
 
-  if (step === -1)
+  if (pos === -1)
     return (
       <div className="max-w-2xl space-y-5 rounded-xl border border-line bg-white p-6">
         <div>
@@ -174,55 +254,83 @@ export function EhiraAssessment() {
           </div>
           {type && <p className="mt-2 text-sm text-muted">Focus for this version: {businessTypes.find((t) => t.id === type)?.focus}</p>}
         </fieldset>
+        <p className="rounded-lg bg-canvas p-3 text-sm text-ink">
+          Have your tax clearance certificate ready (PDF or photo). It is mandatory, and you will need your TIN, the certificate number and its dates.
+        </p>
         <div className="flex flex-wrap items-center gap-3">
           <button type="button" disabled={!type} onClick={() => go(0)} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
             {Object.keys(answers).length ? "Continue the assessment" : "Start the assessment"}
           </button>
           {Object.keys(answers).length > 0 && (
-            <button type="button" onClick={() => update({ answers: {} })} className="text-sm font-semibold text-brand-700 hover:underline">
+            <button type="button" onClick={() => { update({ answers: {} }); setTaxFile(null); }} className="text-sm font-semibold text-brand-700 hover:underline">
               Clear my answers and start over
             </button>
           )}
         </div>
-        <p className="text-xs text-muted">About 15 minutes. Your answers stay in this browser only and are not sent to EABIX.</p>
+        <p className="text-xs text-muted">One question at a time, about 15 minutes. Your report appears at the end. Your answers stay in this browser only and are not sent to EABIX.</p>
       </div>
     );
 
-  if (step >= steps.length) return <Report result={result} name={name} type={businessTypes.find((t) => t.id === bt)!.label} onEdit={() => go(0)} onRestart={() => { update({ answers: {} }); go(-1); }} />;
+  if (pos >= items.length)
+    return (
+      <Report
+        result={result}
+        name={name}
+        type={businessTypes.find((t) => t.id === bt)!.label}
+        answers={answers}
+        taxFile={taxFile}
+        onEdit={() => go(0)}
+        onRestart={() => { update({ answers: {} }); setTaxFile(null); go(-1); }}
+      />
+    );
 
+  const last = pos === items.length - 1;
   return (
-    <div className="max-w-3xl">
+    <form
+      className="max-w-3xl"
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (answered) go(pos + 1);
+      }}
+    >
       <div className="mb-6">
-        <p className="text-sm font-semibold text-brand-700">
-          Step {step + 1} of {steps.length}
-        </p>
-        <div className="mt-2 h-2 rounded-full bg-line">
-          <div className="h-2 rounded-full bg-brand-600 transition-all" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
+        <div className="flex flex-wrap justify-between gap-2 text-sm">
+          <p className="font-semibold text-brand-700">
+            {item.step.title} <span className="font-normal text-muted">· section {item.stepIndex + 1} of {steps.length}</span>
+          </p>
+          <p className="text-muted">
+            Question {pos + 1} of {items.length}
+          </p>
         </div>
-        <h3 className="mt-4 text-2xl font-bold text-ink">{current.title}</h3>
-        {current.intro && <p className="mt-1 text-muted">{current.intro}</p>}
+        <div className="mt-2 h-2 rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={items.length} aria-valuenow={pos + 1} aria-label="Progress">
+          <div className="h-2 rounded-full bg-brand-600 transition-all" style={{ width: `${((pos + 1) / items.length) * 100}%` }} />
+        </div>
+        {item.first && item.step.intro && <p className="mt-4 text-muted">{item.step.intro}</p>}
       </div>
-      <div className="space-y-4">
-        {visibleIds.map((id) => {
-          const q = questions.find((x) => x.id === id) ?? { ...screening.find((s) => s.id === id)!, type: "yesno" as const, required: true as const };
-          return <QuestionField key={id} q={q} value={answers[id]} onChange={(v) => setAnswer(id, v)} />;
-        })}
-      </div>
+      {q!.type === "taxclearance" ? (
+        <TaxClearanceField
+          q={q!}
+          answers={answers}
+          file={taxFile}
+          onAnswer={setAnswer}
+          onFile={(f) => {
+            setTaxFile(f);
+            setAnswer("G3_FILE", f?.name);
+          }}
+        />
+      ) : (
+        <QuestionField key={q!.id} q={q!} value={answers[q!.id]} onChange={q!.type === "yesno" || q!.type === "scale" || q!.type === "choice" ? choose : (v) => setAnswer(q!.id, v)} />
+      )}
       <div className="mt-6 flex flex-wrap items-center gap-3">
-        <button type="button" onClick={() => go(step - 1)} className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink hover:bg-canvas">
+        <button type="button" onClick={() => go(pos - 1)} className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink hover:bg-canvas">
           Back
         </button>
-        <button
-          type="button"
-          disabled={missing.length > 0}
-          onClick={() => go(step + 1)}
-          className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40"
-        >
-          {step === steps.length - 1 ? "See my results" : "Next"}
+        <button type="submit" disabled={!answered} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
+          {last ? "Generate my report" : q!.required ? "Next" : answers[q!.id] === undefined ? "Skip" : "Next"}
         </button>
-        {missing.length > 0 && <p className="text-sm text-muted">Answer the remaining {missing.length === 1 ? "question" : `${missing.length} questions`} to continue.</p>}
+        {!answered && <p className="text-sm text-muted">{q!.type === "taxclearance" ? "Fill in every field and attach the certificate to continue." : "Answer this question to continue."}</p>}
       </div>
-    </div>
+    </form>
   );
 }
 
@@ -234,7 +342,9 @@ const gradeTone: Record<string, string> = {
   E: "from-red-800 to-red-700 text-white",
 };
 
-function Report({ result, name, type, onEdit, onRestart }: { result: ReturnType<typeof score>; name: string; type: string; onEdit: () => void; onRestart: () => void }) {
+function Report({ result, name, type, answers, taxFile, onEdit, onRestart }: { result: ReturnType<typeof score>; name: string; type: string; answers: Answers; taxFile: File | null; onEdit: () => void; onRestart: () => void }) {
+  const tax = taxClearance(answers);
+  const fmt = (d: Answers[string]) => (typeof d === "string" && d ? new Date(`${d}T00:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "–");
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   return (
     <article className="space-y-8">
@@ -292,6 +402,18 @@ function Report({ result, name, type, onEdit, onRestart }: { result: ReturnType<
           </ul>
         </section>
       )}
+
+      <section className="rounded-xl border border-line bg-white p-5">
+        <h4 className="font-bold text-ink">Tax clearance certificate</h4>
+        <dl className="mt-3 grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
+          <div><dt className="text-muted">TIN</dt><dd className="font-medium text-ink">{answers.G3_TIN ?? "–"}</dd></div>
+          <div><dt className="text-muted">Certificate number</dt><dd className="font-medium text-ink">{answers.G3_NO ?? "–"}</dd></div>
+          <div><dt className="text-muted">Issued</dt><dd className="font-medium text-ink">{fmt(answers.G3_ISSUE)}</dd></div>
+          <div><dt className="text-muted">Valid until</dt><dd className="font-medium text-ink">{fmt(answers.G3_EXPIRY)}{tax === "expired" && <span className="text-red-700"> (expired)</span>}</dd></div>
+          <div className="sm:col-span-2"><dt className="text-muted">File</dt><dd className="font-medium text-ink">{taxFile?.name ?? answers.G3_FILE ?? "–"}</dd></div>
+        </dl>
+        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. EABIX verifies it with the issuing tax authority in the verified EHIRA.</p>
+      </section>
 
       <section>
         <h4 className="text-lg font-bold text-ink">Scores by dimension</h4>
