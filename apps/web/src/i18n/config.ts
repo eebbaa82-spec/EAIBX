@@ -11,7 +11,7 @@ export const localeNames: Record<Locale, { short: string; name: string }> = {
 export const translatedPaths: Record<Locale, string[]> = {
   en: [],
   am: ["/"],
-  om: [],
+  om: ["/"],
 };
 
 export function localeFromPath(pathname: string | null): Locale {

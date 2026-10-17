@@ -229,4 +229,100 @@ const am: HomeCopy = {
   ctaTalk: "ቡድናችንን ያነጋግሩ",
 };
 
-export const homeCopy: Partial<Record<Locale, HomeCopy>> = { en, am };
+/** Draft translation, pending review by a native Afaan Oromoo speaker. */
+const om: HomeCopy = {
+  heroTitle: "Bakka Yaadni Itti Guddatu, Investimentiin Itti Yaa'uu fi Daldalli Itti Deebi'ee Dandamatu.",
+  heroBody:
+    "EABIX waltajjii waljijjiirraa daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
+  searchLabel: "EABIX keessa barbaadaa",
+  searchPlaceholder: "Daldaltoota, dameewwan ykn invastaroota barbaadaa; fakkeenyaaf \"qindaa'ina oomisha qonnaa Oromiyaa keessatti\"",
+  searchButton: "Barbaadi",
+  heroButtons: ["Kaappitaala walitti qabaan jira", "Invest gochaan jira", "Daldala koo deebisee dandamachiisuun barbaada"],
+  heroNote: "Makamuun bilisa. Ibsa dhuunfaa mirkanaa'e. Finfinnee keessatti kan ijaarame.",
+  foundingNote: "Miseensonni hundeessitootaa Finfinnee, Hawaasaa, Baahir Daar, Maqalee, Dirree Dhawaa fi magaalota biroo irraa makamaa jiru.",
+  pathsTitle: "Karaa keessan filadhaa",
+  paths: [
+    {
+      audience: "Kalaqxota daldalaa",
+      heading: "Yaada keessan gara daldalaatti guddisaa",
+      body: "Sagantaa inkubeeshinii ykn saffisiisaa makamaa, gorsaa waliin wal-qunnamaa, akkasumas ibsa dhuunfaa invastarootaaf qophaa'e ijaaraa.",
+      link: "Guddachuu jalqabaa",
+      href: "/for-entrepreneurs",
+    },
+    {
+      audience: "Abbootii daldalaa",
+      heading: "Kaappitaala walitti qabaa ykn amanamummaan gurgurraa",
+      body: "Daldala keessan iccitiidhaan galmeessaa, qabxii Qorannoo Fayyaa Daldalaa mirkanaa'e qoodaa, bittootaa fi invastaroota cimoo fi qoratamaniin qofa haasa'aa.",
+      link: "Daldala keessan galmeessaa",
+      href: "/marketplace/new",
+    },
+    {
+      audience: "Invastaroota",
+      heading: "Carraawwan amanaman argadhaa",
+      body: "Carraawwan qoratamanii sadarkaan kennameef dameewwan Itoophiyaa keessaa ilaalaa, kutaalee waliigaltee seenuuf gaafadhaa, adeemsa investimentii keessanis bakka tokkotti hordofaa.",
+      link: "Invest gochuu jalqabaa",
+      href: "/for-investors",
+    },
+    {
+      audience: "Daldaltoota dhiibbaa jala jiran",
+      heading: "Utuu yeroon hin darbin deebi'aa dandamadhaa",
+      body: "Qorannoo Fayyaa Daldalaa bilisaa godhaa, gorsitoota deebisanii dandamachiisuu beekamtii qaban irraa karoora argadhaa, yoo barbaachises irra deebiin qindeessuu ykn gurgurtaa qajeelfamaa ilaalaa.",
+      link: "Deebi'anii dandamachuu jalqabaa",
+      href: "/recovery",
+    },
+  ],
+  howTitle: "EABIX akkamitti hojjeta",
+  howSteps: [
+    { title: "Ibsa dhuunfaa keessan uumaa.", body: "Eenyu akka taatanii fi maal akka barbaaddan nutti himaa. Gara daqiiqaa kudhanii fudhata." },
+    {
+      title: "Qoratamaa.",
+      body: "Qorannoon Fayyaa Daldalaa keenya daldala keessan maallaqa, hojii, gabaa, humna namaa fi bulchiinsaan madaala; sadarkaa A hanga E kenna.",
+    },
+    {
+      title: "Wal-simsiifamaa.",
+      body: "EABIX ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
+    },
+    {
+      title: "Xumuraa fi guddadhaa.",
+      body: "Sanadoota kutaa waliigaltee nageenya qabu keessatti qoodaa, deggersa ogeessaatiin haalawwan irratti waliigalaa, Akkaadamii waliin ijaaruu itti fufaa.",
+    },
+  ],
+  howButton: "Akkamitti akka hojjetu ilaalaa",
+  oppTitle: "Carraawwan torban kanaa",
+  oppIntro: "Daldaltoota mirkanaa'anii amma kaappitaala walitti qabaa jiran ykn bittaaf banaa ta'an keessaa filatamoo.",
+  oppEmpty:
+    "Daldaltoonni mirkanaa'an jalqabaa hojii yommuu eegalan tarreeffamni filatamoon asitti mul'atu. Kaardiin tokkoon tokkoon isaa damee, naannoo, hanga maallaqa barbaadamu qarshiidhaan fi sadarkaa fayyaa A hanga E agarsiisa.",
+  oppButton: "Carraawwan hunda ilaalaa",
+  whyTitle: "Waltajjii qofa jireenya daldalaa guutuu haguugu.",
+  whyItems: [
+    { title: "Yaada irraa hanga gurgurtaatti.", body: "Inkubeeshinii, investimentii, guddinaa fi gurgurtaa waltajjii tokko irratti; kanaaf seenaan hojii keessanii isin hordofa." },
+    { title: "Qabxii malee dhiyeessa qofa miti.", body: "Invastaroonni waan hundeessaan agarsiisuu filate qofa osoo hin taane, sadarkaa fayyaa walaboo ilaalu." },
+    { title: "Fayyisuu qofa osoo hin taane, deebi'anii dandamachuu.", body: "Qorannoo fi deggersi deebisanii dandamachiisuu gurgurtaa dirqamaa dura dhufa, booda miti." },
+    {
+      title: "Jalqabumaa baankiif qophaa'e.",
+      body: "Giddugalli Bulchiinsa Liqii keenya daldaltoonni hariiroo baankii fi dhaabbilee maallaqaa xixiqqoo waliin qaban akka bulchan, liqeessitoonnis qorannoo maamilaa saffisaan akka xumuran gargaara.",
+    },
+    {
+      title: "Itoophiyaaf kan hojjetame.",
+      body: "Chapa ykn Telebirr fayyadamuun qarshiidhaan kaffalaa, Afaan Amaaraa ykn Ingiliziitiin dubbisaa, akkasumas unka seera Itoophiyaaf qophaa'e fayyadamaa.",
+    },
+  ],
+  programsTitle: "Sagantaalee iyyannoo fudhachaa jiran",
+  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni EABIX irratti gaggeessan.",
+  programsEmpty: "Sagantaaleen banaa ta'an qindeessaa fi guyyaa xumuraa isaanii waliin asitti tarreeffamu.",
+  programsButton: "Sagantaalee hunda ilaalaa",
+  partnerTitle: "EABIX waliin hojjedhaa",
+  partnerBody:
+    "Sagantaalee fi tajaajila isaanii daldaltoota Itoophiyaatiif dhiyeessuuf baankota, dhaabbilee maallaqaa xixiqqoo, michoota misoomaa fi yuunivarsiitiiwwan waliin hojjechaa jirra. Beeksisni michummaa dhiyootti ni dhufa.",
+  partnerButton: "Michuu ta'aa",
+  academyTitle: "Leenjii ogummaa fi daldala ijaaru",
+  academyBody:
+    "Koorsiiwwan ogummaa fi ragaa baankii, liqii, gabaa kaappitaalaa fi baankii investimentii, akkasumas koorsiiwwan hojiirra oolan hundeessitootaaf, Afaan Amaaraa fi Ingiliziitiin. Baankonni fi dhaabbileen maallaqaa xixiqqoo gareewwan isaanii guutuu galmeessuu danda'u.",
+  academyButton: "Akkaadamii qoradhaa",
+  ctaTitle: "Boqonnaan keessan itti aanu asitti jalqaba.",
+  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, EABIX namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
+  ctaJoin: "EABIX bilisaan makamaa",
+  ctaTalk: "Garee keenya haasofsiisaa",
+};
+
+export const homeCopy: Partial<Record<Locale, HomeCopy>> = { en, am, om };

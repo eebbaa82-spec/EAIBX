@@ -144,8 +144,8 @@ export function Header() {
 function LanguageSwitch({ locale, pathname }: { locale: Locale; pathname: string | null }) {
   const t = translator(locale);
   const base = basePath(pathname);
-  // Amharic currently covers the home page only; other pages open the Amharic home.
-  const amHref = localizeHref("am", base) === base ? "/am/" : localizeHref("am", base);
+  // Translations cover the home page only so far; other pages open the translated home.
+  const target = (code: "am" | "om") => (localizeHref(code, base) === base ? `/${code}/` : localizeHref(code, base));
   const option = (code: Locale, target: string) =>
     code === locale ? (
       <span className="font-semibold text-ink" aria-current="true" lang={code}>
@@ -160,11 +160,9 @@ function LanguageSwitch({ locale, pathname }: { locale: Locale; pathname: string
     <span className="flex items-center gap-1 text-sm" aria-label={t("Language")}>
       {option("en", base)}
       <span className="text-line">|</span>
-      {option("am", amHref)}
+      {option("am", target("am"))}
       <span className="text-line">|</span>
-      <span className="cursor-not-allowed text-muted/60" title={t("Afaan Oromoo version coming soon")} aria-disabled="true" lang="om">
-        {localeNames.om.short}
-      </span>
+      {option("om", target("om"))}
     </span>
   );
 }

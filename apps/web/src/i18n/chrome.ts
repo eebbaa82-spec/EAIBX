@@ -2,8 +2,8 @@ import type { Locale } from "./config";
 
 /**
  * Site-wide words (menu, footer, buttons), keyed by the English text.
- * A missing key falls back to English. Amharic is a draft pending native review;
- * Afaan Oromo is not started yet.
+ * A missing key falls back to English. Amharic and Afaan Oromoo are drafts
+ * pending native review.
  */
 const am: Record<string, string> = {
   // Menu
@@ -101,10 +101,111 @@ const am: Record<string, string> = {
   "Built in Ethiopia for Ethiopia": "በኢትዮጵያ ለኢትዮጵያ የተገነባ",
   // Language switch
   Language: "ቋንቋ",
-  "Afaan Oromoo version coming soon": "የአፋን ኦሮሞ ቅጂ በቅርቡ ይቀርባል",
   // Translation notice
   draftNotice: "ይህ ገጽ የአማርኛ ረቂቅ ትርጉም ሲሆን በባለሙያ እየተገመገመ ነው።",
   readInEnglish: "በእንግሊዝኛ ያንብቡ",
+};
+
+/** Draft Afaan Oromoo (Qubee), pending native review. */
+const om: Record<string, string> = {
+  // Menu
+  Explore: "Qoradhu",
+  Grow: "Guddadhu",
+  Recover: "Deebi'i",
+  Invest: "Invest godhi",
+  Learn: "Baradhu",
+  Pricing: "Gatii",
+  "Opportunities Marketplace": "Gabaa Carraawwanii",
+  "Businesses raising capital or for sale": "Daldaltoota kaappitaala walitti qabaa jiran ykn gurgurtaaf dhiyaatan",
+  Investors: "Invastaroota",
+  "Who is funding Ethiopian business": "Eenyutu daldala Itoophiyaa maallaqaan deggeraa jira",
+  Advisors: "Gorsitoota",
+  "Vetted experts to help you close": "Ogeeyyii qoratamanii fi waliigaltee keessan xumuruuf isin gargaaran",
+  Programs: "Sagantaalee",
+  "Incubation and acceleration cohorts": "Garee inkubeeshinii fi saffisiisaa",
+  Mentors: "Gorsitoota Muuxannoo",
+  "Learn from people who have built it": "Namoota daldala ijaaran irraa baradhaa",
+  Academy: "Akkaadamii",
+  "Banking, credit and investment training": "Leenjii baankii, liqii fi investimentii",
+  "Business Health Check": "Qorannoo Fayyaa Daldalaa",
+  "Know where you stand in 20 minutes": "Haala keessan daqiiqaa 20 keessatti beekaa",
+  "Business Recovery": "Deebi'anii Dandamachuu Daldalaa",
+  "A guided path back to stability": "Karaa qajeelfamaa tasgabbiitti deebisu",
+  "Credit Management Center": "Giddugala Bulchiinsa Liqii",
+  "Stronger lender relationships, faster due diligence": "Hariiroo liqeessitootaa cimaa, qorannoo maamilaa saffisaa",
+  "Deal Rooms": "Kutaalee Waliigaltee",
+  "Curated, verified deal flow": "Carraawwan investimentii filatamanii fi mirkanaa'an",
+  "For Investors": "Invastarootaaf",
+  "How EABIX works for you": "EABIX akkamitti isiniif hojjeta",
+  "Valuation Tools": "Meeshaalee Madaallii Gatii",
+  "Price a business with confidence": "Gatii daldalaa amanamummaan tilmaamaa",
+  "Knowledge Hub": "Giddugala Beekumsaa",
+  "Sector Reports": "Gabaasa Damee",
+  "Regulations and Research": "Seeraa fi Qorannoo",
+  Events: "Taateewwan",
+  Blog: "Bloogii",
+  // Header
+  "Log in": "Seeni",
+  "Join EABIX": "EABIX Makami",
+  "Open menu": "Baafata bani",
+  "Close menu": "Baafata cufi",
+  "Skip to content": "Gara qabiyyeetti darbi",
+  "EABIX home": "Fuula jalqabaa EABIX",
+  // Footer
+  "The EABIX Brief": "Odeessa EABIX",
+  "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
+    "Waliigaltee, sagantaalee fi hubannoo dinagdee guddachaa jiru Itoophiyaa irraa, torban lama lamaan.",
+  "Email address": "Teessoo imeelii",
+  Subscribe: "Galmaa'i",
+  "No spam. Unsubscribe any time.": "Ergaa barbaachisaa hin taane hin erginu. Yeroo barbaaddanitti galmee dhaabuu ni dandeessu.",
+  "Thanks for subscribing. (Preview only: not connected yet.)": "Galmaa'uu keessaniif galatoomaa. (Agarsiisa qofa: ammaaf hin walqabatne.)",
+  "EABIX, the Erudite Africa Business & Investment Exchange. Where Ideas Grow, Investments Flow, and Businesses Recover.":
+    "EABIX, Waljijjiirraa Daldalaa fi Investimentii Erudite Africa. Bakka yaadni itti guddatu, investimentiin itti yaa'uu fi daldalli itti deebi'ee dandamatu.",
+  "A platform by Erudite Africa Investments PLC.": "Waltajjii Erudite Africa Investments PLC'n dhiyaate.",
+  "For Entrepreneurs": "Kalaqxota Daldalaatiif",
+  "For Partners": "Michootaaf",
+  Company: "Waa'ee Dhaabbatichaa",
+  Support: "Deggersa",
+  "Raise capital": "Kaappitaala walitti qabaa",
+  "Sell your business": "Daldala keessan gurgurraa",
+  "Join a program": "Sagantaa makamaa",
+  "Find a mentor": "Gorsaa argadhaa",
+  "Browse opportunities": "Carraawwan ilaalaa",
+  "Become a verified investor": "Invastara mirkanaa'e ta'aa",
+  "Valuation tools": "Meeshaalee madaallii gatii",
+  "Sector reports": "Gabaasa damee",
+  "Investor FAQ": "Gaaffilee irra deddeebiin invastarootaa",
+  "Partner with us": "Nu waliin hojjedhaa",
+  "Run a program on EABIX": "EABIX irratti sagantaa gaggeessaa",
+  "Sponsor a cohort": "Garee leenjii deggeraa",
+  "List as an advisor": "Akka gorsaatti galmaa'aa",
+  "About EABIX": "Waa'ee EABIX",
+  "Our team": "Garee keenya",
+  Careers: "Carraa hojii",
+  Press: "Miidiyaaf",
+  "Help Center": "Giddugala Gargaarsaa",
+  FAQ: "Gaaffilee irra deddeebiin",
+  "Contact us": "Nu quunnamaa",
+  "Trust and safety": "Amanamummaa fi nageenya",
+  Legal: "Dhimma seeraa",
+  Terms: "Haalawwan tajaajilaa",
+  Privacy: "Iccitii",
+  Cookies: "Kuukii",
+  "Investor Disclaimer": "Akeekkachiisa invastarootaa",
+  "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
+    "Gamoo Apaartimantii Rehobot, Darbii 1ffaa, Boolee Medhaneealem, Finfinnee (Addis Ababa), Itoophiyaa",
+  footerLegal:
+    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. EABIX waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
+  // Trust bar
+  "Verified profiles": "Ibsa dhuunfaa mirkanaa'e",
+  "Secure deal rooms": "Kutaalee waliigaltee nageenya qaban",
+  "Data hosted on secure cloud infrastructure": "Daataan bu'uura misoomaa kilaawudii nageenya qabu irra kaa'ama",
+  "Built in Ethiopia for Ethiopia": "Itoophiyaa keessatti Itoophiyaaf kan ijaarame",
+  // Language switch
+  Language: "Afaan",
+  // Translation notice
+  draftNotice: "Fuulli kun hiika Afaan Oromoo isa jalqabaa ti; ogeeyyiin afaanichaa sakatta'aa jiru.",
+  readInEnglish: "Afaan Ingiliziitiin dubbisaa",
 };
 
 const en: Record<string, string> = {
@@ -112,7 +213,7 @@ const en: Record<string, string> = {
     "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. EABIX is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
 };
 
-const dictionaries: Record<Locale, Record<string, string>> = { en, am, om: {} };
+const dictionaries: Record<Locale, Record<string, string>> = { en, am, om };
 
 /** Translate site-wide text; falls back to the English key. */
 export function translator(locale: Locale) {

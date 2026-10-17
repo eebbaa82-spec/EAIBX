@@ -8,7 +8,7 @@ import { homeCopy } from "@/i18n/home";
 export const metadata: Metadata = {
   title: "EABIX · የኢትዮጵያ የንግድና የኢንቨስትመንት ልውውጥ",
   description: "ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ፣ አክስለሬተር ይቀላቀሉ ወይም ከችግር ያገግሙ። የተረጋገጡ የኢትዮጵያ ንግዶችና ባለሀብቶች በአንድ ቦታ።",
-  alternates: { languages: { en: "/", am: "/am/" } },
+  alternates: { languages: { en: "/", am: "/am/", om: "/om/" } },
 };
 
 export default function AmharicHome() {
