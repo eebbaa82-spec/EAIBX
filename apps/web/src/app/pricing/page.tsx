@@ -5,7 +5,7 @@ import { ButtonLink, Container, DataTable, Faq, Note, PageHero, Section } from "
 export const metadata: Metadata = {
   title: "EABIX Pricing · Plans for Businesses and Investors",
   description:
-    "Start free. Upgrade for featured listings, verified Health Checks and full deal room access. Pay in Birr.",
+    "Start free. Upgrade for featured listings, verified EHIRA assessments and full deal room access. Pay in Birr.",
 };
 
 const businessRows = [
@@ -17,11 +17,11 @@ const businessRows = [
     "Announced after the launch period",
   ],
   ["Profile and listing", "Basic listing", "Featured listing", "Top placement and homepage feature"],
-  ["Health Check", "Free self-assessment", "One verified Health Check a year", "Verified Health Check plus analyst call"],
+  ["EHIRA assessment", "Free self-assessment", "One verified EHIRA a year", "Verified EHIRA plus analyst call"],
   [
     "Investor contacts",
-    "Set by your Health Check grade",
-    "Set by your Health Check grade",
+    "Set by your EHIRA grade",
+    "Set by your EHIRA grade",
     "Unlimited",
   ],
   ["Data room", "5 documents", "Full data room", "Full data room with view analytics"],
@@ -113,7 +113,7 @@ export default function PricingPage() {
       >
         <ul className="space-y-3 text-muted">
           <li className="rounded-lg border border-line bg-white p-4">
-            <strong className="text-ink">Verified Health Check (pay-as-you-go):</strong> announced after the launch period
+            <strong className="text-ink">Verified EHIRA (pay-as-you-go):</strong> announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
             <strong className="text-ink">Success fee on completed transactions introduced through EABIX:</strong>{" "}

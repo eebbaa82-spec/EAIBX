@@ -60,7 +60,7 @@ const en: HomeCopy = {
     {
       audience: "Business owners",
       heading: "Raise capital or sell with confidence",
-      body: "List your business privately, share a verified Health Check score, and talk only to serious, vetted buyers and investors.",
+      body: "List your business privately, share a verified EHIRA score, and talk only to serious, vetted buyers and investors.",
       link: "List your business",
       href: "/marketplace/new",
     },
@@ -74,7 +74,7 @@ const en: HomeCopy = {
     {
       audience: "Businesses under pressure",
       heading: "Recover before it is too late",
-      body: "Take a free Health Check, get a recovery plan from accredited turnaround advisors, and explore restructuring or a managed sale if needed.",
+      body: "Take a free EHIRA assessment, get a recovery plan from accredited turnaround advisors, and explore restructuring or a managed sale if needed.",
       link: "Begin recovery",
       href: "/recovery",
     },
@@ -84,7 +84,7 @@ const en: HomeCopy = {
     { title: "Create your profile.", body: "Tell us who you are and what you need. It takes about ten minutes." },
     {
       title: "Get diagnosed.",
-      body: "Our Business Health Check scores your business across finance, operations, market, people and governance, from grade A to E.",
+      body: "Our Enterprise Health & Investment Readiness Assessment (EHIRA) scores your business across eight dimensions, from finance and operations to governance and investment readiness, with grades A to E.",
     },
     {
       title: "Get matched.",
@@ -156,7 +156,7 @@ const am: HomeCopy = {
     {
       audience: "የንግድ ባለቤቶች",
       heading: "ካፒታል ያሰባስቡ ወይም በእርግጠኝነት ይሽጡ",
-      body: "ንግድዎን በሚስጥር ያስመዝግቡ፣ የተረጋገጠ የንግድ ጤና ምርመራ ውጤት ያጋሩ፣ እንዲሁም ከቁም ነገረኛና ከተጣሩ ገዢዎችና ባለሀብቶች ጋር ብቻ ይነጋገሩ።",
+      body: "ንግድዎን በሚስጥር ያስመዝግቡ፣ የተረጋገጠ የEHIRA ውጤት ያጋሩ፣ እንዲሁም ከቁም ነገረኛና ከተጣሩ ገዢዎችና ባለሀብቶች ጋር ብቻ ይነጋገሩ።",
       link: "ንግድዎን ያስመዝግቡ",
       href: "/marketplace/new",
     },
@@ -170,7 +170,7 @@ const am: HomeCopy = {
     {
       audience: "ጫና ውስጥ ያሉ ንግዶች",
       heading: "ጊዜው ሳያልፍ ያገግሙ",
-      body: "ነፃ የንግድ ጤና ምርመራ ያድርጉ፣ ዕውቅና ካላቸው የማገገሚያ አማካሪዎች የማገገሚያ ዕቅድ ያግኙ፣ አስፈላጊ ከሆነም መልሶ ማዋቀርን ወይም የሚመራ ሽያጭን ያስቡ።",
+      body: "ነፃ የEHIRA ግምገማ ያድርጉ፣ ዕውቅና ካላቸው የማገገሚያ አማካሪዎች የማገገሚያ ዕቅድ ያግኙ፣ አስፈላጊ ከሆነም መልሶ ማዋቀርን ወይም የሚመራ ሽያጭን ያስቡ።",
       link: "ማገገም ይጀምሩ",
       href: "/recovery",
     },
@@ -180,7 +180,7 @@ const am: HomeCopy = {
     { title: "መገለጫዎን ይፍጠሩ።", body: "ማን እንደሆኑና ምን እንደሚፈልጉ ይንገሩን። አሥር ደቂቃ ገደማ ይወስዳል።" },
     {
       title: "ምርመራ ያድርጉ።",
-      body: "የንግድ ጤና ምርመራችን ንግድዎን በፋይናንስ፣ በሥራ ክንውን፣ በገበያ፣ በሰው ኃይልና በአስተዳደር ይመዝናል፤ ከደረጃ A እስከ E ይሰጣል።",
+      body: "የድርጅት ጤናና የኢንቨስትመንት ዝግጁነት ግምገማችን (EHIRA) ንግድዎን ከፋይናንስና ከሥራ ክንውን እስከ አስተዳደርና የኢንቨስትመንት ዝግጁነት ድረስ በስምንት ዘርፎች ይመዝናል፤ ከደረጃ A እስከ E ይሰጣል።",
     },
     {
       title: "ተገቢውን አጋር ያግኙ።",
@@ -252,7 +252,7 @@ const om: HomeCopy = {
     {
       audience: "Abbootii daldalaa",
       heading: "Kaappitaala walitti qabaa ykn amanamummaan gurgurraa",
-      body: "Daldala keessan iccitiidhaan galmeessaa, qabxii Qorannoo Fayyaa Daldalaa mirkanaa'e qoodaa, bittootaa fi invastaroota cimoo fi qoratamaniin qofa haasa'aa.",
+      body: "Daldala keessan iccitiidhaan galmeessaa, qabxii EHIRA mirkanaa'e qoodaa, bittootaa fi invastaroota cimoo fi qoratamaniin qofa haasa'aa.",
       link: "Daldala keessan galmeessaa",
       href: "/marketplace/new",
     },
@@ -266,7 +266,7 @@ const om: HomeCopy = {
     {
       audience: "Daldaltoota dhiibbaa jala jiran",
       heading: "Utuu yeroon hin darbin deebi'aa dandamadhaa",
-      body: "Qorannoo Fayyaa Daldalaa bilisaa godhaa, gorsitoota deebisanii dandamachiisuu beekamtii qaban irraa karoora argadhaa, yoo barbaachises irra deebiin qindeessuu ykn gurgurtaa qajeelfamaa ilaalaa.",
+      body: "Madaallii EHIRA bilisaa godhaa, gorsitoota deebisanii dandamachiisuu beekamtii qaban irraa karoora argadhaa, yoo barbaachises irra deebiin qindeessuu ykn gurgurtaa qajeelfamaa ilaalaa.",
       link: "Deebi'anii dandamachuu jalqabaa",
       href: "/recovery",
     },
@@ -276,7 +276,7 @@ const om: HomeCopy = {
     { title: "Ibsa dhuunfaa keessan uumaa.", body: "Eenyu akka taatanii fi maal akka barbaaddan nutti himaa. Gara daqiiqaa kudhanii fudhata." },
     {
       title: "Qoratamaa.",
-      body: "Qorannoon Fayyaa Daldalaa keenya daldala keessan maallaqa, hojii, gabaa, humna namaa fi bulchiinsaan madaala; sadarkaa A hanga E kenna.",
+      body: "Madaalliin Fayyaa Dhaabbataa fi Qophaa'ina Investimentii keenya (EHIRA) daldala keessan kallattiiwwan saddeettiin, maallaqa fi hojii irraa hanga bulchiinsaa fi qophaa'ina investimentiitti, madaala; sadarkaa A hanga E kenna.",
     },
     {
       title: "Wal-simsiifamaa.",

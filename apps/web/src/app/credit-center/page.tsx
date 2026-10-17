@@ -88,7 +88,7 @@ export default function CreditCenterPage() {
             },
             {
               title: "Verified business data.",
-              body: "With the client's consent, see their EABIX Health Check grade, diagnostic report and financial summaries, reviewed by EABIX analysts.",
+              body: "With the client's consent, see their EHIRA grade, diagnostic report and financial summaries, reviewed by EABIX analysts.",
             },
             {
               title: "Structured appraisal support.",
@@ -124,7 +124,7 @@ export default function CreditCenterPage() {
       <Section title="How it works">
         <Steps
           steps={[
-            { title: "The business builds its credit profile", body: "and completes the Health Check." },
+            { title: "The business builds its credit profile", body: "and completes the EHIRA assessment." },
             { title: "The business chooses which lenders", body: "may see its profile." },
             { title: "The lender reviews and requests", body: "any further documents through the secure workspace." },
             { title: "Both sides track the facility", body: "after disbursement, with shared reminders and early warnings." },

@@ -27,7 +27,7 @@ export default function RecoveryPage() {
           Talk to a recovery advisor
         </ButtonLink>
         <ButtonLink href="/diagnostics" variant="light">
-          Take the free Health Check
+          Take the free EHIRA assessment
         </ButtonLink>
       </PageHero>
 
@@ -45,7 +45,7 @@ export default function RecoveryPage() {
       <Section tone="canvas" title="Your recovery path">
         <Steps
           steps={[
-            { title: "Diagnose.", body: "Take the Health Check to see the real picture, without blame." },
+            { title: "Diagnose.", body: "Take the EHIRA assessment to see the real picture, without blame." },
             {
               title: "Plan.",
               body: "An accredited turnaround advisor builds a practical recovery plan with you: cost, cash, debt, operations and strategy.",
@@ -87,7 +87,7 @@ export default function RecoveryPage() {
           Talk to a recovery advisor
         </ButtonLink>
         <ButtonLink href="/diagnostics" variant="ghost" className="text-white">
-          Take the free Health Check
+          Take the free EHIRA assessment
         </ButtonLink>
       </CtaBand>
     </>

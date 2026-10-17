@@ -17,9 +17,9 @@ export default function ReadinessQuizPage() {
       <Section title="Answer honestly">
         <ReadinessQuiz />
       </Section>
-      <CtaBand title="Want an independent view?" body="The Business Health Check grades your business from A to E across finance, operations, market, people and governance.">
+      <CtaBand title="Want an independent view?" body="EHIRA, the Enterprise Health & Investment Readiness Assessment, grades your business from A to E across eight dimensions, from finance to investment readiness.">
         <ButtonLink href="/diagnostics" variant="light">
-          About the Health Check
+          About EHIRA
         </ButtonLink>
       </CtaBand>
     </>

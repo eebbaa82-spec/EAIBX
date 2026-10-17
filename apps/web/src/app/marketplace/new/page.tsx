@@ -38,13 +38,13 @@ export default function NewListingPage() {
       </Section>
 
       <CtaBand
-        title="Take the Business Health Check so your listing goes live with a grade."
+        title="Take the EHIRA assessment so your listing goes live with a grade."
       >
         <ButtonLink href="/join" variant="light">
           List your business
         </ButtonLink>
         <ButtonLink href="/diagnostics" variant="ghost" className="text-white">
-          Start Health Check
+          Start the EHIRA assessment
         </ButtonLink>
       </CtaBand>
     </>

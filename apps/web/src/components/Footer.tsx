@@ -13,7 +13,7 @@ export function Footer() {
   const t = translator(locale);
   const href = (h: string) => localizeHref(locale, h);
   return (
-    <footer lang={locale} className="bg-ink text-sm text-slate-300">
+    <footer lang={locale} className="print:hidden bg-ink text-sm text-slate-300">
       <div className="border-b border-white/10 py-10">
         <Container className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>

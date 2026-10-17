@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const partnerTypes: [string, string][] = [
   [
     "Banks and microfinance institutions",
-    "Find bankable SMEs with verified Health Check grades, speed up client due diligence, monitor borrowers after disbursement, and train and certify staff through Academy enterprise subscriptions.",
+    "Find bankable SMEs with verified EHIRA grades, speed up client due diligence, monitor borrowers after disbursement, and train and certify staff through Academy enterprise subscriptions.",
   ],
   [
     "Development finance institutions and donors",
@@ -80,7 +80,7 @@ export default function PartnersPage() {
 
       <Section
         title="Measure what matters"
-        intro="Partner dashboards track applications, selections, mentoring hours, capital raised, jobs supported and Health Check grade improvements over time, broken down by gender, region and sector. Export reports for your board and funders in one click."
+        intro="Partner dashboards track applications, selections, mentoring hours, capital raised, jobs supported and EHIRA grade improvements over time, broken down by gender, region and sector. Export reports for your board and funders in one click."
       />
 
       <Section id="lets-talk" title="Let's talk" tone="canvas">

@@ -37,7 +37,7 @@ export function CookieBanner() {
   if (chosen) return null;
 
   return (
-    <div role="region" aria-label="Cookie consent" className="fixed inset-x-0 bottom-0 z-50 p-4">
+    <div role="region" aria-label="Cookie consent" className="fixed inset-x-0 bottom-0 z-50 p-4 print:hidden">
       <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-xl border border-line bg-white p-5 shadow-xl md:flex-row md:items-center">
         <p className="flex-1 text-sm text-ink">
           We use cookies to keep you signed in, remember your language and understand how EABIX is used. You choose what we can use.

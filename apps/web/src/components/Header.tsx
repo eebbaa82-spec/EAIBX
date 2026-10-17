@@ -25,7 +25,7 @@ export function Header() {
   }
 
   return (
-    <header lang={locale} className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
+    <header lang={locale} className="print:hidden sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
         <Link href={href("/")} className="flex items-center gap-2" aria-label={t("EABIX home")}>
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-black text-white">E</span>

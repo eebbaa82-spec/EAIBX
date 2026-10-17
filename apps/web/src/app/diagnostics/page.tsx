@@ -1,81 +1,88 @@
 import type { Metadata } from "next";
-import { ButtonLink, Card, CardGrid, CtaBand, DataTable, Note, PageHero, Section } from "@/components/ui";
+import { EhiraAssessment } from "@/components/tools/EhiraAssessment";
+import { ButtonLink, Card, CardGrid, DataTable, Note, PageHero, Section } from "@/components/ui";
+import { dimensions, gradeBands } from "@/lib/ehira/model";
 
 export const metadata: Metadata = {
-  title: "Free Business Health Check · EABIX",
+  title: "EHIRA: Enterprise Health & Investment Readiness Assessment · EABIX",
   description:
-    "Score your business across finance, operations, market, people and governance. Get an A to E grade and next steps in 20 minutes.",
+    "Score your business across eight dimensions, from financial health to investment readiness, and get an A to E grade, a readiness rating and priority actions.",
 };
 
-export default function DiagnosticsPage() {
+const covers: Record<string, string> = {
+  financial: "Financial statements, audit, profitability, liquidity, leverage and debt service",
+  market: "Customer base, retention, satisfaction and dependence on the largest customer",
+  operations: "On-time delivery, documented procedures and quality management",
+  people: "Staff turnover, training investment and succession planning",
+  governance: "Board, internal controls and tax compliance",
+  strategy: "Strategic plan and monthly KPI monitoring",
+  technology: "Accounting or ERP systems and cybersecurity",
+  investment: "Business plan, financial model and investor pitch deck",
+};
+
+export default function EhiraPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Business Health Check"
-        title="Know exactly where your business stands."
-        subhead="The EABIX Business Health Check scores your business across five areas and gives you a clear A to E grade, a plain-language report and the next steps that matter most."
-      >
-        <ButtonLink href="/join" variant="light">
-          Start my free Health Check
-        </ButtonLink>
-        <p className="w-full text-sm text-brand-100">Takes about 20 minutes. Save and return any time.</p>
-      </PageHero>
+      <div className="print:hidden">
+        <PageHero
+          eyebrow="EHIRA"
+          title="Enterprise Health & Investment Readiness Assessment"
+          subhead="Find out how healthy your business is and how ready it is for investors and lenders. EHIRA scores eight dimensions, gives an A to E grade and a readiness rating, and lists the actions that will lift your score the most."
+        >
+          <ButtonLink href="#assessment" variant="light">
+            Start my free EHIRA
+          </ButtonLink>
+          <p className="w-full text-sm text-brand-100">About 15 minutes. Free self-assessment with an instant report.</p>
+        </PageHero>
 
-      <Section title="The five areas we assess">
-        <DataTable
-          head={["Area", "What we look at"]}
-          rows={[
-            ["Financial health", "Profitability, cash flow, debt levels, working capital and the quality of your records"],
-            ["Operations", "Processes, capacity, suppliers, quality and cost control"],
-            ["Market and customers", "Demand, competition, pricing power and customer concentration"],
-            ["People and leadership", "Management depth, key-person risk, skills and culture"],
-            ["Governance and compliance", "Legal structure, licenses, tax standing, board and controls"],
-          ]}
-        />
-      </Section>
-
-      <Section tone="canvas" title="What the grades mean">
-        <DataTable
-          head={["Grade", "Meaning", "What we suggest next"]}
-          rows={[
-            ["A", "Strong and investment-ready", "List in the marketplace and apply for a curated deal room"],
-            ["B", "Healthy with a few gaps", "Fix the gaps flagged in your report, then list"],
-            ["C", "Stable but vulnerable", "Work with a mentor or advisor on a 90-day improvement plan"],
-            ["D", "Under significant pressure", "Talk to a recovery advisor soon"],
-            ["E", "In distress", "Start a recovery assessment now; options still exist"],
-          ]}
-        />
-      </Section>
-
-      <Section title="Two levels">
-        <CardGrid cols={2}>
-          <Card title="Free self-assessment">
-            Answer guided questions and get an instant indicative grade and summary.
-          </Card>
-          <Card
-            title={
-              <>
-                Verified Health Check (price announced after the launch period)
-              </>
-            }
-          >
-            Upload financial statements and documents. An EABIX analyst reviews them and issues a verified grade that
-            investors can trust, valid for 12 months.
-          </Card>
-        </CardGrid>
-        <div className="mt-8 space-y-4">
-          <p className="text-lg text-ink">
-            Your answers are private. Your grade is shown to others only if you choose to publish it on your listing.
+        <Section title="Eight dimensions">
+          <DataTable
+            head={["Dimension", "Weight", "What we look at"]}
+            rows={dimensions.map((d) => [d.name, `${d.weight}%`, covers[d.id]])}
+          />
+          <p className="mt-4 text-sm text-muted">
+            Weights shown are for the standard SME model. Startup, corporate and distressed-business versions shift the emphasis to what
+            matters most at each stage.
           </p>
-          <Note>The Health Check is a management tool, not an audit, credit rating or investment recommendation.</Note>
-        </div>
-      </Section>
+        </Section>
 
-      <CtaBand title="Know exactly where your business stands." body="Takes about 20 minutes. Save and return any time.">
-        <ButtonLink href="/join" variant="light">
-          Start my free Health Check
-        </ButtonLink>
-      </CtaBand>
+        <Section tone="canvas" title="What the grades mean">
+          <DataTable
+            head={["Grade", "Score", "Meaning"]}
+            rows={gradeBands.map((b, i) => [
+              b.grade,
+              i === 0 ? "90 to 100" : i === gradeBands.length - 1 ? "Below 60" : `${b.min} to ${gradeBands[i - 1].min - 1}`,
+              `${b.label}. ${b.meaning}`,
+            ])}
+          />
+          <p className="mt-4 text-ink">
+            Some answers cap the grade however high the score: for example, no annual financial statements or overdue tax filings limit
+            the grade to C, and negative equity or debt service coverage below 1.0 limit it to D.
+          </p>
+        </Section>
+
+        <Section title="Two levels">
+          <CardGrid cols={2}>
+            <Card title="Free self-assessment">
+              Answer the guided questions below and get an instant indicative grade, readiness rating and action list.
+            </Card>
+            <Card title="Verified EHIRA (price announced after the launch period)">
+              Upload your financial statements and supporting documents. An EABIX analyst reviews them and issues a verified grade
+              that investors and lenders can rely on, valid for 12 months.
+            </Card>
+          </CardGrid>
+          <div className="mt-6">
+            <Note>
+              EHIRA is a decision-support and readiness tool. It does not replace a credit rating, an audit, legal due diligence or a
+              lender&apos;s decision.
+            </Note>
+          </div>
+        </Section>
+      </div>
+
+      <Section id="assessment" tone="canvas" title="Take the assessment">
+        <EhiraAssessment />
+      </Section>
     </>
   );
 }

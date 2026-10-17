@@ -42,7 +42,7 @@ export const mainNav: NavMenu[] = [
   {
     label: "Recover",
     items: [
-      { label: "Business Health Check", href: "/diagnostics", description: "Know where you stand in 20 minutes" },
+      { label: "EHIRA Assessment", href: "/diagnostics", description: "Health and investment readiness in 15 minutes" },
       { label: "Business Recovery", href: "/recovery", description: "A guided path back to stability" },
       { label: "Credit Management Center", href: "/credit-center", description: "Stronger lender relationships, faster due diligence" },
     ],
@@ -76,7 +76,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: "Sell your business", href: "/marketplace/new" },
       { label: "Join a program", href: "/programs" },
       { label: "Find a mentor", href: "/mentors" },
-      { label: "Business Health Check", href: "/diagnostics" },
+      { label: "EHIRA Assessment", href: "/diagnostics" },
     ],
   },
   {

@@ -4,7 +4,7 @@ import { ButtonLink, CtaBand, Faq, PageHero, Section } from "@/components/ui";
 export const metadata: Metadata = {
   title: "EABIX FAQ · Answers for Businesses and Investors",
   description:
-    "Answers to common questions about listings, Health Checks, deal rooms, fees and investor verification.",
+    "Answers to common questions about listings, EHIRA assessments, deal rooms, fees and investor verification.",
 };
 
 export default function FaqPage() {
@@ -51,8 +51,8 @@ export default function FaqPage() {
               a: "Not unless you choose. Listings show an anonymous teaser, and you approve each investor or buyer before they see your identity.",
             },
             {
-              q: "What is the Health Check grade?",
-              a: "An A to E score of your business's health across five areas. A verified grade is reviewed by an EABIX analyst.",
+              q: "What is the EHIRA grade?",
+              a: "EHIRA, the Enterprise Health & Investment Readiness Assessment, grades your business from A to E across eight dimensions, from financial health to investment readiness, and adds a readiness rating. A verified grade is reviewed by an EABIX analyst.",
             },
             {
               q: "How long does it take to raise money or sell?",
@@ -60,7 +60,7 @@ export default function FaqPage() {
             },
             {
               q: "What if my business is in trouble?",
-              a: "Start with the free Health Check and talk to a recovery advisor. The earlier you act, the more options you have.",
+              a: "Start with the free EHIRA assessment and talk to a recovery advisor. The earlier you act, the more options you have.",
             },
           ]}
         />

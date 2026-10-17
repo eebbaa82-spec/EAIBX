@@ -97,7 +97,7 @@ export default function ToolsPage() {
 
       <Section title="EABIX AI Assistant">
         <blockquote className="max-w-3xl rounded-xl border border-line bg-canvas p-6 text-ink">
-          Hello, I am the EABIX assistant. I can help you understand your Health Check report, improve your listing, find
+          Hello, I am the EABIX assistant. I can help you understand your EHIRA report, improve your listing, find
           programs or explain business terms. I do not give financial or legal advice. What would you like to do today?
         </blockquote>
         <div className="mt-6">

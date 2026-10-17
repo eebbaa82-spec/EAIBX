@@ -50,7 +50,7 @@ export const legalDocs: Record<LegalDocKey, LegalDoc> = {
       "Nature of the platform",
       "No offer of securities",
       "Risk warnings",
-      "Health Check grades are not ratings or recommendations",
+      "EHIRA grades are not ratings or recommendations",
       "Due diligence is your responsibility",
       "Foreign investor rules",
     ],

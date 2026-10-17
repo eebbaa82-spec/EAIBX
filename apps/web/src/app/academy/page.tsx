@@ -220,7 +220,7 @@ export default function AcademyPage() {
       <div id="entrepreneurs" className="scroll-mt-20">
         <CtaBand
           title="Learn what investors and lenders look for"
-          body="Short courses for founders and SME managers on financial statements, building a financial model, pitching, cash flow and working with your bank. Your Health Check report recommends courses for your weakest areas."
+          body="Short courses for founders and SME managers on financial statements, building a financial model, pitching, cash flow and working with your bank. Your EHIRA report recommends courses for your weakest areas."
         >
           <ButtonLink href="/join" variant="light">
             Explore courses for entrepreneurs

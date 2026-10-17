@@ -43,7 +43,7 @@ export const audiences: Record<AudienceKey, Audience> = {
             body: "Add your business basics, team, traction and what you are looking for.",
           },
           {
-            title: "Take the Business Health Check.",
+            title: "Take the EHIRA assessment.",
             body: "Get an independent A to E grade and a short report on your strengths and gaps.",
           },
           {
@@ -81,7 +81,7 @@ export const audiences: Record<AudienceKey, Audience> = {
     ],
     ctas: [
       { label: "List your business", href: "/marketplace/new" },
-      { label: "Take the free Health Check", href: "/diagnostics" },
+      { label: "Take the free EHIRA assessment", href: "/diagnostics" },
     ],
   },
   investors: {

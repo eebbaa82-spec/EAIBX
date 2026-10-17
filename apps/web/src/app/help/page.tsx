@@ -4,14 +4,14 @@ import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 export const metadata: Metadata = {
   title: "How can we help? · EABIX",
   description:
-    "EABIX Help Center: getting started, accounts, listings, Health Check, deal rooms, programs, Academy, payments and trust and safety.",
+    "EABIX Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, Academy, payments and trust and safety.",
 };
 
 const topics = [
   "Getting started",
   "Your account and security",
   "Listings and the marketplace",
-  "Health Check",
+  "EHIRA assessment",
   "Deal rooms and data rooms",
   "Programs and mentoring",
   "Academy and certificates",

@@ -93,7 +93,7 @@ export default function MarketplacePage() {
             <FilterGroup
               title="Health grade"
               options={["A", "B", "C", "D", "E"]}
-              helper="Grades come from the EABIX Business Health Check."
+              helper="Grades come from EHIRA, the EABIX Enterprise Health & Investment Readiness Assessment."
             />
             <FilterGroup
               title="Deal type"

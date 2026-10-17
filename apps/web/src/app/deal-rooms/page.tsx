@@ -28,7 +28,7 @@ export default function DealRoomsPage() {
           steps={[
             {
               title: "Curation.",
-              body: "Our analysts shortlist businesses with strong Health Check grades and complete documentation.",
+              body: "Our analysts shortlist businesses with strong EHIRA grades and complete documentation.",
             },
             {
               title: "Preparation.",
@@ -69,7 +69,7 @@ export default function DealRoomsPage() {
 
       <Section id="for-businesses" eyebrow="For businesses" title="Get your business into a Deal Room">
         <p className="max-w-3xl text-lg text-muted">
-          Deal Rooms are selective. To be considered, complete your listing, achieve a verified Health Check grade of{" "}
+          Deal Rooms are selective. To be considered, complete your listing, achieve a verified EHIRA grade of{" "}
           C or better, and upload the core documents in your data room.
         </p>
         <div className="mt-6">

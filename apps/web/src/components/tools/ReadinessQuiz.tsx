@@ -70,7 +70,7 @@ const answers = [
 
 function band(score: number) {
   if (score >= 16)
-    return { title: "Investor-ready", body: "You have the basics in place. Get your Business Health Check grade and start talking to investors.", tone: "bg-gradient-to-br from-brand-900 to-brand-700 text-white" };
+    return { title: "Investor-ready", body: "You have the basics in place. Get your EHIRA grade and start talking to investors.", tone: "bg-gradient-to-br from-brand-900 to-brand-700 text-white" };
   if (score >= 10)
     return { title: "Nearly ready", body: "You are close. Fix the gaps below before approaching investors, so the first impression counts.", tone: "bg-gold-100 text-ink" };
   return { title: "Early stage", body: "There is groundwork to do first. Work through the steps below, and consider an incubation or acceleration program.", tone: "bg-canvas text-ink" };
@@ -166,7 +166,7 @@ export function ReadinessQuiz() {
           </>
         )}
         <p className="text-xs text-muted">
-          A self-assessment to help you prepare. It is not the EABIX Business Health Check and not investment advice. Your answers are not
+          A self-assessment to help you prepare. It is not the full EHIRA assessment and not investment advice. Your answers are not
           saved or sent anywhere.
         </p>
       </div>
