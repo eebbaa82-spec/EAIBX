@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   },
   description:
     "Raise capital, sell a business, join an accelerator or recover from hard times. Verified Ethiopian businesses and investors in one place.",
-  // Keep the preview out of search engines until launch.
-  robots: { index: false, follow: false },
+  // Search engines stay out unless the production publish turns indexing on.
+  robots: process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true" ? { index: true, follow: true } : { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
