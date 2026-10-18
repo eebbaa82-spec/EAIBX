@@ -6,7 +6,7 @@ import { translator } from "@/i18n/chrome";
 import { homeCopy } from "@/i18n/home";
 
 export const metadata: Metadata = {
-  title: "Kena · Waliigaltee Hunda Keessatti Amanamummaa Ijaarra",
+  title: "Kena Hub · Waliigaltee Hunda Keessatti Amanamummaa Ijaarra",
   description: "Kaappitaala walitti qabaa, daldala gurgurraa, sagantaa saffisiisaa makamaa ykn rakkoo irraa deebi'aa. Daldaltootaa fi invastaroota Itoophiyaa mirkanaa'an bakka tokkotti.",
   alternates: { languages: { en: "/", am: "/am/", om: "/om/" } },
 };

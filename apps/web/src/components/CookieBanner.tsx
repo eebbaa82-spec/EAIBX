@@ -40,7 +40,7 @@ export function CookieBanner() {
     <div role="region" aria-label="Cookie consent" className="fixed inset-x-0 bottom-0 z-50 p-4 print:hidden">
       <div className="mx-auto flex max-w-4xl flex-col gap-4 rounded-xl border border-line bg-white p-5 shadow-xl md:flex-row md:items-center">
         <p className="flex-1 text-sm text-ink">
-          We use cookies to keep you signed in, remember your language and understand how Kena is used. You choose what we can use.
+          We use cookies to keep you signed in, remember your language and understand how Kena Hub is used. You choose what we can use.
         </p>
         <div className="flex flex-wrap items-center gap-3 text-sm">
           <button type="button" onClick={() => choose("all")} className="rounded-lg bg-brand-600 px-4 py-2 font-semibold text-white">

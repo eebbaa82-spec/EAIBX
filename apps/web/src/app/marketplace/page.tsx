@@ -93,7 +93,7 @@ export default function MarketplacePage() {
             <FilterGroup
               title="Health grade"
               options={["A", "B", "C", "D", "E"]}
-              helper="Grades come from EHIRA, the Kena Enterprise Health & Investment Readiness Assessment."
+              helper="Grades come from EHIRA, the Kena Hub Enterprise Health & Investment Readiness Assessment."
             />
             <FilterGroup
               title="Deal type"
@@ -189,7 +189,7 @@ export default function MarketplacePage() {
         </div>
         <div className="mt-8">
           <Note>
-            Information on this page is provided by the business owner and summarized by Kena. Kena verifies identity and
+            Information on this page is provided by the business owner and summarized by Kena Hub. Kena Hub verifies identity and
             reviews diagnostics but does not guarantee accuracy. Always carry out your own due diligence and take
             professional advice.
           </Note>

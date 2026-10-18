@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { ButtonLink, Card, CardGrid, EmptyState, PageHero, Section } from "@/components/ui";
 
 const intro =
-  "Kena works with banks, development finance institutions, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.";
+  "Kena Hub works with banks, development finance institutions, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.";
 
 export const metadata: Metadata = {
-  title: "Partners · Kena",
-  description: "Kena works with banks, DFIs, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.",
+  title: "Partners · Kena Hub",
+  description: "Kena Hub works with banks, DFIs, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.",
 };
 
 const categories = [
@@ -35,7 +35,7 @@ export default function AboutPartnersPage() {
       </Section>
       <Section tone="canvas">
         <EmptyState action={<ButtonLink href="/partners">Become a partner</ButtonLink>}>
-          Partner announcements are coming soon. We are working with banks, MFIs, development partners and universities to bring their programs and services to Kena.
+          Partner announcements are coming soon. We are working with banks, MFIs, development partners and universities to bring their programs and services to Kena Hub.
         </EmptyState>
       </Section>
     </>

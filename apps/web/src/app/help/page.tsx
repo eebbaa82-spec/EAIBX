@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "How can we help? · Kena",
+  title: "How can we help? · Kena Hub",
   description:
-    "Kena Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, Academy, payments and trust and safety.",
+    "Kena Hub Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, Academy, payments and trust and safety.",
 };
 
 const topics = [

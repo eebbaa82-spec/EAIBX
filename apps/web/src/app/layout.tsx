@@ -10,7 +10,7 @@ const ethiopic = Noto_Sans_Ethiopic({ variable: "--font-ethiopic", subsets: ["et
 
 export const metadata: Metadata = {
   title: {
-    default: "Kena · Building Trust in Every Deal",
+    default: "Kena Hub · Building Trust in Every Deal",
     template: "%s",
   },
   description:

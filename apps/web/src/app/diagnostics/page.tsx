@@ -4,7 +4,7 @@ import { EhiraAssessment } from "@/components/tools/EhiraAssessment";
 import { ButtonLink, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "EHIRA: Enterprise Health & Investment Readiness Assessment · Kena",
+  title: "EHIRA: Enterprise Health & Investment Readiness Assessment · Kena Hub",
   description:
     "Score your business across eight dimensions, from financial health to investment readiness, and get an A to E grade, a readiness rating and priority actions.",
 };
@@ -28,7 +28,7 @@ export default function EhiraPage() {
           <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink">
             <li>EHIRA scores your business across eight dimensions, from financial health to investment readiness, weighted for your type of business.</li>
             <li>You get an A to E grade, the KENA™ Bank Readiness Index with six readiness scores for credit, investment and transactions, and the actions that will lift them most.</li>
-            <li>The free self-checks give indicative scores on screen; downloadable reports and the verified EHIRA, reviewed by a Kena analyst, are paid services.</li>
+            <li>The free self-checks give indicative scores on screen; downloadable reports and the verified EHIRA, reviewed by a Kena Hub analyst, are paid services.</li>
           </ul>
           <p className="mt-4">
             <Link href="/diagnostics/how-it-works" className="font-semibold text-brand-700 hover:underline">

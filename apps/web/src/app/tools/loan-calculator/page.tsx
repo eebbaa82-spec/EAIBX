@@ -3,7 +3,7 @@ import { LoanCalculator } from "@/components/tools/LoanCalculator";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Loan Calculator: How Much Can I Borrow? · Kena",
+  title: "Loan Calculator: How Much Can I Borrow? · Kena Hub",
   description:
     "Work out the most you can borrow from what you can afford to pay, or your installments for a given loan, with monthly, quarterly, semi-annual or annual repayments.",
 };

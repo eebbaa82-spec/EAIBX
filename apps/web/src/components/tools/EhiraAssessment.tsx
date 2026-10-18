@@ -278,7 +278,7 @@ function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: Field
         <div className="mt-5 space-y-4">
           <p className="text-sm text-ink">
             Request your commercial credit report from the National Bank of Ethiopia&apos;s credit reference system, through NBE or your bank. Attach it
-            here; Kena analysts review it as part of due diligence.
+            here; Kena Hub analysts review it as part of due diligence.
           </p>
           <label className="block text-sm font-medium text-ink">
             Date of the report
@@ -302,7 +302,7 @@ function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: Field
           </div>
         </div>
       )}
-      <p className="mt-4 text-xs text-muted">Nothing here is sent to Kena until the verified EHIRA, where an analyst reviews it.</p>
+      <p className="mt-4 text-xs text-muted">Nothing here is sent to Kena Hub until the verified EHIRA, where an analyst reviews it.</p>
     </fieldset>
   );
 }
@@ -342,7 +342,7 @@ function TaxClearanceField({ q, answers, file, onAnswer, onFile }: FieldProps) {
         <p className="mt-4 rounded-lg bg-gold-100 p-3 text-sm text-ink">This certificate has expired. You can continue, but an expired certificate caps your grade at C.</p>
       )}
       <p className="mt-4 text-xs text-muted">
-        The file stays in this browser and is not sent to Kena. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
+        The file stays in this browser and is not sent to Kena Hub. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
       </p>
     </fieldset>
   );
@@ -461,7 +461,7 @@ export function EhiraAssessment() {
             </button>
           )}
         </div>
-        <p className="text-xs text-muted">One question at a time; your results appear at the end. Your answers stay in this browser only and are not sent to Kena.</p>
+        <p className="text-xs text-muted">One question at a time; your results appear at the end. Your answers stay in this browser only and are not sent to Kena Hub.</p>
       </div>
     );
 
@@ -614,7 +614,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
           <div><dt className="text-muted">Valid until</dt><dd className="font-medium text-ink">{fmt(answers.G3_EXPIRY)}{tax === "expired" && <span className="text-red-700"> (expired)</span>}</dd></div>
           <div className="sm:col-span-2"><dt className="text-muted">File</dt><dd className="font-medium text-ink">{files.G3?.name ?? answers.G3_FILE ?? "–"}</dd></div>
         </dl>
-        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. Kena verifies it with the issuing tax authority in the verified EHIRA.</p>
+        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. Kena Hub verifies it with the issuing tax authority in the verified EHIRA.</p>
       </section>
 
       <section className="rounded-xl border border-line bg-white p-5">
@@ -633,7 +633,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
             <div className="sm:col-span-2"><dt className="text-muted">Loan more than 90 days overdue</dt><dd className="font-medium text-ink">{answers.F8 === "yes" ? "Yes, reported" : "None reported"}</dd></div>
           </dl>
         )}
-        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. Kena analysts review it in the verified EHIRA.</p>
+        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. Kena Hub analysts review it in the verified EHIRA.</p>
       </section>
 
       <section>
@@ -701,7 +701,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
       <BriReport bri={bri} />
 
       <section className="rounded-xl border border-line bg-canvas p-5 print:hidden">
-        <h4 className="font-bold text-ink">Next steps on Kena</h4>
+        <h4 className="font-bold text-ink">Next steps on Kena Hub</h4>
         <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-brand-700">
           <li><Link href="/advisors" className="hover:underline">Find an advisor</Link></li>
           <li><Link href="/programs" className="hover:underline">Join a program</Link></li>
@@ -713,7 +713,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
 
       <p className="text-xs text-muted">
         EHIRA is a decision-support and readiness tool. It does not replace a credit rating, an audit, legal due diligence or a lender&apos;s
-        decision. This report is based on your own answers and has not been verified by Kena.
+        decision. This report is based on your own answers and has not been verified by Kena Hub.
       </p>
 
       <button type="button" onClick={onRestart} className="text-sm font-semibold text-brand-700 hover:underline print:hidden">
@@ -792,7 +792,7 @@ function BriReport({ bri }: { bri: BriResult }) {
             );
           })}
           <p className="text-xs text-muted">
-            Gaps and actions are generated from your answers by Kena&apos;s rules. Recommendations written by the KENA AI engine will come with member accounts.
+            Gaps and actions are generated from your answers by Kena Hub&apos;s rules. Recommendations written by the KENA AI engine will come with member accounts.
           </p>
         </div>
       )}
@@ -804,8 +804,8 @@ function BriReport({ bri }: { bri: BriResult }) {
 function PrintLocked() {
   return (
     <div className="hidden print:block">
-      <p className="text-lg font-bold">Downloadable Kena reports are available with payment.</p>
-      <p className="mt-2">Please view your results on screen, or contact Kena to obtain the full report.</p>
+      <p className="text-lg font-bold">Downloadable Kena Hub reports are available with payment.</p>
+      <p className="mt-2">Please view your results on screen, or contact Kena Hub to obtain the full report.</p>
     </div>
   );
 }
@@ -896,7 +896,7 @@ function QuickResult({ result, bri, name, onFull, onEdit }: { result: ReturnType
           <p className="mt-1 text-sm text-ink">
             This self-check uses {quickSteps.reduce((t, x) => t + x.ids.length, 0)} of the full assessment&apos;s questions, so the scores are indicative. The full EHIRA
             covers every dimension, your financial ratios, tax clearance and credit information, and gives the complete gap analysis. The verified EHIRA adds a
-            review by a Kena analyst that lenders and investors can rely on.
+            review by a Kena Hub analyst that lenders and investors can rely on.
           </p>
           <button type="button" onClick={onFull} className="mt-3 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
             Continue to the full assessment

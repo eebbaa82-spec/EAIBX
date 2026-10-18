@@ -5,7 +5,7 @@ import { AudienceCtas, AudiencePageBody, audiences } from "@/components/group-a/
 const audience = audiences.advisors;
 
 export const metadata: Metadata = {
-  title: "For Mentors and Advisors · Kena",
+  title: "For Mentors and Advisors · Kena Hub",
   description: audience.subhead,
 };
 

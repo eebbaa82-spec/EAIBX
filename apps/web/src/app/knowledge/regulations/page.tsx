@@ -27,7 +27,7 @@ export default function RegulationsPage() {
       </PageHero>
       <Section
         title="In this library"
-        intro={`${latest ? `Last updated ${formatDate(latest)}. ` : ""}Summaries are open to everyone. Direct links to every original document, and the fully referenced PDF digests, are available to registered Kena members.`}
+        intro={`${latest ? `Last updated ${formatDate(latest)}. ` : ""}Summaries are open to everyone. Direct links to every original document, and the fully referenced PDF digests, are available to registered Kena Hub members.`}
       >
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {library.map((c) => (
@@ -72,7 +72,7 @@ export default function RegulationsPage() {
       <Section title="About these summaries">
         <div className="max-w-3xl">
           <Note>
-            Summaries are written by Kena to help you find and understand official documents. They are not legal advice and
+            Summaries are written by Kena Hub to help you find and understand official documents. They are not legal advice and
             do not replace the original text. Laws and directives are amended often, so always check the original document and
             take professional advice before you act.
           </Note>

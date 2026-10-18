@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, Faq, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Kena FAQ · Answers for Businesses and Investors",
+  title: "Kena Hub FAQ · Answers for Businesses and Investors",
   description:
     "Answers to common questions about listings, EHIRA assessments, deal rooms, fees and investor verification.",
 };
@@ -16,16 +16,16 @@ export default function FaqPage() {
         <Faq
           items={[
             {
-              q: "What is Kena?",
-              a: "Kena, Erudite Africa's business and investment platform, is an online platform that connects Ethiopian entrepreneurs and businesses with investors, buyers, mentors, advisors and learning, across the whole life of a business.",
+              q: "What is Kena Hub?",
+              a: "Kena Hub, Erudite Africa's business and investment platform, is an online platform that connects Ethiopian entrepreneurs and businesses with investors, buyers, mentors, advisors and learning, across the whole life of a business.",
             },
             {
-              q: "Who runs Kena?",
-              a: "Kena is operated by Erudite Africa Investments PLC, based in Addis Ababa.",
+              q: "Who runs Kena Hub?",
+              a: "Kena Hub is operated by Erudite Africa Investments PLC, based in Addis Ababa.",
             },
             {
-              q: "Is Kena a stock exchange?",
-              a: "No. Kena is a private matching and information platform. It does not list or trade securities and is not regulated as an exchange. Businesses that want to list publicly may use Kena to prepare for the Ethiopian Securities Exchange.",
+              q: "Is Kena Hub a stock exchange?",
+              a: "No. Kena Hub is a private matching and information platform. It does not list or trade securities and is not regulated as an exchange. Businesses that want to list publicly may use Kena Hub to prepare for the Ethiopian Securities Exchange.",
             },
             {
               q: "Is it free?",
@@ -52,11 +52,11 @@ export default function FaqPage() {
             },
             {
               q: "What is the EHIRA grade?",
-              a: "EHIRA, the Enterprise Health & Investment Readiness Assessment, grades your business from A to E across eight dimensions, from financial health to investment readiness, and adds a readiness rating. A verified grade is reviewed by a Kena analyst.",
+              a: "EHIRA, the Enterprise Health & Investment Readiness Assessment, grades your business from A to E across eight dimensions, from financial health to investment readiness, and adds a readiness rating. A verified grade is reviewed by a Kena Hub analyst.",
             },
             {
               q: "How long does it take to raise money or sell?",
-              a: "It depends on your business, the market and the deal. Many transactions take several months. Kena helps you prepare so you do not lose time.",
+              a: "It depends on your business, the market and the deal. Many transactions take several months. Kena Hub helps you prepare so you do not lose time.",
             },
             {
               q: "What if my business is in trouble?",
@@ -70,7 +70,7 @@ export default function FaqPage() {
         <Faq
           items={[
             {
-              q: "Who can invest through Kena?",
+              q: "Who can invest through Kena Hub?",
               a: (
                 <>
                   Individuals and organizations that complete our investor verification. Foreign and diaspora investors must also
@@ -79,11 +79,11 @@ export default function FaqPage() {
               ),
             },
             {
-              q: "Does Kena give investment advice?",
+              q: "Does Kena Hub give investment advice?",
               a: "No. We provide information, tools and introductions. Make your own assessment and take professional advice.",
             },
             {
-              q: "Does Kena hold investor funds?",
+              q: "Does Kena Hub hold investor funds?",
               a: (
                 <>
                   No. Payments for investments or acquisitions are made directly between the parties, through their banks or

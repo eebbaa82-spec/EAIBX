@@ -11,17 +11,22 @@ import {
   Steps,
   TrustBar,
 } from "@/components/ui";
+import { translator } from "@/i18n/chrome";
 import { localizeHref, type Locale } from "@/i18n/config";
+import { brand } from "@/lib/site";
 import type { HomeCopy } from "@/i18n/home";
 
 export function HomePage({ t, locale }: { t: HomeCopy; locale: Locale }) {
   const href = (h: string) => localizeHref(locale, h);
+  const tc = translator(locale);
   return (
     <>
       <section className="bg-gradient-to-br from-brand-900 via-brand-700 to-brand-600 py-20 text-white sm:py-28">
         <Container>
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl">{t.heroTitle}</h1>
+            <p className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">{brand.name}</p>
+            <p className="mt-1 text-sm font-medium text-gold-400 sm:text-base">{tc(`A platform by ${brand.operator}.`)}</p>
+            <h1 className="mt-8 text-4xl font-extrabold tracking-tight sm:text-6xl">{t.heroTitle}</h1>
             <p className="mt-6 text-lg text-brand-100 sm:text-xl">{t.heroBody}</p>
             <form action="/marketplace/" className="mt-8 flex max-w-2xl gap-2" role="search">
               <label htmlFor="hero-search" className="sr-only">

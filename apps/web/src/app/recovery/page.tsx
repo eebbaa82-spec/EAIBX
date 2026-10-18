@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, Note, PageHero, Section, Steps } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Business Recovery and Turnaround · Kena",
+  title: "Business Recovery and Turnaround · Kena Hub",
   description:
     "Confidential help for Ethiopian businesses under pressure: diagnosis, turnaround plans, recovery capital and managed sales.",
 };
@@ -21,7 +21,7 @@ export default function RecoveryPage() {
       <PageHero
         eyebrow="Business Recovery"
         title="Every business hits hard times. The best ones get help early."
-        subhead="If sales have fallen, cash is tight or debts are piling up, Kena can help you understand what went wrong and find the best way forward, confidentially."
+        subhead="If sales have fallen, cash is tight or debts are piling up, Kena Hub can help you understand what went wrong and find the best way forward, confidentially."
       >
         <ButtonLink href="/contact" variant="light">
           Talk to a recovery advisor
@@ -67,7 +67,7 @@ export default function RecoveryPage() {
           </Note>
           <Note>
             Where formal insolvency or bankruptcy proceedings apply under Ethiopian law, we work alongside your lawyers and
-            the appointed officials. Kena does not replace legal process.
+            the appointed officials. Kena Hub does not replace legal process.
           </Note>
         </div>
       </Section>
