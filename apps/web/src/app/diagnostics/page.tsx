@@ -21,13 +21,13 @@ export default function EhiraPage() {
           <ButtonLink href="#assessment" variant="light">
             Start my free EHIRA
           </ButtonLink>
-          <p className="w-full text-sm text-brand-100">About 15 minutes, one question at a time. Have your tax clearance certificate ready.</p>
+          <p className="w-full text-sm text-brand-100">About 20 minutes, one question at a time. Have your tax clearance certificate ready.</p>
         </PageHero>
 
         <Section tone="canvas" title="What EHIRA does">
           <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink">
             <li>EHIRA scores your business across eight dimensions, from financial health to investment readiness, weighted for your type of business.</li>
-            <li>You get an A to E grade, an investment readiness rating and the actions that will lift your score the most.</li>
+            <li>You get an A to E grade, the KENA™ Bank Readiness Index with six readiness scores for credit, investment and transactions, and the actions that will lift them most.</li>
             <li>The free self-assessment is indicative, while the verified EHIRA, reviewed by a Kena analyst, gives a grade lenders and investors can rely on.</li>
           </ul>
           <p className="mt-4">

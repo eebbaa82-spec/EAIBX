@@ -4,6 +4,10 @@ import Link from "next/link";
 import { useMemo, useState, useSyncExternalStore } from "react";
 import { businessTypes, dimensions, questions, screening, typeWeights, type Answers, type BusinessType, type DimensionId, type Question } from "@/lib/ehira/model";
 import { isoDate, isVisible, score, taxClearance } from "@/lib/ehira/score";
+import { briQuestions } from "@/lib/bri/model";
+import { scoreBri, type BriResult } from "@/lib/bri/score";
+
+const allQuestions = [...questions, ...briQuestions];
 
 const STORAGE_KEY = "kena-ehira-draft-v2";
 
@@ -16,6 +20,12 @@ const allSteps: Step[] = [
     intro: d.id === "financial" ? "Use your last full financial year. The figures marked optional let us calculate your financial ratios; leave them blank if you do not have them." : undefined,
     ids: questions.filter((q) => q.dimension === d.id).map((q) => q.id),
   })),
+  {
+    id: "bri",
+    title: "Finance and transaction readiness",
+    intro: "These questions feed the KENA™ Bank Readiness Index: your readiness for bank, MFI and leasing finance, investors, due diligence and M&A. They do not change your EHIRA grade.",
+    ids: briQuestions.map((q) => q.id),
+  },
   { id: "screening", title: "Legal and compliance screening", intro: "These answers do not add points, but some of them limit the highest grade a business can receive.", ids: screening.map((s) => s.id) },
 ];
 
@@ -328,20 +338,21 @@ export function EhiraAssessment() {
 
   const bt = (businessTypes.some((b) => b.id === type) ? type : "sme") as BusinessType;
   const result = useMemo(() => score(answers, bt), [answers, bt]);
+  const bri = useMemo(() => scoreBri(answers, bt), [answers, bt]);
 
   // One question per screen. Dimensions with no weight for this business type are skipped.
-  const steps = allSteps.filter((s) => s.id === "screening" || typeWeights[bt][s.id as DimensionId] > 0);
+  const steps = allSteps.filter((s) => s.id === "screening" || s.id === "bri" || typeWeights[bt][s.id as DimensionId] > 0);
   const items = steps.flatMap((s, si) =>
     s.ids
       .filter((id) => {
-        const q = questions.find((x) => x.id === id);
+        const q = allQuestions.find((x) => x.id === id);
         return !q || isVisible(q, answers, bt);
       })
       .map((id, qi) => ({ id, step: s, stepIndex: si, first: qi === 0 })),
   );
   const item = items[pos];
   const q: Question | undefined = item
-    ? questions.find((x) => x.id === item.id) ?? { ...screening.find((s) => s.id === item.id)!, dimension: "governance", type: "yesno", required: true, weight: 0, action: "" }
+    ? allQuestions.find((x) => x.id === item.id) ?? { ...screening.find((s) => s.id === item.id)!, dimension: "governance", type: "yesno", required: true, weight: 0, action: "" }
     : undefined;
   const answered = q
     ? q.type === "taxclearance"
@@ -396,7 +407,7 @@ export function EhiraAssessment() {
             </button>
           )}
         </div>
-        <p className="text-xs text-muted">One question at a time, about 15 minutes. Your report appears at the end. Your answers stay in this browser only and are not sent to Kena.</p>
+        <p className="text-xs text-muted">One question at a time, about 20 minutes. Your report appears at the end. Your answers stay in this browser only and are not sent to Kena.</p>
       </div>
     );
 
@@ -404,6 +415,7 @@ export function EhiraAssessment() {
     return (
       <Report
         result={result}
+        bri={bri}
         name={name}
         type={businessTypes.find((t) => t.id === bt)!.label}
         answers={answers}
@@ -464,7 +476,7 @@ const gradeTone: Record<string, string> = {
   E: "from-red-800 to-red-700 text-white",
 };
 
-function Report({ result, name, type, answers, files, onEdit, onRestart }: { result: ReturnType<typeof score>; name: string; type: string; answers: Answers; files: Record<string, File | null>; onEdit: () => void; onRestart: () => void }) {
+function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: { result: ReturnType<typeof score>; bri: BriResult; name: string; type: string; answers: Answers; files: Record<string, File | null>; onEdit: () => void; onRestart: () => void }) {
   const tax = taxClearance(answers);
   const fmt = (d: Answers[string]) => (typeof d === "string" && d ? new Date(`${d}T00:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "–");
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
@@ -618,6 +630,8 @@ function Report({ result, name, type, answers, files, onEdit, onRestart }: { res
         </section>
       )}
 
+      <BriReport bri={bri} />
+
       <section className="rounded-xl border border-line bg-canvas p-5 print:hidden">
         <h4 className="font-bold text-ink">Next steps on Kena</h4>
         <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-brand-700">
@@ -638,5 +652,81 @@ function Report({ result, name, type, answers, files, onEdit, onRestart }: { res
         Start a new assessment
       </button>
     </article>
+  );
+}
+
+const barTone = (v: number | null) => (v === null ? "" : v >= 80 ? "bg-brand-600" : v >= 60 ? "bg-amber-500" : "bg-red-500");
+
+function BriReport({ bri }: { bri: BriResult }) {
+  const weak = bri.indices.filter((x) => x.score !== null && x.score < 80 && x.gaps.length > 0);
+  return (
+    <section className="space-y-5 break-inside-avoid">
+      <div>
+        <h4 className="text-lg font-bold text-ink">KENA™ Bank Readiness Index</h4>
+        <p className="mt-1 text-sm text-muted">
+          Six readiness scores for credit, investment, due diligence and transactions, and the KENA Enterprise Readiness Score (KERS™) that combines them.
+        </p>
+      </div>
+      <div className="rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white">
+        <p className="text-sm opacity-80">KENA Enterprise Readiness Score (KERS™)</p>
+        <p className="mt-1 text-5xl font-extrabold">
+          {bri.kers === null ? "–" : Math.round(bri.kers)} <span className="text-xl font-semibold opacity-70">/ 100</span>
+        </p>
+        <p className="mt-2 text-lg font-bold">{bri.maturity}</p>
+      </div>
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {bri.indices.map((x) => (
+          <li key={x.id} className="rounded-xl border border-line bg-white p-4">
+            <p className="text-xs font-semibold uppercase tracking-wide text-muted">
+              {x.name} ({x.id})
+            </p>
+            <p className="mt-1 text-2xl font-extrabold text-ink">
+              {x.score === null ? "–" : Math.round(x.score)} <span className="text-sm font-semibold text-muted">/ 100</span>
+            </p>
+            <p className="text-sm font-semibold text-ink">{x.status}</p>
+            <div className="mt-2 h-2 rounded-full bg-line">
+              <div className={`h-2 rounded-full ${barTone(x.score)}`} style={{ width: `${x.score ?? 0}%` }} />
+            </div>
+          </li>
+        ))}
+      </ul>
+      {weak.length > 0 && (
+        <div className="space-y-4">
+          <h4 className="text-lg font-bold text-ink">Gap analysis and recommended actions</h4>
+          {weak.map((x) => {
+            const gaps = x.gaps.slice(0, 4);
+            const actions = [...new Set(gaps.map((g) => g.action).filter(Boolean))];
+            return (
+              <div key={x.id} className="rounded-xl border border-line bg-white p-5">
+                <p className="font-bold text-ink">
+                  {x.name} = {Math.round(x.score!)}%
+                </p>
+                <div className="mt-3 grid gap-4 sm:grid-cols-2">
+                  <div>
+                    <p className="text-sm font-semibold text-ink">Key gaps</p>
+                    <ul className="mt-1 list-disc space-y-1 pl-5 text-sm text-ink">
+                      {gaps.map((g) => (
+                        <li key={g.gap}>{g.gap}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-ink">Recommended actions</p>
+                    <ol className="mt-1 list-decimal space-y-1 pl-5 text-sm text-ink">
+                      {actions.map((t) => (
+                        <li key={t}>{t}</li>
+                      ))}
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          <p className="text-xs text-muted">
+            Gaps and actions are generated from your answers by Kena&apos;s rules. Recommendations written by the KENA AI engine will come with member accounts.
+          </p>
+        </div>
+      )}
+    </section>
   );
 }

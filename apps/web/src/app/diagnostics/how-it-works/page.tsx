@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ButtonLink, Card, CardGrid, DataTable, Note, PageHero, Section } from "@/components/ui";
 import { businessTypes, dimensions, gradeBands, typeWeights } from "@/lib/ehira/model";
+import { indices, kersWeights, maturityBands } from "@/lib/bri/model";
 
 export const metadata: Metadata = {
   title: "How EHIRA works · Kena",
@@ -58,7 +59,52 @@ export default function EhiraMethodPage() {
         </p>
       </Section>
 
-      <Section tone="canvas" title="Two levels">
+      <Section
+        tone="canvas"
+        eyebrow="KENA™ Bank Readiness Index (BRI)"
+        title="Six readiness scores and KERS™"
+        intro="The same answers also produce six independent readiness scores from 0 to 100, for credit, investment, due diligence and transactions. They do not change the EHIRA grade."
+      >
+        <div className="grid gap-6 lg:grid-cols-2">
+          {indices.map((ix) => (
+            <div key={ix.id}>
+              <h3 className="text-lg font-bold text-ink">
+                {ix.name} ({ix.id})
+              </h3>
+              <p className="mt-1 text-sm text-muted">{ix.purpose}</p>
+              <div className="mt-3">
+                <DataTable head={["Dimension", "Weight"]} rows={ix.dimensions.map((d) => [d.name, `${d.weight}%`])} />
+              </div>
+              <p className="mt-2 text-sm text-muted">
+                Rating: {ix.bands.map((b, i) => `${i === 0 ? `${b.min}+` : i === ix.bands.length - 1 ? `below ${ix.bands[i - 1].min}` : `${b.min} to ${ix.bands[i - 1].min - 1}`} ${b.label}`).join(" · ")}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 className="text-lg font-bold text-ink">KENA Enterprise Readiness Score (KERS™)</h3>
+            <div className="mt-3">
+              <DataTable head={["Index", "Weight"]} rows={indices.map((ix) => [ix.name, `${kersWeights[ix.id]}%`])} />
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-ink">Enterprise maturity classification</h3>
+            <div className="mt-3">
+              <DataTable
+                head={["KERS™", "Classification"]}
+                rows={maturityBands.map((b, i) => [i === 0 ? "90 to 100" : i === maturityBands.length - 1 ? `Below ${maturityBands[i - 1].min}` : `${b.min} to ${maturityBands[i - 1].min - 1}`, b.label])}
+              />
+            </div>
+          </div>
+        </div>
+        <p className="mt-6 text-ink">
+          After scoring, Kena lists the key gaps holding back each index below 80 and the actions that close them, such as obtaining a tax
+          clearance certificate, registering movable assets in the collateral registry or preparing an investment memorandum.
+        </p>
+      </Section>
+
+      <Section title="Two levels">
         <CardGrid cols={2}>
           <Card title="Free self-assessment">
             Answer the guided questions one at a time and get an instant indicative grade, readiness rating and action list.
