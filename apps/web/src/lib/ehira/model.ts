@@ -50,8 +50,10 @@ export type Question = {
   text: string;
   help?: string;
   type: "yesno" | "scale" | "percent" | "number" | "money" | "months" | "choice" | "taxclearance" | "creditinfo";
-  /** Answer options for `choice` questions; a null score means the option is not scored. */
-  options?: { value: string; label: string; score: number | null }[];
+  /** Answer options for `choice` questions; a null score means the option is not scored. An `exclusive` option clears the others. */
+  options?: { value: string; label: string; score: number | null; exclusive?: boolean }[];
+  /** `choice` question where several options can be picked; the answer is the picked values joined by commas (see multiScore). */
+  multi?: boolean;
   /** Business types the question applies to; all types when absent. */
   for?: BusinessType[];
   /** Added by the methodology addendum for the Ethiopian context (not in the framework draft). */

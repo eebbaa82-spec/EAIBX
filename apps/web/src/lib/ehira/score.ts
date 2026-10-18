@@ -38,6 +38,17 @@ export function taxClearance(a: Answers, today = new Date()): "valid" | "expired
   return expiry >= isoDate(today) ? "valid" : "expired";
 }
 
+/** Several options picked: the best one counts in full, and each further option adds 10 points, up to 100. */
+export function multiScore(q: Question, v: string): number | null {
+  const scores = v
+    .split(",")
+    .map((x) => q.options?.find((o) => o.value === x)?.score)
+    .filter((x): x is number => typeof x === "number")
+    .sort((x, y) => y - x);
+  if (!scores.length) return null;
+  return Math.min(100, scores[0] + 10 * scores.filter((x) => x > 0).slice(1).length);
+}
+
 /** Response score from 0 to 100, or null when the question is unscored or unanswered. */
 export function responseScore(q: Question, a: Answers): number | null {
   if (q.type === "taxclearance") {
@@ -47,6 +58,7 @@ export function responseScore(q: Question, a: Answers): number | null {
   const v = a[q.id];
   if (q.unscored || v === undefined || v === "na") return null;
   if (q.type === "yesno") return v === "yes" ? 100 : 0;
+  if (q.type === "choice" && q.multi) return multiScore(q, String(v));
   if (q.type === "choice") return q.options?.find((o) => o.value === v)?.score ?? null;
   if (typeof v !== "number") return null;
   if (q.type === "scale") return ((Math.min(5, Math.max(1, v)) - 1) / 4) * 100;

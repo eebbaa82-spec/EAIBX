@@ -81,6 +81,11 @@ function parseNumber(v: string) {
   return Number.isFinite(n) ? n : undefined;
 }
 
+/** The options picked on a multi-select question, ignoring values no longer offered. */
+function multiPicked(q: Question, value: Answers[string]) {
+  return typeof value === "string" ? value.split(",").filter((x) => q.options?.some((o) => o.value === x)) : [];
+}
+
 function QuestionField({ q, value, onChange }: { q: Question | { id: string; text: string; type: "yesno"; required: true; help?: string; evidence?: string }; value: Answers[string]; onChange: (v: Answers[string]) => void }) {
   const [text, setText] = useState(typeof value === "number" ? value.toLocaleString("en-US") : "");
   return (
@@ -111,7 +116,23 @@ function QuestionField({ q, value, onChange }: { q: Question | { id: string; tex
           ))}
         </div>
       )}
-      {q.type === "choice" && "options" in q && (
+      {q.type === "choice" && "options" in q && q.multi && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {q.options?.map((o) => {
+            const picked = multiPicked(q, value);
+            const on = picked.includes(o.value);
+            const next = on ? picked.filter((x) => x !== o.value) : o.exclusive ? [o.value] : [...picked.filter((x) => !q.options?.find((y) => y.value === x)?.exclusive), o.value];
+            return (
+              <label key={o.value} className={choice(on)}>
+                <input type="checkbox" className="sr-only" checked={on} onChange={() => onChange(next.length ? next.join(",") : undefined)} />
+                {on && <span aria-hidden="true">✓ </span>}
+                {o.label}
+              </label>
+            );
+          })}
+        </div>
+      )}
+      {q.type === "choice" && "options" in q && !q.multi && (
         <div className="mt-3 flex flex-wrap gap-2">
           {q.options?.map((o) => (
             <label key={o.value} className={choice(value === o.value)}>
@@ -378,7 +399,9 @@ export function EhiraAssessment() {
       ? taxComplete(answers, files.G3 ?? null)
       : q.type === "creditinfo"
         ? creditComplete(answers, files.F8 ?? null)
-        : !q.required || answers[q.id] !== undefined
+        : q.type === "choice" && q.multi
+          ? multiPicked(q, answers[q.id]).length > 0
+          : !q.required || answers[q.id] !== undefined
     : false;
 
   const go = (to: number) => {
@@ -498,7 +521,7 @@ export function EhiraAssessment() {
       ) : q!.type === "creditinfo" ? (
         <CreditInfoField q={q!} answers={answers} file={files.F8 ?? null} onAnswer={setField} onFile={(f) => setFile("F8", f)} business={name} />
       ) : (
-        <QuestionField key={q!.id} q={q!} value={answers[q!.id]} onChange={q!.type === "yesno" || q!.type === "scale" || q!.type === "choice" ? choose : (v) => setAnswer(q!.id, v)} />
+        <QuestionField key={q!.id} q={q!} value={answers[q!.id]} onChange={q!.type === "yesno" || q!.type === "scale" || (q!.type === "choice" && !q!.multi) ? choose : (v) => setAnswer(q!.id, v)} />
       )}
       <div className="mt-6 flex flex-wrap items-center gap-3">
         <button type="button" onClick={() => go(pos - 1)} className="rounded-lg border border-line px-5 py-2.5 text-sm font-semibold text-ink hover:bg-canvas">
