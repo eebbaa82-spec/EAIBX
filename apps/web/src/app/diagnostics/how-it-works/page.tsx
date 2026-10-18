@@ -107,7 +107,8 @@ export default function EhiraMethodPage() {
       <Section title="Two levels">
         <CardGrid cols={2}>
           <Card title="Free self-assessment">
-            Answer the guided questions one at a time and get an instant indicative grade, readiness rating and action list.
+            Take the quick self-check (selected questions, under 5 minutes) or the full assessment (about 20 minutes) and see your
+            indicative grade, readiness scores and actions on screen. Downloadable reports are available with payment.
           </Card>
           <Card title="Verified EHIRA (price announced after the launch period)">
             Upload your financial statements, tax clearance certificate and supporting documents. A Kena analyst reviews them and issues a

@@ -29,7 +29,12 @@ export const isoDate = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 
 /** Tax clearance (G3): valid while today is on or before the expiry date given. */
 export function taxClearance(a: Answers, today = new Date()): "valid" | "expired" | "missing" {
   const expiry = a.G3_EXPIRY;
-  if (typeof expiry !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(expiry)) return "missing";
+  if (typeof expiry !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(expiry)) {
+    // The quick self-check asks a plain yes/no instead of the certificate details.
+    if (a.QG3 === "yes") return "valid";
+    if (a.QG3 === "no") return "expired";
+    return "missing";
+  }
   return expiry >= isoDate(today) ? "valid" : "expired";
 }
 
@@ -88,6 +93,16 @@ export function ratios(a: Answers): Ratio[] {
   return out;
 }
 
+/**
+ * Whether a loan more than 90 days overdue was reported: from the attached NBE report in the full assessment,
+ * or the quick self-check's yes/no (QF8). A signed declaration means none.
+ */
+export function nonPerforming(a: Answers): boolean | null {
+  if (a.F8_ROUTE === "declaration") return a.F8_AGREE === "yes" ? false : null;
+  if (a.F8_ROUTE === "report") return a.F8 === "yes" ? true : a.F8 === "no" ? false : null;
+  return a.QF8 === "yes" ? true : a.QF8 === "no" ? false : null;
+}
+
 export type RedFlag = { flag: string; cap: Grade };
 
 export function redFlags(a: Answers, r: Ratio[]): RedFlag[] {
@@ -99,7 +114,7 @@ export function redFlags(a: Answers, r: Ratio[]): RedFlag[] {
   const dscr = r.find((x) => x.id === "dscr");
   if (dscr?.value !== null && dscr?.value !== undefined && dscr.value < 1) flags.push({ flag: "DSCR below 1.0", cap: "D" });
   for (const s of screening) if (a[s.id] === s.flagIf) flags.push({ flag: s.flag, cap: s.cap });
-  for (const f of addedFlags) if (a[f.id] === f.is) flags.push({ flag: f.flag, cap: f.cap });
+  for (const f of addedFlags) if (nonPerforming(a) === (f.is === "yes")) flags.push({ flag: f.flag, cap: f.cap });
   return flags;
 }
 

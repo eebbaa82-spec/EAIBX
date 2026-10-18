@@ -1,5 +1,5 @@
 import { questions, screening, type Answers, type BusinessType } from "@/lib/ehira/model";
-import { isVisible, ratios, responseScore, type Ratio } from "@/lib/ehira/score";
+import { isVisible, nonPerforming, ratios, responseScore, type Ratio } from "@/lib/ehira/score";
 import { briQuestions, indices, itemText, kersWeights, maturityBands, type Band, type IndexId } from "./model";
 
 const allQuestions = [...questions, ...briQuestions];
@@ -10,8 +10,8 @@ export function itemScore(id: string, a: Answers, type: BusinessType, r: Ratio[]
   const s = screening.find((x) => x.id === id);
   if (s) return a[id] === undefined ? null : a[id] === s.flagIf ? 0 : 100;
   if (id === "F8") {
-    if (a.F8_ROUTE === "declaration") return a.F8_AGREE === "yes" ? 100 : null;
-    return a.F8 === "yes" ? 0 : a.F8 === "no" ? 100 : null;
+    const npl = nonPerforming(a);
+    return npl === null ? null : npl ? 0 : 100;
   }
   const q = allQuestions.find((x) => x.id === id);
   if (!q || !isVisible(q, a, type)) return null;

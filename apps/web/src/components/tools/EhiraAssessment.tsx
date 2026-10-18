@@ -7,7 +7,13 @@ import { isoDate, isVisible, score, taxClearance } from "@/lib/ehira/score";
 import { briQuestions } from "@/lib/bri/model";
 import { scoreBri, type BriResult } from "@/lib/bri/score";
 
-const allQuestions = [...questions, ...briQuestions];
+/** Plain yes/no stand-ins used only by the quick self-check, which takes no uploads. */
+const quickQuestions: Question[] = [
+  { id: "QF8", dimension: "financial", text: "Does the business have any loan more than 90 days overdue with a bank or MFI?", type: "yesno", required: true, weight: 0, unscored: true, action: "" },
+  { id: "QG3", dimension: "governance", text: "Does the business hold a current tax clearance certificate?", type: "yesno", required: true, weight: 0, unscored: true, action: "" },
+];
+
+const allQuestions = [...questions, ...briQuestions, ...quickQuestions];
 
 const STORAGE_KEY = "kena-ehira-draft-v2";
 
@@ -28,6 +34,18 @@ const allSteps: Step[] = [
   },
   { id: "screening", title: "Legal and compliance screening", intro: "These answers do not add points, but some of them limit the highest grade a business can receive.", ids: screening.map((s) => s.id) },
 ];
+
+/** The self-check: a few selected questions per category, all one tap or one number, in under five minutes. */
+const quickSteps: Step[] = [
+  { id: "financial", title: "Financial health", ids: ["F1", "F2", "F7", "QF8"] },
+  { id: "market", title: "Market and customers", ids: ["M4", "M6"] },
+  { id: "operations", title: "Operations and people", ids: ["O2", "H3"] },
+  { id: "governance", title: "Governance and compliance", ids: ["R1", "QG3", "G1", "G5"] },
+  { id: "strategy", title: "Strategy, systems and investment", ids: ["S1", "T1", "I1", "I5"] },
+  { id: "bri", title: "Finance readiness", ids: ["B1", "B5", "B12", "B16", "B22", "B24"] },
+];
+
+type Mode = "quick" | "full";
 
 type Draft = { answers: Answers; type: string; name: string };
 const EMPTY: Draft = { answers: {}, type: "", name: "" };
@@ -314,6 +332,7 @@ export function EhiraAssessment() {
   const [own, setState] = useState<Draft | null>(null);
   const state = own ?? saved;
   const [pos, setPos] = useState(-1);
+  const [mode, setMode] = useState<Mode>("full");
   const [files, setFiles] = useState<Record<string, File | null>>({});
   const { answers, type, name } = state;
 
@@ -341,7 +360,7 @@ export function EhiraAssessment() {
   const bri = useMemo(() => scoreBri(answers, bt), [answers, bt]);
 
   // One question per screen. Dimensions with no weight for this business type are skipped.
-  const steps = allSteps.filter((s) => s.id === "screening" || s.id === "bri" || typeWeights[bt][s.id as DimensionId] > 0);
+  const steps = mode === "quick" ? quickSteps : allSteps.filter((s) => s.id === "screening" || s.id === "bri" || typeWeights[bt][s.id as DimensionId] > 0);
   const items = steps.flatMap((s, si) =>
     s.ids
       .filter((id) => {
@@ -394,21 +413,47 @@ export function EhiraAssessment() {
           </div>
           {type && <p className="mt-2 text-sm text-muted">Focus for this version: {businessTypes.find((t) => t.id === type)?.focus}</p>}
         </fieldset>
-        <p className="rounded-lg bg-canvas p-3 text-sm text-ink">
-          Have your tax clearance certificate ready (PDF or photo), with your TIN, the certificate number and its dates. You will also either sign a declaration that the business has no non-performing loan or attach your own NBE credit report. Both are mandatory.
-        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-lg border border-line p-4">
+            <p className="font-semibold text-ink">Quick self-check</p>
+            <p className="mt-1 text-sm text-muted">{quickSteps.reduce((t, x) => t + x.ids.length, 0)} selected questions, under 5 minutes. Indicative scores and a short summary.</p>
+            <button type="button" disabled={!type} onClick={() => { setMode("quick"); go(0); }} className="mt-3 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
+              Start the quick self-check
+            </button>
+          </div>
+          <div className="rounded-lg border border-line p-4">
+            <p className="font-semibold text-ink">Full EHIRA assessment</p>
+            <p className="mt-1 text-sm text-muted">
+              About 20 minutes. Have your tax clearance certificate ready, and either sign a no-overdue-loan declaration or attach your NBE credit report.
+            </p>
+            <button type="button" disabled={!type} onClick={() => { setMode("full"); go(0); }} className="mt-3 rounded-lg border border-brand-600 px-5 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-50 disabled:opacity-40">
+              {Object.keys(answers).length ? "Continue the full assessment" : "Start the full assessment"}
+            </button>
+          </div>
+        </div>
         <div className="flex flex-wrap items-center gap-3">
-          <button type="button" disabled={!type} onClick={() => go(0)} className="rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-40">
-            {Object.keys(answers).length ? "Continue the assessment" : "Start the assessment"}
-          </button>
           {(Object.keys(answers).length > 0 || name !== "" || type !== "") && (
             <button type="button" onClick={() => { update(EMPTY); setFiles({}); }} className="text-sm font-semibold text-brand-700 hover:underline">
               Clear my answers and start over
             </button>
           )}
         </div>
-        <p className="text-xs text-muted">One question at a time, about 20 minutes. Your report appears at the end. Your answers stay in this browser only and are not sent to Kena.</p>
+        <p className="text-xs text-muted">One question at a time; your results appear at the end. Your answers stay in this browser only and are not sent to Kena.</p>
       </div>
+    );
+
+  if (pos >= items.length && mode === "quick")
+    return (
+      <QuickResult
+        result={result}
+        bri={bri}
+        name={name}
+        onFull={() => {
+          setMode("full");
+          go(0);
+        }}
+        onEdit={() => go(0)}
+      />
     );
 
   if (pos >= items.length)
@@ -481,7 +526,9 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
   const fmt = (d: Answers[string]) => (typeof d === "string" && d ? new Date(`${d}T00:00:00`).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) : "–");
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   return (
-    <article className="space-y-8">
+    <>
+    <PrintLocked />
+    <article className="space-y-8 print:hidden">
       <header className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
         <div>
           <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">EHIRA self-assessment report</p>
@@ -491,9 +538,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
           </p>
         </div>
         <div className="flex gap-3 print:hidden">
-          <button type="button" onClick={() => window.print()} className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">
-            Print or save as PDF
-          </button>
+          <PaidDownload />
           <button type="button" onClick={onEdit} className="rounded-lg border border-line px-4 py-2 text-sm font-semibold text-ink hover:bg-canvas">
             Change answers
           </button>
@@ -652,6 +697,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
         Start a new assessment
       </button>
     </article>
+    </>
   );
 }
 
@@ -728,5 +774,113 @@ function BriReport({ bri }: { bri: BriResult }) {
         </div>
       )}
     </section>
+  );
+}
+
+/** Downloadable reports are a paid feature; until payments open, printing the page shows this instead of the report. */
+function PrintLocked() {
+  return (
+    <div className="hidden print:block">
+      <p className="text-lg font-bold">Downloadable Kena reports are available with payment.</p>
+      <p className="mt-2">Please view your results on screen, or contact Kena to obtain the full report.</p>
+    </div>
+  );
+}
+
+function PaidDownload() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="relative">
+      <button type="button" onClick={() => setOpen(!open)} className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">
+        Download PDF report
+      </button>
+      {open && (
+        <div className="absolute right-0 z-10 mt-2 w-72 rounded-xl border border-line bg-white p-4 text-left text-sm text-ink shadow-lg">
+          <p className="font-semibold">Downloadable reports are a paid service.</p>
+          <p className="mt-1 text-muted">Online payment opens with member accounts. Until then you can view every result here on screen.</p>
+          <Link href="/pricing" className="mt-2 inline-block font-semibold text-brand-700 hover:underline">
+            See pricing →
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function QuickResult({ result, bri, name, onFull, onEdit }: { result: ReturnType<typeof score>; bri: BriResult; name: string; onFull: () => void; onEdit: () => void }) {
+  const actions = result.actions.slice(0, 3);
+  const weakest = bri.indices.filter((x) => x.score !== null).sort((x, y) => x.score! - y.score!)[0];
+  return (
+    <>
+      <PrintLocked />
+      <article className="max-w-4xl space-y-6 print:hidden">
+        <header className="flex flex-wrap items-end justify-between gap-4 border-b border-line pb-4">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-brand-700">Quick self-check results</p>
+            <h3 className="mt-1 text-2xl font-bold text-ink">{name || "Your business"}</h3>
+            <p className="text-sm text-muted">Indicative, based on a few selected answers</p>
+          </div>
+          <div className="flex gap-3">
+            <PaidDownload />
+            <button type="button" onClick={onEdit} className="rounded-lg border border-line px-4 py-2 text-sm font-semibold text-ink hover:bg-canvas">
+              Change answers
+            </button>
+          </div>
+        </header>
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className={`rounded-xl bg-gradient-to-br p-6 ${gradeTone[result.grade]}`}>
+            <p className="text-sm opacity-80">EHIRA indicative grade</p>
+            <p className="mt-1 text-5xl font-extrabold">{result.grade}</p>
+            <p className="mt-2 font-bold">
+              {result.label} · {Math.round(result.total)} / 100
+            </p>
+          </div>
+          <div className="rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white">
+            <p className="text-sm opacity-80">KENA Enterprise Readiness Score (KERS™)</p>
+            <p className="mt-1 text-5xl font-extrabold">{bri.kers === null ? "–" : Math.round(bri.kers)}</p>
+            <p className="mt-2 font-bold">{bri.maturity}</p>
+          </div>
+        </div>
+
+        <ul className="grid gap-3 sm:grid-cols-3">
+          {bri.indices.map((x) => (
+            <li key={x.id} className="rounded-xl border border-line bg-white p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-muted">{x.name}</p>
+              <p className="mt-1 text-xl font-extrabold text-ink">{x.score === null ? "–" : Math.round(x.score)}</p>
+              <p className="text-sm text-ink">{x.status}</p>
+            </li>
+          ))}
+        </ul>
+
+        <section className="rounded-xl border border-line bg-white p-5">
+          <h4 className="font-bold text-ink">Summary</h4>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink">
+            {result.flags.length > 0 && <li>Red flags limit your grade: {result.flags.map((f) => f.flag.toLowerCase()).join("; ")}.</li>}
+            {weakest && (
+              <li>
+                Your weakest area is {weakest.name} ({Math.round(weakest.score!)}){weakest.gaps[0] ? `, mainly: ${weakest.gaps[0].gap.toLowerCase()}` : ""}.
+              </li>
+            )}
+            {actions.map((a) => (
+              <li key={a.text}>{a.text}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="rounded-xl border-2 border-gold-500 bg-gold-100 p-5">
+          <h4 className="font-bold text-ink">A more rigorous assessment awaits</h4>
+          <p className="mt-1 text-sm text-ink">
+            This self-check uses {quickSteps.reduce((t, x) => t + x.ids.length, 0)} of the full assessment&apos;s questions, so the scores are indicative. The full EHIRA
+            covers every dimension, your financial ratios, tax clearance and credit information, and gives the complete gap analysis. The verified EHIRA adds a
+            review by a Kena analyst that lenders and investors can rely on.
+          </p>
+          <button type="button" onClick={onFull} className="mt-3 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
+            Continue to the full assessment
+          </button>
+          <p className="mt-2 text-xs text-muted">Your answers so far carry over.</p>
+        </section>
+      </article>
+    </>
   );
 }

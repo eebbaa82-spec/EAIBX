@@ -19,16 +19,16 @@ export default function EhiraPage() {
           subhead="Find out how healthy your business is and how ready it is for investors and lenders."
         >
           <ButtonLink href="#assessment" variant="light">
-            Start my free EHIRA
+            Start my free self-check
           </ButtonLink>
-          <p className="w-full text-sm text-brand-100">About 20 minutes, one question at a time. Have your tax clearance certificate ready.</p>
+          <p className="w-full text-sm text-brand-100">A quick self-check in under 5 minutes, or the full assessment in about 20.</p>
         </PageHero>
 
         <Section tone="canvas" title="What EHIRA does">
           <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink">
             <li>EHIRA scores your business across eight dimensions, from financial health to investment readiness, weighted for your type of business.</li>
             <li>You get an A to E grade, the KENA™ Bank Readiness Index with six readiness scores for credit, investment and transactions, and the actions that will lift them most.</li>
-            <li>The free self-assessment is indicative, while the verified EHIRA, reviewed by a Kena analyst, gives a grade lenders and investors can rely on.</li>
+            <li>The free self-checks give indicative scores on screen; downloadable reports and the verified EHIRA, reviewed by a Kena analyst, are paid services.</li>
           </ul>
           <p className="mt-4">
             <Link href="/diagnostics/how-it-works" className="font-semibold text-brand-700 hover:underline">
