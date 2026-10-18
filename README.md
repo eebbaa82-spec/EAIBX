@@ -1,6 +1,6 @@
 # Kena Hub
 
-Kena Hub ("Building Trust in Every Deal") is a platform by Erudite Africa Investments PLC that connects Ethiopian entrepreneurs, businesses and investors across the full business lifecycle: incubation, investment, diagnostics, recovery, credit management and learning.
+Kena Hub ("Powering Smarter Business Decisions") is a platform by Erudite Africa Investments PLC that connects Ethiopian entrepreneurs, businesses and investors across the full business lifecycle: incubation, investment, diagnostics, recovery, credit management and learning.
 
 This repository will hold the whole platform, following the Kena Hub Requirement Specification v0.3 (Next.js front end, NestJS + PostgreSQL back end, hosted on Azure).
 

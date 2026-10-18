@@ -39,7 +39,7 @@ export type HomeCopy = {
 };
 
 const en: HomeCopy = {
-  heroTitle: "Building Trust in Every Deal.",
+  heroTitle: "Powering Smarter Business Decisions.",
   heroBody:
     "Kena Hub is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
   searchLabel: "Search Kena Hub",
@@ -135,7 +135,7 @@ const en: HomeCopy = {
 
 /** Draft translation, pending review by a native Amharic speaker. */
 const am: HomeCopy = {
-  heroTitle: "በእያንዳንዱ ስምምነት እምነትን እንገነባለን።",
+  heroTitle: "ብልህ የንግድ ውሳኔዎችን እናጎለብታለን።",
   heroBody:
     "Kena Hub የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
   searchLabel: "Kena Hubን ይፈልጉ",
@@ -231,7 +231,7 @@ const am: HomeCopy = {
 
 /** Draft translation, pending review by a native Afaan Oromoo speaker. */
 const om: HomeCopy = {
-  heroTitle: "Waliigaltee Hunda Keessatti Amanamummaa Ijaarra.",
+  heroTitle: "Murtii Daldalaa Ogummaa Qabu Humneessina.",
   heroBody:
     "Kena Hub waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
   searchLabel: "Kena Hub keessa barbaadaa",

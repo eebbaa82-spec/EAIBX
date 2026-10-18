@@ -2,7 +2,7 @@ export const brand = {
   name: "Kena Hub",
   fullName: "Kena Hub by Erudite Africa",
   operator: "Erudite Africa Investments PLC",
-  tagline: "Building Trust in Every Deal.",
+  tagline: "Powering Smarter Business Decisions.",
 };
 
 /** From the Erudite Africa Investments PLC corporate profile (2026). */

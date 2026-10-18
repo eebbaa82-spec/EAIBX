@@ -76,7 +76,7 @@ export function documentHtml({ title, kicker, lede, edition, asOf, body }) {
   const cover = `${head}<section class="cover"><div class="mark"><i>K</i>Kena Hub</div>
 <div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1><div class="rule"></div>
 <p class="lede">${esc(lede)}</p><div><span class="edition">${editionLabel}</span></div>
-<div class="foot"><span>Kena Hub · Building Trust in Every Deal<br>Erudite Africa Investments PLC · Addis Ababa</span><span style="text-align:right">Updated ${esc(longDate(asOf))}<br>Refreshed monthly</span></div></section></body></html>`;
+<div class="foot"><span>Kena Hub · Powering Smarter Business Decisions<br>Erudite Africa Investments PLC · Addis Ababa</span><span style="text-align:right">Updated ${esc(longDate(asOf))}<br>Refreshed monthly</span></div></section></body></html>`;
   const main = `${head}${body}
 <p class="disclaimer">Prepared by Erudite Africa Investments PLC for Kena Hub, Addis Ababa · contact@ebba.et · Registration no. MT/AA/2/0063282/2018. This publication summarizes information published by international institutions and the Government of Ethiopia for general guidance only. It is not investment, legal or tax advice, nor an offer of securities. Reported returns do not guarantee future results. Verify figures against the original documents before making decisions.</p>
 </body></html>`;

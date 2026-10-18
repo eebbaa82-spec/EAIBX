@@ -12,7 +12,7 @@ export default function PressPage() {
       <PageHero eyebrow="Press" title="Press and media" subhead="News, announcements and media resources about Kena Hub." />
       <Section title="Boilerplate" intro="For press releases.">
         <blockquote className="max-w-3xl rounded-xl border-l-4 border-brand-600 bg-canvas p-6 text-ink">
-          Kena Hub (&ldquo;Building Trust in Every Deal&rdquo;) is a digital platform that connects Ethiopian
+          Kena Hub (&ldquo;Powering Smarter Business Decisions&rdquo;) is a digital platform that connects Ethiopian
           entrepreneurs, businesses and investors across the full business lifecycle, from incubation and investment to
           diagnostics, recovery and exit. Kena Hub is operated by Erudite Africa Investments PLC, headquartered in Addis Ababa.
           Learn more at ebba.et.
