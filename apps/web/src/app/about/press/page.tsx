@@ -15,7 +15,7 @@ export default function PressPage() {
           Investopia (&ldquo;Powering Smarter Business Decisions&rdquo;) is a digital platform that connects Ethiopian
           entrepreneurs, businesses and investors across the full business lifecycle, from incubation and investment to
           diagnostics, recovery and exit. Investopia is operated by Erudite Africa Investments PLC, headquartered in Addis Ababa.
-          Learn more at www.investopia.et.
+          Learn more at investopia.et.
         </blockquote>
       </Section>
       <Section tone="canvas">

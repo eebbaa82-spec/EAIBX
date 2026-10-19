@@ -5,10 +5,12 @@ Options -Indexes
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Always use https and the www address.
+  # Let the host's certificate checks through untouched.
+  RewriteRule ^\.well-known/ - [L]
+  # Always use https and the address the certificate covers (investopia.et, no www).
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteRule ^ https://www.investopia.et%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} !^investopia\.et$ [NC]
+  RewriteRule ^ https://investopia.et%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 <IfModule mod_headers.c>

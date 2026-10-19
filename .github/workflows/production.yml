@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://www.investopia.et
+      url: https://investopia.et
     defaults:
       run:
         working-directory: apps/web

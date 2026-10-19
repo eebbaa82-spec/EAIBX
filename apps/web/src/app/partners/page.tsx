@@ -87,6 +87,7 @@ export default function PartnersPage() {
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
           <div className="rounded-xl border border-line bg-white p-6">
             <PreviewForm
+              formName="partnership"
               submitLabel="Request a call"
               confirmation="Thank you. A member of our partnerships team will contact you within two working days."
               fields={[
