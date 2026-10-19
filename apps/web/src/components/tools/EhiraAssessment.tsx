@@ -15,7 +15,7 @@ const quickQuestions: Question[] = [
 
 const allQuestions = [...questions, ...briQuestions, ...quickQuestions];
 
-const STORAGE_KEY = "kena-ehira-draft-v2";
+const STORAGE_KEY = "investopia-ehira-draft-v2";
 
 type Step = { id: string; title: string; intro?: string; ids: string[] };
 
@@ -29,7 +29,7 @@ const allSteps: Step[] = [
   {
     id: "bri",
     title: "Finance and transaction readiness",
-    intro: "These questions feed the KENA™ Bank Readiness Index: your readiness for bank, MFI and leasing finance, investors, due diligence and M&A. They do not change your EHIRA grade.",
+    intro: "These questions feed the Investopia™ Bank Readiness Index: your readiness for bank, MFI and leasing finance, investors, due diligence and M&A. They do not change your EHIRA grade.",
     ids: briQuestions.map((q) => q.id),
   },
   { id: "screening", title: "Legal and compliance screening", intro: "These answers do not add points, but some of them limit the highest grade a business can receive.", ids: screening.map((s) => s.id) },
@@ -731,13 +731,13 @@ function BriReport({ bri }: { bri: BriResult }) {
   return (
     <section className="space-y-5 break-inside-avoid">
       <div>
-        <h4 className="text-lg font-bold text-ink">KENA™ Bank Readiness Index</h4>
+        <h4 className="text-lg font-bold text-ink">Investopia™ Bank Readiness Index</h4>
         <p className="mt-1 text-sm text-muted">
-          Six readiness scores for credit, investment, due diligence and transactions, and the KENA Enterprise Readiness Score (KERS™) that combines them.
+          Six readiness scores for credit, investment, due diligence and transactions, and the Investopia Enterprise Readiness Score (IERS™) that combines them.
         </p>
       </div>
       <div className="rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white">
-        <p className="text-sm opacity-80">KENA Enterprise Readiness Score (KERS™)</p>
+        <p className="text-sm opacity-80">Investopia Enterprise Readiness Score (IERS™)</p>
         <p className="mt-1 text-5xl font-extrabold">
           {bri.kers === null ? "–" : Math.round(bri.kers)} <span className="text-xl font-semibold opacity-70">/ 100</span>
         </p>
@@ -792,7 +792,7 @@ function BriReport({ bri }: { bri: BriResult }) {
             );
           })}
           <p className="text-xs text-muted">
-            Gaps and actions are generated from your answers by Investopia&apos;s rules. Recommendations written by the KENA AI engine will come with member accounts.
+            Gaps and actions are generated from your answers by Investopia&apos;s rules. Recommendations written by the Investopia AI engine will come with member accounts.
           </p>
         </div>
       )}
@@ -860,7 +860,7 @@ function QuickResult({ result, bri, name, onFull, onEdit }: { result: ReturnType
             </p>
           </div>
           <div className="rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white">
-            <p className="text-sm opacity-80">KENA Enterprise Readiness Score (KERS™)</p>
+            <p className="text-sm opacity-80">Investopia Enterprise Readiness Score (IERS™)</p>
             <p className="mt-1 text-5xl font-extrabold">{bri.kers === null ? "–" : Math.round(bri.kers)}</p>
             <p className="mt-2 font-bold">{bri.maturity}</p>
           </div>

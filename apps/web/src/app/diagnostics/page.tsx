@@ -27,7 +27,7 @@ export default function EhiraPage() {
         <Section tone="canvas" title="What EHIRA does">
           <ul className="max-w-3xl list-disc space-y-2 pl-5 text-ink">
             <li>EHIRA scores your business across eight dimensions, from financial health to investment readiness, weighted for your type of business.</li>
-            <li>You get an A to E grade, the KENA™ Bank Readiness Index with six readiness scores for credit, investment and transactions, and the actions that will lift them most.</li>
+            <li>You get an A to E grade, the Investopia™ Bank Readiness Index with six readiness scores for credit, investment and transactions, and the actions that will lift them most.</li>
             <li>The free self-checks give indicative scores on screen; downloadable reports and the verified EHIRA, reviewed by an Investopia analyst, are paid services.</li>
           </ul>
           <p className="mt-4">

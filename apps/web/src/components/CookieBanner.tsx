@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useSyncExternalStore } from "react";
 
-const KEY = "kena-cookie-choice";
+const KEY = "investopia-cookie-choice";
 const listeners = new Set<() => void>();
 let dismissedThisVisit = false;
 

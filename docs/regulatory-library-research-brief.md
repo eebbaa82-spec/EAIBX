@@ -1,6 +1,6 @@
 # Research brief: Investopia regulations and research library (used every month)
 
-Goal: a JSON list of documents for the category named in your task, saved at `/mnt/project-files/eabix/regulatory-library/data/<slug>.json`. Investors and business owners read these summaries on the Kena website (Knowledge Hub > Regulations and research) and click through to the original.
+Goal: a JSON list of documents for the category named in your task, saved at `/mnt/project-files/eabix/regulatory-library/data/<slug>.json`. Investors and business owners read these summaries on the Investopia website (Knowledge Hub > Regulations and research) and click through to the original.
 
 ## Source rule (strict)
 Each entry is ONE official document, linked at its official home: nbe.gov.et, mofed.gov.et / mof.gov.et, investethiopia.gov.et, ecma.gov.et, the House of Peoples' Representatives or Federal Negarit Gazeta pages, other Ethiopian government sites, or documents.worldbank.org / openknowledge.worldbank.org / worldbank.org. No news sites, law-firm summaries, blogs or mirrors. If the official page cannot be opened, leave the document out (mention it in your final summary).

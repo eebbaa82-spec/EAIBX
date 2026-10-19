@@ -61,8 +61,8 @@ export default function EhiraMethodPage() {
 
       <Section
         tone="canvas"
-        eyebrow="KENA™ Bank Readiness Index (BRI)"
-        title="Six readiness scores and KERS™"
+        eyebrow="Investopia™ Bank Readiness Index (BRI)"
+        title="Six readiness scores and IERS™"
         intro="The same answers also produce six independent readiness scores from 0 to 100, for credit, investment, due diligence and transactions. They do not change the EHIRA grade."
       >
         <div className="grid gap-6 lg:grid-cols-2">
@@ -83,7 +83,7 @@ export default function EhiraMethodPage() {
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           <div>
-            <h3 className="text-lg font-bold text-ink">KENA Enterprise Readiness Score (KERS™)</h3>
+            <h3 className="text-lg font-bold text-ink">Investopia Enterprise Readiness Score (IERS™)</h3>
             <div className="mt-3">
               <DataTable head={["Index", "Weight"]} rows={indices.map((ix) => [ix.name, `${kersWeights[ix.id]}%`])} />
             </div>
@@ -92,7 +92,7 @@ export default function EhiraMethodPage() {
             <h3 className="text-lg font-bold text-ink">Enterprise maturity classification</h3>
             <div className="mt-3">
               <DataTable
-                head={["KERS™", "Classification"]}
+                head={["IERS™", "Classification"]}
                 rows={maturityBands.map((b, i) => [i === 0 ? "90 to 100" : i === maturityBands.length - 1 ? `Below ${maturityBands[i - 1].min}` : `${b.min} to ${maturityBands[i - 1].min - 1}`, b.label])}
               />
             </div>

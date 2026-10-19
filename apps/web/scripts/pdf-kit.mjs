@@ -73,7 +73,7 @@ ol.sources li{font-size:8pt;color:#52606d;text-align:left;margin-bottom:1.2mm;wo
 export function documentHtml({ title, kicker, lede, edition, asOf, body }) {
   const head = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(title)} · Investopia</title><style>${css}</style></head><body>`;
   const editionLabel = edition === "member" ? "Member edition · with full references" : "Public edition";
-  const cover = `${head}<section class="cover"><div class="mark"><i>K</i>Investopia</div>
+  const cover = `${head}<section class="cover"><div class="mark"><i>IN</i>Investopia</div>
 <div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1><div class="rule"></div>
 <p class="lede">${esc(lede)}</p><div><span class="edition">${editionLabel}</span></div>
 <div class="foot"><span>Investopia · Powering Smarter Business Decisions<br>Erudite Africa Investments PLC · Addis Ababa</span><span style="text-align:right">Updated ${esc(longDate(asOf))}<br>Refreshed monthly</span></div></section></body></html>`;

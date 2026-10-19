@@ -1,6 +1,6 @@
-// KENA™ Bank Readiness Index (BRI): six readiness indices and the KENA Enterprise Readiness Score (KERS™),
+// Investopia™ Bank Readiness Index (BRI): six readiness indices and the Investopia Enterprise Readiness Score (IERS™),
 // from Erudite Africa's framework of 18 October 2026. The index and dimension weights, the CBR and DDR rating
-// bands, the KERS weights and the maturity classes are Erudite's. Which answers feed each dimension, the
+// bands, the IERS weights and the maturity classes are Erudite's. Which answers feed each dimension, the
 // added questions below and the bands for the other four indices are Investopia's draft (marked `assumed`).
 import type { Question } from "@/lib/ehira/model";
 
