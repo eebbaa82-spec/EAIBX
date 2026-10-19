@@ -1,0 +1,70 @@
+name: Publish to investopia.et
+
+# Uploads the public site to the investopia.et web host. It never runs on its own:
+# start it from the Actions tab ("Run workflow") when you are ready to publish.
+#
+# Repository secrets (Settings > Secrets and variables > Actions), added by the
+# site owner, never pasted in chat:
+#   INVESTOPIA_FTP_SERVER    host name of the FTP server, for example ftp.investopia.et
+#   INVESTOPIA_FTP_USERNAME  FTP user name
+#   INVESTOPIA_FTP_PASSWORD  FTP password
+#   INVESTOPIA_FTP_DIR       folder the site is served from, for example public_html/
+#                      (optional, defaults to public_html/)
+
+on:
+  workflow_dispatch:
+    inputs:
+      allow_indexing:
+        description: "Let search engines index the site (leave off until launch)"
+        type: boolean
+        default: false
+      protocol:
+        description: "Upload protocol offered by the host"
+        type: choice
+        options: [ftps, ftp]
+        default: ftps
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://www.investopia.et
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - name: Check the upload secrets are set
+        working-directory: .
+        env:
+          SERVER: ${{ secrets.INVESTOPIA_FTP_SERVER }}
+          USERNAME: ${{ secrets.INVESTOPIA_FTP_USERNAME }}
+          PASSWORD: ${{ secrets.INVESTOPIA_FTP_PASSWORD }}
+        run: |
+          missing=""
+          [ -z "$SERVER" ] && missing="$missing INVESTOPIA_FTP_SERVER"
+          [ -z "$USERNAME" ] && missing="$missing INVESTOPIA_FTP_USERNAME"
+          [ -z "$PASSWORD" ] && missing="$missing INVESTOPIA_FTP_PASSWORD"
+          if [ -n "$missing" ]; then echo "::error::Missing repository secrets:$missing"; exit 1; fi
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_ALLOW_INDEXING: ${{ inputs.allow_indexing }}
+      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.INVESTOPIA_FTP_SERVER }}
+          username: ${{ secrets.INVESTOPIA_FTP_USERNAME }}
+          password: ${{ secrets.INVESTOPIA_FTP_PASSWORD }}
+          protocol: ${{ inputs.protocol }}
+          local-dir: apps/web/out/
+          server-dir: ${{ secrets.INVESTOPIA_FTP_DIR || 'public_html/' }}

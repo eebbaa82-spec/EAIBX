@@ -1,0 +1,281 @@
+{
+  "slug": "real-estate-construction",
+  "name": "Real estate, housing and construction",
+  "asOf": "2026-10-16",
+  "summary": "Construction is Ethiopia's largest industrial activity: the National Bank of Ethiopia reports it contributed around 23 percent of GDP and grew 9.0 percent in 2023/24. Urban population is growing by about 4.6 percent a year, and the World Bank estimates the country needs nearly 400,000 new housing units a year. The government has opened residential ownership to foreign nationals, signed affordable-housing PPPs, and is tendering more mixed-use housing PPP sites in Addis Ababa.",
+  "indicators": [
+    {
+      "label": "Construction sector contribution to GDP",
+      "value": "around 23 percent of GDP (70.1 percent of the industrial sector in the text; Table 1.2 shows 72.1 percent)",
+      "period": "2023/24 (Ethiopian fiscal year)",
+      "source": "S1"
+    },
+    {
+      "label": "Construction sector real growth",
+      "value": "9.0 percent",
+      "period": "2023/24",
+      "source": "S1"
+    },
+    {
+      "label": "Urban population (share of total population)",
+      "value": "24.11 percent (2024: 23.62 percent)",
+      "period": "2025",
+      "source": "S2"
+    },
+    {
+      "label": "Urban population growth",
+      "value": "4.59 percent per year (2024: 5.00 percent)",
+      "period": "2025",
+      "source": "S3"
+    },
+    {
+      "label": "New urban housing units needed",
+      "value": "nearly 400,000 new housing units per year to meet new demand (annual projected demand of 381,000 plus replacement housing)",
+      "period": "Estimate published 2019",
+      "source": "S4"
+    },
+    {
+      "label": "Government housing supply versus demand",
+      "value": "meeting only 10% of annual demand; 60% of households in large cities live in rental units",
+      "period": "Estimate published 2019",
+      "source": "S5"
+    },
+    {
+      "label": "Homes built and under construction (government statement)",
+      "value": "around one million homes built over the past five years; over 265,000 more under construction",
+      "period": "Stated July 2025",
+      "source": "S6"
+    },
+    {
+      "label": "Lemi National Cement Factory capacity",
+      "value": "150,000 quintals per day; produces 50 percent of the cement made by factories across the country",
+      "period": "Stated September 2024",
+      "source": "S9"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Treasury bill weighted average yield (benchmark)",
+      "value": "9.74 percent",
+      "period": "2023/24",
+      "basis": "Average weighted yield on nominal Treasury bills, NBE Table 4.4 and statistical annex",
+      "source": "S1"
+    },
+    {
+      "label": "Treasury bill yield on new issuances (benchmark)",
+      "value": "14.4 percent (down from 16.7 percent in December 2025)",
+      "period": "April 2026",
+      "basis": "Weighted average interest rate for new T-bill issuances, as reported by IMF staff",
+      "source": "S13"
+    },
+    {
+      "label": "Bank lending interest rate (all sectors)",
+      "value": "simple average 14.25 percent; range 7.00 to 21.50 percent",
+      "period": "2023/24",
+      "basis": "Commercial bank lending rates across the economy, not specific to construction or real estate",
+      "source": "S1"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are Treasury bill yields (9.74 percent in 2023/24; 14.4 percent on new issuances in April 2026) and the economy-wide bank lending rate (average 14.25 percent, range 7.00 to 21.50 percent, in 2023/24).",
+  "opportunities": [
+    {
+      "title": "Affordable housing PPPs in Addis Ababa",
+      "detail": "The Ministry of Finance invited expressions of interest to design, finance, build, operate, maintain and transfer four affordable housing PPP projects covering eight mixed-use commercial and residential sites in four clusters in Addis Ababa (responses due June 1, 2026).",
+      "source": "S10"
+    },
+    {
+      "title": "Signed housing PPPs",
+      "detail": "Seven private developers signed PPP agreements with the Ministry of Finance on July 3, 2025, four of them for affordable housing, under PPP Proclamation No. 1076/2018.",
+      "source": "S6"
+    },
+    {
+      "title": "Residential property open to foreign buyers",
+      "detail": "The House of Peoples' Representatives passed a proclamation on July 1, 2025 that allows foreign nationals to own residential real estate in Ethiopia, subject to the procedures in the new law.",
+      "source": "S7"
+    },
+    {
+      "title": "Corridor development pipeline",
+      "detail": "The second phase of Addis Ababa's corridor development delivered 135 km of roads, 246 km of pedestrian walkways, 141 km of bicycle lanes and 53 bridges (reported to the City Council in July 2025).",
+      "source": "S8"
+    },
+    {
+      "title": "Expressway PPPs",
+      "detail": "The Ministry of Finance lists three expressway projects (Adama-Awash, Awash-Mieso, Mieso-Dire Dawa), about 357 km with an approximate cost of USD 871 million, among its PPP programs.",
+      "source": "S11"
+    },
+    {
+      "title": "Housing finance build-out",
+      "detail": "A framework agreement between the National Bank of Ethiopia and IFC, witnessed by the Prime Minister in September 2026, aims to support the construction of 1.5 million affordable homes.",
+      "source": "S15"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Exemption from duties and other taxes on imports of machinery, equipment and construction material (Ethiopian Investment Commission incentive list).",
+      "source": "S14"
+    },
+    {
+      "detail": "Up to 15 years income-tax holiday for industrial park developers, and a 60 to 80 year charge-free land lease for industrial park developers.",
+      "source": "S14"
+    },
+    {
+      "detail": "Losses may be carried forward.",
+      "source": "S14"
+    },
+    {
+      "detail": "PPPs run under Proclamation No. 1076/2018, with a PPP Board chaired by the Ministry of Finance that approves pipeline projects, tenders and awards, and a PPP Directorate General acting as its secretariat.",
+      "source": "S11"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Many construction inputs are imported, so supply planning matters; the domestic construction industry grew 5.4 percent against a 17 percent Ten-Year Plan target, and the Ministry of Urban and Infrastructure's Domestic Construction Industry Reform and Transformation Road Map sets out measures to strengthen local contractor capacity and supply chains.",
+      "source": "S12"
+    },
+    {
+      "detail": "Developer and buyer financing operates within the National Bank's 24 percent annual cap on private credit growth, so early engagement with lenders helps secure funding.",
+      "source": "S13"
+    },
+    {
+      "detail": "Cost budgeting should allow for price increases: inflation for housing, water, electricity, gas and other fuels was 28.3 percent in 2023/24, compared with 23.9 percent the year before.",
+      "source": "S1"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Annual Report 2023/2024",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025-09",
+      "url": "https://nbe.gov.et/wp-content/uploads/2025/06/Annual-Report-2023-2024.pdf",
+      "location": "pp. 3-5 (Tables 1.1, 1.2: GDP by sector, construction growth); p. 31 (Table 3.4: inflation); p. 39 (Table 4.4: lending rates, T-bill yields)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Urban population (% of total population), Ethiopia (SP.URB.TOTL.IN.ZS)",
+      "publisher": "World Bank, World Development Indicators",
+      "date": "2026-07",
+      "url": "https://api.worldbank.org/v2/country/ETH/indicator/SP.URB.TOTL.IN.ZS?format=json&mrv=3",
+      "location": "Values for 2025 and 2024 (last updated 2026-07-13)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Urban population growth (annual %), Ethiopia (SP.URB.GROW)",
+      "publisher": "World Bank, World Development Indicators",
+      "date": "2026-10",
+      "url": "https://api.worldbank.org/v2/country/ETH/indicator/SP.URB.GROW?format=json&mrv=3",
+      "location": "Values for 2025 and 2024 (last updated 2026-10-08)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Why should Ethiopians care about urbanization? Jobs, infrastructure, and formal land and housing",
+      "publisher": "World Bank (Africa Can End Poverty blog, Abebaw Alemayehu)",
+      "date": "2019-03",
+      "url": "https://blogs.worldbank.org/en/africacan/why-should-ethiopians-care-about-urbanization-jobs-infrastructure-and-formal-land-and-housing",
+      "location": "Housing section",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Unlocking Ethiopia's Urban Land and Housing Markets: Synthesis Report",
+      "publisher": "World Bank",
+      "date": "2019",
+      "url": "https://documents1.worldbank.org/curated/en/549221572382742218/pdf/Unlocking-Ethiopias-Urban-Land-and-Housing-Markets-Synthesis-Report.pdf",
+      "location": "p. 8 (housing demand and supply)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Public-Private Partnership Agreements Signed",
+      "publisher": "Ethiopian News Agency (Ministry of Finance statement)",
+      "date": "2025-07",
+      "url": "https://www.ena.et/web/eng/w/eng_6885780",
+      "location": "Article dated July 3, 2025",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "House Passes Proclamations that Allows Home Ownership by Foreign Nationals, Overseas Employment Proclamation",
+      "publisher": "Ethiopian News Agency (House of Peoples' Representatives)",
+      "date": "2025-07",
+      "url": "https://www.ena.et/web/eng/w/eng_6869300",
+      "location": "Article dated July 1, 2025",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Addis Ababa's Corridor Dev't Boosts Livability, Tourism: Mayor Adanech",
+      "publisher": "Ethiopian News Agency (Addis Ababa City Administration report to City Council)",
+      "date": "2025-07",
+      "url": "https://www.ena.et/web/eng/w/eng_6935849",
+      "location": "Article dated July 11, 2025",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "PM Abiy Ahmed Inaugurates Lemi National Cement Factory",
+      "publisher": "Ethiopian News Agency (Prime Minister's statement)",
+      "date": "2024-09",
+      "url": "https://www.ena.et/web/eng/w/eng_5209851",
+      "location": "Article dated September 28, 2024",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Expression of Interest Notice: Affordable Housing PPP Projects in Addis Ababa",
+      "publisher": "Ministry of Finance of Ethiopia",
+      "date": "2026-04",
+      "url": "https://www.mofed.gov.et/media/filer_public/04/7a/047ae9f8-a2e0-4680-898e-97b27862a8a0/eoi_notice_afordable_housing.pdf",
+      "location": "Notice dated April 21, 2026 (project and cluster list)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "Public Private Partnership (Programs and Projects)",
+      "publisher": "Ministry of Finance of Ethiopia",
+      "date": "2025",
+      "url": "https://www.mofed.gov.et/programmes-projects/ppp/",
+      "location": "PPP page: legal framework, PPP Board, expressway project list",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S12",
+      "title": "Domestic Construction Industry (DCI) Reform and Transformation Road Map (draft)",
+      "publisher": "Ministry of Urban and Infrastructure of Ethiopia",
+      "date": "2025-06",
+      "url": "https://mui.gov.et/wp-content/uploads/2025/08/DCI_Roadmap_Draft-2.pdf",
+      "location": "p. 3 (Minister's message); pp. 7-8, 11 (challenges); pp. 46-49 (Table 5.1); pp. 52-54 (Table 6.1, risks)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S13",
+      "title": "Ethiopia: Fifth Review Under the Extended Credit Facility Arrangement, IMF Country Report No. 26/174",
+      "publisher": "International Monetary Fund",
+      "date": "2026-07",
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ethea2026002.pdf",
+      "location": "pp. 10-11 (credit cap, T-bill rates); p. 16 (bank credit caps)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S14",
+      "title": "Why Ethiopia (Incentives)",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2026",
+      "url": "https://investethiopia.gov.et/why-ethiopia/",
+      "location": "Incentives section",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S15",
+      "title": "Ethiopia Advances Logistics, Housing, Energy and Regional Cooperation",
+      "publisher": "Ethiopian News Agency (Office of the Prime Minister)",
+      "date": "2026-10",
+      "url": "https://www.ena.et/web/eng/w/eng_9654763",
+      "location": "Article dated October 1, 2026 (housing paragraph)",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "investment-laws",
+  "name": "Investment proclamations and regulations",
+  "intro": "The core federal laws and Ethiopian Investment Board directives that decide who may invest in what, on what terms, and through which institutions. They cover the sectors reserved for domestic investors, the 2024-2025 openings of import, export, wholesale and retail trade to foreign investors, special economic zones, capital markets, banking and PPPs.",
+  "asOf": "2026-10-16",
+  "documents": [
+    {
+      "title": "Ethiopian Investment Board Directive to Regulate Foreign Investors' Participation in Restricted Export, Import, Wholesale and Retail Trade Investments",
+      "number": "Directive No. 1082/2025",
+      "issuer": "Ethiopian Investment Board",
+      "date": "2025",
+      "status": "In force (repeals Directive No. 1001/2024)",
+      "topic": "Foreign investment openings",
+      "summary": "Opens to foreign investors the export, import, wholesale and retail activities that the Investment Regulation reserves for domestic investors. Fertilizer (import and wholesale) and petroleum (import) remain closed. Exporting raw coffee, oilseeds, khat and pulses, and all import and wholesale trade, require a due diligence report on the investor's integrity and capacity. Retail requires at least USD 2.5 million in paid-up capital and a due diligence report from a verification agency the Commission recommends; the Board may approve smaller reputable single-brand retailers case by case.",
+      "relevance": "This is the current rulebook for foreign trading, distribution and retail businesses. It replaces the 2024 volume and floor-space tests with a capital threshold and due diligence screening.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2025/06/Directive-on-Export-Import-Wholesale-1082-2025.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Special Economic Zone Designation, Land Allocation and Utilization Directive",
+      "number": "Directive No. 1083/2025",
+      "issuer": "Ethiopian Investment Board",
+      "date": "2025",
+      "status": "In force",
+      "topic": "Special economic zones",
+      "summary": "Sets the criteria and procedure for designating special economic zones under Proclamation No. 1322/2024. A developer must commit at least USD 75 million to zone infrastructure (sub-developers USD 30 million), place a refundable deposit of USD 500,000 (USD 200,000 for sub-developers), and hold at least 50 hectares, with waivers possible for priority sectors such as digital tech and ICT. The Board decides within three months. Zones must export at least 50% of annual gross output, and developers must start construction within six months and finish main works within 36 months. Existing industrial parks are deemed manufacturing SEZs.",
+      "relevance": "Zone developers and sub-developers face specific capital, land, export and local-content conditions. Enterprises buying or leasing zone land need Commission approval.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2025/07/Ethiopian-Investment-Board-Directive-Number-1083-2025-Special-Economic-Zone-Land-Designation-Allocation.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Special Economic Zone Proclamation",
+      "number": "Proclamation No. 1322/2024",
+      "issuer": "House of Peoples' Representatives (Federal Negarit Gazette, 30th Year No. 25)",
+      "date": "2024-05-20",
+      "status": "In force",
+      "topic": "Special economic zones",
+      "summary": "Creates the legal framework for special economic zones: industrial parks, free trade and logistics zones, science and technology parks, service parks, and agriculture and livestock zones. In free trade zones, goods and services can be imported, processed and re-exported free of customs duties and taxes. The Ethiopian Investment Board designates zones on application by a private, public or PPP company that commits at least USD 75 million. The Commission checks applications within 5 days and reviews them within 30, and the Board decides within 30 days. Existing industrial parks keep their zone status without reapplying.",
+      "relevance": "This is the main law for investors developing, operating or locating in zones. Rules on zone incentives and land are set out in the directives and regulations that implement it.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2024/06/Special_Economic_Zone_Proclamation_No._1322_2024.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Investment Proclamation",
+      "number": "Proclamation No. 1180/2020",
+      "issuer": "House of Peoples' Representatives (Federal Negarit Gazette, 26th Year No. 28)",
+      "date": "2020-04-02",
+      "status": "In force",
+      "topic": "Investment framework",
+      "summary": "Ethiopia's main investment law. All sectors are open to foreign investors unless a regulation reserves them (Art. 6), and the Investment Board may revise that list. Foreign investors need at least USD 200,000 for a project alone or USD 150,000 jointly with a domestic investor, or USD 100,000 alone (USD 50,000 jointly) for architecture, engineering, technical consultancy, testing or publishing (Art. 9). The law guarantees compensation at market value for expropriation (Art. 19), remittance of profits and capital (Art. 20) and ownership of immovable property other than land (Art. 18).",
+      "relevance": "It sets entry thresholds, permit requirements and protections for every foreign investor, and it is the legal basis for the Investment Board directives that open restricted sectors.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2022/11/Investment-Proclamation-No.-1180_2020-Copy.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Ethiopian Investment Board Directive to Regulate Foreign Investors' Participation in Restricted Export, Import, Wholesale and Retail Trade Investments",
+      "number": "Directive No. 1001/2024",
+      "issuer": "Ethiopian Investment Board",
+      "date": "2024-03",
+      "status": "Repealed by Directive No. 1082/2025",
+      "topic": "Foreign investment openings",
+      "summary": "This was the first directive to open reserved export, import, wholesale and retail trade to foreign investors. It set minimum purchase or export commitments by commodity, for example USD 10 million a year for raw coffee. Importers had to be manufacturers or their agents, or commit to at least USD 10 million in imports a year. Retailers needed supermarket, hypermarket or large-format formats of 2,000 to 10,000 square meters or more.",
+      "relevance": "Investors licensed under this directive should check how the 2025 replacement changes their conditions. It also shows how the opening developed.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2024/04/Ethiopian-Investment-Board-Directive-to-Regulate-Foreign-Investors-Participation-in-Restricted-Export-Import-Wholesale-and-Retail-Trade-Investments-No.1001_2024.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Investment Regulation",
+      "number": "Council of Ministers Regulation No. 474/2020",
+      "issuer": "Council of Ministers",
+      "date": "2020",
+      "status": "In force (reserved trade areas opened in part by Directive No. 1082/2025)",
+      "topic": "Reserved sectors",
+      "summary": "This is the regulation called for by Article 6 of Proclamation No. 1180/2020. It lists the investment areas reserved for domestic investors, for joint investment with the government, and for joint ventures with domestic investors. The Investment Board directives of 2024 and 2025 refer to its reserved export, import, wholesale and retail areas when opening them to foreign investors. The official copy is a scanned image, so its lists could not be read for this summary.",
+      "relevance": "Check this list first to see whether a sector is closed to foreign investors or limited to joint ventures. Then check later Board directives for any opening.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2022/11/Investment-Regulation-No.-4742020_09-08-2020_0001-2.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Banking Business Proclamation",
+      "number": "Proclamation No. 1360/2025",
+      "issuer": "House of Peoples' Representatives (published by the National Bank of Ethiopia)",
+      "date": "2025-03",
+      "status": "In force",
+      "topic": "Banking licensing",
+      "summary": "This is the current banking law, which the National Bank posted in March 2025 in place of the earlier Banking Business Proclamation. NBE directives issued under it, such as SBB/99/2026, refer to foreign bank subsidiaries and branches, which shows that the law provides for foreign banks to enter. The official PDF is a scanned image, so its provisions could not be read for this summary.",
+      "relevance": "It is the legal basis for foreign banks and foreign shareholders to enter Ethiopian banking. Its details are set out in NBE licensing directives.",
+      "url": "https://nbe.gov.et/files/banking-business-proclamation-2/",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Foreign Portfolio Investment Regulation (draft)",
+      "number": "",
+      "issuer": "Ethiopian Capital Market Authority (posted for consultation)",
+      "date": "2026-09-29",
+      "status": "Draft",
+      "topic": "Capital markets",
+      "summary": "On 29 September 2026, ECMA posted a draft Foreign Portfolio Investment Regulation in English and Amharic among its draft instruments. The Amharic version is titled as a draft regulation. The download page gives only the title and file details, not the provisions.",
+      "relevance": "Once adopted, this regulation is expected to set the terms for foreign investors buying listed Ethiopian securities. Investors should follow the consultation.",
+      "url": "https://ecma.gov.et/download/foreign-potfolio-investment-regulation/",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Capital Market Proclamation",
+      "number": "Proclamation No. 1248/2021",
+      "issuer": "House of Peoples' Representatives (published by the Ethiopian Capital Market Authority)",
+      "date": "2021",
+      "status": "In force",
+      "topic": "Capital markets",
+      "summary": "This law, adopted in June 2021, created Ethiopia's capital market framework and established the Ethiopian Capital Market Authority. It is part of the Home-Grown Economic Reform Program and the 10-Year Development Plan. ECMA directives on public offerings, dematerialization and collective investment schemes are issued under it.",
+      "relevance": "It underpins the Ethiopian Securities Exchange and the licensing of capital market service providers, and it governs any public offering or listing.",
+      "url": "https://ecma.gov.et/download/capital-market-proclamation-no-1248-2021/",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Public Private Partnership Proclamation",
+      "number": "Proclamation No. 1076/2018",
+      "issuer": "House of Peoples' Representatives (Federal Negarit Gazette, 24th Year No. 28)",
+      "date": "2018-02-22",
+      "status": "Amended by Proclamation No. 1283/2023",
+      "topic": "PPP",
+      "summary": "Sets the framework for federal PPP projects, excluding oil, mining and privatization (Art. 4). It creates a PPP Board chaired by the Minister of Finance to approve project structures and tender results, and a PPP Directorate General in the Ministry to serve as its secretariat. Projects need a feasibility study and are generally procured by open competitive bidding with prequalification (Art. 19). The project company must be incorporated in Ethiopia.",
+      "relevance": "This is the entry route for private and foreign investors into infrastructure such as energy, roads and utilities under concession-type contracts.",
+      "url": "https://www.mofed.gov.et/media/filer_public/58/bf/58bfbdf4-662f-4f55-b12e-dcf3a6cd5ef6/proclamation-no-1076-2018-public-private-partnership-proclamation.pdf",
+      "accessed": "2026-10-16"
+    },
+    {
+      "title": "Industrial Parks Proclamation",
+      "number": "Proclamation No. 886/2015",
+      "issuer": "House of Peoples' Representatives (Federal Negarit Gazette, 21st Year No. 39)",
+      "date": "2015-04",
+      "status": "In force (existing parks are treated as SEZs under Proclamation No. 1322/2024; repeal status not confirmed)",
+      "topic": "Industrial parks",
+      "summary": "This law governs the designation, development and operation of industrial parks. Foreign investors may take part alone or with Ethiopians as developers, operators or enterprises. It provides one-stop-shop services, including work and residence permits, and customs-controlled areas. Developers hold land by lease and may sub-lease and mortgage developed land. It also bans speculative transfers of park land.",
+      "relevance": "It still matters for firms in the existing public and private industrial parks, which now come under the SEZ regime.",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2022/11/Industrial-Parks-Proclamation-No-886_2015.pdf",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

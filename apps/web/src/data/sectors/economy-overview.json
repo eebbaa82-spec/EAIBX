@@ -1,0 +1,266 @@
+{
+  "slug": "economy-overview",
+  "name": "Ethiopia economy and return benchmarks",
+  "asOf": "2026-10-16",
+  "summary": "Ethiopia's real GDP grew 9.2 percent in FY2024/25, and FDI reached a record reported USD 4.32 billion in FY2025/26, up 8 percent from the previous year. The IMF-supported reform program moved the birr to a market-based exchange rate in July 2024 and introduced an interest-rate-based monetary policy framework, and the National Bank of Ethiopia continued FX liberalization in July 2026 by cutting the FX commission and the export surrender requirement. Average inflation has come down from 26.6 percent in FY2023/24 to an estimated 11.7 percent in FY2025/26, and gross reserves rose from 0.7 to 2.1 months of imports.",
+  "indicators": [
+    {
+      "label": "Real GDP growth",
+      "value": "9.2 percent (FY2024/25); IMF projects 7.8 percent for FY2025/26 and 8.2 percent for FY2026/27",
+      "period": "FY2024/25 actual; FY2025/26-2026/27 projections",
+      "source": "S1"
+    },
+    {
+      "label": "Real GDP growth projection (NBE)",
+      "value": "10.2 percent projected for FY2025/26",
+      "period": "FY2025/26",
+      "source": "S3"
+    },
+    {
+      "label": "Headline inflation (year-on-year)",
+      "value": "13.4 percent (food 15.0 percent, non-food 11.1 percent), up from 11.7 percent in April 2026 and 9.7 percent in December 2025",
+      "period": "May 2026",
+      "source": "S3"
+    },
+    {
+      "label": "Average inflation (IMF)",
+      "value": "26.6 percent (FY2023/24), 16.0 percent (FY2024/25), 11.7 percent (FY2025/26 est.), 12.3 percent (FY2026/27 proj.)",
+      "period": "FY2023/24 to FY2026/27",
+      "source": "S1"
+    },
+    {
+      "label": "Exchange rate regime and level",
+      "value": "Market-based exchange rate system since July 29, 2024; weighted average rate at the May 19, 2026 NBE FX auction 159.63 ETB per USD; parallel market spread 10-20 percent since October 2025, about 11 percent in late May 2026",
+      "period": "July 2024 to May 2026",
+      "source": "S2"
+    },
+    {
+      "label": "Foreign direct investment inflows",
+      "value": "USD 4.32 billion, up 8 percent from the previous year (EIC figures)",
+      "period": "FY2025/26",
+      "source": "S6"
+    },
+    {
+      "label": "Gross reserves",
+      "value": "2.1 months of imports (FY2025/26), projected 2.7 months (FY2026/27), up from 0.7 months in FY2023/24",
+      "period": "FY2023/24 to FY2026/27",
+      "source": "S1"
+    },
+    {
+      "label": "Debt restructuring progress (IMF assessment)",
+      "value": "Restructuring under the IMF-supported program aims to improve the debt risk rating to moderate by the end of the program; agreement-in-principle reached with Eurobond holders",
+      "period": "June-July 2026",
+      "source": "S2"
+    }
+  ],
+  "returns": [
+    {
+      "label": "NBE policy rate (National Bank Rate)",
+      "value": "16 percent",
+      "period": "As displayed on NBE homepage, accessed 2026-10-16",
+      "basis": "Central bank policy rate; standing facilities at NBR plus or minus 3 percentage points",
+      "source": "S5"
+    },
+    {
+      "label": "Policy rate decision",
+      "value": "Raised by 1.0 percentage point (from the initial 15 percent set in July 2024 and held through March 2026)",
+      "period": "July 2026 (MPC No. 7)",
+      "basis": "MPC decision; prior level of 15 percent per NBE framework announcement and IMF staff report",
+      "source": "S3"
+    },
+    {
+      "label": "Treasury bill weighted average yield, all tenors",
+      "value": "12.3 percent (down from 15.5 percent a year earlier)",
+      "period": "May 2026",
+      "basis": "Weighted average yield on all Treasury bills",
+      "source": "S3"
+    },
+    {
+      "label": "91-day Treasury bill yield",
+      "value": "11.0 percent (down from 16.1 percent a year earlier)",
+      "period": "May 2026",
+      "basis": "Weighted average yield, 91-day T-bill",
+      "source": "S3"
+    },
+    {
+      "label": "Treasury bill yield on new issuance (IMF)",
+      "value": "14.4 percent, down from 16.7 percent in December 2025",
+      "period": "April 2026",
+      "basis": "Weighted average rate on new T-bill issuances",
+      "source": "S2"
+    },
+    {
+      "label": "Interbank rate (7-day)",
+      "value": "14.6 percent, down from about 18.0 percent in March 2026",
+      "period": "May 2026",
+      "basis": "7-day interbank weighted average rate",
+      "source": "S3"
+    },
+    {
+      "label": "Commercial bank long-term lending rate",
+      "value": "18 percent (June 2025); 17.9 percent (September 2025)",
+      "period": "June and September 2025",
+      "basis": "Weighted average long-term lending interest rate of commercial banks",
+      "source": "S7"
+    },
+    {
+      "label": "Average lending and deposit rates",
+      "value": "Average lending rate 15.0 percent (range 7.0-23.0 percent); weighted average time deposit rate 7.8 percent; average savings rate 8.0 percent",
+      "period": "Q1 FY2024/25 (July-September 2024)",
+      "basis": "Interest rate structure of the banking system, NBE Table 4.4",
+      "source": "S4"
+    }
+  ],
+  "returnsNote": "Benchmark yields and rates above are published by the National Bank of Ethiopia and the IMF; NBE liberalized deposit and lending rates in January 2026 (no floors or caps), so the Q1 FY2024/25 average lending and deposit rates are the latest full interest-rate structure we found.",
+  "opportunities": [
+    {
+      "title": "Agriculture",
+      "detail": "EIC priority sector: 'The opportunity to serve a growing domestic food market.'",
+      "source": "S8"
+    },
+    {
+      "title": "Manufacturing",
+      "detail": "EIC priority sector ranging from light manufacturing to food and beverages.",
+      "source": "S8"
+    },
+    {
+      "title": "Mining",
+      "detail": "EIC priority sector, promoted as a high-potential mining destination.",
+      "source": "S8"
+    },
+    {
+      "title": "ICT",
+      "detail": "EIC priority sector leveraging a growing, tech-savvy local talent pool to serve the global market.",
+      "source": "S8"
+    },
+    {
+      "title": "Tourism",
+      "detail": "EIC priority sector, marketed as 'the land of origins'.",
+      "source": "S8"
+    },
+    {
+      "title": "Energy, health, transport and logistics",
+      "detail": "Listed by EIC as other sectors of opportunity: electricity for a large unserved population, an underserved healthcare sector, and logistics for a landlocked country.",
+      "source": "S8"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "Investors establishing a new enterprise are entitled to an income tax exemption, with length depending on sub-sector, export volume and location; losses during the exemption period can be carried forward.",
+      "source": "S9"
+    },
+    {
+      "detail": "Duty-free import of capital goods and construction materials for new or expanding enterprises.",
+      "source": "S9"
+    },
+    {
+      "detail": "Capital repatriation and remittance of dividends and interest are guaranteed to foreign investors under the Investment Proclamation; minimum foreign investment capital is USD 200,000 (USD 150,000 in a joint venture with a domestic investor).",
+      "source": "S9"
+    },
+    {
+      "detail": "FX liberalization continued in July 2026: the FX commission was reduced from 2.5 to 1.5 percent and the export surrender requirement on goods from 50 to 30 percent.",
+      "source": "S3"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Inflation and interest rates: inflation was 13.4 percent in May 2026, up from 9.7 percent in December 2025, and the National Bank of Ethiopia responded by raising its policy rate by 1 percentage point in July 2026; the IMF advises readiness to tighten further if needed.",
+      "source": "S3"
+    },
+    {
+      "detail": "Exchange rate: the birr has depreciated about 1.3 percent per month under the market-based system, and the parallel market spread has ranged between 10 and 20 percent since October 2025; FX liberalization continued in July 2026 (see incentives).",
+      "source": "S2"
+    },
+    {
+      "detail": "Debt restructuring: completion of the restructuring under the IMF-supported program is in progress, with an agreement-in-principle reached with Eurobond holders.",
+      "source": "S2"
+    },
+    {
+      "detail": "Fuel import costs: higher international fuel prices raise import costs; the IMF brought forward about USD 200 million of program financing to help address these external pressures.",
+      "source": "S1"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "IMF Executive Board Completes the Fifth Review under the Extended Credit Facility Arrangement for Ethiopia (Press Release No. 26/235)",
+      "publisher": "International Monetary Fund",
+      "date": "2026-07",
+      "url": "https://www.imf.org/en/news/articles/2026/07/01/pr26235-ethiopia-imf-completes-5th-review-under-ecf-arrangement",
+      "location": "Press release text and selected economic indicators table",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "The Federal Democratic Republic of Ethiopia: Fifth Review Under the ECF Arrangement, Staff Report (IMF Country Report No. 26/174)",
+      "publisher": "International Monetary Fund",
+      "date": "2026-07",
+      "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ethea2026002.pdf",
+      "location": "Paras. 10-13 (pp. 8-12), Box 2 (p. 9), para. 19 (p. 14), paras. 34-35 (pp. 20-21), Box 5 (p. 24)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Monetary Policy Committee Meeting No. 7 (press release)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/mpc7/",
+      "location": "Policy decision, inflation, money market, T-bill and FX sections",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Quarterly Bulletin, First Quarter 2024/25 Fiscal Year",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025-11",
+      "url": "https://nbe.gov.et/wp-content/uploads/2025/11/First-Quarter-Report-2024-25.pdf",
+      "location": "Section 1.2.5(b) p. 5; Section 4.4 and Table 4.4, pp. 25-26",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "National Bank of Ethiopia homepage (NBE Policy Rate panel)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-10",
+      "url": "https://nbe.gov.et/",
+      "location": "Homepage indicator panel 'NBE POLICY RATE (NBR)'",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Ethiopia Attracts Record 4.32 Billion USD in FDI in 2025/26 Fiscal Year",
+      "publisher": "Ethiopian News Agency (reporting Ethiopian Investment Commission figures)",
+      "date": "2026-07",
+      "url": "https://www.ena.et/web/eng/w/eng_9189864",
+      "location": "Article text, EIC annual performance review",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "Financial Stability Report, March 2026",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-03",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/FInancial-Stability-Report_MARCH_2026_.pdf",
+      "location": "Interest rate developments, pp. 9-10",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Key Sectors",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2026",
+      "url": "https://investethiopia.gov.et/key-sectors/",
+      "location": "Priority Sectors and Other Sectors lists",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "FAQs",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2026",
+      "url": "https://investethiopia.gov.et/resources/faqs/",
+      "location": "Incentives, repatriation and minimum capital answers",
+      "accessed": "2026-10-16"
+    }
+  ]
+}

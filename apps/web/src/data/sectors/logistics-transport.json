@@ -1,0 +1,247 @@
+{
+  "slug": "logistics-transport",
+  "name": "Logistics and transport",
+  "asOf": "2026-10-16",
+  "summary": "Ethiopia plans to invest over USD 70 billion in transport and logistics infrastructure over the next decade, and the first phase of the Modjo modern logistics hub, with capacity of up to one million 20-foot containers a year, was inaugurated in September 2026. About 95 percent of import-export cargo moves along the Addis-Djibouti corridor and the World Bank estimates logistics costs at nearly a third of GDP, so efficiency gains in truck terminals, dry ports and freight services offer a large opportunity. Ethiopian Airlines carried 897,000 tons of cargo in fiscal year 2025/2026, serving 44 freighter destinations.",
+  "indicators": [
+    {
+      "label": "Share of Ethiopia's export-import cargo traffic on the Addis-Djibouti corridor",
+      "value": "95 percent",
+      "period": "2024 (World Bank mission, October 2-4, 2024)",
+      "source": "S2"
+    },
+    {
+      "label": "Logistics costs relative to GDP",
+      "value": "nearly a third of GDP",
+      "period": "2023 (Project Appraisal Document dated June 27, 2023)",
+      "source": "S1"
+    },
+    {
+      "label": "Cost of shipping a 20-foot container to Germany vs. from Vietnam",
+      "value": "247 percent higher from Ethiopia",
+      "period": "2023 (Project Appraisal Document)",
+      "source": "S1"
+    },
+    {
+      "label": "Freight carried by the Addis-Djibouti Railway",
+      "value": "1.2-1.6 million tons per year (average)",
+      "period": "2023 (Project Appraisal Document)",
+      "source": "S1"
+    },
+    {
+      "label": "Ethio-Djibouti electrified railway length",
+      "value": "756 km, with 16 stations in Ethiopia and 4 in Djibouti",
+      "period": "2025 (ENA, March 15, 2025); in operation since January 2018",
+      "source": "S3"
+    },
+    {
+      "label": "Ethiopian Airlines Group cargo carried",
+      "value": "897,000 tons",
+      "period": "Fiscal year 2025/2026 (CEO statement, July 29, 2026)",
+      "source": "S4"
+    },
+    {
+      "label": "Modjo modern logistics hub, first phase",
+      "value": "Built on 60 hectares; capacity of up to one million 20-foot containers annually",
+      "period": "Inaugurated September 2026 (ENA, October 1, 2026)",
+      "source": "S5"
+    },
+    {
+      "label": "Annual import-export trade value",
+      "value": "more than $20 billion",
+      "period": "Undated ('currently'); page last modified 2023",
+      "source": "S6"
+    }
+  ],
+  "returns": [
+    {
+      "label": "Economic internal rate of return, Mieso-Dire Dawa expressway (Addis-Djibouti corridor)",
+      "value": "28.9 percent (NPV US$584 million) at the official rate of ETB 55; 29.5 percent (NPV US$358 million) at an alternative rate of ETB 95",
+      "period": "2023 (appraisal, June 27, 2023)",
+      "basis": "World Bank economic (not financial) rate of return for the road upgrade component of the IDA-financed corridor project; sensitivity case with costs up 20% or benefits down 20% gives 26.9 percent",
+      "source": "S1"
+    },
+    {
+      "label": "364-day Treasury bill weighted average yield (benchmark)",
+      "value": "19.10% (annual)",
+      "period": "Auction 974th/25, April 2, 2025 (latest auction with complete weighted average results shown on the NBE page)",
+      "basis": "Weighted average annual yield on government 364-day Treasury bills; a risk-free birr benchmark, not a sector return",
+      "source": "S10"
+    }
+  ],
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average financial return on investment for private logistics or transport firms in Ethiopia; the figures above are the World Bank's economic rate of return for a public corridor road project and the Treasury bill yield as a benchmark.",
+  "opportunities": [
+    {
+      "title": "Freight truck terminals",
+      "detail": "The World Bank corridor project will seek to mobilize private sector financing for freight truck terminals, and the national target is to increase cargo vehicle terminals from 1 to 23 by 2030.",
+      "source": "S1"
+    },
+    {
+      "title": "New dry ports and logistics hubs",
+      "detail": "The Ethiopian Investment Commission lists dry ports in Semera, Dire Dawa, Woreta, Mekelle, Kombolcha or Jijiga, a logistics hub at Indode on the Addis-Djibouti railway, and expansion of the Modjo logistics center among opportunities.",
+      "source": "S6"
+    },
+    {
+      "title": "National transport investment pipeline",
+      "detail": "The Commission says it has identified six key investment areas and 29 specific investment opportunities, within a plan to invest over USD 70 billion in transport and logistics infrastructure over the next decade.",
+      "source": "S6"
+    },
+    {
+      "title": "Dire Dawa Free Trade Zone",
+      "detail": "More than 45 large-scale investors are active in the zone, which has handled goods worth over USD 100 million since operations began; IPDC aims to channel nearly 4 billion dollars' worth of goods through it over five years.",
+      "source": "S7"
+    },
+    {
+      "title": "Faster dry port clearance",
+      "detail": "The World Bank reports that, after the World Bank-supported expansion of Modjo Dry Port, processing times have in some cases fallen by 70%, from 60 days to 15.",
+      "source": "S11"
+    },
+    {
+      "title": "Air cargo connectivity",
+      "detail": "Ethiopian Airlines serves 44 freighter destinations alongside 127 international passenger destinations, according to the Ethiopian Investment Commission.",
+      "source": "S6"
+    }
+  ],
+  "incentives": [
+    {
+      "detail": "The Ethiopian Investment Board decision of September 2018 allows joint ventures with international logistics service providers holding up to 49% stakes, including in bonded warehouse, consolidation and deconsolidation services (later 2026 reports of full opening of freight forwarding could not be confirmed in a permitted source).",
+      "source": "S8"
+    },
+    {
+      "detail": "The Ethiopian Investment Commission states that the 2020 investment law opened many investment areas to FDI, including transport and logistics.",
+      "source": "S6"
+    },
+    {
+      "detail": "The Ethiopian Maritime Authority said the Dire Dawa Free Trade Zone would provide foreign currency, easy customs and improved logistics services.",
+      "source": "S12"
+    }
+  ],
+  "risks": [
+    {
+      "detail": "Dwell times for trucks and goods at the Djibouti port and the Modjo inland dry port are a cost factor, according to the World Bank; its Addis-Djibouti corridor project is designed to improve corridor efficiency, including through private investment in freight truck terminals.",
+      "source": "S1"
+    },
+    {
+      "detail": "Road carries most corridor freight and the World Bank expects it to keep doing so even if rail traffic grows to 4 million tons, so trucking, terminals and road-based services remain central to the market.",
+      "source": "S1"
+    },
+    {
+      "detail": "Project timelines matter for planning: at the October 2024 World Bank mission, 3.3 percent of the US$730 million corridor grant had been disbursed and civil works on the road component had not yet started.",
+      "source": "S2"
+    },
+    {
+      "detail": "Imported fuel prices are a key operating cost; the IMF noted temporary fuel shortages and sharp fuel price increases in 2026 linked to disruptions in global trade, and that pressures could increase if the disruption is prolonged.",
+      "source": "S9"
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Horn of Africa Initiative Regional Economic Corridor Project, Project Appraisal Document (Report No. PAD4425)",
+      "publisher": "World Bank",
+      "date": "2023-06",
+      "url": "https://documents1.worldbank.org/curated/en/099062823183520233/txt/BOSIB09ed00ad704d09d1d08298287de38c.txt",
+      "location": "Section I.A paras 10-11; Section I.B paras 16-23; Section II.B para 51; Section IV.A paras 79-80, Tables 3-4",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S2",
+      "title": "Aide Memoire, Implementation Support Mission, October 2-4, 2024: Regional Economic Corridor Project (Addis-Djibouti Corridor) P174485",
+      "publisher": "World Bank",
+      "date": "2024-10",
+      "url": "https://documents1.worldbank.org/curated/en/099121924124018289/pdf/P174485-eff1f357-1a14-4994-8096-97755f716e3a.pdf",
+      "location": "Introduction and progress ratings",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S3",
+      "title": "Ethiopia Boosts Transport and Logistics to Address Trade Imbalance",
+      "publisher": "Ethiopian News Agency",
+      "date": "2025-03",
+      "url": "https://www.ena.et/web/eng/w/eng_6180110",
+      "location": "Article body (March 15, 2025)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S4",
+      "title": "Ethiopian Airlines Group Earns 9.1 Billion USD in Revenue in 2025/2026 Fiscal Year",
+      "publisher": "Ethiopian News Agency (statement of state-owned Ethiopian Airlines Group CEO)",
+      "date": "2026-07",
+      "url": "https://www.ena.et/web/eng/w/eng_9295219",
+      "location": "Article body (July 29, 2026)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S5",
+      "title": "Ethiopia Advances Logistics, Housing, Energy and Regional Cooperation",
+      "publisher": "Ethiopian News Agency",
+      "date": "2026-10",
+      "url": "https://www.ena.et/web/eng/w/eng_9654763",
+      "location": "Mojo Modern Logistics Hub paragraph (October 1, 2026)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S6",
+      "title": "Transport and Logistics",
+      "publisher": "Ethiopian Investment Commission",
+      "date": "2023",
+      "url": "https://investethiopia.gov.et/key-sectors/emerging-sectors/transport-and-logistics/",
+      "location": "Sector overview, Ethiopian Airlines and opportunities sections",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S7",
+      "title": "Dire Dawa FTZ Poised to Drive Ethiopia's Trade Transformation, IPDC CEO Says",
+      "publisher": "Ethiopian News Agency (Industrial Parks Development Corporation statement)",
+      "date": "2025-12",
+      "url": "https://www.ena.et/web/eng/w/eng_8031647",
+      "location": "Article body (December 31, 2025)",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Ethiopian Investment Board Decision to Open the Logistics Industry",
+      "publisher": "Ethiopian Investment Commission / Ethiopian Investment Board",
+      "date": "2018-09",
+      "url": "https://investethiopia.gov.et/wp-content/uploads/2022/11/EIB-decision-on-Logistics.pdf",
+      "location": "Decision text",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S9",
+      "title": "IMF Reaches Staff Level Agreement on the Fifth Review of the Extended Credit Facility for Ethiopia (Press Release No. 26/183)",
+      "publisher": "International Monetary Fund",
+      "date": "2026-06",
+      "url": "https://www.imf.org/en/news/articles/2026/06/03/pr26183-ethiopia-imf-reaches-staff-level-agreement-fifth-review-extended-credit-facility",
+      "location": "Press release body",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Treasury Bills Auction",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2025-04",
+      "url": "https://nbe.gov.et/treasury-bills/",
+      "location": "Auction results, 974th/25 (April 2, 2025), weighted average yield row",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S11",
+      "title": "Building Ethiopia's Logistics Future: From Bottlenecks to Flow",
+      "publisher": "World Bank",
+      "date": "2026-05",
+      "url": "https://www.worldbank.org/en/news/feature/2026/05/28/building-ethiopia-s-logistics-future-from-bottlenecks-to-flow",
+      "location": "Section 'Expanding capacity and improving flow'",
+      "accessed": "2026-10-16"
+    },
+    {
+      "id": "S12",
+      "title": "Free Trade Zone Will Provide Efficient Services, Attract Investors: Maritime Authority",
+      "publisher": "Ethiopian News Agency (Ethiopian Maritime Authority statement)",
+      "date": "2022-08",
+      "url": "https://www.ena.et/web/eng/w/en_37964",
+      "location": "Article body (August 23, 2022)",
+      "accessed": "2026-10-16"
+    }
+  ]
+}
