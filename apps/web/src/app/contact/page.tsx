@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const options = [
   { label: "General inquiries", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
   { label: "Partnerships", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
-  { label: "Press", value: <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a> },
+  { label: "Press", value: <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a> },
   { label: "Phone", value: <>Office {company.phoneOffice} · Mobile {company.phoneMobile}</> },
   {
     label: "Office",
@@ -53,7 +53,7 @@ export default function ContactPage() {
             <div className="mt-6">
               <Note>
                 Investopia staff will never ask for your password or ask you to send money to a personal account. Report suspicious
-                messages to <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>.
+                messages to <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a>.
               </Note>
             </div>
           </div>

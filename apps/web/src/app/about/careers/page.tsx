@@ -24,8 +24,8 @@ export default function CareersPage() {
       <Section title="Open roles" tone="canvas">
         <EmptyState>
           No open roles right now. Send your resume to{" "}
-          <a href="mailto:career@ebba.et" className="text-brand-700 hover:underline">
-            career@ebba.et
+          <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">
+            investopia@eruditeafrica.com
           </a>{" "}
           and we will keep you in mind.
         </EmptyState>

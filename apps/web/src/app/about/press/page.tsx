@@ -15,13 +15,13 @@ export default function PressPage() {
           Investopia (&ldquo;Powering Smarter Business Decisions&rdquo;) is a digital platform that connects Ethiopian
           entrepreneurs, businesses and investors across the full business lifecycle, from incubation and investment to
           diagnostics, recovery and exit. Investopia is operated by Erudite Africa Investments PLC, headquartered in Addis Ababa.
-          Learn more at ebba.et.
+          Learn more at www.investopia.et.
         </blockquote>
       </Section>
       <Section tone="canvas">
         <CardGrid cols={2}>
           <Card title="Media contact">
-            <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>
+            <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a>
           </Card>
           <Card title="Download">Brand kit (logos, colors, photos)</Card>
         </CardGrid>

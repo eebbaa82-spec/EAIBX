@@ -67,7 +67,7 @@ export default function MentorsPage() {
           <div>
             <Note>
               Mentors give their time for free and never ask for payment, equity or confidential information in return.
-              Report any concern to <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>.
+              Report any concern to <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a>.
             </Note>
           </div>
         </div>
