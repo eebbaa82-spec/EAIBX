@@ -41,7 +41,9 @@ function body(r, edition) {
       (r.returnsNote ? `<div class="note just">${esc(r.returnsNote)}</div>` : ""),
     r.opportunities.length ? h("Investment opportunities") + items(r.opportunities) : "",
     r.incentives.length ? h("Incentives") + items(r.incentives) : "",
-    r.risks.length ? h("Risks to consider") + items(r.risks) : "",
+    h("Points to consider") +
+      (r.risks.length ? items(r.risks) : "") +
+      `<div class="note just">A detailed risk and outlook assessment for a specific business or investment is part of Kena Hub's analyst due diligence. Contact us to arrange one.</div>`,
     edition === "member"
       ? h("Sources") +
         `<ol class="sources">${r.sources
@@ -61,7 +63,7 @@ for (const file of files) {
     const doc = documentHtml({
       title: r.name,
       kicker: "Sector investment report · Ethiopia",
-      lede: "Opportunities, published returns, incentives and risks, drawn exclusively from reports by international institutions and the Government of Ethiopia.",
+      lede: "Opportunities, published returns and incentives, drawn exclusively from reports by international institutions and the Government of Ethiopia.",
       edition,
       asOf: r.asOf,
       body: body(r, edition),
