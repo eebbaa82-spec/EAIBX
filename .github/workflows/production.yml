@@ -1,11 +1,11 @@
-name: Publish to kena.et
+name: Publish to investopia.et
 
-# Uploads the public site to the kena.et web host. It never runs on its own:
+# Uploads the public site to the investopia.et web host. It never runs on its own:
 # start it from the Actions tab ("Run workflow") when you are ready to publish.
 #
 # Repository secrets (Settings > Secrets and variables > Actions), added by the
 # site owner, never pasted in chat:
-#   KENA_FTP_SERVER    host name of the FTP server, for example ftp.kena.et
+#   KENA_FTP_SERVER    host name of the FTP server, for example ftp.investopia.et
 #   KENA_FTP_USERNAME  FTP user name
 #   KENA_FTP_PASSWORD  FTP password
 #   KENA_FTP_DIR       folder the site is served from, for example public_html/
@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: https://www.kena.et
+      url: https://www.investopia.et
     defaults:
       run:
         working-directory: apps/web
