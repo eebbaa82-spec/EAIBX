@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, Faq, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Erudite Connect FAQ · Answers for Businesses and Investors",
+  title: "Investopia FAQ · Answers for Businesses and Investors",
   description:
     "Answers to common questions about listings, EHIRA assessments, deal rooms, fees and investor verification.",
 };
@@ -16,16 +16,16 @@ export default function FaqPage() {
         <Faq
           items={[
             {
-              q: "What is Erudite Connect?",
-              a: "Erudite Connect, Erudite Africa's business and investment platform, is an online platform that connects Ethiopian entrepreneurs and businesses with investors, buyers, mentors, advisors and learning, across the whole life of a business.",
+              q: "What is Investopia?",
+              a: "Investopia, Erudite Africa's business and investment platform, is an online platform that connects Ethiopian entrepreneurs and businesses with investors, buyers, mentors, advisors and learning, across the whole life of a business.",
             },
             {
-              q: "Who runs Erudite Connect?",
-              a: "Erudite Connect is operated by Erudite Africa Investments PLC, based in Addis Ababa.",
+              q: "Who runs Investopia?",
+              a: "Investopia is operated by Erudite Africa Investments PLC, based in Addis Ababa.",
             },
             {
-              q: "Is Erudite Connect a stock exchange?",
-              a: "No. Erudite Connect is a private matching and information platform. It does not list or trade securities and is not regulated as an exchange. Businesses that want to list publicly may use Erudite Connect to prepare for the Ethiopian Securities Exchange.",
+              q: "Is Investopia a stock exchange?",
+              a: "No. Investopia is a private matching and information platform. It does not list or trade securities and is not regulated as an exchange. Businesses that want to list publicly may use Investopia to prepare for the Ethiopian Securities Exchange.",
             },
             {
               q: "Is it free?",
@@ -52,11 +52,11 @@ export default function FaqPage() {
             },
             {
               q: "What is the EHIRA grade?",
-              a: "EHIRA, the Enterprise Health & Investment Readiness Assessment, grades your business from A to E across eight dimensions, from financial health to investment readiness, and adds a readiness rating. A verified grade is reviewed by an Erudite Connect analyst.",
+              a: "EHIRA, the Enterprise Health & Investment Readiness Assessment, grades your business from A to E across eight dimensions, from financial health to investment readiness, and adds a readiness rating. A verified grade is reviewed by an Investopia analyst.",
             },
             {
               q: "How long does it take to raise money or sell?",
-              a: "It depends on your business, the market and the deal. Many transactions take several months. Erudite Connect helps you prepare so you do not lose time.",
+              a: "It depends on your business, the market and the deal. Many transactions take several months. Investopia helps you prepare so you do not lose time.",
             },
             {
               q: "What if my business is in trouble?",
@@ -70,7 +70,7 @@ export default function FaqPage() {
         <Faq
           items={[
             {
-              q: "Who can invest through Erudite Connect?",
+              q: "Who can invest through Investopia?",
               a: (
                 <>
                   Individuals and organizations that complete our investor verification. Foreign and diaspora investors must also
@@ -79,11 +79,11 @@ export default function FaqPage() {
               ),
             },
             {
-              q: "Does Erudite Connect give investment advice?",
+              q: "Does Investopia give investment advice?",
               a: "No. We provide information, tools and introductions. Make your own assessment and take professional advice.",
             },
             {
-              q: "Does Erudite Connect hold investor funds?",
+              q: "Does Investopia hold investor funds?",
               a: (
                 <>
                   No. Payments for investments or acquisitions are made directly between the parties, through their banks or

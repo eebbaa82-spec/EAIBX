@@ -1,7 +1,7 @@
 // KENA™ Bank Readiness Index (BRI): six readiness indices and the KENA Enterprise Readiness Score (KERS™),
 // from Erudite Africa's framework of 18 October 2026. The index and dimension weights, the CBR and DDR rating
 // bands, the KERS weights and the maturity classes are Erudite's. Which answers feed each dimension, the
-// added questions below and the bands for the other four indices are Erudite Connect's draft (marked `assumed`).
+// added questions below and the bands for the other four indices are Investopia's draft (marked `assumed`).
 import type { Question } from "@/lib/ehira/model";
 
 /** Questions EHIRA does not already ask. They feed the BRI only, never the EHIRA grade. */
@@ -23,7 +23,7 @@ export const briQuestions: Question[] = [
   { id: "B12", dimension: "investment", text: "Are your main business assets insured?", type: "choice", required: true, weight: 1, options: [{ value: "all", label: "All of them", score: 100 }, { value: "some", label: "Some of them", score: 50 }, { value: "none", label: "None", score: 0 }], action: "Insure your main assets; lessors and lenders require it." },
   // Investor readiness
   { id: "B13", dimension: "investment", text: "Is your business model written down: who pays you, for what, and how you make a margin?", type: "yesno", required: true, weight: 1, action: "Write a one-page business model: customers, what they pay for, costs and margin." },
-  { id: "B14", dimension: "investment", text: "Have you estimated the size of your target market from published data?", type: "yesno", required: true, weight: 1, action: "Size your market from published sources, such as Erudite Connect's sector reports." },
+  { id: "B14", dimension: "investment", text: "Have you estimated the size of your target market from published data?", type: "yesno", required: true, weight: 1, action: "Size your market from published sources, such as Investopia's sector reports." },
   { id: "B15", dimension: "investment", text: "How did revenue change last year?", type: "choice", required: true, weight: 1, options: [{ value: "30", label: "Grew more than 30%", score: 100 }, { value: "15", label: "Grew 15 to 30%", score: 80 }, { value: "5", label: "Grew 5 to 15%", score: 60 }, { value: "0", label: "Flat (0 to 5%)", score: 40 }, { value: "down", label: "Declined", score: 10 }], action: "Build a credible growth plan with targets by product, customer and market." },
   { id: "B16", dimension: "investment", text: "Is there an up-to-date cap table showing every shareholder and their stake?", type: "yesno", required: true, weight: 1, action: "Prepare a cap table listing every shareholder, their shares and any promised equity." },
   { id: "B17", dimension: "investment", text: "Is a written investment proposal or memorandum ready?", type: "yesno", required: true, weight: 1, action: "Prepare an investment memorandum: the opportunity, the amount sought, use of funds and investor returns." },

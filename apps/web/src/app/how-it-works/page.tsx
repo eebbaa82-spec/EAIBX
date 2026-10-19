@@ -4,15 +4,15 @@ import { Container, PageHero } from "@/components/ui";
 import { AudienceOverviewSection, audienceOrder, audiences } from "@/components/group-a/audiences";
 
 export const metadata: Metadata = {
-  title: "How Erudite Connect Works for Founders and Investors",
+  title: "How Investopia Works for Founders and Investors",
   description:
-    "See how entrepreneurs, investors, mentors and partners use Erudite Connect to grow, invest and recover, step by step.",
+    "See how entrepreneurs, investors, mentors and partners use Investopia to grow, invest and recover, step by step.",
 };
 
 export default function HowItWorksPage() {
   return (
     <>
-      <PageHero title="One platform. Every stage of business." subhead="Pick your role to see how Erudite Connect works for you." />
+      <PageHero title="One platform. Every stage of business." subhead="Pick your role to see how Investopia works for you." />
       <nav aria-label="Choose your role" className="border-b border-line bg-white">
         <Container>
           <ul className="flex gap-2 overflow-x-auto py-3">

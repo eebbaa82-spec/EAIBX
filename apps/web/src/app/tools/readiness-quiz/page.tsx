@@ -3,7 +3,7 @@ import { ReadinessQuiz } from "@/components/tools/ReadinessQuiz";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Investment Readiness Quiz · Erudite Connect",
+  title: "Investment Readiness Quiz · Investopia",
   description: "Ten questions that tell you how close you are to being investor-ready, with next steps for every gap.",
 };
 

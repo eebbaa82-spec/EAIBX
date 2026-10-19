@@ -2,7 +2,7 @@
  * EHIRA (Enterprise Health & Investment Readiness Assessment).
  *
  * Source: "EHIRA Enterprise Health & Investment Readiness Assessment Framework" design draft
- * (Erudite Africa, 2026-10-17), completed by the EHIRA methodology addendum v0.2 (Erudite Connect,
+ * (Erudite Africa, 2026-10-17), completed by the EHIRA methodology addendum v0.2 (Investopia,
  * 2026-10-17) for everything the draft leaves open: weights for each business type, default
  * score bands, and questions added for the Ethiopian context (marked `added: true`).
  */
@@ -69,7 +69,7 @@ export type Question = {
   evidence?: string;
   /** Shown only when this returns true. */
   showIf?: (a: Answers) => boolean;
-  /** Advice when the answer scores below full marks. Draft wording by Erudite Connect, not from the framework. */
+  /** Advice when the answer scores below full marks. Draft wording by Investopia, not from the framework. */
   action: string;
   assumed?: boolean;
 };
@@ -92,8 +92,8 @@ export const questions: Question[] = [
   { id: "FR6", dimension: "financial", text: "Total debt service last year (ETB)", help: "Loan principal plus interest paid in the year. Enter 0 if you have no loans.", type: "money", required: false, weight: 0, unscored: true, action: "", assumed: true },
 
   { id: "F6", dimension: "financial", added: true, text: "Do all sales and expenses go through a business bank account, separate from personal money?", type: "yesno", required: true, weight: 3, action: "Run all business income and spending through a business bank account. Mixed accounts make revenue impossible for a bank or investor to verify." },
-  { id: "F7", dimension: "financial", added: true, text: "How many months of fixed costs could you cover from cash on hand today?", help: "Cash and bank balances divided by monthly rent, salaries and other overheads.", type: "months", required: true, weight: 4, bands: [{ min: 6, score: 100 }, { min: 3, score: 75 }, { min: 1, score: 50 }, { min: 0, score: 20 }], action: "Aim for a cash reserve of at least six months of fixed costs and forecast cash monthly. Try the Erudite Connect cash flow forecaster." },
-  { id: "F8", dimension: "financial", added: true, text: "Credit information: declaration or NBE credit report", help: "Mandatory. Erudite Connect cannot access the National Bank of Ethiopia's credit reference system, so either sign the declaration below or attach your own commercial credit report from NBE for our analysts to review.", type: "creditinfo", required: true, weight: 0, unscored: true, evidence: "Signed declaration or NBE commercial credit report", action: "" },
+  { id: "F7", dimension: "financial", added: true, text: "How many months of fixed costs could you cover from cash on hand today?", help: "Cash and bank balances divided by monthly rent, salaries and other overheads.", type: "months", required: true, weight: 4, bands: [{ min: 6, score: 100 }, { min: 3, score: 75 }, { min: 1, score: 50 }, { min: 0, score: 20 }], action: "Aim for a cash reserve of at least six months of fixed costs and forecast cash monthly. Try the Investopia cash flow forecaster." },
+  { id: "F8", dimension: "financial", added: true, text: "Credit information: declaration or NBE credit report", help: "Mandatory. Investopia cannot access the National Bank of Ethiopia's credit reference system, so either sign the declaration below or attach your own commercial credit report from NBE for our analysts to review.", type: "creditinfo", required: true, weight: 0, unscored: true, evidence: "Signed declaration or NBE commercial credit report", action: "" },
 
   // B. Market & Customer
   { id: "M1", dimension: "market", text: "How many active customers do you have?", type: "number", required: true, weight: 0, unscored: true, action: "" },
@@ -115,7 +115,7 @@ export const questions: Question[] = [
 
   // D. Human Capital
   { id: "H1", dimension: "people", text: "What is your annual staff turnover?", help: "Staff who left in the year as a share of average headcount.", type: "percent", required: true, weight: DEFAULT_WEIGHT, bands: [{ min: 30, score: 20, strict: true }, { min: 20, score: 50, strict: true }, { min: 10, score: 75 }, { min: 0, score: 100 }], action: "Find out why staff leave and address pay, progression or working conditions.", assumed: true },
-  { id: "H2", dimension: "people", text: "What is your training budget as a percentage of payroll?", type: "percent", required: true, weight: DEFAULT_WEIGHT, bands: [{ min: 3, score: 100 }, { min: 1, score: 70 }, { min: 0, score: 40, strict: true }, { min: 0, score: 0 }], action: "Set aside a training budget for key skills. The Erudite Connect Academy offers practical courses.", assumed: true },
+  { id: "H2", dimension: "people", text: "What is your training budget as a percentage of payroll?", type: "percent", required: true, weight: DEFAULT_WEIGHT, bands: [{ min: 3, score: 100 }, { min: 1, score: 70 }, { min: 0, score: 40, strict: true }, { min: 0, score: 0 }], action: "Set aside a training budget for key skills. The Investopia Academy offers practical courses.", assumed: true },
   { id: "H3", dimension: "people", text: "Does a succession plan exist for key roles?", type: "yesno", required: true, weight: DEFAULT_WEIGHT, action: "Name and prepare a deputy for each key role, including the owner." },
 
   { id: "H4", dimension: "people", added: true, text: "Are all employees registered for the mandatory private-sector pension scheme, with contributions paid?", type: "yesno", required: true, weight: 3, action: "Register all employees for the private-sector pension scheme and pay contributions on time. Arrears are a liability investors will find." },
@@ -124,7 +124,7 @@ export const questions: Question[] = [
   // E. Governance
   { id: "G1", dimension: "governance", text: "Does the business have a Board of Directors?", type: "yesno", required: true, weight: 5, action: "Form a board, or at least an advisory board, that meets regularly with minutes." },
   { id: "G2", dimension: "governance", text: "How formal are your internal controls?", help: "1 = none, 3 = some approvals and reconciliations, 5 = documented and regularly reviewed.", type: "scale", required: true, weight: DEFAULT_WEIGHT, action: "Separate duties for cash handling, approvals and record keeping, and reconcile accounts monthly." },
-  { id: "G3", dimension: "governance", text: "Upload your current tax clearance certificate", help: "Mandatory. Issued by the Ministry of Revenues or your city or regional revenue bureau. Erudite Connect checks it against the issuer's records in the verified EHIRA.", type: "taxclearance", required: true, weight: DEFAULT_WEIGHT, evidence: "Tax clearance certificate", action: "Bring all tax filings and payments up to date and renew your tax clearance certificate. An expired certificate caps your grade at C." },
+  { id: "G3", dimension: "governance", text: "Upload your current tax clearance certificate", help: "Mandatory. Issued by the Ministry of Revenues or your city or regional revenue bureau. Investopia checks it against the issuer's records in the verified EHIRA.", type: "taxclearance", required: true, weight: DEFAULT_WEIGHT, evidence: "Tax clearance certificate", action: "Bring all tax filings and payments up to date and renew your tax clearance certificate. An expired certificate caps your grade at C." },
 
   { id: "G4", dimension: "governance", added: true, text: "Are your accounts prepared under IFRS or IFRS for SMEs, as required by the Accounting and Auditing Board of Ethiopia?", type: "yesno", required: true, weight: 3, action: "Move your reporting to IFRS for SMEs (or full IFRS where required) with a qualified accountant." },
   { id: "G5", dimension: "governance", added: true, text: "Are the memorandum of association, shareholder records and any partner agreements up to date and registered?", type: "yesno", required: true, weight: 3, action: "Update and register your memorandum of association and shareholder records. Unclear ownership stops investment deals." },
@@ -135,7 +135,7 @@ export const questions: Question[] = [
   { id: "S2", dimension: "strategy", text: "Are key performance indicators (KPIs) monitored monthly?", type: "yesno", required: true, weight: DEFAULT_WEIGHT, action: "Choose five to ten KPIs (sales, margin, cash, collections, delivery) and review them every month." },
 
   { id: "S3", dimension: "strategy", added: true, text: "Is there a written annual budget that is compared with actual results at least quarterly?", type: "yesno", required: true, weight: 3, action: "Prepare an annual budget and review actual results against it every quarter." },
-  { id: "S4", dimension: "strategy", added: true, for: ["distressed"], text: "Is there a written turnaround plan, shared with your lenders?", type: "yesno", required: true, weight: 5, action: "Prepare a turnaround plan with cash, cost and debt measures, and discuss it with your lenders early. Erudite Connect Business Recovery advisors can help." },
+  { id: "S4", dimension: "strategy", added: true, for: ["distressed"], text: "Is there a written turnaround plan, shared with your lenders?", type: "yesno", required: true, weight: 5, action: "Prepare a turnaround plan with cash, cost and debt measures, and discuss it with your lenders early. Investopia Business Recovery advisors can help." },
 
   // G. Technology
   { id: "T1", dimension: "technology", text: "Do you use an ERP or accounting system?", type: "yesno", required: true, weight: DEFAULT_WEIGHT, action: "Move your records to an accounting or ERP system instead of paper or spreadsheets." },
@@ -150,7 +150,7 @@ export const questions: Question[] = [
   { id: "I4", dimension: "investment", added: true, text: "Do you know how much finance you need and exactly what it will be used for?", type: "yesno", required: true, weight: 4, action: "Set out the amount you need and a use-of-funds table showing what each part buys and what it will achieve." },
   { id: "I5", dimension: "investment", added: true, text: "What is your record with bank or MFI loans?", type: "choice", required: true, weight: 4, options: [{ value: "ontime", label: "Repaid or repaying as agreed", score: 100 }, { value: "late", label: "Some late payments", score: 40 }, { value: "default", label: "Defaulted or restructured", score: 0 }, { value: "never", label: "Never borrowed", score: null }], action: "Build a clean credit record: keep every installment on time. Banks check your history with the National Bank's credit reference system." },
   { id: "I6", dimension: "investment", added: true, for: ["sme", "borrower", "distressed", "corporate"], text: "Do you have collateral or a guarantee you could offer a lender?", help: "For example property, vehicles, machinery, or a guarantee scheme.", type: "yesno", required: true, weight: 3, action: "Document the assets you could pledge, or ask about guarantee schemes and collateral-light products such as lease financing." },
-  { id: "I7", dimension: "investment", added: true, for: ["startup"], text: "Has the business raised any outside funding (grants, angel investment or an accelerator)?", type: "yesno", required: true, weight: 2, action: "Apply to an accelerator or grant program. Outside backing gives later investors confidence. See Erudite Connect Programs." },
+  { id: "I7", dimension: "investment", added: true, for: ["startup"], text: "Has the business raised any outside funding (grants, angel investment or an accelerator)?", type: "yesno", required: true, weight: 2, action: "Apply to an accelerator or grant program. Outside backing gives later investors confidence. See Investopia Programs." },
 ];
 
 /** Screening questions behind red flags the question bank does not cover yet (assumed wording). */

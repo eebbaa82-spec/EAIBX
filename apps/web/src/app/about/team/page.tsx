@@ -6,7 +6,7 @@ const intro =
   "Our team brings together investment professionals, turnaround specialists, technologists and educators who share one belief: Ethiopian business deserves world-class infrastructure.";
 
 export const metadata: Metadata = {
-  title: "Our Team · Erudite Connect",
+  title: "Our Team · Investopia",
   description: "Investment professionals, turnaround specialists, technologists and educators building world-class infrastructure for Ethiopian business.",
 };
 
@@ -79,7 +79,7 @@ function Profile({ person, large = false }: { person: typeof leader; large?: boo
 export default function TeamPage() {
   return (
     <>
-      <PageHero eyebrow="Our team" title="The people behind Erudite Connect" subhead={intro} />
+      <PageHero eyebrow="Our team" title="The people behind Investopia" subhead={intro} />
       <Section title="Leadership">
         <Profile person={leader} large />
       </Section>

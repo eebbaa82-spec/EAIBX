@@ -3,7 +3,7 @@ import { ButtonLink, EmptyState, FeatureList, PageHero, Section, Steps } from "@
 import { CardAnatomy } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Curated Deal Rooms for Investors · Erudite Connect",
+  title: "Curated Deal Rooms for Investors · Investopia",
   description:
     "Themed showcases of verified, diagnosed Ethiopian businesses, with secure data rooms for due diligence.",
 };
@@ -13,7 +13,7 @@ export default function DealRoomsPage() {
     <>
       <PageHero
         title="Curated deal rooms for serious investors"
-        subhead="Each Erudite Connect Deal Room brings together a hand-picked group of verified, diagnosed businesses around a sector or theme, and opens them to qualified investors for a set period."
+        subhead="Each Investopia Deal Room brings together a hand-picked group of verified, diagnosed businesses around a sector or theme, and opens them to qualified investors for a set period."
       >
         <ButtonLink href="/join" variant="light">
           Request access
@@ -80,7 +80,7 @@ export default function DealRoomsPage() {
       <Section
         tone="canvas"
         title="A secure data room for every deal"
-        intro="Every business on Erudite Connect gets its own private data room. Share financial statements, legal documents and contracts with the investors you approve, and nobody else."
+        intro="Every business on Investopia gets its own private data room. Share financial statements, legal documents and contracts with the investors you approve, and nobody else."
       >
         <FeatureList
           items={[

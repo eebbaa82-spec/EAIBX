@@ -10,7 +10,7 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Erudite Connect Academy · Banking and Finance Training",
+  title: "Investopia Academy · Banking and Finance Training",
   description:
     "Certified courses in banking, credit, capital markets and investment banking, with enterprise plans for banks and MFIs.",
 };
@@ -88,7 +88,7 @@ export default function AcademyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Erudite Connect Academy"
+        eyebrow="Investopia Academy"
         title="Professional training for Ethiopia's finance and business leaders"
         subhead="Practical courses and certifications in banking, credit, capital markets, investment banking and business skills, built for the Ethiopian market and available in Amharic and English."
       >
@@ -151,7 +151,7 @@ export default function AcademyPage() {
         intro={
           <>
             Structured learning paths that take credit staff from the basics to confident, independent decision-making. Each
-            path ends with an assessment and an Erudite Connect certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
+            path ends with an assessment and an Investopia certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
             together with partner institutions.
           </>
         }
@@ -202,7 +202,7 @@ export default function AcademyPage() {
               title: "Custom content.",
               body: (
                 <>
-                  Add your institution&apos;s own policies and procedures alongside Erudite Connect courses.
+                  Add your institution&apos;s own policies and procedures alongside Investopia courses.
                 </>
               ),
             },

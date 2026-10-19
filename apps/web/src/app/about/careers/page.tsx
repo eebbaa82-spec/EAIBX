@@ -5,7 +5,7 @@ const intro =
   "We are a small team with a big mandate. If you want your work to move capital, create jobs and give businesses a second chance, we would like to hear from you.";
 
 export const metadata: Metadata = {
-  title: "Careers · Erudite Connect",
+  title: "Careers · Investopia",
   description: "We are a small team with a big mandate. Help move capital, create jobs and give Ethiopian businesses a second chance.",
 };
 

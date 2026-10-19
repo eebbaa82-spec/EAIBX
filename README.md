@@ -1,8 +1,8 @@
-# Erudite Connect
+# Investopia
 
-Erudite Connect ("Powering Smarter Business Decisions") is a platform by Erudite Africa Investments PLC that connects Ethiopian entrepreneurs, businesses and investors across the full business lifecycle: incubation, investment, diagnostics, recovery, credit management and learning.
+Investopia ("Powering Smarter Business Decisions") is a platform by Erudite Africa Investments PLC that connects Ethiopian entrepreneurs, businesses and investors across the full business lifecycle: incubation, investment, diagnostics, recovery, credit management and learning.
 
-This repository will hold the whole platform, following the Erudite Connect Requirement Specification v0.3 (Next.js front end, NestJS + PostgreSQL back end, hosted on Azure).
+This repository will hold the whole platform, following the Investopia Requirement Specification v0.3 (Next.js front end, NestJS + PostgreSQL back end, hosted on Azure).
 
 ## Layout
 
@@ -27,7 +27,7 @@ The public site is exported as static files (`apps/web/out`) and deployed to Azu
 
 ## Status of the public site
 
-- Every public page from the approved website copy (Erudite Connect Website Content v1.0) is built, in US English.
+- Every public page from the approved website copy (Investopia Website Content v1.0) is built, in US English.
 - Anything that still needs a real fact is shown on the page as a highlighted **[TBC: …]** marker. Search the code for `<Tbc` to list them. None may go live unresolved.
 - Lists that will come from the platform (listings, investors, programs, mentors, events, deal rooms) show their empty states. No sample data is invented.
 - Forms are previews: they show their confirmation message but send nothing until the API exists.

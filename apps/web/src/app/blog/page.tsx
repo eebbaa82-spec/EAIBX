@@ -3,12 +3,12 @@ import { NewsletterForm } from "@/components/forms";
 import { Container, PageHero, Section, TagList } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Erudite Connect Insights · Business and Investing",
+  title: "Investopia Insights · Business and Investing",
   description: "Founder stories, investor perspectives and market analysis from Ethiopia's growth economy.",
 };
 
 const upcoming = [
-  "Introducing Erudite Connect: why Ethiopia needs a trusted platform for the whole business lifecycle",
+  "Introducing Investopia: why Ethiopia needs a trusted platform for the whole business lifecycle",
   "Five things investors check before they reply to your email",
   "Struggling is not failing: how early diagnosis saves good businesses",
   "What the Ethiopian Securities Exchange means for SMEs today",
@@ -21,11 +21,11 @@ export default function BlogPage() {
     <>
       <PageHero
         title="Insights from Ethiopia's growth economy"
-        subhead="Founder stories, investor perspectives, market analysis and Erudite Connect news."
+        subhead="Founder stories, investor perspectives, market analysis and Investopia news."
       />
 
       <Section title="Categories">
-        <TagList items={["Founder stories", "Investing", "Recovery and resilience", "Policy and markets", "How-to", "Erudite Connect news"]} />
+        <TagList items={["Founder stories", "Investing", "Recovery and resilience", "Policy and markets", "How-to", "Investopia news"]} />
       </Section>
 
       <Section tone="canvas" title="Coming soon">
@@ -41,7 +41,7 @@ export default function BlogPage() {
 
       <section className="bg-brand-900 py-16 text-white">
         <Container className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <h2 className="max-w-xl text-2xl font-bold">Found this useful? Get the Erudite Connect Brief every two weeks.</h2>
+          <h2 className="max-w-xl text-2xl font-bold">Found this useful? Get the Investopia Brief every two weeks.</h2>
           <NewsletterForm />
         </Container>
       </section>

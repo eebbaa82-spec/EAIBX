@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ButtonLink, FeatureList, Note, PageHero, Section, Steps } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Credit Management Center · Erudite Connect",
+  title: "Credit Management Center · Investopia",
   description:
     "Manage bank and MFI credit relationships, and give lenders faster, consent-based client due diligence. Built for Ethiopia.",
 };
@@ -14,7 +14,7 @@ export default function CreditCenterPage() {
       <PageHero
         eyebrow="Credit Management Center"
         title="Better credit relationships between businesses and lenders."
-        subhead="The Erudite Connect Credit Management Center of Excellence helps businesses manage their relationships with banks and microfinance institutions (MFIs), and helps banks and MFIs carry out faster, better-documented client due diligence."
+        subhead="The Investopia Credit Management Center of Excellence helps businesses manage their relationships with banks and microfinance institutions (MFIs), and helps banks and MFIs carry out faster, better-documented client due diligence."
       >
         <ButtonLink href="#for-businesses" variant="light">
           I&apos;m a business
@@ -28,7 +28,7 @@ export default function CreditCenterPage() {
         id="for-businesses"
         eyebrow="For businesses"
         title="Be the borrower every lender wants."
-        intro="Getting credit is only the start. Keeping a strong relationship with your bank or MFI means clear records, on-time reporting and early, honest conversations. Erudite Connect gives you the tools to do all three."
+        intro="Getting credit is only the start. Keeping a strong relationship with your bank or MFI means clear records, on-time reporting and early, honest conversations. Investopia gives you the tools to do all three."
       >
         <FeatureList
           items={[
@@ -52,7 +52,7 @@ export default function CreditCenterPage() {
               title: "Early warning.",
               body: (
                 <>
-                  If repayments or covenants come under pressure, Erudite Connect flags it early and connects you with{" "}
+                  If repayments or covenants come under pressure, Investopia flags it early and connects you with{" "}
                   <Link href="/recovery" className="text-brand-700 underline-offset-4 hover:underline">
                     Business Recovery
                   </Link>{" "}
@@ -72,7 +72,7 @@ export default function CreditCenterPage() {
         tone="canvas"
         eyebrow="For banks and MFIs"
         title="Faster due diligence. Healthier portfolios."
-        intro="Erudite Connect gives credit teams a secure, consent-based way to collect, review and verify client information, and to follow borrowers after disbursement."
+        intro="Investopia gives credit teams a secure, consent-based way to collect, review and verify client information, and to follow borrowers after disbursement."
       >
         <FeatureList
           items={[
@@ -88,7 +88,7 @@ export default function CreditCenterPage() {
             },
             {
               title: "Verified business data.",
-              body: "With the client's consent, see their EHIRA grade, diagnostic report and financial summaries, reviewed by Erudite Connect analysts.",
+              body: "With the client's consent, see their EHIRA grade, diagnostic report and financial summaries, reviewed by Investopia analysts.",
             },
             {
               title: "Structured appraisal support.",
@@ -100,7 +100,7 @@ export default function CreditCenterPage() {
             },
             {
               title: "Pre-screened deal flow.",
-              body: "Receive referrals of businesses from the Erudite Connect marketplace and programs that match your lending criteria.",
+              body: "Receive referrals of businesses from the Investopia marketplace and programs that match your lending criteria.",
             },
             {
               title: "Staff training and certification.",
@@ -108,7 +108,7 @@ export default function CreditCenterPage() {
                 <>
                   Enroll your credit teams in the{" "}
                   <Link href="/academy" className="text-brand-700 underline-offset-4 hover:underline">
-                    Erudite Connect Academy
+                    Investopia Academy
                   </Link>{" "}
                   through an enterprise subscription.
                 </>
@@ -136,7 +136,7 @@ export default function CreditCenterPage() {
             access is logged.
           </Note>
           <Note>
-            Erudite Connect is not a lender or a credit reference bureau. Every credit decision is made by the bank or MFI under its
+            Investopia is not a lender or a credit reference bureau. Every credit decision is made by the bank or MFI under its
             own policies and the applicable National Bank of Ethiopia directives.
           </Note>
         </div>
