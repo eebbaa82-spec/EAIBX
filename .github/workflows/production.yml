@@ -5,10 +5,10 @@ name: Publish to investopia.et
 #
 # Repository secrets (Settings > Secrets and variables > Actions), added by the
 # site owner, never pasted in chat:
-#   KENA_FTP_SERVER    host name of the FTP server, for example ftp.investopia.et
-#   KENA_FTP_USERNAME  FTP user name
-#   KENA_FTP_PASSWORD  FTP password
-#   KENA_FTP_DIR       folder the site is served from, for example public_html/
+#   INVESTOPIA_FTP_SERVER    host name of the FTP server, for example ftp.investopia.et
+#   INVESTOPIA_FTP_USERNAME  FTP user name
+#   INVESTOPIA_FTP_PASSWORD  FTP password
+#   INVESTOPIA_FTP_DIR       folder the site is served from, for example public_html/
 #                      (optional, defaults to public_html/)
 
 on:
@@ -41,14 +41,14 @@ jobs:
       - name: Check the upload secrets are set
         working-directory: .
         env:
-          SERVER: ${{ secrets.KENA_FTP_SERVER }}
-          USERNAME: ${{ secrets.KENA_FTP_USERNAME }}
-          PASSWORD: ${{ secrets.KENA_FTP_PASSWORD }}
+          SERVER: ${{ secrets.INVESTOPIA_FTP_SERVER }}
+          USERNAME: ${{ secrets.INVESTOPIA_FTP_USERNAME }}
+          PASSWORD: ${{ secrets.INVESTOPIA_FTP_PASSWORD }}
         run: |
           missing=""
-          [ -z "$SERVER" ] && missing="$missing KENA_FTP_SERVER"
-          [ -z "$USERNAME" ] && missing="$missing KENA_FTP_USERNAME"
-          [ -z "$PASSWORD" ] && missing="$missing KENA_FTP_PASSWORD"
+          [ -z "$SERVER" ] && missing="$missing INVESTOPIA_FTP_SERVER"
+          [ -z "$USERNAME" ] && missing="$missing INVESTOPIA_FTP_USERNAME"
+          [ -z "$PASSWORD" ] && missing="$missing INVESTOPIA_FTP_PASSWORD"
           if [ -n "$missing" ]; then echo "::error::Missing repository secrets:$missing"; exit 1; fi
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -62,9 +62,9 @@ jobs:
           NEXT_PUBLIC_ALLOW_INDEXING: ${{ inputs.allow_indexing }}
       - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.KENA_FTP_SERVER }}
-          username: ${{ secrets.KENA_FTP_USERNAME }}
-          password: ${{ secrets.KENA_FTP_PASSWORD }}
+          server: ${{ secrets.INVESTOPIA_FTP_SERVER }}
+          username: ${{ secrets.INVESTOPIA_FTP_USERNAME }}
+          password: ${{ secrets.INVESTOPIA_FTP_PASSWORD }}
           protocol: ${{ inputs.protocol }}
           local-dir: apps/web/out/
-          server-dir: ${{ secrets.KENA_FTP_DIR || 'public_html/' }}
+          server-dir: ${{ secrets.INVESTOPIA_FTP_DIR || 'public_html/' }}
