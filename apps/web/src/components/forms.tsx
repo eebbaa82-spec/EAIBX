@@ -17,7 +17,56 @@ function liveHost() {
   return typeof window !== "undefined" && /(^|\.)investopia\.et$/.test(window.location.hostname);
 }
 
+/**
+ * Invisible robot check (see submit.php): fetch a signed challenge and find a
+ * nonce whose SHA-256 starts with `difficulty` zero bits. It starts when a
+ * visitor first focuses a form, so it is usually done before they press send.
+ */
+type Solved = { challenge: string; nonce: string };
+let robotCheck: Promise<Solved> | null = null;
+let checkStarted = 0;
+// Match CHALLENGE_MIN_AGE and CHALLENGE_MAX_AGE in submit.php, with some slack.
+const MIN_AGE_MS = 2500;
+const MAX_AGE_MS = 115 * 60 * 1000;
+
+function zeroBits(bytes: Uint8Array) {
+  let bits = 0;
+  for (const b of bytes) {
+    if (b === 0) {
+      bits += 8;
+      continue;
+    }
+    return bits + Math.clz32(b) - 24;
+  }
+  return bits;
+}
+
+async function solveChallenge(): Promise<Solved> {
+  const res = await fetch(`${SUBMIT_URL}?challenge=1`, { cache: "no-store" });
+  const { challenge, difficulty } = (await res.json()) as { challenge: string; difficulty: number };
+  const encoder = new TextEncoder();
+  for (let nonce = 0; ; nonce++) {
+    const hash = await crypto.subtle.digest("SHA-256", encoder.encode(`${challenge}:${nonce}`));
+    if (zeroBits(new Uint8Array(hash)) >= difficulty) return { challenge, nonce: String(nonce) };
+  }
+}
+
+function startRobotCheck() {
+  if (!liveHost()) return;
+  if (robotCheck && Date.now() - checkStarted < MAX_AGE_MS) return;
+  checkStarted = Date.now();
+  robotCheck = solveChallenge();
+  robotCheck.catch(() => (robotCheck = null));
+}
+
 async function sendForm(formName: string, data: FormData) {
+  startRobotCheck();
+  // Each challenge works once, so the next submission starts a fresh one.
+  const solved = await robotCheck!.finally(() => (robotCheck = null));
+  const wait = checkStarted + MIN_AGE_MS - Date.now();
+  if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+  data.set("pow_challenge", solved.challenge);
+  data.set("pow_nonce", solved.nonce);
   data.set("form", formName);
   const res = await fetch(SUBMIT_URL, { method: "POST", body: data });
   const body = (await res.json().catch(() => null)) as { ok?: boolean } | null;
@@ -98,7 +147,7 @@ export function PreviewForm({
     "mt-1 w-full rounded-lg border border-line bg-white px-3 py-2 text-ink focus:border-brand-500 focus:outline-none";
 
   return (
-    <form onSubmit={onSubmit} className={`space-y-4 ${className}`}>
+    <form onSubmit={onSubmit} onFocus={startRobotCheck} className={`space-y-4 ${className}`}>
       <HoneypotField />
       {fields.map((field) => {
         const id = `f-${field.name}`;
@@ -191,6 +240,7 @@ export function NewsletterForm({ locale = "en" }: { locale?: Locale }) {
           setState("error");
         }
       }}
+      onFocus={startRobotCheck}
       className="w-full max-w-md"
     >
       <HoneypotField />

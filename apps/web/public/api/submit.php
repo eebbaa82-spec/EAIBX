@@ -3,6 +3,12 @@
 // each submission to the Investopia inbox and appends it to a CSV file kept
 // outside the web folder (~/investopia-submissions/<form>.csv).
 // The Next.js site is static, so this is the only server-side code it uses.
+//
+// Robot check: before sending, the page asks for a challenge (GET ?challenge)
+// and spends a second or two of browser work finding a nonce whose SHA-256
+// starts with DIFFICULTY zero bits. People never see it; scripted spam has to
+// pay that cost per message, and each challenge is signed, expires and works
+// once.
 
 const INBOX = 'investopia@eruditeafrica.com';
 const SENDER = 'no-reply@investopia.et';
@@ -15,6 +21,9 @@ const FORMS = [
 const MAX_FIELDS = 20;
 const MAX_LENGTH = 5000;
 const MIN_SECONDS_BETWEEN = 20;
+const DIFFICULTY = 16;
+const CHALLENGE_MIN_AGE = 2;
+const CHALLENGE_MAX_AGE = 7200;
 
 header_remove('X-Powered-By');
 header('Content-Type: application/json; charset=utf-8');
@@ -25,6 +34,53 @@ function reply(int $status, array $body): void
     http_response_code($status);
     echo json_encode($body);
     exit;
+}
+
+$dir = dirname(__DIR__, 2) . '/investopia-submissions';
+if (!is_dir($dir)) {
+    @mkdir($dir, 0700, true);
+}
+
+// Signing key for challenges, created on first use and kept outside the web folder.
+function secret(string $dir): string
+{
+    $file = $dir . '/.challenge-key';
+    $key = is_file($file) ? (string) @file_get_contents($file) : '';
+    if (strlen($key) < 32) {
+        $key = bin2hex(random_bytes(32));
+        @file_put_contents($file, $key, LOCK_EX);
+        @chmod($file, 0600);
+    }
+    return $key;
+}
+
+function sign(string $payload, string $dir): string
+{
+    return hash_hmac('sha256', $payload, secret($dir));
+}
+
+function leading_zero_bits(string $raw): int
+{
+    $bits = 0;
+    foreach (str_split($raw) as $byte) {
+        $b = ord($byte);
+        if ($b === 0) {
+            $bits += 8;
+            continue;
+        }
+        while (($b & 0x80) === 0) {
+            $bits++;
+            $b <<= 1;
+        }
+        break;
+    }
+    return $bits;
+}
+
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'GET' && isset($_GET['challenge'])) {
+    header('Cache-Control: no-store');
+    $payload = time() . '.' . bin2hex(random_bytes(12));
+    reply(200, ['challenge' => $payload . '.' . sign($payload, $dir), 'difficulty' => DIFFICULTY]);
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
@@ -41,9 +97,38 @@ if (trim($_POST['website'] ?? '') !== '') {
     reply(200, ['ok' => true]);
 }
 
+// The robot check: a valid, fresh, unused challenge with a solved nonce.
+$challenge = (string) ($_POST['pow_challenge'] ?? '');
+$nonce = (string) ($_POST['pow_nonce'] ?? '');
+$parts = explode('.', $challenge);
+$age = count($parts) === 3 ? time() - (int) $parts[0] : -1;
+if (
+    count($parts) !== 3
+    || !hash_equals(sign($parts[0] . '.' . $parts[1], $dir), $parts[2])
+    || $age < CHALLENGE_MIN_AGE
+    || $age > CHALLENGE_MAX_AGE
+    || !preg_match('/^[0-9]{1,12}$/', $nonce)
+    || leading_zero_bits(hash('sha256', $challenge . ':' . $nonce, true)) < DIFFICULTY
+) {
+    reply(403, ['ok' => false, 'error' => 'Robot check failed. Please reload the page and try again']);
+}
+$used = $dir . '/.used-' . md5($challenge);
+if (is_file($used)) {
+    reply(403, ['ok' => false, 'error' => 'Robot check failed. Please reload the page and try again']);
+}
+@touch($used);
+// Forget used challenges once they have expired anyway.
+if (mt_rand(1, 50) === 1) {
+    foreach (glob($dir . '/.used-*') ?: [] as $old) {
+        if (time() - (int) @filemtime($old) > CHALLENGE_MAX_AGE) {
+            @unlink($old);
+        }
+    }
+}
+
 $fields = [];
 foreach ($_POST as $key => $value) {
-    if (in_array($key, ['form', 'website'], true) || is_array($value)) {
+    if (in_array($key, ['form', 'website', 'pow_challenge', 'pow_nonce'], true) || is_array($value)) {
         continue;
     }
     if (count($fields) >= MAX_FIELDS) {
@@ -60,12 +145,6 @@ foreach ($_POST as $key => $value) {
 $email = $fields['email'] ?? '';
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     reply(400, ['ok' => false, 'error' => 'A valid email address is required']);
-}
-
-$home = dirname(__DIR__, 2);
-$dir = $home . '/investopia-submissions';
-if (!is_dir($dir)) {
-    @mkdir($dir, 0700, true);
 }
 
 // One submission per address every few seconds keeps casual floods out.
