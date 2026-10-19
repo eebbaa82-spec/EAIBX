@@ -1,6 +1,6 @@
 export const brand = {
-  name: "Kena Hub",
-  fullName: "Kena Hub by Erudite Africa",
+  name: "Erudite Connect",
+  fullName: "Erudite Connect by Erudite Africa",
   operator: "Erudite Africa Investments PLC",
   tagline: "Powering Smarter Business Decisions.",
 };
@@ -51,7 +51,7 @@ export const mainNav: NavMenu[] = [
     label: "Invest",
     items: [
       { label: "Deal Rooms", href: "/deal-rooms", description: "Curated, verified deal flow" },
-      { label: "For Investors", href: "/for-investors", description: "How Kena Hub works for you" },
+      { label: "For Investors", href: "/for-investors", description: "How Erudite Connect works for you" },
       { label: "Valuation Tools", href: "/tools", description: "Price a business with confidence" },
     ],
   },
@@ -94,7 +94,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
     heading: "For Partners",
     links: [
       { label: "Partner with us", href: "/partners" },
-      { label: "Run a program on Kena Hub", href: "/for-partners" },
+      { label: "Run a program on Erudite Connect", href: "/for-partners" },
       { label: "Sponsor a cohort", href: "/partners#ways-to-partner" },
       { label: "List as an advisor", href: "/for-advisors" },
     ],
@@ -102,7 +102,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
   {
     heading: "Company",
     links: [
-      { label: "About Kena Hub", href: "/about" },
+      { label: "About Erudite Connect", href: "/about" },
       { label: "Our team", href: "/about/team" },
       { label: "Careers", href: "/about/careers" },
       { label: "Press", href: "/about/press" },

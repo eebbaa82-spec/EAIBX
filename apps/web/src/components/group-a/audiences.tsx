@@ -32,7 +32,7 @@ export const audiences: Record<AudienceKey, Audience> = {
     href: "/for-entrepreneurs",
     title: "Raise capital, grow faster or sell on your terms.",
     subhead:
-      "Whether you have an idea on paper or a business with twenty years of history, Kena Hub gives you a clear path to the next stage.",
+      "Whether you have an idea on paper or a business with twenty years of history, Erudite Connect gives you a clear path to the next stage.",
     blocks: [
       {
         kind: "steps",
@@ -90,7 +90,7 @@ export const audiences: Record<AudienceKey, Audience> = {
     href: "/for-investors",
     title: "Verified Ethiopian deal flow, without the noise.",
     subhead:
-      "Kena Hub helps angel investors, funds, family offices, corporates and diaspora investors find, assess and close opportunities with confidence.",
+      "Erudite Connect helps angel investors, funds, family offices, corporates and diaspora investors find, assess and close opportunities with confidence.",
     blocks: [
       {
         kind: "steps",
@@ -114,7 +114,7 @@ export const audiences: Record<AudienceKey, Audience> = {
           },
           {
             title: "Invest or acquire.",
-            body: "Agree terms directly or with a Kena Hub-listed advisor, and track your portfolio on your dashboard.",
+            body: "Agree terms directly or with an Erudite Connect-listed advisor, and track your portfolio on your dashboard.",
           },
         ],
       },
@@ -157,7 +157,7 @@ export const audiences: Record<AudienceKey, Audience> = {
     href: "/for-advisors",
     title: "Share what you know. Grow what you do.",
     subhead:
-      "Kena Hub connects experienced professionals with founders and businesses who need their expertise, as volunteer mentors or as paid advisors.",
+      "Erudite Connect connects experienced professionals with founders and businesses who need their expertise, as volunteer mentors or as paid advisors.",
     blocks: [
       {
         kind: "cards",
@@ -194,9 +194,9 @@ export const audiences: Record<AudienceKey, Audience> = {
     key: "partners",
     tab: "Partner institutions",
     href: "/for-partners",
-    title: "Run your programs and pipelines on Kena Hub.",
+    title: "Run your programs and pipelines on Erudite Connect.",
     subhead:
-      "Banks, DFIs, government agencies, universities and corporates use Kena Hub to find, support and fund businesses at scale, with the data to prove impact.",
+      "Banks, DFIs, government agencies, universities and corporates use Erudite Connect to find, support and fund businesses at scale, with the data to prove impact.",
     blocks: [
       {
         kind: "tags",

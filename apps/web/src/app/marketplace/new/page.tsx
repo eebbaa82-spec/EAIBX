@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, Note, PageHero, Section, Steps } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "List your business · Kena Hub",
+  title: "List your business · Erudite Connect",
   description:
     "It is free to create a listing. Your identity stays private until you choose to share it.",
 };
@@ -11,7 +11,7 @@ export default function NewListingPage() {
   return (
     <>
       <PageHero
-        title="List your business on Kena Hub"
+        title="List your business on Erudite Connect"
         subhead="It is free to create a listing. Your identity stays private until you choose to share it."
       >
         <ButtonLink href="/join" variant="light">

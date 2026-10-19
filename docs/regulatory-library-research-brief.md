@@ -1,4 +1,4 @@
-# Research brief: Kena regulations and research library (used every month)
+# Research brief: Erudite Connect regulations and research library (used every month)
 
 Goal: a JSON list of documents for the category named in your task, saved at `/mnt/project-files/eabix/regulatory-library/data/<slug>.json`. Investors and business owners read these summaries on the Kena website (Knowledge Hub > Regulations and research) and click through to the original.
 

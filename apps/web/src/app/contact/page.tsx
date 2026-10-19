@@ -4,8 +4,8 @@ import { Note, PageHero, Section } from "@/components/ui";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Kena Hub · Addis Ababa",
-  description: "Talk to the Kena Hub team about your business, investment or partnership.",
+  title: "Contact Erudite Connect · Addis Ababa",
+  description: "Talk to the Erudite Connect team about your business, investment or partnership.",
 };
 
 const options = [
@@ -52,7 +52,7 @@ export default function ContactPage() {
             </dl>
             <div className="mt-6">
               <Note>
-                Kena Hub staff will never ask for your password or ask you to send money to a personal account. Report suspicious
+                Erudite Connect staff will never ask for your password or ask you to send money to a personal account. Report suspicious
                 messages to <a href="mailto:contact@ebba.et" className="text-brand-700 hover:underline">contact@ebba.et</a>.
               </Note>
             </div>

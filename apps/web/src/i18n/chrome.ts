@@ -34,7 +34,7 @@ const am: Record<string, string> = {
   "Deal Rooms": "የስምምነት ክፍሎች",
   "Curated, verified deal flow": "የተመረጡና የተረጋገጡ የኢንቨስትመንት ዕድሎች",
   "For Investors": "ለባለሀብቶች",
-  "How Kena Hub works for you": "Kena Hub ለእርስዎ እንዴት እንደሚሠራ",
+  "How Erudite Connect works for you": "Erudite Connect ለእርስዎ እንዴት እንደሚሠራ",
   "Valuation Tools": "የዋጋ ትመና መሣሪያዎች",
   "Price a business with confidence": "የንግድን ዋጋ በእርግጠኝነት ይገምቱ",
   "Knowledge Hub": "የዕውቀት ማዕከል",
@@ -44,13 +44,13 @@ const am: Record<string, string> = {
   Blog: "ብሎግ",
   // Header
   "Log in": "ይግቡ",
-  "Join Kena Hub": "Kena Hubን ይቀላቀሉ",
+  "Join Erudite Connect": "Erudite Connectን ይቀላቀሉ",
   "Open menu": "ምናሌውን ክፈት",
   "Close menu": "ምናሌውን ዝጋ",
   "Skip to content": "ወደ ይዘቱ ይዝለሉ",
-  "Kena Hub home": "የKena Hub መነሻ ገጽ",
+  "Erudite Connect home": "የErudite Connect መነሻ ገጽ",
   // Footer
-  "The Kena Hub Brief": "የKena Hub ዜና መጽሔት",
+  "The Erudite Connect Brief": "የErudite Connect ዜና መጽሔት",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "ከኢትዮጵያ እያደገ ካለው ኢኮኖሚ የተገኙ ስምምነቶች፣ ፕሮግራሞችና ግንዛቤዎች፣ በየሁለት ሳምንቱ።",
   "Email address": "የኢሜይል አድራሻ",
@@ -73,10 +73,10 @@ const am: Record<string, string> = {
   "Sector reports": "የዘርፍ ሪፖርቶች",
   "Investor FAQ": "የባለሀብቶች ተደጋጋሚ ጥያቄዎች",
   "Partner with us": "ከእኛ ጋር ይተባበሩ",
-  "Run a program on Kena Hub": "በKena Hub ላይ ፕሮግራም ያካሂዱ",
+  "Run a program on Erudite Connect": "በErudite Connect ላይ ፕሮግራም ያካሂዱ",
   "Sponsor a cohort": "የሥልጠና ቡድን ስፖንሰር ያድርጉ",
   "List as an advisor": "እንደ አማካሪ ይመዝገቡ",
-  "About Kena Hub": "ስለ Kena Hub",
+  "About Erudite Connect": "ስለ Erudite Connect",
   "Our team": "ቡድናችን",
   Careers: "የሥራ ዕድሎች",
   Press: "ለሚዲያ",
@@ -92,7 +92,7 @@ const am: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "ረሆቦት አፓርትመንት ሕንፃ፣ 1ኛ ፎቅ፣ ቦሌ መድኃኔዓለም፣ አዲስ አበባ፣ ኢትዮጵያ",
   footerLegal:
-    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Kena Hub የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
+    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Erudite Connect የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
   // Trust bar
   "Verified profiles": "የተረጋገጡ መገለጫዎች",
   "Secure deal rooms": "ደህንነታቸው የተጠበቀ የስምምነት ክፍሎች",
@@ -135,7 +135,7 @@ const om: Record<string, string> = {
   "Deal Rooms": "Kutaalee Waliigaltee",
   "Curated, verified deal flow": "Carraawwan investimentii filatamanii fi mirkanaa'an",
   "For Investors": "Invastarootaaf",
-  "How Kena Hub works for you": "Kena Hub akkamitti isiniif hojjeta",
+  "How Erudite Connect works for you": "Erudite Connect akkamitti isiniif hojjeta",
   "Valuation Tools": "Meeshaalee Madaallii Gatii",
   "Price a business with confidence": "Gatii daldalaa amanamummaan tilmaamaa",
   "Knowledge Hub": "Giddugala Beekumsaa",
@@ -145,13 +145,13 @@ const om: Record<string, string> = {
   Blog: "Bloogii",
   // Header
   "Log in": "Seeni",
-  "Join Kena Hub": "Kena Hub Makami",
+  "Join Erudite Connect": "Erudite Connect Makami",
   "Open menu": "Baafata bani",
   "Close menu": "Baafata cufi",
   "Skip to content": "Gara qabiyyeetti darbi",
-  "Kena Hub home": "Fuula jalqabaa Kena Hub",
+  "Erudite Connect home": "Fuula jalqabaa Erudite Connect",
   // Footer
-  "The Kena Hub Brief": "Odeessa Kena Hub",
+  "The Erudite Connect Brief": "Odeessa Erudite Connect",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "Waliigaltee, sagantaalee fi hubannoo dinagdee guddachaa jiru Itoophiyaa irraa, torban lama lamaan.",
   "Email address": "Teessoo imeelii",
@@ -174,10 +174,10 @@ const om: Record<string, string> = {
   "Sector reports": "Gabaasa damee",
   "Investor FAQ": "Gaaffilee irra deddeebiin invastarootaa",
   "Partner with us": "Nu waliin hojjedhaa",
-  "Run a program on Kena Hub": "Kena Hub irratti sagantaa gaggeessaa",
+  "Run a program on Erudite Connect": "Erudite Connect irratti sagantaa gaggeessaa",
   "Sponsor a cohort": "Garee leenjii deggeraa",
   "List as an advisor": "Akka gorsaatti galmaa'aa",
-  "About Kena Hub": "Waa'ee Kena Hub",
+  "About Erudite Connect": "Waa'ee Erudite Connect",
   "Our team": "Garee keenya",
   Careers: "Carraa hojii",
   Press: "Miidiyaaf",
@@ -193,7 +193,7 @@ const om: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "Gamoo Apaartimantii Rehobot, Darbii 1ffaa, Boolee Medhaneealem, Finfinnee (Addis Ababa), Itoophiyaa",
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Kena Hub waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
+    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Erudite Connect waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
   // Trust bar
   "Verified profiles": "Ibsa dhuunfaa mirkanaa'e",
   "Secure deal rooms": "Kutaalee waliigaltee nageenya qaban",
@@ -208,7 +208,7 @@ const om: Record<string, string> = {
 
 const en: Record<string, string> = {
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Kena Hub is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
+    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Erudite Connect is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
 };
 
 const dictionaries: Record<Locale, Record<string, string>> = { en, am, om };

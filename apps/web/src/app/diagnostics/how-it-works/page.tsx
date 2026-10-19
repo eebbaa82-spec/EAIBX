@@ -4,7 +4,7 @@ import { businessTypes, dimensions, gradeBands, typeWeights } from "@/lib/ehira/
 import { indices, kersWeights, maturityBands } from "@/lib/bri/model";
 
 export const metadata: Metadata = {
-  title: "How EHIRA works · Kena Hub",
+  title: "How EHIRA works · Erudite Connect",
   description: "The dimensions, weights, grades and red flags behind the Enterprise Health & Investment Readiness Assessment.",
 };
 
@@ -99,7 +99,7 @@ export default function EhiraMethodPage() {
           </div>
         </div>
         <p className="mt-6 text-ink">
-          After scoring, Kena Hub lists the key gaps holding back each index below 80 and the actions that close them, such as obtaining a tax
+          After scoring, Erudite Connect lists the key gaps holding back each index below 80 and the actions that close them, such as obtaining a tax
           clearance certificate, registering movable assets in the collateral registry or preparing an investment memorandum.
         </p>
       </Section>
@@ -111,7 +111,7 @@ export default function EhiraMethodPage() {
             indicative grade, readiness scores and actions on screen. Downloadable reports are available with payment.
           </Card>
           <Card title="Verified EHIRA (price announced after the launch period)">
-            Upload your financial statements, tax clearance certificate and supporting documents. A Kena Hub analyst reviews them and issues a
+            Upload your financial statements, tax clearance certificate and supporting documents. An Erudite Connect analyst reviews them and issues a
             verified grade that investors and lenders can rely on, valid for 12 months.
           </Card>
         </CardGrid>

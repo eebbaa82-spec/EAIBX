@@ -10,7 +10,7 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Kena Hub Academy · Banking and Finance Training",
+  title: "Erudite Connect Academy · Banking and Finance Training",
   description:
     "Certified courses in banking, credit, capital markets and investment banking, with enterprise plans for banks and MFIs.",
 };
@@ -88,7 +88,7 @@ export default function AcademyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Kena Hub Academy"
+        eyebrow="Erudite Connect Academy"
         title="Professional training for Ethiopia's finance and business leaders"
         subhead="Practical courses and certifications in banking, credit, capital markets, investment banking and business skills, built for the Ethiopian market and available in Amharic and English."
       >
@@ -151,7 +151,7 @@ export default function AcademyPage() {
         intro={
           <>
             Structured learning paths that take credit staff from the basics to confident, independent decision-making. Each
-            path ends with an assessment and a Kena Hub certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
+            path ends with an assessment and an Erudite Connect certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
             together with partner institutions.
           </>
         }
@@ -202,7 +202,7 @@ export default function AcademyPage() {
               title: "Custom content.",
               body: (
                 <>
-                  Add your institution&apos;s own policies and procedures alongside Kena Hub courses.
+                  Add your institution&apos;s own policies and procedures alongside Erudite Connect courses.
                 </>
               ),
             },

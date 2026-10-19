@@ -4,8 +4,8 @@ import { PreviewForm } from "@/components/forms";
 import { Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Log in · Kena Hub",
-  description: "Welcome back. Log in to your Kena Hub account for programs, investment, recovery and learning.",
+  title: "Log in · Erudite Connect",
+  description: "Welcome back. Log in to your Erudite Connect account for programs, investment, recovery and learning.",
 };
 
 export default function LoginPage() {
@@ -28,9 +28,9 @@ export default function LoginPage() {
               <p className="mt-1">Enter your email or phone and we will send you a reset link.</p>
             </div>
             <p className="mt-6 text-center text-sm text-muted">
-              New to Kena Hub?{" "}
+              New to Erudite Connect?{" "}
               <Link href="/join" className="font-semibold text-brand-700 hover:underline">
-                Join Kena Hub free
+                Join Erudite Connect free
               </Link>
             </p>
           </div>

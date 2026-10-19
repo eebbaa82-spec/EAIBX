@@ -3,7 +3,7 @@ import { CashflowForecaster } from "@/components/tools/CashflowForecaster";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Cash Flow Forecaster · Kena Hub",
+  title: "Cash Flow Forecaster · Erudite Connect",
   description: "Project your cash position for the next 12 months and see shortfalls before they happen.",
 };
 
