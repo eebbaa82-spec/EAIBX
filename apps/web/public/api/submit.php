@@ -16,6 +16,7 @@ const MAX_FIELDS = 20;
 const MAX_LENGTH = 5000;
 const MIN_SECONDS_BETWEEN = 20;
 
+header_remove('X-Powered-By');
 header('Content-Type: application/json; charset=utf-8');
 header('X-Robots-Tag: noindex');
 
