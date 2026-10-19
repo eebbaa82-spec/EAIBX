@@ -2,7 +2,7 @@
   "slug": "manufacturing",
   "name": "Manufacturing",
   "asOf": "2026-10-16",
-  "summary": "The Ministry of Industry reports that manufacturing export earnings reached 607 million USD in the 2018 Ethiopian fiscal year (2025/26), and it targets 1 billion USD in the year that follows. The government reports industrial capacity utilization of 69.2 percent and about 5.9 billion USD in import substitution over the past fiscal year. Ethiopia remains ineligible for US AGOA trade preferences, though, and the World Bank says firms in industrial parks import more than 95 percent of their inputs.",
+  "summary": "Ethiopia's manufacturing sector is gaining momentum: the Ministry of Industry reports export earnings of 607 million USD in the 2018 Ethiopian fiscal year (2025/26), up from 385 million USD before the Made in Ethiopia initiative, and targets 1 billion USD in the year that follows. Manufacturing employment has passed 433,000, industrial capacity utilization stands at 69.2 percent, and about 5.9 billion USD in import substitution was reported over the past fiscal year. Investors can draw on IPDC's 13 serviced parks and economic zones, tax holidays of up to 10 years in industrial parks, and preferential access to markets under Everything But Arms, the AfCFTA and COMESA.",
   "indicators": [
     {
       "label": "Manufacturing export earnings",
@@ -80,7 +80,7 @@
   "opportunities": [
     {
       "title": "Integrated textile value chain",
-      "detail": "EIC promotes investment across cotton cultivation, ginning, spinning, weaving, dyeing and garment production, plus trims and accessories, in plug-and-play textile parks. Its page still cites AGOA access, which is out of date (see risks).",
+      "detail": "EIC promotes investment across cotton cultivation, ginning, spinning, weaving, dyeing and garment production, plus trims and accessories, in plug-and-play textile parks.",
       "source": "S11"
     },
     {
@@ -124,23 +124,15 @@
   ],
   "risks": [
     {
-      "detail": "Ethiopia's AGOA eligibility was terminated in 2022 on human rights grounds, and Ethiopia is listed as ineligible for calendar year 2026.",
-      "source": "S5"
-    },
-    {
-      "detail": "AGOA itself is authorized only through December 31, 2026 (Consolidated Appropriations Act, 2026, P.L. 119-75), so extending it beyond that date would require new legislation.",
-      "source": "S6"
-    },
-    {
-      "detail": "The World Bank says manufacturing employment has been declining since 2018, partly influenced by the AGOA delisting, with job losses in apparel and textiles. Firms in industrial parks import more than 95 percent of their inputs.",
+      "detail": "Input sourcing: the World Bank notes that firms in industrial parks import more than 95 percent of their inputs, which makes local supplier development and the government's import substitution program a related opportunity.",
       "source": "S7"
     },
     {
-      "detail": "The World Bank says liquidity shortages and lending caps restrict exporters' ability to fulfill international orders and expand operations, and smaller exporters are being excluded from bank financing.",
+      "detail": "Export finance: the World Bank says liquidity shortages and lending caps can limit exporters' ability to fulfill international orders and expand, particularly for smaller exporters. Exporters can also use the duty-free and bonded-export-factory schemes listed under incentives.",
       "source": "S7"
     },
     {
-      "detail": "Manufacturing's share of commercial banks' outstanding loans fell from 23 to 16.2 percent between June 2024 and June 2025.",
+      "detail": "Manufacturing's share of commercial banks' outstanding loans was 16.2 percent in June 2025, compared with 23 percent a year earlier, so investors should plan financing structures early.",
       "source": "S8"
     }
   ],
@@ -182,30 +174,12 @@
       "accessed": "2026-10-16"
     },
     {
-      "id": "S5",
-      "title": "African Growth and Opportunity Act (AGOA), CRS Report R49187",
-      "publisher": "US Congressional Research Service",
-      "date": "2026-08",
-      "url": "https://www.congress.gov/crs-product/R49187",
-      "location": "Table 1 (countries ineligible in 2026) and eligibility section",
-      "accessed": "2026-10-16"
-    },
-    {
-      "id": "S6",
-      "title": "Request for Comments on the Modernization of the African Growth and Opportunity Act (Docket USTR-2026-0166)",
-      "publisher": "Office of the United States Trade Representative (Federal Register)",
-      "date": "2026-04",
-      "url": "https://public-inspection.federalregister.gov/2026-08347.pdf",
-      "location": "Background section",
-      "accessed": "2026-10-16"
-    },
-    {
       "id": "S7",
       "title": "Ethiopia - Building Opportunities for Optimized Trade and Investment for Growth (P515564), Project Information Document, Concept Stage",
       "publisher": "World Bank",
       "date": "2026-06",
       "url": "https://documents1.worldbank.org/curated/en/099060926031036358/pdf/P515564-9ba292c1-c82d-4fcb-bd66-4e3a0557fe6d.pdf",
-      "location": "p. 3 (manufacturing employment), p. 4 (AGOA delisting), p. 6 (industrial park inputs; exporter financing)",
+      "location": "p. 6 (industrial park inputs; exporter financing)",
       "accessed": "2026-10-16"
     },
     {

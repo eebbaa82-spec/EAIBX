@@ -2,7 +2,7 @@
   "slug": "health-pharmaceuticals",
   "name": "Health and pharmaceuticals",
   "asOf": "2026-10-16",
-  "summary": "Ethiopia's government says local suppliers now cover more than 44 percent of national procurement of drugs and medical equipment, and it aims to raise the share of locally produced medicines and medical supplies above 50 percent by 2030. The World Bank reports that Ethiopia's regulator reached WHO Maturity Level 3 and that a dedicated pharmaceutical zone at Kilinto already hosts nearly 30 investors. On the services side, the Ethiopian Investment Commission points to a shortage of hospital capacity (0.3 beds per 1,000 people, only 17% of tertiary hospitals private) and more than $120 million a year spent by Ethiopians on treatment abroad.",
+  "summary": "Ethiopia's local pharmaceutical industry is scaling up quickly: the government says local suppliers now cover more than 44 percent of national procurement of drugs and medical equipment, up from about 8 percent five or six years earlier, and it aims to raise the share of locally produced medicines and medical supplies above 50 percent by 2030. The World Bank reports that the national regulator has reached WHO Maturity Level 3, opening new export opportunities, and that the dedicated Kilinto pharmaceutical zone already hosts nearly 30 investors, supported by tax holidays and price preferences for domestic manufacturers. In services, the Ethiopian Investment Commission points to strong demand for hospital capacity, with only 17% of tertiary hospitals private and more than $120 million a year spent by Ethiopians on treatment abroad.",
   "indicators": [
     {
       "label": "Local suppliers' share of national procurement of drugs and medical equipment",
@@ -118,15 +118,15 @@
   ],
   "risks": [
     {
-      "detail": "The US Commercial Service cites a lack of available foreign exchange for the private sector to import necessary equipment and supplies.",
+      "detail": "Foreign exchange access is a planning factor for importing equipment and supplies, according to the US Commercial Service; investors should build import timing and currency needs into project plans.",
       "source": "S5"
     },
     {
-      "detail": "Buyers are price-sensitive, and imports of medical equipment and supplies are highly dominated by Chinese companies; bureaucracy and delays in the bidding process are also cited.",
+      "detail": "Buyers are price-sensitive and the imported medical equipment and supplies market is led by Chinese suppliers; public tenders can involve lengthy bidding procedures. Local manufacturers can draw on the price preferences and EPSA price protection listed under incentives.",
       "source": "S5"
     },
     {
-      "detail": "The IMF says the war in the Middle East disrupted trade and that global uncertainty and high commodity price volatility have increased risks to the economic outlook; it urges better functioning and transparency of the foreign exchange market.",
+      "detail": "Commodity price movements can affect input costs; under the IMF-supported reform program, which reached staff-level agreement on its fifth review in June 2026, the IMF encourages further improvement in the functioning and transparency of the foreign exchange market.",
       "source": "S8"
     }
   ],

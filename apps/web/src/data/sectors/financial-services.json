@@ -2,7 +2,7 @@
   "slug": "financial-services",
   "name": "Financial services",
   "asOf": "2026-10-16",
-  "summary": "Ethiopia's 32 banks held deposits of ETB 3.5 trillion at end-June 2025 and earned a return on equity of 27.4 percent, while microfinance institutions posted a 27.5 percent return on equity. The 2025 Banking Business Proclamation opens banking to foreign investors through subsidiaries, branches or stakes in domestic banks, and the Ethiopian Securities Exchange has listed seven companies since January 2025. Insurance penetration is only 0.3 percent, and 135.9 million mobile money accounts point to a fast-growing digital payments market.",
+  "summary": "Ethiopia's 32 banks grew deposits 40.7 percent to ETB 3.5 trillion in the year to end-June 2025 and earned a return on equity of 27.4 percent, while microfinance institutions posted a 27.5 percent return on equity. The 2025 Banking Business Proclamation opens banking to foreign investors through subsidiaries, branches or stakes in domestic banks, and the Ethiopian Securities Exchange has listed seven companies since January 2025. With insurance penetration at 0.3 percent, premiums growing 43.1 percent, and 135.9 million mobile money accounts, insurance and digital payments offer substantial room to grow.",
   "indicators": [
     {
       "label": "Number of banks",
@@ -148,19 +148,19 @@
   ],
   "risks": [
     {
-      "detail": "Concentration: the state-owned Commercial Bank of Ethiopia holds 49.1 percent of banking assets, and trade accounts for 41.5 percent of loans.",
+      "detail": "Market structure: the state-owned Commercial Bank of Ethiopia holds 49.1 percent of banking assets, and trade accounts for 41.5 percent of loans, which shapes competition and lending mix for new entrants.",
       "source": "S1"
     },
     {
-      "detail": "Financial sector stakeholders rank exchange rate movements and inflation as the most significant short-term risks; operational risk is rising with financial fraud and crime.",
+      "detail": "Macro and operational factors: financial sector stakeholders rank exchange rate movements and inflation as the main short-term factors, and operational risk from financial fraud is increasing.",
       "source": "S1"
     },
     {
-      "detail": "The IMF says foreign bank entry 'will take time', and flags particularly fast private credit growth at the Commercial Bank of Ethiopia, whose asset quality review was due by June 2026.",
+      "detail": "Pace of opening: the IMF expects foreign bank entry to take time, and notes fast private credit growth at the Commercial Bank of Ethiopia, whose asset quality review was due by June 2026.",
       "source": "S3"
     },
     {
-      "detail": "The foreign equity and licensing directives we reviewed are NBE drafts with blank numbers and effective dates, so the final rules may differ.",
+      "detail": "Final rules: the foreign equity and licensing directives we reviewed are NBE drafts without final numbers and effective dates, so the final rules may differ.",
       "source": "S4"
     }
   ],

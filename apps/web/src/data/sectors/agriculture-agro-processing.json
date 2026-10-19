@@ -2,7 +2,7 @@
   "slug": "agriculture-agro-processing",
   "name": "Agriculture and agro-processing",
   "asOf": "2026-10-16",
-  "summary": "Agriculture made up 32.8 percent of Ethiopia's GDP and 60.1 percent of employment in 2025 (World Bank), and coffee export earnings reached a record 3 billion USD in the budget year that ended in July 2026. The Ethiopian Investment Commission promotes agro-processing in edible oil, juices, animal feed, tomato and poultry, where large shares of demand are now met by imports. FAO-hosted investment cases presented in 2025 and 2026 project internal rates of return of 20.8 to 32 percent for animal feed, ranching, poultry and coffee projects.",
+  "summary": "Coffee export earnings reached a record 3 billion USD in the budget year that ended in July 2026, and agriculture accounted for 32.8 percent of Ethiopia's GDP and 60.1 percent of employment in 2025 (World Bank). The Ethiopian Investment Commission promotes agro-processing in edible oil, juices, animal feed, tomato and poultry, where large shares of demand are currently met by imports, and integrated agro-industrial parks offer ready-made sheds with income and export tax exemptions. FAO-hosted investment cases presented in 2025 and 2026 project internal rates of return of 20.8 to 32 percent for animal feed, ranching, poultry and coffee projects.",
   "indicators": [
     {
       "label": "Coffee export earnings",
@@ -171,19 +171,19 @@
   ],
   "risks": [
     {
-      "detail": "The coffee value chain faces an overall financing gap of 95 percent, and interest rates of 18-30 percent make borrowing expensive.",
+      "detail": "Access to finance: UNIDO estimates the coffee value chain's overall financing gap at 95 percent, with loan interest rates of 18-30 percent, so financing structure is a key part of project planning.",
       "source": "S13"
     },
     {
-      "detail": "About 80 percent of coffee trees are 50-70 years old; adoption of good agricultural practices is low, and climate change, pests and diseases are named risks.",
+      "detail": "Farm productivity: about 80 percent of coffee trees are 50-70 years old and adoption of good agricultural practices is low, and climate, pests and diseases need active management; the coffee rejuvenation investment case above targets this replanting need.",
       "source": "S13"
     },
     {
-      "detail": "FAO-hosted investment cases flag price volatility and inconsistent raw material supply for feed, climate and land-suitability risks for ranching, and high capital costs, FX shortages and disease outbreaks for poultry.",
+      "detail": "Input and operating factors: FAO-hosted investment cases point to raw material supply consistency and price movements for feed, climate and land suitability for ranching, and capital costs, foreign exchange access and animal health for poultry.",
       "source": "S11"
     },
     {
-      "detail": "The World Bank notes that liquidity shortages and lending caps restrict exporters' ability to fulfill international orders, and smaller exporters are being excluded from bank financing.",
+      "detail": "Export finance: the World Bank notes that bank liquidity and lending limits affect exporters' ability to finance international orders, particularly for smaller exporters; the same project document reports improved forex availability in FY26.",
       "source": "S16"
     }
   ],

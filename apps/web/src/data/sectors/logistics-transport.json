@@ -2,7 +2,7 @@
   "slug": "logistics-transport",
   "name": "Logistics and transport",
   "asOf": "2026-10-16",
-  "summary": "About 95 percent of Ethiopia's import-export cargo moves along the Addis-Djibouti corridor, and the World Bank estimates that logistics costs account for nearly a third of GDP, so cutting costs on this route is a large opportunity. The government is expanding the Modjo dry port and logistics hub, plans new dry ports and truck terminals, and says it intends to invest over USD 70 billion in transport and logistics infrastructure. Ethiopian Airlines, the state-owned carrier, reported carrying 897,000 tons of cargo in fiscal year 2025/2026.",
+  "summary": "Ethiopia plans to invest over USD 70 billion in transport and logistics infrastructure over the next decade, and the first phase of the Modjo modern logistics hub, with capacity of up to one million 20-foot containers a year, was inaugurated in September 2026. About 95 percent of import-export cargo moves along the Addis-Djibouti corridor and the World Bank estimates logistics costs at nearly a third of GDP, so efficiency gains in truck terminals, dry ports and freight services offer a large opportunity. Ethiopian Airlines carried 897,000 tons of cargo in fiscal year 2025/2026, serving 44 freighter destinations.",
   "indicators": [
     {
       "label": "Share of Ethiopia's export-import cargo traffic on the Addis-Djibouti corridor",
@@ -118,19 +118,19 @@
   ],
   "risks": [
     {
-      "detail": "The World Bank cites long dwell times for trucks and goods caused by inefficiencies at the Djibouti port and the Modjo inland dry port.",
+      "detail": "Dwell times for trucks and goods at the Djibouti port and the Modjo inland dry port are a cost factor, according to the World Bank; its Addis-Djibouti corridor project is designed to improve corridor efficiency, including through private investment in freight truck terminals.",
       "source": "S1"
     },
     {
-      "detail": "Rail carries only a small share of corridor freight; the World Bank notes that even if rail traffic grows to 4 million tons, road will still carry most cargo.",
+      "detail": "Road carries most corridor freight and the World Bank expects it to keep doing so even if rail traffic grows to 4 million tons, so trucking, terminals and road-based services remain central to the market.",
       "source": "S1"
     },
     {
-      "detail": "Corridor upgrades have been slow to start: in October 2024 the World Bank recorded only 3.3 percent disbursement of the US$730 million grant and civil works on the road component had not commenced.",
+      "detail": "Project timelines matter for planning: at the October 2024 World Bank mission, 3.3 percent of the US$730 million corridor grant had been disbursed and civil works on the road component had not yet started.",
       "source": "S2"
     },
     {
-      "detail": "The IMF says the war in the Middle East disrupted trade and caused temporary fuel shortages and sharp increases in imported fuel prices, and that pressures could increase if the shock is prolonged.",
+      "detail": "Imported fuel prices are a key operating cost; the IMF noted temporary fuel shortages and sharp fuel price increases in 2026 linked to disruptions in global trade, and that pressures could increase if the disruption is prolonged.",
       "source": "S9"
     }
   ],

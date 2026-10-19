@@ -2,7 +2,7 @@
   "slug": "tourism-hospitality",
   "name": "Tourism and hospitality",
   "asOf": "2026-10-16",
-  "summary": "The Ministry of Tourism reported more than 1.2 million international tourists and upwards of 2 billion US dollars in revenue over the nine months reported on April 1, 2026, alongside over 30 million domestic travelers. Ethiopian Airlines carried 19.0 million passengers and earned $7.6 billion in the fiscal year to June 2025, and the African Development Bank is lead arranger for nearly $8 billion of the $10 billion Bishoftu airport for a project it describes as set to be Africa's largest airport by 2029. Star-rated hotels, lodges, MICE facilities and tourist transport are open to foreign investors, while large parts of the north are under official travel warnings.",
+  "summary": "Tourism is gaining momentum: the Ministry of Tourism reported more than 1.2 million international tourists and upwards of 2 billion US dollars in revenue over the nine months reported on April 1, 2026, alongside over 30 million domestic travelers. Ethiopian Airlines carried 19.0 million passengers and earned $7.6 billion in the fiscal year to June 2025, and the African Development Bank is lead arranger for nearly $8 billion of the $10 billion Bishoftu airport, a project it describes as set to be Africa's largest airport by 2029. Star-rated hotels, lodges, MICE facilities and tourist transport are open to foreign investors, with income tax exemptions and duty-free import of capital goods available for new enterprises.",
   "indicators": [
     {
       "label": "International tourist arrivals",
@@ -120,19 +120,15 @@
   ],
   "risks": [
     {
-      "detail": "The UK government advises against all travel to all of Tigray, Amhara and Gambela regions and parts of Oromia, Afar, Somali and Benishangul-Gumuz; all civilian flights to and from Tigray were suspended on September 22, 2026.",
-      "source": "S10"
-    },
-    {
-      "detail": "Non-star hotels, lodges, guest houses, restaurants, travel agencies, ticket sales and tour operation are reserved for domestic investors, and foreign investors may hold no more than 49 percent in domestic air transport.",
+      "detail": "Investment rules differ by segment: star-rated hotels and lodges are open to foreign investors, while non-star hotels, lodges, guest houses, restaurants, travel agencies, ticket sales and tour operation are reserved for domestic investors, and foreign investors may hold up to 49 percent in domestic air transport.",
       "source": "S5"
     },
     {
-      "detail": "Institutional change: a draft proclamation discussed in parliament in October 2026 would re-establish the Ministry of Tourism as the Ministry of Culture and Tourism.",
+      "detail": "Institutional set-up is being updated: a draft proclamation discussed in parliament in October 2026 would re-establish the Ministry of Tourism as the Ministry of Culture and Tourism, so investors should confirm their counterpart ministry.",
       "source": "S11"
     },
     {
-      "detail": "The Bishoftu airport's AfDB financing remained subject to Board approval at signing, and the project carries a $350 million resettlement and livelihood restoration allocation.",
+      "detail": "Bishoftu airport timelines depend on financing approvals and site preparation: the AfDB financing remained subject to Board approval at signing, and the project includes a $350 million resettlement and livelihood restoration allocation.",
       "source": "S3"
     }
   ],
@@ -216,15 +212,6 @@
       "date": "2026-07",
       "url": "https://nbe.gov.et/mpc7/",
       "location": "Financial market developments",
-      "accessed": "2026-10-16"
-    },
-    {
-      "id": "S10",
-      "title": "Foreign travel advice: Ethiopia",
-      "publisher": "UK Foreign, Commonwealth and Development Office",
-      "date": "2026-10",
-      "url": "https://www.gov.uk/foreign-travel-advice/ethiopia",
-      "location": "Warnings and insurance (updated October 7, 2026)",
       "accessed": "2026-10-16"
     },
     {

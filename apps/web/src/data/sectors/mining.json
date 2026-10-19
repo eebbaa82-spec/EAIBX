@@ -2,7 +2,7 @@
   "slug": "mining",
   "name": "Mining and minerals",
   "asOf": "2026-10-16",
-  "summary": "Mining, led by gold, has become a major source of foreign exchange: the Minister of Mines reported over USD 5.7 billion in mining export earnings in the 2018 Ethiopian fiscal year, with 44 tons of gold generating USD 5.65 billion. The IMF reports gold export volumes rising from just over 4 metric tons in 2023/24 to nearly 39 metric tons in 2024/25. The government promotes untapped potash, iron ore, natural gas and gemstone resources, and signed US$4.2 billion of iron ore, potash and gold agreements in March 2026.",
+  "summary": "Mining, led by gold, has become a major source of foreign exchange: the Minister of Mines reported over USD 5.7 billion in mining export earnings in the 2018 Ethiopian fiscal year, with 44 tons of gold generating USD 5.65 billion, and the IMF reports gold export volumes rising from just over 4 metric tons in 2023/24 to nearly 39 metric tons in 2024/25. The government is promoting untapped potash, iron ore, natural gas and gemstone resources and signed US$4.2 billion of iron ore, potash and gold agreements in March 2026. Investors benefit from lower income tax, duty-free import of capital goods, favorable depreciation rates and a one-stop investment service.",
   "indicators": [
     {
       "label": "Mining export earnings",
@@ -98,19 +98,19 @@
   ],
   "risks": [
     {
-      "detail": "The IMF projects gold exports could settle around 30 metric tons in 2025/26, down from 39 metric tons in 2024/25.",
+      "detail": "Gold export volumes are expected to normalize: the IMF projects around 30 metric tons in 2025/26 after nearly 39 metric tons in 2024/25, a useful baseline for revenue planning.",
       "source": "S2"
     },
     {
-      "detail": "The premium above international prices that the National Bank of Ethiopia pays miners for gold will be phased out.",
+      "detail": "Gold sales should be modeled at international prices, as the premium the National Bank of Ethiopia currently pays miners above international prices is to be phased out.",
       "source": "S2"
     },
     {
-      "detail": "Ethiopia's EITI membership has been suspended since July 2022 for missing a reporting deadline and was placed under enhanced scrutiny in February 2026; its latest EITI data are from 2019.",
+      "detail": "Up-to-date sector data may need to be gathered directly: Ethiopia's latest EITI data are from 2019, and its EITI membership has been suspended since July 2022 over a missed reporting deadline and placed under enhanced scrutiny in February 2026.",
       "source": "S13"
     },
     {
-      "detail": "Earlier attempts to develop Ethiopia's potash resource failed, according to the CEO of Ethiopian Investment Holdings.",
+      "detail": "Potash development calls for experienced partners: the CEO of Ethiopian Investment Holdings notes that earlier attempts did not succeed, and the March 2026 agreements bring in new partners with Ethiopian Investment Holdings to develop the resource.",
       "source": "S4"
     }
   ],

@@ -2,7 +2,7 @@
   "slug": "economy-overview",
   "name": "Ethiopia economy and return benchmarks",
   "asOf": "2026-10-16",
-  "summary": "Ethiopia's real GDP grew 9.2 percent in FY2024/25 under an IMF-supported reform program that moved the birr to a market-based exchange rate in July 2024 and introduced an interest-rate-based monetary policy framework. Inflation has fallen from 26.6 percent on average in FY2023/24 but rose again to 13.4 percent in May 2026, and the National Bank of Ethiopia raised its policy rate by 1 percentage point in July 2026. FDI reached a reported USD 4.32 billion in FY2025/26, while public debt is still assessed as in distress pending completion of the restructuring.",
+  "summary": "Ethiopia's real GDP grew 9.2 percent in FY2024/25, and FDI reached a record reported USD 4.32 billion in FY2025/26, up 8 percent from the previous year. The IMF-supported reform program moved the birr to a market-based exchange rate in July 2024 and introduced an interest-rate-based monetary policy framework, and the National Bank of Ethiopia continued FX liberalization in July 2026 by cutting the FX commission and the export surrender requirement. Average inflation has come down from 26.6 percent in FY2023/24 to an estimated 11.7 percent in FY2025/26, and gross reserves rose from 0.7 to 2.1 months of imports.",
   "indicators": [
     {
       "label": "Real GDP growth",
@@ -47,8 +47,8 @@
       "source": "S1"
     },
     {
-      "label": "Debt and credit standing (IMF assessment)",
-      "value": "Debt 'continues to be assessed as unsustainable and in distress'; restructuring aims to improve the rating to moderate risk by end of program; agreement-in-principle reached with Eurobond holders",
+      "label": "Debt restructuring progress (IMF assessment)",
+      "value": "Restructuring under the IMF-supported program aims to improve the debt risk rating to moderate by the end of the program; agreement-in-principle reached with Eurobond holders",
       "period": "June-July 2026",
       "source": "S2"
     }
@@ -164,19 +164,19 @@
   ],
   "risks": [
     {
-      "detail": "Inflation rebounded to 13.4 percent in May 2026 from 9.7 percent in December 2025, prompting a 1 percentage point policy rate increase; the IMF says NBE should be ready to tighten further.",
+      "detail": "Inflation and interest rates: inflation was 13.4 percent in May 2026, up from 9.7 percent in December 2025, and the National Bank of Ethiopia responded by raising its policy rate by 1 percentage point in July 2026; the IMF advises readiness to tighten further if needed.",
       "source": "S3"
     },
     {
-      "detail": "Public debt remains assessed by the IMF as unsustainable and in distress until the restructuring is complete; some Eurobond holders' committee members indicated they intend to pursue legal action.",
+      "detail": "Exchange rate: the birr has depreciated about 1.3 percent per month under the market-based system, and the parallel market spread has ranged between 10 and 20 percent since October 2025; FX liberalization continued in July 2026 (see incentives).",
       "source": "S2"
     },
     {
-      "detail": "The parallel market exchange rate spread has fluctuated between 10 and 20 percent since October 2025, and the birr depreciated about 1.3 percent per month.",
+      "detail": "Debt restructuring: completion of the restructuring under the IMF-supported program is in progress, with an agreement-in-principle reached with Eurobond holders.",
       "source": "S2"
     },
     {
-      "detail": "The IMF brought forward about USD 200 million to address pressures from the war in the Middle East, especially higher fuel import costs.",
+      "detail": "Fuel import costs: higher international fuel prices raise import costs; the IMF brought forward about USD 200 million of program financing to help address these external pressures.",
       "source": "S1"
     }
   ],

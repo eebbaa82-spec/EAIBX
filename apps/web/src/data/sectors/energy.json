@@ -121,7 +121,7 @@
     },
     {
       "title": "Geothermal development",
-      "detail": "Geothermal potential is about 10 GW with less than 1% exploited, while the Aluto-Langano expansion, Corbetti and Tulu Moye projects have stalled.",
+      "detail": "Geothermal potential is about 10 GW with less than 1% exploited so far, and the Aluto-Langano expansion, Corbetti and Tulu Moye projects are still to be advanced.",
       "source": "S2"
     }
   ],
@@ -141,15 +141,15 @@
   ],
   "risks": [
     {
-      "detail": "Key risks named by the government and World Bank include IPP delays, payment risk, foreign exchange availability, non-cost-recovery tariffs, and hydrological risk.",
+      "detail": "Project and payment factors: the government and World Bank name IPP timelines, offtaker payment, foreign exchange availability, tariff levels and hydrology as factors to manage; the Compact responds with MIGA and IDA guarantees, standardized PPAs and an IPP helpdesk (see incentives).",
       "source": "S1"
     },
     {
-      "detail": "Utility finances are weak: tariffs are below cost recovery, technical and commercial losses exceed 20%, and metering coverage is below 10%.",
+      "detail": "Utility finances: tariffs are below cost recovery, technical and commercial losses exceed 20%, and metering coverage is below 10%; the Compact targets 100% cost recovery by 2028.",
       "source": "S1"
     },
     {
-      "detail": "The World Bank-financed Aluto geothermal project confirmed 28.6 MW against 70 MW planned at appraisal and did not mobilize private capital.",
+      "detail": "Geothermal resource confirmation: the World Bank-financed Aluto project confirmed 28.6 MW against 70 MW planned at appraisal and did not mobilize private capital, so resource confirmation is a key early-stage step.",
       "source": "S5"
     }
   ],

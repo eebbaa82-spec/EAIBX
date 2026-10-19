@@ -2,7 +2,7 @@
   "slug": "ict-digital",
   "name": "ICT and digital economy",
   "asOf": "2026-10-16",
-  "summary": "Ethiopia ended its single-operator telecom market in 2021, and the World Bank reports that private investors committed more than $1 billion in license fees and a further $3 billion in investment, while telecom prices fell by around 70 percent. Mobile money accounts grew from 12.2 million in 2020 to 139.5 million in 2025 according to the National Bank of Ethiopia, yet only 15 percent were active in the last 30 days, leaving room for payments, fintech and data services. The government has approved a Digital Ethiopia 2030 strategy, parliament passed a Startup Proclamation in July 2025, and the investment commission promotes software, business process outsourcing and data centers.",
+  "summary": "Ethiopia opened its telecom market in 2021, and the World Bank reports that private investors committed more than $1 billion in license fees and a further $3 billion in investment while telecom prices fell by around 70 percent. Mobile money accounts grew from 12.2 million in 2020 to 139.5 million in 2025 according to the National Bank of Ethiopia, and with 15 percent active in the last 30 days there is wide room to grow payments, fintech and data services. The government has approved a Digital Ethiopia 2030 strategy, parliament passed a Startup Proclamation in July 2025, and the investment commission promotes software, business process outsourcing and data centers.",
   "indicators": [
     {
       "label": "Mobile money accounts",
@@ -111,7 +111,7 @@
   ],
   "incentives": [
     {
-      "detail": "Investors establishing a new enterprise are entitled to an income tax exemption that depends on the investment sub-sector; industrial park investors receive 2 years in Addis Ababa or the Oromia special zone and 4 years elsewhere.",
+      "detail": "Investors establishing a new enterprise are entitled to an income tax exemption that depends on the investment sub-sector; industrial park investors receive 2 years in Addis Ababa or its surrounding special zone and 4 years elsewhere.",
       "source": "S8"
     },
     {
@@ -129,23 +129,19 @@
   ],
   "risks": [
     {
-      "detail": "Low usage: only 15 percent of mobile money accounts were active in the last 30 days in 2025, about a quarter of registered agents actively operate, and merchant payments were 0.16 percent of digital transaction value in 2023/24.",
+      "detail": "Adoption is at an early stage: 15 percent of mobile money accounts were active in the last 30 days in 2025, about a quarter of registered agents actively operate, and merchant payments were 0.16 percent of digital transaction value in 2023/24. The NBE's draft 2026-2030 strategy plans a shared-agent platform, Fayda authentication and a data exchange framework to deepen usage.",
       "source": "S3"
     },
     {
-      "detail": "Fraud losses reached ETB 1.3 billion in 2024 with no framework defining liability or compensation, and outbound cross-border payments are constrained by foreign currency shortages and capital account policies.",
+      "detail": "Consumer protection and cross-border flows are areas to plan for: fraud losses were ETB 1.3 billion in 2024 and a liability and compensation framework has yet to be defined, and outbound cross-border payments depend on foreign currency availability and capital account rules.",
       "source": "S3"
     },
     {
-      "detail": "Market concentration and closed-loop systems may limit competition in digital payments, according to the NBE strategy.",
+      "detail": "The NBE strategy notes that market concentration and closed-loop systems can limit competition in digital payments, an area the strategy's shared-agent platform and data exchange framework are intended to open up.",
       "source": "S3"
     },
     {
-      "detail": "Conflict caused about $600 million in damage to communications infrastructure between 2020 and 2022.",
-      "source": "S1"
-    },
-    {
-      "detail": "Demand remains thin: Ethiopia's data consumption per capita is 11.6 percent of the regional average, per the World Bank telecom market assessment benchmarking.",
+      "detail": "Data use per capita is 11.6 percent of the regional average, per World Bank telecom market benchmarking, so service and pricing models should be built for a market where usage is still growing.",
       "source": "S11"
     }
   ],
