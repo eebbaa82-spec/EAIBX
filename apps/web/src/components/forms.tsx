@@ -13,7 +13,7 @@ import type { Locale } from "@/i18n/config";
  */
 const SUBMIT_URL = "/api/submit.php";
 
-function liveHost() {
+export function liveHost() {
   return typeof window !== "undefined" && /(^|\.)investopia\.et$/.test(window.location.hostname);
 }
 
@@ -51,7 +51,7 @@ async function solveChallenge(): Promise<Solved> {
   }
 }
 
-function startRobotCheck() {
+export function startRobotCheck() {
   if (!liveHost()) return;
   if (robotCheck && Date.now() - checkStarted < MAX_AGE_MS) return;
   checkStarted = Date.now();
@@ -59,7 +59,7 @@ function startRobotCheck() {
   robotCheck.catch(() => (robotCheck = null));
 }
 
-async function sendForm(formName: string, data: FormData) {
+export async function sendForm(formName: string, data: FormData) {
   startRobotCheck();
   // Each challenge works once, so the next submission starts a fresh one.
   const solved = await robotCheck!.finally(() => (robotCheck = null));
@@ -203,7 +203,7 @@ export function PreviewForm({
 }
 
 /** Hidden from people; bots that fill it in are dropped by submit.php. */
-function HoneypotField() {
+export function HoneypotField() {
   return (
     <div aria-hidden="true" className="hidden">
       <label>

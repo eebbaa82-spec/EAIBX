@@ -5,6 +5,7 @@ import type { CourseModule } from "@/data/financial-literacy/types";
 import { Icon } from "./Icon";
 import { DoneBadge, ProgressBar } from "./Progress";
 import { Quiz } from "./Quiz";
+import { CourseGate } from "./Signup";
 import { Visual } from "./Visual";
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -239,64 +240,66 @@ export function ModulePage({ module: m, locale }: { module: CourseModule; locale
             </ul>
           </section>
 
-          {c.lessons.map((l, i) => (
-            <section key={l.id} id={l.id} className="scroll-mt-24 border-b border-line py-10 last:border-0">
-              <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
-                {pad(index + 1)}.{i + 1}
-              </p>
-              <h2 className="mt-1 text-2xl font-bold tracking-tight text-ink">{l.title}</h2>
-              <div className="mt-4 space-y-4 text-lg leading-relaxed text-ink">
-                {l.body.map((p, pi) => (
-                  <p key={pi}>{p}</p>
-                ))}
-              </div>
-              {l.points && (
-                <ul className="mt-4 space-y-2">
-                  {l.points.map((p, pi) => (
-                    <li key={pi} className="flex gap-3 text-lg text-ink">
-                      <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-gold-500" />
-                      {p}
-                    </li>
-                  ))}
-                </ul>
-              )}
-              {l.visual && <Visual data={l.visual} />}
-              {l.example && (
-                <aside className="mt-6 rounded-xl border-l-4 border-brand-500 bg-canvas p-5">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">{t.example}</p>
-                  <p className="mt-1 font-semibold text-ink">{l.example.title}</p>
-                  <p className="mt-2 text-ink">{l.example.text}</p>
-                </aside>
-              )}
-              {l.tip && (
-                <p className="mt-6 flex gap-3 rounded-xl bg-gold-100 p-4 text-ink">
-                  <Icon name="idea" className="h-6 w-6 shrink-0 text-gold-500" />
-                  <span>
-                    <strong>{t.tip}:</strong> {l.tip}
-                  </span>
+          <CourseGate locale={locale}>
+            {c.lessons.map((l, i) => (
+              <section key={l.id} id={l.id} className="scroll-mt-24 border-b border-line py-10 last:border-0">
+                <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">
+                  {pad(index + 1)}.{i + 1}
                 </p>
-              )}
+                <h2 className="mt-1 text-2xl font-bold tracking-tight text-ink">{l.title}</h2>
+                <div className="mt-4 space-y-4 text-lg leading-relaxed text-ink">
+                  {l.body.map((p, pi) => (
+                    <p key={pi}>{p}</p>
+                  ))}
+                </div>
+                {l.points && (
+                  <ul className="mt-4 space-y-2">
+                    {l.points.map((p, pi) => (
+                      <li key={pi} className="flex gap-3 text-lg text-ink">
+                        <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-gold-500" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {l.visual && <Visual data={l.visual} />}
+                {l.example && (
+                  <aside className="mt-6 rounded-xl border-l-4 border-brand-500 bg-canvas p-5">
+                    <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">{t.example}</p>
+                    <p className="mt-1 font-semibold text-ink">{l.example.title}</p>
+                    <p className="mt-2 text-ink">{l.example.text}</p>
+                  </aside>
+                )}
+                {l.tip && (
+                  <p className="mt-6 flex gap-3 rounded-xl bg-gold-100 p-4 text-ink">
+                    <Icon name="idea" className="h-6 w-6 shrink-0 text-gold-500" />
+                    <span>
+                      <strong>{t.tip}:</strong> {l.tip}
+                    </span>
+                  </p>
+                )}
+              </section>
+            ))}
+
+            <section className="mt-6 rounded-2xl bg-brand-900 p-6 text-white">
+              <h2 className="text-xl font-bold">{t.takeaways}</h2>
+              <ul className="mt-4 space-y-2">
+                {c.takeaways.map((k, i) => (
+                  <li key={i} className="flex gap-3">
+                    <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
+                    {k}
+                  </li>
+                ))}
+              </ul>
             </section>
-          ))}
 
-          <section className="mt-6 rounded-2xl bg-brand-900 p-6 text-white">
-            <h2 className="text-xl font-bold">{t.takeaways}</h2>
-            <ul className="mt-4 space-y-2">
-              {c.takeaways.map((k, i) => (
-                <li key={i} className="flex gap-3">
-                  <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
-                  {k}
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section id="quiz" className="scroll-mt-24 py-10">
-            <h2 className="text-2xl font-bold tracking-tight text-ink">{t.quiz}</h2>
-            <div className="mt-4">
-              <Quiz moduleId={m.id} questions={c.quiz} locale={locale} />
-            </div>
-          </section>
+            <section id="quiz" className="scroll-mt-24 py-10">
+              <h2 className="text-2xl font-bold tracking-tight text-ink">{t.quiz}</h2>
+              <div className="mt-4">
+                <Quiz moduleId={m.id} questions={c.quiz} locale={locale} />
+              </div>
+            </section>
+          </CourseGate>
 
           <nav className="grid gap-3 border-t border-line pt-6 sm:grid-cols-2" aria-label={t.modules}>
             {prev ? (

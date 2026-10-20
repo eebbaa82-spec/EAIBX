@@ -17,6 +17,11 @@ const FORMS = [
     'partnership' => 'Partnership enquiry',
     'newsletter' => 'Newsletter sign-up',
     'waitlist' => 'Coming-soon waitlist',
+    'course' => 'Financial literacy course registration',
+];
+// Forms kept as a mailing list get one spreadsheet column per field.
+const CSV_COLUMNS = [
+    'course' => ['name', 'occupation', 'education', 'email', 'mobile', 'consent', 'language', 'page'],
 ];
 const MAX_FIELDS = 20;
 const MAX_LENGTH = 5000;
@@ -161,10 +166,13 @@ $csv = $dir . '/' . $form . '.csv';
 $isNew = !is_file($csv);
 if ($handle = @fopen($csv, 'a')) {
     if (flock($handle, LOCK_EX)) {
+        $columns = CSV_COLUMNS[$form] ?? null;
         if ($isNew) {
-            fputcsv($handle, ['received', 'fields']);
+            fputcsv($handle, $columns ? array_merge(['received'], $columns) : ['received', 'fields']);
         }
-        fputcsv($handle, [$when, json_encode($fields, JSON_UNESCAPED_UNICODE)]);
+        fputcsv($handle, $columns
+            ? array_merge([$when], array_map(function ($c) use ($fields) { return $fields[$c] ?? ''; }, $columns))
+            : [$when, json_encode($fields, JSON_UNESCAPED_UNICODE)]);
         flock($handle, LOCK_UN);
     }
     fclose($handle);
