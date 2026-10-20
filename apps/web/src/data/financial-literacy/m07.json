@@ -1,0 +1,496 @@
+{
+  "id": "m07",
+  "slug": "sources-of-finance",
+  "icon": "coins",
+  "minutes": 14,
+  "en": {
+    "title": "Sources of Finance",
+    "summary": "Learn where business money can come from, and how to borrow and manage a loan responsibly.",
+    "objectives": [
+      "Name the main sources of finance for a business",
+      "Weigh the advantages and disadvantages of different financing options",
+      "Understand the steps and documents needed to get a loan",
+      "Use and monitor a loan wisely, by the agreed terms"
+    ],
+    "lessons": [
+      {
+        "id": "sources",
+        "title": "Where business money comes from",
+        "body": [
+          "Finance is the money you need to start or grow a business. Raising it is often hard for small business owners, especially in developing countries like Ethiopia.",
+          "The sources you can use depend on the laws, the institutions around you and the stage of your business. Knowing the options helps you choose wisely."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "piggy", "label": "Personal savings", "text": "Use your own saved money." },
+            { "icon": "people", "label": "Friends and family", "text": "They invest for a share or a return." },
+            { "icon": "bank", "label": "Small business loans", "text": "Borrow and repay with a clear plan." },
+            { "icon": "truck", "label": "Lease financing", "text": "Use an asset for regular payments." },
+            { "icon": "heart", "label": "Angel investors", "text": "Investors who back promising start-ups." },
+            { "icon": "coins", "label": "Crowdfunding", "text": "Raise money from many people." },
+            { "icon": "handshake", "label": "Strategic partners", "text": "Partners share money, resources and customers." },
+            { "icon": "target", "label": "Grants and contests", "text": "Grants and prizes for start-ups." }
+          ]
+        },
+        "example": {
+          "title": "Hana and Kuma's Coffee Hub",
+          "text": "Hana and Kuma want to open The Coffee Hub. They need a lot of capital. With a good business plan, they can compare these options and attract investors."
+        },
+        "tip": "Before you ask for a loan, prepare a business plan, financial forecasts and a clear repayment plan."
+      },
+      {
+        "id": "sharia",
+        "title": "Sharia-compliant (interest-free) financing",
+        "body": [
+          "Sharia-compliant financing, also called Islamic finance, follows the principles of Islamic law (Sharia). It does not allow charging or receiving interest, which is called riba.",
+          "Instead, it shares profit and loss, uses leasing, and links money to real assets. It uses models such as Mudarabah and Musharakah. It avoids speculation (gharar) and industries like alcohol, gambling and pork. It values ethical, socially responsible investing.",
+          "In Ethiopia, Sharia-compliant financing is offered by:"
+        ],
+        "points": [
+          "Islamic banking services in conventional banks, for example at the Commercial Bank of Ethiopia",
+          "Dedicated branches of conventional banks that offer Sharia-compliant services",
+          "Dedicated Islamic banks, approved and supervised by the regulators",
+          "Some microfinance institutions and other providers"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "Sharia-compliant",
+            "items": [
+              "No interest (riba)",
+              "Risk is shared",
+              "Tied to real assets",
+              "Avoids prohibited activities",
+              "Profit-and-loss sharing",
+              "High transparency"
+            ]
+          },
+          "right": {
+            "title": "Conventional",
+            "items": [
+              "Interest-based loans",
+              "Risk moves to borrower",
+              "Asset not always needed",
+              "Wide range of industries",
+              "Fixed returns",
+              "Less strict disclosure"
+            ]
+          }
+        },
+        "tip": "Before you decide, ask Islamic finance experts or experienced institutions to explain each option's terms."
+      },
+      {
+        "id": "debt-financing",
+        "title": "Why borrow? Debt financing",
+        "body": [
+          "Debt financing means borrowing money from a lender and paying it back later. In Ethiopia, you can use movable property as collateral. Collateral is property the lender can take if you do not repay. These loans are called asset-based loans or chattel mortgages.",
+          "Unlike equity financing, a loan does not reduce your ownership. Equity financing means selling a share of ownership to investors.",
+          "Borrow with care. Check your ability to repay, the interest rate and the risks. Make sure your cash flow covers repayments. Keep a healthy balance between debt and equity."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "Quick capital", "text": "Get the money you need to start." },
+            { "icon": "growth", "label": "Business growth", "text": "Open new locations or add products." },
+            { "icon": "check", "label": "Flexible use", "text": "Buy equipment, hire staff, renovate." },
+            { "icon": "lock", "label": "Keep ownership", "text": "Full control and all the profits." },
+            { "icon": "receipt", "label": "Credit history", "text": "Repaying on time builds a good record." },
+            { "icon": "calculator", "label": "Possible savings", "text": "Can cost less with good rates." },
+            { "icon": "scale", "label": "Independence", "text": "No outside investors in your decisions." }
+          ]
+        },
+        "example": {
+          "title": "A loan for The Coffee Hub",
+          "text": "Hana and Kuma could use a loan to buy equipment, hire skilled staff, renovate and invest in technology. They would keep full control and all the profits."
+        }
+      },
+      {
+        "id": "loan-planning",
+        "title": "Planning and applying for a loan",
+        "body": [
+          "Responsible borrowing starts before you sign. First, plan carefully. Then apply and negotiate with care.",
+          "Work out the exact amount you need. It may cover:"
+        ],
+        "points": [
+          "Start-up costs",
+          "Equipment",
+          "Improvements to rented premises",
+          "First stock (inventory)",
+          "Marketing costs",
+          "Working capital (money for daily operations)"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Know your need", "text": "Match the loan to your business plan." },
+            { "label": "Make real forecasts", "text": "Base your numbers on market research." },
+            { "label": "Check affordability", "text": "Make sure cash flow covers repayments." },
+            { "label": "Compare lenders", "text": "Compare interest rates, terms and fees." },
+            { "label": "Prepare documents", "text": "Business plan, forecasts and financial statements." },
+            { "label": "Negotiate terms", "text": "Seek fair rates and flexible repayment." },
+            { "label": "Understand collateral", "text": "Weigh the risks of collateral and guarantees." }
+          ]
+        },
+        "tip": "Make your loan application accurate, complete and well presented."
+      },
+      {
+        "id": "loan-use",
+        "title": "Using and monitoring your loan",
+        "body": [
+          "Once you get the loan, use it only for its purpose and keep watching your money. Repeat these steps until the loan is repaid. Plan ahead for risks such as an economic downturn, market changes or unexpected costs.",
+          "Good communication with your lender also matters:"
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "Use for its purpose" },
+            { "label": "Track cash flow" },
+            { "label": "Repay on time" },
+            { "label": "Review reports" },
+            { "label": "Plan for risks" }
+          ]
+        },
+        "points": [
+          "Be open and honest. Tell the lender early about big changes or problems.",
+          "If you face short-term trouble, talk to the lender first. They may revise your repayment schedule.",
+          "Manage your loan well. A good relationship helps when you need more finance later."
+        ],
+        "tip": "Set reminders or automatic payments so you never pay late. Repaying early can reduce interest costs."
+      },
+      {
+        "id": "leasing",
+        "title": "Lease financing",
+        "body": [
+          "Lease financing lets a business use an asset without buying it. The owner lets the user use the asset in exchange for regular payments over a set period.",
+          "Its advantages:"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "house", "label": "Lessor", "text": "The owner of the asset." },
+            { "icon": "people", "label": "Lessee", "text": "The user who pays regularly." },
+            { "icon": "truck", "label": "Asset", "text": "The item being leased." }
+          ]
+        },
+        "points": [
+          "Saves capital: no large payment up front",
+          "Easier cash flow: payments are spread over time while the asset earns income",
+          "Tax benefits: in many places, lease payments count as operating costs and may lower taxable income",
+          "The lessor carries some of the risk"
+        ]
+      },
+      {
+        "id": "expansion",
+        "title": "Finance for growing or going public",
+        "body": [
+          "To grow bigger or become a public company, a business needs a lot of capital. A public company sells its shares (parts of ownership) to the public.",
+          "Venture capital usually invests in start-ups and young companies. Private equity focuses on established businesses. Both give money in exchange for ownership.",
+          "Before you approach investors or lenders, prepare a strong business plan and financial forecasts. Ask experienced advisors for help."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "chart", "label": "IPO", "text": "First sale of shares to the public." },
+            { "icon": "growth", "label": "Venture capital", "text": "Capital in exchange for ownership." },
+            { "icon": "bank", "label": "Bank loans", "text": "Loans and lines of credit." },
+            { "icon": "handshake", "label": "Partnerships", "text": "Joint ventures with established companies." },
+            { "icon": "piggy", "label": "Retained earnings", "text": "Reinvest your own profits." }
+          ]
+        },
+        "tip": "An IPO (Initial Public Offering) must follow regulatory requirements, so seek professional advice."
+      }
+    ],
+    "takeaways": [
+      "Common sources include savings, family, loans, leasing, investors, crowdfunding, partners and grants.",
+      "Sharia-compliant finance avoids interest and shares profit, loss and risk.",
+      "A loan lets you keep ownership, but you must be able to repay it.",
+      "Plan the loan, compare lenders and read the terms before you sign.",
+      "Use a loan only for its purpose, repay on time and talk openly with your lender.",
+      "Leasing lets you use assets without a large upfront payment."
+    ],
+    "quiz": [
+      {
+        "q": "What is debt financing?",
+        "options": ["Selling shares of your business", "Borrowing money and repaying it later", "Receiving a grant you never repay", "Using only your own savings"],
+        "answer": 1,
+        "explain": "Debt financing means borrowing from a lender and repaying at a future date."
+      },
+      {
+        "q": "Which is a key feature of Sharia-compliant financing?",
+        "options": ["It charges fixed interest", "It does not allow interest (riba)", "It finances any industry", "It needs little transparency"],
+        "answer": 1,
+        "explain": "Sharia-compliant finance prohibits interest and uses profit-and-loss sharing instead."
+      },
+      {
+        "q": "What advantage does a loan have over equity financing?",
+        "options": ["You never repay it", "The owners keep full ownership and profits", "Investors make decisions for you", "There is never any interest"],
+        "answer": 1,
+        "explain": "A loan does not reduce ownership, so the owners keep control and all the profits."
+      },
+      {
+        "q": "Hana and Kuma face a short cash problem and may miss a payment. What should they do?",
+        "options": ["Hide it from the lender", "Stop paying without notice", "Talk to the lender early", "Use the loan for personal needs"],
+        "answer": 2,
+        "explain": "Talking to the lender early can lead to solutions, such as a revised repayment schedule."
+      },
+      {
+        "q": "In a lease, who is the lessee?",
+        "options": ["The owner of the asset", "The user who makes regular payments", "The regulator", "The insurance company"],
+        "answer": 1,
+        "explain": "The lessee uses the asset and pays the lessor regular lease payments."
+      },
+      {
+        "q": "What is an IPO?",
+        "options": ["A small loan from family", "Offering company shares to the public for the first time", "A type of lease", "A savings account"],
+        "answer": 1,
+        "explain": "An Initial Public Offering sells a company's shares to the public for the first time."
+      }
+    ]
+  },
+  "am": {
+    "title": "የፋይናንስ ምንጮች",
+    "summary": "የቢዝነስ ገንዘብ ከየት እንደሚገኝ እና ብድርን በኃላፊነት እንዴት መውሰድና ማስተዳደር እንደሚቻል ይማሩ።",
+    "objectives": [
+      "ለቢዝነስ የሚሆኑ ዋና ዋና የፋይናንስ ምንጮችን መለየት",
+      "የተለያዩ የፋይናንስ አማራጮችን ጥቅምና ጉዳት መገምገም",
+      "ብድር ለማግኘት የሚያስፈልጉ ሂደቶችንና ሰነዶችን መረዳት",
+      "ብድርን በተስማሙት ውሎች መሠረት በአግባቡ መጠቀምና መከታተል"
+    ],
+    "lessons": [
+      {
+        "id": "sources",
+        "title": "የቢዝነስ ገንዘብ ከየት ይገኛል?",
+        "body": [
+          "ፋይናንስ ማለት ቢዝነስ ለመጀመር ወይም ለማሳደግ የሚያስፈልግ ገንዘብ ነው። በተለይ እንደ ኢትዮጵያ ባሉ ታዳጊ አገሮች ለአነስተኛ ቢዝነስ ባለቤቶች ገንዘብ ማሰባሰብ ብዙ ጊዜ ከባድ ነው።",
+          "የሚያገኙት የገንዘብ ምንጭ በሕግና በቁጥጥር ሁኔታ፣ በተቋማት እና በቢዝነሱ የዕድገት ደረጃ ይወሰናል። አማራጮቹን ማወቅ ትክክለኛውን ምንጭ ለመምረጥ ይረዳዎታል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "piggy", "label": "የግል ቁጠባ", "text": "የራስዎን የተቆጠበ ገንዘብ ይጠቀሙ።" },
+            { "icon": "people", "label": "ጓደኞችና ቤተሰብ", "text": "ለባለቤትነት ድርሻ ወይም ለጥቅም ኢንቨስት ያደርጋሉ።" },
+            { "icon": "bank", "label": "አነስተኛ የቢዝነስ ብድር", "text": "በግልጽ የክፍያ ዕቅድ ተበድሮ መመለስ።" },
+            { "icon": "truck", "label": "የሊዝ ፋይናንስ", "text": "ንብረትን በመደበኛ ክፍያ መጠቀም።" },
+            { "icon": "heart", "label": "መልአክ መሰል ባለሀብቶች", "text": "ተስፋ ሰጭ ጅምሮችን የሚደግፉ ባለሀብቶች።" },
+            { "icon": "coins", "label": "የብዙ ሰዎች ድጋፍ", "text": "ከብዙ ሰዎች ገንዘብ ማሰባሰብ።" },
+            { "icon": "handshake", "label": "ስትራቴጂካዊ አጋሮች", "text": "አጋሮች ገንዘብ፣ ሀብትና ደንበኛ ይጋራሉ።" },
+            { "icon": "target", "label": "ስጦታዎችና ውድድሮች", "text": "ለጀማሪ ቢዝነሶች ስጦታና ሽልማት።" }
+          ]
+        },
+        "example": {
+          "title": "የሐና እና ኩማ ካፌ",
+          "text": "ሐና እና ኩማ ካፌ መክፈት ይፈልጋሉ። ትልቅ ካፒታል ያስፈልጋቸዋል። ጥሩ የቢዝነስ ዕቅድ በማውጣት እነዚህን አማራጮች ማወዳደርና ባለሀብቶችን መሳብ ይችላሉ።"
+        },
+        "tip": "ብድር ከመጠየቅዎ በፊት የቢዝነስ ዕቅድ፣ የፋይናንስ ትንበያና ግልጽ የክፍያ ዕቅድ ያዘጋጁ።"
+      },
+      {
+        "id": "sharia",
+        "title": "ሸሪዓ መር (ከወለድ ነጻ) ፋይናንስ",
+        "body": [
+          "ሸሪዓ መር ፋይናንስ ኢስላማዊ ፋይናንስ በመባልም ይታወቃል። የኢስላማዊ ሕግ (ሸሪዓ) መርሆዎችን ይከተላል። ወለድ (ሪባ) ማስከፈልም ሆነ መቀበል አይፈቀድም።",
+          "በምትኩ ትርፍና ኪሳራን ይጋራል፣ ሊዝን ይጠቀማል፣ ገንዘቡንም ከእውነተኛ ንብረት ጋር ያቆራኛል። እንደ ሙዳራባህ እና ሙሻራካህ ያሉ ሞዴሎችን ይጠቀማል። መላምትን (ጋራር) እና እንደ አልኮል፣ ቁማርና የአሳማ ሥጋ ያሉ ዘርፎችን ያስወግዳል። ሥነ ምግባራዊና ማህበራዊ ኃላፊነት ያለው ኢንቨስትመንትን ያስቀድማል።",
+          "በኢትዮጵያ ሸሪዓ መር ፋይናንስ የሚሰጡት፦"
+        ],
+        "points": [
+          "በመደበኛ ባንኮች ውስጥ ያሉ ኢስላማዊ የባንክ መስኮቶች፤ ለምሳሌ የኢትዮጵያ ንግድ ባንክ",
+          "ሸሪዓ መር አገልግሎት የሚሰጡ የመደበኛ ባንኮች ልዩ ቅርንጫፎች",
+          "በተቆጣጣሪ አካላት ይሁንታና ቁጥጥር የሚሠሩ ኢስላማዊ ባንኮች",
+          "አንዳንድ የማይክሮ ፋይናንስ ተቋማትና ሌሎች አሠራሮች"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "ሸሪዓ መር",
+            "items": [
+              "ወለድ (ሪባ) የለም",
+              "ስጋት ይጋራል",
+              "ከእውነተኛ ንብረት ጋር የተቆራኘ",
+              "የተከለከሉ ተግባራትን ያስወግዳል",
+              "ትርፍና ኪሳራ መጋራት",
+              "ከፍተኛ ግልጽነት"
+            ]
+          },
+          "right": {
+            "title": "የተለመደ ፋይናንስ",
+            "items": [
+              "በወለድ ላይ የተመሠረተ ብድር",
+              "ስጋት ወደ ተበዳሪው ይተላለፋል",
+              "ንብረት ሁልጊዜ አያስፈልግም",
+              "ሰፊ የኢንዱስትሪ ዘርፎች",
+              "ቋሚ ተመላሽ",
+              "ያነሰ ጥብቅ ግልጽነት"
+            ]
+          }
+        },
+        "tip": "ከመወሰንዎ በፊት የእያንዳንዱን አማራጭ ውሎች እንዲያስረዱዎ የኢስላማዊ ፋይናንስ ባለሙያዎችን ወይም ልምድ ያላቸውን ተቋማት ያማክሩ።"
+      },
+      {
+        "id": "debt-financing",
+        "title": "ለምን መበደር? የብድር ፋይናንሲንግ",
+        "body": [
+          "የብድር ፋይናንሲንግ ማለት ከአበዳሪ ገንዘብ ተበድሮ ወደፊት መመለስ ነው። በኢትዮጵያ ተንቀሳቃሽ ንብረትን መያዣ አድርጎ መበደር ይቻላል። መያዣ ማለት ብድሩ ካልተመለሰ አበዳሪው የሚወስደው ንብረት ነው። እነዚህ ብድሮች ንብረት ተኮር ብድሮች (chattel mortgages) ይባላሉ።",
+          "ከኤኲቲ (equity) ፋይናንሲንግ በተለየ ብድር ባለቤትነትዎን አይቀንስም። ኤኲቲ ፋይናንሲንግ ማለት የባለቤትነት ድርሻን ለባለሀብቶች መሸጥ ነው።",
+          "በጥንቃቄ ይበደሩ። የመክፈል አቅምዎን፣ የወለድ ተመኑንና አደጋዎቹን ይገምግሙ። የገንዘብ ፍሰትዎ ክፍያውን እንደሚሸፍን ያረጋግጡ። በዕዳና በኤኲቲ መካከል ሚዛን ይጠብቁ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "ፈጣን ካፒታል", "text": "ለመጀመር የሚያስፈልገውን ገንዘብ ያገኛሉ።" },
+            { "icon": "growth", "label": "ቢዝነስ ማሳደግ", "text": "አዲስ ቦታ መክፈት ወይም ምርት መጨመር።" },
+            { "icon": "check", "label": "ተለማጭ አጠቃቀም", "text": "መሣሪያ መግዛት፣ ሠራተኛ መቅጠር፣ ቤት ማደስ።" },
+            { "icon": "lock", "label": "ባለቤትነትን ማቆየት", "text": "ሙሉ ቁጥጥርና ሁሉም ትርፍ የእርስዎ ነው።" },
+            { "icon": "receipt", "label": "የብድር ታሪክ", "text": "በወቅቱ መክፈል ጥሩ ታሪክ ይገነባል።" },
+            { "icon": "calculator", "label": "ወጭ መቆጠብ", "text": "በጥሩ የወለድ ተመን ወጭው ሊያንስ ይችላል።" },
+            { "icon": "scale", "label": "ነጻነት", "text": "የውጭ ባለሀብቶች በውሳኔ ጣልቃ አይገቡም።" }
+          ]
+        },
+        "example": {
+          "title": "ብድር ለካፌው",
+          "text": "ሐና እና ኩማ በብድሩ መሣሪያ መግዛት፣ ብቁ ሠራተኞችን መቅጠር፣ ቤቱን ማደስና በቴክኖሎጂ ኢንቨስት ማድረግ ይችላሉ። የካፌውን ሙሉ ቁጥጥርና ትርፍ ይይዛሉ።"
+        }
+      },
+      {
+        "id": "loan-planning",
+        "title": "ብድርን ማቀድና ማመልከት",
+        "body": [
+          "ኃላፊነት ያለው ብድር የሚጀምረው ከመፈረምዎ በፊት ነው። መጀመሪያ በጥንቃቄ ያቅዱ። ከዚያ በጥንቃቄ ያመልክቱና ይደራደሩ።",
+          "የሚያስፈልግዎትን ትክክለኛ የገንዘብ መጠን ይወስኑ። ይህ የሚከተሉትን ሊሸፍን ይችላል፦"
+        ],
+        "points": [
+          "የመነሻ ወጭዎች",
+          "የመሣሪያ ግዢ",
+          "የሊዝ ይዞታ (የተከራዩት ቦታ) ማሻሻያ",
+          "የመጀመሪያ የዕቃ ክምችት (inventory)",
+          "የገበያ ማስተዋወቂያ ወጭዎች",
+          "የሥራ ማስኬጃ ካፒታል (ለዕለት ሥራ የሚውል ገንዘብ)"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ፍላጎትን ይወቁ", "text": "ብድሩን ከቢዝነስ ዕቅድዎ ጋር ያጣጥሙ።" },
+            { "label": "ተጨባጭ ትንበያ", "text": "ቁጥሮችን በገበያ ጥናት ላይ ይመሥርቱ።" },
+            { "label": "አዋጪነትን ይመዝኑ", "text": "የገንዘብ ፍሰቱ ክፍያውን ይሸፍን እንደሆነ ያረጋግጡ።" },
+            { "label": "አበዳሪዎችን ያወዳድሩ", "text": "የወለድ ተመንን፣ ውሎችንና ክፍያዎችን ያወዳድሩ።" },
+            { "label": "ሰነዶችን ያዘጋጁ", "text": "የቢዝነስ ዕቅድ፣ ትንበያና የሒሳብ መግለጫዎች።" },
+            { "label": "ውሎችን ይደራደሩ", "text": "ተስማሚ ወለድና ተለማጭ ክፍያ ይጠይቁ።" },
+            { "label": "መያዣን ይረዱ", "text": "የመያዣና የዋስትና አደጋን ይመዝኑ።" }
+          ]
+        },
+        "tip": "የብድር ማመልከቻዎ ትክክለኛ፣ የተሟላና በደንብ የተዘጋጀ ይሁን።"
+      },
+      {
+        "id": "loan-use",
+        "title": "ብድርን መጠቀምና መከታተል",
+        "body": [
+          "ብድሩን ካገኙ በኋላ ለታለመለት ዓላማ ብቻ ይጠቀሙበት፤ ገንዘብዎንም ዘወትር ይከታተሉ። ብድሩ እስኪመለስ ድረስ እነዚህን ደረጃዎች ይድገሙ። እንደ ኢኮኖሚያዊ ውድቀት፣ የገበያ ለውጥ ወይም ያልተጠበቁ ወጭዎች ላሉ አደጋዎች አስቀድመው ያቅዱ።",
+          "ከአበዳሪዎ ጋር ጥሩ ግንኙነትም አስፈላጊ ነው፦"
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "ለዓላማው መጠቀም" },
+            { "label": "የገንዘብ ፍሰት መከታተል" },
+            { "label": "በወቅቱ መክፈል" },
+            { "label": "ሪፖርቶችን መገምገም" },
+            { "label": "ለአደጋ መዘጋጀት" }
+          ]
+        },
+        "points": [
+          "ግልጽና ሐቀኛ ይሁኑ። ትልቅ ለውጥ ወይም ችግር ሲኖር ለአበዳሪው ወዲያውኑ ያሳውቁ።",
+          "ጊዜያዊ ችግር ካጋጠመዎ አስቀድመው ከአበዳሪው ጋር ይወያዩ። የመክፈያ ጊዜውን ሊያሻሽሉልዎ ይችላሉ።",
+          "ብድርዎን በአግባቡ ያስተዳድሩ። ጥሩ ግንኙነት ወደፊት ተጨማሪ ብድር ሲያስፈልግ ይጠቅማል።"
+        ],
+        "tip": "ክፍያ እንዳይዘገይ አስታዋሽ ወይም አውቶማቲክ ክፍያ ያዘጋጁ። ብድርን ቀድሞ መክፈል የወለድ ወጭን ሊቀንስ ይችላል።"
+      },
+      {
+        "id": "leasing",
+        "title": "የሊዝ (የረጅም ጊዜ ክፍያ) ፋይናንስ",
+        "body": [
+          "የሊዝ ፋይናንስ አንድ ቢዝነስ ንብረትን ሳይገዛ እንዲጠቀም ያስችላል። የንብረቱ ባለቤት ተጠቃሚው በተወሰነ ጊዜ ውስጥ መደበኛ ክፍያ እየከፈለ ንብረቱን እንዲጠቀም ይፈቅዳል።",
+          "ጥቅሞቹ፦"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "house", "label": "አከራይ", "text": "የንብረቱ ባለቤት።" },
+            { "icon": "people", "label": "ተከራይ", "text": "መደበኛ ክፍያ የሚከፍል ተጠቃሚ።" },
+            { "icon": "truck", "label": "ንብረት", "text": "የሊዝ ውሉ ርእሰ ጉዳይ።" }
+          ]
+        },
+        "points": [
+          "ካፒታልን መቆጠብ፦ ንብረቱን ለመግዛት ትልቅ ቅድመ ክፍያ አያስፈልግም",
+          "የተሻለ የገንዘብ ፍሰት፦ ክፍያው በጊዜ ተከፋፍሎ ንብረቱ ከሚያስገኘው ገቢ ጋር ይጣጣማል",
+          "የታክስ ጥቅም፦ በብዙ ቦታዎች የሊዝ ክፍያ እንደ ሥራ ማስኬጃ ወጭ ስለሚቆጠር ግብር የሚከፈልበትን ገቢ ሊቀንስ ይችላል",
+          "አከራዩ የተወሰነውን ስጋት ይሸከማል"
+        ]
+      },
+      {
+        "id": "expansion",
+        "title": "ለማስፋፋትና የሕዝብ ኩባንያ ለመሆን",
+        "body": [
+          "ቢዝነስን ለማስፋፋት ወይም የሕዝብ ኩባንያ ለመሆን ከፍተኛ ካፒታል ያስፈልጋል። የሕዝብ ኩባንያ አክሲዮኑን (የባለቤትነት ድርሻውን) ለሕዝብ የሚሸጥ ኩባንያ ነው።",
+          "ቬንቸር ካፒታል ብዙውን ጊዜ በጀማሪና በጅምር ላይ ባሉ ኩባንያዎች ኢንቨስት ያደርጋል። የግል ኤኲቲ ደግሞ በደንብ በተቋቋሙ ቢዝነሶች ላይ ያተኩራል። ሁለቱም ለባለቤትነት ድርሻ ካፒታል ይሰጣሉ።",
+          "ባለሀብቶችን ወይም አበዳሪዎችን ከማነጋገርዎ በፊት ጠንካራ የቢዝነስ ዕቅድና የፋይናንስ ትንበያ ያዘጋጁ። ልምድ ያላቸውን አማካሪዎች ያማክሩ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "chart", "label": "አይፒኦ (IPO)", "text": "አክሲዮንን ለመጀመሪያ ጊዜ ለሕዝብ መሸጥ።" },
+            { "icon": "growth", "label": "ቬንቸር ካፒታል", "text": "ለባለቤትነት ድርሻ የሚሰጥ ካፒታል።" },
+            { "icon": "bank", "label": "የባንክ ብድሮች", "text": "ብድሮችና የብድር መስመሮች።" },
+            { "icon": "handshake", "label": "አጋርነት", "text": "ከተደራጁ ኩባንያዎች ጋር ጆይንት ቬንቸር።" },
+            { "icon": "piggy", "label": "የውስጥ ፋይናንስ", "text": "የራስን ትርፍ መልሶ ኢንቨስት ማድረግ።" }
+          ]
+        },
+        "tip": "መነሻ የሕዝብ መዋጮ (አይፒኦ) የቁጥጥር መስፈርቶችን ማሟላት ይጠይቃል፤ ስለዚህ የባለሙያ ምክር ይጠይቁ።"
+      }
+    ],
+    "takeaways": [
+      "የተለመዱ ምንጮች ቁጠባ፣ ቤተሰብ፣ ብድር፣ ሊዝ፣ ባለሀብቶች፣ የብዙ ሰዎች ድጋፍ፣ አጋሮችና ስጦታዎች ናቸው።",
+      "ሸሪዓ መር ፋይናንስ ወለድን ያስወግዳል፤ ትርፍን፣ ኪሳራንና ስጋትን ይጋራል።",
+      "ብድር ባለቤትነትዎን ያስጠብቃል፤ ነገር ግን የመክፈል አቅም ሊኖርዎ ይገባል።",
+      "ከመፈረምዎ በፊት ብድሩን ያቅዱ፣ አበዳሪዎችን ያወዳድሩ፣ ውሎቹን ያንብቡ።",
+      "ብድርን ለታለመለት ዓላማ ብቻ ይጠቀሙ፣ በወቅቱ ይክፈሉ፣ ከአበዳሪዎ ጋር በግልጽ ይነጋገሩ።",
+      "ሊዝ ትልቅ ቅድመ ክፍያ ሳይኖር ንብረትን ለመጠቀም ያስችላል።"
+    ],
+    "quiz": [
+      {
+        "q": "የብድር ፋይናንሲንግ ምንድን ነው?",
+        "options": ["የቢዝነስዎን አክሲዮን መሸጥ", "ገንዘብ ተበድሮ ወደፊት መመለስ", "የማይመለስ ስጦታ መቀበል", "የራስን ቁጠባ ብቻ መጠቀም"],
+        "answer": 1,
+        "explain": "የብድር ፋይናንሲንግ ከአበዳሪ ተበድሮ ወደፊት መመለስ ማለት ነው።"
+      },
+      {
+        "q": "የሸሪዓ መር ፋይናንስ ዋና መለያ የትኛው ነው?",
+        "options": ["ቋሚ ወለድ ያስከፍላል", "ወለድ (ሪባ) አይፈቅድም", "ማንኛውንም ዘርፍ ፋይናንስ ያደርጋል", "ግልጽነት አያስፈልገውም"],
+        "answer": 1,
+        "explain": "ሸሪዓ መር ፋይናንስ ወለድን ይከለክላል፤ በምትኩ ትርፍና ኪሳራ መጋራትን ይጠቀማል።"
+      },
+      {
+        "q": "ብድር ከኤኲቲ ፋይናንሲንግ የሚሻልበት ጥቅም የትኛው ነው?",
+        "options": ["ፈጽሞ አይመለስም", "ባለቤቶቹ ሙሉ ባለቤትነትና ትርፍ ይይዛሉ", "ባለሀብቶች ይወስኑልዎታል", "ወለድ ፈጽሞ የለውም"],
+        "answer": 1,
+        "explain": "ብድር ባለቤትነትን ስለማይቀንስ ባለቤቶቹ ቁጥጥሩንና ሁሉንም ትርፍ ይይዛሉ።"
+      },
+      {
+        "q": "ሐና እና ኩማ ጊዜያዊ የገንዘብ ችግር ገጥሟቸው ክፍያ ሊያመልጣቸው ነው። ምን ማድረግ አለባቸው?",
+        "options": ["ከአበዳሪው መደበቅ", "ሳያሳውቁ መክፈል ማቆም", "አስቀድመው ከአበዳሪው ጋር መነጋገር", "ብድሩን ለግል ጉዳይ መጠቀም"],
+        "answer": 2,
+        "explain": "አስቀድሞ ከአበዳሪው ጋር መነጋገር እንደ የክፍያ ጊዜ ማሻሻል ያሉ መፍትሔዎችን ሊያስገኝ ይችላል።"
+      },
+      {
+        "q": "በሊዝ ውል ተከራይ ማነው?",
+        "options": ["የንብረቱ ባለቤት", "መደበኛ ክፍያ የሚከፍል ተጠቃሚ", "ተቆጣጣሪው አካል", "የኢንሹራንስ ኩባንያው"],
+        "answer": 1,
+        "explain": "ተከራዩ ንብረቱን ይጠቀማል፤ ለአከራዩም መደበኛ የሊዝ ክፍያ ይከፍላል።"
+      },
+      {
+        "q": "አይፒኦ (IPO) ምንድን ነው?",
+        "options": ["ከቤተሰብ የሚገኝ አነስተኛ ብድር", "የኩባንያን አክሲዮን ለመጀመሪያ ጊዜ ለሕዝብ ማቅረብ", "የሊዝ አይነት", "የቁጠባ ሂሳብ"],
+        "answer": 1,
+        "explain": "መነሻ የሕዝብ መዋጮ (አይፒኦ) የኩባንያን አክሲዮን ለመጀመሪያ ጊዜ ለሕዝብ መሸጥ ነው።"
+      }
+    ]
+  }
+}

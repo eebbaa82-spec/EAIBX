@@ -100,6 +100,20 @@ export default function AcademyPage() {
         </ButtonLink>
       </PageHero>
 
+      <Section
+        tone="canvas"
+        eyebrow="Free for everyone"
+        title="Financial Literacy for Everyone"
+        intro="Ten short, illustrated modules on business, goals, budgeting, bookkeeping, saving, investing, borrowing, financial services, digital money and insurance. In English and Amharic, with quizzes. No sign-up needed."
+      >
+        <div className="flex flex-wrap gap-3">
+          <ButtonLink href="/academy/financial-literacy/">Start the free course</ButtonLink>
+          <ButtonLink href="/am/academy/financial-literacy/" variant="secondary">
+            <span lang="am">በአማርኛ ይማሩ</span>
+          </ButtonLink>
+        </div>
+      </Section>
+
       <div className="border-b border-line bg-white py-6">
         <div className="mx-auto flex max-w-6xl justify-center px-4">
           <nav aria-label="Academy audiences">
