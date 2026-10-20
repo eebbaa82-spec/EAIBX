@@ -57,8 +57,35 @@ export const courseCopy = {
     backToCourse: "All modules",
     progress: (n: number, total: number) => `${n} of ${total} modules completed`,
     source:
-      "Adapted from the Financial Education Module for the Youth and MSMEs (May 2024) by the National Bank of Ethiopia.",
+      "Adapted from the Financial Education Module for the Youth and MSMEs (May 2024), published by the National Bank of Ethiopia and developed by St. Mary's University with First Consult, with support from the Mastercard Foundation.",
     otherLanguage: "ይህን ኮርስ በአማርኛ ያንብቡ",
+    seeCredits: "Read the full declaration and credits",
+    credits: {
+      title: "Declaration and acknowledgment of sources",
+      declaration: [
+        "Investopia, a platform by Erudite Africa Investments PLC, declares that the content of this course is adapted from the Financial Education Module for the Youth and MSMEs (basic level), published by the National Bank of Ethiopia in May 2024, and from its Amharic edition (2016 E.C.).",
+        "The knowledge, concepts, examples and structure of this course belong to the authors and institutions credited below. Investopia has only simplified, shortened, illustrated and arranged the original for online learning. Any errors introduced in this adaptation are Investopia's own.",
+        "This course is offered free of charge for public financial education. It is not an official publication of the National Bank of Ethiopia, and the institutions named here have not reviewed or endorsed this adaptation.",
+      ],
+      institutionsTitle: "Original authors and institutions",
+      institutions: [
+        { name: "National Bank of Ethiopia", role: "Publisher of the module, prepared under its Financial Education Strategy (2021-2025)" },
+        { name: "St. Mary's University", role: "Developed the module" },
+        { name: "First Consult", role: "Developed the module with St. Mary's University and the National Bank of Ethiopia, under the BRIDGES program" },
+        { name: "Mastercard Foundation", role: "Supported the development of the module under the BRIDGES program" },
+        { name: "Financial Education Working Group", role: "Financial experts and representatives of various organizations who contributed to the content" },
+      ],
+      prefaceTitle: "Preface to the original module signed by",
+      preface: [
+        { name: "H.E. Mamo Mihretu", role: "Governor, National Bank of Ethiopia" },
+        { name: "Samuel Yalew", role: "Ethiopia Country Director, Mastercard Foundation" },
+        { name: "Nebil Kellow", role: "Managing Director, First Consult" },
+      ],
+      referencesTitle: "Works cited in the original module",
+      references:
+        "World Bank; OECD/INFE; International Labour Organization (ILO); Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ); Consumer Financial Protection Bureau (CFPB); Bank of Uganda; Reserve Bank of India; Kilimo Trust; Mengesha et al. (2020); National Bank of Ethiopia, Financial Inclusion Strategy (2017); FDRE Proclamation No. 1147/2019.",
+      original: "The original module is published by the National Bank of Ethiopia at nbe.gov.et.",
+    },
   },
   am: {
     eyebrow: "ኢንቨስቶፒያ አካዳሚ · ነፃ ኮርስ",
@@ -95,8 +122,35 @@ export const courseCopy = {
     next: "ቀጣዩ ሞጁል",
     backToCourse: "ሁሉም ሞጁሎች",
     progress: (n: number, total: number) => `${n}/${total} ሞጁሎች ተጠናቀዋል`,
-    source: "ከኢትዮጵያ ብሔራዊ ባንክ የወጣቶች እና የጥቃቅን፣ አነስተኛና መካከለኛ ኢንተርፕራይዞች የፋይናንስ ትምህርት ሞጁል (2016 ዓ.ም.) የተወሰደ።",
+    source: "በኢትዮጵያ ብሔራዊ ባንክ ከታተመው፣ በቅድስት ማርያም ዩኒቨርሲቲ እና በፈርስት ኮንሰልት ከተዘጋጀው እና በማስተርካርድ ፋውንዴሽን ድጋፍ ከተሠራው የወጣቶች እና የጥቃቅን፣ አነስተኛና መካከለኛ ኢንተርፕራይዞች የፋይናንስ ትምህርት ሞጁል (2016 ዓ.ም.) የተወሰደ።",
     otherLanguage: "Read this course in English",
+    seeCredits: "ሙሉ መግለጫውን እና ምስጋናውን ያንብቡ",
+    credits: {
+      title: "የምንጭ መግለጫ እና ምስጋና",
+      declaration: [
+        "ኢንቨስቶፒያ፣ የኢሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ. መድረክ፣ የዚህ ኮርስ ይዘት በኢትዮጵያ ብሔራዊ ባንክ በግንቦት 2016 ዓ.ም. (May 2024) ከታተመው የወጣቶች እና የጥቃቅን፣ አነስተኛና መካከለኛ ኢንተርፕራይዞች መሠረታዊ ደረጃ የፋይናንስ ትምህርት ሞጁል እና ከአማርኛ ቅጂው የተወሰደ መሆኑን ያረጋግጣል።",
+        "የዚህ ኮርስ ዕውቀት፣ ፅንሰ ሐሳቦች፣ ምሳሌዎች እና አወቃቀር ከዚህ በታች ለተጠቀሱት አዘጋጆች እና ተቋማት የሚገቡ ናቸው። ኢንቨስቶፒያ ያደረገው ዋናውን ሰነድ ለኦንላይን ትምህርት እንዲመች ማቅለል፣ ማሳጠር፣ በሥዕል ማስደገፍ እና ማደራጀት ብቻ ነው። በዚህ ማስተካከያ ሂደት የተፈጠረ ማንኛውም ስሕተት የኢንቨስቶፒያ ኀላፊነት ነው።",
+        "ይህ ኮርስ ለሕዝብ የፋይናንስ ትምህርት በነፃ የቀረበ ነው። የኢትዮጵያ ብሔራዊ ባንክ ይፋዊ ኅትመት አይደለም፤ እዚህ የተጠቀሱት ተቋማትም ይህን ማስተካከያ አልገመገሙም ወይም አላጸደቁም።",
+      ],
+      institutionsTitle: "የዋናው ሞጁል አዘጋጆች እና ተቋማት",
+      institutions: [
+        { name: "የኢትዮጵያ ብሔራዊ ባንክ", role: "ሞጁሉን ያሳተመ፤ በፋይናንስ ትምህርት ስትራቴጂው (2021-2025) መሠረት የተዘጋጀ" },
+        { name: "የቅድስት ማርያም ዩኒቨርሲቲ", role: "ሞጁሉን ያዘጋጀ" },
+        { name: "ፈርስት ኮንሰልት", role: "በብሪጅስ (BRIDGES) መርሐ ግብር ከቅድስት ማርያም ዩኒቨርሲቲ እና ከኢትዮጵያ ብሔራዊ ባንክ ጋር በመተባበር ያዘጋጀ" },
+        { name: "ማስተርካርድ ፋውንዴሽን", role: "በብሪጅስ (BRIDGES) መርሐ ግብር የሞጁሉን ዝግጅት የደገፈ" },
+        { name: "የፋይናንስ ትምህርት የሥራ ቡድን", role: "ለይዘቱ አስተዋጽኦ ያደረጉ የፋይናንስ ባለሙያዎች እና የተለያዩ ድርጅቶች ተወካዮች" },
+      ],
+      prefaceTitle: "የዋናውን ሞጁል መቅድም የፈረሙ",
+      preface: [
+        { name: "H.E. Mamo Mihretu", role: "ገዥ፣ የኢትዮጵያ ብሔራዊ ባንክ" },
+        { name: "Samuel Yalew", role: "የኢትዮጵያ ሀገር ዳይሬክተር፣ ማስተርካርድ ፋውንዴሽን" },
+        { name: "Nebil Kellow", role: "ማኔጂንግ ዳይሬክተር፣ ፈርስት ኮንሰልት" },
+      ],
+      referencesTitle: "በዋናው ሞጁል የተጠቀሱ ሥራዎች",
+      references:
+        "World Bank; OECD/INFE; International Labour Organization (ILO); Deutsche Gesellschaft für Internationale Zusammenarbeit (GIZ); Consumer Financial Protection Bureau (CFPB); Bank of Uganda; Reserve Bank of India; Kilimo Trust; Mengesha et al. (2020); National Bank of Ethiopia, Financial Inclusion Strategy (2017); FDRE Proclamation No. 1147/2019.",
+      original: "ዋናው ሞጁል በኢትዮጵያ ብሔራዊ ባንክ ድረ ገጽ nbe.gov.et ላይ ይገኛል።",
+    },
   },
 };
 

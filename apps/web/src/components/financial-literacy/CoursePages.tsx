@@ -18,11 +18,60 @@ function LanguageLink({ locale, slug }: { locale: CourseLocale; slug?: string })
   );
 }
 
+/** The formal declaration and credits, shown in full on the course overview. */
+function Credits({ locale }: { locale: CourseLocale }) {
+  const c = courseCopy[locale].credits;
+  return (
+    <section id="credits" className="scroll-mt-24 border-t border-line bg-canvas py-12">
+      <Container className="max-w-4xl">
+        <h2 className="text-xl font-bold text-ink">{c.title}</h2>
+        <div className="mt-4 space-y-3 text-ink">
+          {c.declaration.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+        <h3 className="mt-8 font-semibold text-ink">{c.institutionsTitle}</h3>
+        <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+          {c.institutions.map((x) => (
+            <li key={x.name} className="rounded-xl border border-line bg-white p-4">
+              <p className="font-semibold text-ink">{x.name}</p>
+              <p className="mt-1 text-sm text-muted">{x.role}</p>
+            </li>
+          ))}
+        </ul>
+        <h3 className="mt-8 font-semibold text-ink">{c.prefaceTitle}</h3>
+        <ul className="mt-3 space-y-1 text-ink">
+          {c.preface.map((x) => (
+            <li key={x.name}>
+              <span lang="en" className="font-semibold">
+                {x.name}
+              </span>
+              , {x.role}
+            </li>
+          ))}
+        </ul>
+        <h3 className="mt-8 font-semibold text-ink">{c.referencesTitle}</h3>
+        <p lang="en" className="mt-2 text-sm text-muted">
+          {c.references}
+        </p>
+        <p className="mt-6 text-sm text-muted">{c.original}</p>
+      </Container>
+    </section>
+  );
+}
+
+/** A short credit on every module page, pointing to the full declaration. */
 function Source({ locale }: { locale: CourseLocale }) {
+  const t = courseCopy[locale];
   return (
     <section className="border-t border-line bg-canvas py-8">
       <Container>
-        <p className="text-sm text-muted">{courseCopy[locale].source}</p>
+        <p className="text-sm text-muted">
+          {t.source}{" "}
+          <Link href={`${courseHref(locale)}#credits`} className="font-semibold text-brand-700 hover:underline">
+            {t.seeCredits}
+          </Link>
+        </p>
       </Container>
     </section>
   );
@@ -117,7 +166,7 @@ export function CourseOverview({ locale }: { locale: CourseLocale }) {
           </ol>
         </Container>
       </section>
-      <Source locale={locale} />
+      <Credits locale={locale} />
     </div>
   );
 }
