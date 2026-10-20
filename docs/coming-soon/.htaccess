@@ -1,6 +1,7 @@
-# Coming-soon mode: every address shows coming-soon.html over https.
+# Coming-soon mode: every address shows coming-soon.html over https, except
+# the free Financial Literacy course (English and Amharic), which is open now.
 # To launch the full site, replace this file with the site's own .htaccess.
-DirectoryIndex coming-soon.html
+DirectoryIndex coming-soon.html index.html
 Options -Indexes
 ServerSignature Off
 
@@ -15,9 +16,13 @@ ServerSignature Off
   # Send everyone to https://investopia.et (the address the certificate covers).
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} !^investopia\.et$ [NC]
-  RewriteRule ^ https://investopia.et/ [R=301,L]
+  RewriteRule ^ https://investopia.et%{REQUEST_URI} [R=301,L]
   RewriteCond %{REQUEST_URI} !^/coming-soon\.html$
   RewriteCond %{REQUEST_URI} !^/api/submit\.php$
+  # The course pages and the files they load.
+  RewriteCond %{REQUEST_URI} !^/(am/)?academy/financial-literacy/
+  RewriteCond %{REQUEST_URI} !^/_next/
+  RewriteCond %{REQUEST_URI} !^/(favicon\.ico|og-image\.png)$
   RewriteRule ^ /coming-soon.html [L]
 </IfModule>
 
