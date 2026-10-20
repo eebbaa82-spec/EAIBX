@@ -5,7 +5,7 @@ import type { CourseModule } from "@/data/financial-literacy/types";
 import { Icon } from "./Icon";
 import { DoneBadge, ProgressBar } from "./Progress";
 import { Quiz } from "./Quiz";
-import { CourseGate } from "./Signup";
+import { CourseGate, OverviewSignup } from "./Signup";
 import { Visual } from "./Visual";
 
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -121,6 +121,8 @@ export function CourseOverview({ locale }: { locale: CourseLocale }) {
           </div>
         </Container>
       </section>
+
+      <OverviewSignup locale={locale} />
 
       <section className="bg-white py-14">
         <Container>

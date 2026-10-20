@@ -46,7 +46,24 @@ export function CourseGate({ locale, children }: { locale: CourseLocale; childre
   return <SignupForm locale={locale} onDone={() => setRegistered(true)} />;
 }
 
-function SignupForm({ locale, onDone }: { locale: CourseLocale; onDone: () => void }) {
+/** On the course overview: the same form, shown until the visitor has registered. */
+export function OverviewSignup({ locale }: { locale: CourseLocale }) {
+  const [registered, setRegistered] = useState(true);
+  useEffect(() => {
+    const t = setTimeout(() => setRegistered(isRegistered()), 0);
+    return () => clearTimeout(t);
+  }, []);
+  if (registered) return null;
+  return (
+    <div id="register" className="bg-white pt-14">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6">
+        <SignupForm locale={locale} onDone={() => setRegistered(true)} scroll={false} />
+      </div>
+    </div>
+  );
+}
+
+function SignupForm({ locale, onDone, scroll = true }: { locale: CourseLocale; onDone: () => void; scroll?: boolean }) {
   const t = courseCopy[locale].signup;
   const [state, setState] = useState<"idle" | "sending" | "error">("idle");
 
@@ -66,7 +83,7 @@ function SignupForm({ locale, onDone }: { locale: CourseLocale; onDone: () => vo
     }
     rememberRegistered();
     onDone();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
