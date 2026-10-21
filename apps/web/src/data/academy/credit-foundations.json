@@ -1,0 +1,2186 @@
+{
+  "id": "credit-l1",
+  "slug": "credit-foundations",
+  "track": "credit",
+  "level": 1,
+  "icon": "bank",
+  "title": "Level 1: Credit Foundations",
+  "subtitle": "From first enquiry to a correctly documented disbursement",
+  "summary": "A practical first course for new credit officers in Ethiopian banks and MFIs: the rules and limits, the loan products, the intake interview, basic ratios and collateral, and the loan file from approval to disbursement.",
+  "audience": "New and junior credit officers, relationship officers and branch staff in Ethiopian commercial banks and microfinance institutions who handle overdraft and term loan requests.",
+  "hours": 10,
+  "objectives": [
+    "Explain why credit policy and procedure exist and who holds which approval authority",
+    "Match a customer need to the right credit product and its main terms",
+    "Run an intake interview, collect the right documents and order a credit report",
+    "Compute five basic ratios and collateral coverage for a small borrower",
+    "Prepare the loan approval form, contracts, registration, insurance and file correctly"
+  ],
+  "runningCase": {
+    "name": "Kidist Bakery, Hawassa",
+    "text": "W/ro Kidist Mengistu has run Kidist Bakery in Hawassa as a sole proprietor for 6 years. Annual sales are Birr 9 million with an operating margin of 9%. She asks Bank A for a Birr 1,500,000 overdraft to buy flour and sugar and a Birr 2,000,000 two-year term loan for a new oven costing Birr 2,400,000, of which she contributes Birr 400,000. She offers her residential house, valued at Birr 4,800,000 and jointly owned with her husband Ato Dawit Haile, plus the new oven. Her credit report is clean. You will follow her request through every module, from routing to disbursement."
+  },
+  "modules": [
+    {
+      "id": "s1",
+      "slug": "lending-governance-limits",
+      "icon": "bank",
+      "minutes": 60,
+      "title": "Lending in a bank: governance and limits",
+      "summary": "Why loans are a bank's largest risk, who may approve what, and which regulatory limits no officer can override.",
+      "objectives": [
+        "Explain the difference between credit policy and credit procedure",
+        "Describe the roles of the Board, credit committees, credit analysis and branches",
+        "Route a loan request to the right approval authority by amount and type of decision",
+        "Apply the NBE single borrower and related party limits to a borrower group",
+        "Name the five NBE loan classes and their minimum provisions"
+      ],
+      "lessons": [
+        {
+          "id": "why-credit",
+          "title": "Why credit policy and procedure exist",
+          "body": [
+            "The loan portfolio is the largest asset on a bank's balance sheet and its greatest source of risk. Deposits are the public's money, so a bank that lends carelessly puts savers, shareholders and the wider economy at risk. That is why lending is the most tightly governed activity in any Ethiopian bank.",
+            "Two documents guide every lending decision. The credit policy states the bank's lending intentions: which sectors it serves, how much risk it accepts and how it prices that risk. The credit procedure manual says step by step how to carry those intentions out. Both sit under the Banking Business Proclamation No. 1360/2025 and NBE directives, which always prevail."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Credit policy",
+              "items": [
+                "Approved by the Board",
+                "States what the bank will and will not finance",
+                "Sets risk appetite and pricing principles",
+                "Changes rarely"
+              ]
+            },
+            "right": {
+              "title": "Credit procedure",
+              "items": [
+                "Issued by management",
+                "Says how each step is done",
+                "Lists documents, forms and limits",
+                "Updated as practice and directives change"
+              ]
+            }
+          },
+          "example": {
+            "title": "The shortcut that cost a branch",
+            "text": "A branch of Bank A approved a Birr 1.8 million overdraft for Fikru Hardware after a single phone call, planning to collect the documents later. The documents never came, the trade licence turned out to be unrenewed and the house offered as security was registered in a trade name. When the account went into arrears the bank had no valid mortgage. Following the procedure would have stopped the loan at the front door."
+          },
+          "tip": "When policy and procedure seem to conflict, the stricter rule applies until the credit department confirms otherwise in writing."
+        },
+        {
+          "id": "credit-strategy",
+          "title": "Credit strategy: lend on cash flow, price for risk",
+          "body": [
+            "A sound credit strategy has three parts. Lend only to legitimate, viable activities. Price each loan for the risk it carries. Act firmly against customers who divert funds or mislead the bank.",
+            "Ethiopian bank manuals describe their approach as cash flow based lending: the primary source of repayment is the cash the business generates. Collateral is the second way out, used only if the business fails, and it must never make the officer complacent. Since January 2026 each bank sets its own lending rates, so risk-based pricing is now a real tool in the officer's hands."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "check",
+                "label": "Lawful and viable",
+                "text": "Finance real, legal business activity that can repay."
+              },
+              {
+                "icon": "scale",
+                "label": "Price for risk",
+                "text": "Higher risk earns a higher rate or stronger terms."
+              },
+              {
+                "icon": "coins",
+                "label": "Cash flow first",
+                "text": "Repayment comes from the business, not the house."
+              },
+              {
+                "icon": "warning",
+                "label": "Act on diversion",
+                "text": "Firm action when funds are misused or facts hidden."
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE Directive No. NBE/INT/13/2026, Interest Rates (As Amended)",
+            "text": "From January 9, 2026 each bank freely sets its deposit and lending rates. Rates must be approved in writing by the bank's board on explicit written criteria and reported to the NBE. Existing loans keep their contractual terms unless the contract provides otherwise."
+          },
+          "example": {
+            "title": "Two millers, two prices",
+            "text": "Bank A receives similar Birr 3 million working capital requests from two flour millers in Adama. Mulugeta Flour has six years of clean records and audited accounts; a newer mill has one year of provisional accounts and thin margins. Under the bank's board-approved criteria, the newer mill is offered a higher rate and a shorter review period. Same product, different risk, different price."
+          }
+        },
+        {
+          "id": "who-does-what",
+          "title": "Who does what in the credit structure",
+          "body": [
+            "Authority in credit is layered so that no single person can both originate and approve a loan. The Board sets policy and reviews the loan portfolio quarterly through its credit or loan review committee, covering loan quality, classification, provisioning, workouts and write-offs.",
+            "Management credit committees approve within the discretionary lending limits the Board delegates. The credit analysis department checks every proposal for technical, procedural and substantive content. Branches market, interview, visit, collect documents, disburse, follow up and collect."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Board of Directors",
+                "text": "Sets credit policy, holds ultimate responsibility, reviews quarterly."
+              },
+              {
+                "label": "Management credit committees",
+                "text": "Approve within delegated limits."
+              },
+              {
+                "label": "Credit analysis",
+                "text": "Independent check of each proposal."
+              },
+              {
+                "label": "Branch",
+                "text": "Origination, documents, disbursement, follow-up and collection."
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE Directive No. SBB/91/2024, Bank Corporate Governance",
+            "text": "Requires at least nine directors, one-third independent, and four mandatory board committees, one of them a credit committee, with NBE prior approval of the chief risk officer. A shareholder with 2% or more is an influential shareholder."
+          },
+          "tip": "Ultimate responsibility for credit risk rests with the Board of Directors, even when approval is delegated."
+        },
+        {
+          "id": "committee-rules",
+          "title": "Committee rules and conflicts of interest",
+          "body": [
+            "Credit committees decide by consensus, otherwise by majority. A typical Ethiopian bank manual sets the quorum at two thirds of members. Every member present signs the loan approval form (LAF), and any dissent is minuted with reasons.",
+            "A member with a private interest in the applicant, as a relative, partner, supplier or shareholder, must declare it and abstain. Declaring is not enough: the member may not vote. Approvals also expire: a typical manual requires disbursement within 90 days of approval, or 180 days where the bank pays a seller for an asset, after which the loan goes back for re-approval. Other manuals set 60 days, extendable to 90, for concluding the contract."
+          ],
+          "points": [
+            "Quorum: two thirds of members",
+            "Every present member signs the LAF; dissent is minuted",
+            "Conflicted members declare and abstain",
+            "Unused approvals lapse and need re-approval"
+          ],
+          "scenario": {
+            "title": "The supplier on the committee",
+            "situation": "Bank A's committee of six meets to approve a Birr 4 million loan to Gonder Steel Works. Ato Yared, one member, owns a company that supplies scrap metal to Gonder Steel. He tells the chair about this at the start of the meeting.",
+            "question": "What should happen next?",
+            "options": [
+              "Ato Yared votes, since he declared the interest",
+              "Ato Yared leaves the decision and the minutes record his declaration; the remaining five form a quorum",
+              "The meeting is postponed until Ato Yared sells his company",
+              "Ato Yared votes but his vote counts as half"
+            ],
+            "answer": 1,
+            "explain": "A conflicted member must declare and abstain. Five of six members exceeds the two-thirds quorum, so the committee can decide; voting after declaring is not allowed, and postponing is unnecessary."
+          }
+        },
+        {
+          "id": "routing",
+          "title": "Routing requests to the right authority",
+          "body": [
+            "Each committee has a discretionary limit. Routing depends on the amount, whether the loan is secured, and the type of decision. Rescheduling, restructuring and foreclosure usually go to the most senior committee whatever the amount, because they change the risk the bank already holds.",
+            "The table below is illustrative, based on one Ethiopian bank's procedure, and is used as Bank A's table in this course. Your own bank's limits will differ: always check the current delegation letter."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Branch committee",
+                "text": "Up to its branch grade limit."
+              },
+              {
+                "label": "Credit department committee",
+                "text": "Secured loans up to Birr 5 million."
+              },
+              {
+                "label": "Head office committee",
+                "text": "Above Birr 5 million to Birr 10 million."
+              },
+              {
+                "label": "Senior management committee",
+                "text": "Above Birr 10 million, plus all rescheduling, restructuring and foreclosure."
+              }
+            ]
+          },
+          "example": {
+            "title": "Kidist Bakery: where does it go?",
+            "text": "Kidist Bakery's request totals Birr 3,500,000 (Birr 1,500,000 overdraft plus Birr 2,000,000 term loan), secured by a house and the new oven. If it is above the Hawassa branch's grade limit, it goes to the credit department committee, since secured exposure is below Birr 5 million. The branch still does all the origination work and writes the recommendation."
+          },
+          "scenario": {
+            "title": "A small loan in arrears",
+            "situation": "Hanna Tesfaye's Birr 600,000 term loan is two installments in arrears. She asks the branch to reschedule it over a longer period. The branch committee's limit is well above Birr 600,000.",
+            "question": "Who approves the rescheduling under Bank A's table?",
+            "options": [
+              "The branch committee, because the amount is within its limit",
+              "The credit department committee, because the loan is secured",
+              "The senior management committee, because all rescheduling goes there"
+            ],
+            "answer": 2,
+            "explain": "Authority depends on the type of decision as well as the amount. Rescheduling changes risk the bank already holds, so Bank A sends all of it to the senior management committee regardless of size."
+          }
+        },
+        {
+          "id": "nbe-limits",
+          "title": "NBE limits no officer can override",
+          "body": [
+            "NBE sets limits that protect a bank from depending on one customer group. A bank's exposure to a single counterparty group may not exceed 25% of its total capital, and related businesses are combined as one borrower. An exposure of 10% or more of capital is a large exposure and is reported monthly.",
+            "Lending to related parties is limited further: 15% of capital per related party and 35% for all related parties together, always on arm's-length terms. Related parties include shareholders of 2% or more. Loans fully secured by cash or cash substitutes are excluded from the limits. Some older manuals still cite the repealed SBB/53/2012; use the current directives."
+          ],
+          "regulation": {
+            "source": "NBE Directives No. SBB/87/2024 (Large Exposures) and SBB/88/2024 (Related Party Transactions)",
+            "text": "Exposure to one counterparty group may not exceed 25% of total capital; a large exposure is 10% or more, reported monthly within 20 days. Related party limits are 15% per party and 35% in aggregate, on arm's-length terms, with board approval above Birr 15 million after an Audit Committee opinion. Related parties may never get better terms than other borrowers."
+          },
+          "worked": {
+            "title": "Abebe Trading PLC: group exposure test (Birr millions)",
+            "rows": [
+              {
+                "label": "Bank capital",
+                "value": "400"
+              },
+              {
+                "label": "Requested overdraft, Abebe Trading",
+                "value": "120"
+              },
+              {
+                "label": "Existing loan, Selam Import (same 60% to 70% owner)",
+                "value": "15"
+              },
+              {
+                "label": "Combined group exposure",
+                "value": "135 (33.75% of capital)"
+              },
+              {
+                "label": "Single group limit, 25%",
+                "value": "100: breached"
+              },
+              {
+                "label": "Related party limit, 15% (a 3% bank shareholder owns part of Abebe)",
+                "value": "60"
+              },
+              {
+                "label": "Room left for the group: 60 less 15",
+                "value": "45"
+              }
+            ],
+            "note": "Abebe and Selam share a majority owner, so they are one borrower. Because a 2%+ shareholder of the bank has an interest in Abebe, the 15% related party limit applies and the loan also counts toward the 35% aggregate. The request cannot be approved as presented."
+          },
+          "scenario": {
+            "title": "Telling the branch manager",
+            "situation": "The branch manager of Bank A is keen on the Abebe Trading overdraft of Birr 120 million and asks you what can be offered. The group can carry at most Birr 45 million more under the related party limit.",
+            "question": "What do you advise?",
+            "options": [
+              "Approve Birr 120 million but split it between Abebe and Selam so each is below 25%",
+              "Approve Birr 100 million, exactly the single borrower limit",
+              "Offer up to Birr 45 million on terms no better than for an unrelated borrower, or more only for any part fully secured by cash",
+              "Give a lower interest rate to compensate for the smaller amount"
+            ],
+            "answer": 2,
+            "explain": "Splitting between group companies does not help because they are combined. The related party limit is the binding one, cash-secured portions are excluded, and related parties may never receive better terms."
+          }
+        },
+        {
+          "id": "loan-classes",
+          "title": "The five NBE loan classes",
+          "body": [
+            "Every loan is classified by how long it is past due, and the bank must hold a minimum provision for each class. Under the NBE directive the classes are pass, special mention (30 to 89 days past due), substandard (90 to 179 days), doubtful (180 to 359 days) and loss (360 days or more).",
+            "Collateral is ignored when classifying: a well-secured loan 120 days overdue is still substandard. Interest on non-performing loans stops being recognized as income, and if a customer's non-performing loans reach 20% of their exposure, all their loans are reclassified. A borrower with a substandard, doubtful or loss balance is a defaulter and may not receive new loans."
+          ],
+          "visual": {
+            "type": "bars",
+            "unit": "%",
+            "items": [
+              {
+                "label": "Pass",
+                "value": 1
+              },
+              {
+                "label": "Special mention",
+                "value": 3
+              },
+              {
+                "label": "Substandard",
+                "value": 20
+              },
+              {
+                "label": "Doubtful",
+                "value": 50
+              },
+              {
+                "label": "Loss",
+                "value": 100
+              }
+            ],
+            "caption": "Minimum provision by loan class under NBE Directive No. SBB/90/2024"
+          },
+          "regulation": {
+            "source": "NBE Directive No. SBB/90/2024, Asset Classification and Provisioning",
+            "text": "Minimum provisions: pass 1%, special mention 3%, substandard 20%, doubtful 50%, loss 100%. Non-accrual applies to all non-performing loans regardless of collateral, and a 20% cross-default rule reclassifies the customer's other loans. Any IFRS shortfall goes to a regulatory reserve."
+          },
+          "worked": {
+            "title": "Minimum provisions for a branch portfolio (Birr)",
+            "rows": [
+              {
+                "label": "Pass: 40,000,000 x 1%",
+                "value": "400,000"
+              },
+              {
+                "label": "Special mention: 5,000,000 x 3%",
+                "value": "150,000"
+              },
+              {
+                "label": "Substandard: 2,000,000 x 20%",
+                "value": "400,000"
+              },
+              {
+                "label": "Doubtful: 1,000,000 x 50%",
+                "value": "500,000"
+              },
+              {
+                "label": "Loss: 500,000 x 100%",
+                "value": "500,000"
+              },
+              {
+                "label": "Total minimum provision on Birr 48,500,000",
+                "value": "1,950,000"
+              }
+            ],
+            "note": "Only 7% of this portfolio is non-performing, yet it drives 72% of the provision. Every loan that slips a class costs the bank capital, which is why front-door discipline matters."
+          }
+        }
+      ],
+      "takeaways": [
+        "The loan portfolio is a bank's largest asset and largest risk; policy states intentions, procedure says how",
+        "Repayment comes first from cash flow; collateral is the second way out",
+        "The Board holds ultimate responsibility; committees approve only within delegated limits",
+        "Authority depends on the type of decision as well as the amount; rescheduling goes high",
+        "Group exposure is capped at 25% of capital, related parties at 15% each and 35% in total",
+        "Loans are classified by days past due, ignoring collateral, with provisions from 1% to 100%"
+      ],
+      "quiz": [
+        {
+          "q": "Which body holds ultimate responsibility for a bank's credit risk?",
+          "options": [
+            "The branch manager",
+            "The credit analysis department",
+            "The Board of Directors",
+            "The NBE"
+          ],
+          "answer": 2,
+          "explain": "The Board sets policy and holds ultimate responsibility, even when it delegates approval."
+        },
+        {
+          "q": "What is the typical quorum of a credit committee in an Ethiopian bank manual?",
+          "options": [
+            "Two thirds of members",
+            "Half of members",
+            "All members",
+            "Three members"
+          ],
+          "answer": 0,
+          "explain": "Manuals set a quorum of two thirds of members."
+        },
+        {
+          "q": "A committee member supplies goods to the applicant and declares it. May the member vote?",
+          "options": [
+            "Yes, after declaring",
+            "Yes, if the chair agrees",
+            "No, the member must declare and abstain"
+          ],
+          "answer": 2,
+          "explain": "Declaring the interest does not permit voting; the member must abstain."
+        },
+        {
+          "q": "A loan is fully secured by a blocked time deposit. Does it count toward the single borrower limit?",
+          "options": [
+            "Yes, at full value",
+            "No, loans fully secured by cash are excluded",
+            "Only half of it counts"
+          ],
+          "answer": 1,
+          "explain": "Exposures fully secured by cash or cash substitutes are excluded from the limits."
+        },
+        {
+          "q": "Bank capital is Birr 600 million. What is the most a single borrower group may owe?",
+          "options": [
+            "Birr 150 million",
+            "Birr 90 million",
+            "Birr 210 million",
+            "Birr 60 million"
+          ],
+          "answer": 0,
+          "explain": "25% of Birr 600 million is Birr 150 million."
+        },
+        {
+          "q": "A loan is 95 days past due and fully secured by a house. How is it classified?",
+          "options": [
+            "Pass, because it is fully secured",
+            "Special mention",
+            "Substandard",
+            "Doubtful"
+          ],
+          "answer": 2,
+          "explain": "Collateral is ignored in classification; 90 to 179 days past due is substandard."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "slug": "credit-products",
+      "icon": "coins",
+      "minutes": 60,
+      "title": "Credit products",
+      "summary": "Match the purpose and cash cycle of a need to the product built for it, because a wrong product is the first step toward a problem loan.",
+      "objectives": [
+        "Describe the main product families and their key terms",
+        "Match loan tenor to the life of the asset or the length of the cash cycle",
+        "Read an overdraft statement for turnover and swing",
+        "Choose between overdraft, overdrawal, merchandise loan, L/C facility, pre-shipment advance and guarantee"
+      ],
+      "lessons": [
+        {
+          "id": "match-need",
+          "title": "Short money for short needs",
+          "body": [
+            "The golden rule of product choice is to match the tenor of the loan to the life of the asset or the length of the cash cycle it finances. Stock that sells in three months needs short money. An oven that works for ten years needs long money.",
+            "A mismatch creates trouble even for a good business. If a truck is bought with an overdraft, the account stays fully drawn for years and becomes a hard-core debit: on paper a revolving facility, in reality a term loan with no repayment schedule."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Short-term needs",
+              "items": [
+                "Stock and raw materials",
+                "Receivables gaps",
+                "Seasonal purchases",
+                "Products: overdraft, short-term loan, merchandise loan"
+              ]
+            },
+            "right": {
+              "title": "Long-term needs",
+              "items": [
+                "Machinery and vehicles",
+                "Buildings and expansion",
+                "Permanent working capital",
+                "Products: medium and long-term loans"
+              ]
+            }
+          },
+          "example": {
+            "title": "The truck inside the overdraft",
+            "text": "Gebre Transport used its Birr 2.5 million overdraft at Bank A to buy a used truck. For the next 14 months the account never fell below Birr 2.4 million and credits barely covered interest. At renewal the bank had to convert the balance into a three-year term loan with a fresh pledge on the truck. A medium-term loan from the start would have avoided the strain."
+          }
+        },
+        {
+          "id": "term-loans",
+          "title": "Term loans by tenure and grace",
+          "body": [
+            "Term loans are grouped by tenure. A short-term loan runs up to one year and finances one trading cycle. A medium-term loan runs 1 to 5 years for capital goods, vehicles or permanent working capital. A long-term loan runs over 5 and typically up to 10 years for new projects and expansion, and manuals expect the borrower to contribute part of the project cost, often at least 30%, from own funds.",
+            "A grace period is time when principal is not repaid. Interest generally still accrues and is paid or capitalized according to the contract. A typical manual allows up to 3 months grace on short-term loans, 6 to 12 months on medium-term loans and up to 24 months, sometimes 36, on long-term loans."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Short term",
+                "text": "Up to 1 year, grace up to 3 months"
+              },
+              {
+                "label": "Medium term",
+                "text": "1 to 5 years, grace up to 12 months"
+              },
+              {
+                "label": "Long term",
+                "text": "Over 5 up to 10 years, grace 24 to 36 months, own contribution often 30% or more"
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE Directive No. SBB/90/2024, as cited in a commercial bank's credit manual",
+            "text": "A short-term loan has a maturity of up to one year. Overdrafts are reviewed and renewed at least once a year."
+          },
+          "worked": {
+            "title": "Grace does not mean free: Birr 2,000,000 medium-term loan",
+            "rows": [
+              {
+                "label": "Principal",
+                "value": "Birr 2,000,000"
+              },
+              {
+                "label": "Assumed rate (illustrative)",
+                "value": "15% a year"
+              },
+              {
+                "label": "Grace on principal",
+                "value": "6 months"
+              },
+              {
+                "label": "Interest accruing during grace: 2,000,000 x 15% x 6/12",
+                "value": "Birr 150,000"
+              },
+              {
+                "label": "Principal installments after grace (24 months)",
+                "value": "Birr 83,333 a month plus interest"
+              }
+            ],
+            "note": "The customer must budget for Birr 150,000 of interest during grace, paid monthly or capitalized as the contract says."
+          }
+        },
+        {
+          "id": "overdraft",
+          "title": "The overdraft facility",
+          "body": [
+            "An overdraft lets a customer draw beyond the account balance up to an approved limit, solely for the day-to-day operating needs of an established, viable business. It bridges gaps between collections and payments and is repayable on demand. It is never for fixed assets or a one-off need.",
+            "A typical Ethiopian bank manual requires more than one year in business (or six months of related owner experience), a satisfactory relationship with the bank, and the previous six months' current account statement. The facility is reviewed every 6 or 12 months; the bank notifies the customer 60 days before expiry for a 12-month facility, and the customer applies for renewal one month before the review date."
+          ],
+          "points": [
+            "Revolving, repayable on demand",
+            "Interest charged daily on the balance and capitalized at month end",
+            "Usually secured by buildings or other strong security",
+            "Poor turnover can lead to call-back or conversion into a term loan"
+          ],
+          "example": {
+            "title": "Kidist Bakery's flour and sugar line",
+            "text": "Kidist Bakery buys flour and sugar weekly and is paid daily by shops and households in Hawassa. A Birr 1,500,000 overdraft fits this cash cycle: she draws to pay suppliers, and daily sales flow back into the account. Bank A will approve it for 12 months and review swing and turnover before renewal."
+          },
+          "tip": "Ask for six months of account statements before discussing an overdraft limit; they tell you more than any projection."
+        },
+        {
+          "id": "reading-od",
+          "title": "Reading an overdraft statement: turnover and swing",
+          "body": [
+            "Two measures show whether an overdraft is truly revolving. Turnover is total credits over the period divided by the limit. Swing looks at how far the balance moves between the highest debit and the lowest debit or credit balance, showing the facility is used and repaid, not frozen.",
+            "A typical manual rates turnover above 4 times as excellent, above 3 to 4 as very good, above 1.5 to 3 as good, above 1 to 1.5 as unsatisfactory, and 1 or below as poor. For utilization, a highest debit above 85% of the limit scores best. An account at 100% every day with credits barely covering interest is a hard-core debit, whatever the turnover suggests."
+          ],
+          "visual": {
+            "type": "bars",
+            "unit": "Birr thousands",
+            "items": [
+              {
+                "label": "Jan",
+                "value": 1400
+              },
+              {
+                "label": "Feb",
+                "value": 1700
+              },
+              {
+                "label": "Mar",
+                "value": 2100
+              },
+              {
+                "label": "Apr",
+                "value": 1300
+              },
+              {
+                "label": "May",
+                "value": 1600
+              },
+              {
+                "label": "Jun",
+                "value": 1500
+              }
+            ],
+            "caption": "Monthly credits into a Birr 2,000,000 overdraft, January to June"
+          },
+          "worked": {
+            "title": "Six-month overdraft review, limit Birr 2,000,000",
+            "rows": [
+              {
+                "label": "Total credits, January to June",
+                "value": "Birr 9,600,000"
+              },
+              {
+                "label": "Turnover: 9,600,000 / 2,000,000",
+                "value": "4.8 times: excellent"
+              },
+              {
+                "label": "Average highest debit",
+                "value": "About Birr 1,890,000, 95% of limit"
+              },
+              {
+                "label": "Lowest balance",
+                "value": "Credit of Birr 50,000 in March"
+              }
+            ],
+            "note": "Fully used, actively repaid and touching credit within three months: a genuinely revolving facility that merits renewal."
+          },
+          "scenario": {
+            "title": "A frozen overdraft",
+            "situation": "Hailu Building Materials has a Birr 3,000,000 overdraft. Over the last 12 months total credits were Birr 2,400,000, and the balance never fell below Birr 2,950,000.",
+            "question": "How do you rate it and what do you recommend at renewal?",
+            "options": [
+              "Excellent; renew and increase the limit",
+              "Good; renew at the same limit",
+              "Poor at 0.8 times; call back, reduce the limit, or convert all or part into a term loan",
+              "Unsatisfactory; renew but charge a higher fee"
+            ],
+            "answer": 2,
+            "explain": "Turnover of 2,400,000 / 3,000,000 = 0.8 is poor, and a balance stuck near the limit is a hard-core debit. The manual options are call-back, reduction or conversion into a term loan with a repayment schedule."
+          }
+        },
+        {
+          "id": "temporary-merchandise",
+          "title": "Overdrawals and merchandise loans",
+          "body": [
+            "An overdrawal, or excess drawing, covers a short, unexpected shortage when the source of repayment is known, such as a cheque about to clear. A typical manual allows it for up to 30 days, normally not more than once a month, settled within 90 days with one 30-day extension, at a higher rate. Frequent users should apply for a permanent facility.",
+            "A merchandise loan releases cash tied up in stock that is pledged to the bank, often under dual lock: two different locks, the bank holding one key. Goods must have determinable value, be fast moving, stable in price, non-perishable, not fashion-prone and insurable. Items with an expiry date under one year, pharmaceuticals, chemicals and packed foods are refused. Manuals advance 70% to 90% of the lower of cost or market, and the store is marked and insured."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "check",
+                "label": "Determinable value",
+                "text": "Price can be checked."
+              },
+              {
+                "icon": "truck",
+                "label": "Fast moving",
+                "text": "Easily sold locally or abroad."
+              },
+              {
+                "icon": "scale",
+                "label": "Stable price",
+                "text": "No wild swings."
+              },
+              {
+                "icon": "clock",
+                "label": "Non-perishable",
+                "text": "No expiry inside one year."
+              },
+              {
+                "icon": "umbrella",
+                "label": "Insurable",
+                "text": "Against fire, theft and burglary."
+              },
+              {
+                "icon": "lock",
+                "label": "Dual custody",
+                "text": "Two locks, one key with the bank."
+              }
+            ]
+          },
+          "scenario": {
+            "title": "Short this week, paid next week",
+            "situation": "Lemlem Supermarket in Bahir Dar has an overdraft with excellent turnover. This week it is Birr 400,000 short to pay a supplier, because a large cheque from a government buyer will clear next week.",
+            "question": "Which product fits?",
+            "options": [
+              "A one-year short-term loan",
+              "An overdrawal settled within 30 days from the identified cheque",
+              "A permanent increase of the overdraft limit",
+              "A merchandise loan against the shelves"
+            ],
+            "answer": 1,
+            "explain": "The need is short, unexpected and has a known source of repayment, which is exactly what an overdrawal is for. A permanent increase or a term loan would over-finance a one-week gap."
+          }
+        },
+        {
+          "id": "trade-guarantees",
+          "title": "Trade products, guarantees and consumer loans",
+          "body": [
+            "An import letter of credit facility lets an importer pay for goods without tying up the full value: the customer pays a margin, often a minimum of 20% to 30%, and the bank holds the import documents until settlement. A pre-shipment export advance finances buying and preparing exportable goods, typically at 70% to 90% of the sales contract or L/C, converted to an L/C within 60 to 90 days and settled from export proceeds.",
+            "A letter of guarantee covers bid, advance payment, performance or customs bonds, priced by commission based on risk and collateral, and void after expiry. Consumer loans for homes, cars, personal needs or education are repaid from salary, with total deductions kept within one third of salary and 20% to 40% equity for home loans."
+          ],
+          "worked": {
+            "title": "Import L/C for Sheger Pharma PLC (Birr)",
+            "rows": [
+              {
+                "label": "L/C value",
+                "value": "10,000,000"
+              },
+              {
+                "label": "Customer margin at 30%",
+                "value": "3,000,000"
+              },
+              {
+                "label": "Bank's funded exposure",
+                "value": "7,000,000"
+              },
+              {
+                "label": "Control",
+                "value": "Bank holds shipping documents until settled"
+              }
+            ],
+            "note": "The importer's Birr 3 million cash covers the margin exactly, so the facility is workable without tying up the full value."
+          },
+          "regulation": {
+            "source": "NBE Directive No. FXD/01/2024, Foreign Exchange Directive (as amended)",
+            "text": "Exporters must repatriate export proceeds within three months. Routing proceeds through the financing bank is the main control on a pre-shipment advance."
+          },
+          "scenario": {
+            "title": "The coffee exporter",
+            "situation": "Sidama Highland Coffee PLC has a signed sales contract and needs cash to buy and clean coffee for shipment in four months. It asks Bank A for finance.",
+            "question": "What product and key condition fit best?",
+            "options": [
+              "An overdraft for 12 months with no conditions",
+              "A five-year medium-term loan",
+              "A performance guarantee",
+              "A pre-shipment advance against the sales contract, converted to an L/C within the set days, with proceeds routed through the bank"
+            ],
+            "answer": 3,
+            "explain": "Pre-shipment finance is built for buying and preparing exports. The main risks are that goods are not shipped or proceeds bypass the bank, so conversion to an L/C and routing proceeds are the key controls."
+          }
+        }
+      ],
+      "takeaways": [
+        "Match tenor to the life of the asset or the length of the cash cycle",
+        "An overdraft is for revolving working capital, never for fixed assets or one-off needs",
+        "Turnover above 4 times is excellent; 1 or below is poor and calls for action",
+        "Overdrawals cover short gaps with a known source of repayment",
+        "Merchandise must be non-perishable, marketable, stable in price and insurable",
+        "Grace periods defer principal, not interest"
+      ],
+      "quiz": [
+        {
+          "q": "Why should an overdraft not finance a truck purchase?",
+          "options": [
+            "A truck is a long-life asset and an overdraft is short, on-demand money",
+            "Trucks cannot be insured",
+            "Overdrafts carry no interest",
+            "Only MFIs finance trucks"
+          ],
+          "answer": 0,
+          "explain": "The mismatch creates a hard-core debit that never revolves."
+        },
+        {
+          "q": "Which item is acceptable for a merchandise loan?",
+          "options": [
+            "Packed fruit juice",
+            "Pharmaceuticals",
+            "Cement",
+            "Batteries"
+          ],
+          "answer": 2,
+          "explain": "Cement is non-perishable and fast moving; the others are on the excluded list."
+        },
+        {
+          "q": "Total credits over 6 months are Birr 6,000,000 on a Birr 2,000,000 limit. What is turnover?",
+          "options": [
+            "3 times",
+            "0.33 times",
+            "12 times"
+          ],
+          "answer": 0,
+          "explain": "6,000,000 / 2,000,000 = 3 times, rated good under a typical manual."
+        },
+        {
+          "q": "What does a grace period usually cover?",
+          "options": [
+            "Both principal and interest are forgiven",
+            "Interest only; principal is paid",
+            "Principal only; interest still accrues"
+          ],
+          "answer": 2,
+          "explain": "Grace defers principal; interest is paid or capitalized per the contract."
+        },
+        {
+          "q": "A contractor must give the employer a 10% performance bond. Which product fits?",
+          "options": [
+            "Merchandise loan",
+            "Performance guarantee",
+            "Overdrawal",
+            "Consumer loan"
+          ],
+          "answer": 1,
+          "explain": "A letter of guarantee for performance, priced by commission against counter-security."
+        },
+        {
+          "q": "A hotel owner wants to replace kitchen equipment worth Birr 4 million. Which structure fits?",
+          "options": [
+            "Medium-term loan of 3 to 5 years, paid direct to the supplier, equipment pledged and insured",
+            "Overdraft renewed yearly",
+            "Overdrawal for 30 days",
+            "Pre-shipment advance"
+          ],
+          "answer": 0,
+          "explain": "Equipment is a capital good, so medium-term money matched to its life is right."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "slug": "credit-origination",
+      "icon": "people",
+      "minutes": 60,
+      "title": "Credit origination",
+      "summary": "Most bad loans are visible at the front door: practise the eligibility check, interview, documents, credit report and business visit that catch them.",
+      "objectives": [
+        "Apply the general eligibility criteria to an applicant",
+        "Run an interview with open and probing questions and record red flags",
+        "Identify the financial statements and documents each type of applicant must present",
+        "Obtain and use a credit report correctly and confidentially",
+        "Conduct a business visit and write up variations in a due diligence report"
+      ],
+      "lessons": [
+        {
+          "id": "front-door",
+          "title": "Eligibility: the first filter",
+          "body": [
+            "Most bad loans are visible before they are made. The eligibility check is the first filter, and an applicant who fails it can be declined at this stage, with written reasons, before anyone spends time on analysis.",
+            "Ethiopian bank manuals list similar criteria. A typical manual also requires at least one year in operation, or six months where the owner has related experience, except for project finance."
+          ],
+          "points": [
+            "A lawful, creditworthy business, or a defined, sustainable income for consumer loans",
+            "A renewed trade licence (or investment licence for new projects) and a TIN",
+            "A tax clearance where required, and no history of tax evasion",
+            "No unsettled loss loan with the bank and no non-performing loan at any bank, including major shareholders and subsidiaries",
+            "No record of cheque account misuse during the rehabilitation period",
+            "The minimum equity contribution and every document requested",
+            "A business that is financially viable, legal, technically feasible and environmentally sound"
+          ],
+          "regulation": {
+            "source": "NBE Directive No. SBB/90/2024, as applied in a commercial bank's credit manual",
+            "text": "An applicant may not have a non-performing loan with the bank or at other banks. A borrower with a balance classified substandard, doubtful or loss is a defaulter, and persons related to the borrower are also credit-checked. The bank may lend further only to rehabilitate a defaulted loan."
+          },
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "receipt",
+                "label": "Licence and TIN",
+                "text": "Renewed and matching the activity."
+              },
+              {
+                "icon": "check",
+                "label": "Tax clearance",
+                "text": "Valid, never evaded tax."
+              },
+              {
+                "icon": "warning",
+                "label": "No NPL anywhere",
+                "text": "Including owners and subsidiaries."
+              },
+              {
+                "icon": "card",
+                "label": "Clean cheques",
+                "text": "No misuse record."
+              },
+              {
+                "icon": "piggy",
+                "label": "Own contribution",
+                "text": "Minimum equity in place."
+              },
+              {
+                "icon": "leaf",
+                "label": "Viable and sound",
+                "text": "Legal, feasible, environmentally sound."
+              }
+            ]
+          },
+          "example": {
+            "title": "Kidist Bakery passes the first filter",
+            "text": "Kidist Bakery has a renewed trade licence, a TIN, six years in business, a clean credit report and Birr 400,000 of her own money for the oven. Her husband Ato Dawit will need a tax clearance as joint owner of the house. The officer records that she meets every general criterion and moves to the interview."
+          }
+        },
+        {
+          "id": "interview",
+          "title": "The intake interview",
+          "body": [
+            "The interview aims to understand the business and test the request. Start with open questions such as \"Walk me through a normal month of sales\", then probe: \"Who else do you borrow from?\", \"What exactly will you pay with the first Birr 500,000?\"",
+            "Cover at least: what the business does and how it is doing, its products, the exact purpose of the funds, other debts, the cash flow that will repay, main customers and suppliers, reliability of supply, alternative markets, the owners' willingness and track record, management competence, unusual and external risks, the collateral, environmental compliance and the borrower's position in its sector."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Open",
+                "text": "Let the customer describe the business in their own words."
+              },
+              {
+                "label": "Probe",
+                "text": "Ask about other lenders, exact use of funds and repayment source."
+              },
+              {
+                "label": "Check",
+                "text": "Compare answers with documents and statements."
+              },
+              {
+                "label": "Record",
+                "text": "Write down every red flag and inconsistency."
+              },
+              {
+                "label": "Decide",
+                "text": "Proceed, ask for more, or decline with written reasons."
+              }
+            ]
+          },
+          "example": {
+            "title": "W/ro Hirut's textile shop",
+            "text": "W/ro Hirut Wolde asks for a Birr 1.5 million overdraft for her textile shop in Merkato. Probing reveals that sales are seasonal, that she has an unmentioned Birr 800,000 loan at another bank, and that she wants part of the money to buy a minibus for her brother. The hidden loan changes her repayment capacity, and the minibus is a diverted purpose that does not fit an overdraft."
+          },
+          "scenario": {
+            "title": "Part of the money for a minibus",
+            "situation": "During the interview W/ro Hirut admits that Birr 600,000 of the Birr 1.5 million overdraft would buy a minibus for her brother's taxi business. The rest is for fabric stock before the holiday season.",
+            "question": "What is the best response?",
+            "options": [
+              "Consider only the stock need as an overdraft, sized on verified sales and after counting the other bank's loan; the minibus is outside the request",
+              "Approve the full overdraft; the minibus will earn income",
+              "Decline everything immediately without explanation",
+              "Approve the overdraft and ask the brother to sign as guarantor"
+            ],
+            "answer": 0,
+            "explain": "A minibus is a long-life asset for a different business, so it does not fit an overdraft. The genuine stock need can be assessed, but the hidden Birr 800,000 loan must be included in capacity. Any decline must give written reasons."
+          }
+        },
+        {
+          "id": "documents",
+          "title": "Documents and financial statements",
+          "body": [
+            "A typical manual asks every applicant for the loan request application form with TIN, signed by an authorized person, stating purpose, source of repayment, collateral, affiliated persons and major customers and suppliers. It adds the renewed trade licence and registration certificates, financial statements, the credit report, ageing of receivables and payables, inventory by type and age, evidence of marital status, and the mortgagors' tax clearance.",
+            "Which financial statements are needed depends on the legal form and the exposure. Where a sole proprietor keeps no proper books, a commercial credit report, completed and signed by the applicant personally, may be used and then verified by the bank. Give the customer the full checklist at the first meeting so everything comes in one go."
+          ],
+          "worked": {
+            "title": "Statements required by applicant type (illustrative bank procedure)",
+            "rows": [
+              {
+                "label": "Share company, any amount",
+                "value": "Latest audited plus interim statements"
+              },
+              {
+                "label": "PLC, sole proprietor or partnership above Birr 5 million",
+                "value": "Audited plus interim statements"
+              },
+              {
+                "label": "PLC below Birr 5 million; sole proprietor or partnership Birr 1 to 5 million",
+                "value": "Provisional statements for 3 years, GAAP basis"
+              },
+              {
+                "label": "Sole proprietor or partnership below Birr 1 million",
+                "value": "Commercial credit report may be used"
+              },
+              {
+                "label": "New business",
+                "value": "Projected statements and cash flow for the loan period"
+              },
+              {
+                "label": "Kidist Bakery, sole proprietor, exposure Birr 3.5 million",
+                "value": "3 years of provisional statements"
+              }
+            ],
+            "note": "Thresholds differ between manuals. Where exposure is Birr 5 million or more, safe practice is to ask for audited statements from an NBE-listed, AABE-certified auditor."
+          },
+          "regulation": {
+            "source": "NBE Directive No. SBB/90/2024, as cited in a commercial bank's credit manual",
+            "text": "Before granting loans of Birr 10 million or more to a borrower in business for at least one year, the bank must review the borrower's externally audited financial statements."
+          }
+        },
+        {
+          "id": "credit-report",
+          "title": "Credit information from the NBE Credit Reference Bureau",
+          "body": [
+            "Before approval, obtain a credit report on the applicant, its owners and guarantors from the NBE Credit Reference Bureau. A typical manual also pulls reports for renewals, rescheduling, collateral release or replacement and refinancing, and asks the borrower and guarantors to sign written consent. This is one reason the TIN is collected.",
+            "Credit information may be used only by bank staff making the lending decision, only for that decision, and must stay confidential. The bank's own account history counts too: bounced cheques signal weak character."
+          ],
+          "regulation": {
+            "source": "NBE Directive No. CRB/02/2019, Credit Reference Bureau",
+            "text": "Banks collect credit information on applicants through the NBE credit reference system before approving credit, including temporary facilities such as overdrawals."
+          },
+          "scenario": {
+            "title": "A settled arrear",
+            "situation": "The credit report for Tsegaye Electronics shows a loan at another bank that was 45 days overdue and was settled last month. The owner says it was a one-off delay caused by a customer's late payment.",
+            "question": "How should the officer treat this?",
+            "options": [
+              "Ignore it, since the loan is settled",
+              "Decline automatically, since any arrear disqualifies",
+              "Record it as a character concern, ask for a written explanation, and weigh it with the rest of the findings"
+            ],
+            "answer": 2,
+            "explain": "A settled 45-day arrear is not a current NPL, so it does not disqualify on its own, but it is evidence on character that must be documented and weighed."
+          }
+        },
+        {
+          "id": "business-visit",
+          "title": "The business visit",
+          "body": [
+            "A business visit verifies by observation what the application claims: premises, stock, machinery, activity level, staff and records. A typical manual sends at least two staff, who check sales, cash, stock, fixed assets and source documents, confirm the business is the one licensed, and check that the trade licence is displayed.",
+            "Note every variation from the application, find the reason, and write a due diligence report. Compare declared sales with VAT returns and the sales book: tax records are hard to fake and expose overstated figures."
+          ],
+          "worked": {
+            "title": "Tsegaye Electronics: application versus visit",
+            "rows": [
+              {
+                "label": "Monthly sales: claimed / observed",
+                "value": "Birr 2,400,000 / about Birr 900,000"
+              },
+              {
+                "label": "Staff: claimed / observed",
+                "value": "8 / 3"
+              },
+              {
+                "label": "Stock: claimed / observed",
+                "value": "Birr 5,000,000 / about Birr 1,500,000"
+              },
+              {
+                "label": "VAT declarations",
+                "value": "Consistent with the lower sales book"
+              },
+              {
+                "label": "Overdraft requested",
+                "value": "Birr 3,000,000"
+              }
+            ],
+            "note": "The sales gap matters most because it drives repayment, and the VAT returns support the lower figure. Size any facility on verified sales of Birr 900,000 a month, not the claimed figure."
+          },
+          "scenario": {
+            "title": "Recommend or not?",
+            "situation": "Your visit to Tsegaye Electronics found sales, staff and stock all far below the application, and the credit report shows a recent 45-day arrear at another bank. The owner wants the full Birr 3 million overdraft.",
+            "question": "What do you recommend?",
+            "options": [
+              "Approve in full; the arrear is settled",
+              "Decline as requested; consider a smaller facility on verified sales only if the owner's written explanation is credible",
+              "Approve half without further questions",
+              "Ask the owner to resubmit a new application with higher figures"
+            ],
+            "answer": 1,
+            "explain": "The overstatement and the recent arrear both raise character concerns. Any facility must be sized on verified sales and only after a credible written explanation."
+          }
+        },
+        {
+          "id": "document-checks",
+          "title": "Checking documents and authority",
+          "body": [
+            "Copies must be checked against originals and stamped \"Checked against original\" with the officer's signature and date. Reject illegible documents and any with unsigned alterations.",
+            "Check that the person signing has authority: a company resolution to borrow and pledge, the consent of all partners in a partnership, and a power of attorney authenticated by the Document Authentication and Registration Office (DARO) when an agent applies. A typical manual seeks a legal opinion when a power of attorney is unclear or property is owned by heirs."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "See the original",
+                "text": "Never accept a copy alone."
+              },
+              {
+                "label": "Compare",
+                "text": "Names, numbers, dates, stamps."
+              },
+              {
+                "label": "Stamp and sign",
+                "text": "\"Checked against original\", signature and date."
+              },
+              {
+                "label": "Check authority",
+                "text": "Resolution, partners' consent or DARO power of attorney."
+              }
+            ]
+          },
+          "scenario": {
+            "title": "An altered trade licence",
+            "situation": "A photocopy of Selamawit Tadesse's trade licence shows the renewal year written over by hand, with no signature or stamp beside the change. She says the issuing office corrected it.",
+            "question": "What should the officer do?",
+            "options": [
+              "Accept it, since she explained the change",
+              "Stamp it \"Checked against original\" to save time",
+              "Reject it and ask for the original renewed licence or a properly authenticated copy"
+            ],
+            "answer": 2,
+            "explain": "Documents with unsigned alterations are rejected. Stamping a copy without seeing the original would be a false certification."
+          }
+        }
+      ],
+      "takeaways": [
+        "Eligibility screening can and should decline weak applicants early, in writing",
+        "Open questions reveal the business; probing questions reveal hidden debts and diverted purposes",
+        "Statement requirements depend on legal form and exposure; give the full checklist up front",
+        "Credit reports cover applicant, owners and guarantors, with consent, and stay confidential",
+        "The business visit verifies the application; VAT returns test declared sales",
+        "Every copy is checked against the original, stamped, signed and dated"
+      ],
+      "quiz": [
+        {
+          "q": "Which is a general eligibility criterion?",
+          "options": [
+            "A minimum of 50 employees",
+            "Collateral worth twice the loan",
+            "No non-performing loan at any bank, including major shareholders",
+            "An account at the bank for 5 years"
+          ],
+          "answer": 2,
+          "explain": "No NPL anywhere, including owners and subsidiaries, is a standard criterion."
+        },
+        {
+          "q": "A PLC has total exposure of Birr 7 million. Which statements must it present under the illustrative procedure?",
+          "options": [
+            "Audited plus interim statements",
+            "A commercial credit report",
+            "Provisional statements only"
+          ],
+          "answer": 0,
+          "explain": "Above Birr 5 million a PLC presents audited plus interim statements."
+        },
+        {
+          "q": "Who may use credit bureau information?",
+          "options": [
+            "Any bank staff for marketing",
+            "The applicant's competitors on request",
+            "Only staff making the lending decision, for that decision, kept confidential"
+          ],
+          "answer": 2,
+          "explain": "Credit information is confidential and limited to the lending decision."
+        },
+        {
+          "q": "What do you write on a photocopy you checked against the original?",
+          "options": [
+            "\"Checked against original\" with signature and date",
+            "\"Copy\"",
+            "Nothing, just file it",
+            "\"Approved\""
+          ],
+          "answer": 0,
+          "explain": "The stamp, signature and date certify who checked it and when."
+        },
+        {
+          "q": "Why compare VAT returns with declared sales?",
+          "options": [
+            "To calculate the loan's interest",
+            "To decide the collateral value",
+            "To verify that declared sales are real and consistent with tax records"
+          ],
+          "answer": 2,
+          "explain": "Tax records are hard to inflate, so they test the application's sales figure."
+        },
+        {
+          "q": "A sole proprietor with Birr 600,000 exposure keeps no proper books. What financial information may be used?",
+          "options": [
+            "Audited statements only",
+            "A commercial credit report signed by the applicant and verified by the bank",
+            "No information is needed"
+          ],
+          "answer": 1,
+          "explain": "Below Birr 1 million a commercial credit report may be used, then verified."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "slug": "analysis-and-collateral",
+      "icon": "calculator",
+      "minutes": 65,
+      "title": "Fundamentals of analysis and collateral",
+      "summary": "The order of judgment: first can and will the borrower repay from the business, and only then how well collateral protects the bank if it does not.",
+      "objectives": [
+        "Use the 5 Cs to organize a credit judgment and its evidence",
+        "Compute and interpret five basic ratios",
+        "Identify acceptable collateral and apply valuation haircuts",
+        "Compute collateral coverage and the used vehicle share",
+        "State the insurance requirements for collateral"
+      ],
+      "lessons": [
+        {
+          "id": "order-of-judgment",
+          "title": "The 5 Cs and the order of judgment",
+          "body": [
+            "Would you lend to a borrower with excellent collateral and no profit? The answer is no. Ethiopian manuals say the same thing in their own words: the bank follows cash flow based lending, and the ability to repay is more important than collateral.",
+            "The 5 Cs organize the judgment. Some manuals add two more, cash and control, making 7 Cs, but the logic is the same: character and capacity first, collateral last."
+          ],
+          "visual": {
+            "type": "acronym",
+            "items": [
+              {
+                "letter": "C",
+                "label": "Character",
+                "text": "Will they repay? Credit report, track record, honesty of documents."
+              },
+              {
+                "letter": "C",
+                "label": "Capacity",
+                "text": "Can the business repay from cash flow? Income, turnover, DSCR."
+              },
+              {
+                "letter": "C",
+                "label": "Capital",
+                "text": "How much of their own money is at risk? Net worth, leverage."
+              },
+              {
+                "letter": "C",
+                "label": "Collateral",
+                "text": "What protects the bank if repayment fails?"
+              },
+              {
+                "letter": "C",
+                "label": "Conditions",
+                "text": "Sector, market, regulation, foreign exchange, loan terms."
+              }
+            ]
+          },
+          "example": {
+            "title": "A fine villa, an empty order book",
+            "text": "Ato Getachew Lemma offered a villa in Bole valued at Birr 18 million for a Birr 6 million loan to his new printing press. The press had no contracts and the projections assumed full capacity in month one. Bank A declined: the collateral was strong, but there was no credible capacity to repay, and selling a family home is a costly, slow and damaging way to collect."
+          },
+          "scenario": {
+            "title": "Strong house, weak cash flow",
+            "situation": "Ayana Dairy asks for a Birr 2 million loan. Its accounts show losses for two years, but it offers a building worth Birr 5 million with clean title.",
+            "question": "What is the right approach?",
+            "options": [
+              "Decline or restructure the request until the business shows a credible source of repayment from cash flow",
+              "Approve, since coverage is 250%",
+              "Approve at a higher rate"
+            ],
+            "answer": 0,
+            "explain": "Collateral is the second way out, not the reason to lend. Without capacity the loan is likely to end in foreclosure."
+          }
+        },
+        {
+          "id": "ratios",
+          "title": "Five basic ratios",
+          "body": [
+            "Ratios turn financial statements into answers. The current ratio asks whether short-term debts can be met from short-term assets. Debt to net worth shows how much of the business creditors finance. Operating profit margin shows how much each Birr of sales earns before interest and tax.",
+            "Interest coverage shows how many times profit covers interest. Return on equity shows the owners' return on their investment. Always compute at least two years so you see the trend, and ask the customer to explain big jumps or drops."
+          ],
+          "visual": {
+            "type": "equation",
+            "parts": [
+              {
+                "label": "Current ratio"
+              },
+              {
+                "label": "Current assets",
+                "op": "="
+              },
+              {
+                "label": "Current liabilities",
+                "op": "/"
+              }
+            ],
+            "caption": "Below 1 means short-term liabilities exceed short-term assets: a liquidity strain."
+          },
+          "points": [
+            "Current ratio = current assets / current liabilities",
+            "Debt to net worth = total liabilities / tangible net worth",
+            "Operating profit margin = operating profit / sales x 100",
+            "Interest coverage = EBIT / interest expense",
+            "Return on equity = net profit / equity x 100"
+          ],
+          "worked": {
+            "title": "Meskel Flour Mill ratios (Birr thousands)",
+            "rows": [
+              {
+                "label": "Current ratio: (400 + 1,200 + 2,400) / (1,500 + 1,000)",
+                "value": "4,000 / 2,500 = 1.6"
+              },
+              {
+                "label": "Debt to net worth: (1,500 + 1,000 + 3,000) / 4,500",
+                "value": "5,500 / 4,500 = 1.22"
+              },
+              {
+                "label": "Operating margin: 1,440 / 18,000",
+                "value": "8.0%"
+              },
+              {
+                "label": "Interest coverage: 1,440 / 480",
+                "value": "3.0 times"
+              },
+              {
+                "label": "Return on equity: 672 / 4,500",
+                "value": "14.9%"
+              }
+            ],
+            "note": "Sales 18,000, gross profit 3,600, operating expenses 2,160, EBIT 1,440, interest 480, tax at 30% leaves net profit 672. Liquidity is adequate, leverage moderate and interest is covered three times."
+          }
+        },
+        {
+          "id": "reading-ratios",
+          "title": "Reading ratios for Kidist Bakery",
+          "body": [
+            "A ratio means little on its own. Compare it with prior years, with similar businesses and with what the new loan will add. A current ratio of 1.8 is comfortable for a bakery; interest coverage must be tested again after adding the interest on the new facilities.",
+            "Match each ratio to a C: debt to net worth measures capital, interest coverage and margins measure capacity. Then write one sentence per ratio that a committee member can read in a minute."
+          ],
+          "worked": {
+            "title": "Kidist Bakery, last financial year (Birr, illustrative provisional accounts)",
+            "rows": [
+              {
+                "label": "Sales",
+                "value": "9,000,000"
+              },
+              {
+                "label": "Operating profit at 9%",
+                "value": "810,000"
+              },
+              {
+                "label": "Current ratio: 1,800,000 / 1,000,000",
+                "value": "1.8"
+              },
+              {
+                "label": "Debt to net worth: 1,500,000 / 3,000,000",
+                "value": "0.5"
+              },
+              {
+                "label": "Interest coverage: 810,000 / 120,000",
+                "value": "6.75 times"
+              },
+              {
+                "label": "Return on equity: 483,000 / 3,000,000",
+                "value": "16.1%"
+              }
+            ],
+            "note": "Low leverage and strong coverage. Even if new interest roughly triples the interest bill to Birr 360,000, coverage stays above 2 times, so capacity supports the request."
+          },
+          "scenario": {
+            "title": "A current ratio below 1",
+            "situation": "Wolkite Tannery has current assets of Birr 3 million and current liabilities of Birr 4 million. It asks Bank A to increase its overdraft by Birr 1 million.",
+            "question": "What does the current ratio tell you?",
+            "options": [
+              "1.33: comfortable liquidity, approve",
+              "0.75: irrelevant because the overdraft is secured",
+              "0.75: short-term liabilities exceed short-term assets, a liquidity strain to investigate before adding short-term debt"
+            ],
+            "answer": 2,
+            "explain": "3 / 4 = 0.75. Adding more short-term debt to a business already short of liquid assets needs a clear explanation and a cash flow test first."
+          }
+        },
+        {
+          "id": "collateral-basics",
+          "title": "What makes good collateral",
+          "body": [
+            "Acceptable collateral is marketable, accessible, stable in value, transferable and insurable. Common types are buildings that are completed or sufficiently advanced, vehicles and machinery not older than 10 years, merchandise, cash deposits, treasury bills and bonds, shares of other companies, and bank and personal guarantees.",
+            "Manuals differ on how complete a building must be: one sets at least 50%, another 60% for residential and 65% for commercial buildings. The bank never takes its own shares. Property must be owned by a natural or legal person; property registered under a trade name is not accepted. Personal guarantees are treated as clean lending and add comfort, not coverage."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Acceptable",
+              "items": [
+                "Completed house with title deed",
+                "Truck 4 years old",
+                "Blocked time deposit",
+                "Shares of another credible company",
+                "Cement under dual lock"
+              ]
+            },
+            "right": {
+              "title": "Not acceptable",
+              "items": [
+                "Shop registered in a trade name",
+                "Truck 12 years old",
+                "The bank's own shares",
+                "Perishable or expiring stock",
+                "Building below the completion threshold"
+              ]
+            }
+          },
+          "regulation": {
+            "source": "Movable Property Security Right Proclamation No. 1147/2019 and NBE Directive No. MCR/01/2020",
+            "text": "Security rights over movable property, including inventory, receivables, vehicles and machinery, are registered on the Ethiopian Movable Collateral Registry, operational since 26 February 2020. Land, houses and buildings are excluded and are registered with land administration offices."
+          },
+          "example": {
+            "title": "A shop in the wrong name",
+            "text": "Ato Tamrat Bekele offered his shop in Dire Dawa, valued at Birr 3.2 million, as security. The title was registered to \"Tamrat Electric\", his trade name. Bank A could not accept it until he transferred the title into his own name at the land administration office, which took six weeks."
+          }
+        },
+        {
+          "id": "valuation",
+          "title": "Valuation haircuts for vehicles and machinery",
+          "body": [
+            "Used vehicles and machinery lose value fast, so banks count only part of their value. One Ethiopian bank's procedure, used here as illustrative, counts up to 2 years old at 90% of the lower of invoice or insurance value, 2 to 5 years at 75%, 5 to 10 years at 50%, and over 10 years or unknown age as not acceptable. Used vehicles may not exceed 40% of total collateral for a new loan.",
+            "Another manual values used vehicles at the lowest of the insurer's estimate, an external assessor or the head office market value, and new ones at invoice value. Vehicles over 10 years old are accepted only exceptionally. For overdrafts, vehicles usually count only alongside a building."
+          ],
+          "visual": {
+            "type": "bars",
+            "unit": "% of value counted",
+            "items": [
+              {
+                "label": "Up to 2 years",
+                "value": 90
+              },
+              {
+                "label": "2 to 5 years",
+                "value": 75
+              },
+              {
+                "label": "5 to 10 years",
+                "value": 50
+              },
+              {
+                "label": "Over 10 years",
+                "value": 0
+              }
+            ],
+            "caption": "Illustrative haircuts for used vehicles and machinery from one bank's procedure"
+          },
+          "worked": {
+            "title": "Meskel Flour Mill: collateral for a new Birr 5,000,000 loan",
+            "rows": [
+              {
+                "label": "Warehouse, valued",
+                "value": "Birr 5,000,000"
+              },
+              {
+                "label": "Truck, 4 years old, insurance value Birr 2,000,000 at 75%",
+                "value": "Birr 1,500,000"
+              },
+              {
+                "label": "Total acceptable collateral",
+                "value": "Birr 6,500,000"
+              },
+              {
+                "label": "Coverage: 6.5 / 5.0",
+                "value": "130%"
+              },
+              {
+                "label": "Used vehicle share: 1.5 / 6.5",
+                "value": "23%, within the 40% cap"
+              }
+            ],
+            "note": "Coverage is adequate and the vehicle share is well within the cap."
+          },
+          "scenario": {
+            "title": "A 7-year-old excavator",
+            "situation": "Rift Valley Construction offers a 7-year-old excavator with an insurance value of Birr 6,000,000 as security.",
+            "question": "What value counts under the illustrative schedule?",
+            "options": [
+              "Birr 6,000,000",
+              "Birr 3,000,000",
+              "Birr 4,500,000",
+              "Nothing, it is too old"
+            ],
+            "answer": 1,
+            "explain": "5 to 10 years counts at 50%: 50% x 6,000,000 = Birr 3,000,000."
+          }
+        },
+        {
+          "id": "almaz-case",
+          "title": "Case: Almaz Garment's collateral offer",
+          "body": [
+            "Almaz Garment PLC asks for a Birr 4,000,000 term loan for sewing machines. It offers five items: a residential house 60% complete estimated at Birr 3,000,000 owned by the managing director; a shop estimated at Birr 2,000,000 registered in the trade name \"Almaz Fashion\"; a 12-year-old truck with insurance value Birr 900,000; a 2-year-old van with insurance value Birr 1,200,000 and invoice value Birr 1,400,000; and a personal guarantee from the director's brother.",
+            "Every insurable collateral also needs 100% insurance cover before disbursement, with the bank as first beneficiary: buildings against fire and allied perils, vehicles comprehensive, merchandise against fire, theft and burglary, machinery against fire and breakdown. No premium, no cover."
+          ],
+          "worked": {
+            "title": "Almaz Garment: acceptable collateral (Birr)",
+            "rows": [
+              {
+                "label": "House, 60% complete (meets a 50% or 60% threshold)",
+                "value": "3,000,000"
+              },
+              {
+                "label": "Shop in trade name",
+                "value": "0, not acceptable"
+              },
+              {
+                "label": "Truck, 12 years old",
+                "value": "0, over 10 years"
+              },
+              {
+                "label": "Van, 2 years: 90% x lower of 1,200,000 and 1,400,000",
+                "value": "1,080,000"
+              },
+              {
+                "label": "Brother's personal guarantee",
+                "value": "Comfort only, not counted"
+              },
+              {
+                "label": "Total and coverage on 4,000,000",
+                "value": "4,080,000, about 102%"
+              }
+            ],
+            "note": "Coverage is thin. The director signs as mortgagor with spouse consent. Under a stricter manual requiring 65% completion the house would fail too."
+          },
+          "scenario": {
+            "title": "What else to ask for",
+            "situation": "Your coverage for Almaz Garment comes to about 102%, which the committee will see as thin. The loan is for new sewing machines bought from a known supplier.",
+            "question": "Which package of conditions best strengthens the loan?",
+            "options": [
+              "Accept the shop in the trade name after all",
+              "Raise the interest rate and disburse to the customer's account",
+              "Count the 12-year-old truck at 50%",
+              "Pledge the new machines, require the equity contribution in a blocked account, and pay the supplier directly"
+            ],
+            "answer": 3,
+            "explain": "A pledge on the new machines adds coverage, blocked equity proves the contribution, and direct payment ensures the funds buy the asset. The other options break collateral rules or add no protection."
+          }
+        }
+      ],
+      "takeaways": [
+        "Lend on cash flow; collateral is the second way out and never a reason to lend",
+        "The 5 Cs: character, capacity, capital, collateral, conditions",
+        "Five ratios: current ratio, debt to net worth, operating margin, interest coverage, ROE",
+        "Collateral must be marketable, accessible, stable, transferable, insurable and in a person's name",
+        "Older vehicles and machinery count at a discount; over 10 years is generally not acceptable",
+        "Insure 100%, bank as first beneficiary, before disbursement"
+      ],
+      "quiz": [
+        {
+          "q": "Which C does the debt to net worth ratio measure?",
+          "options": [
+            "Character",
+            "Conditions",
+            "Capital",
+            "Collateral"
+          ],
+          "answer": 2,
+          "explain": "It shows how much of the business is financed by owners versus creditors."
+        },
+        {
+          "q": "Current assets are Birr 3 million and current liabilities Birr 4 million. What is the current ratio?",
+          "options": [
+            "0.75",
+            "1.33",
+            "1.0",
+            "0.25"
+          ],
+          "answer": 0,
+          "explain": "3 / 4 = 0.75, a liquidity strain."
+        },
+        {
+          "q": "A 7-year-old excavator has an insurance value of Birr 6 million. What counts under the illustrative schedule?",
+          "options": [
+            "Birr 6 million",
+            "Birr 4.5 million",
+            "Birr 3 million"
+          ],
+          "answer": 2,
+          "explain": "5 to 10 years counts at 50%."
+        },
+        {
+          "q": "Why is collateral called the second way out?",
+          "options": [
+            "Repayment should come from cash flow; collateral is relied on only if that fails",
+            "It is registered second",
+            "It is valued twice"
+          ],
+          "answer": 0,
+          "explain": "The first way out is the business's cash flow."
+        },
+        {
+          "q": "Can a bank lend against its own shares?",
+          "options": [
+            "Yes, at 90%",
+            "Yes, at 60%",
+            "No"
+          ],
+          "answer": 2,
+          "explain": "Manuals never accept the bank's own shares."
+        },
+        {
+          "q": "EBIT is Birr 1,200,000 and interest is Birr 400,000. What is interest coverage?",
+          "options": [
+            "0.33 times",
+            "3 times",
+            "4.8 times",
+            "1.6 times"
+          ],
+          "answer": 1,
+          "explain": "1,200,000 / 400,000 = 3 times."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "slug": "credit-administration",
+      "icon": "lock",
+      "minutes": 65,
+      "title": "Credit administration and capstone",
+      "summary": "An approved loan is still unprotected until contracts are signed correctly, collateral is registered and insured, and the file is complete.",
+      "objectives": [
+        "Prepare the LAF and a written decision letter with all conditions",
+        "Execute loan and mortgage contracts with the right signatures and stamp duty",
+        "Register and insure collateral before disbursement",
+        "Disburse in the correct order and keep the credit and safe custody files",
+        "Handle renewals at the same, reduced and increased limits"
+      ],
+      "lessons": [
+        {
+          "id": "laf-decision",
+          "title": "The LAF, the decision letter and appeals",
+          "body": [
+            "The loan approval form (LAF) is the principal decision document for every fresh request, renewal, restructuring, legal action, change of terms or appeal. All members present sign it, and the reasons for the decision are recorded.",
+            "Communicate the decision in writing, stating the amount, terms and every condition to be met before disbursement. If the request is declined or reduced, give the reason. One manual lets the customer appeal within 15 days; a different officer reprocesses it and the next higher committee decides, and that decision is final. Another manual accepts an appeal only with new or overlooked information, stated in writing."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Approve",
+                "text": "LAF signed, reasons recorded."
+              },
+              {
+                "label": "Notify",
+                "text": "Written letter with all conditions."
+              },
+              {
+                "label": "Sign contracts",
+                "text": "All parties and spouses, before witnesses."
+              },
+              {
+                "label": "Register",
+                "text": "Mortgage and pledges at the right office."
+              },
+              {
+                "label": "Insure",
+                "text": "100% cover, bank as first beneficiary."
+              },
+              {
+                "label": "Verify",
+                "text": "Documentation checklist complete."
+              },
+              {
+                "label": "Disburse",
+                "text": "Often direct to the supplier."
+              }
+            ]
+          },
+          "scenario": {
+            "title": "An appeal with nothing new",
+            "situation": "Bank A reduced Fasil Furniture's request from Birr 3 million to Birr 2 million because verified sales were lower than claimed. Ten days later the owner appeals in writing but brings no new information, only a complaint that the amount is too small.",
+            "question": "How should the appeal be handled?",
+            "options": [
+              "Explain the reasons again; an appeal without new or justifiable information is not accepted, while one with new facts is reprocessed by a different officer for the next higher committee",
+              "Approve Birr 3 million to keep the customer",
+              "Ignore the letter"
+            ],
+            "answer": 0,
+            "explain": "Appeals exist to correct decisions made on incomplete information. Without new facts, staff explain the reasoning; with new facts, a different officer reprocesses for the next higher level."
+          }
+        },
+        {
+          "id": "contracts",
+          "title": "Contracts and signatures",
+          "body": [
+            "Use separate loan and mortgage or pledge contracts from the bank's standard formats, in at least 4 copies. They state the parties, amount, purpose, rate, drawdown deadline, maturity, repayment schedule, collateral description and the rights of each party.",
+            "The borrower, mortgagor, guarantor and their spouses sign every page in full before bank witnesses; an illiterate party gives a thumbprint before witnesses. A typical manual requires two witnesses, a revenue stamp on the originals and internal legal review for large contracts. Stamp duty is paid on the lower of the loan amount or the collateral value."
+          ],
+          "example": {
+            "title": "The missing spouse",
+            "text": "Ato Mesfin Alemu mortgaged the family house for a Birr 2 million loan, but his wife never signed. When the loan defaulted she challenged the mortgage over the jointly owned house, and Bank A found itself unsecured. One missing signature cost the bank its recourse."
+          },
+          "worked": {
+            "title": "Kidist Bakery: who signs and on what stamp duty base (Birr)",
+            "rows": [
+              {
+                "label": "Borrower",
+                "value": "W/ro Kidist Mengistu"
+              },
+              {
+                "label": "Spouse and joint owner of the house",
+                "value": "Ato Dawit Haile, every page"
+              },
+              {
+                "label": "Witnesses",
+                "value": "Two, before the bank signatory"
+              },
+              {
+                "label": "Total loan amount",
+                "value": "3,500,000"
+              },
+              {
+                "label": "Collateral value: house 4,800,000 + oven 2,400,000",
+                "value": "7,200,000"
+              },
+              {
+                "label": "Stamp duty base: the lower of the two",
+                "value": "3,500,000"
+              }
+            ],
+            "note": "Duty is paid by the borrower at registration, and the receipt goes in the file."
+          },
+          "tip": "Bring marital status evidence to the first meeting: spouse consent problems surface at signing, when everyone is in a hurry."
+        },
+        {
+          "id": "registration",
+          "title": "Registering collateral before disbursement",
+          "body": [
+            "Collateral must be registered after the mortgage contract is signed and before disbursement. Until registration the bank has no enforceable security right against third parties. A typical manual insists the bank does the registering itself and never leaves it to the borrower.",
+            "Buildings are registered at the municipality or sub-city land office, vehicles at the transport bureau with the ownership booklet, construction machinery at the designated ministry, and movables on the Movable Collateral Registry. Original title documents go to the bank's safe custody. A tax clearance for the mortgagor is valid for 6 months, and a typical manual requires it before approval."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "house",
+                "label": "Buildings",
+                "text": "Municipality or sub-city land administration office."
+              },
+              {
+                "icon": "truck",
+                "label": "Vehicles",
+                "text": "Transport bureau, with the ownership booklet."
+              },
+              {
+                "icon": "store",
+                "label": "Construction machinery",
+                "text": "The designated ministry."
+              },
+              {
+                "icon": "lock",
+                "label": "Movables",
+                "text": "Ethiopian Movable Collateral Registry."
+              }
+            ]
+          },
+          "regulation": {
+            "source": "Property Mortgaged or Pledged with Banks Proclamation No. 97/1998 (amended by No. 216/2000)",
+            "text": "Allows banks to foreclose on mortgaged or pledged property without court action. That power depends on a validly executed and registered mortgage. A typical manual also warns that a mortgage registration older than ten years can bar the bank's right, so ageing registrations are tracked yearly."
+          },
+          "scenario": {
+            "title": "Disburse now, register next week",
+            "situation": "Kidist Bakery's contracts are signed on a Monday, but the sub-city land office cannot register the mortgage until the following week. The supplier offers a 3% discount if the oven is paid today.",
+            "question": "What should the branch do?",
+            "options": [
+              "Pay the supplier today; registration is a formality",
+              "Disburse half today and half after registration",
+              "Wait until the mortgage and pledge are registered, then disburse"
+            ],
+            "answer": 2,
+            "explain": "Until registration the bank has no enforceable right against third parties. A discount is not worth an unsecured Birr 2 million; partial release is possible only exceptionally and with approval."
+          }
+        },
+        {
+          "id": "insurance-disbursement",
+          "title": "Insurance and disbursement",
+          "body": [
+            "Insurance needs 100% cover, the bank as first beneficiary, the right perils, and renewal tracked on a follow-up card or system alert. The officer is accountable for losses from lapsed cover. A typical manual says that if the customer does not renew, the bank pays the premium and debits the loan account.",
+            "Disburse only after every precondition is met and checked against the documentation checklist. Pay vehicle and machinery loans directly to the supplier after the equity is blocked and ownership is transferred to the borrower and pledged to the bank. If warning signs appear after approval, stop and refer back to the committee."
+          ],
+          "regulation": {
+            "source": "Proclamation No. 746/2012, Art. 48, as cited in a commercial bank's credit manual",
+            "text": "No premium, no cover: an insurance policy is not effective unless the premium is paid, so renewals must be paid on time, with renewal notices about one month before expiry."
+          },
+          "scenario": {
+            "title": "A warning sign before payment",
+            "situation": "Between approval and disbursement of a Birr 2.5 million loan to Mekelle Plastics, the officer learns that the general manager and the production manager both resigned and that a major customer has stopped buying.",
+            "question": "What should the officer do?",
+            "options": [
+              "Disburse, since the approval is valid",
+              "Stop and refer the file back to the committee with the new information",
+              "Disburse but double the follow-up visits",
+              "Cancel the loan without telling anyone"
+            ],
+            "answer": 1,
+            "explain": "An approval rests on the facts at the time. Key management changes and loss of a major customer are warning signals, so the committee must reconsider before money leaves the bank."
+          }
+        },
+        {
+          "id": "files-renewals",
+          "title": "Files and renewals",
+          "body": [
+            "Keep two files. The Credit File holds the application, analysis, LAF, correspondence and reports. The Safe Custody File holds contracts, title deeds, ownership booklets, guarantees and other security documents, kept in the vault and logged in the security register; the customer signs the register on release.",
+            "Renewals depend on the limit. An overdraft renewed at the same limit needs only a declaration of indebtedness. A reduced limit needs a supplementary contract after the balance falls to the new limit. An increased limit needs a fresh contract for the increase. Prune bulky credit files, keeping the latest application and LAF in the new file."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Credit File",
+              "items": [
+                "Application",
+                "Analysis and due diligence report",
+                "LAF and decision letter",
+                "Correspondence and visit reports"
+              ]
+            },
+            "right": {
+              "title": "Safe Custody File",
+              "items": [
+                "Signed contracts",
+                "Original title deeds and booklets",
+                "Guarantees and share certificates",
+                "Insurance policies, logged in the security register"
+              ]
+            }
+          },
+          "scenario": {
+            "title": "A larger limit at renewal",
+            "situation": "After a good year, Kidist Bakery asks to renew her Birr 1,500,000 overdraft at Birr 2,000,000. Turnover and swing are excellent and the house still covers the new total.",
+            "question": "What documentation is needed for the renewal?",
+            "options": [
+              "A declaration of indebtedness only",
+              "Nothing, renewals are automatic",
+              "A fresh contract for the Birr 500,000 increase, with collateral and insurance checked for the new total"
+            ],
+            "answer": 2,
+            "explain": "Same limit: declaration of indebtedness. Increased limit: a fresh contract for the increase, with coverage and insurance reconfirmed."
+          }
+        },
+        {
+          "id": "spot-errors",
+          "title": "Spot the errors in a loan file",
+          "body": [
+            "A mock file for a Birr 2 million term loan secured by a house contains ten planted errors. For each, ask: what could go wrong for the bank?",
+            "Several errors leave the bank unsecured: the missing spouse signature, the late registration and the insurance that names only the borrower. Others undermine the decision itself, such as an LAF signed by 2 of 5 members."
+          ],
+          "points": [
+            "Mortgage signed by the owner but not the spouse",
+            "Tax clearance 8 months old, beyond its 6-month validity",
+            "Insurance names the borrower only, not the bank",
+            "Insured for Birr 1.2 million on a house valued at Birr 2.6 million",
+            "Loan disbursed 3 March, mortgage registered 10 March",
+            "Photocopied title deed not marked \"Checked against original\"",
+            "LAF signed by 2 of 5 members, quorum not shown",
+            "Decision letter omits the Birr 500,000 equity condition",
+            "Loan and mortgage terms in one combined contract",
+            "Original title deed kept in the branch manager's desk drawer"
+          ],
+          "scenario": {
+            "title": "Which error first?",
+            "situation": "You find all ten errors in the mock file on the day the loan goes into arrears. The house is jointly owned and the borrower's wife says she never agreed to the mortgage.",
+            "question": "Which error most directly threatens recovery right now?",
+            "options": [
+              "The title deed kept in a desk drawer",
+              "The decision letter that omitted the equity condition",
+              "The missing spouse signature on the mortgage",
+              "The combined contract"
+            ],
+            "answer": 2,
+            "explain": "An unsigned spouse can challenge a mortgage over a jointly owned house, leaving the bank unsecured. The other errors are serious but do not by themselves void the security."
+          }
+        },
+        {
+          "id": "capstone",
+          "title": "Capstone: the Kidist Bakery file",
+          "body": [
+            "Bring the course together. Kidist Bakery needs a 12-month overdraft for flour and sugar, reviewed at expiry, and a medium-term loan for the oven repaid in 24 monthly installments, paid directly to the supplier after the Birr 400,000 equity is blocked.",
+            "The document checklist: application, renewed trade licence, TIN, 3 years of provisional statements, credit report, business visit report, title deed and site plan, valuation report, tax clearance, marriage certificate and spouse consent, supplier proforma invoice and IDs. Then follow the disbursement order without skipping a step."
+          ],
+          "worked": {
+            "title": "Kidist Bakery: collateral coverage (Birr)",
+            "rows": [
+              {
+                "label": "Residential house, jointly owned",
+                "value": "4,800,000"
+              },
+              {
+                "label": "New oven at invoice value",
+                "value": "2,400,000"
+              },
+              {
+                "label": "Total collateral",
+                "value": "7,200,000"
+              },
+              {
+                "label": "Total exposure: overdraft 1,500,000 + term loan 2,000,000",
+                "value": "3,500,000"
+              },
+              {
+                "label": "Coverage",
+                "value": "About 206%"
+              }
+            ],
+            "note": "Coverage is strong, but the approval still rests on capacity: low leverage and interest coverage well above 2 times."
+          },
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Approval and written decision"
+              },
+              {
+                "label": "Customer accepts the terms"
+              },
+              {
+                "label": "Contracts signed by both spouses"
+              },
+              {
+                "label": "Stamp duty paid"
+              },
+              {
+                "label": "House mortgage and oven pledge registered"
+              },
+              {
+                "label": "Insurance with bank as first beneficiary"
+              },
+              {
+                "label": "Checklist verified, equity blocked"
+              },
+              {
+                "label": "Pay the supplier, activate the overdraft"
+              }
+            ]
+          },
+          "example": {
+            "title": "The first three months",
+            "text": "Two follow-up actions protect the new loan. First, a visit to confirm the oven is installed and working in the Hawassa bakery. Second, a monthly review of overdraft swing and turnover, with insurance and contract expiry dates entered in the diary so nothing lapses."
+          }
+        }
+      ],
+      "takeaways": [
+        "The LAF records every decision; decisions go to the customer in writing with all conditions",
+        "Separate contracts, signed on every page by all parties and spouses before witnesses",
+        "Register collateral before disbursement; the bank registers, never the borrower",
+        "Insure 100% with the bank as first beneficiary and track renewals",
+        "Disburse only after the checklist is complete; stop if warning signs appear",
+        "Keep a Credit File and a Safe Custody File, and match renewal documents to the new limit"
+      ],
+      "quiz": [
+        {
+          "q": "Within how many days may a customer appeal under the manual cited in the training module?",
+          "options": [
+            "7 days",
+            "30 days",
+            "15 days",
+            "90 days"
+          ],
+          "answer": 2,
+          "explain": "That manual allows 15 days, after which a different officer reprocesses the appeal."
+        },
+        {
+          "q": "Who must sign a mortgage contract over a jointly owned house?",
+          "options": [
+            "The borrower, the owner (mortgagor) and the spouse, before bank witnesses",
+            "The borrower only",
+            "The branch manager only"
+          ],
+          "answer": 0,
+          "explain": "Every party with a right in the property signs every page before witnesses."
+        },
+        {
+          "q": "Can a loan be disbursed before the mortgage is registered?",
+          "options": [
+            "Yes, if the customer is reputable",
+            "No, until registration the bank has no enforceable right against third parties",
+            "Yes, if the contract is signed"
+          ],
+          "answer": 1,
+          "explain": "Registration perfects the security."
+        },
+        {
+          "q": "What is kept in the Safe Custody File?",
+          "options": [
+            "Contracts, title deeds, ownership booklets, guarantees and other security documents",
+            "The credit analysis",
+            "Marketing materials"
+          ],
+          "answer": 0,
+          "explain": "The legal and security documents live in the vault."
+        },
+        {
+          "q": "Stamp duty is paid on which base?",
+          "options": [
+            "The higher of loan or collateral value",
+            "Always the collateral value",
+            "The lower of loan or collateral value"
+          ],
+          "answer": 2,
+          "explain": "Manuals set the base as the lower of the two."
+        },
+        {
+          "q": "An overdraft is renewed at a reduced limit. What document is needed?",
+          "options": [
+            "A declaration of indebtedness only",
+            "A supplementary contract after the balance falls to the new limit",
+            "Nothing"
+          ],
+          "answer": 1,
+          "explain": "A reduced limit is documented with a supplementary contract once the balance is within it."
+        }
+      ]
+    }
+  ],
+  "exam": [
+    {
+      "q": "Bank A's capital is Birr 800 million. A group already owes Birr 150 million and asks for Birr 80 million more. What does the single group limit allow?",
+      "options": [
+        "Up to Birr 50 million more",
+        "The full Birr 80 million",
+        "Nothing, the group is already over the limit",
+        "Up to Birr 120 million more"
+      ],
+      "answer": 0,
+      "explain": "25% of 800 is Birr 200 million; 200 less 150 leaves Birr 50 million."
+    },
+    {
+      "q": "A borrower's company is 40% owned by a 2.5% shareholder of the bank. Bank capital is Birr 500 million. What is the most the bank may lend to this related party?",
+      "options": [
+        "Birr 125 million",
+        "Birr 175 million",
+        "Birr 75 million",
+        "No limit applies"
+      ],
+      "answer": 2,
+      "explain": "A 2%+ shareholder makes it a related party; 15% of 500 is Birr 75 million."
+    },
+    {
+      "q": "A Birr 900,000 loan in arrears is to be restructured. The branch limit is Birr 2 million. Under Bank A's table, who decides?",
+      "options": [
+        "The senior management committee",
+        "The branch committee",
+        "The credit department committee",
+        "The head office committee"
+      ],
+      "answer": 0,
+      "explain": "All rescheduling and restructuring goes to the senior management committee regardless of amount."
+    },
+    {
+      "q": "A loan is 200 days past due and secured by a building worth three times the balance. What is the minimum provision rate?",
+      "options": [
+        "1%",
+        "20%",
+        "100%",
+        "50%"
+      ],
+      "answer": 3,
+      "explain": "180 to 359 days is doubtful, at 50%; collateral is ignored in classification."
+    },
+    {
+      "q": "A credit committee has nine members. Ato Yonas, one of them, is a partner of the applicant. What is the minimum attendance for a valid meeting, and what does Ato Yonas do?",
+      "options": [
+        "Five members; Ato Yonas votes after declaring",
+        "Six members; Ato Yonas declares his interest and abstains",
+        "Nine members; Ato Yonas leaves the bank",
+        "Four members; Ato Yonas chairs the meeting"
+      ],
+      "answer": 1,
+      "explain": "Two thirds of nine is six, and a conflicted member must declare and abstain."
+    },
+    {
+      "q": "An overdraft with a Birr 4,000,000 limit had total credits of Birr 13,000,000 in 12 months. How is turnover rated?",
+      "options": [
+        "Very good",
+        "Excellent",
+        "Good",
+        "Poor"
+      ],
+      "answer": 0,
+      "explain": "13 / 4 = 3.25 times; above 3 and up to 4 is rated very good."
+    },
+    {
+      "q": "A distributor holds Birr 6 million of cement and is short of cash until the rainy season ends. What is the most it could normally borrow on a merchandise loan at a 70% advance?",
+      "options": [
+        "Birr 6.0 million",
+        "Birr 1.8 million",
+        "Birr 4.2 million",
+        "Birr 5.4 million"
+      ],
+      "answer": 2,
+      "explain": "70% of the lower of cost or market: 0.7 x 6 = Birr 4.2 million, under dual lock and insurance."
+    },
+    {
+      "q": "A customer needs a 10-day cash gap covered with a known incoming payment. Which product fits?",
+      "options": [
+        "Medium-term loan",
+        "Overdrawal",
+        "Letter of guarantee",
+        "Long-term loan"
+      ],
+      "answer": 1,
+      "explain": "Overdrawals cover short, unexpected gaps with an identified repayment source."
+    },
+    {
+      "q": "An importer must open a Birr 15 million L/C with a 30% margin. How much cash must the importer provide?",
+      "options": [
+        "Birr 3.0 million",
+        "Birr 10.5 million",
+        "Birr 1.5 million",
+        "Birr 4.5 million"
+      ],
+      "answer": 3,
+      "explain": "30% x 15 = Birr 4.5 million; the bank funds the remaining Birr 10.5 million against documents."
+    },
+    {
+      "q": "What is the main risk in a pre-shipment advance?",
+      "options": [
+        "The exporter's licence expires",
+        "Interest rates fall",
+        "Goods are not shipped or proceeds bypass the bank",
+        "The L/C is too large"
+      ],
+      "answer": 2,
+      "explain": "Controls include conversion to an L/C, routing proceeds through the bank and warehouse visits."
+    },
+    {
+      "q": "During an interview a customer reveals an undisclosed Birr 800,000 loan at another bank. Which C is most affected, and how?",
+      "options": [
+        "Capacity and character: repayment capacity falls and disclosure is questioned",
+        "Collateral: the house is worth less",
+        "Conditions: the sector is weaker"
+      ],
+      "answer": 0,
+      "explain": "Hidden debt reduces cash available for repayment and raises an honesty concern."
+    },
+    {
+      "q": "A PLC asks for Birr 12 million. Under the NBE requirement cited in a typical manual, what must the bank review?",
+      "options": [
+        "A commercial credit report",
+        "Projected statements only",
+        "Externally audited financial statements"
+      ],
+      "answer": 2,
+      "explain": "For loans of Birr 10 million or more to a borrower in business at least a year, audited statements are reviewed."
+    },
+    {
+      "q": "Claimed monthly sales are Birr 2.4 million; the sales book and VAT returns show Birr 900,000. On what should a facility be sized?",
+      "options": [
+        "Verified sales of Birr 900,000",
+        "Birr 2.4 million, the application figure",
+        "The average, Birr 1.65 million"
+      ],
+      "answer": 0,
+      "explain": "VAT returns support the lower figure, so only verified sales count."
+    },
+    {
+      "q": "Current assets are Birr 5 million and current liabilities Birr 2 million. What is the current ratio?",
+      "options": [
+        "0.4",
+        "3.0",
+        "7.0",
+        "2.5"
+      ],
+      "answer": 3,
+      "explain": "5 / 2 = 2.5."
+    },
+    {
+      "q": "Net profit is Birr 540,000 and equity Birr 3,600,000. What is ROE?",
+      "options": [
+        "6.7%",
+        "15.0%",
+        "66.7%",
+        "1.5%"
+      ],
+      "answer": 1,
+      "explain": "540,000 / 3,600,000 = 15%."
+    },
+    {
+      "q": "A 3-year-old truck has an insurance value of Birr 3 million. What counts under the illustrative schedule?",
+      "options": [
+        "Birr 2,250,000",
+        "Birr 3,000,000",
+        "Birr 2,700,000",
+        "Birr 1,500,000"
+      ],
+      "answer": 0,
+      "explain": "2 to 5 years counts at 75%: Birr 2,250,000."
+    },
+    {
+      "q": "For a new loan, collateral is a building at Birr 3 million and used vehicles counted at Birr 2.5 million. Does the vehicle share meet a 40% cap?",
+      "options": [
+        "Yes, it is 25%",
+        "No, it is about 45%",
+        "Yes, it is exactly 40%"
+      ],
+      "answer": 1,
+      "explain": "2.5 / 5.5 = about 45%, above the 40% cap; more non-vehicle collateral is needed."
+    },
+    {
+      "q": "A shop registered in a trade name is offered as collateral. What should the officer do?",
+      "options": [
+        "Accept at 50%",
+        "Refuse until title is transferred to a natural or legal person",
+        "Accept if insured"
+      ],
+      "answer": 1,
+      "explain": "Trade names cannot hold title, so the property is not acceptable as registered."
+    },
+    {
+      "q": "An insurance policy covers a house valued at Birr 2.6 million for Birr 1.2 million and names only the borrower. What is wrong?",
+      "options": [
+        "Only the beneficiary",
+        "Only the amount",
+        "Nothing",
+        "Both: cover must be 100% and the bank must be first beneficiary"
+      ],
+      "answer": 3,
+      "explain": "Both faults leave the bank exposed if the house is destroyed."
+    },
+    {
+      "q": "A mortgagor's tax clearance was issued 7 months before approval. What follows?",
+      "options": [
+        "It is valid for 12 months, so proceed",
+        "Tax clearance is not needed for mortgagors",
+        "It has expired after 6 months; obtain a new one before approval"
+      ],
+      "answer": 2,
+      "explain": "A tax clearance is valid for 6 months and a typical manual requires it before approval."
+    }
+  ],
+  "sources": [
+    "Erudite Africa training module: Level 1: Credit Foundations (October 2026)",
+    "Erudite Africa credit training program overview and Ethiopian context module (October 2026)",
+    "A commercial bank's Revised Credit Procedure Manual (August 2025), unnamed",
+    "NBE directives as listed in the lessons, including SBB/87/2024, SBB/88/2024, SBB/90/2024, SBB/91/2024 and CRB/02/2019",
+    "Ethiopian laws as cited: Banking Business Proclamation No. 1360/2025, Movable Property Security Right Proclamation No. 1147/2019, Proclamation No. 97/1998"
+  ]
+}

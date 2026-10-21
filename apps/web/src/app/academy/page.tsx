@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ProCatalog } from "@/components/academy/CoursePages";
 import {
   ButtonLink,
   CtaBand,
@@ -104,7 +105,7 @@ export default function AcademyPage() {
         tone="canvas"
         eyebrow="Free for everyone"
         title="Financial Literacy for Everyone"
-        intro="Ten short, illustrated modules on business, goals, budgeting, bookkeeping, saving, investing, borrowing, financial services, digital money and insurance. In English and Amharic, with quizzes. No sign-up needed."
+        intro="Ten short, illustrated modules on business, goals, budgeting, bookkeeping, saving, investing, borrowing, financial services, digital money and insurance. In English and Amharic, with quizzes. Free: register once to start."
       >
         <div className="flex flex-wrap gap-3">
           <ButtonLink href="/academy/financial-literacy/">Start the free course</ButtonLink>
@@ -112,6 +113,15 @@ export default function AcademyPage() {
             <span lang="am">በአማርኛ ይማሩ</span>
           </ButtonLink>
         </div>
+      </Section>
+
+      <Section
+        id="online-courses"
+        eyebrow="For subscribers: bank and MFI staff"
+        title="Online professional courses"
+        intro="Interactive courses with Ethiopian examples, decisions to make, NBE rules, worked calculations, module quizzes, a final exam and a certificate. Module 1 of every course is free for registered users."
+      >
+        <ProCatalog />
       </Section>
 
       <div className="border-b border-line bg-white py-6">

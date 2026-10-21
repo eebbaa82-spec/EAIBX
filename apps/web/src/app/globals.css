@@ -117,3 +117,14 @@ body {
     padding: 0 !important;
   }
 }
+
+/* Academy certificate: one landscape page. */
+@page certificate {
+  size: A4 landscape;
+  margin: 12mm;
+}
+@media print {
+  .certificate {
+    page: certificate;
+  }
+}

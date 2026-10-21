@@ -1,0 +1,1931 @@
+{
+  "id": "ops-domestic",
+  "slug": "domestic-banking-operations",
+  "track": "operations",
+  "level": 1,
+  "icon": "bank",
+  "title": "Domestic Banking Operations",
+  "subtitle": "Accounts, deposits, tellers, cheques, transfers and fraud control in an Ethiopian bank branch",
+  "summary": "A practical course on how an Ethiopian bank branch opens accounts, handles cash and cheques, makes domestic transfers and prevents fraud, under the current NBE rules.",
+  "audience": "Customer service officers, tellers, cash and non-cash supervisors, account opening staff and new graduates joining branch operations",
+  "hours": 10,
+  "objectives": [
+    "Describe how a branch is organized and how the maker-checker principle and dual control protect the bank",
+    "Explain the duties the bank and the customer owe each other, including secrecy and compliance with lawful orders",
+    "Open accounts for any type of customer with the right documents, identification and due diligence",
+    "Choose the right deposit product and explain its conditions",
+    "Run a teller position, apply authorization limits and end-of-day controls",
+    "Examine, endorse, clear and return cheques, apply the insufficient-fund rules and process stop payment orders",
+    "Make domestic transfers and handle lost instruments",
+    "Maintain accounts and recognize and report fraud and forgery"
+  ],
+  "runningCase": {
+    "name": "A week at Bank A's Merkato branch",
+    "text": "Bank A's Merkato branch, led by Meseret Haile, serves traders in Addis Ababa's largest market. Through the week, Tana Gebeya Trading PLC, owned by Dawit Alemu, Hirut Bekele and Kebede Worku, a senior regional official, opens a current account, deposits Birr 2.4 million in cash containing a counterfeit note, has a second cheque returned for insufficient funds and asks to stop it, and finally faces a suspicious transfer after an employee leaks its account details. Each day you decide what the branch must do, which rule applies and who must be told."
+  },
+  "modules": [
+    {
+      "id": "s1",
+      "slug": "branch-organization-and-customer-relationship",
+      "icon": "bank",
+      "minutes": 50,
+      "title": "Branch organization and the bank-customer relationship",
+      "summary": "How a branch fits into the bank and the NBE system, who does what, how maker-checker and dual control protect everyone, and what the bank and the customer owe each other.",
+      "objectives": [
+        "Explain the NBE's role under Proclamation No. 1359/2025 and where a branch sits in the bank",
+        "Describe the main branch roles and the six branch processes",
+        "Apply the maker-checker principle and dual control to everyday branch tasks",
+        "Explain the duties the bank and the customer owe each other, including secrecy and lawful orders",
+        "Name the main customer types and the three families of deposit accounts"
+      ],
+      "lessons": [
+        {
+          "id": "nbe-setting",
+          "title": "The setting: the NBE and the bank",
+          "body": [
+            "Every Ethiopian bank branch works inside rules set by the National Bank of Ethiopia (NBE). NBE Proclamation No. 1359/2025, in force since February 2025, makes price stability the NBE's first objective, followed by financial stability and growth. It also gives the NBE power to license and supervise banks and to set rules on cash and legal tender.",
+            "A bank is organized in layers. Head office directorates write policy and procedures, district offices oversee groups of branches, and branches and sub-branches serve customers. The branch is where the rules meet real people, so a mistake at the counter can become a regulatory issue for the whole bank.",
+            "Directives issued under the old NBE law stay in force unless they conflict with the new Proclamation. That is why staff must always check whether a manual figure is still current."
+          ],
+          "points": [
+            "Head office: policy, products, systems and compliance",
+            "District office: supervision and support of branches",
+            "Branch and sub-branch: customer service, cash and records"
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "bank",
+                "label": "NBE",
+                "text": "Licenses, supervises and issues directives"
+              },
+              {
+                "icon": "book",
+                "label": "Head office",
+                "text": "Policies, procedures and products"
+              },
+              {
+                "icon": "people",
+                "label": "District office",
+                "text": "Oversees a group of branches"
+              },
+              {
+                "icon": "store",
+                "label": "Branch",
+                "text": "Serves customers and keeps records"
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE Proclamation No. 1359/2025",
+            "text": "Price stability is the primary objective of the NBE, then financial stability, then growth. Earlier directives stay in force unless they are inconsistent with the Proclamation (Art. 55)."
+          },
+          "tip": "When a manual and a newer directive disagree, follow the directive and tell your supervisor."
+        },
+        {
+          "id": "branch-roles",
+          "title": "Who does what in a branch",
+          "body": [
+            "A typical branch has a branch manager and an assistant, a cash customer service supervisor, a non-cash customer service supervisor, customer service officers and tellers, and a branch auditor. Each role has a clear job and clear limits.",
+            "The cash supervisor runs the head till and funds the tellers. The non-cash supervisor authorizes account openings and non-cash transactions. The branch auditor keeps the files and pre-audits sensitive payments. Knowing these lines helps every officer route work to the right person."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "people",
+                "label": "Branch manager",
+                "text": "Leads the branch, approves exceptions"
+              },
+              {
+                "icon": "coins",
+                "label": "Cash supervisor",
+                "text": "Runs the head till, funds tellers"
+              },
+              {
+                "icon": "check",
+                "label": "Non-cash supervisor",
+                "text": "Authorizes accounts and transfers"
+              },
+              {
+                "icon": "atm",
+                "label": "Tellers and officers",
+                "text": "Serve customers, capture transactions"
+              },
+              {
+                "icon": "book",
+                "label": "Branch auditor",
+                "text": "Keeps files, pre-audits payments"
+              }
+            ]
+          },
+          "example": {
+            "title": "Meet the Merkato branch of Bank A",
+            "text": "Bank A's Merkato branch in Addis Ababa serves traders, importers and market associations. Meseret Haile is the branch manager, Yonas Girma is the cash supervisor, Liya Tadesse is the non-cash supervisor, Bethlehem Assefa and Abel Mekonnen are tellers and customer service officers, and Kidist Worku is the branch auditor. On a busy Monday the branch handles more than 600 transactions, most of them cash."
+          }
+        },
+        {
+          "id": "six-processes",
+          "title": "The six branch processes",
+          "body": [
+            "Almost everything a branch does falls into six processes: collection (deposits and receipts), withdrawal, account opening, domestic transfer, international transfer and e-banking. Each has its own forms, checks and approval points.",
+            "Seeing the work as processes helps staff ask the same three questions every time: what document starts it, who captures it and who checks it."
+          ],
+          "visual": {
+            "type": "cycle",
+            "items": [
+              {
+                "label": "Collection"
+              },
+              {
+                "label": "Withdrawal"
+              },
+              {
+                "label": "Account opening"
+              },
+              {
+                "label": "Domestic transfer"
+              },
+              {
+                "label": "International transfer"
+              },
+              {
+                "label": "E-banking"
+              }
+            ]
+          },
+          "tip": "For any transaction, ask: what starts it, who makes it, who checks it."
+        },
+        {
+          "id": "maker-checker",
+          "title": "Maker-checker and dual control",
+          "body": [
+            "The maker-checker principle means no single person both captures and approves a transaction. The maker captures it, checks originals and stamps them \"original seen\", screens the customer against blacklists and counts cash. The checker verifies the work and authorizes it in the core banking system, checks the NBE delinquent list for cheque accounts and keeps dual control of the vault.",
+            "Dual control means two named people must be present for sensitive steps, such as opening the vault or handling duplicate keys. Together these controls protect customers, the bank and the staff themselves, because an honest officer is never left alone with an unchecked risk."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Maker",
+              "items": [
+                "Captures the transaction",
+                "Checks originals, stamps \"original seen\"",
+                "Screens against blacklists",
+                "Counts the cash"
+              ]
+            },
+            "right": {
+              "title": "Checker",
+              "items": [
+                "Verifies the maker's work",
+                "Authorizes in the core banking system",
+                "Checks the NBE delinquent list for cheque accounts",
+                "Keeps dual control of the vault"
+              ]
+            }
+          },
+          "scenario": {
+            "title": "Running case, Day 1: short of staff",
+            "situation": "Liya Tadesse, the non-cash supervisor at Bank A's Merkato branch, is on two weeks of leave. Branch manager Meseret Haile suggests that Yonas Girma, the cash supervisor, also authorizes all account openings for a week to keep the queue moving.",
+            "question": "What is the best response?",
+            "options": [
+              "Accept: Yonas is senior and the queue matters most",
+              "Let tellers authorize their own account openings for one week",
+              "Stop opening accounts until Liya returns",
+              "Arrange a temporary checker who does not also control cash, such as the assistant manager or a supervisor from the district office, and record the delegation in writing"
+            ],
+            "answer": 3,
+            "explain": "Combining cash control with account authorization puts conflicting duties in one person, and letting makers approve their own work breaks maker-checker. A written, temporary delegation to an independent checker keeps service going and keeps control."
+          }
+        },
+        {
+          "id": "bank-customer-duties",
+          "title": "What the bank and the customer owe each other",
+          "body": [
+            "The bank keeps customer information secret, pays valid instructions, keeps accurate records and gives statements. The customer gives true documents and uses the account lawfully. Secrecy is not absolute: the bank must obey lawful orders to pay or block funds from courts, the Ministry of Revenues, the anti-corruption commission, the Financial Intelligence Service and the NBE.",
+            "When an order arrives, the branch checks that it is genuine and addressed to the bank, acts on it exactly as written, and informs the branch manager and the legal unit. The officer does not tip off the customer where the order or the law forbids it."
+          ],
+          "points": [
+            "Bank: secrecy, pay valid instructions, records, statements, obey lawful orders",
+            "Customer: true documents, lawful use, care with cheques and PINs"
+          ],
+          "scenario": {
+            "title": "A court letter arrives",
+            "situation": "A letter from the Federal First Instance Court orders Bank A to block Birr 500,000 on the account of Tsion Fikru, a fabric trader. Her account shows a balance of Birr 350,000. Abel Mekonnen receives the letter at the counter.",
+            "question": "What should the branch do first?",
+            "options": [
+              "Call Tsion so she can explain before anything is blocked",
+              "Verify the letter, block the available balance as ordered, and inform the branch manager and the legal unit",
+              "Return the letter because the balance is below Birr 500,000",
+              "Wait for a second letter before acting"
+            ],
+            "answer": 1,
+            "explain": "The bank must comply with a lawful court order. It blocks what the account holds, reports the shortfall through the legal unit, and does not warn the customer first."
+          },
+          "worked": {
+            "title": "Blocking a balance under a court order",
+            "rows": [
+              {
+                "label": "Amount ordered to be blocked",
+                "value": "Birr 500,000"
+              },
+              {
+                "label": "Ledger balance",
+                "value": "Birr 350,000"
+              },
+              {
+                "label": "Amount blocked now",
+                "value": "Birr 350,000"
+              },
+              {
+                "label": "Shortfall against the order",
+                "value": "Birr 150,000"
+              },
+              {
+                "label": "Available to the customer",
+                "value": "Birr 0"
+              }
+            ],
+            "note": "The branch blocks the full available balance, reports the Birr 150,000 shortfall to the court through the legal unit, and asks the legal unit how to treat later credits."
+          }
+        },
+        {
+          "id": "customer-account-types",
+          "title": "Customer types and the three account families",
+          "body": [
+            "Branches serve three broad customer groups: individuals, businesses and institutions, and other banks. Each group needs different documents and has different risks.",
+            "Deposit accounts fall into three families. Savings accounts pay interest and use a passbook or card. Checking (current) accounts let the customer write cheques. Fixed time deposits lock money for an agreed period in return for a higher rate. Day 2 covers each product in detail."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "piggy",
+                "label": "Savings",
+                "text": "Interest bearing, passbook or card"
+              },
+              {
+                "icon": "receipt",
+                "label": "Checking (current)",
+                "text": "Cheques, for businesses and active users"
+              },
+              {
+                "icon": "clock",
+                "label": "Fixed time deposit",
+                "text": "Locked for a term, higher rate"
+              }
+            ]
+          },
+          "example": {
+            "title": "Three customers, three accounts",
+            "text": "Almaz Kebede, a teacher, opens a savings account for her monthly salary. Habesha Spice Traders, a sole proprietorship, opens a checking account to pay suppliers by cheque. Girma Haile, a retired engineer, puts Birr 400,000 in a 12-month fixed time deposit at Bank A because he will not need the money for a year."
+          }
+        }
+      ],
+      "takeaways": [
+        "The NBE sets the rules under Proclamation No. 1359/2025; the branch is where they are applied",
+        "Every branch role has clear duties and limits, and work should be routed to the right person",
+        "Maker-checker means no one captures and approves the same transaction",
+        "Dual control protects vaults, keys and honest staff",
+        "Customer secrecy gives way to lawful orders from courts and authorities, which the branch obeys exactly and reports internally"
+      ],
+      "quiz": [
+        {
+          "q": "Under the maker-checker principle, who authorizes a new account in the core banking system?",
+          "options": [
+            "The checker, a supervisor who did not capture it",
+            "The officer who captured it",
+            "The customer",
+            "The branch auditor after month end"
+          ],
+          "answer": 0,
+          "explain": "The checker authorizes; the maker never approves their own work."
+        },
+        {
+          "q": "What is the NBE's primary objective under Proclamation No. 1359/2025?",
+          "options": [
+            "Growth of bank lending",
+            "Exchange rate targets",
+            "Price stability",
+            "Bank profitability"
+          ],
+          "answer": 2,
+          "explain": "Price stability comes first, then financial stability, then growth."
+        },
+        {
+          "q": "Who funds the tellers from the head till?",
+          "options": [
+            "Any teller",
+            "The branch auditor",
+            "The non-cash supervisor",
+            "The cash customer service supervisor"
+          ],
+          "answer": 3,
+          "explain": "The cash supervisor runs the head till and funds the teller tills."
+        },
+        {
+          "q": "Which of these may lawfully order the bank to block a customer's account?",
+          "options": [
+            "A competitor bank",
+            "A court",
+            "The customer's neighbor",
+            "A newspaper"
+          ],
+          "answer": 1,
+          "explain": "Courts, the Ministry of Revenues, the anti-corruption commission, the Financial Intelligence Service and the NBE may issue lawful orders."
+        },
+        {
+          "q": "Which task should never be done by one person alone?",
+          "options": [
+            "Greeting customers",
+            "Printing a statement",
+            "Opening the vault",
+            "Answering a phone enquiry"
+          ],
+          "answer": 2,
+          "explain": "The vault is under dual control by two named officers."
+        },
+        {
+          "q": "Which is NOT one of the six branch processes?",
+          "options": [
+            "Loan recovery litigation",
+            "Domestic transfer",
+            "Collection",
+            "Account opening"
+          ],
+          "answer": 0,
+          "explain": "The six are collection, withdrawal, account opening, domestic transfer, international transfer and e-banking."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "slug": "opening-accounts-and-deposit-products",
+      "icon": "people",
+      "minutes": 65,
+      "title": "Opening accounts and deposit products",
+      "summary": "Identify and screen customers, collect the right documents for each customer type, handle special customers, and match people to the right deposit product.",
+      "objectives": [
+        "Accept only valid identification and apply customer due diligence, including beneficial owners and politically exposed persons",
+        "List the documents needed for companies, partnerships, associations, NGOs and government bodies",
+        "Open accounts for minors, illiterate and visually impaired customers and joint holders correctly",
+        "Match customers to deposit products and explain their conditions, including freely set rates",
+        "Apply the current foreign currency account rules for diaspora and foreign customers"
+      ],
+      "lessons": [
+        {
+          "id": "identification",
+          "title": "Identification: what counts as valid ID",
+          "body": [
+            "Acceptable IDs include the national ID (including the Fayda digital ID), a kebele ID, a passport with a residence permit for foreigners, and a driving license or similar official document. The ID must be valid, sealed, unaltered and show an address.",
+            "The officer also takes a photograph and a specimen signature, which become the reference for every later transaction. A poor specimen today means a forged signature may pass tomorrow."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "card",
+                "label": "National ID (Fayda)",
+                "text": "Digital ID now accepted alongside older IDs"
+              },
+              {
+                "icon": "house",
+                "label": "Kebele ID",
+                "text": "Valid, sealed and showing the address"
+              },
+              {
+                "icon": "book",
+                "label": "Passport",
+                "text": "With a residence permit for foreigners"
+              },
+              {
+                "icon": "truck",
+                "label": "Driving license",
+                "text": "Or a similar official photo ID"
+              }
+            ]
+          },
+          "example": {
+            "title": "An expired ID at the counter",
+            "text": "Mulugeta Desta comes to Bank A to open a savings account with a kebele ID that expired three months ago. Abel Mekonnen explains politely that an expired ID cannot be used, and shows him that he can use his Fayda number instead. The account is opened the same day with a valid ID on file."
+          },
+          "tip": "Check four things on every ID: valid date, seal, no alterations, address."
+        },
+        {
+          "id": "cdd-screening",
+          "title": "Due diligence, beneficial owners and PEPs",
+          "body": [
+            "Before an account is opened, the officer screens the customer against blacklists and AML lists. For companies, the bank must find the beneficial owners: the real people who own or control the business, not just the names on the forms.",
+            "Politically exposed persons (PEPs), such as senior public officials, are not refused because of their role. They receive enhanced due diligence: senior management approval, a clear source of funds and closer monitoring. Unusual activity is reported to the Financial Intelligence Service as a suspicious transaction report."
+          ],
+          "regulation": {
+            "source": "Proclamation No. 780/2013 and the NBE customer due diligence directive",
+            "text": "Banks must identify and verify customers and their beneficial owners, apply extra care to politically exposed persons, and report suspicious transactions to the Financial Intelligence Service."
+          },
+          "scenario": {
+            "title": "Running case, Day 2: a shareholder in public office",
+            "situation": "Tana Gebeya Trading PLC asks Bank A's Merkato branch to open a current account. It has three shareholders: Dawit Alemu (40%), Hirut Bekele (35%) and Kebede Worku (25%), who is a senior regional official. All documents are in order.",
+            "question": "What should the branch do?",
+            "options": [
+              "Refuse the account because a public official is a shareholder",
+              "Open the account normally; 25% is a minority stake",
+              "Treat Kebede Worku as a PEP: apply enhanced due diligence, record source of funds, get senior approval and monitor the account",
+              "Ask Kebede Worku to resign from the company first"
+            ],
+            "answer": 2,
+            "explain": "A PEP is a reason for enhanced due diligence, not refusal. A 25% owner is a beneficial owner and must be identified, verified and monitored."
+          }
+        },
+        {
+          "id": "business-documents",
+          "title": "Documents by business type",
+          "body": [
+            "Each legal form needs its own file. A sole proprietor brings a trade license, and the account is titled \"owner, trading as\" the business name. A private limited company or share company brings its registration, authenticated memorandum and articles, license, TIN and a signatory resolution that states who may sign and up to what limit. A share company in formation may open a blocked account for its capital deposit.",
+            "A joint venture has no legal personality, so it is opened as a joint account of its members. Cooperatives bring their registration and by-laws. The Commercial Code No. 1243/2021 governs business organizations, so the documents must match the form the business actually has."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Sole proprietor",
+              "items": [
+                "Trade license",
+                "Owner's valid ID",
+                "TIN",
+                "Title: owner, trading as business name"
+              ]
+            },
+            "right": {
+              "title": "PLC or share company",
+              "items": [
+                "Registration certificate",
+                "Authenticated memorandum and articles",
+                "Licence and TIN",
+                "Signatory resolution with limits"
+              ]
+            }
+          },
+          "example": {
+            "title": "Tana Gebeya Trading PLC's file",
+            "text": "For the running case, Liya Tadesse's checklist for Tana Gebeya Trading PLC covers the registration certificate, authenticated memorandum and articles, trade license, TIN, a board resolution naming Dawit Alemu and Hirut Bekele as joint signatories for payments above Birr 200,000, IDs and photos of all three shareholders, and the PEP approval for Kebede Worku."
+          }
+        },
+        {
+          "id": "institutions-associations",
+          "title": "NGOs, government bodies, schools, idir and equb",
+          "body": [
+            "NGOs and charities register under the Civil Society Organizations Proclamation No. 1113/2019, which replaced the 2009 charities law. Government offices and public enterprises need an instruction from the finance office naming the signatories. Schools and religious bodies bring their registration and a letter naming signatories.",
+            "Associations such as idir and equb bring their registration, by-laws and the minutes that elected their officers. They are often run as earmarked accounts, where the money may only be used for the stated purpose."
+          ],
+          "regulation": {
+            "source": "Civil Society Organizations Proclamation No. 1113/2019",
+            "text": "Accounts for NGOs and charities are opened on the basis of their registration under this Proclamation, which replaced Charities and Societies Proclamation No. 621/2009."
+          },
+          "example": {
+            "title": "The Merkato traders' idir",
+            "text": "The Merkato Textile Traders Idir, with 140 members, wants an account for its burial fund. Its chair, Ato Tesfaye Gudeta, brings the registration, by-laws and minutes of the meeting that elected him, the treasurer and the secretary. Bank A opens an earmarked account that needs two of the three officers to sign."
+          }
+        },
+        {
+          "id": "special-customers",
+          "title": "Minors, illiterate and visually impaired customers, joint accounts",
+          "body": [
+            "A minor's account is opened by a guardian and paid to the minor at 18. Interdicted persons and firms in liquidation need court papers naming who may act. Illiterate and visually impaired customers give a thumbprint before a witness and a bank officer, their photo is fixed on the passbook, and a supervisor authorizes each transaction.",
+            "Joint accounts depend on their wording. An \"and\" account needs all holders to sign. An \"and/or\" account lets any one holder sign. A bank may limit the number of holders; one manual's example is at most three."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "\"And\" joint account",
+              "items": [
+                "All holders must sign",
+                "Stronger control",
+                "Slower to use"
+              ]
+            },
+            "right": {
+              "title": "\"And/or\" joint account",
+              "items": [
+                "Any one holder may sign",
+                "Convenient",
+                "Each holder can withdraw everything"
+              ]
+            }
+          },
+          "scenario": {
+            "title": "A thumbprint without a witness",
+            "situation": "During a file review, Kidist Worku finds a savings account opened for Ayele Tolossa, a farmer from Sebeta who cannot read or write. The form carries his thumbprint and the officer's signature, but no witness signature. The account has had three small deposits.",
+            "question": "What is the right fix?",
+            "options": [
+              "Call Ayele back to repeat the thumbprint before a witness and an officer, and until then let only a supervisor authorize transactions",
+              "Close the account and return the money",
+              "Nothing, a thumbprint is enough",
+              "Ask any teller to sign as witness now"
+            ],
+            "answer": 0,
+            "explain": "The thumbprint must be taken before a witness and an officer. Re-doing it properly fixes the file; a witness who was not present cannot sign afterwards."
+          }
+        },
+        {
+          "id": "deposit-products",
+          "title": "Deposit products and how rates are set",
+          "body": [
+            "Beyond normal savings and checking, banks offer negotiable order of withdrawal (NOW) accounts, fixed time deposits (written application, a certificate, interest lost on early withdrawal), child trust and women's savings accounts, save-for-credit accounts, provident fund and pension accounts, escrow accounts (an escrow agreement is required), Ethiopian Commodity Exchange pay-in and pay-out accounts, and interest-free wadiah and qard accounts.",
+            "Checking accounts need a TIN and a check of the NBE delinquent list, and the officer explains the consequences of cheque misuse. A typical manual sets example minimum opening balances of Birr 25 for savings, Birr 250 for checking, Birr 10,000 for NOW and Birr 100,000 for fixed time deposits; each bank sets its own. Since NBE/INT/13/2026 there is no NBE minimum savings rate: each bank's board sets deposit rates."
+          ],
+          "regulation": {
+            "source": "NBE Directive No. NBE/INT/13/2026, Interest Rates (As Amended)",
+            "text": "Each bank freely sets its demand, savings and time deposit rates. Rates must be approved in writing by the bank's board on explicit written criteria and reported to the NBE, with monthly weighted average rates. There is no longer a minimum savings rate."
+          },
+          "worked": {
+            "title": "Fixed time deposit versus savings (Bank A example rates)",
+            "rows": [
+              {
+                "label": "Amount deposited by Girma Haile",
+                "value": "Birr 400,000"
+              },
+              {
+                "label": "Bank A board-approved 12-month fixed rate (example)",
+                "value": "12.0% a year"
+              },
+              {
+                "label": "Interest after 12 months",
+                "value": "Birr 48,000"
+              },
+              {
+                "label": "Bank A savings rate (example)",
+                "value": "8.0% a year"
+              },
+              {
+                "label": "Interest on savings over 12 months",
+                "value": "Birr 32,000"
+              },
+              {
+                "label": "Extra earned by keeping the term",
+                "value": "Birr 16,000"
+              },
+              {
+                "label": "If withdrawn early after 7 months (interest lost under the product terms)",
+                "value": "Fixed interest forfeited, as stated on the certificate"
+              }
+            ],
+            "note": "The fixed deposit pays more only if Girma keeps the money for the full term. The officer explains the early withdrawal condition before he signs."
+          },
+          "tip": "Never quote a rate from memory: use the board-approved rate sheet for that day."
+        },
+        {
+          "id": "fcy-accounts",
+          "title": "Foreign currency accounts after the FX reform",
+          "body": [
+            "Foreign currency accounts for foreign entities, diaspora customers and exporters follow FXD/01/2024, as amended by FXD/04/2026. Older manuals that describe retention accounts A and B or rules under FXD/48/2017 are out of date. FXD/01/2024 Arts. 13 to 15 cover diaspora and non-resident accounts.",
+            "Diaspora accounts must be fed from foreign sources. A credit from a local Birr source into a diaspora FCY account is an error to be reversed. FXD/04/2026 lets FDI companies open FX accounts with an application, investment license and TIN, and removed the minimum FX account deposit, so staff should confirm the current opening rules on the bank's latest circular."
+          ],
+          "regulation": {
+            "source": "NBE Directive No. FXD/01/2024, amended by FXD/04/2026",
+            "text": "FX accounts for diaspora customers and foreign nationals of Ethiopian origin are governed by FXD/01/2024. FXD/04/2026 lets FDI companies open FX accounts with only an application, investment license and TIN, and removes the minimum FX account deposit."
+          },
+          "scenario": {
+            "title": "A local credit into a diaspora account",
+            "situation": "Selamawit Getachew lives in Washington and holds a USD diaspora account at Bank A. Her brother in Addis Ababa asks the teller to credit Birr 120,000 converted into USD to her account from his local savings.",
+            "question": "What should the teller do?",
+            "options": [
+              "Convert and credit it; it is the same family",
+              "Ask the branch manager to approve an exception",
+              "Credit it and fix it at month end",
+              "Decline: a diaspora FCY account may only be fed from foreign sources; offer a Birr transfer to a local account instead"
+            ],
+            "answer": 3,
+            "explain": "A diaspora FCY account must be funded from abroad. A local-source credit breaks the FX rules, so the teller offers a lawful alternative."
+          }
+        }
+      ],
+      "takeaways": [
+        "Accept only valid, sealed, unaltered IDs that show an address; the Fayda digital ID is accepted",
+        "Identify beneficial owners; PEPs get enhanced due diligence, not refusal",
+        "Each legal form has its own document list; a joint venture is opened as a joint account",
+        "Illiterate and visually impaired customers: thumbprint before a witness and an officer, photo on the passbook, supervisor authorizes",
+        "Deposit rates are set by each bank's board under NBE/INT/13/2026; there is no NBE minimum savings rate",
+        "Diaspora FCY accounts follow FXD/01/2024 as amended and must be fed from foreign sources"
+      ],
+      "quiz": [
+        {
+          "q": "Which ID would you reject?",
+          "options": [
+            "A kebele ID that expired last month",
+            "A valid Fayda national ID",
+            "A passport with a valid residence permit",
+            "A valid driving license with an address"
+          ],
+          "answer": 0,
+          "explain": "An ID must be valid; an expired ID cannot be accepted."
+        },
+        {
+          "q": "A 30% shareholder of a PLC client is a senior public official. What applies?",
+          "options": [
+            "Refuse the account",
+            "No checks, as the company is the customer",
+            "Enhanced due diligence as a PEP",
+            "Open only a savings account"
+          ],
+          "answer": 2,
+          "explain": "PEPs get enhanced due diligence; they are not refused for their role."
+        },
+        {
+          "q": "How is a joint venture account opened?",
+          "options": [
+            "As a joint account of its members, since a joint venture has no legal personality",
+            "In the joint venture's own name as a legal person",
+            "As a sole proprietor account",
+            "It cannot be opened"
+          ],
+          "answer": 0,
+          "explain": "A joint venture has no legal personality, so its members open a joint account."
+        },
+        {
+          "q": "Who may sign on an \"and/or\" joint account?",
+          "options": [
+            "All holders together only",
+            "Only the first named holder",
+            "Any one holder",
+            "Only the branch manager"
+          ],
+          "answer": 2,
+          "explain": "\"And/or\" lets any one holder sign; \"and\" needs all."
+        },
+        {
+          "q": "Under NBE/INT/13/2026, who sets a bank's savings rate?",
+          "options": [
+            "The NBE, as a minimum",
+            "The Ministry of Finance",
+            "The branch manager",
+            "The bank's board, in writing, reported to the NBE"
+          ],
+          "answer": 3,
+          "explain": "Each bank's board sets deposit rates freely and reports them to the NBE."
+        },
+        {
+          "q": "Which law governs accounts for NGOs and charities?",
+          "options": [
+            "Charities and Societies Proclamation No. 621/2009",
+            "Civil Society Organizations Proclamation No. 1113/2019",
+            "Proclamation No. 780/2013",
+            "FXD/01/2024"
+          ],
+          "answer": 1,
+          "explain": "Proclamation No. 1113/2019 replaced the 2009 law."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "slug": "teller-operations-and-cash-control",
+      "icon": "coins",
+      "minutes": 60,
+      "title": "Teller operations and cash control",
+      "summary": "Run a teller position from opening to balancing: tills, cash deposits, withdrawals, CPOs and remittances, authorization limits, keys, legal tender and the end-of-day close.",
+      "objectives": [
+        "Explain how the vault, head till and teller tills work together",
+        "Receive cash deposits and pay withdrawals with the right checks",
+        "Pay cashier's payment orders and incoming remittances safely",
+        "Apply authorization limits and key and vault controls",
+        "Apply legal tender and counterfeit rules and complete the end-of-day close"
+      ],
+      "lessons": [
+        {
+          "id": "three-tills",
+          "title": "Vault, head till and teller tills",
+          "body": [
+            "Cash moves through three levels. The vault till is opened and closed by the branch manager or the non-cash supervisor under dual control. The head till, run by the cash supervisor, funds the tellers during the day and receives their surplus cash. Each teller till serves customers.",
+            "At day end the cash supervisor checks that every teller till is back to zero, meaning all cash has been returned to the head till and the vault and every movement is recorded."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Open the vault",
+                "text": "Two named officers, dual control"
+              },
+              {
+                "label": "Fund the head till",
+                "text": "Cash supervisor signs for the cash"
+              },
+              {
+                "label": "Fund teller tills",
+                "text": "Each teller signs for an opening float"
+              },
+              {
+                "label": "Serve customers",
+                "text": "Surplus cash goes back to the head till"
+              },
+              {
+                "label": "Return to zero",
+                "text": "All tills cleared, cash back in the vault"
+              }
+            ]
+          },
+          "tip": "Never accept a float without counting it in front of the person giving it to you."
+        },
+        {
+          "id": "cash-deposits",
+          "title": "Receiving cash deposits",
+          "body": [
+            "The teller counts the cash against the denominations written on the deposit slip. The system receipt is the customer's proof of deposit. Manual tickets are used only during a system outage and are replaced by system receipts once the system returns.",
+            "A suspected counterfeit note is never returned to the customer. The teller follows the branch procedure, tells the supervisor and records the note so it can be reported as the NBE rules require."
+          ],
+          "example": {
+            "title": "Running case, Day 3: a large cash deposit",
+            "text": "Hirut Bekele brings Birr 2,400,000 in cash for Tana Gebeya Trading PLC's account. Teller Bethlehem Assefa counts it against the slip: 11,000 notes of Birr 200 and 400 notes of Birr 500. In one bundle she finds a Birr 200 note with a blurred watermark. She keeps the note, calls Yonas Girma, credits Birr 2,399,800 and gives Hirut a receipt for the note held. Because the amount is unusual for the company's profile, Liya Tadesse also reviews whether a suspicious transaction report is needed."
+          },
+          "scenario": {
+            "title": "A suspected counterfeit in the bundle",
+            "situation": "While counting a Birr 50,000 deposit for Meron Abebe, a shop owner, teller Abel finds one Birr 200 note that fails the security feature check. Meron insists she just took it from a customer and asks for it back.",
+            "question": "What should Abel do?",
+            "options": [
+              "Give the note back so Meron can return it to her customer",
+              "Keep the note, credit Birr 49,800, give Meron a record of the note held and inform the supervisor for reporting",
+              "Accept it to keep a good customer happy",
+              "Tear the note in front of Meron"
+            ],
+            "answer": 1,
+            "explain": "Counterfeits must be withheld and reported, never put back into circulation. A written record protects the customer and the bank."
+          }
+        },
+        {
+          "id": "withdrawals",
+          "title": "Paying withdrawals",
+          "body": [
+            "For a cheque, the teller checks that the amount in words and figures agrees, the signature matches the specimen, the payee and endorsement are right, alterations are signed by the drawer, and the cheque is not stale or post-dated.",
+            "Savings withdrawals need a voucher and the passbook, with ID for large amounts. When the passbook is not presented, the branch manager must approve. Payments ordered by a court or authority are made only on the original order after verification."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Words and figures agree"
+              },
+              {
+                "label": "Signature matches the specimen"
+              },
+              {
+                "label": "Payee and endorsement correct"
+              },
+              {
+                "label": "Alterations signed by the drawer"
+              },
+              {
+                "label": "Not stale, not post-dated"
+              }
+            ]
+          },
+          "scenario": {
+            "title": "No passbook",
+            "situation": "Tadesse Bekele, a well-known customer, asks to withdraw Birr 35,000 from his savings account. He shows his Fayda ID but says he left his passbook at home and is in a hurry.",
+            "question": "What should the teller do?",
+            "options": [
+              "Pay, because the teller knows him",
+              "Refuse and send him home",
+              "Refer the withdrawal to the branch manager for approval, as required when the passbook is not presented",
+              "Pay half now and half when he brings the passbook"
+            ],
+            "answer": 2,
+            "explain": "Without the passbook, the branch manager must approve. Knowing a customer is not a control."
+          }
+        },
+        {
+          "id": "cpo-remittances",
+          "title": "Cashier's payment orders and incoming remittances",
+          "body": [
+            "Before paying a CPO, the teller verifies the issuing branch and its signatures, confirms in the system that the CPO is still outstanding, identifies the payee and takes the payee's endorsement.",
+            "For an incoming remittance, \"know your payee\": check the reference and the message, match the payee's ID to the name, and use a voucher countersigned by the checker."
+          ],
+          "example": {
+            "title": "A CPO from another branch",
+            "text": "Hana Mekuria presents a Birr 180,000 CPO issued by Bank A's Bole branch for a car deposit. Abel confirms in the system that the CPO is outstanding and that the signatures match, checks Hana's ID against the payee name, takes her endorsement on the back and passes it to Yonas Girma, who authorizes it because it is above Birr 100,000."
+          }
+        },
+        {
+          "id": "limits-keys",
+          "title": "Authorization limits, keys and the vault",
+          "body": [
+            "Banks set authorization limits by amount. In one manual's example, payments up to Birr 20,000 are checked by the system, Birr 20,000 to 100,000 need a supervisor, and above Birr 100,000 need a supervisor, the assistant or the branch manager. Replace these with your bank's current limits.",
+            "Keys and combinations are controlled strictly: a key register, combinations known only to named officers and reset at each handover, duplicate keys sealed under dual control at another location, and a written report of any lost key."
+          ],
+          "worked": {
+            "title": "Routing today's withdrawals (example limits)",
+            "rows": [
+              {
+                "label": "Birr 12,500 savings withdrawal",
+                "value": "System check only"
+              },
+              {
+                "label": "Birr 35,000 cheque",
+                "value": "Supervisor"
+              },
+              {
+                "label": "Birr 100,000 cheque",
+                "value": "Supervisor"
+              },
+              {
+                "label": "Birr 180,000 CPO",
+                "value": "Supervisor, assistant or branch manager"
+              },
+              {
+                "label": "Birr 650,000 cheque for Tana Gebeya Trading PLC",
+                "value": "Supervisor, assistant or branch manager, plus signatory limit check"
+              }
+            ],
+            "note": "The amount decides who checks. For company cheques, the signatory resolution also decides who must sign."
+          },
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Up to Birr 20,000",
+                "text": "Checked by the system (example)"
+              },
+              {
+                "label": "Birr 20,000 to 100,000",
+                "text": "Supervisor authorizes (example)"
+              },
+              {
+                "label": "Above Birr 100,000",
+                "text": "Supervisor, assistant or branch manager (example)"
+              }
+            ]
+          }
+        },
+        {
+          "id": "legal-tender",
+          "title": "Legal tender, cash limits and crypto",
+          "body": [
+            "Coins are legal tender only up to Birr 10 in a single payment, so a creditor may refuse larger amounts paid in coins unless both parties agree. Counterfeit notes must be reported. The NBE sets limits on cash withdrawals and cash holdings, and crypto payments are banned unless the NBE permits them.",
+            "Tellers should know the current NBE cash limits from the bank's latest circular, because they change, and explain them politely to customers."
+          ],
+          "regulation": {
+            "source": "NBE Proclamation No. 1359/2025, Arts. 36, 37, 43 and 51 (as cited in the training module)",
+            "text": "Coins are legal tender only up to Birr 10 per payment; counterfeits must be reported; the NBE may set cash withdrawal and holding limits; payment in crypto assets is banned unless the NBE permits it."
+          },
+          "tip": "If a customer asks to pay a bill in a crypto asset, the answer is no; offer a bank transfer instead."
+        },
+        {
+          "id": "end-of-day",
+          "title": "Balancing and the end-of-day close",
+          "body": [
+            "At day end each teller clears pending items, counts cash by denomination and balances it against the system. The branch then closes the day. No work starts on the next day before the previous day is closed.",
+            "After a transaction is committed, an error is corrected only by a reversal entry approved by the checker, never by editing or deleting. A shortage or excess is reported the same day, never hidden or covered from personal money."
+          ],
+          "worked": {
+            "title": "Bethlehem's till at day end",
+            "rows": [
+              {
+                "label": "Opening float from head till",
+                "value": "Birr 300,000"
+              },
+              {
+                "label": "Add: cash deposits received",
+                "value": "Birr 3,145,000"
+              },
+              {
+                "label": "Less: cash withdrawals paid",
+                "value": "Birr 1,820,500"
+              },
+              {
+                "label": "Less: surplus returned to head till during the day",
+                "value": "Birr 1,500,000"
+              },
+              {
+                "label": "Expected closing cash",
+                "value": "Birr 124,500"
+              },
+              {
+                "label": "Cash counted",
+                "value": "Birr 124,000"
+              },
+              {
+                "label": "Difference",
+                "value": "Birr 500 short"
+              }
+            ],
+            "note": "Bethlehem re-counts, checks each voucher against the system, and finds a Birr 500 note paid twice on a split withdrawal. She reports the shortage to Yonas Girma before the close, and the branch follows its shortage procedure."
+          },
+          "scenario": {
+            "title": "A Birr 500 shortage",
+            "situation": "Teller Abel's till is Birr 500 short at day end. A colleague suggests he quietly add Birr 500 of his own money so the day can close on time.",
+            "question": "What should Abel do?",
+            "options": [
+              "Re-count, trace the vouchers, and report the shortage to the cash supervisor so it is recorded under the branch procedure",
+              "Leave the shortage unrecorded and check again tomorrow",
+              "Add his own Birr 500 and close the day",
+              "Take Birr 500 from another teller's till"
+            ],
+            "answer": 0,
+            "explain": "Shortages must be traced and reported. Covering them hides errors and possible fraud, and breaks the audit trail."
+          }
+        }
+      ],
+      "takeaways": [
+        "Cash moves vault to head till to teller tills, and every till returns to zero at day end",
+        "The system receipt is the customer's proof; manual tickets only during an outage",
+        "Without a passbook, a savings withdrawal needs branch manager approval",
+        "Amount-based authorization limits and strict key control protect the cash",
+        "Coins are legal tender only up to Birr 10 per payment; counterfeits are withheld and reported; crypto payments are banned",
+        "Errors after commit are fixed only by reversal; shortages are reported, never covered"
+      ],
+      "quiz": [
+        {
+          "q": "Who checks that every teller till is back to zero at day end?",
+          "options": [
+            "The customer",
+            "The cash supervisor",
+            "Any teller",
+            "The district office"
+          ],
+          "answer": 1,
+          "explain": "The cash supervisor runs the head till and checks teller tills at day end."
+        },
+        {
+          "q": "A customer wants to pay a Birr 40 debt entirely in coins. Must the creditor accept?",
+          "options": [
+            "No, coins are legal tender only up to Birr 10 unless the parties agree",
+            "Yes, always",
+            "Only on weekdays",
+            "Only at a bank"
+          ],
+          "answer": 0,
+          "explain": "Coins are legal tender only up to Birr 10 per payment."
+        },
+        {
+          "q": "When may a teller issue a manual deposit ticket?",
+          "options": [
+            "Whenever the customer prefers",
+            "For deposits above Birr 100,000",
+            "Only during a system outage, to be replaced later by a system receipt",
+            "Never"
+          ],
+          "answer": 2,
+          "explain": "Manual tickets are an outage fallback only."
+        },
+        {
+          "q": "Using the example limits, who authorizes a Birr 75,000 cheque payment?",
+          "options": [
+            "A supervisor",
+            "The system only",
+            "The teller alone",
+            "The NBE"
+          ],
+          "answer": 0,
+          "explain": "Birr 20,000 to 100,000 needs a supervisor in the example limits."
+        },
+        {
+          "q": "How is an error corrected after a transaction is committed?",
+          "options": [
+            "Delete the transaction",
+            "Edit the amount",
+            "Post a reversal entry",
+            "Ignore it"
+          ],
+          "answer": 2,
+          "explain": "After commit, errors are corrected only by reversal."
+        },
+        {
+          "q": "What happens to a vault combination when the officer who knows it hands over?",
+          "options": [
+            "It is kept",
+            "It is shared with all tellers",
+            "It is written on the vault door",
+            "It is reset"
+          ],
+          "answer": 3,
+          "explain": "Combinations are known only to named officers and reset at each handover."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "slug": "cheques-clearing-and-domestic-transfers",
+      "icon": "receipt",
+      "minutes": 65,
+      "title": "Cheques, clearing and domestic transfers",
+      "summary": "Examine, endorse and clear cheques, apply the insufficient-fund cheque rules and stop payment orders, and process domestic transfers, CPOs and lost instruments.",
+      "objectives": [
+        "Check a cheque's essential elements under Commercial Code No. 1243/2021",
+        "Apply the rules on endorsement and crossing",
+        "Explain clearing through the cheque truncation system, the automated clearing house and RTGS",
+        "Apply the three-strike insufficient-fund cheque rules and the NBE delinquent list",
+        "Process stop payment orders, domestic transfers, CPOs and lost CPOs correctly"
+      ],
+      "lessons": [
+        {
+          "id": "cheque-basics",
+          "title": "The cheque and the bank's duty to pay",
+          "body": [
+            "Cheques are governed by the Commercial Code No. 1243/2021. Older manuals quote the 1960 Code's article numbers, so use the 2021 numbering. A valid cheque has its essential elements: the word cheque, an unconditional order to pay a sum, the bank's name, the place and date, and the drawer's signature.",
+            "The bank must pay a valid cheque when funds are available. Cheque books are issued only to checking account holders, against a requisition, and recorded in stock and issue registers so every leaf can be traced."
+          ],
+          "regulation": {
+            "source": "Commercial Code Proclamation No. 1243/2021",
+            "text": "Cheques, endorsement, crossing and stop payment follow the 2021 Code, which replaced the 1960 Commercial Code and its article numbers."
+          },
+          "example": {
+            "title": "A post-dated cheque",
+            "text": "On 10 March, Yared Tilahun presents a Birr 45,000 cheque dated 25 March drawn by Abay Edible Oil PLC. Bethlehem explains that the cheque is post-dated, cannot be paid before its date under Bank A's procedure, and asks him to come back on or after 25 March."
+          }
+        },
+        {
+          "id": "endorsement-crossing",
+          "title": "Endorsement and crossing",
+          "body": [
+            "An endorsement transfers a cheque. A blank endorsement (signature only) makes it payable to bearer, an order endorsement names the next payee, and a restrictive endorsement limits further transfer. An allonge, a slip attached to the cheque, is used when the back is full. Endorsements cannot be conditional or partial.",
+            "A crossing tells the bank how to pay. A general crossing means pay only into an account. A special crossing means pay only to the named bank. \"Account payee only\" means credit only the payee's account, and \"not negotiable\" limits the rights of a later holder. A crossing is deleted only with the drawer's written confirmation."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Endorsements",
+              "items": [
+                "Blank: payable to bearer",
+                "Order: names the next payee",
+                "Restrictive: limits transfer",
+                "Never conditional or partial",
+                "Allonge when the back is full"
+              ]
+            },
+            "right": {
+              "title": "Crossings",
+              "items": [
+                "General: pay into an account",
+                "Special: only to the named bank",
+                "Account payee only: payee's account",
+                "Not negotiable: limits later holders",
+                "Deleted only with the drawer's written confirmation"
+              ]
+            }
+          },
+          "scenario": {
+            "title": "Account payee only, for cash",
+            "situation": "Biniam Haile, the named payee, presents a Birr 90,000 cheque crossed \"account payee only\" and asks for cash because he needs to pay workers today. He holds a savings account at Bank A.",
+            "question": "What should the teller do?",
+            "options": [
+              "Pay cash, since he is the named payee",
+              "Ask him to cross out the crossing and sign",
+              "Pay cash if the branch manager agrees",
+              "Refuse cash and offer to credit his account, from which he can then withdraw"
+            ],
+            "answer": 3,
+            "explain": "An account payee only cheque may only be credited to the payee's account. Only the drawer, in writing, can remove a crossing."
+          }
+        },
+        {
+          "id": "clearing",
+          "title": "Clearing and settlement",
+          "body": [
+            "When a customer deposits another bank's cheque, the branch stamps it \"pending clearance\" and does not let the funds be used yet. Outward cheques are scanned into the cheque truncation system, and the clearing file is settled through the NBE's automated clearing house. High-value and urgent payments go through the real-time gross settlement (RTGS) system.",
+            "Inward cheques drawn on the branch are examined and either paid or returned for a reason the NBE allows, such as insufficient funds or a signature mismatch. Every return goes into the returned cheque register."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Deposit and stamp",
+                "text": "Pending clearance, funds not yet available"
+              },
+              {
+                "label": "Scan",
+                "text": "Cheque truncation system"
+              },
+              {
+                "label": "Clear",
+                "text": "NBE automated clearing house"
+              },
+              {
+                "label": "Settle",
+                "text": "Net positions settled between banks"
+              },
+              {
+                "label": "Pay or return",
+                "text": "Returns only for reasons the NBE allows, logged in the register"
+              }
+            ]
+          },
+          "tip": "Never let a customer draw on a cheque that is still pending clearance."
+        },
+        {
+          "id": "insufficient-fund",
+          "title": "Insufficient-fund cheques: the three-strike rule",
+          "body": [
+            "Issuing a cheque without funds harms the payee and the payment system. On a first offence, the bank records it, blocks debits until the payee is paid, charges a fee and gives a written warning. A second offence within 12 months brings a fine and a final warning. A third within 24 months means closing all the customer's checking accounts, a fine, and a report to the NBE within 5 working days, which puts the customer on the NBE delinquent list.",
+            "Removal from the list needs at least 12 months, settlement of all cheques with a public notice, and an application to the NBE. The 2018 manual's fines were 3% capped at Birr 25,000 for a second offence and 5% capped at Birr 50,000 for a third; confirm the current figures against the latest NBE directive. Credit manuals also treat bounced cheques as a sign of poor character when a customer later applies for a loan."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "First offence",
+                "text": "Record, block debits until the payee is paid, charge, written warning"
+              },
+              {
+                "label": "Second within 12 months",
+                "text": "Fine and final warning"
+              },
+              {
+                "label": "Third within 24 months",
+                "text": "Close all checking accounts, fine, report to the NBE within 5 working days"
+              },
+              {
+                "label": "Delinquent list",
+                "text": "Removal after at least 12 months, settlement, public notice and application"
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE cheque and payment system directives (as summarized in the training module)",
+            "text": "A third insufficient-fund cheque within 24 months is reported to the NBE within 5 working days, and the customer is placed on the NBE delinquent list. Removal needs at least 12 months, settlement of all cheques with a public notice, and an application to the NBE."
+          },
+          "worked": {
+            "title": "Fines on Tana Gebeya Trading PLC's cheques (2018 manual figures, for practice)",
+            "rows": [
+              {
+                "label": "Second offence: cheque amount",
+                "value": "Birr 600,000"
+              },
+              {
+                "label": "Fine at 3%",
+                "value": "Birr 18,000 (below the Birr 25,000 cap)"
+              },
+              {
+                "label": "Third offence (hypothetical): cheque amount",
+                "value": "Birr 1,200,000"
+              },
+              {
+                "label": "Fine at 5%",
+                "value": "Birr 60,000"
+              },
+              {
+                "label": "Cap",
+                "value": "Birr 50,000"
+              },
+              {
+                "label": "Fine charged",
+                "value": "Birr 50,000"
+              },
+              {
+                "label": "Report to the NBE",
+                "value": "Within 5 working days"
+              }
+            ],
+            "note": "The cap matters for large cheques. Always confirm the current percentages and caps before charging."
+          },
+          "scenario": {
+            "title": "Running case, Day 4: the second bounce",
+            "situation": "A Birr 600,000 cheque from Tana Gebeya Trading PLC to Abay Edible Oil PLC is returned for insufficient funds. The returned cheque register shows a first return eight months ago.",
+            "question": "What does the branch do?",
+            "options": [
+              "Close all the company's checking accounts and report it to the NBE",
+              "Treat it as a second offence: block debits until the payee is paid, charge the fine and issue a final warning",
+              "Treat it as a new first offence because eight months have passed",
+              "Pay the cheque from the branch's own funds"
+            ],
+            "answer": 1,
+            "explain": "A second insufficient-fund cheque within 12 months is a second offence. Closure and NBE reporting apply only on a third within 24 months."
+          }
+        },
+        {
+          "id": "stop-payment",
+          "title": "Stop payment orders",
+          "body": [
+            "A customer may stop a cheque only when it is lost or stolen, never to avoid an insufficient-fund return. The customer must bring police evidence within 15 working days. A court or the Ministry of Revenues may stop payment by official letter.",
+            "The bank itself stops payment on news of the drawer's death, after legal advice. Every stop is recorded in the system at once so no branch pays the cheque by mistake."
+          ],
+          "scenario": {
+            "title": "Running case, Day 4: stop it, please",
+            "situation": "After the second return, Dawit Alemu of Tana Gebeya Trading PLC asks Liya Tadesse to stop payment on the same Birr 600,000 cheque so that it cannot be presented again. He says it is not lost, only that cash is tight.",
+            "question": "What should Liya do?",
+            "options": [
+              "Accept the stop to help the customer",
+              "Accept if he pays a stop payment fee",
+              "Refuse: a customer stop payment is only for a lost or stolen cheque, and explain how to settle with the payee",
+              "Accept and tell the payee the cheque was lost"
+            ],
+            "answer": 2,
+            "explain": "Stop payment is not a tool to avoid an insufficient-fund return. The right path is to fund the account or settle with the payee."
+          },
+          "example": {
+            "title": "A stolen cheque book",
+            "text": "Sara Mohammed reports that her bag, with a cheque book, was stolen at Merkato bus station. Liya records stop payment on the unused leaves at once and reminds Sara to bring the police report within 15 working days. Two days later a forged leaf is presented in clearing and returned."
+          }
+        },
+        {
+          "id": "domestic-transfers",
+          "title": "Domestic transfers, CPOs and lost instruments",
+          "body": [
+            "Telegraphic transfers need full names and phone numbers of sender and receiver, and the paying branch checks the message before paying. Account-to-account transfers move money between accounts within the bank. A CPO is a payment order issued by the bank; one manual's example sets its validity at 6 months.",
+            "For a lost CPO, the branch notifies all branches, which reply within 7 working days; after 15 days the bank refunds the buyer against an indemnity. Customers also use mobile, internet, ATM and POS channels. Mobile money wallets have NBE limits: under ONPS/09/2023, a daily wallet balance of Birr 75,000 and a daily aggregate transaction limit of Birr 150,000, with some exemptions."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Day 0",
+                "text": "Customer reports the lost CPO; stop recorded; all branches notified"
+              },
+              {
+                "label": "Within 7 working days",
+                "text": "Branches confirm whether it was presented"
+              },
+              {
+                "label": "After 15 days",
+                "text": "Refund or reissue against a signed indemnity"
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE Directive No. ONPS/09/2023, Payment Instrument Issuer (Amendment)",
+            "text": "Raised the daily mobile wallet balance limit to Birr 75,000 and set a daily aggregate transaction limit of Birr 150,000, with exemptions such as utility, tax and bulk payments. It was further amended by ONPS/10/2025, so confirm current limits."
+          },
+          "example": {
+            "title": "A lost CPO for a land payment",
+            "text": "Getahun Assefa buys a Birr 750,000 CPO from Bank A to pay for a plot, then loses it on the way. The branch records a stop, notifies all branches, and receives seven replies confirming it was not presented. After 15 days Getahun signs an indemnity and receives a replacement CPO."
+          }
+        }
+      ],
+      "takeaways": [
+        "Use the Commercial Code No. 1243/2021 for cheques, not the 1960 article numbers",
+        "Crossings and endorsements change how a cheque may be paid; a crossing is removed only by the drawer in writing",
+        "Cheques clear through the truncation system and the NBE automated clearing house; high-value payments use RTGS",
+        "Three strikes: warning, then fine and final warning within 12 months, then closure and NBE report within 5 working days within 24 months",
+        "A customer stop payment is only for a lost or stolen cheque, with police evidence within 15 working days",
+        "Lost CPOs follow a notify, confirm and indemnify routine"
+      ],
+      "quiz": [
+        {
+          "q": "A cheque crossed \"account payee only\" is presented for cash by the payee. Can the teller pay cash?",
+          "options": [
+            "Yes",
+            "Yes, if under Birr 20,000",
+            "Yes, with the manager's approval",
+            "No, it may only be credited to the payee's account"
+          ],
+          "answer": 3,
+          "explain": "Account payee only cheques go to the payee's account."
+        },
+        {
+          "q": "Which endorsement is not allowed?",
+          "options": [
+            "Blank",
+            "Conditional",
+            "Order",
+            "Restrictive"
+          ],
+          "answer": 1,
+          "explain": "Endorsements cannot be conditional or partial."
+        },
+        {
+          "q": "Within how many working days must a third insufficient-fund cheque be reported to the NBE?",
+          "options": [
+            "5",
+            "10",
+            "15",
+            "30"
+          ],
+          "answer": 0,
+          "explain": "The report goes to the NBE within 5 working days."
+        },
+        {
+          "q": "A customer asks to stop a cheque because the account lacks funds. What should the officer do?",
+          "options": [
+            "Accept",
+            "Accept for a fee",
+            "Refuse; a customer stop is only for a lost or stolen cheque",
+            "Ask the payee"
+          ],
+          "answer": 2,
+          "explain": "Stop payment cannot be used to avoid an insufficient-fund return."
+        },
+        {
+          "q": "Through which system are high-value payments settled in real time?",
+          "options": [
+            "RTGS",
+            "Cheque truncation system",
+            "Manual tickets",
+            "POS"
+          ],
+          "answer": 0,
+          "explain": "RTGS settles high-value payments one by one in real time."
+        },
+        {
+          "q": "What is attached when there is no room left for endorsements on the back of a cheque?",
+          "options": [
+            "A CPO",
+            "A stop order",
+            "An allonge",
+            "A deposit slip"
+          ],
+          "answer": 2,
+          "explain": "An allonge is a slip attached for further endorsements."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "slug": "account-maintenance-and-fraud",
+      "icon": "shield",
+      "minutes": 60,
+      "title": "Account maintenance, fraud and reporting",
+      "summary": "Maintain accounts correctly, control suspense items, recognize and respond to fraud and forgery, and report to the right authority while treating customers fairly.",
+      "objectives": [
+        "Handle inactive and dormant accounts, closures, signature changes and powers of attorney",
+        "Follow up and clear suspense items on time",
+        "Recognize forgery, insider collusion and digital fraud and prevent it",
+        "Report suspicious transactions and operational losses, and know the NBE's power to freeze funds",
+        "Treat customers fairly and handle complaints"
+      ],
+      "lessons": [
+        {
+          "id": "dormant-accounts",
+          "title": "Inactive and dormant accounts",
+          "body": [
+            "Accounts that stop moving carry extra risk, because an owner who is not watching will not notice a fraudulent withdrawal. In one manual's example, a checking account with no movement for 6 months becomes inactive, and a savings account with no movement for 2 years becomes dormant.",
+            "On a dormant account, the branch manager approves any withdrawal, and the account is reactivated only after the customer updates their information. Long-unclaimed balances follow the bank's unclaimed balance procedure, and passbooks left with the branch are kept in custody under register."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Active",
+                "text": "Normal movement"
+              },
+              {
+                "label": "6 months, checking (example)",
+                "text": "Inactive, extra checks on debits"
+              },
+              {
+                "label": "2 years, savings (example)",
+                "text": "Dormant, branch manager approves withdrawals"
+              },
+              {
+                "label": "Reactivation",
+                "text": "Updated customer information and ID"
+              }
+            ]
+          },
+          "example": {
+            "title": "A dormant account wakes up",
+            "text": "Workneh Gebru's savings account has not moved for three years. A man arrives with a withdrawal voucher for Birr 85,000 and a passbook. The signature looks close, but the photo on file does not match his face. Teller Bethlehem refers it to Meseret Haile, who refuses the payment and calls Workneh on his recorded number. Workneh, who lives in Hawassa, confirms he sent no one."
+          }
+        },
+        {
+          "id": "maintenance-poa",
+          "title": "Closing accounts, signatures, mandates and powers of attorney",
+          "body": [
+            "To close an account, the branch collects the passbook and unused cheques, credits interest due and files the documents. Changes of signature or address need the customer's written request and ID. Every non-individual account has a mandate file with the current signatories and limits, and rubber stamp registers record company seals.",
+            "A power of attorney must be authenticated, and its wording matters: a power to \"operate\" an account does not allow the agent to open new accounts. Customer information is confidential at every step."
+          ],
+          "scenario": {
+            "title": "A power of attorney that does not match",
+            "situation": "Elias Tamrat presents an authenticated power of attorney to withdraw Birr 260,000 from the account of his uncle, Getnet Tamrat. His signature on the voucher does not match the specimen of the agent in the mandate file.",
+            "question": "What is the right immediate action?",
+            "options": [
+              "Pay, because the power of attorney is authenticated",
+              "Pay half the amount",
+              "Do not pay; refer to the supervisor and branch manager, verify with the account holder through recorded contacts, and record the incident",
+              "Ask Elias to sign again until it matches"
+            ],
+            "answer": 2,
+            "explain": "A signature mismatch is a red flag regardless of the document. Stop, escalate, verify with the owner and record what happened."
+          },
+          "points": [
+            "Close: collect passbook and unused cheques, credit interest, file",
+            "Mandate file for every non-individual account",
+            "\"Operate\" does not include opening new accounts"
+          ]
+        },
+        {
+          "id": "suspense",
+          "title": "Suspense accounts",
+          "body": [
+            "Suspense accounts hold items that cannot yet be posted to the right account, such as an unidentified credit. They are meant to be temporary. Old open items hide errors and fraud.",
+            "One manual's example routine is to follow up open items from 30 days, write to the parties after 45 days, and clear them within 90 days, reporting long-outstanding items to management."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Day 30",
+                "text": "Follow up the open item"
+              },
+              {
+                "label": "Day 45",
+                "text": "Write to the parties"
+              },
+              {
+                "label": "Day 90",
+                "text": "Clear the item; report anything still open"
+              }
+            ]
+          },
+          "worked": {
+            "title": "Merkato branch suspense ageing on 30 June (example routine)",
+            "rows": [
+              {
+                "label": "Items under 30 days",
+                "value": "6 items, Birr 142,300"
+              },
+              {
+                "label": "Items 30 to 45 days: follow up",
+                "value": "3 items, Birr 61,000"
+              },
+              {
+                "label": "Items 45 to 90 days: letter sent",
+                "value": "2 items, Birr 98,750"
+              },
+              {
+                "label": "Item at 80 days",
+                "value": "Birr 74,000 unidentified transfer"
+              },
+              {
+                "label": "Items over 90 days: report",
+                "value": "1 item, Birr 12,400"
+              },
+              {
+                "label": "Total open",
+                "value": "12 items, Birr 314,450"
+              }
+            ],
+            "note": "The Birr 74,000 item has 10 days left. It needs a named owner and a plan today, and the Birr 12,400 item must be reported."
+          },
+          "scenario": {
+            "title": "An 80-day suspense item",
+            "situation": "A Birr 74,000 credit has sat in suspense for 80 days. The remitting branch's message lists a beneficiary name that does not match any Merkato customer. A letter was sent at day 45 with no reply.",
+            "question": "What should the non-cash supervisor do now?",
+            "options": [
+              "Leave it; there are still 10 days",
+              "Post it to the customer with the most similar name",
+              "Write it off to income",
+              "Escalate: contact the remitting branch and sender directly, document the trail, and plan to clear or return it before day 90, reporting it if it stays open"
+            ],
+            "answer": 3,
+            "explain": "With 10 days left, active follow-up and documentation are needed. Guessing the beneficiary or taking it to income are both wrong."
+          }
+        },
+        {
+          "id": "fraud-types",
+          "title": "Fraud and forgery: what to look for",
+          "body": [
+            "Branch fraud takes many forms: forged signatures, seals, IDs, documents and endorsements; insider collusion; and digital fraud such as social engineering, PIN and OTP theft, SIM swap and fake payment messages.",
+            "Prevention is simple to say and hard to do under pressure: verify originals, never rush, escalate doubts, and apply risk-based due diligence. Fraudsters often create urgency because it makes staff skip checks."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "receipt",
+                "label": "Forged documents",
+                "text": "Signatures, seals, IDs, endorsements"
+              },
+              {
+                "icon": "people",
+                "label": "Insider collusion",
+                "text": "Staff working with outsiders"
+              },
+              {
+                "icon": "phone",
+                "label": "Social engineering",
+                "text": "Fake calls from \"the bank\""
+              },
+              {
+                "icon": "lock",
+                "label": "PIN and OTP theft",
+                "text": "Never share a code"
+              },
+              {
+                "icon": "card",
+                "label": "SIM swap",
+                "text": "A new SIM takes over the customer's number"
+              },
+              {
+                "icon": "warning",
+                "label": "Fake payment messages",
+                "text": "Check the system, not the SMS"
+              }
+            ]
+          },
+          "example": {
+            "title": "Running case, Day 5: a leak and a transfer",
+            "text": "An accounts clerk at Tana Gebeya Trading PLC shares the company's account number and a copy of the signatories' IDs with an outsider. Two days later, a transfer request for Birr 1,350,000 to an unknown account in Adama arrives with signatures that look right. Liya Tadesse notices the request came by a new email address and calls Dawit Alemu on the number in the mandate file. He knows nothing about it. The branch stops the transfer, records the incident and prepares a suspicious transaction report."
+          }
+        },
+        {
+          "id": "digital-fraud",
+          "title": "Digital fraud and customer awareness",
+          "body": [
+            "Many frauds now start with a phone call. A caller claims to be from the bank, says the account is at risk and asks for an OTP or PIN, or asks the customer to \"move money to a safe account\". The bank never asks for these.",
+            "The NBE's fraud awareness instruction FCPED/142/26 of 21 April 2026 requires microfinance institutions to run monthly awareness campaigns, send fraud-warning messages in local languages, report fraud-linked numbers and accounts, and report to the NBE within 10 days. Banks use the same messages with their own customers."
+          ],
+          "regulation": {
+            "source": "NBE Instruction FCPED/142/26 (21 April 2026), customer fraud awareness",
+            "text": "Microfinance institutions must run monthly fraud awareness campaigns, send warning messages in local languages, report fraud-linked numbers and accounts, and report to the NBE within 10 days."
+          },
+          "scenario": {
+            "title": "A call from \"the bank\"",
+            "situation": "Mekdes Alemayehu calls the branch in tears. Someone who said he worked at Bank A told her the account was hacked and asked for the code sent to her phone. Ten minutes later Birr 48,000 left her account through mobile banking to an unknown wallet.",
+            "question": "What should the branch do first?",
+            "options": [
+              "Tell her it is her own fault and close the call",
+              "Block her mobile banking access at once, record the complaint, report the receiving wallet through the bank's fraud channel, and explain the next steps and timelines to her",
+              "Wait for her to visit the branch with ID before doing anything",
+              "Refund her from the teller's till"
+            ],
+            "answer": 1,
+            "explain": "Speed matters: block the channel, record and report the recipient so funds may be traced, and treat the customer fairly with clear next steps."
+          }
+        },
+        {
+          "id": "reporting",
+          "title": "Reporting, freezing and recording losses",
+          "body": [
+            "Suspicious transactions are reported to the Financial Intelligence Service under Proclamation No. 780/2013, without telling the customer. Operational losses are recorded in the bank's loss database; the training module cites recording losses of Birr 20,000 or more under SBB/95/2025 and the NBE's risk management guidance.",
+            "Under NBE Proclamation No. 1359/2025, the NBE may freeze suspect funds for up to 10 days. The branch acts on such instructions at once and passes them to the compliance unit."
+          ],
+          "regulation": {
+            "source": "NBE Proclamation No. 1359/2025 (fund freezing, Art. 50) and Proclamation No. 780/2013",
+            "text": "The NBE may freeze suspect funds for up to 10 days. Banks report suspicious transactions to the Financial Intelligence Service."
+          },
+          "worked": {
+            "title": "Recording the forged withdrawal loss",
+            "rows": [
+              {
+                "label": "Forged cheque paid at another branch",
+                "value": "Birr 165,000"
+              },
+              {
+                "label": "Recovered from the receiving account after a freeze",
+                "value": "Birr 120,000"
+              },
+              {
+                "label": "Net loss",
+                "value": "Birr 45,000"
+              },
+              {
+                "label": "Recording threshold cited in the module",
+                "value": "Birr 20,000"
+              },
+              {
+                "label": "Record in the operational loss database",
+                "value": "Yes"
+              },
+              {
+                "label": "Suspicious transaction report to the Financial Intelligence Service",
+                "value": "Yes"
+              }
+            ],
+            "note": "Both the gross amount and the recovery are recorded, so management sees the full event and the control that failed."
+          }
+        },
+        {
+          "id": "fair-treatment",
+          "title": "Fair treatment and complaints",
+          "body": [
+            "NBE Proclamation No. 1359/2025 Art. 41 gives the NBE consumer protection duties, and the NBE's financial consumer protection directive FCP/01/2020 covers fair treatment, disclosure of rates, complaints handling and customer data. For branch staff this means clear information, polite service, written records of complaints and timely answers.",
+            "A good complaint process logs the complaint, gives the customer a reference, investigates, answers in writing and escalates unresolved cases. Complaints are also an early warning of fraud and control failures."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Listen and log",
+                "text": "Record the complaint with a reference"
+              },
+              {
+                "label": "Acknowledge",
+                "text": "Tell the customer the next steps and timeline"
+              },
+              {
+                "label": "Investigate",
+                "text": "Check records, CCTV and logs"
+              },
+              {
+                "label": "Answer in writing",
+                "text": "Clear, polite and factual"
+              },
+              {
+                "label": "Escalate and learn",
+                "text": "Unresolved cases and control fixes"
+              }
+            ]
+          },
+          "regulation": {
+            "source": "NBE Proclamation No. 1359/2025 Art. 41 and Directive FCP/01/2020",
+            "text": "Banks must treat financial consumers fairly, disclose terms clearly and handle complaints."
+          },
+          "tip": "Give every complaining customer a reference number before they leave."
+        }
+      ],
+      "takeaways": [
+        "Dormant accounts need branch manager approval for withdrawals and updated customer information to reactivate",
+        "A power to \"operate\" an account does not include opening new accounts; signature mismatches are escalated",
+        "Suspense items are followed up at 30 days, by letter at 45 days and cleared within 90 days (example routine)",
+        "Verify originals, never rush and escalate doubts: urgency is the fraudster's favorite tool",
+        "Report suspicious transactions to the Financial Intelligence Service; the NBE may freeze suspect funds for up to 10 days",
+        "Fair treatment and logged complaints are part of the control system"
+      ],
+      "quiz": [
+        {
+          "q": "In the example rules, when does a savings account become dormant?",
+          "options": [
+            "After 2 years with no movement",
+            "After 6 months",
+            "After 30 days",
+            "Never"
+          ],
+          "answer": 0,
+          "explain": "The example is no movement for 2 years for savings."
+        },
+        {
+          "q": "A power of attorney allows the agent to \"operate\" an account. May the agent open a new account for the principal?",
+          "options": [
+            "Yes",
+            "Only with a cheque book",
+            "Only a savings account",
+            "No"
+          ],
+          "answer": 3,
+          "explain": "\"Operate\" does not allow opening new accounts."
+        },
+        {
+          "q": "For how long may the NBE freeze suspect funds under Proclamation No. 1359/2025?",
+          "options": [
+            "Up to 30 days",
+            "Up to 10 days",
+            "Up to 90 days",
+            "Indefinitely"
+          ],
+          "answer": 1,
+          "explain": "The NBE may freeze suspect funds for up to 10 days."
+        },
+        {
+          "q": "To whom are suspicious transaction reports sent?",
+          "options": [
+            "The Financial Intelligence Service",
+            "The police only",
+            "The customer",
+            "The Ministry of Trade"
+          ],
+          "answer": 0,
+          "explain": "Suspicious transactions go to the Financial Intelligence Service."
+        },
+        {
+          "q": "A caller asks a customer for the OTP sent to their phone, saying they are from the bank. This is:",
+          "options": [
+            "A normal bank check",
+            "A system upgrade",
+            "Social engineering fraud",
+            "A complaint"
+          ],
+          "answer": 2,
+          "explain": "Banks never ask for OTPs or PINs."
+        },
+        {
+          "q": "In the example routine, by when should a suspense item be cleared?",
+          "options": [
+            "90 days",
+            "45 days",
+            "30 days",
+            "One year"
+          ],
+          "answer": 0,
+          "explain": "Follow up at 30, letter at 45, clear within 90 days."
+        }
+      ]
+    }
+  ],
+  "exam": [
+    {
+      "q": "Bank A's Merkato branch is short of staff. Which arrangement keeps maker-checker intact?",
+      "options": [
+        "The cash supervisor also authorizes account openings",
+        "Tellers authorize their own account openings",
+        "A written temporary delegation of account authorization to the assistant manager, who does not control cash",
+        "The customer signs as checker"
+      ],
+      "answer": 2,
+      "explain": "An independent, documented checker preserves segregation of duties."
+    },
+    {
+      "q": "A court orders a block of Birr 800,000 on an account holding Birr 610,000. How much is blocked now, and what is reported?",
+      "options": [
+        "Birr 610,000 blocked; the Birr 190,000 shortfall reported through the legal unit",
+        "Birr 0, because the balance is short",
+        "Birr 800,000, creating an overdraft",
+        "Birr 305,000, half the balance"
+      ],
+      "answer": 0,
+      "explain": "The branch blocks what is available and reports the shortfall."
+    },
+    {
+      "q": "Which statement about customer secrecy is correct?",
+      "options": [
+        "It is absolute and overrides court orders",
+        "It ends when an account becomes dormant",
+        "It applies only to companies",
+        "It gives way to lawful orders from courts, the Ministry of Revenues, the anti-corruption commission, the Financial Intelligence Service and the NBE"
+      ],
+      "answer": 3,
+      "explain": "Secrecy is a duty but yields to lawful orders."
+    },
+    {
+      "q": "A PLC's shareholders are A (45%), B (35%) and C (20%), and C is a senior public official. What is the correct approach?",
+      "options": [
+        "Identify only A, the largest owner",
+        "Identify all beneficial owners and apply enhanced due diligence because of C",
+        "Refuse the account",
+        "Open the account without screening"
+      ],
+      "answer": 1,
+      "explain": "All beneficial owners are identified and the PEP triggers enhanced due diligence."
+    },
+    {
+      "q": "A share company is still being formed and wants to deposit its subscribed capital. What can the bank open?",
+      "options": [
+        "A blocked account for the capital deposit",
+        "A normal checking account with a cheque book",
+        "A diaspora FCY account",
+        "Nothing until registration"
+      ],
+      "answer": 0,
+      "explain": "A share company in formation may open a blocked account for its capital deposit."
+    },
+    {
+      "q": "An idir wants an account for its burial fund. Which set of documents is right?",
+      "options": [
+        "Trade license and TIN",
+        "A court order",
+        "Registration, by-laws and minutes electing its officers",
+        "Passport and residence permit"
+      ],
+      "answer": 2,
+      "explain": "Associations bring registration, by-laws and minutes, often with an earmarked account."
+    },
+    {
+      "q": "Girma deposits Birr 250,000 for 12 months at an example board-approved rate of 11%. How much interest does he earn if he keeps the full term?",
+      "options": [
+        "Birr 27,500",
+        "Birr 22,500",
+        "Birr 11,000",
+        "Birr 30,000"
+      ],
+      "answer": 0,
+      "explain": "250,000 x 11% = Birr 27,500."
+    },
+    {
+      "q": "A trainer says the NBE minimum savings rate is 7%. What is correct today?",
+      "options": [
+        "It is still 7%",
+        "It is 10%",
+        "There is no NBE minimum; each bank's board sets rates under NBE/INT/13/2026",
+        "It is set by each branch"
+      ],
+      "answer": 2,
+      "explain": "NBE/INT/13/2026 removed the minimum savings rate."
+    },
+    {
+      "q": "A teller counts a deposit of Birr 80,000 and finds two counterfeit Birr 200 notes. What is credited?",
+      "options": [
+        "Birr 80,000",
+        "Nothing; the whole deposit is refused",
+        "Birr 79,800",
+        "Birr 79,600, with the notes withheld and reported"
+      ],
+      "answer": 3,
+      "explain": "Two Birr 200 notes are withheld, so Birr 79,600 is credited."
+    },
+    {
+      "q": "Using the example limits, which payment needs a supervisor, assistant or branch manager?",
+      "options": [
+        "Birr 15,000 savings withdrawal",
+        "Birr 240,000 CPO",
+        "Birr 60,000 cheque",
+        "Birr 20,000 cheque"
+      ],
+      "answer": 1,
+      "explain": "Above Birr 100,000 goes to a supervisor, assistant or branch manager."
+    },
+    {
+      "q": "A till opened with Birr 200,000, received Birr 900,000, paid Birr 650,000 and returned Birr 300,000 to the head till. The count is Birr 149,500. What is the result?",
+      "options": [
+        "Balanced",
+        "Birr 500 over",
+        "Birr 500 short",
+        "Birr 1,500 short"
+      ],
+      "answer": 2,
+      "explain": "Expected is 200,000 + 900,000 - 650,000 - 300,000 = Birr 150,000, so the till is Birr 500 short."
+    },
+    {
+      "q": "A customer offers to settle a Birr 25 fee entirely in coins. What is the rule?",
+      "options": [
+        "Coins are legal tender only up to Birr 10 per payment unless both parties agree",
+        "The bank must accept",
+        "Coins are no longer legal tender",
+        "Only Birr 1 coins are accepted"
+      ],
+      "answer": 0,
+      "explain": "Coins are legal tender only up to Birr 10 per payment."
+    },
+    {
+      "q": "The previous business day was not closed because of a system fault. A teller wants to start today's transactions. What applies?",
+      "options": [
+        "Start; close both days tonight",
+        "Delete yesterday's pending items",
+        "Use manual tickets for everything",
+        "No work starts on the next day before the previous day is closed"
+      ],
+      "answer": 3,
+      "explain": "The previous day must be closed first."
+    },
+    {
+      "q": "A drawer's third insufficient-fund cheque within 24 months is for Birr 900,000. Using the 2018 manual figures (5%, capped at Birr 50,000), what is the fine and what else happens?",
+      "options": [
+        "Birr 50,000; written warning only",
+        "Birr 45,000; all checking accounts closed and NBE report within 5 working days",
+        "Birr 27,000; final warning",
+        "No fine; report within 30 days"
+      ],
+      "answer": 1,
+      "explain": "5% of 900,000 is Birr 45,000, below the cap; the third strike also means closure and an NBE report within 5 working days."
+    },
+    {
+      "q": "A second insufficient-fund cheque comes 14 months after the first. Under the three-strike rule as described, how is it treated?",
+      "options": [
+        "As a first offence, since the 12-month window has passed",
+        "As a second offence",
+        "As a third offence",
+        "It is ignored"
+      ],
+      "answer": 0,
+      "explain": "The second-offence rule applies within 12 months, so this restarts as a first offence; confirm with the current NBE directive."
+    },
+    {
+      "q": "A customer's endorsement reads \"Pay Abebe Kassa if the goods arrive\". What should the teller do?",
+      "options": [
+        "Pay Abebe",
+        "Pay half",
+        "Refuse; endorsements cannot be conditional",
+        "Cross the cheque"
+      ],
+      "answer": 2,
+      "explain": "A conditional endorsement is not allowed."
+    },
+    {
+      "q": "A customer reports a stolen cheque and asks to stop it but has no police report yet. What applies?",
+      "options": [
+        "Record the stop now and require police evidence within 15 working days",
+        "Refuse until the police report arrives",
+        "Stop only after the cheque is presented",
+        "Close the account"
+      ],
+      "answer": 0,
+      "explain": "The stop is recorded at once, with police evidence due within 15 working days."
+    },
+    {
+      "q": "A CPO buyer reports it lost. In what order do the steps happen?",
+      "options": [
+        "Refund at once, then notify branches",
+        "Wait 6 months for expiry, then refund",
+        "Notify all branches, receive replies within 7 working days, refund after 15 days against an indemnity",
+        "Ask the payee to sign a release"
+      ],
+      "answer": 2,
+      "explain": "Notify, confirm and refund against an indemnity after 15 days."
+    },
+    {
+      "q": "A forged withdrawal costs Birr 210,000, of which Birr 185,000 is recovered after a freeze. What should be recorded?",
+      "options": [
+        "Nothing, the net loss is small",
+        "Only the net loss, without the event details",
+        "Only the recovery",
+        "Gross Birr 210,000, recovery Birr 185,000 and net loss Birr 25,000, which is above the Birr 20,000 threshold cited in the module"
+      ],
+      "answer": 3,
+      "explain": "The full event is recorded; the Birr 25,000 net loss is above the cited threshold."
+    },
+    {
+      "q": "After an employee leaks a client's account details, a large transfer request arrives from a new email address. Which response is best?",
+      "options": [
+        "Process it, the signatures match",
+        "Verify with the signatory through the mandate file contacts, stop the transfer, record the incident and consider a suspicious transaction report",
+        "Email the requester to confirm",
+        "Tell the client's staff that a report is being filed"
+      ],
+      "answer": 1,
+      "explain": "Independent verification, stopping the payment and reporting are the right steps; tipping off is not allowed."
+    }
+  ],
+  "sources": [
+    "Erudite Africa training module: Domestic Banking Operations: 5-Day Course (October 2026)",
+    "A commercial bank's branch operations procedure manual (2018), unnamed, with example figures to be replaced by each bank's current rules",
+    "NBE Proclamation No. 1359/2025 and NBE directives as listed in the lessons (NBE/INT/13/2026, FXD/01/2024, FXD/04/2026, ONPS/09/2023, FCP/01/2020, FCPED/142/26)",
+    "Commercial Code Proclamation No. 1243/2021, Proclamation No. 780/2013 and Civil Society Organizations Proclamation No. 1113/2019",
+    "Erudite Africa Ethiopian context module (39 topics), October 2026",
+    "A commercial bank's Revised Credit Procedure Manual (2025), unnamed"
+  ]
+}
