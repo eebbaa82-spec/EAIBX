@@ -62,8 +62,16 @@ export default function CreditCenterPage() {
             },
           ]}
         />
-        <div className="mt-8">
-          <ButtonLink href="/join">Build my credit profile</ButtonLink>
+        <div className="mt-8 rounded-2xl border border-brand-200 bg-brand-50 p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">Free tool</p>
+          <h3 className="mt-1 text-xl font-bold text-ink">Borrower profile builder</h3>
+          <p className="mt-2 max-w-2xl text-muted">
+            Upload your company profile, answer a few questions about your loan, finances and collateral, and get a lender-ready profile, a
+            readiness check and the document checklist for your loan type, from working capital to project and lease financing.
+          </p>
+          <div className="mt-5">
+            <ButtonLink href="/credit-center/profile-builder">Build my borrower profile</ButtonLink>
+          </div>
         </div>
       </Section>
 

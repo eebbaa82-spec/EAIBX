@@ -18,10 +18,12 @@ const FORMS = [
     'newsletter' => 'Newsletter sign-up',
     'waitlist' => 'Coming-soon waitlist',
     'course' => 'Financial literacy course registration',
+    'member' => 'Member registration',
 ];
 // Forms kept as a mailing list get one spreadsheet column per field.
 const CSV_COLUMNS = [
     'course' => ['name', 'occupation', 'education', 'email', 'mobile', 'consent', 'language', 'page'],
+    'member' => ['name', 'business', 'email', 'mobile', 'consent', 'page'],
 ];
 const MAX_FIELDS = 20;
 const MAX_LENGTH = 5000;

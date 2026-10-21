@@ -98,3 +98,22 @@ body {
     animation: none;
   }
 }
+
+/* Printed packs (borrower profile builder): A4, no screen chrome. */
+@page {
+  size: A4;
+  margin: 18mm 16mm;
+}
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+  main:has(.bank-pack) section {
+    padding: 0 !important;
+  }
+  main:has(.bank-pack) section > div {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}
