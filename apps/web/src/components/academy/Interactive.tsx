@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { ProCourse, QuizQuestion, Scenario } from "@/data/academy/types";
-import { examHref, passMark, proCourseHref } from "@/data/academy";
+import { examHref, passMark, proCourseHref } from "@/data/academy/paths";
 
 /**
  * Progress, quizzes, decision scenarios, the final exam and the certificate.

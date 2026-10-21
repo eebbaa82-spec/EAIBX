@@ -1,37 +1,154 @@
 import type { ProCourse } from "./types";
-import creditL1 from "./credit-foundations.json";
-import creditL2 from "./credit-analysis-appraisal.json";
-import creditL3 from "./advanced-credit-portfolio-risk.json";
-import projectL1 from "./project-finance-foundations.json";
-import projectL2 from "./financial-appraisal-loan-structuring.json";
-import projectL3 from "./project-risk-structuring-monitoring.json";
-import ops from "./domestic-banking-operations.json";
+import creditFoundations from "./credit-foundations.json";
+import creditAnalysisAppraisal from "./credit-analysis-appraisal.json";
+import loanPortfolioManagement from "./loan-portfolio-management.json";
+import advancedCreditPortfolioRisk from "./advanced-credit-portfolio-risk.json";
+import projectFinanceFoundations from "./project-finance-foundations.json";
+import financialAppraisalLoanStructuring from "./financial-appraisal-loan-structuring.json";
+import projectRiskStructuringMonitoring from "./project-risk-structuring-monitoring.json";
+import syndicatedLoansCrossBorderProjectFinance from "./syndicated-loans-cross-border-project-finance.json";
+import ethiopianBankingLawRegulation from "./ethiopian-banking-law-regulation.json";
+import resourceMobilization from "./resource-mobilization.json";
+import internationalTradeFinance from "./international-trade-finance.json";
+import digitalBankingFintech from "./digital-banking-fintech.json";
+import customerServiceRetailBanking from "./customer-service-retail-banking.json";
+import salesNegotiationSkills from "./sales-negotiation-skills.json";
+import internationalMoneyTransfersRemittances from "./international-money-transfers-remittances.json";
+import regulatoryLandscapeInternationalOperations from "./regulatory-landscape-international-operations.json";
+import treasuryForexManagement from "./treasury-forex-management.json";
+import supplyChainFinance from "./supply-chain-finance.json";
+import forexProductsRiskManagement from "./forex-products-risk-management.json";
+import domesticBankingOperations from "./domestic-banking-operations.json";
+import introductionCapitalMarkets from "./introduction-capital-markets.json";
+import capitalMarketsLawRegulation from "./capital-markets-law-regulation.json";
+import securities from "./securities.json";
+import investmentAnalysisPortfolioManagement from "./investment-analysis-portfolio-management.json";
+import brokerageOperationsClientAdvisory from "./brokerage-operations-client-advisory.json";
+import financialModelingValuation from "./financial-modeling-valuation.json";
+import dueDiligenceMastery from "./due-diligence-mastery.json";
+import originationPitchDeck from "./origination-pitch-deck.json";
+import privateEquityVentureCapital from "./private-equity-venture-capital.json";
+import lboModeling from "./lbo-modeling.json";
+import mergersAcquisitions from "./mergers-acquisitions.json";
+import equityCapitalMarkets from "./equity-capital-markets.json";
+import debtCapitalMarkets from "./debt-capital-markets.json";
+import negotiationDealStructuring from "./negotiation-deal-structuring.json";
+import sectorAnalysisModeling from "./sector-analysis-modeling.json";
+import esgInvestmentBanking from "./esg-investment-banking.json";
+import corporateGovernanceEthics from "./corporate-governance-ethics.json";
+import riskManagementFramework from "./risk-management-framework.json";
+import sustainableFinanceEsg from "./sustainable-finance-esg.json";
+import dataAnalyticsDigitalLiteracy from "./data-analytics-digital-literacy.json";
+import genderSensitiveFinancialServices from "./gender-sensitive-financial-services.json";
+import digitalMarketingDigitalBanking from "./digital-marketing-digital-banking.json";
+import socialMediaManagement from "./social-media-management.json";
+import strategicLeadershipChangeManagement from "./strategic-leadership-change-management.json";
 
-export const proCourses = [creditL1, creditL2, creditL3, projectL1, projectL2, projectL3, ops] as ProCourse[];
+/** Every Academy course, in catalog order: by track, then level. */
+export const proCourses = [
+  creditFoundations,
+  creditAnalysisAppraisal,
+  loanPortfolioManagement,
+  advancedCreditPortfolioRisk,
+  projectFinanceFoundations,
+  financialAppraisalLoanStructuring,
+  projectRiskStructuringMonitoring,
+  syndicatedLoansCrossBorderProjectFinance,
+  ethiopianBankingLawRegulation,
+  resourceMobilization,
+  internationalTradeFinance,
+  digitalBankingFintech,
+  customerServiceRetailBanking,
+  salesNegotiationSkills,
+  internationalMoneyTransfersRemittances,
+  regulatoryLandscapeInternationalOperations,
+  treasuryForexManagement,
+  supplyChainFinance,
+  forexProductsRiskManagement,
+  domesticBankingOperations,
+  introductionCapitalMarkets,
+  capitalMarketsLawRegulation,
+  securities,
+  investmentAnalysisPortfolioManagement,
+  brokerageOperationsClientAdvisory,
+  financialModelingValuation,
+  dueDiligenceMastery,
+  originationPitchDeck,
+  privateEquityVentureCapital,
+  lboModeling,
+  mergersAcquisitions,
+  equityCapitalMarkets,
+  debtCapitalMarkets,
+  negotiationDealStructuring,
+  sectorAnalysisModeling,
+  esgInvestmentBanking,
+  corporateGovernanceEthics,
+  riskManagementFramework,
+  sustainableFinanceEsg,
+  dataAnalyticsDigitalLiteracy,
+  genderSensitiveFinancialServices,
+  digitalMarketingDigitalBanking,
+  socialMediaManagement,
+  strategicLeadershipChangeManagement,
+] as ProCourse[];
 
-export const tracks: { id: ProCourse["track"]; name: string; intro: string }[] = [
-  {
-    id: "credit",
-    name: "Credit Analysis Program",
-    intro: "Three levels that take credit officers from the basics of lending to portfolio risk, built on Ethiopian bank credit practice and NBE directives.",
-  },
-  {
-    id: "project",
-    name: "Project Appraisal Program",
-    intro: "Three levels on project lending: reading feasibility studies, financial appraisal and loan structuring, then risk, security and monitoring.",
-  },
-  {
-    id: "operations",
-    name: "Banking Operations",
-    intro: "How a branch runs its domestic operations: accounts, deposits, cheques and clearing, transfers, cash and fraud controls.",
-  },
-];
+export const tracks: { id: ProCourse["track"]; name: string; intro: string }[] =
+  [
+    {
+      id: "credit",
+      name: "Credit Analysis Program",
+      intro:
+        "From the basics of lending to portfolio risk, built on Ethiopian bank credit practice and NBE directives.",
+    },
+    {
+      id: "project",
+      name: "Project Finance Program",
+      intro:
+        "Project lending from feasibility studies to financial appraisal, structuring, risk, monitoring and syndication.",
+    },
+    {
+      id: "banking",
+      name: "School of Banking Fundamentals",
+      intro:
+        "The core knowledge every banker needs, from regulation and funding to trade finance, treasury, digital banking and customer service.",
+    },
+    {
+      id: "operations",
+      name: "Banking Operations",
+      intro:
+        "How a branch runs its domestic operations: accounts, deposits, cheques and clearing, transfers, cash and fraud controls.",
+    },
+    {
+      id: "capital",
+      name: "School of Capital Markets and Investment",
+      intro:
+        "How Ethiopia's capital market works and how to analyze, advise on and manage investments.",
+    },
+    {
+      id: "ib",
+      name: "School of Investment Banking",
+      intro:
+        "Hands-on valuation, deals and capital raising for investment bankers, fund managers and corporate finance teams.",
+    },
+    {
+      id: "skills",
+      name: "School of Professional Skills",
+      intro:
+        "Cross-cutting skills that strengthen every role in a modern financial institution or growing business.",
+    },
+  ];
 
-export const levelNames = { 1: "Foundation", 2: "Intermediate", 3: "Advanced" } as const;
+/** The level line on course cards and pages. */
+export const levelLabel = (c: ProCourse) =>
+  c.levels ??
+  (c.track === "operations"
+    ? "Five-day course"
+    : `Level ${c.level} · ${levelNames[c.level]}`);
 
-export const academyPath = "/academy/courses";
-export const proCourseHref = (course: string, module?: string) => `${academyPath}/${course}/${module ? `${module}/` : ""}`;
-export const examHref = (course: string) => `${academyPath}/${course}/final-exam/`;
+export const levelNames = {
+  1: "Foundation",
+  2: "Intermediate",
+  3: "Advanced",
+} as const;
 
-/** Pass mark for the final exam, in percent. */
-export const passMark = 70;
+export { academyPath, examHref, passMark, proCourseHref } from "./paths";

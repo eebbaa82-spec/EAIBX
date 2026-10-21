@@ -52,7 +52,8 @@ export type ProModule = {
 export type ProCourse = {
   id: string;
   slug: string;
-  track: "credit" | "project" | "operations";
+  track: "credit" | "project" | "operations" | "banking" | "capital" | "ib" | "skills";
+  levels?: string; // e.g. "Foundational to Intermediate"; shown instead of the level number
   level: 1 | 2 | 3;
   icon: IconName;
   title: string;
