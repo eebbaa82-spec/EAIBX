@@ -1,0 +1,49 @@
+name: Preview on GitHub Pages
+
+# Publishes the full site, including pages hidden behind coming-soon on
+# investopia.et, to https://eebbaa82-spec.github.io/EAIBX/ for review.
+# The build goes to the gh-pages branch; GitHub Pages serves that branch once
+# Settings > Pages > Source is set to "Deploy from a branch", gh-pages, / (root).
+# Forms only send from investopia.et, so the preview never posts anything.
+
+on:
+  push:
+    branches: [main, claude/eabix-public-site-ihom20]
+    paths: ["apps/web/**", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pages-preview
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /EAIBX
+      - name: Push the build to gh-pages
+        run: |
+          touch out/.nojekyll
+          rm -f out/.htaccess out/api/submit.php
+          cd out
+          git init -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898099+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "Preview of ${GITHUB_REF_NAME} at ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git" gh-pages

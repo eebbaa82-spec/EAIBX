@@ -114,7 +114,7 @@ export default function PartnersPage() {
             </p>
             <p className="mt-4">
               <a
-                href="/downloads/Investopia-Partner-Brochure.pdf"
+                href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/downloads/Investopia-Partner-Brochure.pdf`}
                 download
                 className="inline-flex rounded-lg bg-brand-700 px-4 py-2 font-semibold text-white hover:bg-brand-600"
               >
