@@ -19,6 +19,7 @@ import {
   pct,
   type Profile,
 } from "./ProfileBuilder";
+import type { Identity } from "./IdentityCheck";
 
 /**
  * The bank-ready pack: a formal application letter plus the borrower profile and an
@@ -200,9 +201,14 @@ export function LetterStep({
   );
 }
 
-export function PackDownload({ p }: { p: Profile }) {
+export function PackDownload({ p, verified, onVerify }: { p: Profile; verified: boolean; onVerify: () => void }) {
   const registered = useRegistered();
   const [open, setOpen] = useState(false);
+  const [live, setLive] = useState(false);
+  useEffect(() => {
+    const t = setTimeout(() => setLive(liveHost()), 0);
+    return () => clearTimeout(t);
+  }, []);
   return (
     <section className="rounded-2xl bg-brand-900 p-6 text-white sm:p-8">
       <p className="text-sm font-semibold uppercase tracking-wide text-gold-400">
@@ -213,7 +219,17 @@ export function PackDownload({ p }: { p: Profile }) {
         A formal application letter, your complete borrower profile and an annex
         of enclosed documents, laid out on A4 and ready to hand to the bank.
       </p>
-      {registered ? (
+      {registered && !verified && live ? (
+        <div className="mt-5 flex flex-wrap items-center gap-4">
+          <button type="button" onClick={onVerify} className="rounded-lg bg-gold-400 px-5 py-3 font-semibold text-ink hover:bg-gold-500">
+            Verify the business first
+          </button>
+          <p className="text-sm text-brand-100">
+            The pack opens once Investopia has confirmed the business on the Ministry of Trade register and that you may act for it
+            {p.tin ? ` (TIN ${p.tin})` : ""}.
+          </p>
+        </div>
+      ) : registered ? (
         <div className="mt-5 flex flex-wrap items-center gap-4">
           <button
             type="button"
@@ -225,6 +241,7 @@ export function PackDownload({ p }: { p: Profile }) {
           <p className="text-sm text-brand-100">
             In the print window, choose &ldquo;Save as PDF&rdquo; as the
             destination.
+            {!verified && " Preview site: the pack is marked as not identity-verified."}
           </p>
         </div>
       ) : open ? (
@@ -403,12 +420,26 @@ export function BankPack({
   p,
   a,
   docs,
+  identity,
 }: {
   p: Profile;
   a: Analysis;
   docs: Docs;
+  identity?: Identity;
 }) {
   const registered = useRegistered();
+  if (registered && !identity && liveHost())
+    return (
+      <div className="hidden print:block">
+        <p className="text-lg font-bold">
+          The bank-ready pack opens once the business identity is verified.
+        </p>
+        <p className="mt-2">
+          Complete the identity check on the borrower profile builder page,
+          then choose Download PDF.
+        </p>
+      </div>
+    );
   if (!registered)
     return (
       <div className="hidden print:block">
@@ -489,6 +520,11 @@ export function BankPack({
           <p className="text-[16pt] font-bold">{p.name || "Applicant"}</p>
           <p className="text-[9pt]">
             Prepared {longDate()} · Figures as stated by the applicant
+          </p>
+          <p className="text-[9pt] font-bold">
+            {identity
+              ? `Identity verified by Investopia${identity.verifiedOn ? ` on ${identity.verifiedOn}` : ""}: TIN ${identity.tin}${identity.licence ? `, licence ${identity.licence}` : ""}, checked against the Ministry of Trade register; requested by ${identity.requester} (${identity.role.split(" (")[0].toLowerCase()}).`
+              : "Preview copy: business identity not verified."}
           </p>
         </div>
 

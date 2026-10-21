@@ -15,7 +15,7 @@ export default function ProfileBuilderPage() {
         <PageHero
           eyebrow="Credit Management Center"
           title="Borrower profile builder"
-          subhead="Prepare the profile a bank or MFI will ask for: who you are, what you need, your finances, banking record and collateral. Get a readiness check, the exact documents for your loan type, and a bank-ready PDF with your application letter. Your answers stay on your device."
+          subhead="Prepare the profile a bank or MFI will ask for: who you are, what you need, your finances, banking record and collateral. Get a readiness check, the exact documents for your loan type, and a bank-ready PDF with your application letter once your business identity is verified. Your profile answers stay on your device."
         />
       </div>
       <Section>

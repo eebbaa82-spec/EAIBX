@@ -23,6 +23,7 @@ import {
 import { frequencies, installmentCount, installmentFor, type Frequency } from "@/lib/calc/loan";
 import { findDetails, readText, type Found } from "@/lib/docs/extract";
 import { clearFiles, deleteFile, getFile, putFile } from "@/lib/docs/store";
+import { IdentityStep, identityVerified, useIdentity } from "./IdentityCheck";
 import { BankPack, LetterStep, PackDownload } from "./ProfilePack";
 
 /**
@@ -180,7 +181,7 @@ const inputClass =
 const labelClass = "block text-sm font-medium text-ink";
 const smallButton = "rounded-lg border border-line px-3 py-1.5 text-sm font-semibold text-brand-700 hover:border-brand-500";
 
-const steps = ["Company profile", "Applicant", "Owners and management", "Loan request", "Finances", "Banking record", "Collateral", "Documents", "Application letter", "Your profile"];
+const steps = ["Identity check", "Company profile", "Applicant", "Owners and management", "Loan request", "Finances", "Banking record", "Collateral", "Documents", "Application letter", "Your profile"];
 
 const PROFILE_DOC = businessDocs[0];
 const ACCEPT = ".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png";
@@ -465,6 +466,8 @@ export function ProfileBuilder() {
 
   const set = (patch: Partial<Profile>) => setP((old) => ({ ...old, ...patch }));
   const at = steps[step];
+  const identity = useIdentity();
+  const verified = identityVerified(identity, p.tin);
   // Files also live here for the visit, in case the browser blocks IndexedDB.
   const blobs = useRef(new Map<string, Blob>());
   const [found, setFound] = useState<Found[] | null>(null);
@@ -563,6 +566,19 @@ export function ProfileBuilder() {
       </nav>
 
       <div className="print:hidden">
+        {at === "Identity check" && (
+          <Panel
+            title="Confirm who is applying"
+            intro="The bank-ready pack is only for the business itself or someone it has authorized. Give the business's TIN and licence and your own details; Investopia checks them against the Ministry of Trade register and sends you a verification code. You can fill in the rest of the profile meanwhile."
+          >
+            <IdentityStep
+              isBusiness={isBusiness}
+              profileTin={p.tin}
+              onApply={(v) => set({ name: v.name, tin: v.tin, licence: v.licence || p.licence, email: p.email || v.email, phone: p.phone || v.phone })}
+            />
+          </Panel>
+        )}
+
         {at === "Company profile" && (
           <Panel
             title="Start with your company profile"
@@ -971,12 +987,12 @@ export function ProfileBuilder() {
       {at === "Your profile" && (
         <>
           <div className="print:hidden">
-            <PackDownload p={p} />
+            <PackDownload p={p} verified={verified} onVerify={() => go(0)} />
             <div className="mt-8">
               <Result p={p} a={a} docs={docs} onToggle={(k) => set({ done: { ...p.done, [k]: !p.done[k] } })} />
             </div>
           </div>
-          <BankPack p={p} a={a} docs={docs} />
+          <BankPack p={p} a={a} docs={docs} identity={verified ? identity : undefined} />
         </>
       )}
 
@@ -995,7 +1011,7 @@ export function ProfileBuilder() {
           Start over
         </button>
       </div>
-      <p className="mt-4 text-xs text-muted print:hidden">Your answers stay on this device. Nothing is sent to Investopia or any lender.</p>
+      <p className="mt-4 text-xs text-muted print:hidden">Your answers stay on this device. Only the identity check details are sent to Investopia; nothing is sent to any lender.</p>
     </div>
   );
 }
