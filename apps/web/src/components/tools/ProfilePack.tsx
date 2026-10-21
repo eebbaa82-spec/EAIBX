@@ -73,6 +73,10 @@ function markRegistered() {
   window.dispatchEvent(new Event(EVENT));
 }
 
+/** Erudite's wording (2026-10-21): the applicant answers for the facts, the lender for its due diligence. */
+export const PACK_DISCLAIMER =
+  "This profile is built from information and documents supplied by the applicant. Investopia has not audited them and is not responsible for any erroneous or misleading information. The identity check confirms only that the business appears on the Ministry of Trade register and that the applicant may act for it. It is up to the lender to check whether the documents are genuine, and this profile does not in any way relieve the lender of its own due diligence. Investopia is not a lender; every credit decision is made by the lender under its own policies.";
+
 const longDate = (d = new Date()) =>
   d.toLocaleDateString("en-GB", {
     day: "numeric",
@@ -218,6 +222,10 @@ export function PackDownload({ p, verified, onVerify }: { p: Profile; verified: 
       <p className="mt-2 max-w-3xl text-brand-100">
         A formal application letter, your complete borrower profile and an annex
         of enclosed documents, laid out on A4 and ready to hand to the bank.
+      </p>
+      <p className="mt-3 max-w-3xl text-sm text-brand-100">
+        <span className="font-semibold text-white">Please note: </span>
+        {PACK_DISCLAIMER}
       </p>
       {registered && !verified && live ? (
         <div className="mt-5 flex flex-wrap items-center gap-4">
@@ -526,6 +534,10 @@ export function BankPack({
               ? `Identity verified by Investopia${identity.verifiedOn ? ` on ${identity.verifiedOn}` : ""}: TIN ${identity.tin}${identity.licence ? `, licence ${identity.licence}` : ""}, checked against the Ministry of Trade register; requested by ${identity.requester} (${identity.role.split(" (")[0].toLowerCase()}).`
               : "Preview copy: business identity not verified."}
           </p>
+        </div>
+        <div className="mt-3 border border-slate-800 p-2 text-[8.5pt] leading-snug">
+          <span className="font-bold">Disclaimer. </span>
+          {PACK_DISCLAIMER}
         </div>
 
         <H>Applicant</H>
@@ -905,9 +917,8 @@ export function BankPack({
           </tbody>
         </table>
         <p className="mt-4 text-[9pt]">
-          Prepared with the Investopia Borrower Profile Builder (investopia.et).
-          Investopia is not a lender; every credit decision is made by the
-          lender under its own policies.
+          Prepared with the Investopia Borrower Profile Builder (investopia.et).{" "}
+          {PACK_DISCLAIMER}
         </p>
       </section>
     </div>
