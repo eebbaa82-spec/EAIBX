@@ -5,7 +5,7 @@ DirectoryIndex coming-soon.html index.html
 Options -Indexes
 ServerSignature Off
 
-<FilesMatch "(^\.|\.(bak|old|orig|sql|log|ini|sh|env|map)$)">
+<FilesMatch "(^\.|^_.*\.php$|\.(bak|old|orig|sql|log|ini|sh|env|map)$)">
   Require all denied
 </FilesMatch>
 

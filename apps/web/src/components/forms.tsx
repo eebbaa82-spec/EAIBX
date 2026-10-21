@@ -59,7 +59,7 @@ export function startRobotCheck() {
   robotCheck.catch(() => (robotCheck = null));
 }
 
-export async function sendForm(formName: string, data: FormData) {
+export async function sendForm(formName: string, data: FormData, url = SUBMIT_URL) {
   startRobotCheck();
   // Each challenge works once, so the next submission starts a fresh one.
   const solved = await robotCheck!.finally(() => (robotCheck = null));
@@ -68,9 +68,10 @@ export async function sendForm(formName: string, data: FormData) {
   data.set("pow_challenge", solved.challenge);
   data.set("pow_nonce", solved.nonce);
   data.set("form", formName);
-  const res = await fetch(SUBMIT_URL, { method: "POST", body: data });
-  const body = (await res.json().catch(() => null)) as { ok?: boolean } | null;
-  if (!res.ok || !body?.ok) throw new Error("Form not sent");
+  const res = await fetch(url, { method: "POST", body: data });
+  const body = (await res.json().catch(() => null)) as { ok?: boolean; error?: string; [key: string]: unknown } | null;
+  if (!res.ok || !body?.ok) throw new Error(body?.error ?? "Form not sent");
+  return body;
 }
 
 function SendError() {

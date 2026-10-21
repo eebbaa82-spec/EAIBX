@@ -5,7 +5,7 @@ Options -Indexes
 ServerSignature Off
 
 # Never serve backups, dotfiles or source maps if one is ever uploaded by mistake.
-<FilesMatch "(^\.|\.(bak|old|orig|sql|log|ini|sh|env|map)$)">
+<FilesMatch "(^\.|^_.*\.php$|\.(bak|old|orig|sql|log|ini|sh|env|map)$)">
   Require all denied
 </FilesMatch>
 

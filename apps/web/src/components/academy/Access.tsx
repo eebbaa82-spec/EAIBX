@@ -19,6 +19,7 @@ type Access = "loading" | "guest" | "registered" | "subscriber";
 const MEMBER = "investopia-member-registered";
 const COURSE = "investopia-financial-literacy-registered";
 const SUBSCRIBER = "investopia-academy-subscriber";
+const CODE = "investopia-academy-code";
 const EVENT = "investopia-academy-access";
 const visit: Record<string, boolean> = {};
 
@@ -61,6 +62,15 @@ export function useAccess() {
     };
   }, []);
   return access;
+}
+
+/** The access code entered on this device, needed to register a certificate. */
+export function savedCode() {
+  try {
+    return window.localStorage.getItem(CODE) ?? "";
+  } catch {
+    return "";
+  }
 }
 
 async function sha256(text: string) {
@@ -245,6 +255,11 @@ function CodeForm() {
     const clean = code.trim().toUpperCase().replace(/\s+/g, "");
     const ok = accessCodeHashes.has(await sha256(clean));
     if (ok) {
+      try {
+        window.localStorage.setItem(CODE, clean);
+      } catch {
+        // Storage unavailable: the code is asked for again with the certificate.
+      }
       remember(MEMBER);
       remember(SUBSCRIBER);
     } else setState("wrong");

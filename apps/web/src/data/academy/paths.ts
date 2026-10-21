@@ -7,3 +7,7 @@ export const examHref = (course: string) =>
 
 /** Pass mark for the final exam, in percent. */
 export const passMark = 70;
+
+/** Where a certificate's QR code leads: the public check on the live site. */
+export const verifyUrl = (id: string) =>
+  `https://investopia.et/academy/verify/?id=${encodeURIComponent(id)}`;

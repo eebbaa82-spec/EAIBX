@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import type { ProCourse, QuizQuestion, Scenario } from "@/data/academy/types";
-import { examHref, passMark, proCourseHref } from "@/data/academy/paths";
+import { examHref, passMark, proCourseHref, verifyUrl } from "@/data/academy/paths";
+import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components/forms";
+import { savedCode } from "./Access";
 
 /**
  * Progress, quizzes, decision scenarios, the final exam and the certificate.
@@ -13,7 +15,8 @@ import { examHref, passMark, proCourseHref } from "@/data/academy/paths";
 const KEY = "investopia-academy-progress";
 const EVENT = "investopia-academy-progress";
 
-type Result = { score: number; total: number; date: string; name?: string; id?: string };
+/** registered: the certificate number is on Investopia's register, so it can be verified. */
+type Result = { score: number; total: number; date: string; name?: string; id?: string; registered?: boolean };
 type Progress = Record<string, { done: string[]; exam?: Result }>;
 
 function read(): Progress {
@@ -215,10 +218,16 @@ export function ModuleQuiz({ course, module, questions }: { course: string; modu
 
 const longDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 
-function certificateId(course: ProCourse) {
+/** A stand-in number for certificates printed from the preview site, which has no register. */
+function sampleId(course: ProCourse) {
   const a = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  const rnd = Array.from(crypto.getRandomValues(new Uint8Array(6)), (b) => a[b % 32]).join("");
+  const rnd = Array.from(crypto.getRandomValues(new Uint8Array(8)), (b) => a[b % 32]).join("");
   return `INV/ACAD/${course.id.toUpperCase()}/${new Date().getFullYear()}/${rnd}`;
+}
+
+async function qrSvg(text: string) {
+  const QRCode = await import("qrcode");
+  return QRCode.toString(text, { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#000000", light: "#ffffff" } });
 }
 
 /** The final exam: answers are revealed only after submitting; a pass unlocks the certificate. */
@@ -311,54 +320,123 @@ export function FinalExam({ course }: { course: ProCourse }) {
 export function Certificate({ course }: { course: ProCourse }) {
   const { exam } = useProgress(course.slug);
   const [name, setName] = useState("");
+  const [code, setCode] = useState("");
+  const [qr, setQr] = useState("");
+  const [state, setState] = useState<{ busy: boolean; error?: string }>({ busy: false });
   useEffect(() => {
-    const t = setTimeout(() => setName(exam?.name ?? ""), 0);
+    const t = setTimeout(() => {
+      setName(exam?.name ?? "");
+      setCode(savedCode());
+    }, 0);
     return () => clearTimeout(t);
   }, [exam?.name]);
+  useEffect(() => {
+    if (exam?.id) qrSvg(verifyUrl(exam.id)).then(setQr, () => setQr(""));
+  }, [exam?.id]);
   if (!exam || exam.score / exam.total < passMark / 100) return null;
-  const id = exam.id;
+  const pct = Math.round((exam.score / exam.total) * 100);
+  const live = liveHost();
 
-  function issue() {
-    saveExam(course.slug, { ...exam!, name: name.trim(), id: id ?? certificateId(course) });
-    setTimeout(() => window.print(), 50);
+  async function issue(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const full = name.trim();
+    let id = exam!.id;
+    let registered = exam!.registered ?? false;
+    setState({ busy: true });
+    if (live && !(registered && exam!.name === full)) {
+      // Investopia's register gives the number, so a QR scan can confirm it.
+      const data = new FormData(e.currentTarget);
+      data.set("name", full);
+      data.set("course", course.slug);
+      data.set("course_id", course.id.toUpperCase());
+      data.set("course_title", course.title);
+      data.set("score", String(pct));
+      data.set("code", code.trim());
+      try {
+        const body = await sendForm("certificate", data, "/api/certificate.php");
+        id = String(body.id);
+        registered = true;
+      } catch (err) {
+        setState({ busy: false, error: err instanceof Error ? err.message : "Could not issue the certificate" });
+        return;
+      }
+    } else if (!id) {
+      id = sampleId(course);
+    }
+    saveExam(course.slug, { ...exam!, name: full, id, registered });
+    setQr(await qrSvg(verifyUrl(id)).catch(() => ""));
+    setState({ busy: false });
+    setTimeout(() => window.print(), 100);
   }
 
   return (
     <section className="mt-12 print:mt-0">
       <div className="print:hidden rounded-2xl border border-gold-400 bg-gold-100 p-6">
         <h2 className="text-xl font-bold text-ink">Your certificate of completion</h2>
-        <p className="mt-1 text-muted">Type your name as it should appear, then download the certificate (choose &ldquo;Save as PDF&rdquo; in the print window).</p>
-        <div className="mt-4 flex flex-wrap items-end gap-3">
+        <p className="mt-1 text-muted">
+          Type your name as it should appear, then download the certificate (choose &ldquo;Save as PDF&rdquo; in the print window). Each certificate carries a
+          unique number and a QR code that anyone can scan to confirm it with Investopia.
+        </p>
+        <form onSubmit={issue} onFocus={live ? startRobotCheck : undefined} className="mt-4 flex flex-wrap items-end gap-3">
           <label className="block min-w-64 flex-1 text-sm font-semibold text-ink">
             Full name
             <input
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
               maxLength={80}
               className="mt-1 w-full rounded-lg border border-line bg-white px-3 py-2.5 text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
             />
           </label>
-          <button type="button" disabled={!name.trim()} onClick={issue} className="rounded-lg bg-brand-600 px-5 py-2.5 font-semibold text-white hover:bg-brand-700 disabled:opacity-50">
-            Download certificate
+          {live && (
+            <label className="block min-w-48 text-sm font-semibold text-ink">
+              Access code
+              <input
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+                required
+                autoComplete="off"
+                spellCheck={false}
+                placeholder="INV-XXXXX-XXXXX"
+                className="mt-1 w-full rounded-lg border border-line bg-white px-3 py-2.5 font-mono uppercase text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
+              />
+            </label>
+          )}
+          <HoneypotField />
+          <button type="submit" disabled={!name.trim() || state.busy} className="rounded-lg bg-brand-600 px-5 py-2.5 font-semibold text-white hover:bg-brand-700 disabled:opacity-50">
+            {state.busy ? "Issuing..." : "Download certificate"}
           </button>
-        </div>
+        </form>
+        {state.error && (
+          <p role="alert" className="mt-3 text-sm text-red-700">
+            {state.error}.
+          </p>
+        )}
+        {!live && <p className="mt-3 text-sm text-muted">This is the preview site, so the certificate is a sample: its number is not on the register.</p>}
       </div>
       <div className="certificate hidden break-inside-avoid print:flex">
-        <div className="flex h-[184mm] w-full flex-col items-center justify-center border-[6px] border-double border-brand-700 p-12 text-center font-serif text-black">
+        <div className="flex h-[184mm] w-full flex-col items-center justify-center border-[6px] border-double border-brand-700 px-12 py-10 text-center font-serif text-black">
           <p className="text-[11pt] uppercase tracking-[0.3em] text-brand-700">Investopia Academy</p>
-          <p className="mt-6 text-[30pt] font-bold">Certificate of Completion</p>
-          <p className="mt-6 text-[12pt]">This certifies that</p>
+          <p className="mt-5 text-[30pt] font-bold">Certificate of Completion</p>
+          <p className="mt-5 text-[12pt]">This certifies that</p>
           <p className="mt-3 border-b border-black px-10 pb-1 text-[24pt] font-bold">{name || exam.name}</p>
           <p className="mt-5 max-w-[200mm] text-[12pt]">
-            has completed the online course <strong>{course.title}</strong> ({course.subtitle}) and passed its final examination with a score of{" "}
-            {Math.round((exam.score / exam.total) * 100)}%.
+            has completed the online course <strong>{course.title}</strong> ({course.subtitle}) and passed its final examination with a score of {pct}%.
           </p>
-          <div className="mt-14 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.4fr] gap-10 text-[10pt]">
+          <div className="mt-10 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.6fr] items-end gap-10 text-[10pt]">
             <p className="border-t border-black pt-1">Date: {longDate(exam.date)}</p>
             <p className="border-t border-black pt-1">Investopia Academy</p>
-            <p className="border-t border-black pt-1">Certificate no. {id ?? ""}</p>
+            <div className="flex items-end gap-3 text-left">
+              {qr && <div className="h-[26mm] w-[26mm] shrink-0 [&>svg]:h-full [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: qr }} />}
+              <div className="text-[9pt] leading-snug">
+                <p className="font-bold">Certificate no.</p>
+                <p className="font-mono">{exam.id ?? ""}</p>
+                <p className="mt-1">Scan, or check the number at investopia.et/academy/verify</p>
+                {!exam.registered && <p className="mt-1 font-bold">Sample: not on the register</p>}
+              </div>
+            </div>
           </div>
-          <p className="mt-10 text-[9pt]">Investopia is a platform by Erudite Africa Investments PLC · investopia.et</p>
+          <p className="mt-8 text-[9pt]">Investopia is a platform by Erudite Africa Investments PLC · investopia.et</p>
         </div>
       </div>
     </section>
