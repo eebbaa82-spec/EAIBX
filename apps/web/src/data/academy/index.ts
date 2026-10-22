@@ -43,6 +43,9 @@ import genderSensitiveFinancialServices from "./gender-sensitive-financial-servi
 import digitalMarketingDigitalBanking from "./digital-marketing-digital-banking.json";
 import socialMediaManagement from "./social-media-management.json";
 import strategicLeadershipChangeManagement from "./strategic-leadership-change-management.json";
+import organizationalCultureWorkplaceMindset from "./organizational-culture-workplace-mindset.json";
+import organizationalCultureHighPerformance from "./organizational-culture-high-performance.json";
+import organizationalCultureChampions from "./organizational-culture-champions.json";
 
 /** Every Academy course, in catalog order: by track, then level. */
 export const proCourses = [
@@ -90,6 +93,9 @@ export const proCourses = [
   digitalMarketingDigitalBanking,
   socialMediaManagement,
   strategicLeadershipChangeManagement,
+  organizationalCultureWorkplaceMindset,
+  organizationalCultureHighPerformance,
+  organizationalCultureChampions,
 ] as ProCourse[];
 
 export const tracks: { id: ProCourse["track"]; name: string; intro: string }[] =
