@@ -55,48 +55,36 @@ function Hero({
 }
 
 const folderHref = (id: FolderId) => `/academy/folders/${id}/`;
+/** "SME owners" stays as is; "Bank and MFI staff" becomes "bank and MFI staff" after "For". */
+const forWhom = (a: string) => (/^[A-Z][a-z]/.test(a) ? a.charAt(0).toLowerCase() + a.slice(1) : a);
 const inFolder = (f: (typeof folders)[number]) =>
   proCourses.filter((c) => f.tracks.includes(c.track));
 
-/** The four course folders, as cards that open each folder's page. */
+/** A compact switcher between the folders, shown on each folder's page. */
 export function FolderCards({ current }: { current?: FolderId }) {
   return (
-    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {folders.map((f) => {
-        const n = inFolder(f).length;
-        const on = f.id === current;
-        return (
-          <li key={f.id}>
-            <Link
-              href={folderHref(f.id)}
-              aria-current={on ? "page" : undefined}
-              className={`group flex h-full flex-col rounded-xl border p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
-                on
-                  ? "border-brand-600 bg-brand-900 text-white"
-                  : "border-line bg-white hover:border-brand-500"
-              }`}
-            >
-              <span
-                className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
-                  on ? "bg-gold-400 text-ink" : "bg-brand-100 text-brand-700 group-hover:bg-brand-600 group-hover:text-white"
+    <nav aria-label="Course folders">
+      <ul className="flex flex-wrap gap-2">
+        {folders.map((f) => {
+          const on = f.id === current;
+          return (
+            <li key={f.id}>
+              <Link
+                href={folderHref(f.id)}
+                aria-current={on ? "page" : undefined}
+                className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition ${
+                  on ? "border-brand-600 bg-brand-600 text-white" : "border-line bg-white text-ink hover:border-brand-500"
                 }`}
               >
-                <Icon name={f.icon} className="h-6 w-6" />
-              </span>
-              <span className={`mt-3 block text-lg font-semibold ${on ? "" : "text-ink"}`}>
+                <Icon name={f.icon} className="h-4 w-4" />
                 {f.name}
-              </span>
-              <span className={`mt-1 block flex-1 text-sm ${on ? "text-brand-100" : "text-muted"}`}>
-                {f.intro}
-              </span>
-              <span className={`mt-3 block text-sm font-semibold ${on ? "text-gold-400" : "text-brand-600"}`}>
-                {n ? `${n} course${n === 1 ? "" : "s"}` : "Courses being added"}
-              </span>
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
+                <span className={on ? "text-brand-100" : "text-muted"}>{inFolder(f).length}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
   );
 }
 
@@ -159,24 +147,61 @@ function FolderTracks({ folder: f }: { folder: (typeof folders)[number] }) {
   );
 }
 
-/** Catalog for the Academy page and the course list: the folders, then each folder's courses. */
+const folderTone: Record<FolderId, string> = {
+  "bank-and-mfi": "from-brand-900 via-brand-700 to-brand-600",
+  "financial-management": "from-[#5a4310] via-[#9a7418] to-gold-400",
+  "capital-markets": "from-[#0d3550] via-[#1d5a7d] to-[#3b86a8]",
+  general: "from-[#3c2a4d] via-[#5d4677] to-[#8a6fa8]",
+};
+
+/** Catalog for the Academy page and the course list: one thumbnail per folder; the courses open inside each folder. */
 export function ProCatalog() {
   return (
-    <div className="space-y-14">
-      <FolderCards />
-      {folders.map((f) => (
-        <div key={f.id} id={f.id} className="scroll-mt-24">
-          <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-line pb-3">
-            <h3 className="text-2xl font-bold tracking-tight text-ink">{f.name}</h3>
-            <Link href={folderHref(f.id)} className="text-sm font-semibold text-brand-600 hover:text-brand-700">
-              Open the folder →
+    <ul className="grid gap-x-6 gap-y-10 sm:grid-cols-2">
+      {folders.map((f) => {
+        const list = inFolder(f);
+        const names = tracks.filter((t) => f.tracks.includes(t.id) && list.some((c) => c.track === t.id));
+        return (
+          <li key={f.id} id={f.id} className="scroll-mt-24">
+            <Link href={folderHref(f.id)} className="group block focus:outline-none" aria-label={`${f.name}: ${list.length} courses`}>
+              {/* The folder tab */}
+              <span className={`ml-5 block h-5 w-36 rounded-t-xl bg-gradient-to-r ${folderTone[f.id]} opacity-90`} aria-hidden="true" />
+              <span
+                className={`relative flex min-h-64 flex-col gap-6 lg:aspect-[16/9] lg:min-h-0 justify-between overflow-hidden rounded-2xl rounded-tl-none bg-gradient-to-br ${folderTone[f.id]} p-6 text-white shadow-md transition group-hover:-translate-y-1 group-hover:shadow-xl group-focus-visible:ring-4 group-focus-visible:ring-gold-400`}
+              >
+                <Icon
+                  name={f.icon}
+                  className="pointer-events-none absolute -right-6 -bottom-8 h-48 w-48 text-white/10 transition group-hover:scale-105"
+                />
+                <span className="flex items-center gap-3">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 backdrop-blur">
+                    <Icon name={f.icon} className="h-6 w-6" />
+                  </span>
+                  <span className="rounded-full bg-white/15 px-3 py-1 text-sm font-semibold">
+                    {list.length ? `${list.length} course${list.length === 1 ? "" : "s"}` : "Courses being added"}
+                  </span>
+                </span>
+                <span className="relative">
+                  <span className="block text-2xl font-bold tracking-tight sm:text-3xl">{f.name}</span>
+                  <span className="mt-1 block max-w-md text-sm text-white/85">{f.intro}</span>
+                  <span className="mt-3 flex flex-wrap gap-1.5">
+                    {names.map((t) => (
+                      <span key={t.id} className="rounded-full bg-black/20 px-2.5 py-0.5 text-xs font-medium">
+                        {t.name}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </span>
+              <span className="mt-3 flex items-center justify-between px-1 text-sm">
+                <span className="text-muted">For {forWhom(f.audience)}</span>
+                <span className="shrink-0 font-semibold text-brand-600 group-hover:text-brand-700">Open folder →</span>
+              </span>
             </Link>
-          </div>
-          <p className="mt-2 mb-6 text-sm text-muted">For {f.audience.charAt(0).toLowerCase() + f.audience.slice(1)}</p>
-          <FolderTracks folder={f} />
-        </div>
-      ))}
-    </div>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
@@ -200,7 +225,7 @@ export function FolderPage({ id }: { id: FolderId }) {
         title={f.name}
       >
         <p className="mt-4 max-w-3xl text-lg text-brand-100">{f.intro}</p>
-        <p className="mt-2 text-brand-100">For {f.audience.charAt(0).toLowerCase() + f.audience.slice(1)}.</p>
+        <p className="mt-2 text-brand-100">For {forWhom(f.audience)}.</p>
       </Hero>
       <section className="bg-canvas py-12">
         <Container className="space-y-12">
