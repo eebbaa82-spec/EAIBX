@@ -13,6 +13,7 @@ import {
   questions,
   sectorReportFor,
   riskKeys,
+  stressTests,
   suggestedRisks,
   type AnalystFile,
   type CreditCase,
@@ -103,6 +104,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
   const a = useMemo(() => analyseCase(k), [k]);
   const drafts = useMemo(() => draftCommentary(k, a), [k, a]);
   const suggested = useMemo(() => suggestedRisks(k, a), [k, a]);
+  const stress = useMemo(() => stressTests(k, a), [k, a]);
   const swot = useMemo(() => autoSwot(k, a, contextSwot(selection(k, ctx))), [k, a, ctx]);
   const go = (i: number) => {
     setStep(i);
@@ -468,7 +470,17 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           </div>
         ))}
       </Block>
-      <Block title="8.8 Risk assessment" intro="Levels marked Auto are set from the figures and your business assessment. Choose a level to override one.">
+      <Block
+        title="8.8 Risk assessment"
+        intro="Each risk area is assessed from the figures, the scenario tests, the credit reference report and your business assessment. Levels marked Auto are set by the workspace; choose a level to override one, and add your own comment."
+      >
+        <Grid>
+          {k.importer && (
+            <Text label="Share of direct costs that is imported (%)" type="number" value={k.importShare} onChange={(v) => set({ importShare: v })} placeholder="50" hint="Used for the weaker birr scenario. 50% is assumed if left blank." />
+          )}
+          <Text label="Your institution's capital (ETB)" type="number" value={k.lenderCapital} onChange={(v) => set({ lenderCapital: v })} hint="Optional. Flags a big borrower, whose total exposure is 5% of capital or more." />
+        </Grid>
+        <StressTable stress={stress} unit={k.unit} />
         <div className="space-y-4">
           {riskKeys.map((r) => (
             <div key={r.key} className="grid gap-2 sm:grid-cols-[12rem_8rem_1fr] sm:items-start">
@@ -749,6 +761,40 @@ function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set
           report.
         </p>
         <textarea aria-label="Analyst's sector and regional information" rows={4} value={k.contextUpdate} onChange={(e) => set({ contextUpdate: e.target.value })} className={inputClass} />
+      </div>
+    </div>
+  );
+}
+
+function StressTable({ stress, unit }: { stress: ReturnType<typeof stressTests>; unit: string }) {
+  if (!stress.length) return <p className="text-sm text-muted">Enter the financial statements to run the scenario tests.</p>;
+  return (
+    <div>
+      <p className="font-semibold text-ink">Scenario tests on the latest period</p>
+      <div className="mt-2 overflow-x-auto rounded-xl border border-line bg-white">
+        <table className="w-full min-w-[640px] text-left text-sm">
+          <thead className="bg-canvas text-xs uppercase tracking-wide text-muted">
+            <tr>
+              <th className="px-2 py-2">Scenario</th>
+              <th className="px-2 py-2 text-right">Profit before tax ({unit})</th>
+              <th className="px-2 py-2 text-right">Interest or collateral cover</th>
+              <th className="px-2 py-2">Result</th>
+            </tr>
+          </thead>
+          <tbody>
+            {stress.map((x) => (
+              <tr key={x.name} className="border-t border-line align-top">
+                <td className="px-2 py-1.5">
+                  <span className="font-semibold">{x.name}</span>
+                  <span className="block text-xs text-muted">{x.shock}</span>
+                </td>
+                <td className="px-2 py-1.5 text-right tabular-nums">{Number.isFinite(x.pbt) ? Math.round(x.pbt).toLocaleString("en-US") : "-"}</td>
+                <td className="px-2 py-1.5 text-right tabular-nums">{Number.isFinite(x.cover) ? (x.collateral ? `${Math.round(x.cover * 100)}%` : `${x.cover.toFixed(2)}x`) : "-"}</td>
+                <td className={`px-2 py-1.5 font-semibold ${x.result === "Fails" ? "text-red-700" : x.result === "Weakens" ? "text-amber-700" : "text-brand-700"}`}>{x.result}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );

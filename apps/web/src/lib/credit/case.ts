@@ -22,13 +22,18 @@ export type Recommendation = { type: string; amount: string; rate: string; tenur
 export type Level = "Low" | "Medium" | "High" | "";
 export type AnalystFile = { id: string; name: string; size: number; note: string };
 
+/** Risk areas, following the risk management procedure: credit, liquidity, interest rate, foreign exchange and operational risk, applied to one borrower. */
 export const riskKeys = [
-  { key: "product", label: "Product risk", hint: "Demand, substitutes, shelf life and quality of what the business sells." },
-  { key: "market", label: "Market risk", hint: "Competition, price changes, customer concentration and export markets." },
-  { key: "profitability", label: "Profitability risk", hint: "How stable margins are, and how sensitive profit is to cost or price changes." },
-  { key: "supplier", label: "Supplier risk", hint: "Dependence on few suppliers, imported inputs and foreign currency needs." },
-  { key: "environmental", label: "Environmental and social risk", hint: "Licenses, waste, land use, safety and community impact." },
-  { key: "collateral", label: "Collateral risk", hint: "Value, marketability, legal title and insurance with the lender named as co-beneficiary." },
+  { key: "credit", label: "Credit risk", hint: "Capacity to repay from profit and cash flow, repayment record here and at other banks." },
+  { key: "liquidity", label: "Liquidity risk", hint: "Whether current assets cover obligations as they fall due, and the length of the cash cycle." },
+  { key: "interest", label: "Interest rate risk", hint: "How far a rise in lending rates would cut profit and interest cover." },
+  { key: "fx", label: "Foreign exchange risk", hint: "Exposure of costs and income to a weaker birr through imported inputs or export sales." },
+  { key: "concentration", label: "Concentration risk", hint: "Dependence on few customers or suppliers, and the size of the exposure against the lender's capital." },
+  { key: "operational", label: "Operational risk", hint: "Fraud, business disruption, damage to physical assets, process failures and insurance." },
+  { key: "legal", label: "Legal and compliance risk", hint: "Legal capacity to borrow, valid licences and tax clearance, and enforceable contracts and collateral." },
+  { key: "strategic", label: "Strategic and market risk", hint: "Position in the sector, competition, management expertise and the sales trend." },
+  { key: "reputation", label: "Reputation and integrity risk", hint: "Integrity, reputation and conduct of the borrower and its owners." },
+  { key: "collateral", label: "Collateral risk", hint: "Coverage, marketability, legal title, insurance, and coverage if property values fall." },
 ] as const;
 export type RiskKey = (typeof riskKeys)[number]["key"];
 
@@ -128,6 +133,8 @@ export type CreditCase = {
   salesMix: string;
   notes: Record<string, string>;
   risks: Record<RiskKey, { level: Level; note: string }>;
+  importShare: string;
+  lenderCapital: string;
   assessment: Partial<Record<QuestionKey, { rating: Rating; note: string }>>;
   gradeJustification: string;
   swot: { s: string; w: string; o: string; t: string };
@@ -199,6 +206,8 @@ export const emptyCase = (): CreditCase => ({
   notes: {},
   risks: Object.fromEntries(riskKeys.map((r) => [r.key, { level: "", note: "" }])) as CreditCase["risks"],
   assessment: {},
+  importShare: "",
+  lenderCapital: "",
   gradeJustification: "",
   swot: { s: "", w: "", o: "", t: "" },
   recommendations: [{ type: "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }],
@@ -448,32 +457,150 @@ export { change };
 
 const pctText = (n: number) => `${(n * 100).toFixed(0)}%`;
 
-/** Risk levels suggested from the figures, used where the analyst left a level blank. */
-export function suggestedRisks(k: CreditCase, a: CaseAnalysis): Partial<Record<RiskKey, { level: Level; why: string }>> {
+const unitScale: Record<string, number> = { "ETB '000": 1000, ETB: 1, "ETB million": 1000000 };
+const levelOrder: Level[] = ["", "Low", "Medium", "High"];
+const higher = (x: Level, y: Level): Level => (levelOrder.indexOf(x) >= levelOrder.indexOf(y) ? x : y);
+
+export type Stress = { name: string; shock: string; pbt: number; cover: number; result: "Withstands" | "Weakens" | "Fails"; collateral?: boolean };
+
+/**
+ * Forward-looking scenarios on the latest period, as the procedure asks for a
+ * capacity-to-repay analysis under various scenarios: lower sales, higher costs,
+ * higher interest rates, a weaker birr and lower property values.
+ */
+export function stressTests(k: CreditCase, a: CaseAnalysis): Stress[] {
   const L = a.latest;
-  const rating = (q: QuestionKey) => k.assessment[q]?.rating ?? "";
-  const fromRating = (q: QuestionKey): Level => (rating(q) === "Strong" ? "Low" : rating(q) === "Adequate" ? "Medium" : rating(q) === "Weak" ? "High" : "");
-  const out: Partial<Record<RiskKey, { level: Level; why: string }>> = {};
-  if (fromRating("market")) out.market = { level: fromRating("market"), why: `market position rated ${rating("market").toLowerCase()}` };
-  if (fromRating("suppliers")) out.supplier = { level: fromRating("suppliers"), why: `suppliers and inputs rated ${rating("suppliers").toLowerCase()}` };
-  else if (k.importer) out.supplier = { level: "Medium", why: "the business depends on imports and foreign currency" };
-  if (fromRating("environment")) out.environmental = { level: fromRating("environment"), why: `environment, safety and insurance rated ${rating("environment").toLowerCase()}` };
+  const out: Stress[] = [];
   if (L) {
-    if (L.netProfit < 0) out.profitability = { level: "High", why: "the latest period shows a loss" };
-    else if (L.npMargin < 0.03) out.profitability = { level: "Medium", why: `net margin is thin at ${pctText(L.npMargin)}` };
-    else out.profitability = { level: "Low", why: `net margin is ${pctText(L.npMargin)}` };
-    if (Number.isFinite(L.salesGrowth) && L.salesGrowth < -0.1 && !out.market) out.market = { level: "High", why: `annualized sales fell ${pctText(-L.salesGrowth)}` };
+    const scale = unitScale[k.unit] ?? 1000;
+    const year = (L.days || 365) / 365;
+    const newDebt = (a.recommended || a.requested || 0) / scale;
+    const extraInterest = (pts: number) => (L.bankDebt + newDebt) * (pts / 100) * year;
+    const direct = L.cogs + L.otherDirect;
+    const importShare = Math.min(100, Math.max(0, amount(k.importShare) || (k.importer ? 50 : 0))) / 100;
+    const run = (name: string, shock: string, profitHit: number, interestUp: number) => {
+      const finExp = L.finExp + interestUp;
+      const pbt = L.pbt - profitHit - interestUp;
+      const cover = finExp > 0 ? (pbt + finExp) / finExp : NaN;
+      const result = pbt > 0 && (!Number.isFinite(cover) || cover >= 1.5) ? "Withstands" : pbt >= 0 || cover >= 1 ? "Weakens" : "Fails";
+      out.push({ name, shock, pbt, cover, result });
+    };
+    run("Current position", "Latest period as reported", 0, 0);
+    run("Lower sales", "Sales 20% lower, direct costs falling with them", 0.2 * L.grossProfit, 0);
+    run("Higher input costs", "Direct costs 10% higher", 0.1 * direct, 0);
+    run("Higher interest rates", "Lending rates 3 points higher, proposed facility included", 0, extraInterest(3));
+    if (importShare > 0) run("Weaker birr", `Birr 20% weaker against the dollar, ${Math.round(importShare * 100)}% of direct costs imported`, 0.2 * direct * importShare, 0);
+    run("Combined", "Sales 10% lower, direct costs 5% higher and rates 3 points higher", 0.1 * L.grossProfit + 0.05 * direct, extraInterest(3));
   }
   if (Number.isFinite(a.coverRecommended)) {
-    const uninsured = k.otherCollateral.some((o) => o.insured === "No");
-    out.collateral =
-      a.coverRecommended >= 1.25 && !uninsured
-        ? { level: "Low", why: `collateral covers ${pctText(a.coverRecommended)} of exposure` }
-        : a.coverRecommended >= 1
-          ? { level: "Medium", why: `collateral covers ${pctText(a.coverRecommended)} of exposure${uninsured ? " and some items are uninsured" : ""}` }
-          : { level: "High", why: `collateral covers only ${pctText(a.coverRecommended)} of exposure` };
+    const cover = a.coverRecommended * 0.7;
+    out.push({ name: "Lower property values", shock: "Collateral worth 30% less", pbt: NaN, cover, result: cover >= 1 ? "Withstands" : cover >= 0.8 ? "Weakens" : "Fails", collateral: true });
   }
   return out;
+}
+
+/** Risk levels set from the figures, the credit report and the business assessment; the analyst can override any. */
+export function suggestedRisks(k: CreditCase, a: CaseAnalysis): Partial<Record<RiskKey, { level: Level; why: string }>> {
+  const L = a.latest;
+  const stress = stressTests(k, a);
+  const st = (name: string) => stress.find((s) => s.name === name);
+  const rating = (q: QuestionKey) => k.assessment[q]?.rating ?? "";
+  const fromRating = (q: QuestionKey): Level => (rating(q) === "Strong" ? "Low" : rating(q) === "Adequate" ? "Medium" : rating(q) === "Weak" ? "High" : "");
+  const parts: Partial<Record<RiskKey, { level: Level; why: string }[]>> = {};
+  const note = (key: RiskKey, level: Level, why: string) => {
+    if (level) (parts[key] ??= []).push({ level, why });
+  };
+  const rated = (key: RiskKey, q: QuestionKey) => rating(q) && note(key, fromRating(q), `${questions.find((x) => x.key === q)?.label.toLowerCase()} rated ${rating(q).toLowerCase()}`);
+  const ob = otherBanks(k);
+
+  // Credit risk: capacity to repay and repayment record.
+  if (L) {
+    if (L.pbt < 0) note("credit", "High", "the latest period shows a loss before tax");
+    else if (Number.isFinite(L.interestCover)) note("credit", L.interestCover < 1 ? "High" : L.interestCover < 2 ? "Medium" : "Low", `interest cover is ${L.interestCover.toFixed(2)}x`);
+    else note("credit", L.npMargin < 0.03 ? "Medium" : "Low", `net margin is ${pctText(L.npMargin)} with no finance cost`);
+  }
+  if (ob) note("credit", ob.inArrears ? "High" : "Low", ob.inArrears ? `${ob.inArrears} facilit${ob.inArrears === 1 ? "y" : "ies"} in arrears at other banks` : "facilities at other banks are current");
+  const bad = k.facilities.filter((f) => f.status !== "Pass").length;
+  if (k.facilities.length) note("credit", bad ? "High" : "Low", bad ? `${bad} present facilit${bad === 1 ? "y is" : "ies are"} not classified pass` : "present facilities are classified pass");
+
+  // Liquidity risk.
+  if (L && Number.isFinite(L.currentRatio)) {
+    note("liquidity", L.currentRatio < 1 ? "High" : L.currentRatio < 1.2 ? "Medium" : "Low", `current ratio ${L.currentRatio.toFixed(2)}x${Number.isFinite(L.quickRatio) ? `, quick ratio ${L.quickRatio.toFixed(2)}x` : ""}`);
+    if (Number.isFinite(L.wcCycle) && L.wcCycle > 180) note("liquidity", "Medium", `cash cycle of ${Math.round(L.wcCycle)} days`);
+  }
+
+  // Interest rate risk: rates 3 points higher.
+  const rate = st("Higher interest rates");
+  if (rate) note("interest", rate.result === "Fails" ? "High" : rate.result === "Weakens" ? "Medium" : "Low", Number.isFinite(rate.cover) ? `interest cover would be ${rate.cover.toFixed(2)}x with rates 3 points higher` : "little bank debt");
+
+  // Foreign exchange risk.
+  const fx = st("Weaker birr");
+  if (fx) note("fx", fx.result === "Fails" ? "High" : fx.result === "Weakens" ? "Medium" : "Low", `with a 20% weaker birr, profit before tax would be ${fmt(fx.pbt, "amount")} (${k.unit})`);
+  else if (k.exporter) note("fx", "Low", "export earnings in foreign currency");
+  else if (L) note("fx", "Low", "no imported inputs or foreign currency obligations reported");
+
+  // Concentration risk.
+  rated("concentration", "customers");
+  rated("concentration", "suppliers");
+  const capital = amount(k.lenderCapital);
+  const exposure = a.existing + (a.recommended || a.requested);
+  if (Number.isFinite(capital) && capital > 0 && exposure > 0) {
+    const share = exposure / capital;
+    note("concentration", share >= 0.05 ? "High" : share >= 0.02 ? "Medium" : "Low", `total exposure is ${(share * 100).toFixed(1)}% of the lender's capital${share >= 0.05 ? ", a big borrower" : ""}`);
+  }
+
+  // Operational risk.
+  rated("operational", "operations");
+  rated("operational", "environment");
+  if (k.otherCollateral.some((o) => o.insured === "No")) note("operational", "Medium", "some assets are uninsured");
+
+  // Legal and compliance risk.
+  rated("legal", "compliance");
+  if (k.buildings.some((b) => b.owner.trim() && k.borrower.trim() && bankKey(b.owner) !== bankKey(k.borrower))) note("legal", "Medium", "some collateral is owned by a third party");
+  if (k.exceptions.trim()) note("legal", "Medium", "the request has exceptions to policy");
+
+  // Strategic and market risk.
+  rated("strategic", "market");
+  rated("strategic", "management");
+  if (L && Number.isFinite(L.salesGrowth)) note("strategic", L.salesGrowth < -0.1 ? "High" : L.salesGrowth < 0 ? "Medium" : "Low", `annualized sales ${L.salesGrowth >= 0 ? "up" : "down"} ${pctText(Math.abs(L.salesGrowth))}`);
+
+  // Reputation and integrity risk.
+  rated("reputation", "character");
+  if (ob?.worst && !/pass/i.test(ob.worst) && ob.active.length) note("reputation", "High", `worst classification at other banks is ${ob.worst.toLowerCase()}`);
+
+  // Collateral risk.
+  if (Number.isFinite(a.coverRecommended)) {
+    const fall = st("Lower property values");
+    note("collateral", a.coverRecommended >= 1.25 ? "Low" : a.coverRecommended >= 1 ? "Medium" : "High", `collateral covers ${pctText(a.coverRecommended)} of exposure${fall ? `, ${pctText(fall.cover)} if values fall 30%` : ""}`);
+  }
+  // The highest level found sets the area's level; its reasons come first.
+  const out: Partial<Record<RiskKey, { level: Level; why: string }>> = {};
+  for (const [key, list] of Object.entries(parts) as [RiskKey, { level: Level; why: string }[]][]) {
+    const sorted = [...list].sort((x, y) => levelOrder.indexOf(y.level) - levelOrder.indexOf(x.level));
+    out[key] = { level: sorted.reduce<Level>((m, x) => higher(m, x.level), ""), why: sorted.map((x) => x.why).join("; ") };
+  }
+  return out;
+}
+
+/**
+ * The points the procedure expects the analyst to have documented at origination,
+ * checked against what is in the case.
+ */
+export function originationChecklist(k: CreditCase, a: CaseAnalysis) {
+  const r = (q: QuestionKey) => !!k.assessment[q]?.rating;
+  const insured = k.otherCollateral.every((o) => o.insured === "Yes");
+  return [
+    { point: "Purpose of the credit and source of repayment", done: !!k.purpose.trim() && (k.requests.some((x) => x.repayment.trim()) || r("plan")) },
+    { point: "Integrity and reputation of the borrower", done: r("character") },
+    { point: "Risk profile and sensitivity to economic and market developments", done: !!a.latest && (!!k.sectorReport || !!k.contextUpdate.trim()) },
+    { point: "Repayment history and current capacity to repay", done: !!a.latest && (!!k.repaymentHistory.trim() || !!k.crb) },
+    { point: "Forward-looking analysis under various scenarios", done: !!a.latest },
+    { point: "Legal capacity of the borrower to borrow", done: !!k.ownership && r("compliance") },
+    { point: "Business expertise and position in the sector", done: r("management") && r("market") },
+    { point: "Terms and conditions to limit future changes in risk", done: !!k.conditions.trim() },
+    { point: "Adequacy and enforceability of collateral, registration and insurance", done: a.collateral > 0 && insured },
+    { point: "Credit risk grade", done: !!k.gradeNow },
+  ];
 }
 
 export type Scored = { criterion: string; result: string; verdict: "Meets" | "Watch" | "Concern" | "Not assessed" };
@@ -490,6 +617,8 @@ export function scorecard(k: CreditCase, a: CaseAnalysis): Scored[] {
     if (Number.isFinite(L.interestCover)) add("Interest cover", `${L.interestCover.toFixed(2)}x`, L.interestCover < 1 ? "Concern" : L.interestCover < 2 ? "Watch" : "Meets");
     if (Number.isFinite(L.salesGrowth)) add("Sales trend", `${L.salesGrowth >= 0 ? "Up" : "Down"} ${pctText(Math.abs(L.salesGrowth))} annualized`, L.salesGrowth < -0.1 ? "Concern" : L.salesGrowth < 0 ? "Watch" : "Meets");
   } else add("Financial statements", "Not entered", "Not assessed");
+  const combined = stressTests(k, a).find((x) => x.name === "Combined");
+  if (combined) add("Stress test", `Combined scenario: ${combined.result.toLowerCase()}`, combined.result === "Fails" ? "Concern" : combined.result === "Weakens" ? "Watch" : "Meets");
   if (Number.isFinite(a.coverRecommended)) add("Collateral coverage", pctText(a.coverRecommended), a.coverRecommended < 1 ? "Concern" : a.coverRecommended < 1.25 ? "Watch" : "Meets");
   else add("Collateral coverage", "No collateral entered", "Not assessed");
   const ob = otherBanks(k);

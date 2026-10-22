@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { amount, autoSwot, birr, discounted, otherBanks, overallVerdict, periodLabel, questions, riskKeys, scorecard, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
+import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, overallVerdict, periodLabel, questions, riskKeys, scorecard, stressTests, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { titleCase } from "./CreditCrb";
 import type { AnalysisContext } from "@/lib/credit/context";
 import { contextSwot, outlookFacts, selection } from "@/lib/credit/select";
@@ -208,6 +208,8 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const address = [k.city, k.woreda, k.kebele, sel.regionName].filter(Boolean).join(", ");
   const text = (n: string) => (k.notes[n]?.trim() ? k.notes[n] : drafts[n] ?? "");
   const suggested = suggestedRisks(k, a);
+  const stress = stressTests(k, a);
+  const checklist = originationChecklist(k, a);
   const swot = autoSwot(k, a, contextSwot(sel));
   const card = scorecard(k, a);
   const verdict = overallVerdict(card);
@@ -216,10 +218,9 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
     .map((r) => {
       const own = k.risks[r.key];
       const auto = suggested[r.key];
-      if (own.level || !auto) return { label: r.label, level: own.level, note: own.note.trim() };
+      if (own.level || !auto) return { label: r.label, level: own.level, note: own.note.trim() || (own.level ? "" : "Not assessed.") };
       return { label: r.label, level: auto.level, note: own.note.trim() || `${auto.why[0].toUpperCase()}${auto.why.slice(1)}.` };
-    })
-    .filter((r) => r.level || r.note);
+    });
   const extra = (x: string) =>
     x
       .split(/\n+/)
@@ -457,7 +458,18 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         </div>
       ))}
       <H3>8.8 Risk assessment</H3>
-      <Table head={["Risk", "Level", "Comment"]} rows={risks.map((r) => [r.label, r.level || "-", r.note])} />
+      <P>Each risk area is assessed from the financial statements, the scenario tests below, the credit reference report and the business assessment.</P>
+      <Table head={["Risk area", "Level", "Basis"]} rows={risks.map((r) => [r.label, r.level || "-", r.note])} />
+      {stress.length > 0 && (
+        <>
+          <p className="mt-3 font-semibold">Scenario tests on the latest period</p>
+          <Table
+            head={["Scenario", "Shock", `Profit before tax (${k.unit})`, "Interest or collateral cover", "Result"]}
+            right={[2, 3]}
+            rows={stress.map((x) => [x.name, x.shock, Number.isFinite(x.pbt) ? fmt(x.pbt, "amount") : "-", Number.isFinite(x.cover) ? (x.collateral ? pctOr(x.cover) : timesOr(x.cover)) : "-", x.result])}
+          />
+        </>
+      )}
       {k.gradeJustification.trim() && (
         <>
           <p className="mt-2 font-semibold">Grade justification (current grade {k.gradeNow})</p>
@@ -531,6 +543,8 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
               />
             </div>
           </div>
+          <p className="mt-2 font-bold">Points documented for the approving authority</p>
+          <Table head={["Point", "Status"]} rows={checklist.map((c) => [c.point, c.done ? "Documented" : "Not documented"])} />
           <P>
             {recs.length
               ? `The officer recommends ${recs.map((r) => `${r.type ? r.type.toLowerCase() : "a facility"} of ${etb(r.amount)}${r.tenure ? ` for ${r.tenure} months` : ""}`).join(", ")}${recs.length > 1 && recTotal ? `, ${birr(recTotal)} in total` : ""}${recs.some((r) => r.collateral) ? `, secured by ${recs.map((r) => r.collateral).filter(Boolean).join("; ")}` : ""}.${k.conditions.trim() ? " Approval is subject to the conditions and covenants in section 10." : ""}`
