@@ -9,6 +9,7 @@ import {
   passMark,
   proCourseHref,
   proCourses,
+  simName,
   folderOf,
   folders,
   tracks,
@@ -279,7 +280,7 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
               ["For", c.audience],
               [
                 "Study time",
-                `About ${Math.round(minutes(c) / 60)} hours online, in ${c.modules.length} modules (${c.hours} hours in the classroom version)`,
+                `About ${Math.round(minutes(c) / 60)} hours online, in ${c.modules.length} modules (${c.days ? `${c.days} days` : `${c.hours} hours`} in the classroom version)`,
               ],
               [
                 "Each module",
@@ -289,7 +290,12 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
                 "Assessment",
                 `A ${c.exam.length}-question final exam; pass mark ${passMark}%`,
               ],
-              ["Certificate", "Investopia Academy certificate of completion"],
+              [
+                "Certificate",
+                c.award
+                  ? `Investopia Academy ${c.award}`
+                  : "Investopia Academy certificate of completion",
+              ],
               [
                 "Access",
                 "Module 1 free for registered users; the full course, exam and certificate for subscribers",
@@ -353,7 +359,7 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
                   </span>
                   <span className="flex-1">
                     <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">
-                      Officer simulation
+                      {simName(c)}
                     </span>
                     <span className="mt-1 block text-lg font-semibold text-ink">
                       {c.simulation.title}
@@ -391,8 +397,84 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
           </ol>
         </Container>
       </section>
+      <PracticalWork course={c} />
       <Sources course={c} />
     </div>
+  );
+}
+
+/** The practical exercise or capstone, the templates and the award criteria. */
+function PracticalWork({ course: c }: { course: ProCourse }) {
+  if (!c.practical && !c.downloads?.length && !c.criteria?.length) return null;
+  return (
+    <section className="bg-white py-12">
+      <Container className="grid gap-10 lg:grid-cols-[3fr_2fr]">
+        {c.practical && (
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gold-500">
+              {c.practical.kind}
+            </p>
+            <h2 className="mt-1 text-2xl font-bold tracking-tight text-ink">
+              {c.practical.title}
+            </h2>
+            <p className="mt-3 text-ink">{c.practical.text}</p>
+            <ol className="mt-5 space-y-3">
+              {c.practical.steps.map((s, i) => (
+                <li key={s} className="flex gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-100 text-sm font-semibold text-brand-700">
+                    {i + 1}
+                  </span>
+                  <span className="text-ink">{s}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 font-semibold text-ink">What you hand in</p>
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-ink">
+              {c.practical.deliverables.map((d) => (
+                <li key={d}>{d}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="space-y-6">
+          {!!c.downloads?.length && (
+            <div className="rounded-xl border border-line bg-canvas p-6">
+              <h3 className="text-lg font-semibold text-ink">Templates and tools</h3>
+              <ul className="mt-4 space-y-4">
+                {c.downloads.map((d) => (
+                  <li key={d.file}>
+                    <a
+                      href={`/academy/templates/${d.file}`}
+                      download
+                      className="font-semibold text-brand-600 hover:text-brand-700"
+                    >
+                      <Icon name="calculator" className="mr-2 inline h-5 w-5" />
+                      {d.label}
+                    </a>
+                    <p className="mt-1 text-sm text-muted">{d.note}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {!!c.criteria?.length && (
+            <div className="rounded-xl border border-gold-400 bg-gold-100 p-6">
+              <h3 className="text-lg font-semibold text-ink">
+                How to earn the {c.award ?? "certificate"}
+              </h3>
+              <ul className="mt-3 space-y-2">
+                {c.criteria.map((k) => (
+                  <li key={k} className="flex gap-2 text-ink">
+                    <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+                    {k}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </Container>
+    </section>
   );
 }
 
@@ -653,7 +735,7 @@ export function ProModulePage({
               className="rounded-xl bg-brand-600 p-4 text-right text-white hover:bg-brand-700"
             >
               <span className="text-sm text-brand-100">
-                {next ? "Next module" : c.simulation ? "Officer simulation" : "Final exam"} →
+                {next ? "Next module" : c.simulation ? simName(c) : "Final exam"} →
               </span>
               <span className="mt-1 block font-semibold">
                 {next ? next.title : c.simulation ? c.simulation.title : "Final exam and certificate"}
@@ -678,10 +760,10 @@ export function ProSimulationPage({ course: c }: { course: ProCourse }) {
               ← {c.title}
             </Link>
           }
-          title="Officer simulation"
+          title={simName(c)}
         >
           <p className="mt-3 max-w-3xl text-lg text-brand-100">
-            {sim.title}. Handle each item as it reaches your desk, using what you learned in the {c.modules.length} modules. Your choices have consequences later.
+            {sim.title}. Handle each item as it reaches you, using what you learned in the {c.modules.length} modules. Your choices have consequences later.
           </p>
         </Hero>
       </div>

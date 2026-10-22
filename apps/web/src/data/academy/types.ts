@@ -105,10 +105,24 @@ export type ProCourse = {
   summary: string; // one or two sentences for the catalog card
   audience: string;
   hours: number; // contact hours of the classroom version
+  days?: number; // classroom days, shown instead of hours when set
+  award?: "Certificate" | "Professional Certificate" | "Executive Certificate"; // the tier printed on the certificate
   objectives: string[];
   runningCase?: { name: string; text: string }; // the fictional company used throughout
   modules: ProModule[];
   simulation?: Simulation;
+  /** A practical exercise or capstone, done with the downloadable templates and assessed in blended delivery. */
+  practical?: {
+    kind: "Practical exercise" | "Capstone project";
+    title: string;
+    text: string;
+    steps: string[];
+    deliverables: string[];
+  };
+  /** Excel templates and tools for the course, kept in public/academy/templates/. */
+  downloads?: { label: string; file: string; note: string }[];
+  /** What a learner must do to earn the award, online and in the blended version. */
+  criteria?: string[];
   exam: QuizQuestion[]; // 20, covering every module
   sources: string[]; // what the course draws on, institutions named only if public (NBE, laws)
 };

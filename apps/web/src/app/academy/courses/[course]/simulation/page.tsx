@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProSimulationPage } from "@/components/academy/CoursePages";
-import { proCourses } from "@/data/academy";
+import { proCourses, simName } from "@/data/academy";
 
 export const dynamicParams = false;
 
@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ course: string }> }): Promise<Metadata> {
   const { course } = await params;
   const c = proCourses.find((x) => x.slug === course);
-  return c?.simulation ? { title: `Officer simulation · ${c.title} · Investopia Academy`, description: c.simulation.title } : {};
+  return c?.simulation ? { title: `${simName(c)} · ${c.title} · Investopia Academy`, description: c.simulation.title } : {};
 }
 
 export default async function ProSimulation({ params }: { params: Promise<{ course: string }> }) {

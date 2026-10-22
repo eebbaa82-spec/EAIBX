@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState, type FormEvent } from "react";
 import type { ProCourse, QuizQuestion, Scenario } from "@/data/academy/types";
-import { examHref, passMark, proCourseHref, verifyUrl } from "@/data/academy/paths";
+import { examHref, passMark, proCourseHref, simName, verifyUrl } from "@/data/academy/paths";
 import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components/forms";
 import { savedCode } from "./Access";
 import { reportProgress } from "./seat";
@@ -345,11 +345,11 @@ export function Certificate({ course }: { course: ProCourse }) {
       <section className="mt-12 rounded-2xl border border-gold-400 bg-gold-100 p-6 print:hidden">
         <h2 className="text-xl font-bold text-ink">One step to your certificate</h2>
         <p className="mt-1 text-ink">
-          You passed the exam. The certificate also needs the officer simulation, where you work as {course.simulation!.role.toLowerCase()} and manage real
+          You passed the exam. The certificate also needs the {simName(course).toLowerCase()}, where you work as {course.simulation!.role.toLowerCase()} and manage real
           cases with what you learned. {sim.done ? `Your last run scored ${sim.score}%; you need ${passMark}%.` : `Pass it with ${passMark}% or more.`}
         </p>
         <Link href={simulationHref(course.slug)} className="mt-4 inline-block rounded-lg bg-brand-600 px-5 py-2.5 font-semibold text-white hover:bg-brand-700">
-          Go to the officer simulation →
+          Go to the {simName(course).toLowerCase()} →
         </Link>
       </section>
     );
@@ -435,12 +435,12 @@ export function Certificate({ course }: { course: ProCourse }) {
       <div className="certificate hidden break-inside-avoid print:flex">
         <div className="flex h-[184mm] w-full flex-col items-center justify-center border-[6px] border-double border-brand-700 px-12 py-10 text-center font-serif text-black">
           <p className="text-[11pt] uppercase tracking-[0.3em] text-brand-700">Investopia Academy</p>
-          <p className="mt-5 text-[30pt] font-bold">Certificate of Completion</p>
+          <p className="mt-5 text-[30pt] font-bold">{course.award ?? "Certificate of Completion"}</p>
           <p className="mt-5 text-[12pt]">This certifies that</p>
           <p className="mt-3 border-b border-black px-10 pb-1 text-[24pt] font-bold">{name || exam.name}</p>
           <p className="mt-5 max-w-[200mm] text-[12pt]">
             has completed the online course <strong>{course.title}</strong> ({course.subtitle}) and passed its final examination with a score of {pct}%
-            {sim.required ? `, and its officer simulation as ${course.simulation!.role.toLowerCase()} with ${sim.score}%` : ""}.
+            {sim.required ? `, and its ${simName(course).toLowerCase()} as ${course.simulation!.role.toLowerCase()} with ${sim.score}%` : ""}.
           </p>
           <div className="mt-10 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.6fr] items-end gap-10 text-[10pt]">
             <p className="border-t border-black pt-1">Date: {longDate(exam.date)}</p>
