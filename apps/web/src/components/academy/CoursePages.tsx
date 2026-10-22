@@ -444,7 +444,7 @@ function PracticalWork({ course: c }: { course: ProCourse }) {
                 {c.downloads.map((d) => (
                   <li key={d.file}>
                     <a
-                      href={`/academy/templates/${d.file}`}
+                      href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/academy/templates/${d.file}`}
                       download
                       className="font-semibold text-brand-600 hover:text-brand-700"
                     >
