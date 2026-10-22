@@ -256,7 +256,7 @@ export function FinalExam({ course }: { course: ProCourse }) {
     <div className="print:hidden">
       {missing.length > 0 && (
         <p className="rounded-xl bg-gold-100 p-4 text-ink">
-          You can take the exam now, but it covers all five modules. Not yet completed:{" "}
+          You can take the exam now, but it covers all {course.modules.length} modules. Not yet completed:{" "}
           {missing.map((m, i) => (
             <span key={m.id}>
               {i > 0 && ", "}

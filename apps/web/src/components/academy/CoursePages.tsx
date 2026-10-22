@@ -9,7 +9,10 @@ import {
   passMark,
   proCourseHref,
   proCourses,
+  folderOf,
+  folders,
   tracks,
+  type FolderId,
 } from "@/data/academy";
 import type { ProCourse, ProLesson, ProModule } from "@/data/academy/types";
 import { AcademyGate, AccessBadge } from "./Access";
@@ -50,49 +53,160 @@ function Hero({
   );
 }
 
-/** Catalog cards for the Academy page and the course list. */
+const folderHref = (id: FolderId) => `/academy/folders/${id}/`;
+const inFolder = (f: (typeof folders)[number]) =>
+  proCourses.filter((c) => f.tracks.includes(c.track));
+
+/** The four course folders, as cards that open each folder's page. */
+export function FolderCards({ current }: { current?: FolderId }) {
+  return (
+    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {folders.map((f) => {
+        const n = inFolder(f).length;
+        const on = f.id === current;
+        return (
+          <li key={f.id}>
+            <Link
+              href={folderHref(f.id)}
+              aria-current={on ? "page" : undefined}
+              className={`group flex h-full flex-col rounded-xl border p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${
+                on
+                  ? "border-brand-600 bg-brand-900 text-white"
+                  : "border-line bg-white hover:border-brand-500"
+              }`}
+            >
+              <span
+                className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+                  on ? "bg-gold-400 text-ink" : "bg-brand-100 text-brand-700 group-hover:bg-brand-600 group-hover:text-white"
+                }`}
+              >
+                <Icon name={f.icon} className="h-6 w-6" />
+              </span>
+              <span className={`mt-3 block text-lg font-semibold ${on ? "" : "text-ink"}`}>
+                {f.name}
+              </span>
+              <span className={`mt-1 block flex-1 text-sm ${on ? "text-brand-100" : "text-muted"}`}>
+                {f.intro}
+              </span>
+              <span className={`mt-3 block text-sm font-semibold ${on ? "text-gold-400" : "text-brand-600"}`}>
+                {n ? `${n} course${n === 1 ? "" : "s"}` : "Courses being added"}
+              </span>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
+function CourseCard({ c }: { c: ProCourse }) {
+  return (
+    <Link
+      href={proCourseHref(c.slug)}
+      className="group flex h-full flex-col rounded-xl border border-line bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-md"
+    >
+      <span className="flex items-center gap-3">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">
+          <Icon name={c.icon} className="h-6 w-6" />
+        </span>
+        <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
+          {levelLabel(c)}
+        </span>
+      </span>
+      <span className="mt-3 block text-lg font-semibold text-ink">
+        {c.title}
+      </span>
+      <span className="mt-1 block flex-1 text-muted">{c.summary}</span>
+      <span className="mt-3 block text-sm text-muted">
+        {c.modules.length} modules · {lessonCount(c)} lessons · final exam ·
+        certificate
+      </span>
+    </Link>
+  );
+}
+
+/** The tracks of one folder with their course cards. */
+function FolderTracks({ folder: f }: { folder: (typeof folders)[number] }) {
+  const shown = tracks.filter(
+    (t) => f.tracks.includes(t.id) && proCourses.some((c) => c.track === t.id),
+  );
+  if (!shown.length) {
+    return (
+      <p className="rounded-xl border border-dashed border-line bg-white p-5 text-muted">
+        The courses in this folder are being prepared. Contact us to hear when they open.
+      </p>
+    );
+  }
+  return (
+    <div className="space-y-10">
+      {shown.map((t) => (
+        <div key={t.id}>
+          <h4 className="text-lg font-semibold text-ink">{t.name}</h4>
+          <p className="mt-1 mb-5 max-w-3xl text-muted">{t.intro}</p>
+          <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {proCourses
+              .filter((c) => c.track === t.id)
+              .map((c) => (
+                <li key={c.slug}>
+                  <CourseCard c={c} />
+                </li>
+              ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** Catalog for the Academy page and the course list: the folders, then each folder's courses. */
 export function ProCatalog() {
   return (
-    <div className="space-y-12">
-      {tracks
-        .filter((t) => proCourses.some((c) => c.track === t.id))
-        .map((t) => (
-          <div key={t.id}>
-            <h3 className="text-xl font-semibold text-ink">{t.name}</h3>
-            <p className="mt-1 mb-5 max-w-3xl text-muted">{t.intro}</p>
-            <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {proCourses
-                .filter((c) => c.track === t.id)
-                .map((c) => (
-                  <li key={c.slug}>
-                    <Link
-                      href={proCourseHref(c.slug)}
-                      className="group flex h-full flex-col rounded-xl border border-line bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-brand-500 hover:shadow-md"
-                    >
-                      <span className="flex items-center gap-3">
-                        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-100 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">
-                          <Icon name={c.icon} className="h-6 w-6" />
-                        </span>
-                        <span className="text-xs font-semibold uppercase tracking-wide text-brand-600">
-                          {levelLabel(c)}
-                        </span>
-                      </span>
-                      <span className="mt-3 block text-lg font-semibold text-ink">
-                        {c.title}
-                      </span>
-                      <span className="mt-1 block flex-1 text-muted">
-                        {c.summary}
-                      </span>
-                      <span className="mt-3 block text-sm text-muted">
-                        5 modules · {lessonCount(c)} lessons · final exam ·
-                        certificate
-                      </span>
-                    </Link>
-                  </li>
-                ))}
-            </ul>
+    <div className="space-y-14">
+      <FolderCards />
+      {folders.map((f) => (
+        <div key={f.id} id={f.id} className="scroll-mt-24">
+          <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-line pb-3">
+            <h3 className="text-2xl font-bold tracking-tight text-ink">{f.name}</h3>
+            <Link href={folderHref(f.id)} className="text-sm font-semibold text-brand-600 hover:text-brand-700">
+              Open the folder →
+            </Link>
           </div>
-        ))}
+          <p className="mt-2 mb-6 text-sm text-muted">For {f.audience.charAt(0).toLowerCase() + f.audience.slice(1)}</p>
+          <FolderTracks folder={f} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** One folder's page. */
+export function FolderPage({ id }: { id: FolderId }) {
+  const f = folders.find((x) => x.id === id)!;
+  return (
+    <div>
+      <Hero
+        eyebrow={
+          <p className="flex flex-wrap items-center gap-3 text-sm font-semibold uppercase tracking-wide text-gold-400">
+            <Link
+              href="/academy/#catalog"
+              className="text-brand-100 normal-case tracking-normal hover:text-white"
+            >
+              ← Investopia Academy
+            </Link>
+            <span>Course folder</span>
+          </p>
+        }
+        title={f.name}
+      >
+        <p className="mt-4 max-w-3xl text-lg text-brand-100">{f.intro}</p>
+        <p className="mt-2 text-brand-100">For {f.audience.charAt(0).toLowerCase() + f.audience.slice(1)}.</p>
+      </Hero>
+      <section className="bg-canvas py-12">
+        <Container className="space-y-12">
+          <FolderCards current={f.id} />
+          <FolderTracks folder={f} />
+        </Container>
+      </section>
     </div>
   );
 }
@@ -108,6 +222,12 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
               className="text-brand-100 normal-case tracking-normal hover:text-white"
             >
               ← Investopia Academy
+            </Link>
+            <Link
+              href={folderHref(folderOf(c).id)}
+              className="normal-case tracking-normal text-brand-100 hover:text-white"
+            >
+              {folderOf(c).name}
             </Link>
             <span>{tracks.find((t) => t.id === c.track)!.name}</span>
             <span>{levelLabel(c)}</span>
@@ -159,11 +279,11 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
               ["For", c.audience],
               [
                 "Study time",
-                `About ${Math.round(minutes(c) / 60)} hours online, in 5 modules (${c.hours} hours in the classroom version)`,
+                `About ${Math.round(minutes(c) / 60)} hours online, in ${c.modules.length} modules (${c.hours} hours in the classroom version)`,
               ],
               [
                 "Each module",
-                "Short lessons, animated visuals, Ethiopian examples, decisions to make, NBE rules and worked calculations, then a quiz",
+                `Short lessons, animated visuals, Ethiopian examples, decisions to make, ${folderOf(c).id === "bank-and-mfi" ? "NBE rules" : "the laws and directives that apply"} and worked calculations, then a quiz`,
               ],
               [
                 "Assessment",
@@ -189,7 +309,7 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
       <section className="bg-canvas py-12">
         <Container>
           <h2 className="text-2xl font-bold tracking-tight text-ink">
-            The five modules
+            The {c.modules.length} modules
           </h2>
           <ol className="mt-8 grid gap-4 md:grid-cols-2">
             {c.modules.map((m, i) => (
@@ -262,7 +382,7 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
                     Final exam and certificate
                   </span>
                   <span className="mt-1 block text-brand-100">
-                    {c.exam.length} applied questions across all five modules.
+                    {c.exam.length} applied questions across all {c.modules.length} modules.
                     Pass with {passMark}% to download your certificate.
                   </span>
                 </span>
@@ -287,10 +407,11 @@ function Sources({ course: c }: { course: ProCourse }) {
           ))}
         </ul>
         <p className="mt-3 text-sm text-muted">
-          Examples and companies are fictional. Bank practices are shown as
-          typical Ethiopian practice, not as any one bank&apos;s policy. Always
-          apply your own institution&apos;s approved policy and the current NBE
-          directives.
+          {folderOf(c).id === "financial-management"
+            ? "Examples and companies are fictional. Tax rates and rules are shown as they stood when the course was written; always check the current proclamations, directives and guidance from the Ministry of Revenues before filing, and take professional advice for your own case."
+            : folderOf(c).id === "general"
+              ? "Examples and organizations are fictional. Apply your own organization's approved policies."
+              : "Examples and companies are fictional. Bank practices are shown as typical Ethiopian practice, not as any one bank's policy. Always apply your own institution's approved policy and the current NBE directives."}
         </p>
       </Container>
     </section>
@@ -560,7 +681,7 @@ export function ProSimulationPage({ course: c }: { course: ProCourse }) {
           title="Officer simulation"
         >
           <p className="mt-3 max-w-3xl text-lg text-brand-100">
-            {sim.title}. Handle each item as it reaches your desk, using what you learned in the five modules. Your choices have consequences later.
+            {sim.title}. Handle each item as it reaches your desk, using what you learned in the {c.modules.length} modules. Your choices have consequences later.
           </p>
         </Hero>
       </div>
@@ -588,7 +709,7 @@ export function ProExamPage({ course: c }: { course: ProCourse }) {
         title="Final exam"
       >
         <p className="mt-3 max-w-3xl text-lg text-brand-100">
-          {c.exam.length} applied questions across all five modules. Answers are
+          {c.exam.length} applied questions across all {c.modules.length} modules. Answers are
           shown after you submit. Pass with {passMark}% or more to download your
           certificate of completion.
         </p>

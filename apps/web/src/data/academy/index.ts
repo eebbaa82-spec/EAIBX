@@ -119,6 +119,18 @@ export const tracks: { id: ProCourse["track"]; name: string; intro: string }[] =
         "How a branch runs its domestic operations: accounts, deposits, cheques and clearing, transfers, cash and fraud controls.",
     },
     {
+      id: "tax",
+      name: "Taxation Program",
+      intro:
+        "Ethiopian business taxation from registration and filing to tax planning, transfer pricing and audits, on the current proclamations and directives.",
+    },
+    {
+      id: "smefinance",
+      name: "SME Financial Management Program",
+      intro:
+        "Setting up a company, keeping Excel-based records, monitoring performance and preparing an investor-ready business.",
+    },
+    {
       id: "capital",
       name: "School of Capital Markets and Investment",
       intro:
@@ -137,6 +149,58 @@ export const tracks: { id: ProCourse["track"]; name: string; intro: string }[] =
         "Cross-cutting skills that strengthen every role in a modern financial institution or growing business.",
     },
   ];
+
+export type FolderId = "bank-and-mfi" | "financial-management" | "capital-markets" | "general";
+
+/** The Academy's course folders, each holding one or more tracks. */
+export const folders: {
+  id: FolderId;
+  name: string;
+  audience: string;
+  intro: string;
+  icon: ProCourse["icon"];
+  tracks: ProCourse["track"][];
+}[] = [
+  {
+    id: "bank-and-mfi",
+    name: "Bank and MFI",
+    audience: "Bank and MFI staff",
+    intro:
+      "Credit, project finance, banking fundamentals and branch operations, built on Ethiopian bank practice and NBE directives.",
+    icon: "bank",
+    tracks: ["credit", "project", "banking", "operations"],
+  },
+  {
+    id: "financial-management",
+    name: "Financial Management",
+    audience: "SME owners, accountants, finance staff, NGOs and corporate teams",
+    intro:
+      "Taxation and financial management for Ethiopian businesses, on the current proclamations and directives, with Excel templates.",
+    icon: "coins",
+    tracks: ["tax", "smefinance"],
+  },
+  {
+    id: "capital-markets",
+    name: "Capital Market",
+    audience: "Capital market professionals, investment bankers and fund managers",
+    intro:
+      "Ethiopia's capital market, securities, investment analysis and investment banking.",
+    icon: "chart",
+    tracks: ["capital", "ib"],
+  },
+  {
+    id: "general",
+    name: "General Courses",
+    audience: "Staff and managers in any organization",
+    intro:
+      "Cross-cutting skills for every role: governance, risk, ESG, data, digital, leadership and workplace culture.",
+    icon: "people",
+    tracks: ["skills"],
+  },
+];
+
+export const folderOf = (c: ProCourse) =>
+  folders.find((f) => f.tracks.includes(c.track))!;
 
 /** The level line on course cards and pages. */
 export const levelLabel = (c: ProCourse) =>

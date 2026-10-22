@@ -3,8 +3,8 @@ import { ProCatalog } from "@/components/academy/CoursePages";
 import { PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Online courses for bank and MFI staff · Investopia Academy",
-  description: "Interactive online courses in credit analysis, project appraisal and banking operations, with Ethiopian examples, NBE rules, quizzes, a final exam and a certificate.",
+  title: "Online courses · Investopia Academy",
+  description: "Interactive online courses in four folders: Bank and MFI, Financial Management, Capital Market and General Courses, with Ethiopian examples, quizzes, a final exam and a certificate.",
 };
 
 export default function AcademyCourses() {
@@ -12,8 +12,8 @@ export default function AcademyCourses() {
     <>
       <PageHero
         eyebrow="Investopia Academy"
-        title="Online courses for bank and MFI staff"
-        subhead="Interactive courses in credit, project appraisal and banking operations, built on Ethiopian bank practice and NBE directives. Module 1 of every course is free for registered users; subscribers open everything, including the final exam and certificate."
+        title="Online courses"
+        subhead="Interactive courses in four folders: Bank and MFI, Financial Management, Capital Market and General Courses, built on Ethiopian practice and the current laws and directives. Module 1 of every course is free for registered users; subscribers open everything, including the final exam and certificate."
       />
       <Section>
         <ProCatalog />

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { InstitutionDashboard, type CatalogCourse } from "@/components/academy/Institution";
-import { proCourses, tracks } from "@/data/academy";
+import { folderOf, proCourses, tracks } from "@/data/academy";
 import { PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const catalog: CatalogCourse[] = proCourses.map((c) => ({
   slug: c.slug,
   title: c.title,
-  track: tracks.find((t) => t.id === c.track)?.name ?? c.track,
+  track: `${folderOf(c).name} · ${tracks.find((t) => t.id === c.track)?.name ?? c.track}`,
   modules: c.modules.map((m) => m.id),
   simulation: Boolean(c.simulation),
 }));

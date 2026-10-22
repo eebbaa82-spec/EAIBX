@@ -47,9 +47,9 @@ export default function AcademyPage() {
 
       <Section
         id="catalog"
-        eyebrow="For subscribers: bank and MFI staff"
+        eyebrow="For subscribers"
         title="Course catalog"
-        intro="Every course in the catalog is online and interactive, with Ethiopian examples, decisions to make, NBE rules, worked calculations, module quizzes, a final exam and a certificate. Module 1 of every course is free for registered users."
+        intro="Courses are kept in four folders: Bank and MFI, Financial Management, Capital Market and General Courses. Every course is online and interactive, with Ethiopian examples, decisions to make, the rules that apply, worked calculations, module quizzes, a practical simulation, a final exam and a certificate. Module 1 of every course is free for registered users."
       >
         <span id="online-courses" aria-hidden="true" />
         <ProCatalog />
