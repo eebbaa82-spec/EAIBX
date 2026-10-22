@@ -1960,6 +1960,995 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A week as credit officer at Bank A, Hawassa branch",
+    "role": "Credit officer",
+    "setting": [
+      "You are the newest credit officer at Bank A's Hawassa branch. The branch serves bakeries, dairies, hardware and building material traders, coffee traders and small manufacturers around the lake and along the southern corridor. Its loan book is about Birr 650 million, mostly overdrafts, merchandise loans and medium-term loans for vehicles and machinery.",
+      "You handle requests from the first enquiry to disbursement: you interview applicants, check eligibility and documents, read account statements, count collateral, prepare files for the right committee and make sure every condition is met before money leaves the bank. You report to the branch credit manager, and the branch manager chairs the branch credit committee.",
+      "This week the branch wants to grow its book without adding bad loans. Items reach you in the order below, and some of your choices come back later in the week. Work each one as you would on the job: read the facts, do the numbers, and choose the action you would defend before the committee and an NBE examiner."
+    ],
+    "authority": {
+      "title": "Your branch's rules and limits",
+      "rows": [
+        {
+          "label": "Lending basis",
+          "value": "Cash flow first; collateral is the second way out, never the reason to lend"
+        },
+        {
+          "label": "Bank A total capital",
+          "value": "Birr 4,000 million"
+        },
+        {
+          "label": "Single counterparty group",
+          "value": "Up to 25% of total capital (Birr 1,000 million); 10% or more is a large exposure, reported monthly"
+        },
+        {
+          "label": "Related parties",
+          "value": "15% of capital per party, 35% in total, arm's-length terms; board approval above Birr 15 million"
+        },
+        {
+          "label": "Approval routing",
+          "value": "Branch committee up to Birr 2 million (Hawassa grade limit); credit department committee secured up to Birr 5 million; head office committee above Birr 5 to 10 million; senior management committee above Birr 10 million and all rescheduling, restructuring and foreclosure"
+        },
+        {
+          "label": "Committees",
+          "value": "Quorum two thirds of members; conflicted members declare and abstain; every present voting member signs the LAF"
+        },
+        {
+          "label": "Loan classes and provisions",
+          "value": "Pass 1%; special mention 30 to 89 days, 3%; substandard 90 to 179 days, 20%; doubtful 180 to 359 days, 50%; loss 360 days or more, 100%. Collateral ignored; 20% cross-default rule"
+        },
+        {
+          "label": "Overdraft turnover",
+          "value": "Above 4 times excellent; above 3 to 4 very good; above 1.5 to 3 good; above 1 to 1.5 unsatisfactory; 1 or below poor"
+        },
+        {
+          "label": "Vehicles and machinery",
+          "value": "Up to 2 years 90% of the lower of invoice or insurance value; 2 to 5 years 75%; 5 to 10 years 50%; over 10 years not accepted; used vehicles at most 40% of collateral"
+        },
+        {
+          "label": "Before disbursement",
+          "value": "Contracts signed by all parties and spouses, collateral registered by the bank, 100% insurance with Bank A as first beneficiary, checklist complete; disburse within 90 days of approval (180 for asset purchases)"
+        }
+      ],
+      "note": "These follow the course and a typical Ethiopian bank manual; the routing limits are illustrative. Your own bank's policy and delegation letter always come first."
+    },
+    "meters": [
+      {
+        "id": "quality",
+        "label": "Portfolio quality",
+        "help": "Rises with sound screening, analysis and structure; falls when weak or poorly secured loans get through."
+      },
+      {
+        "id": "relationship",
+        "label": "Customer relationships",
+        "help": "Rises when good customers are served well and quickly; falls with needless refusals, delays or unexplained decisions."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of NBE directives or the bank's procedure, hidden or not."
+      },
+      {
+        "id": "income",
+        "label": "Branch income",
+        "help": "Rises with sound, well-structured new business; falls with lost customers, provisions and losses."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "tigist-interview",
+        "when": "Monday 08:40",
+        "from": "W/ro Tigist Alemu, owner of Tigist Hardware",
+        "channel": "visit",
+        "subject": "Birr 2 million overdraft for a hardware shop",
+        "body": [
+          "W/ro Tigist has run Tigist Hardware in Hawassa as a sole proprietor for four years, with a renewed trade license, a TIN and a clean account at Bank A. She asks for a Birr 2 million overdraft \"for stock before the building season\".",
+          "You ask what exactly she will pay with the money. She explains that Birr 1.3 million is for cement, iron bars and roofing sheets, and Birr 700,000 is for a pickup to deliver to building sites. When you ask who else she borrows from, she mentions a Birr 900,000 loan at Bank B that is not on her application. It is current."
+        ],
+        "ask": "How do you take the request forward?",
+        "options": [
+          {
+            "text": "Assess the stock need as an overdraft sized on verified sales after counting the Bank B loan, and appraise the pickup as a separate medium-term loan.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "relationship": 5,
+              "compliance": 3,
+              "income": 3
+            },
+            "outcome": "Right. A pickup is a long-life asset and does not belong in an overdraft, and the Bank B loan changes her repayment capacity. Probing questions exist to find exactly these two facts, and she keeps a route to finance for both needs."
+          },
+          {
+            "text": "Recommend the full Birr 2 million overdraft: she is a four-year customer with a clean account, and the pickup will bring in site deliveries and more sales.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "relationship": 6,
+              "income": 3
+            },
+            "outcome": "A vehicle bought from an overdraft freezes Birr 700,000 of the limit for years and turns it into a hard-core debit. Match tenor to the life of the asset: short money for stock, medium-term money for the pickup."
+          },
+          {
+            "text": "Decline in writing: she left the Birr 900,000 Bank B loan off her signed application, which the manual treats as a character concern.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "income": -4,
+              "quality": 2
+            },
+            "outcome": "The loan is current and she disclosed it when asked. Record it as a point to verify and include it in capacity, but a current loan at another bank is not a reason to decline a four-year customer."
+          },
+          {
+            "text": "Recommend the Birr 2 million overdraft and ask her to pledge the pickup at the transport bureau once she buys it.",
+            "score": 1,
+            "effects": {
+              "quality": -6,
+              "relationship": 4
+            },
+            "outcome": "A pledge does not fix a product mismatch. The pickup still sits inside a revolving limit with no repayment schedule, and the Bank B loan has still not been counted in her capacity."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "abel-eligibility",
+        "when": "Monday 11:15",
+        "from": "Relationship manager, Hawassa branch",
+        "channel": "email",
+        "subject": "Abel Furniture Works: credit report back, let's move fast",
+        "body": [
+          "Abel Furniture Works PLC asks for a Birr 3 million overdraft. The company's own credit report is clean and its account conduct is good.",
+          "The reports on the owners show that Ato Henok, who holds 40% of the shares, has a personal loan at Bank B that is 110 days past due and classified substandard. The RM writes: \"That is his personal matter, not the company's. Abel is clean, and the owners will move all their deposits to us if we approve this month.\""
+        ],
+        "ask": "What do you do with the file?",
+        "options": [
+          {
+            "text": "Proceed: the applicant is the company, its own credit report and account conduct are clean, and Ato Henok's loan is a personal matter at another bank.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "quality": -10,
+              "relationship": 5,
+              "income": 3
+            },
+            "outcome": "The eligibility rule covers major shareholders as well as the company: no non-performing loan at any bank, including owners and subsidiaries. A 40% shareholder with a substandard loan is a defaulter, so the file fails the first filter.",
+            "next": "abel-later"
+          },
+          {
+            "text": "Stop at eligibility: decline in writing with the reason, and say the bank can reconsider once Ato Henok's Bank B loan is settled and re-checked.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 6,
+              "relationship": -3
+            },
+            "outcome": "Correct. Eligibility screening is meant to stop weak files early, with written reasons, before anyone spends time on analysis. Telling the owners exactly what would change the answer keeps the door open for a sound relationship later."
+          },
+          {
+            "text": "Proceed, but ask for a second building as extra collateral so the bank is covered if the shareholder's arrears spill over into the company.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -6,
+              "relationship": 3
+            },
+            "outcome": "Collateral cannot cure an eligibility failure. The rule is about the borrower group's repayment behavior, and more security only makes an ineligible loan look safer than it is."
+          },
+          {
+            "text": "Ask the RM to tell the owners informally that it will not work this month, so the relationship and the deposits are not hurt by a written refusal.",
+            "score": 1,
+            "effects": {
+              "relationship": -6,
+              "compliance": -3
+            },
+            "outcome": "The answer is right but the method is not. A decline must give written reasons so the customer knows what to fix and the file shows why the bank said no."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "routing-four",
+        "when": "Monday 14:30",
+        "from": "Branch credit manager",
+        "channel": "memo",
+        "subject": "Route this week's four files before the committee calendar closes",
+        "body": [
+          "The credit manager asks you to mark which committee each file goes to so the secretaries can book the meetings. All four facilities are secured by buildings. The Hawassa branch committee's grade limit is Birr 2 million."
+        ],
+        "exhibit": {
+          "title": "Files to route",
+          "rows": [
+            {
+              "label": "A. Tigist Hardware: new overdraft for stock",
+              "value": "Birr 1.3 million, secured"
+            },
+            {
+              "label": "B. Yirga Block Makers: new term loan",
+              "value": "Birr 5 million, secured"
+            },
+            {
+              "label": "C. W/ro Hanna Tesfaye: reschedule a loan two installments in arrears",
+              "value": "Birr 800,000, secured"
+            },
+            {
+              "label": "D. Lakeside Fruit Processing: new term loan",
+              "value": "Birr 7 million, secured"
+            }
+          ]
+        },
+        "ask": "How do you route them?",
+        "options": [
+          {
+            "text": "A to the branch committee, B to the credit department committee, C to the senior management committee, D to the head office committee.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "relationship": 4,
+              "quality": 3
+            },
+            "outcome": "Correct. Authority depends on the type of decision as well as the amount: rescheduling changes risk the bank already holds, so C goes to the senior management committee however small it is. The others follow the amount bands for secured loans."
+          },
+          {
+            "text": "A and C to the branch committee, since both are within its Birr 2 million limit; B to the credit department committee; D to the head office committee.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -5,
+              "relationship": 2
+            },
+            "outcome": "C is within the branch's amount limit, but rescheduling always goes to the senior management committee under Bank A's table. Approving it at the branch would be a decision without authority."
+          },
+          {
+            "text": "A to the branch committee, B and C to the credit department committee because both are secured, D to the head office committee.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "quality": -2
+            },
+            "outcome": "Being secured does not decide where a rescheduling goes. Bank A sends all rescheduling, restructuring and foreclosure to the senior management committee, whatever the amount and security."
+          },
+          {
+            "text": "Send all four to the senior management committee this week so every file gets the most senior review.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "income": -3,
+              "compliance": 2
+            },
+            "outcome": "It is not a breach, but it clogs the top committee and makes three good customers wait for decisions the delegated committees are authorized to make. Delegation exists so each decision is taken at the right level."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "lakeside-group",
+        "when": "Tuesday 09:00",
+        "from": "Corporate relationship manager",
+        "channel": "email",
+        "subject": "Lakeside Agro: Birr 600 million working capital line",
+        "body": [
+          "Hawassa Lakeside Agro PLC, a large fruit and vegetable grower, asks for a Birr 600 million working capital line. The corporate RM wants the branch file ready for the senior committee this week.",
+          "Your check shows that Lakeside Agro Exporters PLC already owes Bank A Birr 520 million. Both companies have the same majority owner, who holds 65% of each. Neither owner holds shares in Bank A."
+        ],
+        "exhibit": {
+          "title": "Exposure test (Birr millions)",
+          "rows": [
+            {
+              "label": "Bank A total capital",
+              "value": "4,000"
+            },
+            {
+              "label": "Existing loan: Lakeside Agro Exporters",
+              "value": "520"
+            },
+            {
+              "label": "New request: Hawassa Lakeside Agro",
+              "value": "600"
+            },
+            {
+              "label": "Single counterparty group limit",
+              "value": "25% of total capital"
+            },
+            {
+              "label": "Large exposure threshold",
+              "value": "10% of total capital"
+            }
+          ]
+        },
+        "ask": "What do you put in the file?",
+        "options": [
+          {
+            "text": "Combine the two as one group: 1,120 is 28% of capital, above the Birr 1,000 million limit. Offer up to Birr 480 million and report it as a large exposure.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 6,
+              "income": 6,
+              "relationship": 2
+            },
+            "outcome": "Correct: 520 + 600 = 1,120, which is 28% of 4,000. The group limit is 1,000, so the room left is 1,000 less 520 = Birr 480 million. Related businesses are one borrower, and at 10% or more the group is reported monthly as a large exposure."
+          },
+          {
+            "text": "Recommend Birr 600 million to the senior management committee: on its own Hawassa Lakeside Agro would be 15% of capital, well within the 25% single counterparty limit.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "quality": -10,
+              "income": 6
+            },
+            "outcome": "Companies with a common majority owner are combined as one counterparty group. Testing each company alone hides a 28% exposure, a breach of the 25% limit that no officer or committee can approve."
+          },
+          {
+            "text": "Recommend Birr 600 million but book Birr 120 million of it in the majority owner's personal name, so each borrower stays well under the limit.",
+            "score": 0,
+            "effects": {
+              "compliance": -30,
+              "quality": -8
+            },
+            "outcome": "The owner is part of the same group, so a personal loan is combined with the companies too. Arranging a loan to hide a limit breach is a deliberate violation that examiners and internal audit look for."
+          },
+          {
+            "text": "Cap the new line at Birr 400 million, since 10% of capital is the large exposure threshold and the most one group should borrow.",
+            "score": 1,
+            "effects": {
+              "income": -5,
+              "relationship": -4,
+              "compliance": 2
+            },
+            "outcome": "10% is the large exposure reporting threshold, not a limit. The limit is 25%, which leaves room of Birr 480 million. Confusing the two turns away Birr 80 million of business the bank could lawfully do."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "dairy-truck",
+        "when": "Tuesday 11:30",
+        "from": "Hawassa Fresh Dairy PLC, general manager",
+        "channel": "call",
+        "subject": "Can we buy a cold truck from our overdraft?",
+        "body": [
+          "Hawassa Fresh Dairy has a Birr 3 million overdraft with very good turnover, used to pay farmers for milk every week. Only Birr 1.2 million is drawn today.",
+          "The general manager wants to use Birr 1.8 million of the unused limit to buy a refrigerated truck costing Birr 2,250,000, with the company paying the other Birr 450,000. The truck has a useful life of about 8 years. \"It is our own limit, so it should be quick,\" he says."
+        ],
+        "ask": "What do you advise?",
+        "options": [
+          {
+            "text": "Keep the overdraft for milk and offer a 3-year loan of Birr 1.8 million, with the Birr 450,000 blocked, direct payment to the supplier and a pledge on the truck.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "relationship": 5,
+              "income": 4
+            },
+            "outcome": "Right product, right tenor. A truck needs medium-term money with a repayment schedule, and the overdraft stays free for the weekly milk cycle. Blocking the equity and paying the supplier directly make sure the loan buys the asset."
+          },
+          {
+            "text": "Agree: the Birr 3 million limit is already approved, only Birr 1.2 million is drawn and turnover is very good, so the truck can be paid from the unused headroom.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "relationship": 5,
+              "compliance": -5
+            },
+            "outcome": "An overdraft is for day-to-day operating needs, never for fixed assets. The truck would freeze Birr 1.8 million of the limit for years and leave the dairy short of cash to pay farmers.",
+            "next": "dairy-later"
+          },
+          {
+            "text": "Offer a one-year short-term loan of Birr 1.8 million for the truck, so the bank's money is back within the year and the overdraft stays free.",
+            "score": 1,
+            "effects": {
+              "quality": -3,
+              "relationship": -4
+            },
+            "outcome": "A one-year loan for an 8-year asset loads a year's installments on cash flow the truck has not yet earned. Match the tenor to the asset: medium-term, not short-term."
+          },
+          {
+            "text": "Offer a 10-year long-term loan of Birr 1.8 million so the installments stay small enough for the dairy's weekly cash flow.",
+            "score": 1,
+            "effects": {
+              "quality": -5,
+              "income": 2
+            },
+            "outcome": "A loan longer than the truck's useful life leaves the bank financing a worn-out vehicle in the final years. Long-term loans are for projects and expansion, not one vehicle."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "yirga-collateral",
+        "when": "Wednesday 09:30",
+        "from": "Loan officer, Hawassa branch",
+        "channel": "email",
+        "subject": "Yirga Block Makers: collateral for the Birr 5 million term loan",
+        "body": [
+          "Yirga Block Makers PLC needs a Birr 5 million term loan for block-making machines. The loan officer lists what the managing director offers and asks you to confirm the acceptable collateral and coverage for the credit department committee."
+        ],
+        "exhibit": {
+          "title": "Collateral offered (Birr thousands)",
+          "rows": [
+            {
+              "label": "Completed residential house, title deed in the names of the MD and his wife",
+              "value": "3,800 (bank engineer's valuation)"
+            },
+            {
+              "label": "Truck A, 3 years old",
+              "value": "Insurance value 2,400"
+            },
+            {
+              "label": "Truck B, 11 years from manufacture",
+              "value": "Insurance value 1,000"
+            },
+            {
+              "label": "Shop registered to the trade name \"Yirga Blocks\"",
+              "value": "2,500 (estimate)"
+            },
+            {
+              "label": "Personal guarantee of the MD's brother",
+              "value": "Offered"
+            }
+          ]
+        },
+        "ask": "What coverage do you report?",
+        "options": [
+          {
+            "text": "Birr 5.6 million, 112%: the house plus Truck A at 75%. Truck B, the trade-name shop and the guarantee do not count; used vehicles are 32%, within the cap.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 6
+            },
+            "outcome": "Correct: 3,800 + (2,400 x 75%) = 5,600, and 5,600 / 5,000 = 112%. Truck B is over 10 years, property in a trade name is not accepted, and a personal guarantee is treated as clean lending. The vehicle share is 1,800 / 5,600 = 32%."
+          },
+          {
+            "text": "Birr 9.7 million, 194%: count the house, both trucks and the shop at the values offered, since the MD owns all of them and the brother's guarantee adds comfort.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -8
+            },
+            "outcome": "Collateral counts only if it is acceptable and only at the haircut value. Counting everything overstates the bank's protection by Birr 4.1 million.",
+            "next": "yirga-later"
+          },
+          {
+            "text": "Birr 6.1 million, 122%: the house, Truck A at 75% and Truck B at 50% in the 5 to 10 year band; the shop and the guarantee do not count.",
+            "score": 1,
+            "effects": {
+              "quality": -4,
+              "compliance": -4
+            },
+            "outcome": "Truck B is 11 years from manufacture, so it falls outside every band. Vehicles over 10 years are not acceptable, whatever haircut you apply."
+          },
+          {
+            "text": "Birr 3.8 million, 76%: only buildings count for a term loan of this size, so ask the MD for another property.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "income": -2
+            },
+            "outcome": "A registered vehicle within the age limit is acceptable collateral. Ignoring Truck A understates coverage and sends the customer looking for security the policy does not require."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "poultry-ratios",
+        "when": "Wednesday 14:00",
+        "from": "Branch manager",
+        "channel": "meeting",
+        "subject": "Bekele Poultry Farm: the villa covers it three times over",
+        "body": [
+          "Bekele Poultry Farm PLC asks for a Birr 3.6 million, 3-year term loan for a new hatchery shed, at an assumed 15% rate. The owner offers a villa valued at Birr 12 million. The branch manager says: \"Coverage is over 300%. Write it up for approval today.\"",
+          "You have the latest provisional accounts."
+        ],
+        "exhibit": {
+          "title": "Bekele Poultry Farm, last financial year (Birr thousands)",
+          "rows": [
+            {
+              "label": "Current assets",
+              "value": "4,200"
+            },
+            {
+              "label": "Current liabilities",
+              "value": "5,250"
+            },
+            {
+              "label": "EBIT",
+              "value": "1,080"
+            },
+            {
+              "label": "Interest on existing debt",
+              "value": "360"
+            },
+            {
+              "label": "Interest on the new loan: 3,600 x 15%",
+              "value": "540"
+            }
+          ]
+        },
+        "ask": "What do you tell the branch manager?",
+        "options": [
+          {
+            "text": "Report current ratio 0.80 and coverage falling from 3.0 to 1.2 times; propose a smaller loan or more owner equity once the liquidity gap is explained.",
+            "score": 3,
+            "effects": {
+              "quality": 12,
+              "compliance": 3,
+              "relationship": -3
+            },
+            "outcome": "Correct: 4,200 / 5,250 = 0.80, so short-term debts already exceed short-term assets, and 1,080 / (360 + 540) = 1.2 times. Character and capacity come first and collateral last; a loan that can only be repaid by selling the villa is a bad loan."
+          },
+          {
+            "text": "Report a current ratio of 1.25 and interest coverage of 3.0 times on last year's accounts, and recommend approval with the villa as security.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -4
+            },
+            "outcome": "That inverts the current ratio (5,250 / 4,200) and leaves out the interest on the new loan. Coverage must be tested again after adding the new facility, and here it falls to 1.2 times."
+          },
+          {
+            "text": "Recommend approval as the manager asks: the Birr 12 million villa gives 333% coverage, and the farm's EBIT of Birr 1.08 million covers current interest three times.",
+            "score": 0,
+            "effects": {
+              "quality": -15,
+              "relationship": 4,
+              "income": 3
+            },
+            "outcome": "Collateral is the second way out, never the reason to lend. Foreclosing on a family villa is slow, costly and damaging, and the farm's own numbers do not show it can carry the debt."
+          },
+          {
+            "text": "Decline the request and return the file to the branch, since the current ratio is below 1.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "income": -3,
+              "quality": 3
+            },
+            "outcome": "The concern is right but the work is unfinished. A credit officer explains the ratios and looks for a structure the business can carry before declining an established farm."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "committee-conflict",
+        "when": "Thursday 10:00",
+        "from": "Branch credit committee",
+        "channel": "meeting",
+        "subject": "Hawassa Fresh Dairy truck loan: a member declares an interest",
+        "body": [
+          "You present the dairy's Birr 1.8 million medium-term loan to the branch committee of six members. Five are present. At the start of the item the operations manager says his wife holds 10% of Hawassa Fresh Dairy.",
+          "The chair says: \"If he steps out we are only four. He has declared it, so let him vote and we can finish today.\""
+        ],
+        "ask": "As the officer presenting, what do you advise?",
+        "options": [
+          {
+            "text": "He declares and leaves; the minutes record it, and the four remaining members decide, since four of six meets the two-thirds quorum.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "relationship": 3,
+              "quality": 3
+            },
+            "outcome": "Correct. Two thirds of six is four, so the committee can still decide. A conflicted member must declare and abstain; declaring is not enough on its own."
+          },
+          {
+            "text": "Let him vote: he declared his wife's 10% stake at the start, the minutes record it, and the committee can finish the dairy's loan today.",
+            "score": 0,
+            "effects": {
+              "compliance": -18,
+              "quality": -4,
+              "relationship": 2
+            },
+            "outcome": "Declaring does not permit voting. A member with a private interest in the applicant must abstain, or the approval itself is open to challenge."
+          },
+          {
+            "text": "Postpone the item until the absent member returns next week, so five members can vote without the operations manager.",
+            "score": 1,
+            "effects": {
+              "relationship": -6,
+              "income": -2
+            },
+            "outcome": "No breach, but no need either: four of six already form a quorum. The dairy waits a week for a decision the committee could lawfully take today."
+          },
+          {
+            "text": "Phone the absent member so five vote, including the operations manager, and have the minutes record his declaration.",
+            "score": 0,
+            "effects": {
+              "compliance": -15
+            },
+            "outcome": "Adding a voice does not cure the conflict. The conflicted member still votes, and a phone vote leaves no signature on the LAF."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "meron-insurance",
+        "when": "Thursday 14:30",
+        "from": "W/ro Meron Kebede, owner of Meron Bakery",
+        "channel": "call",
+        "subject": "Pay the oven supplier today, the price goes up next week",
+        "body": [
+          "Meron Bakery's Birr 2 million term loan for a new oven was approved last week. The loan and mortgage contracts are signed by W/ro Meron and her husband before two witnesses, stamp duty is paid, and the bank registered the mortgage on their house at the sub-city land office yesterday.",
+          "The last item on the checklist is insurance. The policy she brought insures the house, valued at Birr 3.8 million, for Birr 1.5 million and names only her as beneficiary. The supplier says the oven price rises 4% on Monday."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Hold payment until the policy covers the full Birr 3.8 million with Bank A as first beneficiary; ask the insurer for the endorsement today.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 5,
+              "relationship": 2
+            },
+            "outcome": "Correct. Insurable collateral needs 100% cover with the bank as first beneficiary before disbursement. Today the house is insured for less than 40% of its value, and any claim would be paid to the borrower, not the bank."
+          },
+          {
+            "text": "Pay the supplier today to save the 4% rise: the contracts are signed and the mortgage is registered, so only the insurance endorsement is left for next week.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -6,
+              "relationship": 5
+            },
+            "outcome": "Disbursing before a precondition is met breaks the checklist rule, and the officer is accountable for losses from missing or lapsed cover. A 4% price rise is not worth an under-insured Birr 2 million loan.",
+            "next": "meron-later"
+          },
+          {
+            "text": "Pay for half the oven today to lock in the price, and the rest after the endorsement arrives from the insurer.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -4
+            },
+            "outcome": "A partial release is still a release before the conditions are met. Exceptions need committee approval, not an officer's decision on the phone."
+          },
+          {
+            "text": "Pay the extra premium from the bank, debit her loan account and disburse today before the insurer confirms.",
+            "score": 1,
+            "effects": {
+              "compliance": -5,
+              "relationship": 3
+            },
+            "outcome": "No premium, no cover, but a premium alone is not cover either until the insurer issues the policy with the bank as first beneficiary. The bank pays premiums only when a customer fails to renew."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "dilla-classify",
+        "when": "Friday 09:15",
+        "from": "Loan monitoring system",
+        "channel": "system",
+        "subject": "Past due alert: Dilla Coffee Traders",
+        "body": [
+          "The month-end run flags Dilla Coffee Traders. Its term loan is 120 days past due. The RM writes: \"Their building covers everything 2.5 times. Keep the account as pass, and please approve the new Birr 1 million merchandise loan they want next week.\""
+        ],
+        "exhibit": {
+          "title": "Dilla Coffee Traders' loans at Bank A (Birr)",
+          "rows": [
+            {
+              "label": "Term loan, 120 days past due",
+              "value": "1,200,000"
+            },
+            {
+              "label": "Overdraft, within terms",
+              "value": "2,800,000"
+            },
+            {
+              "label": "Merchandise loan, current",
+              "value": "1,000,000"
+            },
+            {
+              "label": "Total exposure",
+              "value": "5,000,000"
+            },
+            {
+              "label": "Building collateral",
+              "value": "12,500,000"
+            }
+          ]
+        },
+        "ask": "How do you classify the account and what minimum provision do you report?",
+        "options": [
+          {
+            "text": "NPLs are 24% of exposure, so all three loans become substandard: provision Birr 1,000,000, interest stops, and no new loan until arrears clear.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "quality": 6,
+              "income": -4,
+              "relationship": -3
+            },
+            "outcome": "Correct: 120 days is substandard, and 1,200,000 / 5,000,000 = 24% passes the 20% cross-default trigger, so 5,000,000 x 20% = 1,000,000. Collateral is ignored when classifying, and a borrower with a substandard balance is a defaulter who cannot get new loans except to rehabilitate."
+          },
+          {
+            "text": "Term loan substandard at Birr 240,000, the overdraft and merchandise loan pass at Birr 38,000: total provision Birr 278,000.",
+            "score": 1,
+            "effects": {
+              "compliance": -8,
+              "quality": -3
+            },
+            "outcome": "The term loan is right at 1,200,000 x 20% = 240,000, but the 20% cross-default rule moves the other loans down too. Reporting 278,000 understates the provision by Birr 722,000."
+          },
+          {
+            "text": "Keep everything as pass, as the RM asks: provision Birr 50,000, since the building covers the Birr 5 million exposure 2.5 times.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "quality": -8,
+              "income": 3
+            },
+            "outcome": "Classification is by days past due, and collateral is ignored. Hiding a 120-day arrear as pass misstates the books and keeps recognizing interest that must stop."
+          },
+          {
+            "text": "Term loan special mention, the rest pass: provision Birr 74,000, and approve next week's Birr 1 million merchandise loan, since the building still covers everything.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "quality": -8,
+              "income": 2
+            },
+            "outcome": "Special mention ends at 89 days, so 120 days is substandard. Lending new money to a defaulter is prohibited except to rehabilitate the defaulted loan."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "selam-renewal",
+        "when": "Friday 14:00",
+        "from": "Selam Building Materials, owner",
+        "channel": "visit",
+        "subject": "Renew our overdraft at Birr 2.5 million",
+        "body": [
+          "Selam Building Materials asks to renew its Birr 2 million overdraft at Birr 2.5 million. Its house, valued at Birr 4 million, is already mortgaged to Bank A. The house insurance policy expires in three weeks.",
+          "You pull the last 12 months of the account."
+        ],
+        "exhibit": {
+          "title": "Selam Building Materials overdraft, last 12 months (Birr)",
+          "rows": [
+            {
+              "label": "Current limit",
+              "value": "2,000,000"
+            },
+            {
+              "label": "Total credits",
+              "value": "9,800,000"
+            },
+            {
+              "label": "Average highest debit",
+              "value": "1,860,000"
+            },
+            {
+              "label": "Lowest balance",
+              "value": "Credit of 120,000, in two different months"
+            }
+          ]
+        },
+        "ask": "What do you recommend and which documents do you need?",
+        "options": [
+          {
+            "text": "Turnover is 4.9 times, excellent. Renew at Birr 2.5 million with a fresh contract for the Birr 500,000 increase and the insurance renewed before expiry.",
+            "score": 3,
+            "effects": {
+              "quality": 6,
+              "relationship": 6,
+              "income": 6,
+              "compliance": 5
+            },
+            "outcome": "Correct: 9,800,000 / 2,000,000 = 4.9 times, and the highest debit is 93% of the limit, a genuinely revolving facility. An increased limit needs a fresh contract for the increase, and the expiring policy must be renewed so cover never lapses."
+          },
+          {
+            "text": "Recommend renewal at Birr 2.5 million on a declaration of indebtedness, since the house already mortgaged to the bank covers the higher limit.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "relationship": 4,
+              "income": 3
+            },
+            "outcome": "A declaration of indebtedness covers renewal at the same limit. The extra Birr 500,000 needs a fresh contract, or that part of the debt is not properly documented."
+          },
+          {
+            "text": "Turnover is 3.9 times on the new Birr 2.5 million limit, only very good, so renew at the same Birr 2 million and review again in six months.",
+            "score": 1,
+            "effects": {
+              "relationship": -6,
+              "income": -3
+            },
+            "outcome": "Turnover is measured on the limit the account actually had: 9,800,000 / 2,000,000 = 4.9 times, excellent. Holding back a well-run, well-secured customer costs the branch good business."
+          },
+          {
+            "text": "Renew automatically at Birr 2.5 million: the account is excellent, and the mortgage and insurance are already on file, so no new documents are needed.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -4,
+              "relationship": 4
+            },
+            "outcome": "Renewals are never automatic. The increase needs a contract, and a policy that expires in three weeks will leave the house uninsured if nobody tracks it."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "abel-later",
+        "when": "Six weeks later",
+        "from": "Internal audit",
+        "channel": "email",
+        "subject": "Overdraft approved for a company whose shareholder is a defaulter",
+        "body": [
+          "Internal audit's branch review finds that Abel Furniture Works' Birr 3 million overdraft was approved while its 40% shareholder had a substandard loan at Bank B. That loan is now doubtful. Birr 1.1 million of the overdraft is drawn, and the audit report goes to the board audit committee."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Reply to audit that the borrower is the company, its own record is clean, and the shareholder's Bank B loan was never the company's debt.",
+            "score": 0,
+            "effects": {
+              "compliance": -10
+            },
+            "outcome": "The eligibility rule names major shareholders explicitly. Defending the breach makes the audit point worse."
+          },
+          {
+            "text": "Accept the finding in writing, stop further drawings, refer the file to the committee with a plan, and watch the account closely.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 6
+            },
+            "outcome": "Owning the error and protecting the bank's position is the only way forward. The lesson stands: eligibility checks on owners are the first filter, not a formality."
+          },
+          {
+            "text": "Call back the full overdraft at once.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": -2
+            },
+            "outcome": "Calling the full balance from a performing company without a plan can push it into default. Freeze the exposure and let the committee decide on the remedy."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "dairy-later",
+        "when": "Four months later",
+        "from": "Branch credit manager",
+        "channel": "memo",
+        "subject": "Hawassa Fresh Dairy is late paying farmers",
+        "body": [
+          "Since the truck was paid from the overdraft, the account has stayed above Birr 2.9 million and credits barely cover interest. The dairy is paying farmers late, and the general manager asks for the limit to be raised to Birr 4.5 million."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Raise the limit to Birr 4.5 million so the dairy can pay its farmers on time and keep milk supply, since the business itself is still sound.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "income": -3
+            },
+            "outcome": "More revolving money behind a hard-core debit only grows the frozen balance. The cause is a fixed asset in a working capital line."
+          },
+          {
+            "text": "Convert the truck portion into a medium-term loan with a registered pledge on the truck, and keep the overdraft for the milk cycle.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "relationship": 5,
+              "compliance": 3
+            },
+            "outcome": "Conversion into a term loan is the standard remedy for a hard-core debit. The overdraft goes back to revolving, and the truck is repaid from the income it earns."
+          },
+          {
+            "text": "Call back the overdraft in full.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "quality": -2
+            },
+            "outcome": "The dairy is viable; the problem is the wrong product. Calling back now would cut off the farmers and lower what the bank recovers."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "yirga-later",
+        "when": "The following Monday",
+        "from": "Legal and collateral unit",
+        "channel": "email",
+        "subject": "Two Yirga Block Makers items cannot be registered",
+        "body": [
+          "The collateral unit rejects the shop, because the title is in the trade name \"Yirga Blocks\", and Truck B, which is 11 years from manufacture. The committee approved the loan on your 194% figure and asks for the real coverage."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Correct the figure in a written memo: Birr 5.6 million, 112%, and ask the committee to note the change before disbursement.",
+            "score": 3,
+            "effects": {
+              "compliance": 6,
+              "quality": 4
+            },
+            "outcome": "Errors in a credit file are corrected in writing before money leaves the bank. At 112% the loan is still covered, so the decision can stand on the right figure."
+          },
+          {
+            "text": "Tell the committee the difference does not matter: the loan is still covered above 100%, so the approval stands and no new paper is needed.",
+            "score": 0,
+            "effects": {
+              "compliance": -8
+            },
+            "outcome": "The committee decided on a wrong number. Coverage fell from 194% to 112%, and the record must show it."
+          },
+          {
+            "text": "Ask the MD to transfer the shop into his own name before you correct anything.",
+            "score": 1,
+            "effects": {
+              "relationship": -5,
+              "compliance": -2
+            },
+            "outcome": "A title transfer may be useful later, but it takes weeks and does not fix the wrong figure already in front of the committee. Correct the record first."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "meron-later",
+        "when": "Two months later",
+        "from": "Internal audit",
+        "channel": "email",
+        "subject": "Meron Bakery loan disbursed before insurance was in place",
+        "body": [
+          "An audit sample finds that Meron Bakery's loan was disbursed while the house was insured for Birr 1.5 million of its Birr 3.8 million value, with only the borrower named. The endorsement never arrived, and the policy expires next month."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Raise cover to Birr 3.8 million with Bank A as first beneficiary, diary the renewal, and if she does not renew, pay the premium and debit her loan.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 5
+            },
+            "outcome": "This closes the gap and follows the manual's renewal rule. The officer is accountable for lapsed cover, so tracking renewal dates is part of the job, not an extra."
+          },
+          {
+            "text": "Note that nothing has gone wrong in two months and the mortgage is registered, and leave the policy to the customer to sort out at next month's renewal.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "quality": -4
+            },
+            "outcome": "The bank is still exposed, and the policy is about to lapse. No premium, no cover, and no cover for the bank without its name on the policy."
+          },
+          {
+            "text": "Write to the customer asking her to raise the cover and name Bank A as first beneficiary when she renews the policy next month.",
+            "score": 1,
+            "effects": {
+              "compliance": -3,
+              "relationship": 2
+            },
+            "outcome": "Better than nothing, but it leaves the bank under-insured for another month. Fix it now and diary the renewal."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-week hand-over note to the branch credit manager.",
+      "guide": [
+        "The decisions you are most sure of, and the rule each one rests on.",
+        "The decision you would revisit, and what you would check first.",
+        "Conditions still open before disbursement, such as insurance, registration and equity, with dates.",
+        "Accounts to watch next month, such as past due loans, hard-core overdrafts and large exposures.",
+        "One point of procedure the branch should brief all officers on."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Bank A's capital is Birr 800 million. A group already owes Birr 150 million and asks for Birr 80 million more. What does the single group limit allow?",

@@ -1675,6 +1675,930 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A week as remittance desk officer at Bank A, Merkato branch",
+    "role": "Remittance desk officer",
+    "setting": [
+      "You run the remittance desk at Bank A's Merkato branch in Addis Ababa, one of the busiest payout points in the city. Families come to collect money from the United States, the Gulf, Europe and South Africa through the MTOs the bank serves as payout agent; others receive SWIFT transfers into accounts or ask to send family support abroad.",
+      "Your supervisor authorizes payments above your limit and the branch compliance officer handles anything suspicious. The branch manager wants two things this week: genuine families paid quickly and courteously, and more payout customers turned into account holders. Head office wants every payout identified, recorded and screened.",
+      "Today's illustrative rates: Bank A buys USD at Birr 152.40 and sells at Birr 155.50. Before every decision ask three questions: who is this customer, what does the rule say, and does this transaction make sense?"
+    ],
+    "authority": {
+      "title": "Your desk's rules",
+      "rows": [
+        {
+          "label": "Payout steps",
+          "value": "Customer gives tracking number, sender, country and amount; you compare; original valid ID of the named beneficiary; screen; convert; sign; check; file"
+        },
+        {
+          "label": "Conversion (FXD/01/2024)",
+          "value": "Inward remittances paid in Birr at the bank's buying rate, or credited to an eligible FCY account; rate shown on the receipt"
+        },
+        {
+          "label": "Wallet limits (ONPS/09/2023, as reported)",
+          "value": "Daily wallet balance Birr 75,000; daily transactions Birr 150,000; confirm current limits"
+        },
+        {
+          "label": "Outward family support (FXD/04/2026)",
+          "value": "Residents may send up to USD 3,000 for family support; count earlier transfers in the period"
+        },
+        {
+          "label": "Diaspora FCY accounts",
+          "value": "Funded only from foreign sources; no minimum deposit since FXD/04/2026"
+        },
+        {
+          "label": "Errors",
+          "value": "Corrected only by reversal and a correct entry, maker and checker, reason recorded"
+        },
+        {
+          "label": "FX dealing (Proclamation No. 1359/2025, Art. 39)",
+          "value": "Only through banks and NBE-authorized dealers"
+        },
+        {
+          "label": "AML/CFT",
+          "value": "Notice, record, escalate to compliance the same day; screen before paying; never tip off"
+        }
+      ],
+      "note": "These follow the course and current NBE rules; some limits are as reported. Your own bank's procedures and compliance unit always come first."
+    },
+    "meters": [
+      {
+        "id": "service",
+        "label": "Customer service",
+        "help": "Rises when genuine families are served quickly, kindly and accurately; falls with delays, errors and needless refusals."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of identification, FX, limit or AML rules; rises when cases are handled and recorded by the book."
+      },
+      {
+        "id": "control",
+        "label": "Loss and fraud control",
+        "help": "Rises when the desk protects the bank and customers from wrong payouts, fraud and scams; falls when money leaves without proper checks."
+      },
+      {
+        "id": "business",
+        "label": "Desk business",
+        "help": "Rises with formal remittances kept, accounts opened and FX brought into the bank; falls when customers leave for other channels."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "payout-rate",
+        "when": "Monday 08:40",
+        "from": "Worknesh Gebre, beneficiary",
+        "channel": "visit",
+        "subject": "Collecting USD 450 from my daughter in Dallas",
+        "body": [
+          "Worknesh Gebre gives you a tracking number, says the sender is her daughter Lidya Gebre in Dallas and that she expects USD 450. You find the transfer: every detail matches. Her Fayda ID is valid and the photo matches.",
+          "A new colleague beside you says: 'Pay her at the selling rate, it is higher and she will be happier.'"
+        ],
+        "exhibit": {
+          "title": "Transfer and rates",
+          "rows": [
+            {
+              "label": "Transfer",
+              "value": "USD 450, available today"
+            },
+            {
+              "label": "Bank A buying rate",
+              "value": "Birr 152.40"
+            },
+            {
+              "label": "Bank A selling rate",
+              "value": "Birr 155.50"
+            },
+            {
+              "label": "Customer",
+              "value": "Pays rent and her own medical bills from it every month"
+            }
+          ]
+        },
+        "ask": "How do you pay her?",
+        "options": [
+          {
+            "text": "Pay Birr 68,580 at the buying rate, show it on the receipt, and offer a savings account for next month's credit.",
+            "score": 3,
+            "effects": {
+              "service": 8,
+              "compliance": 5,
+              "business": 6
+            },
+            "outcome": "Correct: 450 x 152.40 = Birr 68,580. Inward remittances are converted at the bank's buying rate, shown on the receipt, and every cash payout is a chance to offer an account."
+          },
+          {
+            "text": "Pay Birr 69,975 at the selling rate as the colleague suggests: it is the higher of today's two published rates and she depends on the money.",
+            "score": 0,
+            "effects": {
+              "control": -10,
+              "compliance": -5,
+              "service": 3
+            },
+            "outcome": "The bank buys the dollars, so the buying rate applies. Paying at the selling rate overpays by Birr 1,395 and leaves the till short at day end."
+          },
+          {
+            "text": "Pay her the USD 450 in dollar cash, so she can change it later at whichever rate suits her and keep some dollars for emergencies.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "business": -5
+            },
+            "outcome": "Inward remittances to residents are paid in Birr unless the beneficiary holds an eligible FCY account. Handing out dollar cash pushes them toward the informal market."
+          },
+          {
+            "text": "Pay Birr 68,580 at the buying rate with the rate on the receipt, and move to the next customer quickly since the queue is long.",
+            "score": 2,
+            "effects": {
+              "service": 4,
+              "compliance": 3
+            },
+            "outcome": "The payout is correct, but a monthly receiver who pays rent from the money is exactly the customer an account would serve better. One question costs ten seconds."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "broker-rate",
+        "when": "Monday 09:30",
+        "from": "Kedir Mohammed, regular receiver",
+        "channel": "visit",
+        "subject": "My cousin in Dubai says a broker pays more",
+        "body": [
+          "Kedir receives about USD 800 a month from his cousin in Dubai. He says a broker there offered Birr 154.20 per dollar against Bank A's 152.40 and asks whether his cousin should switch.",
+          "Kedir is not an account holder yet."
+        ],
+        "exhibit": {
+          "title": "The comparison for USD 800",
+          "rows": [
+            {
+              "label": "Through the MTO at Birr 152.40",
+              "value": "to compute"
+            },
+            {
+              "label": "Through a broker at Birr 154.20",
+              "value": "to compute"
+            },
+            {
+              "label": "Protection if lost",
+              "value": "MTO: claim and refund; broker: none"
+            }
+          ]
+        },
+        "ask": "What do you tell him?",
+        "options": [
+          {
+            "text": "Show him the gap is Birr 1,440, about 1%, against no protection and FX dealing outside the law; offer an account.",
+            "score": 3,
+            "effects": {
+              "service": 8,
+              "business": 8,
+              "compliance": 3
+            },
+            "outcome": "Correct: 800 x 152.40 = 121,920 and 800 x 154.20 = 123,360. Since FXD/01/2024 the gap is small, while Proclamation No. 1359/2025 Art. 39 limits FX dealing to banks and authorized dealers."
+          },
+          {
+            "text": "Agree the broker pays Birr 1,440 more on USD 800 and that the channel is his cousin's choice, but remind him to keep the receipts.",
+            "score": 0,
+            "effects": {
+              "business": -10,
+              "compliance": -6
+            },
+            "outcome": "Endorsing an unlicensed broker sends the dollars out of the banking system and exposes the family to loss with no remedy."
+          },
+          {
+            "text": "Offer to match the broker's Birr 154.20 at the desk for Kedir's monthly USD 800, so the family stays in the formal channel.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "control": -5
+            },
+            "outcome": "The desk does not set rates. Bank A's rate comes from treasury and applies to every customer."
+          },
+          {
+            "text": "Tell him that dealing with a broker is illegal and the bank will report him to the police if his cousin switches.",
+            "score": 1,
+            "effects": {
+              "service": -8,
+              "business": -4
+            },
+            "outcome": "Threats are not good service, and they drive customers away. Explain the protection and the legal position calmly instead."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "no-id",
+        "when": "Monday 11:15",
+        "from": "Abebech Tola, 70, with her nephew",
+        "channel": "visit",
+        "subject": "Collecting USD 300 from Riyadh, but no ID",
+        "body": [
+          "Abebech Tola has come from Wolkite with a young man she calls her nephew. She knows the tracking number, the sender (her daughter in Riyadh) and the amount, USD 300. She has no ID card at all.",
+          "The nephew shows his own Fayda ID and offers to collect for her. The queue behind them is long and the supervisor is at lunch."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Pay the nephew: he has a valid Fayda ID, Abebech is standing beside him and confirms it, and every transfer detail matches.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -10,
+              "service": 4
+            },
+            "outcome": "Only the named beneficiary can be paid. Paying a third party breaks the identification rule and leaves the bank liable if the money does not reach her.",
+            "next": "no-id-later"
+          },
+          {
+            "text": "Pay Abebech: she gave the tracking number, sender and amount correctly, and asking a 70-year-old to come back is unkind.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -6,
+              "service": 3
+            },
+            "outcome": "Kindness does not replace identification. Without an ID nobody can confirm she is the beneficiary, and the payout could not be defended in a claim."
+          },
+          {
+            "text": "No payout without her ID: help her start Fayda registration and keep the transfer available, or the sender can amend it.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "control": 6,
+              "service": 4
+            },
+            "outcome": "Correct. The named beneficiary must be identified, and help means getting her an ID, not skipping the check. Recording the reason for the hold protects her and the desk."
+          },
+          {
+            "text": "Cancel the transfer and refund the sender in Riyadh, so the daughter can resend it to the nephew who has an ID.",
+            "score": 1,
+            "effects": {
+              "service": -8,
+              "business": -4
+            },
+            "outcome": "The desk cannot cancel an MTO transfer; only the sender can, through the sending agent. Keeping it available while she gets an ID serves the family better."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "wallet-limit",
+        "when": "Monday 14:00",
+        "from": "Hiwot Desta, beneficiary",
+        "channel": "call",
+        "subject": "My brother wants to send USD 550 straight to my wallet",
+        "body": [
+          "Hiwot's brother in Jeddah wants to send USD 550 to her mobile wallet so she can receive it without coming to the branch. She already holds about Birr 8,000 in the wallet.",
+          "She asks: 'If it is too big, can he just send two transfers today?'"
+        ],
+        "exhibit": {
+          "title": "Wallet check",
+          "rows": [
+            {
+              "label": "Transfer at Birr 152.40",
+              "value": "to compute"
+            },
+            {
+              "label": "Current wallet balance",
+              "value": "Birr 8,000"
+            },
+            {
+              "label": "Reported daily wallet balance limit",
+              "value": "Birr 75,000"
+            }
+          ]
+        },
+        "ask": "What do you advise?",
+        "options": [
+          {
+            "text": "Birr 83,820 is over the Birr 75,000 balance limit: credit a Bank A savings account and link the wallet.",
+            "score": 3,
+            "effects": {
+              "service": 8,
+              "compliance": 6,
+              "business": 8
+            },
+            "outcome": "Correct: 550 x 152.40 = 83,820, and with the existing balance it would be 91,820. An account credit fits the rule and gives her a safe place to hold the money."
+          },
+          {
+            "text": "Yes: two transfers of USD 275 on the same day, about Birr 41,910 each, will each fit under the Birr 75,000 wallet limit.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "control": -4
+            },
+            "outcome": "The balance limit applies to what the wallet holds, so splitting does not help, and splitting to get round a limit is a red flag."
+          },
+          {
+            "text": "Send it all to the wallet: remittance credits from MTOs are processed differently from ordinary transfers, so the limit should not block it.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "service": -4
+            },
+            "outcome": "Wallet limits apply to all credits. The transfer would fail or breach the issuer rules, and Hiwot would wait longer."
+          },
+          {
+            "text": "Ask him to send USD 450 now and the remaining USD 100 next week, so each credit stays small enough for her wallet.",
+            "score": 1,
+            "effects": {
+              "service": 2,
+              "compliance": 2
+            },
+            "outcome": "USD 450 is Birr 68,580; with her Birr 8,000 that is 76,580, still just over the limit. The idea is sound but the numbers do not work, and an account solves it at once."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "sha-charges",
+        "when": "Tuesday 09:00",
+        "from": "Yonas Tefera, account holder",
+        "channel": "email",
+        "subject": "USD 25 is missing from my brother's transfer from London",
+        "body": [
+          "Yonas writes angrily that his brother sent USD 2,000 from London, but his account was credited with less. He wants the bank to refund the difference today.",
+          "You pull the incoming SWIFT message."
+        ],
+        "exhibit": {
+          "title": "Incoming MT103 details",
+          "rows": [
+            {
+              "label": "Amount sent",
+              "value": "USD 2,000"
+            },
+            {
+              "label": "Charge option",
+              "value": "SHA"
+            },
+            {
+              "label": "Correspondent bank charge deducted",
+              "value": "USD 25"
+            },
+            {
+              "label": "Credited in Birr at 152.40",
+              "value": "to compute"
+            }
+          ]
+        },
+        "ask": "How do you reply?",
+        "options": [
+          {
+            "text": "Explain SHA: the correspondent deducted USD 25, so USD 1,975 arrived, Birr 300,990. OUR avoids it; attach the message.",
+            "score": 3,
+            "effects": {
+              "service": 8,
+              "compliance": 3,
+              "control": 3
+            },
+            "outcome": "Correct: 1,975 x 152.40 = Birr 300,990. Showing the message turns a complaint into understanding, and the OUR tip prevents the next one."
+          },
+          {
+            "text": "Refund the Birr equivalent of USD 25, about Birr 3,810, from the branch's goodwill budget so he stays a happy account holder.",
+            "score": 1,
+            "effects": {
+              "control": -6,
+              "service": 4
+            },
+            "outcome": "Bank A made no error. Paying for a correspondent's charge sets a precedent and hides the real cause from the customer."
+          },
+          {
+            "text": "Explain that the USD 25 is a standard deduction on transfers into Ethiopia, collected by the authorities, so no refund is possible.",
+            "score": 0,
+            "effects": {
+              "compliance": -8,
+              "service": -5
+            },
+            "outcome": "That is untrue. Giving false information breaks fair treatment rules, and the customer will find out when the next transfer arrives."
+          },
+          {
+            "text": "Reply that the deduction was made outside Bank A, so the bank is not responsible, and close the complaint in the log today.",
+            "score": 1,
+            "effects": {
+              "service": -8
+            },
+            "outcome": "The bank is not at fault, but complaints must be recorded and answered with an explanation and the next step, as the consumer protection rules expect."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "outward-limit",
+        "when": "Tuesday 11:30",
+        "from": "Getachew Lemma, resident customer",
+        "channel": "visit",
+        "subject": "Send USD 2,500 to my brother in Johannesburg",
+        "body": [
+          "Getachew wants to send USD 2,500 to his brother in Johannesburg for family support. The system shows he sent USD 1,200 for family support earlier in the same period.",
+          "When you mention the limit, he says: 'Then put the rest in my wife's name. She is here with her ID.'"
+        ],
+        "exhibit": {
+          "title": "Outward check",
+          "rows": [
+            {
+              "label": "Family support limit (FXD/04/2026)",
+              "value": "USD 3,000 per person in the period"
+            },
+            {
+              "label": "Already sent this period",
+              "value": "USD 1,200"
+            },
+            {
+              "label": "Requested",
+              "value": "USD 2,500"
+            },
+            {
+              "label": "Bank A selling rate",
+              "value": "Birr 155.50"
+            }
+          ]
+        },
+        "ask": "What do you offer?",
+        "options": [
+          {
+            "text": "Offer up to USD 1,800, Birr 279,900 at 155.50 plus the tariff, after screening; decline the rest and the wife's name.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "service": 3,
+              "business": 4
+            },
+            "outcome": "Correct: 3,000 minus 1,200 leaves USD 1,800, and 1,800 x 155.50 = Birr 279,900. Using another person's name to get round the limit is structuring."
+          },
+          {
+            "text": "Send the USD 2,500: each transfer is below USD 3,000, and the earlier USD 1,200 went to a different month's purpose code.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -4
+            },
+            "outcome": "The limit is counted per person over the period. USD 1,200 + 2,500 = 3,700, above the limit."
+          },
+          {
+            "text": "Send USD 1,800 in his name and USD 700 in his wife's name, since she is a resident with her own USD 3,000 family support limit.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "control": -5,
+              "service": 3
+            },
+            "outcome": "The wife is not the person supporting the brother. Splitting the same payment across family members to stay under a limit is structuring and must not be processed."
+          },
+          {
+            "text": "Send USD 1,800 at the buying rate of 152.40 instead of 155.50 as a goodwill gesture for a long-standing customer.",
+            "score": 1,
+            "effects": {
+              "control": -6,
+              "compliance": -3
+            },
+            "outcome": "The amount is right, but outward transfers use the bank's selling rate. The desk cannot change rates on its own."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "wrong-rate",
+        "when": "Wednesday 09:30",
+        "from": "Day-end till report",
+        "channel": "system",
+        "subject": "Till over by Birr 17,550",
+        "body": [
+          "Yesterday's till was over by Birr 17,550. You trace it to a USD 650 payout to Abdi Hussen, keyed at Birr 125.40 instead of 152.40. His receipt shows the wrong rate. He has just called to ask why he got less than his cousin said he would.",
+          "A colleague suggests: 'Just hand him the difference from the till when he comes in. No paperwork, and the till balances.'"
+        ],
+        "exhibit": {
+          "title": "The payout",
+          "rows": [
+            {
+              "label": "Transfer",
+              "value": "USD 650"
+            },
+            {
+              "label": "Correct rate / rate keyed",
+              "value": "152.40 / 125.40"
+            },
+            {
+              "label": "Birr paid",
+              "value": "81,510"
+            },
+            {
+              "label": "Till overage",
+              "value": "Birr 17,550"
+            }
+          ]
+        },
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Tell the supervisor, reverse the 81,510 entry and post 99,060 with maker and checker, then pay Abdi 17,550 on a receipt.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "control": 8,
+              "service": 6
+            },
+            "outcome": "Correct: 650 x 152.40 = 99,060, and 99,060 minus 81,510 = 17,550. A posted transaction is corrected only by a controlled reversal, and a clear apology keeps the customer."
+          },
+          {
+            "text": "Follow the colleague's suggestion: hand Abdi the Birr 17,550 from the till when he comes in, so the till balances and he is paid at once.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -10,
+              "service": 4
+            },
+            "outcome": "Off-book cash payments hide errors and invite fraud. The records still show Birr 81,510 paid and the customer's file does not match the cash.",
+            "next": "wrong-rate-later"
+          },
+          {
+            "text": "Keep the Birr 17,550 surplus in the till until month end, in case another error turns up, then correct everything together.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "service": -8,
+              "control": -5
+            },
+            "outcome": "The money belongs to the customer. Holding an overage to cover other errors is a serious control failure."
+          },
+          {
+            "text": "Tell Abdi the rate on his signed receipt is what he accepted, and suggest he compare rates before signing next time.",
+            "score": 0,
+            "effects": {
+              "service": -12,
+              "compliance": -8
+            },
+            "outcome": "The error is the bank's. Fair treatment means correcting it quickly, not holding the customer to a mistake he did not make."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "diaspora-birr",
+        "when": "Wednesday 14:00",
+        "from": "Samuel Bekele, brother of a diaspora account holder",
+        "channel": "visit",
+        "subject": "Convert Birr 400,000 into my sister's USD diaspora account",
+        "body": [
+          "Samuel's sister, a US citizen of Ethiopian origin, opened a USD diaspora account at the branch last month, funded by SWIFT from her bank in Maryland. Samuel brings Birr 400,000 from the sale of a minibus and asks you to convert it and credit her USD account.",
+          "Samuel is a good depositor and says the branch manager knows him well."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Convert the Birr 400,000 at the selling rate of 155.50 and credit about USD 2,572 to her account, as she is the account holder's brother.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -5,
+              "service": 3
+            },
+            "outcome": "A diaspora FCY account may be funded only from foreign sources. A local Birr credit is not allowed and would have to be reversed."
+          },
+          {
+            "text": "Credit it if his sister approves by email from Maryland, since she owns the account and can decide what goes into it.",
+            "score": 0,
+            "effects": {
+              "compliance": -12
+            },
+            "outcome": "The account holder's consent does not change the funding rule. The source of the money is the issue, not who approves it."
+          },
+          {
+            "text": "Decline politely: the account takes only foreign funds. Offer a Birr account; she can keep sending from Maryland.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "service": 4,
+              "business": 5
+            },
+            "outcome": "Correct. FXD/01/2024 lets diaspora members hold FCY accounts funded from foreign sources. A Birr account keeps the deposit at Bank A within the rules."
+          },
+          {
+            "text": "Ask the branch manager, who knows Samuel well, to approve a one-time exception and note the reason on the file.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "service": 2
+            },
+            "outcome": "The rule comes from the NBE directive, so no branch manager can approve an exception. Escalating only delays the right answer."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "structuring",
+        "when": "Thursday 10:00",
+        "from": "Payout system, beneficiary history",
+        "channel": "system",
+        "subject": "Eighth transfer in 10 days for Biruk Alemu",
+        "body": [
+          "Biruk Alemu, who says he is a shop assistant, is at the counter for a USD 960 transfer. The history shows eight transfers in 10 days from six different senders in Dubai and Riyadh, all just under USD 1,000.",
+          "When you ask about the senders, he says they are 'friends of my boss' paying for goods he will buy for them."
+        ],
+        "exhibit": {
+          "title": "Biruk's transfers in 10 days (USD)",
+          "rows": [
+            {
+              "label": "Amounts",
+              "value": "960, 940, 980, 950, 970, 930, 990, 960"
+            },
+            {
+              "label": "Senders",
+              "value": "6 different people"
+            },
+            {
+              "label": "Total and Birr equivalent at 152.40",
+              "value": "to compute"
+            },
+            {
+              "label": "Stated work",
+              "value": "Shop assistant"
+            }
+          ]
+        },
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Pay if the details and ID match, record his explanation, and refer USD 7,680, about Birr 1.17 million, to compliance today.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "control": 8,
+              "service": 2
+            },
+            "outcome": "Correct: the eight amounts total USD 7,680, Birr 1,170,432. Each transfer looks ordinary; the pattern does not. The desk records and escalates, and compliance decides on a report."
+          },
+          {
+            "text": "Pay and do nothing more: each transfer is under USD 1,000, his ID is valid, and buying goods for friends abroad is a plausible story.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -10
+            },
+            "outcome": "Many senders, amounts just under a review level and a total far above his profile are classic structuring signs. The officer does not need proof to escalate.",
+            "next": "structuring-later"
+          },
+          {
+            "text": "Refuse today's payout and tell him the pattern is being reported for money laundering, so he understands why he is not being paid.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "service": -6
+            },
+            "outcome": "Telling a customer about a possible report is tipping off, which the AML/CFT law forbids. It can let the organizers move money before the authorities act."
+          },
+          {
+            "text": "Ask him to bring all six senders' details and their reasons for paying him to the branch before you release today's USD 960.",
+            "score": 1,
+            "effects": {
+              "service": -6,
+              "compliance": -2
+            },
+            "outcome": "The senders are abroad, so this is impossible and only alerts him. Normal questions, a record and a same-day referral are what the desk should do."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "sanctions-alert",
+        "when": "Thursday 15:00",
+        "from": "Screening system",
+        "channel": "system",
+        "subject": "Possible match on beneficiary Ahmed Yusuf",
+        "body": [
+          "A USD 1,200 transfer for Ahmed Yusuf triggers a sanctions alert. The list entry gives the same name and the same year of birth, no nationality and no ID number. The customer's Fayda record shows an Ethiopian born in that year.",
+          "The customer is at the counter, the queue is long, and a colleague says: 'It is a very common name. Just clear it and pay.'"
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Clear it: Ahmed Yusuf is a very common name, the customer's Fayda record is Ethiopian, and the list entry gives no nationality.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "control": -10,
+              "service": 3
+            },
+            "outcome": "A common name is a reason for an alert, not for clearing it. With the same year of birth and nothing on the list to rule him out, the officer cannot clear it."
+          },
+          {
+            "text": "Pay now since the queue is long, and send the alert with the Fayda record to compliance afterwards for a final check.",
+            "score": 0,
+            "effects": {
+              "compliance": -18,
+              "control": -10
+            },
+            "outcome": "Screening comes before payout. Once the money is paid to a possible listed person, it cannot be undone."
+          },
+          {
+            "text": "Hold it, refer the alert and your comparison to compliance at once, and tell the customer you need a little more time.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "control": 8,
+              "service": -2
+            },
+            "outcome": "Correct. Only clear false positives are cleared at the desk; anything that cannot be ruled out goes to compliance, and neutral words avoid tipping off."
+          },
+          {
+            "text": "Tell the customer his name matches a sanctions list entry and ask him directly whether he is the person listed.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "service": -5
+            },
+            "outcome": "Disclosing the alert can tip off a real match and embarrasses an innocent customer. The check is done quietly by compliance."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "job-scam",
+        "when": "Friday 11:00",
+        "from": "Mother of a job seeker",
+        "channel": "visit",
+        "subject": "Send USD 1,500 for my daughter's visa to a job in the Gulf",
+        "body": [
+          "A mother wants to send USD 1,500, Birr 233,250 at the selling rate, to a personal account in the Gulf. Her daughter was offered a hotel job through a social media page; the 'agent' asks for visa, ticket and medical fees. There is no contract and no licensed Ethiopian agency involved. This is the second fee the agent has asked for.",
+          "She asks you to send it as family support."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Send it as family support: the mother is a resident, the USD 1,500 is within the USD 3,000 limit, and it is for her own daughter's future.",
+            "score": 0,
+            "effects": {
+              "control": -12,
+              "compliance": -10,
+              "business": 3
+            },
+            "outcome": "The money is a fee to a stranger, not support for family abroad, so the purpose does not fit. A job offered online, fees to a personal account and repeated new fees are classic job scam signs."
+          },
+          {
+            "text": "Explain gently the signs of a job scam, decline it as family support, record the talk and refer it to compliance.",
+            "score": 3,
+            "effects": {
+              "control": 12,
+              "compliance": 8,
+              "service": 6
+            },
+            "outcome": "Correct. Patience and plain words protect the family from losing the money, and the referral lets compliance look at the receiving account. The NBE has asked banks to raise fraud awareness for exactly these cases."
+          },
+          {
+            "text": "Refuse firmly and tell her she is foolish to believe a job offered on social media, so she does not try again.",
+            "score": 1,
+            "effects": {
+              "service": -10,
+              "control": 4
+            },
+            "outcome": "Stopping the payment is right, but victims are often embarrassed. Without a kind explanation she may simply send it through a broker."
+          },
+          {
+            "text": "Send USD 750 now as family support and the rest only when the agent shows the visa, which limits what she can lose.",
+            "score": 0,
+            "effects": {
+              "control": -8,
+              "compliance": -8
+            },
+            "outcome": "Half of a scam payment is still lost money, under a purpose that does not fit."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "no-id-later",
+        "when": "Three weeks later",
+        "from": "MTO claims unit",
+        "channel": "email",
+        "subject": "Sender says her mother never received USD 300",
+        "body": [
+          "Abebech Tola's daughter in Riyadh has filed a claim: her mother says she never received the money. The file shows the payout was made to the nephew on his own ID. The nephew has stopped answering his phone."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Report the facts in writing, cooperate with the MTO claim, accept the bank may repay, and help Abebech get Fayda.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "service": 4,
+              "control": 3
+            },
+            "outcome": "Owning the error is the only defensible course. A bank that pays without proper identification may have to make good the loss, which is why the named beneficiary rule exists."
+          },
+          {
+            "text": "Tell the MTO the payout was correct: the nephew showed a valid Fayda ID, the details matched, and Abebech was present.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "service": -6
+            },
+            "outcome": "A valid ID in another person's name is not identification of the beneficiary. The claim will succeed and the bank's credibility with the MTO suffers."
+          },
+          {
+            "text": "Ask Abebech to sort it out with her nephew, and tell the MTO the family dispute is not the bank's concern.",
+            "score": 1,
+            "effects": {
+              "service": -8,
+              "control": -2
+            },
+            "outcome": "The bank paid the wrong person. Pushing the problem onto an elderly customer is not fair treatment."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "wrong-rate-later",
+        "when": "Month end",
+        "from": "Internal audit",
+        "channel": "memo",
+        "subject": "Cash paid to Abdi Hussen without an entry",
+        "body": [
+          "Internal audit's reconciliation shows Abdi's USD 650 payout recorded at Birr 81,510, while CCTV and the customer's statement show a further Birr 17,550 handed over in cash with no voucher. Audit asks the desk to explain."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Explain the error and cash payment honestly, and post the reversal and correct entry now, with maker and checker.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "control": 4
+            },
+            "outcome": "Late correction is still correction. Honesty with audit limits the damage and brings the records back in line with what happened."
+          },
+          {
+            "text": "Tell audit the Birr 17,550 was a personal gift from you to a customer you know, not a bank payment that needed a voucher.",
+            "score": 0,
+            "effects": {
+              "compliance": -15
+            },
+            "outcome": "A false explanation to audit turns an error into misconduct."
+          },
+          {
+            "text": "Explain that a colleague suggested the cash payment, and ask audit to address the matter with that colleague directly.",
+            "score": 1,
+            "effects": {
+              "compliance": -4
+            },
+            "outcome": "The colleague's advice is part of the facts, but you made the payment. The fix is the controlled entry, not blame."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "structuring-later",
+        "when": "Two months later",
+        "from": "Branch compliance officer",
+        "channel": "memo",
+        "subject": "Financial Intelligence Service request on Biruk Alemu",
+        "body": [
+          "The Financial Intelligence Service has asked Bank A for all transfers paid to Biruk Alemu, now more than 20 in three months, as part of a wider case. Compliance asks why the desk never referred the pattern."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Give compliance the full history today, admit the pattern was missed, and start a weekly frequent-transfer list.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "control": 4
+            },
+            "outcome": "Full cooperation is the duty now. The weekly list is the control that would have caught the pattern early."
+          },
+          {
+            "text": "Tell compliance each transfer was below USD 1,000 and every ID matched, so under the desk procedure there was nothing to refer.",
+            "score": 0,
+            "effects": {
+              "compliance": -10
+            },
+            "outcome": "Structuring is designed to stay below review levels. The duty is to look at the pattern, not each ticket."
+          },
+          {
+            "text": "Call Biruk to ask what the Financial Intelligence Service wants, so the desk can prepare the right documents quickly.",
+            "score": 0,
+            "effects": {
+              "compliance": -20
+            },
+            "outcome": "Contacting the customer about an authority's enquiry is tipping off, a serious breach of the AML/CFT law."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-week hand-over note to the branch supervisor.",
+      "guide": [
+        "Transfers on hold and why, with what each customer must bring.",
+        "Errors found and how each was corrected, with voucher references.",
+        "Cases you referred to compliance this week, described by facts only.",
+        "How many payout customers you converted to account or wallet credit.",
+        "One change at the desk that would serve families better or catch risk earlier."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Why does a formal remittance payout support Ethiopia's foreign exchange position, while an informal one does not?",

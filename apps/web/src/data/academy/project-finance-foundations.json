@@ -1807,6 +1807,926 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A month as project loan officer at Bank A, Dukem branch",
+    "role": "Project loan officer",
+    "setting": [
+      "You have just joined the project lending desk of Bank A's Dukem branch, in the fast-growing industrial corridor south of Addis Ababa. The branch has about Birr 650 million of long-term loans to factories, warehouses and agro-processors, several of them still under construction, and a steady flow of new project requests from local investors.",
+      "Your job this month: screen every request, test feasibility studies against evidence, rebuild project cost and the financing plan, and prepare clean files for the head office credit committee, which approves project loans of any size. You also control disbursement on the projects already approved. You report to the branch manager, and the head office project finance department reviews your work.",
+      "Items arrive in the order you would meet them on the job. Do the numbers on paper or a spreadsheet, and choose the action you would defend in front of the committee and an NBE examiner."
+    ],
+    "authority": {
+      "title": "Your desk's rules and targets",
+      "rows": [
+        {
+          "label": "Long-term loan tenor",
+          "value": "Over 5 and up to 10 years, excluding grace; longer only through rescheduling or with executive management consent"
+        },
+        {
+          "label": "Grace period",
+          "value": "Up to 24 months, on principal only, matched to the implementation stage and projected cash flow"
+        },
+        {
+          "label": "Expansion as a project",
+          "value": "Production capacity must rise by more than 40%; project life at least equal to the loan period"
+        },
+        {
+          "label": "Equity",
+          "value": "At least 30% of total project cost from own funds, never borrowed; committed first and verified at each disbursement"
+        },
+        {
+          "label": "Project cost",
+          "value": "All eight components, with contingency of 5% to 10% of building and machinery and interest during construction"
+        },
+        {
+          "label": "Discount rate",
+          "value": "At least the lending rate (Bank A prices project loans at 16%), higher where project risk warrants"
+        },
+        {
+          "label": "Approval",
+          "value": "Project loans of any size approved at head office level"
+        },
+        {
+          "label": "Disbursement",
+          "value": "In tranches against certified progress, paid directly to contractors and suppliers, site visit by two staff before each tranche"
+        },
+        {
+          "label": "Environment",
+          "value": "Environmental assessment for large projects before the bank decides (Proclamation No. 299/2002)"
+        }
+      ],
+      "note": "These follow the course and a typical Ethiopian bank manual. Your own bank's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "quality",
+        "label": "Portfolio quality",
+        "help": "Rises when projects are appraised on evidence and funded only against progress; falls when weak assumptions or early releases slip through."
+      },
+      {
+        "id": "relationship",
+        "label": "Sponsor relationships",
+        "help": "Rises when good sponsors get clear, timely answers and workable structures; falls with needless refusals or delays."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of the manual's project rules or NBE directives, hidden or not."
+      },
+      {
+        "id": "income",
+        "label": "Branch income",
+        "help": "Rises with sound, well-structured project business; falls with lost deals, stalled projects and losses."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "ziway-expansion",
+        "when": "Week 1, Monday 09:00",
+        "from": "Relationship manager, Dukem branch",
+        "channel": "email",
+        "subject": "Ziway Edible Oil PLC: Birr 9 million project loan for a new press",
+        "body": [
+          "Ziway Edible Oil PLC, a good customer for six years, wants to add a second oilseed press. The RM has booked it as a project loan: Birr 9 million over 8 years with 18 months of grace. 'It is an expansion, so it is a project. The owner wants the long grace to keep installments low.'",
+          "The supplier says the press takes about 3 months to install. The machine has a rated life of 8 years."
+        ],
+        "exhibit": {
+          "title": "Ziway Edible Oil: capacity before and after",
+          "rows": [
+            {
+              "label": "Current crushing capacity",
+              "value": "40 tonnes a day"
+            },
+            {
+              "label": "Capacity after the new press",
+              "value": "52 tonnes a day"
+            },
+            {
+              "label": "Installation period",
+              "value": "about 3 months"
+            },
+            {
+              "label": "Manual threshold for an expansion project",
+              "value": "capacity increase of more than 40%"
+            }
+          ]
+        },
+        "ask": "How do you classify and structure the request?",
+        "options": [
+          {
+            "text": "Keep it as a project loan: capacity after the press is 130% of today's 40 tonnes, well over the manual's 40% threshold for expansions.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -5,
+              "relationship": 4
+            },
+            "outcome": "The increase is (52 minus 40) / 40 = 30%, not 130%. The threshold measures the increase, so this is below the 40% the manual needs for an expansion project, and booking it as one is a misclassification."
+          },
+          {
+            "text": "Not a project loan: the increase is 30%, below 40%. Offer a medium-term machinery loan, 30% own contribution, grace matched to the 3-month installation.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 6,
+              "relationship": 3,
+              "income": 3
+            },
+            "outcome": "Right product. A 30% increase is a sound machinery investment but not a project under the manual, and an 18-month grace for a 3-month installation would let cash leak away. The customer still gets the press, on a structure that matches it."
+          },
+          {
+            "text": "Book it as a project loan and flag it as an exception for head office, which approves every project loan anyway and can judge the 30% case.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "relationship": 2
+            },
+            "outcome": "Head office approval is about who decides, not a way to stretch the definition. Sending a misclassified request upward wastes the committee's time and puts your name on the error."
+          },
+          {
+            "text": "Decline the long-term request: below the 40% threshold the manual gives no project route, so tell the RM to offer an overdraft instead.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "income": -4
+            },
+            "outcome": "Failing the project test does not mean failing the customer. A medium-term machinery loan fits a 30% expansion, and refusing loses a sound six-year client."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "hawassa-tenor",
+        "when": "Week 1, Tuesday 11:30",
+        "from": "Hawassa Garment Works PLC, managing director",
+        "channel": "visit",
+        "subject": "New garment factory: 12 years of repayment after 30 months of grace",
+        "body": [
+          "Hawassa Garment Works PLC plans a new export garment factory. The study is solid and the sponsors have run a garment workshop for ten years. Construction takes 18 months, and the study shows the plant reaching break-even about 6 months after start-up.",
+          "The managing director asks for 30 months of grace and 12 years of repayment after grace. 'Another bank offered us something like that. We want breathing room.'"
+        ],
+        "ask": "What structure do you put in the proposal?",
+        "options": [
+          {
+            "text": "Propose 30 months of grace and 12 years of repayment as asked, and note the competing offer so the committee sees why we matched it.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "relationship": 5,
+              "income": 2
+            },
+            "outcome": "The manual caps grace at 24 months and long-term loans at 10 years excluding grace, longer only through rescheduling or executive management consent. Matching a rumored offer is not a reason to breach both limits."
+          },
+          {
+            "text": "Propose 24 months of grace on principal (18 months building plus 6 of start-up), then up to 10 years of repayment tested on the cash flow.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 6,
+              "relationship": 3,
+              "income": 3
+            },
+            "outcome": "This matches grace to the implementation stage and the first months of operation, within the 24-month cap, and keeps the tenor inside 10 years. State clearly that the tenor excludes grace, and that grace covers principal only."
+          },
+          {
+            "text": "Propose 18 months of grace, exactly the construction period in the study, and 10 years of repayment, both inside the manual's limits.",
+            "score": 2,
+            "effects": {
+              "quality": 3,
+              "compliance": 3,
+              "relationship": -2
+            },
+            "outcome": "Within policy, but principal falls due the day the plant starts, before it breaks even. Grace should cover construction and the first months of operation."
+          },
+          {
+            "text": "Offer 12 months of grace and 7 years of repayment: a shorter loan reduces the bank's exposure if the export orders come in slowly.",
+            "score": 1,
+            "effects": {
+              "quality": -3,
+              "relationship": -8,
+              "income": -3
+            },
+            "outcome": "Installments would start while the factory is still being built, so the loan could fall into arrears through no fault of the project. Shape the loan to the cash flow, not to a feeling of safety."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "malt-study",
+        "when": "Week 1, Wednesday 14:00",
+        "from": "Relationship manager, Dukem branch",
+        "channel": "email",
+        "subject": "Kulumsa Malt PLC study: please clear it for Thursday's committee",
+        "body": [
+          "Kulumsa Malt PLC wants Birr 120 million to build a malting plant that will sell to breweries. The RM writes: 'The study is from a respected consultant and the sponsors are big barley traders. Committee is Thursday. Please do not make trouble over details.'",
+          "Your read of the study: full capacity from year 1; a selling price 15% above imported malt 'because of freshness', with no buyer letters; barley bought at today's price for 10 years; demand growth of 14% a year with no source. The sponsors' own operations manager told you on the phone that 60% in year 1 is realistic."
+        ],
+        "exhibit": {
+          "title": "Kulumsa Malt: year 1 revenue inputs",
+          "rows": [
+            {
+              "label": "Plant capacity",
+              "value": "20,000 tonnes a year"
+            },
+            {
+              "label": "Study: year 1 utilization",
+              "value": "100%"
+            },
+            {
+              "label": "Study: selling price",
+              "value": "Birr 9,200 a tonne"
+            },
+            {
+              "label": "Imported malt, delivered price today",
+              "value": "Birr 8,000 a tonne"
+            },
+            {
+              "label": "Realistic year 1 utilization",
+              "value": "60%"
+            }
+          ]
+        },
+        "ask": "What do you send the RM?",
+        "options": [
+          {
+            "text": "Clear the study for Thursday with a note that the consultant is respected and the sponsors trade barley, and ask for buyer letters later.",
+            "score": 0,
+            "effects": {
+              "quality": -15,
+              "relationship": 5,
+              "income": 3
+            },
+            "outcome": "The study is the sponsor's sales document. Four key assumptions are unproven, and the committee would approve a loan on a year 1 revenue that is almost double what the plant can realistically earn.",
+            "next": "malt-later"
+          },
+          {
+            "text": "Send the RM four red flags with the evidence each needs; re-run year 1 at 60% and market price, about Birr 96 million against Birr 184 million.",
+            "score": 3,
+            "effects": {
+              "quality": 12,
+              "compliance": 3,
+              "relationship": -3
+            },
+            "outcome": "Correct: 20,000 x 100% x 9,200 = 184.0 million in the study; 20,000 x 60% x 8,000 = 96.0 million on evidence. A specific list of what to prove (buyer letters, barley price history and sensitivity, demand source) is far more useful to the sponsor than 'the study is weak'."
+          },
+          {
+            "text": "Re-run year 1 at the realistic 60% but keep the study's Birr 9,200 price, about Birr 110 million, and send it Thursday with that fix.",
+            "score": 1,
+            "effects": {
+              "quality": 2,
+              "relationship": 2
+            },
+            "outcome": "Fixing the ramp-up is half the job. The 15% premium has no buyer evidence, so 12,000 x 9,200 = 110.4 million still overstates revenue by Birr 14.4 million against the market price."
+          },
+          {
+            "text": "Recommend rejection: full capacity in year 1, frozen barley prices and an unsourced 14% growth figure show the study cannot be trusted.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "income": -5
+            },
+            "outcome": "Optimism is normal in a study; the officer's job is to test it, not to throw it out. Experienced sponsors and a real brewery market deserve a corrected projection, not a refusal."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "dukem-site",
+        "when": "Week 2, Monday 10:00",
+        "from": "Branch manager",
+        "channel": "call",
+        "subject": "Site visit findings at Dukem Edible Oil Refinery PLC",
+        "body": [
+          "You and a colleague visited the plot for Dukem Edible Oil Refinery PLC, a Birr 85 million new refinery. Three findings: the land lease certificate is in the managing director's personal name, not the company's; the grid line is 1.2 km away and the cost table has no line for the power connection or the last 900 meters of access road; and the refinery will discharge process water, but the environmental assessment 'will be done after approval'.",
+          "The branch manager calls: 'These are details. Send it to head office now and we will fix them after approval. The sponsor is impatient.'"
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Send it to head office now as the branch manager asks, and list the lease, the road and power lines and the assessment as follow-ups.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -10,
+              "relationship": 4
+            },
+            "outcome": "Each finding is a real risk: the bank cannot take a mortgage on land the company does not hold, missing costs mean the project runs short, and the manual requires the environmental assessment before the bank decides on a large project."
+          },
+          {
+            "text": "Hold the file and write to the sponsor: lease into the company's name, road and power quotations in cost, approved environmental assessment.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 8,
+              "relationship": -2
+            },
+            "outcome": "This is what the site visit is for. A clear written list gives the sponsor a fast path to approval, and the note protects you and the branch manager when head office asks why the file was held."
+          },
+          {
+            "text": "Send it with the lease transfer and the environmental assessment as conditions before first disbursement, and add road and power to cost.",
+            "score": 2,
+            "effects": {
+              "quality": 4,
+              "compliance": -3,
+              "relationship": 2
+            },
+            "outcome": "Close, and the cost fix is right. But the manual expects the environmental impact to be assessed before the bank decides on a big project, because it can change whether the project works at all."
+          },
+          {
+            "text": "Accept the lease in the managing director's name backed by his personal guarantee, add the road and power lines, and send the file on.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "quality": -6
+            },
+            "outcome": "A guarantee does not put the land in the borrower's name. The documents must be valid and in the company's own name before the bank can rely on them."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "sululta-cost",
+        "when": "Week 2, Wednesday 09:30",
+        "from": "Sululta Packaging PLC, sponsor",
+        "channel": "email",
+        "subject": "Our Birr 35 million loan request: equity is exactly 30%",
+        "body": [
+          "Sululta Packaging PLC will build a corrugated carton plant. The sponsor's cost table totals Birr 50.0 million, with equity of Birr 15.0 million (land lease already paid, Birr 3.0 million, plus Birr 12.0 million cash) and a loan request of Birr 35.0 million, 'exactly 30% equity'.",
+          "From the freight forwarder and installer you obtained the missing machinery costs. Construction takes 12 months, and Bank A would price the loan at 16%. Your desk uses a 5% contingency on building and machinery for firm quotations."
+        ],
+        "exhibit": {
+          "title": "Sululta Packaging: cost table (Birr millions)",
+          "rows": [
+            {
+              "label": "Land lease prepayment (paid)",
+              "value": "3.0"
+            },
+            {
+              "label": "Building and civil works",
+              "value": "16.0"
+            },
+            {
+              "label": "Machinery, CIF price",
+              "value": "22.0"
+            },
+            {
+              "label": "Duties and clearing (not in sponsor's table)",
+              "value": "2.2"
+            },
+            {
+              "label": "Installation (not in sponsor's table)",
+              "value": "0.8"
+            },
+            {
+              "label": "Vehicles",
+              "value": "2.5"
+            },
+            {
+              "label": "Pre-operating costs",
+              "value": "1.5"
+            },
+            {
+              "label": "Initial working capital",
+              "value": "5.0"
+            },
+            {
+              "label": "Contingency and IDC",
+              "value": "not included"
+            }
+          ]
+        },
+        "ask": "What do you put in your financing plan?",
+        "options": [
+          {
+            "text": "Accept the plan: the sponsor's table shows Birr 15 million of equity on a Birr 50 million cost, exactly the 30% the manual requires.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -8,
+              "relationship": 4
+            },
+            "outcome": "The sponsor's table leaves out duties, installation, contingency and IDC. On the true cost of about Birr 57.9 million, Birr 15 million is only about 26% equity, and the project would run out of money before it starts operating."
+          },
+          {
+            "text": "Rebuild cost to about Birr 57.9 million, hold the loan at Birr 35 million, and have sponsors add about Birr 7.9 million cash.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 6,
+              "relationship": -2
+            },
+            "outcome": "Correct: machinery 22.0 + 2.2 + 0.8 = 25.0; contingency 5% x (16.0 + 25.0) = 2.05; subtotal 55.05; IDC 35 x 16% x 1 x 50% = 2.8; total 57.85. With the loan unchanged, equity is 22.85, or about 39%, well above the 30% minimum, and the cost overrun stays with the owners."
+          },
+          {
+            "text": "Raise the loan to about Birr 42.9 million to cover duties, installation, contingency and IDC, keeping the sponsors' Birr 15 million.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -8,
+              "income": 3
+            },
+            "outcome": "That puts the bank at about 74% of cost and the owners at 26%, a breach of the 30% equity rule. The gap the sponsor left out is exactly what equity is meant to absorb."
+          },
+          {
+            "text": "Keep equity at exactly 30% of the rebuilt cost: ask the sponsors for about Birr 2.4 million more cash and raise the loan to about Birr 40.5 million.",
+            "score": 2,
+            "effects": {
+              "quality": 2,
+              "compliance": 2,
+              "income": 3
+            },
+            "outcome": "Within the rule (30% of 57.85 is about 17.4), but the bank now carries more debt, the IDC must be recalculated on the bigger loan, and repayment capacity has to be re-tested. Holding the loan and asking the owners to fund the overrun is the stronger answer."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "sululta-equity",
+        "when": "Week 2, Friday 15:00",
+        "from": "Sululta Packaging PLC, sponsor",
+        "channel": "call",
+        "subject": "We will add the extra equity, here is how",
+        "body": [
+          "The sponsor accepts that more equity is needed and offers: Birr 4.0 million from a personal loan he is arranging at Bank B against his house, and his company's dump truck, manufactured 12 years ago, which he values at Birr 3.9 million.",
+          "He adds: 'My trading company made good profits last year, but I want to keep that cash for stock.'"
+        ],
+        "ask": "How do you treat the offer?",
+        "options": [
+          {
+            "text": "Accept both: the Birr 4.0 million arrives as cash in the project account, and the dump truck is a working asset the plant will use daily.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -10,
+              "relationship": 3
+            },
+            "outcome": "Borrowed money is not own funds: it adds hidden debt that the bank did not appraise and puts none of the owner's money at risk. A vehicle more than 10 years from manufacture is not acceptable as collateral and doubtful as equity.",
+            "next": "equity-later"
+          },
+          {
+            "text": "Accept the truck once the bank engineer values it, as in-kind equity, but refuse the Birr 4.0 million borrowed from Bank B.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "quality": 2
+            },
+            "outcome": "Refusing the loan is right. But a 12-year-old truck is past the 10-year limit, and in-kind equity must be owned by the borrowing company and suitable for the project; an old dump truck at a self-assessed value is neither firm nor fit."
+          },
+          {
+            "text": "Refuse both and ask for the trading company's retained profits, verified on bank statements and blocked, or a smaller scope.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 8,
+              "relationship": -2
+            },
+            "outcome": "The 30% rule asks for the owners' own money, committed first and verified. Profits from his existing business are exactly that, and blocking them protects the bank until they are spent on the project."
+          },
+          {
+            "text": "Accept the Bank B loan if its tenor runs longer than ours, so its installments do not compete with our loan for the plant's cash flow.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -6
+            },
+            "outcome": "The tenor of the other loan does not change its nature. Equity must come from own funds, never from borrowing."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "legetafo-installment",
+        "when": "Week 3, Monday 09:15",
+        "from": "Legetafo Feed Mill PLC, owner",
+        "channel": "visit",
+        "subject": "What will my yearly installment be?",
+        "body": [
+          "Mekdes Alemayehu, owner of Legetafo Feed Mill PLC, is close to approval for a Birr 20 million loan at 15% for her new feed mill: 12 months of grace on principal, then 5 years of equal annual installments.",
+          "She asks: 'What will I pay each year after grace, and can the mill carry it?' Her projection shows cash available for debt service of Birr 8.0 million in the first repayment year."
+        ],
+        "exhibit": {
+          "title": "Legetafo Feed Mill: repayment inputs",
+          "rows": [
+            {
+              "label": "Loan after grace",
+              "value": "Birr 20,000,000"
+            },
+            {
+              "label": "Interest rate",
+              "value": "15% a year"
+            },
+            {
+              "label": "Repayment term",
+              "value": "5 years, equal annual installments"
+            },
+            {
+              "label": "Annuity factor, 15%, 5 years",
+              "value": "3.352"
+            },
+            {
+              "label": "Cash available for debt service, first repayment year",
+              "value": "Birr 8.0 million"
+            }
+          ]
+        },
+        "ask": "What do you tell her?",
+        "options": [
+          {
+            "text": "About Birr 5.97 million a year (20 million / 3.352); her Birr 8.0 million of cash covers it about 1.34 times.",
+            "score": 3,
+            "effects": {
+              "quality": 6,
+              "relationship": 6,
+              "income": 2
+            },
+            "outcome": "Correct: installment = loan / annuity factor = 20,000,000 / 3.352, about Birr 5,966,600, and 8.0 / 5.97 is about 1.34. Showing her the cover helps her plan, and the same factor gives the bank its repayment test."
+          },
+          {
+            "text": "Birr 4.0 million a year, 20 million spread over 5 years; with Birr 8.0 million of cash the mill covers its installment twice over.",
+            "score": 0,
+            "effects": {
+              "quality": -8,
+              "relationship": -4
+            },
+            "outcome": "That ignores interest altogether. She would budget for Birr 2 million a year less than she owes, and the cover looks twice as safe as it is."
+          },
+          {
+            "text": "Birr 7.0 million in the first year, Birr 4.0 million of principal plus Birr 3.0 million of interest, falling each year after that.",
+            "score": 1,
+            "effects": {
+              "quality": -2,
+              "relationship": -2
+            },
+            "outcome": "That is year 1 of an equal-principal schedule, not the equal installment she asked for. It also leaves only thin cover in the year cash is tightest, so explain the difference before she chooses."
+          },
+          {
+            "text": "About Birr 8.05 million a year (20 million grown at 15% for 5 years, divided by 5), more than her cash, so the loan should be reduced.",
+            "score": 0,
+            "effects": {
+              "quality": -3,
+              "relationship": -10,
+              "income": -4
+            },
+            "outcome": "Compounding the whole loan forward ignores that principal falls each year. The annuity factor gives the right figure, about Birr 5.97 million, and the mill can carry it."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "kombolcha-npv",
+        "when": "Week 3, Wednesday 11:00",
+        "from": "Kombolcha Ceramic Tiles PLC, finance manager",
+        "channel": "email",
+        "subject": "Kiln line: NPV positive at 10%, please proceed",
+        "body": [
+          "Kombolcha Ceramic Tiles PLC asks Bank A to finance a Birr 50 million energy-saving kiln line. The consultant projects net cash of Birr 15 million a year for the line's 5-year rated life and reports a positive NPV at a 10% discount rate.",
+          "Bank A would price this loan at 16%. The finance manager writes: 'NPV is positive and payback is only 3.3 years. What more does the bank need?'"
+        ],
+        "exhibit": {
+          "title": "Kombolcha kiln line: annuity factors for 5 years",
+          "rows": [
+            {
+              "label": "Investment",
+              "value": "Birr 50 million"
+            },
+            {
+              "label": "Net cash, years 1 to 5",
+              "value": "Birr 15 million a year"
+            },
+            {
+              "label": "Annuity factor at 10%",
+              "value": "3.791"
+            },
+            {
+              "label": "Annuity factor at 11% (cost of funds)",
+              "value": "3.696"
+            },
+            {
+              "label": "Annuity factor at 16% (lending rate)",
+              "value": "3.274"
+            },
+            {
+              "label": "Annuity factor at 18%",
+              "value": "3.127"
+            }
+          ]
+        },
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Agree and proceed: the consultant's NPV at 10% is about Birr 6.9 million, so the kiln line creates value and payback is only 3.3 years.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "relationship": 3
+            },
+            "outcome": "A rate below the lending rate flatters the project. The required return must at least cover the 16% the bank charges, and at that rate the answer changes."
+          },
+          {
+            "text": "Re-run at the 16% lending rate: NPV is about minus Birr 0.9 million, so ask for firmer savings and cost before committee.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 3,
+              "relationship": -2
+            },
+            "outcome": "Correct: 15 x 3.274 = 49.1, less 50 = about minus 0.9; at 18% it is about minus 3.1. A small shortfall in savings would wipe out the project's value, so firmer evidence is needed before anyone borrows."
+          },
+          {
+            "text": "Use the bank's 11% cost of funds as the discount rate: NPV is then about Birr 5.4 million, so the line passes and can go to committee.",
+            "score": 1,
+            "effects": {
+              "quality": -6
+            },
+            "outcome": "The cost of funds is not the required return: the rate must also cover the bank's operating costs, margin and project risk. At least the 16% lending rate is the floor."
+          },
+          {
+            "text": "Accept it on payback: Birr 50 million recovered in 3.3 years is well inside the 5-year life, which is what matters most to the bank.",
+            "score": 1,
+            "effects": {
+              "quality": -5,
+              "relationship": 2
+            },
+            "outcome": "Payback shows liquidity but ignores the time value of money. It hides that the line barely recovers its cost once each year's cash is discounted at the rate the bank requires."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "sululta-cp",
+        "when": "Week 4, Monday 08:40",
+        "from": "District manager",
+        "channel": "call",
+        "subject": "Release Sululta's first tranche today, the contractor is waiting",
+        "body": [
+          "Sululta Packaging's loan was approved by head office and the loan contract is signed. The contractor is on site and wants the first tranche of Birr 6 million to start the foundations.",
+          "Your checklist shows: the mortgage on the land lease right has been submitted for registration but is not yet registered; Birr 4 million of the sponsors' cash equity is in their current account, not yet spent or blocked; and the contractor's all-risks policy has been issued but is not endorsed to Bank A.",
+          "The district manager calls: 'If we hold the money, the contractor will move to another site. Release it today and tidy up the paperwork this week.'"
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Release the Birr 6 million today against the sponsors' personal guarantees, and close the registration and endorsement this week.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "quality": -8,
+              "relationship": 4
+            },
+            "outcome": "A guarantee does not replace a condition precedent. Releasing now would put bank money on site before the security is registered, the owners' money is committed or the works are insured in the bank's favor."
+          },
+          {
+            "text": "Hold the release and tell the sponsor and district manager in writing that registration, equity and insurance must close first.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 6,
+              "relationship": -2
+            },
+            "outcome": "Conditions precedent exist so that the bank takes construction risk only after its protection and the owners' money are in place. The commitment charge already running on the undisbursed loan gives the sponsor good reason to close them fast."
+          },
+          {
+            "text": "Release Birr 3 million today so the foundations start, and the other Birr 3 million once the three open conditions are met.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -5,
+              "relationship": 2
+            },
+            "outcome": "A partial release is still a release before the conditions precedent are met. The risk is the same, only smaller."
+          },
+          {
+            "text": "Release once the registration office issues a receipt for the mortgage filing, and follow up the equity and the endorsement next.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "quality": -2
+            },
+            "outcome": "A filing receipt is not a registered mortgage, and the equity and insurance conditions are still open. All conditions precedent come before the first Birr, not one of them."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "gelan-tranche",
+        "when": "Week 4, Thursday 10:30",
+        "from": "Gelan Steel Profiles PLC, contractor",
+        "channel": "email",
+        "subject": "Tranche 2 request: Birr 7.2 million for the factory building",
+        "body": [
+          "Gelan Steel Profiles PLC's factory building is under construction under a Birr 24 million contract. The contractor asks for Birr 7.2 million, the full amount the engineer's certificate shows as earned less the sponsors' payment.",
+          "Yesterday you and a colleague visited the site: the roof steel is up and the walls are about half done, which matches the engineer's certificate."
+        ],
+        "exhibit": {
+          "title": "Gelan Steel Profiles: building contract status (Birr millions)",
+          "rows": [
+            {
+              "label": "Building contract value",
+              "value": "24.0"
+            },
+            {
+              "label": "Engineer's certificate: work complete",
+              "value": "55%"
+            },
+            {
+              "label": "Paid by sponsors (equity) to the contractor",
+              "value": "6.0"
+            },
+            {
+              "label": "Paid by Bank A, tranche 1, to the contractor",
+              "value": "4.8"
+            },
+            {
+              "label": "Contractor's request",
+              "value": "7.2"
+            }
+          ]
+        },
+        "ask": "How much do you release, and how?",
+        "options": [
+          {
+            "text": "Release Birr 7.2 million to the contractor: certified work of 13.2 (24.0 x 55%) less the sponsors' 6.0 already paid on the building.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -8,
+              "relationship": 4
+            },
+            "outcome": "That forgets the Birr 4.8 million the bank already paid. The contractor would be funded Birr 4.8 million ahead of verified progress, which is exactly what staged disbursement prevents.",
+            "next": "tranche-later"
+          },
+          {
+            "text": "Release Birr 2.4 million direct to the contractor: certified 13.2, less 6.0 equity and 4.8 already paid.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 6,
+              "relationship": 1,
+              "income": 1
+            },
+            "outcome": "Correct: 13.2 minus 6.0 minus 4.8 = 2.4. Money follows certified, visited progress and goes straight to the contractor, so physical progress, funds released and equity spent stay in line."
+          },
+          {
+            "text": "Release Birr 2.4 million into the sponsors' account so they can pay the contractor, keeping the payment within the family's control.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "quality": -3,
+              "relationship": 3
+            },
+            "outcome": "The amount is right, but project funds should go directly to contractors and suppliers. Paying into the borrower's general account opens the door to diversion."
+          },
+          {
+            "text": "Release nothing until the building is 65% complete, the level at which a factory building under construction is accepted as collateral.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "income": -3,
+              "quality": -2
+            },
+            "outcome": "The 65% level is a collateral rule for buildings under construction, not a disbursement trigger. Holding earned money stalls the works and raises the risk of delay."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "malt-later",
+        "when": "Ten months later",
+        "from": "Head office project finance department",
+        "channel": "memo",
+        "subject": "Kulumsa Malt: first principal installment due in 2 months",
+        "body": [
+          "Kulumsa Malt's loan was approved on the original study. The plant ran at 58% in its first year and sold at about Birr 8,100 a tonne, close to the imported price. Cash covers interest but not the principal due in two months. The sponsors ask for 'a little extra working capital' to pay it."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Grant the extra working capital the sponsors ask for, so the first principal installment is paid on time and the loan stays current.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -8
+            },
+            "outcome": "Lending new money to pay an old installment hides the problem and grows the exposure. The loan looks current while the real repayment capacity is unchanged."
+          },
+          {
+            "text": "Get a fresh projection on actual volumes and prices and propose a documented rescheduling to the committee.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 5,
+              "relationship": 3
+            },
+            "outcome": "This repairs the structure on evidence and through the proper authority. The lesson stands: the realistic ramp-up and market price you could have tested at appraisal were what the plant actually delivered."
+          },
+          {
+            "text": "Call the loan now, before it falls into arrears, and start recovery while the plant and its stock still hold their value.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "income": -6
+            },
+            "outcome": "The plant is working and earning; calling the loan would destroy a viable business and cut what the bank recovers. Restructure first."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "equity-later",
+        "when": "Five weeks later",
+        "from": "Credit administration",
+        "channel": "email",
+        "subject": "Sululta Packaging: credit report shows a new Birr 4 million loan",
+        "body": [
+          "The NBE Credit Reference Bureau report run before the second tranche shows the sponsor's new Birr 4 million personal loan at Bank B, with the first installment due next month. The bank engineer has also refused to value the 12-year-old truck. The contractor's next request is on your desk."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Continue with the tranche: the borrowed Birr 4 million is already spent on the project, and stopping now would delay construction.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "quality": -6
+            },
+            "outcome": "The equity on which the loan was approved does not meet the own-funds rule, and the sponsor must now service a loan the bank never appraised. Continuing compounds the error."
+          },
+          {
+            "text": "Hold further tranches, report to the committee, and require own cash, verified and blocked, before the next release.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 6,
+              "relationship": -2
+            },
+            "outcome": "Equity is verified at each disbursement for exactly this reason. Correcting it openly, before more bank money goes in, keeps the bank at no more than 70% of cost."
+          },
+          {
+            "text": "Reduce the loan by Birr 7.9 million to restore the equity share, and let the sponsor find the missing money during construction.",
+            "score": 1,
+            "effects": {
+              "relationship": -6,
+              "quality": -2
+            },
+            "outcome": "Cutting the loan without a funded plan leaves a hole in the project budget mid-construction. The fix is real own funds, verified before the next release."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "tranche-later",
+        "when": "Three weeks later",
+        "from": "Engineer, Bank A engineering unit",
+        "channel": "visit",
+        "subject": "Gelan Steel Profiles: progress has slowed",
+        "body": [
+          "On the next site visit the building is only 57% complete. The contractor used part of the advance on another job and now asks for a further Birr 3 million 'to finish the walls'. The bank has paid Birr 12.0 million against certified work of about Birr 13.7 million, with Birr 6.0 million from the sponsors."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Release the Birr 3 million so the contractor brings his crew back and the walls are finished before the rainy season.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -8
+            },
+            "outcome": "Funds released plus equity are already Birr 18.0 million against Birr 13.7 million of work. More money ahead of progress only deepens the gap."
+          },
+          {
+            "text": "Release nothing until certified progress catches up, report the over-release to the committee and visit every two weeks.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 6
+            },
+            "outcome": "When warning signs appear, stop and refer back to the committee. Releases resume once the three figures, physical progress, money released and equity spent, line up again."
+          },
+          {
+            "text": "Demand in writing that the sponsors repay the Birr 4.8 million over-release this week, so the bank is back within progress.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": 1
+            },
+            "outcome": "The over-release came from the bank's own error. Pulling cash from the sponsors mid-construction could stop the project; control future releases instead."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-month hand-over note to the branch manager and the head office project finance department.",
+      "guide": [
+        "Which requests you classified, restructured or sent back, and the rule behind each.",
+        "The project assumptions you changed and the evidence you are still waiting for.",
+        "Open conditions precedent and tranches, with dates for registration, equity checks and site visits.",
+        "One risk in the project book you want management to watch, such as a slow contractor or a thin equity cushion."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Rift Valley Juice PLC wants to replace its old bottling machine with a new one of the same capacity. Under a typical Ethiopian bank manual, how is this classified?",

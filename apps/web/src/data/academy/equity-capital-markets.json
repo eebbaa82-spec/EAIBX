@@ -2082,6 +2082,967 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "An IPO mandate as ECM associate at Bank A Capital",
+    "role": "Equity capital markets associate",
+    "setting": [
+      "You are an equity capital markets (ECM) associate at Bank A Capital, the ECMA-licensed investment banking subsidiary of Bank A. The ECM desk advises Ethiopian banks, insurers and growth companies on listings, IPOs, rights issues and placements on the Ethiopian Securities Exchange (ESX).",
+      "Your lead mandate: Bank B S.C., a fictional peer commercial bank with 9,800 shareholders, 4,000,000 shares, shareholders' equity of ETB 6.0 billion and net profit of ETB 0.84 billion. It wants to list on the ESX Main Board by introduction and raise ETB 1.2 billion of new shares to support its capital plan under SBB/95/2025. The offer has retail (45%), institutional (35%), diaspora (12%) and employee (8%) tranches. You also handle smaller growth company files for the desk.",
+      "You report to the head of ECM, who leads the client relationship and signs off every filing. Over about seven months you take Bank B from fees and prospectus to pricing, allocation and listing day. Work each item as you would on the job: check the rule, do the numbers, then choose the action you would defend to the issuer's board, to ECMA and to the NBE."
+    ],
+    "authority": {
+      "title": "Your desk's rules and reference points",
+      "rows": [
+        {
+          "label": "Main Board (Rule 5.1)",
+          "value": "ETB 500 million market cap or equity; 3-year record; profit once in 3 years; IFRS or AABE accounts; 15% float with 300 holders (10% at ETB 2 billion or more)"
+        },
+        {
+          "label": "Growth Board (Rule 6.1)",
+          "value": "2-year record; revenue growth of 20% a year; ETB 50 million market cap; 10% float with 50 holders; no profit test"
+        },
+        {
+          "label": "Insider moratorium",
+          "value": "Insiders may sell at most 50% of their shares within 12 months of listing"
+        },
+        {
+          "label": "ECMA fees (Directive No. 996/2024)",
+          "value": "Share offer ETB 300,000 plus 0.1% of the value offered; share trades 0.15%"
+        },
+        {
+          "label": "Bank shareholders",
+          "value": "Holding 2% or more of a bank needs NBE approval (SBB/89/2024); allocations above it are conditional and disclosed"
+        },
+        {
+          "label": "Offer conduct",
+          "value": "Prospectus specific and consistent; marketing fair and balanced; subscription money segregated; basis of allotment disclosed before launch"
+        },
+        {
+          "label": "Stabilization",
+          "value": "Not planned without ECMA confirmation of the rules"
+        }
+      ],
+      "note": "These follow the course. Confirm items the course marks as reported, such as Directive No. 1030/2024, against the official text; your own firm's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "execution",
+        "label": "Deal execution",
+        "help": "Rises when the offer moves forward on sound terms and on time; falls with failed tranches, rework or delays."
+      },
+      {
+        "id": "investors",
+        "label": "Investor trust",
+        "help": "Rises with fair pricing, honest disclosure and fair allocation; falls when investors are misled or treated unequally."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of ECMA, ESX or NBE rules."
+      },
+      {
+        "id": "client",
+        "label": "Issuer relationship",
+        "help": "Rises when the issuer is well advised and well served; falls with needless cost, delay or advice that ignores its interests."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "growth-test",
+        "when": "Month 1, Monday 09:30",
+        "from": "Founder, Bonga Spice Processing S.C.",
+        "channel": "visit",
+        "subject": "We want to list on the Growth Board this year",
+        "body": [
+          "The founder of Bonga Spice Processing S.C., a fictional spice and coffee processor, asks the desk to list it on the Growth Board within six months and raise about ETB 20 million from the public. It has traded for three years and is still loss-making while it builds a new plant.",
+          "Its share register shows 22 shareholders."
+        ],
+        "exhibit": {
+          "title": "Bonga Spice Processing S.C.",
+          "rows": [
+            {
+              "label": "Revenue FY2023/24",
+              "value": "ETB 80 million"
+            },
+            {
+              "label": "Revenue FY2024/25",
+              "value": "ETB 100 million"
+            },
+            {
+              "label": "Revenue FY2025/26",
+              "value": "ETB 118 million"
+            },
+            {
+              "label": "Net result FY2025/26",
+              "value": "Loss of ETB 5 million"
+            },
+            {
+              "label": "Estimated market cap at offer",
+              "value": "ETB 160 million"
+            },
+            {
+              "label": "Planned float",
+              "value": "12% to about 400 investors"
+            }
+          ]
+        },
+        "ask": "What do you advise?",
+        "options": [
+          {
+            "text": "It qualifies: average growth over the two years is 21.5%, above the 20% test, and the Growth Board looks at the trend rather than one weak year.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "client": 4
+            },
+            "outcome": "Growth was 25% and then 18%. The test asks for 20% a year, and the latest year falls short, so averaging hides a failed test that the ESX will see."
+          },
+          {
+            "text": "Not eligible yet: FY2025/26 growth was 18%, below Rule 6.1's 20% a year. Place privately now and list once it qualifies.",
+            "score": 3,
+            "effects": {
+              "compliance": 6,
+              "client": 4,
+              "execution": 3
+            },
+            "outcome": "Correct: 100 / 80 = +25% but 118 / 100 = +18%. Size, record, float and the absence of a profit test are fine; growth is the gap. A placement, reported as limited to 100 investors, raises the money without a public offer."
+          },
+          {
+            "text": "List on the Main Board instead, since it has a three-year record.",
+            "score": 0,
+            "effects": {
+              "compliance": -8,
+              "client": -3
+            },
+            "outcome": "The Main Board needs at least ETB 500 million of market cap or equity and profit once in three years. At ETB 160 million and loss-making, Bonga fails both."
+          },
+          {
+            "text": "It qualifies on all tests: the Growth Board is built for young, loss-making companies, so last year's loss does not count against Bonga.",
+            "score": 0,
+            "effects": {
+              "compliance": -8,
+              "execution": -4
+            },
+            "outcome": "There is no profit test on the Growth Board, but the growth test still applies every year and Bonga missed it in the latest year."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "founder-sale",
+        "when": "Month 1, Thursday 14:00",
+        "from": "Founder, Tulu Generics S.C.",
+        "channel": "call",
+        "subject": "I want to sell 3.6 million of my shares in the offer",
+        "body": [
+          "Tulu Generics S.C., a fictional generic medicines maker, is listing on the Growth Board. Its founder holds 6,000,000 shares and wants to sell 3,600,000 of them in the offer to fund a new venture. 'It is my company; the buyers will still have a great business.'"
+        ],
+        "ask": "What do you tell him?",
+        "options": [
+          {
+            "text": "No problem: the Growth Board rules set no limit on what founders may sell, so you can sell as much as the book will absorb in the offer.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -6,
+              "client": 4
+            },
+            "outcome": "On both boards insiders may sell at most 50% of their shares within 12 months of listing. 3.6 million of 6 million is 60%, above the limit."
+          },
+          {
+            "text": "Sell at most 3,000,000 shares (50%) within 12 months; we size the sale within that and disclose the lock-up.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "investors": 6,
+              "client": 2
+            },
+            "outcome": "Correct. The moratorium protects new investors from founders who list and leave, and disclosure tells them how much stock could come to market later."
+          },
+          {
+            "text": "Transfer 600,000 shares to a trusted friend before listing, so your own holding is smaller, then sell 3,000,000 shares yourself in the offer.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "investors": -8
+            },
+            "outcome": "Using an associate to get around the moratorium is an evasion, and an associate's holding is not public float either. It would damage the issuer and the adviser."
+          },
+          {
+            "text": "You must keep all your shares for two years after listing.",
+            "score": 1,
+            "effects": {
+              "client": -6
+            },
+            "outcome": "Stricter than the rule. The founder may sell up to half in the first 12 months; telling him otherwise loses a legitimate part of the deal."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "ecma-fee",
+        "when": "Month 2, Tuesday 10:00",
+        "from": "Chief financial officer, Bank B",
+        "channel": "email",
+        "subject": "Budget line for the ECMA registration fee",
+        "body": [
+          "Bank B's CFO is finalizing the deal budget. She asks what ECMA registration fee to provide for. The plan is a listing by introduction of the 4,000,000 existing shares plus an offer of ETB 1.2 billion of new shares at an indicative ETB 1,600, which values the existing shares at ETB 6.4 billion."
+        ],
+        "ask": "What do you put in the budget?",
+        "options": [
+          {
+            "text": "ETB 1.5 million: ETB 300,000 + 0.1% of ETB 1.2 billion offered; confirm with ECMA how the introduction is treated.",
+            "score": 3,
+            "effects": {
+              "client": 5,
+              "compliance": 5
+            },
+            "outcome": "Correct: 300,000 + 1,200,000 = 1,500,000, about 0.13% of the raise. The fee is on the value offered; shares listed without an offer are not offered, so their treatment is confirmed, not assumed."
+          },
+          {
+            "text": "ETB 6.7 million: ETB 300,000 plus 0.1% of the ETB 6.4 billion market value, since the whole share capital is admitted to the exchange at listing.",
+            "score": 1,
+            "effects": {
+              "client": -4
+            },
+            "outcome": "The share offer fee is based on the value offered, not on the market value of shares being introduced. This overstates the budget by about ETB 5 million."
+          },
+          {
+            "text": "ETB 750,000: ETB 150,000 plus 0.05%.",
+            "score": 1,
+            "effects": {
+              "client": -2,
+              "compliance": -3
+            },
+            "outcome": "That is the bond offer fee. A share offer pays ETB 300,000 plus 0.1% under Directive No. 996/2024."
+          },
+          {
+            "text": "ETB 1.8 million: 0.15% of the ETB 1.2 billion raise, the combined rate for a main board equity offer that also includes an introduction.",
+            "score": 0,
+            "effects": {
+              "client": -3,
+              "compliance": -3
+            },
+            "outcome": "0.15% is the ECMA transaction fee on share trades after listing, not the registration fee."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "risk-factor",
+        "when": "Month 3, Wednesday 16:30",
+        "from": "Chief executive, Bank B",
+        "channel": "meeting",
+        "subject": "Keep the credit risk factor general",
+        "body": [
+          "Due diligence found that 7% of Bank B's loan book is to one construction group, and that the exposure is on the bank's watch list. The draft prospectus says only 'the bank faces credit risk'.",
+          "The CEO says a specific statement will scare first-time investors. 'Every bank has some problem loans. Keep it general.'"
+        ],
+        "ask": "What do you require?",
+        "options": [
+          {
+            "text": "Keep it general as the CEO asks: the financial notes already show total loans, and a named exposure could unsettle depositors before the offer.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -8,
+              "client": 4
+            },
+            "outcome": "A material risk found in due diligence must be disclosed specifically. A generic line hides it and exposes the board and the adviser to liability.",
+            "next": "risk-later"
+          },
+          {
+            "text": "A specific risk factor on the concentration and its watch-list status, matching the notes, with the bank's plan.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "investors": 6,
+              "client": -2
+            },
+            "outcome": "Correct. Good risk factors are specific and ranked, and every issue found in due diligence must appear. Pairing it with the action plan informs investors without alarming them."
+          },
+          {
+            "text": "Cover the concentration in the investor presentations and roadshow, where analysts can ask questions, and keep the prospectus wording general.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "investors": -4
+            },
+            "outcome": "Selective disclosure in presentations is worse: some investors learn it and others do not. Material facts belong in the prospectus that every investor reads."
+          },
+          {
+            "text": "Delay filing until the loan is off the watch list.",
+            "score": 1,
+            "effects": {
+              "execution": -8,
+              "client": -4
+            },
+            "outcome": "The timetable should not wait on one loan when honest disclosure solves the problem. Disclose it and proceed."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "pricing",
+        "when": "Month 5, Thursday 11:00",
+        "from": "Board of directors, Bank B",
+        "channel": "meeting",
+        "subject": "Fix the offer price: the board wants ETB 1,750",
+        "body": [
+          "Institutional soft sounding is complete. The valuation team's fair value estimate is ETB 1,850 per share at mid-range. A director argues for ETB 1,750, 'close to fair value'. The institutional tranche is 35% of the offer, ETB 420 million, and retail will subscribe at the fixed price afterward."
+        ],
+        "exhibit": {
+          "title": "Institutional soft-sounding book (ETB million, cumulative)",
+          "rows": [
+            {
+              "label": "Bids at ETB 1,750",
+              "value": "250"
+            },
+            {
+              "label": "Bids at ETB 1,650",
+              "value": "380"
+            },
+            {
+              "label": "Bids at ETB 1,600",
+              "value": "610"
+            },
+            {
+              "label": "Bids at ETB 1,500",
+              "value": "760"
+            },
+            {
+              "label": "Institutional tranche",
+              "value": "420"
+            },
+            {
+              "label": "Existing shares",
+              "value": "4,000,000"
+            }
+          ]
+        },
+        "ask": "What price do you recommend, and how do you explain the discount?",
+        "options": [
+          {
+            "text": "ETB 1,750: the board's view of value should prevail, since the fair value work supports it and retail demand can fill the gap in the book.",
+            "score": 0,
+            "effects": {
+              "execution": -12,
+              "investors": -4,
+              "client": 4
+            },
+            "outcome": "At ETB 1,750 the book is 250 / 420 = 0.6 times covered. The institutional tranche would fail before retail opens, the Ethio telecom lesson on pricing without price discovery.",
+            "next": "price-later"
+          },
+          {
+            "text": "ETB 1,600: the tranche is 1.45 times covered (610 / 420), and the 13.5% discount buys a covered, liquid start.",
+            "score": 3,
+            "effects": {
+              "execution": 10,
+              "investors": 6,
+              "client": 3
+            },
+            "outcome": "Correct: 1.2 billion / 1,600 = 750,000 new shares, 250 x 750,000 = ETB 187.5 million transferred, or about ETB 47 per existing share. State the discount in birr per share so the board can debate the real cost."
+          },
+          {
+            "text": "ETB 1,650: closer to fair value, so existing holders give up less, and only slightly short of cover, which the retail tranche can make up.",
+            "score": 1,
+            "effects": {
+              "execution": -5,
+              "client": 2
+            },
+            "outcome": "Coverage at ETB 1,650 is 380 / 420 = 0.9 times, so the tranche is uncovered with no cushion for retail. A small gain in price risks the whole offer."
+          },
+          {
+            "text": "ETB 1,500, to guarantee heavy oversubscription.",
+            "score": 1,
+            "effects": {
+              "client": -8,
+              "execution": 2
+            },
+            "outcome": "The book is already covered at ETB 1,600. At ETB 1,500 Bank B must issue 800,000 shares instead of 750,000, and the value given to new investors rises from about ETB 187.5 million to ETB 280 million, about ETB 70 per existing share instead of 47."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "pension-two-percent",
+        "when": "Month 5, Friday 15:00",
+        "from": "Investment manager, a pension fund",
+        "channel": "call",
+        "subject": "We want 120,000 shares in the institutional tranche",
+        "body": [
+          "A pension fund asks for an allocation of 120,000 new shares at ETB 1,600. It holds no Bank B shares today. After the offer Bank B will have 4,750,000 shares in issue. Listing is planned for the end of month 7."
+        ],
+        "ask": "How do you handle the order?",
+        "options": [
+          {
+            "text": "Allocate in full: pension funds are long-term, stable investors, the NBE welcomes them, and approval would be a formality after listing.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -3,
+              "execution": 3
+            },
+            "outcome": "120,000 / 4,750,000 = 2.5%, above the 2% threshold. Holding 2% or more of a bank needs NBE approval under SBB/89/2024, so the allocation cannot be unconditional."
+          },
+          {
+            "text": "Make the 120,000-share allocation conditional on NBE approval and disclose it; otherwise cap it at 95,000 shares.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "investors": 4,
+              "execution": 3
+            },
+            "outcome": "Correct: 2% of 4,750,000 is 95,000 shares. Conditional allocation with a fallback keeps the timetable and the fund's demand while respecting the NBE approval rule."
+          },
+          {
+            "text": "Split the order across the fund and its sister fund, 60,000 shares each, so each holding stays below the 2% level and the full demand is filled.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -4
+            },
+            "outcome": "Splitting among related holders to stay under the threshold is an evasion. The NBE looks at the combined influence of connected holders."
+          },
+          {
+            "text": "Refuse the order: no single investor should hold more than 2%.",
+            "score": 1,
+            "effects": {
+              "execution": -4,
+              "client": -3
+            },
+            "outcome": "The rule does not ban holdings above 2%; it requires approval. Refusing loses sound institutional demand that the bank needs."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "standby",
+        "when": "Month 5, Friday 17:30",
+        "from": "Head of ECM",
+        "channel": "meeting",
+        "subject": "Standby commitment for the Bank B offer",
+        "body": [
+          "Bank B must hold its capital ratio by 31 December 2026, so the board wants certainty on the ETB 1.2 billion raise. Three insurers offer a standby commitment to buy any shortfall at the ETB 1,600 offer price. Bank A Capital's own balance sheet is too small to underwrite the full amount."
+        ],
+        "exhibit": {
+          "title": "Proposed standby (ETB million)",
+          "rows": [
+            {
+              "label": "Offer size",
+              "value": "1,200"
+            },
+            {
+              "label": "Expected take-up from soundings and retail survey",
+              "value": "1,050"
+            },
+            {
+              "label": "Standby commitment",
+              "value": "360"
+            },
+            {
+              "label": "Largest insurer's share of the commitment",
+              "value": "50%"
+            },
+            {
+              "label": "Offer price",
+              "value": "ETB 1,600"
+            },
+            {
+              "label": "Shares in issue after the offer",
+              "value": "4,750,000"
+            }
+          ]
+        },
+        "ask": "What do you check before signing?",
+        "options": [
+          {
+            "text": "Nothing more: the expected shortfall is only ETB 150 million, so the largest insurer would buy at most ETB 75 million, well under any limit.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "execution": -3
+            },
+            "outcome": "A standby must be tested as if called in full. If it is, the largest insurer buys 180 million / 1,600 = 112,500 shares, 2.4% of the bank, which needs NBE approval in advance."
+          },
+          {
+            "text": "If called in full, the largest insurer holds 112,500 shares (2.4%): get NBE approval or cap it at 95,000 shares.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "execution": 6,
+              "client": 3
+            },
+            "outcome": "Correct: 50% x 360 = 180 million, / 1,600 = 112,500 shares, / 4,750,000 = 2.4%. A standby is only as good as the investor's capacity and its approvals, both checked before signing."
+          },
+          {
+            "text": "Ask Bank A Capital to underwrite the full ETB 1.2 billion instead.",
+            "score": 0,
+            "effects": {
+              "compliance": -8,
+              "client": -3
+            },
+            "outcome": "A commitment the underwriter could not honor if called gives false certainty. Capacity must be backed by capital or committed sub-underwriters."
+          },
+          {
+            "text": "Drop the standby: expected take-up is close to the full amount.",
+            "score": 1,
+            "effects": {
+              "execution": -6,
+              "client": -4
+            },
+            "outcome": "With a capital deadline, certainty has real value. A properly approved standby is worth its fee here."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "slogan",
+        "when": "Month 6, Monday 09:00",
+        "from": "Marketing agency for Bank B",
+        "channel": "email",
+        "subject": "Retail campaign slogan for approval today",
+        "body": [
+          "The agency proposes the campaign line 'Bank B shares: a guaranteed 20% dividend every year' for radio, wallet notifications and branch posters. The bank's marketing head loves it and the campaign launches tomorrow.",
+          "The prospectus states that dividends depend on profit, the board's decision and the capital plan, and that past dividends do not guarantee future ones."
+        ],
+        "ask": "What do you advise?",
+        "options": [
+          {
+            "text": "Approve: it is memorable, it will reach first-time investors who rarely read a prospectus, and strong retail demand helps the offer close.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "investors": -10,
+              "execution": 4
+            },
+            "outcome": "Offer communications must be fair, balanced and consistent with the prospectus. Promising a guaranteed dividend misleads first-time investors and contradicts the document they rely on.",
+            "next": "slogan-later"
+          },
+          {
+            "text": "Reject it: propose a balanced message about owning part of the bank, state dividends are not guaranteed, cite the prospectus.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "investors": 6,
+              "client": -2
+            },
+            "outcome": "Correct. Investor education is part of the deal, and risk is explained as clearly as benefits. A one-day delay to fix the message is cheap next to a misleading campaign."
+          },
+          {
+            "text": "Approve it for radio only, where there is less time for details, and keep the full disclaimers and dividend policy on the posters and website.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -6
+            },
+            "outcome": "The channel does not change the rule. Radio reaches many first-time investors, so a misleading claim there does even more harm."
+          },
+          {
+            "text": "Change 'guaranteed' to 'expected' and approve.",
+            "score": 1,
+            "effects": {
+              "compliance": -5,
+              "investors": -3
+            },
+            "outcome": "Still a return promise the prospectus does not support. Remove the number and explain that dividends depend on profit and the capital plan."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "reconcile",
+        "when": "Month 6, Friday 17:00",
+        "from": "Offer operations team",
+        "channel": "system",
+        "subject": "Retail offer closed: channel reconciliation",
+        "body": [
+          "The retail offer has closed. Before allocation, operations sends the channel totals and the balance credited to the segregated offer accounts. Rejected applications had incomplete KYC; their money is in the offer accounts and must be refunded."
+        ],
+        "exhibit": {
+          "title": "Retail subscriptions at close (ETB million)",
+          "rows": [
+            {
+              "label": "Wallets",
+              "value": "1,150"
+            },
+            {
+              "label": "Bank apps and internet banking",
+              "value": "360"
+            },
+            {
+              "label": "Branches of receiving banks",
+              "value": "130"
+            },
+            {
+              "label": "Total reported by channels",
+              "value": "1,640"
+            },
+            {
+              "label": "Credited to segregated offer accounts",
+              "value": "1,633"
+            },
+            {
+              "label": "Branch applications paid by check, not yet cleared",
+              "value": "7"
+            },
+            {
+              "label": "Rejected applications, incomplete KYC",
+              "value": "13"
+            }
+          ]
+        },
+        "ask": "What amount do you allocate on, and how do you treat the differences?",
+        "options": [
+          {
+            "text": "Allocate on ETB 1,620 million of valid, cleared money (1,633 - 13); hold the ETB 7 million uncleared; refund ETB 13 million.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "investors": 6,
+              "execution": 4
+            },
+            "outcome": "Correct. Every birr reported is traced to the offer account before allocation, and the 7 million difference is explained by the uncleared checks. Applications are allocated only on money actually received."
+          },
+          {
+            "text": "Allocate on the ETB 1,640 million the channels reported.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "investors": -4
+            },
+            "outcome": "That includes ETB 7 million not received and ETB 13 million of rejected applications. Allocating on reports rather than cleared money leads to shares issued without payment."
+          },
+          {
+            "text": "Allocate on the ETB 1,633 million credited to the offer accounts, since money that has reached the accounts is the firmest figure the registrar holds.",
+            "score": 1,
+            "effects": {
+              "compliance": -5
+            },
+            "outcome": "The money is there, but ETB 13 million belongs to rejected applicants who must be refunded, not allocated shares."
+          },
+          {
+            "text": "Allocate on ETB 1,627 million: the channel totals less the rejected applications, which removes the invalid forms before the allotment is run.",
+            "score": 1,
+            "effects": {
+              "compliance": -5
+            },
+            "outcome": "This still counts ETB 7 million of checks that have not cleared. Uncleared payments stay out of allocation until they clear."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "allot",
+        "when": "Month 7, Monday 10:00",
+        "from": "Head of ECM",
+        "channel": "memo",
+        "subject": "Retail tranche 3 times covered: apply the basis of allotment",
+        "body": [
+          "The retail tranche is ETB 540 million (45% of ETB 1.2 billion). Valid retail applications are ETB 1,620 million. The prospectus basis of allotment: applicants for up to 50 shares are filled in full; all larger applicants are scaled back pro rata. Applicants for up to 50 shares total ETB 324 million.",
+          "A large customer of Bank B phones to ask for a full allocation as a 'loyal client'."
+        ],
+        "ask": "What do you apply?",
+        "options": [
+          {
+            "text": "Small applicants in full (ETB 324 million); larger ones scaled at 16.7% (216 / 1,296); the loyal customer like the rest.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "investors": 8,
+              "execution": 3
+            },
+            "outcome": "Correct: 540 - 324 = 216 and 1,620 - 324 = 1,296 for larger applicants. The disclosed basis is applied mechanically, which spreads ownership and builds trust in the first offers."
+          },
+          {
+            "text": "Scale every applicant at 33.3% (540 / 1,620): one simple ratio is easy to explain, treats all applicants the same and avoids any complaint of favoritism.",
+            "score": 1,
+            "effects": {
+              "compliance": -5,
+              "investors": -3
+            },
+            "outcome": "Simple, but it ignores the disclosed basis of allotment that guarantees small applicants in full. The basis set before launch must be the one applied."
+          },
+          {
+            "text": "Fill the loyal customer in full as a goodwill gesture for a long relationship with the bank, then apply the published basis to everyone else.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -8,
+              "client": 3
+            },
+            "outcome": "Favoring one applicant breaks the disclosed basis and treats investors unequally. Every applicant can check the published basis against their allocation."
+          },
+          {
+            "text": "Run a ballot among larger applicants instead of scaling; it is quicker.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "investors": -4
+            },
+            "outcome": "A ballot is a valid method only if it was disclosed before the offer. Changing the method after the books close is not allowed."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "no-accounts",
+        "when": "Month 7, Wednesday 15:00",
+        "from": "Company secretary, Bank B",
+        "channel": "email",
+        "subject": "2,600 holders still have no broker account: delay the listing?",
+        "body": [
+          "Ten days before listing day, 2,600 of Bank B's 9,800 existing holders still have no broker or depository account to receive their dematerialized shares. The register has been reconciled to share capital. A director suggests delaying listing until every holder has an account."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "List on schedule; hold unaccounted shares in a suspense account and credit holders as their accounts open.",
+            "score": 3,
+            "effects": {
+              "execution": 8,
+              "investors": 5,
+              "compliance": 4
+            },
+            "outcome": "Correct. Holders keep all their rights while their shares are held safely and can trade once their accounts open. Confirm the depository's procedure early, since its rules were not available to the course."
+          },
+          {
+            "text": "Delay listing until all 9,800 holders have accounts, so every shareholder can trade from day one and no one is treated differently at the start.",
+            "score": 1,
+            "effects": {
+              "execution": -10,
+              "client": -4
+            },
+            "outcome": "Waiting for full coverage is unrealistic and holds back the new investors and the 7,200 holders who are ready. A suspense account protects the rest."
+          },
+          {
+            "text": "Sell the shares of holders without accounts on the first trading day and send them the cash, so no shares sit unclaimed in a suspense account.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "investors": -10
+            },
+            "outcome": "Selling a holder's shares without instruction is unlawful. Their property must be held for them, not disposed of."
+          },
+          {
+            "text": "Cancel the shares of holders without accounts and reissue later.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "investors": -8
+            },
+            "outcome": "Holders do not lose their shares because they have not opened an account. Cancellation has no basis and would destroy trust in the listing."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "rights-terp",
+        "when": "Month 7, Friday 11:00",
+        "from": "Chief financial officer, Kombolcha Packaging S.C.",
+        "channel": "email",
+        "subject": "Rights issue terms for our second line",
+        "body": [
+          "Kombolcha Packaging S.C., a fictional listed client, needs new capital 18 months after its Growth Board listing. The board proposes a 1-for-4 rights issue at ETB 96 per share. The shares last traded at ETB 120 and the rights will be tradable on the ESX. The CFO asks what to tell holders, many of them small retail investors."
+        ],
+        "exhibit": {
+          "title": "Kombolcha Packaging rights issue",
+          "rows": [
+            {
+              "label": "Market price before the issue (cum rights)",
+              "value": "ETB 120"
+            },
+            {
+              "label": "Subscription price",
+              "value": "ETB 96"
+            },
+            {
+              "label": "Terms",
+              "value": "1 new share for every 4 held"
+            }
+          ]
+        },
+        "ask": "What do you put in the holder communication?",
+        "options": [
+          {
+            "text": "TERP is ETB 115.20 ((4 x 120 + 96) / 5); each right is worth ETB 4.80 per old share, so take up or sell.",
+            "score": 3,
+            "effects": {
+              "investors": 8,
+              "compliance": 4,
+              "client": 4
+            },
+            "outcome": "Correct. A holder of 10,000 shares who does nothing loses about 10,000 x 4.80 = ETB 48,000 in theory. Clear guidance protects small holders and supports take-up."
+          },
+          {
+            "text": "The price should settle at ETB 108, halfway between 120 and 96.",
+            "score": 0,
+            "effects": {
+              "investors": -6
+            },
+            "outcome": "TERP weights each price by the number of shares: four old shares at 120 and one new share at 96. The simple midpoint is wrong."
+          },
+          {
+            "text": "TERP is ETB 115.20, and holders who do nothing are not affected, since their number of shares stays the same and the issue is offered at a discount.",
+            "score": 1,
+            "effects": {
+              "investors": -5,
+              "compliance": -3
+            },
+            "outcome": "The TERP is right, but a holder who neither subscribes nor sells loses ETB 4.80 per share as the price falls to TERP. Telling holders they lose nothing misleads them."
+          },
+          {
+            "text": "The share price will fall to ETB 96, the subscription price, so holders should sell their shares before the record date to protect their value.",
+            "score": 0,
+            "effects": {
+              "investors": -8,
+              "compliance": -4
+            },
+            "outcome": "Only one share in five is issued at ETB 96, so the price falls to the TERP, not to the subscription price. Advising a sell-off on a wrong number harms holders."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "risk-later",
+        "when": "Four months after listing",
+        "from": "ECMA, market supervision",
+        "channel": "email",
+        "subject": "Query: construction group loan now non-performing",
+        "body": [
+          "Bank B has reported that its loans to the construction group are now non-performing and need large provisions. The share price has fallen 18%. ECMA asks the issuer and the adviser why a watch-listed concentration of 7% of loans was not described in the prospectus."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Answer ECMA fully and on time with the due diligence file, and advise Bank B to publish a clear disclosure.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "investors": 5,
+              "client": -3
+            },
+            "outcome": "Full cooperation and clear disclosure now limit the damage. The lesson stands: material facts found in due diligence go in the prospectus, specifically."
+          },
+          {
+            "text": "Argue that the line 'the bank faces credit risk' covered it, since credit risk includes concentration and the total loans were in the notes.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "investors": -6
+            },
+            "outcome": "A generic line does not disclose a specific, known risk. Defending it compounds the problem with the regulator."
+          },
+          {
+            "text": "Say the decision was the CEO's, since the issuer owns the prospectus, and leave the reply to Bank B and its own legal advisers to handle.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "client": -6
+            },
+            "outcome": "The adviser shares responsibility for the prospectus it ran. Shifting blame does not answer the regulator and damages the relationship."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "price-later",
+        "when": "The following week",
+        "from": "Head of ECM",
+        "channel": "memo",
+        "subject": "Institutional tranche at ETB 1,750 is 0.6 times covered",
+        "body": [
+          "The institutional offer at ETB 1,750 has closed with ETB 250 million of orders against ETB 420 million. Retail is due to open on Monday at the same fixed price, and the press is asking about weak demand."
+        ],
+        "ask": "What do you advise the board?",
+        "options": [
+          {
+            "text": "Open retail at ETB 1,750 and rely on the branch network and the campaign to fill the gap, since retail demand has been strong in other offers.",
+            "score": 0,
+            "effects": {
+              "execution": -10,
+              "investors": -6
+            },
+            "outcome": "Retail investors will read the weak institutional result. A fixed price the institutions rejected is likely to fail again, as weak first-window take-up in the Ethio telecom case showed."
+          },
+          {
+            "text": "Reset the price to ETB 1,600, where the book was 1.45 times covered, with ECMA's agreement on revised terms.",
+            "score": 3,
+            "effects": {
+              "execution": 8,
+              "investors": 5,
+              "client": -2
+            },
+            "outcome": "Repricing to where demand exists rescues the offer. The lesson stands: let price discovery set the fixed price before retail opens."
+          },
+          {
+            "text": "Move the shortfall to retail through the clawback and keep ETB 1,750, so the board's price holds and the offer size does not change.",
+            "score": 1,
+            "effects": {
+              "execution": -4,
+              "investors": -3
+            },
+            "outcome": "Clawback moves shares between tranches; it does not create demand at a price that institutions turned down."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "slogan-later",
+        "when": "Two weeks later",
+        "from": "ECMA, investor protection",
+        "channel": "email",
+        "subject": "Complaints about 'guaranteed 20% dividend' advertising",
+        "body": [
+          "ECMA has received complaints from retail applicants who say they subscribed because of the guaranteed dividend. It asks Bank B and its adviser to explain the campaign before the offer closes."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Withdraw the campaign, publish a correction in every channel, tell ECMA, and let applicants review their decision.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "investors": 6,
+              "execution": -3
+            },
+            "outcome": "Correcting a misleading message in the same channels, and being open with the regulator, is the only credible response. Fair and balanced communication is a rule, not a style choice."
+          },
+          {
+            "text": "Keep the campaign running, since the offer is going well, and add the dividend disclaimer to the next print run of posters and leaflets.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "investors": -8
+            },
+            "outcome": "Continuing a misleading campaign after a regulator's query is a serious breach and puts the whole offer at risk."
+          },
+          {
+            "text": "Change the posters but leave the radio spots running until close, since the airtime is already paid and the offer has only a few days left.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "investors": -4
+            },
+            "outcome": "A partial fix leaves investors exposed to the same claim. Every channel must be corrected."
+          }
+        ],
+        "module": "s4"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-mandate hand-over note to the head of ECM.",
+      "guide": [
+        "The final structure: price, shares issued, tranches, coverage and the basis of allotment applied.",
+        "The approvals that shaped the deal: ECMA registration, NBE approval for 2% holdings, the standby.",
+        "Disclosure and marketing decisions you made, and why.",
+        "Post-listing items with owners and dates: suspense accounts, investor relations, results calendar.",
+        "One lesson from the growth company files for the next mandate."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Gondar Cement has ETB 1.8 billion market capitalization and plans a Main Board listing. Insiders hold 87% and 900 others hold 13%. What must change?",

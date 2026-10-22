@@ -2110,6 +2110,1041 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A week as project appraisal analyst at Bank A, Project Finance Department",
+    "role": "Project appraisal analyst",
+    "setting": [
+      "You have just joined the Project Finance Department at Bank A's head office in Addis Ababa. The department appraises every project loan in the bank, of any size, before it goes to the head office credit committee. The project book stands at about Birr 6 billion across agro-processing, manufacturing and hotels.",
+      "This week your main file is Holeta Animal Feed PLC, a new 40,000-tonne feed mill west of Addis Ababa sponsored by a family group that runs poultry farms and grain trading companies. Total project cost is Birr 86.0 million, with Birr 26.0 million of sponsors' equity and a Birr 60.0 million loan request at 16%. The committee sits on Friday. Other files and questions will land on your desk along the way.",
+      "You report to the head of the department. The committee expects a traceable model, a structure the cash flow can carry, and an honest view of the risks. Do the numbers on paper or a spreadsheet, and choose the action you would defend in front of the committee and an NBE examiner."
+    ],
+    "authority": {
+      "title": "Your department's rules and targets",
+      "rows": [
+        {
+          "label": "Debt service cover",
+          "value": "Minimum DSCR of 1.25 in every year of the loan; the weakest year decides"
+        },
+        {
+          "label": "Discount rate",
+          "value": "16%, at least the lending rate, plus a margin where project risk warrants"
+        },
+        {
+          "label": "Tenor and grace",
+          "value": "Long-term loans over 5 and normally up to 10 years excluding grace; grace up to 24 months on principal only"
+        },
+        {
+          "label": "Equity",
+          "value": "At least 30% of project cost, real cash or assets, never borrowed"
+        },
+        {
+          "label": "Group exposure (SBB/87/2024)",
+          "value": "Up to 25% of total capital per counterparty group; 10% or more is a large exposure, reported monthly within 20 days"
+        },
+        {
+          "label": "Related parties (SBB/88/2024)",
+          "value": "15% per related party, 35% in aggregate, arm's-length terms, board approval above Birr 15 million after an Audit Committee opinion"
+        },
+        {
+          "label": "Bank A total capital",
+          "value": "Birr 4,000 million"
+        },
+        {
+          "label": "Imports",
+          "value": "Minimum L/C margin of 30%, funded from the project's own cash"
+        },
+        {
+          "label": "Insurance",
+          "value": "All pledged and mortgaged assets insured and endorsed to the bank; renewal notice one month before expiry"
+        }
+      ],
+      "note": "These follow the course, NBE directives cited in it and a typical Ethiopian bank manual. Your own bank's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "quality",
+        "label": "Portfolio quality",
+        "help": "Rises when the model is traceable and the structure fits the cash flow; falls when weak assumptions or fragile structures are approved."
+      },
+      {
+        "id": "committee",
+        "label": "Committee confidence",
+        "help": "Rises when your analysis is honest, complete and ready for challenge; falls when the committee finds what you missed or hid."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of NBE limits or the bank's policy; rises when checks are shown openly."
+      },
+      {
+        "id": "relationship",
+        "label": "Sponsor relationships",
+        "help": "Rises when sound sponsors get workable structures and clear requests; falls with needless refusals and delays."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "holeta-market",
+        "when": "Monday 09:00",
+        "from": "Relationship manager, corporate banking",
+        "channel": "email",
+        "subject": "Holeta Animal Feed: market chapter looks fine, only 8.5% share",
+        "body": [
+          "The RM writes: 'Holeta only needs 8.5% of the regional feed market. That is small. Can we sign off the market chapter today so you can move on to the model?'",
+          "The study claims sales of 34,000 tonnes from year 3. The sponsors' own three poultry farms will buy 9,000 tonnes a year; two other large farms have sent letters of intent for 6,000 tonnes. The rest is 'expected from the open market'. The feed industry association gives you the market and capacity figures."
+        ],
+        "exhibit": {
+          "title": "Holeta Animal Feed: market and industry (tonnes a year)",
+          "rows": [
+            {
+              "label": "Holeta planned sales from year 3 (85% of 40,000)",
+              "value": "34,000"
+            },
+            {
+              "label": "Of which: sponsors' own poultry farms",
+              "value": "9,000"
+            },
+            {
+              "label": "Of which: letters of intent from two farms",
+              "value": "6,000"
+            },
+            {
+              "label": "Regional market for compound feed",
+              "value": "400,000, growing 7% a year (industry association)"
+            },
+            {
+              "label": "Existing mills' capacity",
+              "value": "520,000"
+            },
+            {
+              "label": "Existing mills' utilization",
+              "value": "about 70%"
+            }
+          ]
+        },
+        "ask": "What do you write in the market chapter?",
+        "options": [
+          {
+            "text": "Sign it off: 8.5% of a 400,000-tonne market growing 7% a year is modest, and the sponsors' own farms already take 9,000 tonnes of it.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "relationship": 4
+            },
+            "outcome": "The share alone says nothing about whether buyers exist. Existing mills produce about 364,000 tonnes, leaving about 156,000 tonnes of spare capacity, so competitors can cut prices without investing a Birr. Nearly half of Holeta's volume has no buyer evidence.",
+            "next": "market-later"
+          },
+          {
+            "text": "Record 8.5% (6.25% outside the sponsors' farms), flag 156,000 tonnes of spare capacity, and ask buyer evidence for 19,000 tonnes.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 8,
+              "relationship": -2
+            },
+            "outcome": "Correct: 34,000 / 400,000 = 8.5%; 25,000 / 400,000 = 6.25% from outside buyers; 520,000 x 70% = 364,000 produced, so 156,000 tonnes spare. The captive farms are a real, named advantage; the open-market volume is still a hope until buyers are evidenced."
+          },
+          {
+            "text": "Record the share as 6.5% (34,000 / 520,000 tonnes of industry capacity) and sign the chapter off as a low-share, low-risk entry.",
+            "score": 1,
+            "effects": {
+              "quality": -4,
+              "committee": -4
+            },
+            "outcome": "Market share is planned sales divided by the market, not by industry capacity. Using capacity understates the share and hides the more important point: the industry already has a lot of idle capacity."
+          },
+          {
+            "text": "Cut the projection to the 9,000 tonnes the sponsors' own farms will buy, until outside buyers sign contracts with the mill.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": 2
+            },
+            "outcome": "Too harsh. The letters of intent and the sponsors' trading network are evidence worth testing, and a 9,000-tonne mill would never cover its fixed costs. Ask for evidence, then scale to what is proven."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "holeta-maize",
+        "when": "Monday 14:30",
+        "from": "Plant engineer for the sponsors",
+        "channel": "call",
+        "subject": "Raw material plan: maize storage of 2,000 tonnes",
+        "body": [
+          "Maize makes up about 60% of Holeta's feed by weight. The engineer explains that the sponsors plan to buy all their maize at harvest, from November to February, when prices are lowest, and to run the mill all year. The study includes a warehouse for 2,000 tonnes of maize.",
+          "The study shows no supply contracts and no extra working capital for seasonal stock."
+        ],
+        "exhibit": {
+          "title": "Holeta Animal Feed: maize requirement from year 3",
+          "rows": [
+            {
+              "label": "Feed output",
+              "value": "34,000 tonnes a year"
+            },
+            {
+              "label": "Maize share of feed",
+              "value": "60%"
+            },
+            {
+              "label": "Buying season",
+              "value": "4 months (November to February)"
+            },
+            {
+              "label": "Maize storage in the study",
+              "value": "2,000 tonnes"
+            }
+          ]
+        },
+        "ask": "What do you require?",
+        "options": [
+          {
+            "text": "Need is 1,700 tonnes a month; harvest buying means storing about 13,600. Require storage or year-round contracts, plus seasonal working capital.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 6,
+              "relationship": 1
+            },
+            "outcome": "Correct: 34,000 x 60% = 20,400; / 12 = 1,700 a month; 8 months after the buying season x 1,700 = 13,600 tonnes. Converting output into raw material, month by month, is the technical test that stops a plant being built and then left idle."
+          },
+          {
+            "text": "Add storage for the full 20,400 tonnes of annual maize need to the investment cost, so the mill can buy the whole year at harvest prices.",
+            "score": 1,
+            "effects": {
+              "quality": 2,
+              "relationship": -4
+            },
+            "outcome": "The mill uses maize during the buying season too, so the peak stock is 8 months of use, about 13,600 tonnes, not a full year. Oversizing adds cost and debt the project does not need."
+          },
+          {
+            "text": "Accept the plan: maize is already in the projections as 60% of variable cost, and traders in the area sell maize throughout the year.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "committee": -5
+            },
+            "outcome": "The cost line says nothing about whether maize will be in the warehouse in July. With 2,000 tonnes of storage, a little over a month of use, the mill either stops or buys off-season at higher prices than the model assumes."
+          },
+          {
+            "text": "Decline: a mill that depends on a 4-month buying season and 2,000 tonnes of storage is too exposed for a loan of 10 years.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "committee": -2
+            },
+            "outcome": "Seasonality is a design problem with known fixes: storage, supply contracts and seasonal working capital. Turn the weakness into a condition rather than a refusal."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "model-review",
+        "when": "Tuesday 09:00",
+        "from": "Junior analyst, Project Finance Department",
+        "channel": "memo",
+        "subject": "Holeta model, year 1: cash of Birr 16.5 million",
+        "body": [
+          "A junior colleague has built the first draft of Holeta's model and asks you to check year 1 before it goes into the report. Year 1 is in grace on principal; interest on the Birr 60 million loan at 16% is payable.",
+          "His working: EBITDA 15.0; no interest 'because of the grace period'; no depreciation in the profit line; profit before tax 15.0; tax at 30% 4.5; net profit 10.5; plus depreciation 6.0 gives cash of 16.5."
+        ],
+        "exhibit": {
+          "title": "Holeta Animal Feed: year 1 inputs (Birr millions)",
+          "rows": [
+            {
+              "label": "Revenue: 22,000 tonnes x Birr 5,000",
+              "value": "110.0"
+            },
+            {
+              "label": "Variable costs (70% of sales)",
+              "value": "77.0"
+            },
+            {
+              "label": "Fixed cash costs",
+              "value": "18.0"
+            },
+            {
+              "label": "EBITDA",
+              "value": "15.0"
+            },
+            {
+              "label": "Depreciation",
+              "value": "6.0"
+            },
+            {
+              "label": "Loan and rate",
+              "value": "60.0 at 16%, interest payable during grace"
+            },
+            {
+              "label": "Profit tax",
+              "value": "30%, none in a loss year"
+            }
+          ]
+        },
+        "ask": "What do you tell him?",
+        "options": [
+          {
+            "text": "Interest of 9.6 is due in grace, depreciation comes before tax, and a loss year has no tax: cash after interest is about Birr 5.4 million.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 6
+            },
+            "outcome": "Correct: EBIT 15.0 minus 6.0 = 9.0; less interest 9.6 = minus 0.6; no tax; net profit minus 0.6 plus depreciation 6.0 = 5.4. The project shows a loss but still generates cash. The draft overstated year 1 cash threefold."
+          },
+          {
+            "text": "Only the depreciation is wrong: deduct it before tax, which gives EBIT of 9.0, tax of 2.7 and cash of about Birr 12.3 million.",
+            "score": 1,
+            "effects": {
+              "quality": -3,
+              "committee": -2
+            },
+            "outcome": "That fixes one of three errors. Interest of 9.6 is still missing, because grace covers principal only, and once it is in, year 1 is a loss year with no tax at all."
+          },
+          {
+            "text": "Leave it: leaving out interest and leaving out depreciation roughly cancel, and year 1 cash of Birr 16.5 million looks like the study.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -8
+            },
+            "outcome": "They do not cancel: leaving out interest and adding depreciation to a profit that never deducted it both push cash up. A model that cannot be traced to its assumptions should not reach the committee."
+          },
+          {
+            "text": "Remove the depreciation add-back so year 1 cash equals net profit of Birr 10.5 million, which avoids counting depreciation twice.",
+            "score": 0,
+            "effects": {
+              "quality": -6,
+              "committee": -4
+            },
+            "outcome": "Depreciation is a cost but not a cash payment, so it is deducted in profit and added back once in cash. The real problems, missing interest and tax on what is actually a loss, are still there."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "price-inflation",
+        "when": "Tuesday 11:30",
+        "from": "Deputy head of department",
+        "channel": "call",
+        "subject": "Let the sponsor's price assumption through",
+        "body": [
+          "Holeta's chief financial officer has sent a revised study: feed prices rise 8% a year for ten years, while maize, wages and energy stay at year 1 levels. The EBITDA margin climbs from 14% in year 1 to over 40% by year 10.",
+          "The deputy head calls: 'Inflation is high, prices will rise. The sponsor is important to the bank. Use his assumption, it makes the DSCR comfortable.'"
+        ],
+        "ask": "How do you handle the price assumption?",
+        "options": [
+          {
+            "text": "Use the sponsor's 8% price growth: inflation is high, feed prices follow it, and the sponsor knows his market better than we do.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "compliance": -4,
+              "relationship": 3
+            },
+            "outcome": "Raising prices while freezing costs manufactures profit. A margin that climbs every year with no new investment is the classic sign of a one-sided assumption, and the committee will ask why maize does not inflate too."
+          },
+          {
+            "text": "Inflate costs the same as prices, or hold both flat in real terms, and explain the choice in writing to the deputy head.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 6,
+              "relationship": -2
+            },
+            "outcome": "Prices and costs must be treated consistently. A written note shows the deputy head the effect of the change and protects both of you when the committee tests the margin."
+          },
+          {
+            "text": "Compromise at 4% price growth with costs flat, and note in the report that the sponsor expected 8% and the bank halved it.",
+            "score": 1,
+            "effects": {
+              "quality": -5,
+              "committee": -3,
+              "relationship": 2
+            },
+            "outcome": "A smaller one-sided increase is still the same error. The margin still rises every year for no reason the business can explain."
+          },
+          {
+            "text": "Keep prices flat in real terms for the base case, and run a downside where costs rise 2 points faster than prices each year.",
+            "score": 2,
+            "effects": {
+              "quality": 6,
+              "committee": 4,
+              "relationship": -2
+            },
+            "outcome": "A sound base case and a useful stress. It would be the best answer if you also showed the deputy head in writing why the sponsor's version cannot go to committee."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "holeta-dscr",
+        "when": "Tuesday 15:00",
+        "from": "Holeta Animal Feed PLC, chief financial officer",
+        "channel": "email",
+        "subject": "Our proposed repayment: 1 year grace, then 6 x Birr 10 million",
+        "body": [
+          "The sponsor proposes 12 months of grace on principal, then six equal principal payments of Birr 10 million in years 2 to 7. The sponsors say they have no more cash to add to equity.",
+          "You have the corrected model. Year 2 is the first year of principal, at 70% utilization."
+        ],
+        "exhibit": {
+          "title": "Holeta Animal Feed: year 2 under the sponsor's structure (Birr millions)",
+          "rows": [
+            {
+              "label": "EBITDA",
+              "value": "24.0"
+            },
+            {
+              "label": "Depreciation",
+              "value": "6.0"
+            },
+            {
+              "label": "Interest (16% on opening balance of 60.0)",
+              "value": "9.6"
+            },
+            {
+              "label": "Profit tax",
+              "value": "30%"
+            },
+            {
+              "label": "Principal due",
+              "value": "10.0"
+            },
+            {
+              "label": "Department floor",
+              "value": "minimum DSCR 1.25"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "DSCR is about 1.22 (EBITDA 24.0 / debt service 19.6), close enough to the 1.25 floor: accept the sponsor's six equal payments.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "relationship": 4
+            },
+            "outcome": "Cash for debt service is net profit plus depreciation plus interest, after tax. Using EBITDA ignores Birr 2.5 million of tax, and the true DSCR is 1.10, well below the floor in the year the loan is most likely to default.",
+            "next": "dscr-later"
+          },
+          {
+            "text": "DSCR is 1.10. Sculpt: Birr 6.0 million in year 2, then 9.0 a year to year 8; year 2 DSCR rises to about 1.38.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 8,
+              "relationship": 3
+            },
+            "outcome": "Correct: EBIT 18.0, PBT 8.4, tax 2.52, net profit 5.88, cash 5.88 + 6.0 + 9.6 = 21.48; 21.48 / 19.6 = 1.10. With 6.0 of principal, 21.48 / 15.6 = 1.38, and year 3 is about 1.56. Shape, not size, was the problem."
+          },
+          {
+            "text": "DSCR is 1.10. Give a second year of grace, within the 24-month cap, then seven equal principal payments from year 3.",
+            "score": 2,
+            "effects": {
+              "quality": 5,
+              "committee": 3,
+              "relationship": 4
+            },
+            "outcome": "It passes the floor (year 3 is about 1.53), within the 24-month grace cap. But the bank stays exposed at the full Birr 60 million for an extra year, while the cash flow could already carry some principal in year 2."
+          },
+          {
+            "text": "DSCR is 1.10. Cut the loan to Birr 50 million so year 2 principal and interest fall below the cash the mill generates.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "quality": 2
+            },
+            "outcome": "A smaller loan needs Birr 10 million more equity, which the sponsors say they do not have. When one year is weak and later years are strong, reshape the schedule before cutting the loan."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "holeta-breakeven",
+        "when": "Wednesday 09:30",
+        "from": "Head of Project Finance Department",
+        "channel": "meeting",
+        "subject": "How far can year 2 volume fall?",
+        "body": [
+          "The head of department is preparing for Friday: 'The committee always asks how far sales can fall before the plant cannot pay us. Give me cash break-even for year 2 under the sculpted structure we are leaning toward, and the cushion against plan.'"
+        ],
+        "exhibit": {
+          "title": "Holeta Animal Feed: break-even inputs, year 2",
+          "rows": [
+            {
+              "label": "Price",
+              "value": "Birr 5,000 a tonne"
+            },
+            {
+              "label": "Variable costs",
+              "value": "70% of sales"
+            },
+            {
+              "label": "Fixed cash costs",
+              "value": "Birr 18.0 million"
+            },
+            {
+              "label": "Depreciation",
+              "value": "Birr 6.0 million"
+            },
+            {
+              "label": "Year 2 debt service, sculpted",
+              "value": "principal 6.0 + interest 9.6 (Birr millions)"
+            },
+            {
+              "label": "Capacity and plan",
+              "value": "40,000 tonnes; 70% planned in year 2"
+            }
+          ]
+        },
+        "ask": "What do you report?",
+        "options": [
+          {
+            "text": "Cash break-even is about 22,400 tonnes, 56% of capacity, against 70% planned: a cushion of 14 points.",
+            "score": 3,
+            "effects": {
+              "quality": 6,
+              "committee": 8
+            },
+            "outcome": "Correct: contribution is 5,000 x 30% = Birr 1,500 a tonne; (18.0 + 6.0 + 9.6) million / 1,500 = 22,400 tonnes; 18.0 million / 1,500 = 12,000 tonnes. The cushion between cash break-even and plan is the number the committee will remember."
+          },
+          {
+            "text": "Break-even is 12,000 tonnes (Birr 18.0 million of fixed costs / Birr 1,500 a tonne), 30% of capacity, so the cushion is 40 points.",
+            "score": 0,
+            "effects": {
+              "committee": -8,
+              "quality": -6
+            },
+            "outcome": "That is accounting break-even: the volume to avoid a loss. The bank needs the volume to pay principal and interest too, which is cash break-even at 56%. Reporting 40 points overstates the cushion almost threefold."
+          },
+          {
+            "text": "Cash break-even is about 6,720 tonnes, 17% of capacity: fixed costs and debt service of 33.6 million divided by the Birr 5,000 price.",
+            "score": 0,
+            "effects": {
+              "committee": -8,
+              "quality": -5
+            },
+            "outcome": "Each tonne sold only contributes what is left after variable costs, Birr 1,500, not the full price. Dividing by price makes the project look almost unbreakable."
+          },
+          {
+            "text": "Cash break-even is about 26,400 tonnes, 66% of capacity, including depreciation: a cushion of only 4 points, so the structure is too tight.",
+            "score": 1,
+            "effects": {
+              "committee": -3,
+              "relationship": -3
+            },
+            "outcome": "Depreciation is not a cash payment, so it does not belong in cash break-even. Adding it understates the cushion and could push the committee to refuse a sound structure."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "sendafa-npv",
+        "when": "Wednesday 14:00",
+        "from": "Credit committee secretary",
+        "channel": "email",
+        "subject": "Sendafa Brick and Tile PLC: one-line verdict needed",
+        "body": [
+          "A colleague's file on Sendafa Brick and Tile PLC, a new tile plant, needs your one-line verdict for the committee pack. The consultant reports an IRR of about 17% and calls the project 'strong'.",
+          "Your colleague's working at 16% is in the exhibit. The residual value is the land lease right and buildings at the end of year 10, plus recovered working capital, all at the consultant's estimate."
+        ],
+        "exhibit": {
+          "title": "Sendafa Brick and Tile: project cash flow at 16% (Birr millions)",
+          "rows": [
+            {
+              "label": "Investment, year 0",
+              "value": "64.0"
+            },
+            {
+              "label": "PV of operating cash flows, years 1 to 10",
+              "value": "61.5"
+            },
+            {
+              "label": "Residual value at end of year 10 (consultant)",
+              "value": "22.0"
+            },
+            {
+              "label": "Discount factor, year 10 at 16%",
+              "value": "0.227"
+            }
+          ]
+        },
+        "ask": "What verdict do you write?",
+        "options": [
+          {
+            "text": "A strong project: the consultant's IRR of about 17% beats the 16% hurdle and NPV is positive, so approve on standard terms.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "committee": -6,
+              "relationship": 3
+            },
+            "outcome": "NPV is 61.5 + 22.0 x 0.227 minus 64.0 = about plus Birr 2.5 million, and without the residual it is about minus Birr 2.5 million. The project clears the hurdle only on a consultant's estimate of value ten years away."
+          },
+          {
+            "text": "Marginal: NPV is about plus Birr 2.5 million, positive only because of the residual; needs an independent valuation of it.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "committee": 8,
+              "relationship": 1
+            },
+            "outcome": "Correct: 22.0 x 0.227 = 5.0; 61.5 + 5.0 minus 64.0 = 2.5. A one-line verdict says what the numbers show and what must be true for them to hold, so the committee can vote with its eyes open."
+          },
+          {
+            "text": "Reject: without the Birr 22.0 million residual value the NPV is about minus Birr 2.5 million, so the project does not earn 16%.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "committee": -2
+            },
+            "outcome": "Land and buildings do keep value, so ignoring the residual is too harsh. The issue is how much to trust the estimate, which an independent valuation can answer."
+          },
+          {
+            "text": "Re-run at 14%, closer to the bank's funding cost, so the project passes comfortably without relying on the consultant's residual.",
+            "score": 0,
+            "effects": {
+              "quality": -8,
+              "committee": -8,
+              "compliance": -5
+            },
+            "outcome": "Lowering the rate to reach a wanted answer is not analysis. The required return is at least the lending rate; changing it to fit the result misleads the committee."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "group-exposure",
+        "when": "Thursday 09:00",
+        "from": "Head of corporate banking",
+        "channel": "call",
+        "subject": "Holeta is a separate PLC, do not mix it with the group",
+        "body": [
+          "Credit administration reports that the sponsor family's other companies, a grain trading company, the poultry farms and a transport company, already owe Bank A Birr 945 million. Holeta's Birr 60 million loan would sit in the same group.",
+          "The head of corporate banking calls: 'Holeta is a new PLC with its own balance sheet. Treat it on its own. If it helps, book Birr 55 million now and the rest next quarter.'"
+        ],
+        "exhibit": {
+          "title": "Sponsor group exposure (Birr millions)",
+          "rows": [
+            {
+              "label": "Bank A total capital",
+              "value": "4,000"
+            },
+            {
+              "label": "Existing group exposure",
+              "value": "945"
+            },
+            {
+              "label": "Holeta new loan",
+              "value": "60"
+            },
+            {
+              "label": "Unused overdraft line in the trading company (part of the 945)",
+              "value": "40"
+            }
+          ]
+        },
+        "ask": "What do you put in the compliance section?",
+        "options": [
+          {
+            "text": "Treat Holeta as a separate borrower: it is a new PLC with its own balance sheet and its own project security, as corporate banking says.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "committee": -6,
+              "relationship": 3
+            },
+            "outcome": "Exposures to companies under common ownership are one counterparty group. 945 + 60 = 1,005 against a 25% limit of Birr 1,000 million is a breach, however sound the project is.",
+            "next": "group-later"
+          },
+          {
+            "text": "Aggregate the group at Birr 1,005 million, over the Birr 1,000 million limit, and cancel at least 5 million of the unused overdraft.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "committee": 6,
+              "quality": 3,
+              "relationship": -1
+            },
+            "outcome": "Correct: 25% of 4,000 = 1,000, so the group needs Birr 5 million of room. Cutting an unused line costs the sponsors nothing in practice. At more than 10% of capital, Birr 400 million, the group is a large exposure reported within 20 days of each month end."
+          },
+          {
+            "text": "Book Birr 55 million now and the last Birr 5 million next quarter, once the trading company's overdraft has come down.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "committee": -8
+            },
+            "outcome": "Splitting a loan to stay under a limit at a reporting date is a deliberate breach. The exposure is the same, and the next large exposure report will show it.",
+            "next": "group-later"
+          },
+          {
+            "text": "Decline Holeta: with Birr 945 million already lent to the family, the group is too large for Bank A whatever the structure.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": -1
+            },
+            "outcome": "The breach is Birr 5 million. Structuring options exist: cut an unused line, syndicate part of the loan or reduce another facility. Declining a sound project is not required."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "burayu-related",
+        "when": "Thursday 14:00",
+        "from": "Burayu Packaging PLC, managing director",
+        "channel": "visit",
+        "subject": "As a shareholder, I expect one point off the rate",
+        "body": [
+          "Burayu Packaging PLC asks for a Birr 45 million project loan for a new printing line. Its managing director holds 3% of Bank A's shares. He tells you: 'I am a shareholder. One point off the rate is fair, and I am sure we can skip the board.'",
+          "Bank A already lends Birr 120 million to the managing director's companies. The bank's total related party exposure is Birr 1,250 million."
+        ],
+        "exhibit": {
+          "title": "Related party check (Birr millions)",
+          "rows": [
+            {
+              "label": "Bank A total capital",
+              "value": "4,000"
+            },
+            {
+              "label": "Existing exposure to the managing director's companies",
+              "value": "120"
+            },
+            {
+              "label": "New request",
+              "value": "45"
+            },
+            {
+              "label": "Bank A total related party exposure today",
+              "value": "1,250"
+            }
+          ]
+        },
+        "ask": "How do you handle the request?",
+        "options": [
+          {
+            "text": "Related party: 165 is within the 600 limit and 1,295 within 1,400. Arm's-length price, Audit Committee opinion, board approval.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "committee": 6,
+              "relationship": -1
+            },
+            "outcome": "Correct: shareholders of 2% or more are related parties; 15% x 4,000 = 600 and 35% x 4,000 = 1,400. The loan can proceed, but only on the same terms as any customer and with board oversight."
+          },
+          {
+            "text": "Give the one point: the loan is well within the related party limits, and a shareholder's business is worth keeping at Bank A.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "committee": -5,
+              "relationship": 4
+            },
+            "outcome": "Being within limits does not allow better terms. Related party credit must be at arm's length; a shareholder discount is exactly what SBB/88/2024 forbids."
+          },
+          {
+            "text": "Treat him as an ordinary customer: a 3% holding gives him no control, so the related party rules for directors do not apply.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "committee": -4
+            },
+            "outcome": "The threshold is 2% of shares, so 3% makes him a related party. Missing it means the loan reaches the committee without the board route the directive requires."
+          },
+          {
+            "text": "Decline: aggregate related party exposure would reach 1,295, about 32% of capital, too close to the 35% limit for comfort.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "compliance": 1
+            },
+            "outcome": "1,295 is within the 35% limit. Headroom is worth noting for the board, but the directive limits and controls related party lending; it does not ban it."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "committee-stress",
+        "when": "Friday 10:00",
+        "from": "Credit committee member",
+        "channel": "meeting",
+        "subject": "What if Holeta runs at 60% in year 2?",
+        "body": [
+          "You present Holeta with the sculpted structure: Birr 6.0 million of principal in year 2, then Birr 9.0 million a year. A committee member asks: 'New mills in this industry often run below plan. What is year 2 DSCR at 60% utilization instead of 70%?'"
+        ],
+        "exhibit": {
+          "title": "Holeta year 2 at 60% utilization: inputs (Birr millions unless stated)",
+          "rows": [
+            {
+              "label": "Volume: 40,000 x 60%",
+              "value": "24,000 tonnes"
+            },
+            {
+              "label": "Price",
+              "value": "Birr 5,000 a tonne"
+            },
+            {
+              "label": "Variable costs",
+              "value": "70% of sales"
+            },
+            {
+              "label": "Fixed cash costs",
+              "value": "18.0"
+            },
+            {
+              "label": "Depreciation",
+              "value": "6.0"
+            },
+            {
+              "label": "Interest",
+              "value": "9.6"
+            },
+            {
+              "label": "Tax",
+              "value": "30%"
+            },
+            {
+              "label": "Principal",
+              "value": "6.0"
+            }
+          ]
+        },
+        "ask": "What do you answer?",
+        "options": [
+          {
+            "text": "About 1.11: the plant still pays the bank, but only just; a 1.25 DSCR covenant and dividend lock-up give early warning.",
+            "score": 3,
+            "effects": {
+              "committee": 10,
+              "quality": 6
+            },
+            "outcome": "Correct: revenue 120.0, variable costs 84.0, EBITDA 18.0, EBIT 12.0, PBT 2.4, tax 0.72, net 1.68; cash 1.68 + 6.0 + 9.6 = 17.28; 17.28 / 15.6 = 1.11. A stressed number with its controls is the answer committees approve on."
+          },
+          {
+            "text": "The base case is 1.38, and the sponsors' own farms buy 9,000 tonnes a year, so year 2 volume cannot realistically fall to 60%.",
+            "score": 0,
+            "effects": {
+              "committee": -10,
+              "quality": -6
+            },
+            "outcome": "The committee asked for the downside, and you had the numbers. Refusing to give them costs the committee's trust on this and every future file."
+          },
+          {
+            "text": "About 1.15: EBITDA of 18.0 divided by debt service of 15.6, still above 1.0, so the structure survives a 10-point shortfall.",
+            "score": 1,
+            "effects": {
+              "committee": -3,
+              "quality": -2
+            },
+            "outcome": "Close, but EBITDA ignores tax. Cash for debt service is net profit plus depreciation plus interest, which gives 1.11."
+          },
+          {
+            "text": "Below the 1.25 floor at 60%, so I withdraw the proposal and bring back a smaller loan at the next committee meeting.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "committee": -3
+            },
+            "outcome": "The base case passes. The committee needed to hear the downside and how it is controlled, not a withdrawal of a sound structure."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "insurance-renewal",
+        "when": "Friday 15:30",
+        "from": "Gelan Plastic Pipes PLC, finance manager",
+        "channel": "call",
+        "subject": "Please wait two months on the machinery insurance",
+        "body": [
+          "Gelan Plastic Pipes PLC, a project financed by Bank A two years ago, has had a slow quarter. Its machinery policy, endorsed to Bank A, expires in three weeks. The finance manager asks the bank to 'wait about two months' before renewal, until a large order is paid."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Agree to wait two months: the customer has paid every installment, the machines are new, and the large order is nearly paid.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -8,
+              "relationship": 4
+            },
+            "outcome": "No premium, no cover. For two months the bank's main security would be uninsured, and a single fire could wipe out the collateral behind the loan."
+          },
+          {
+            "text": "Send the renewal notice now; if it is not renewed by expiry, the bank pays the premium and debits the loan account.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 6,
+              "relationship": -2
+            },
+            "outcome": "This is what a typical manual directs: notice before expiry, then the bank renews and debits. The customer keeps cover, and the bank's security stays protected."
+          },
+          {
+            "text": "Ask the insurer to keep the cover running for two months and collect the premium when the customer's large order is paid.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "quality": -2
+            },
+            "outcome": "Under the Insurance Business Proclamation the principle is no premium, no cover. An informal promise from the insurer is not a policy."
+          },
+          {
+            "text": "Release the machinery from the security for now, so the insurance is no longer a bank requirement, and re-pledge it later.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -12
+            },
+            "outcome": "Giving up security to avoid a premium leaves a project loan with nothing behind it. It also needs approval from whoever holds that authority."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "market-later",
+        "when": "Eighteen months later",
+        "from": "Portfolio monitoring unit",
+        "channel": "memo",
+        "subject": "Holeta Animal Feed: year 1 sales at 48% of capacity",
+        "body": [
+          "Two large mills cut prices by 8% when Holeta opened. The sponsors' farms bought as promised, but open-market sales were far below the study. Year 1 volume was 48% of capacity against 55% planned, and the first principal installment falls due in four months."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Ask for a fresh projection on actual sales and prices and propose a documented restructuring to the committee.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "committee": 5,
+              "relationship": 2
+            },
+            "outcome": "Repairing the structure on evidence, through the proper authority, gives the plant time to win buyers. The lesson stands: spare industry capacity was the warning in the market chapter."
+          },
+          {
+            "text": "Lend a new working capital line of about four months' sales so the first principal installment can be paid on time.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -6
+            },
+            "outcome": "New money to pay an old installment hides the problem and grows the exposure to a group already near its limit."
+          },
+          {
+            "text": "Call the loan before the first installment is missed, while the mill and its stock still cover most of the exposure.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "quality": -2
+            },
+            "outcome": "The plant is operating and its captive sales are real. Calling the loan would destroy value the bank needs to be repaid from."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "dscr-later",
+        "when": "Year 2 of operations",
+        "from": "Holeta Animal Feed PLC, chief financial officer",
+        "channel": "email",
+        "subject": "We cannot meet the Birr 10 million principal in full",
+        "body": [
+          "The plant ran at 70% as planned, and cash for debt service was Birr 21.5 million, almost exactly the projection. But the installment of Birr 10 million principal plus Birr 9.6 million interest is Birr 19.6 million, and the company also needs cash for maize stock. It asks for help before the due date."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Propose to the committee a sculpted schedule, lighter principal now and more later, with a dividend lock-up.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "committee": 6,
+              "relationship": 3
+            },
+            "outcome": "The project performed; the schedule did not fit it. Reshaping the repayment through the committee fixes the real cause, which a year-by-year DSCR would have shown at appraisal."
+          },
+          {
+            "text": "Grant a short-term loan of Birr 10 million to pay the principal on time, repayable from maize stock sales in the next quarter.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -6
+            },
+            "outcome": "Borrowing to pay an installment only moves the shortfall and adds interest. It also hides a structural problem from the committee."
+          },
+          {
+            "text": "Let the installment fall into arrears and classify the loan if it reaches special mention, since the plant is performing.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "quality": -4
+            },
+            "outcome": "Arrears on a performing project damage the customer's credit record for a problem the bank designed. Act before the due date."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "group-later",
+        "when": "The following month",
+        "from": "Risk management department",
+        "channel": "email",
+        "subject": "Large exposure report: one group above 25% of capital",
+        "body": [
+          "The monthly large exposure report, due to the NBE within 20 days of month end, shows the sponsor family's group at Birr 1,005 million, above the 25% limit of Birr 1,000 million. Risk management asks how this was approved."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Acknowledge the error in writing, cancel at least Birr 5 million of the unused line at once, and report breach and fix.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "committee": 3
+            },
+            "outcome": "Owning a breach and curing it quickly is the only way forward. The rule exists because a single group's trouble should never threaten the bank's capital."
+          },
+          {
+            "text": "Argue in writing that Holeta is a separate PLC with its own security and should not be counted in the family group.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "committee": -4
+            },
+            "outcome": "Common ownership makes it one group. Defending the breach makes it worse and damages your credibility with risk management."
+          },
+          {
+            "text": "Ask the trading company to repay part of its overdraft before month end, then let it draw again after the report is filed.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "relationship": -3
+            },
+            "outcome": "Window dressing a limit at the reporting date does not cure the breach and is itself a serious finding."
+          }
+        ],
+        "module": "s4"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-week hand-over note to the head of the Project Finance Department.",
+      "guide": [
+        "Holeta's recommendation in three lines: amount, structure, minimum DSCR, cash break-even and the two key risks.",
+        "The assumptions you changed in the sponsor's case, and the evidence still outstanding.",
+        "Compliance points that must be closed before disbursement, such as the group limit and related party approvals.",
+        "One decision from the week you would revisit, and what you would check."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "A new plant plans to sell 20,000 tonnes into a 250,000-tonne market. What share is that, and what should the analyst ask?",

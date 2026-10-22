@@ -1698,6 +1698,922 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A week as assistant branch manager (operations) at Bank A, Hawassa branch",
+    "role": "Assistant branch manager, operations",
+    "setting": [
+      "You have just taken over operations at Bank A's Hawassa branch, a busy branch near the lake that serves hotels, coffee and grain traders, schools and thousands of salary and savings customers. On a normal day the branch handles about 500 transactions, most of them cash, plus account openings, checks in clearing and domestic transfers.",
+      "You report to the branch manager, Tigist Alemu. The cash supervisor, Samuel Dagne, runs the head till and the tellers; the non-cash supervisor, Rahel Bekele, authorizes account openings and transfers; the branch auditor keeps the files. As assistant manager you are an authorizer above Birr 100,000, a named vault officer, and the person staff call when something does not fit the procedure.",
+      "Your job this week: keep the queues moving and the customers served while every control holds. Each item arrives in the order it reaches you. Read the facts, do the numbers yourself, and choose the action you would defend in front of the branch manager, internal audit and the NBE examiner."
+    ],
+    "authority": {
+      "title": "Your branch's rules and limits",
+      "rows": [
+        {
+          "label": "Maker-checker and dual control",
+          "value": "No one captures and approves the same transaction; two named officers for the vault and duplicate keys"
+        },
+        {
+          "label": "Authorization limits (example)",
+          "value": "Up to Birr 20,000 system check; Birr 20,000 to 100,000 supervisor; above Birr 100,000 supervisor, assistant or branch manager"
+        },
+        {
+          "label": "Savings withdrawal without passbook",
+          "value": "Branch manager approves"
+        },
+        {
+          "label": "Dormant accounts (example: savings, 2 years no movement)",
+          "value": "Branch manager approves withdrawals; reactivate only after the customer updates information"
+        },
+        {
+          "label": "Insufficient-fund checks",
+          "value": "First: warning and debit block; second within 12 months: fine and final warning; third within 24 months: close checking accounts, fine, report to the NBE within 5 working days"
+        },
+        {
+          "label": "Fines (2018 manual, for practice)",
+          "value": "Second offense 3% capped at Birr 25,000; third 5% capped at Birr 50,000"
+        },
+        {
+          "label": "Customer stop payment",
+          "value": "Lost or stolen checks only, with police evidence within 15 working days"
+        },
+        {
+          "label": "Suspense items (example routine)",
+          "value": "Follow up at 30 days, letter at 45 days, clear within 90 days, report anything older"
+        },
+        {
+          "label": "Lawful orders and fraud",
+          "value": "Verify, act exactly as written, inform the branch manager and legal unit, never tip off; suspicious transactions to the Financial Intelligence Service; losses of Birr 20,000 or more in the loss database"
+        }
+      ],
+      "note": "These follow the course and a typical Ethiopian branch operations manual. Example limits and fines must be replaced by your own bank's current figures: your institution's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "control",
+        "label": "Operational control",
+        "help": "Rises when maker-checker, dual control and verification hold; falls when a shortcut leaves a risk unchecked."
+      },
+      {
+        "id": "service",
+        "label": "Customer service",
+        "help": "Rises when customers are served quickly and treated fairly; falls with needless refusals, delays or poor explanations."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of NBE rules, lawful orders or the bank's procedure, hidden or not."
+      },
+      {
+        "id": "efficiency",
+        "label": "Branch efficiency",
+        "help": "Rises when work flows to the right person on time; falls with queues, rework and losses."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "vault-open",
+        "when": "Monday 07:50",
+        "from": "Samuel Dagne, cash supervisor",
+        "channel": "call",
+        "subject": "Vault: can I open it alone this morning?",
+        "body": [
+          "You are stuck in traffic about 40 minutes from the branch. Samuel calls: thirty customers are already waiting, and Hawassa Lakeside Hotel PLC's driver is coming at 08:30 for Birr 3 million in payroll cash. He holds his own key and asks you to read him your combination by phone so he can open the vault alone.",
+          "Rahel Bekele, the non-cash supervisor, is already in the branch. She is a named vault officer with her own combination, but she is busy preparing the morning account openings."
+        ],
+        "ask": "What do you tell Samuel?",
+        "options": [
+          {
+            "text": "Read Samuel the combination now so the vault opens at 08:00 for the hotel payroll, then reset it the moment I arrive and note it in the key register.",
+            "score": 0,
+            "effects": {
+              "control": -15,
+              "compliance": -12,
+              "efficiency": 6
+            },
+            "outcome": "Combinations are known only to named officers and reset at each handover; sharing one by phone leaves one person alone with the cash. Dual control exists to protect the cash and the honest staff member, and it fails the moment one person holds both parts."
+          },
+          {
+            "text": "Ask Rahel to open the vault with Samuel as the second named officer, log it in the vault register, and confirm the 08:30 payroll to the hotel.",
+            "score": 3,
+            "effects": {
+              "control": 8,
+              "service": 6,
+              "efficiency": 6
+            },
+            "outcome": "Right call. Two named officers open the vault, the register shows who did it, and the payroll is ready on time. Account openings can wait fifteen minutes; dual control cannot."
+          },
+          {
+            "text": "Tell Samuel to keep the vault shut until I arrive at about 08:40, put a notice at the door and apologize to the hotel driver for the short delay.",
+            "score": 2,
+            "effects": {
+              "control": 4,
+              "service": -6,
+              "efficiency": -6
+            },
+            "outcome": "Safe, but slower than it needs to be. Another named officer was in the building, so the hotel's payroll and the queue did not have to wait for you."
+          },
+          {
+            "text": "Let the senior teller, who has ten years' service and counts cash daily, stand with Samuel as the second person and sign the register until I arrive.",
+            "score": 1,
+            "effects": {
+              "control": -6,
+              "compliance": -5,
+              "efficiency": 4
+            },
+            "outcome": "Two people are present, but only one of them is a named vault officer. Dual control means two named, authorized officers, not any second pair of eyes."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "tabor-account",
+        "when": "Monday 09:20",
+        "from": "Relationship manager, Hawassa branch",
+        "channel": "visit",
+        "subject": "Tabor Grain Traders PLC: open the current account today, please",
+        "body": [
+          "Tabor Grain Traders PLC wants a current account. Its shareholders are Mulu Hailu (60%) and Ermias Tadesse (40%). The registration, authenticated memorandum and articles, trade license, TIN and signatory resolution are all in order, and both names are clear on the blacklist screening.",
+          "Ermias's kebele ID expired two months ago. He has a Fayda number and is in town today. The RM says: \"A Birr 5 million deposit is waiting. Open it now on what we have and I will bring his new ID next week. I know him personally.\""
+        ],
+        "ask": "How do you handle the account opening?",
+        "options": [
+          {
+            "text": "Open the account now on the expired kebele ID so the Birr 5 million can come in today, and diarize Ermias's renewed ID for next week as the RM promised.",
+            "score": 0,
+            "effects": {
+              "control": -10,
+              "compliance": -15,
+              "service": 5,
+              "efficiency": 4
+            },
+            "outcome": "An expired ID is not valid identification, and a 40% shareholder is a beneficial owner who must be identified and verified before the account opens. Knowing a customer personally is not a control.",
+            "next": "tabor-later"
+          },
+          {
+            "text": "Open it with Mulu as the only owner on file: she holds 60%, signs every payment, and her ID and screening are complete; add Ermias once his ID is renewed.",
+            "score": 0,
+            "effects": {
+              "control": -8,
+              "compliance": -12,
+              "service": 4
+            },
+            "outcome": "The bank must identify all the real people who own or control a company. A 40% owner is plainly a beneficial owner, whether or not he signs."
+          },
+          {
+            "text": "Have Ermias bring his Fayda ID at lunch, verify and photograph him, complete both owners' files and the delinquent-list check, then open today.",
+            "score": 3,
+            "effects": {
+              "control": 8,
+              "compliance": 6,
+              "service": 5
+            },
+            "outcome": "Right. The Fayda digital ID is accepted, so a valid ID can be on file within hours. The customer still opens today, and the file is complete when the Birr 5 million arrives."
+          },
+          {
+            "text": "Decline and ask the RM to resubmit once every shareholder holds a valid ID, since an expired ID on a new company file is a warning sign.",
+            "score": 1,
+            "effects": {
+              "service": -12,
+              "efficiency": -4
+            },
+            "outcome": "Too blunt. An expired ID is a document problem with an easy fix, not a reason to refuse a company whose papers are otherwise in order."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "court-order",
+        "when": "Monday 11:40",
+        "from": "Front desk officer, Hawassa branch",
+        "channel": "email",
+        "subject": "Court letter: block Birr 800,000 on Abebech Tola's accounts",
+        "body": [
+          "A letter from the Federal First Instance Court, addressed to Bank A, orders the bank to block Birr 800,000 on the accounts of Abebech Tola, a grain trader and sole proprietor. The front desk has confirmed the letter with the court registry.",
+          "The RM emails: \"Abebech is one of our best customers. Let me call her first so she is not surprised, and maybe we block only her current account for now.\""
+        ],
+        "exhibit": {
+          "title": "Abebech Tola's accounts at 11:40",
+          "rows": [
+            {
+              "label": "Amount ordered to be blocked",
+              "value": "Birr 800,000"
+            },
+            {
+              "label": "Savings account balance",
+              "value": "Birr 410,000"
+            },
+            {
+              "label": "Current account balance",
+              "value": "Birr 265,000"
+            },
+            {
+              "label": "Check from another bank deposited today, pending clearance",
+              "value": "Birr 90,000"
+            }
+          ]
+        },
+        "ask": "What do you instruct?",
+        "options": [
+          {
+            "text": "Block Birr 675,000 across both accounts, report the Birr 125,000 shortfall through the legal unit, ask it about the Birr 90,000, and do not call her.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "control": 6,
+              "service": -2
+            },
+            "outcome": "Correct: 410,000 + 265,000 = Birr 675,000 available, against an order of 800,000, a shortfall of Birr 125,000. Funds pending clearance are not yet available, so the legal unit decides how to treat later credits. Secrecy gives way to a lawful order, and the customer is not tipped off."
+          },
+          {
+            "text": "Block Birr 765,000, including the Birr 90,000 check deposited this morning, report a Birr 35,000 shortfall to the court and inform the branch manager.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "control": -4
+            },
+            "outcome": "A check pending clearance is not available money. If it is returned, the bank has reported a block it does not hold. Block what the accounts hold now and let the legal unit advise on later credits."
+          },
+          {
+            "text": "Block the Birr 265,000 current account balance now, as the RM suggests, and block the savings this afternoon once he has spoken to the customer.",
+            "score": 1,
+            "effects": {
+              "compliance": -10,
+              "service": 3
+            },
+            "outcome": "The order covers her accounts, not one of them. Acting on part of a court order, and leaving time for the customer to move the rest, is a compliance failure."
+          },
+          {
+            "text": "Let the RM call Abebech first so she can contact the court herself and settle the matter, then act on the letter tomorrow if the order still stands.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "control": -6,
+              "service": 4
+            },
+            "outcome": "Warning the customer before acting can let her move the money and puts the bank in breach of the order. The branch verifies the order, acts on it exactly as written, and informs the branch manager and legal unit."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "deposit-choice",
+        "when": "Monday 14:10",
+        "from": "Ato Bekele Wolde, retired teacher",
+        "channel": "visit",
+        "subject": "Where should I keep Birr 500,000?",
+        "body": [
+          "Ato Bekele has sold a plot and has Birr 500,000 to deposit. He will need Birr 150,000 for his daughter's wedding in about 5 months and will not touch the rest for at least a year.",
+          "He says the RM told him last week that Bank A could give him \"a special 14%\" on a fixed deposit. Today's board-approved rate sheet shows the rates below."
+        ],
+        "exhibit": {
+          "title": "Bank A board-approved rate sheet, today (example rates)",
+          "rows": [
+            {
+              "label": "Savings account",
+              "value": "8.0% a year, withdraw any time"
+            },
+            {
+              "label": "12-month fixed time deposit",
+              "value": "12.0% a year; fixed interest forfeited on early withdrawal, as stated on the certificate"
+            },
+            {
+              "label": "Minimum fixed time deposit (example)",
+              "value": "Birr 100,000"
+            },
+            {
+              "label": "Special rate approvals on file",
+              "value": "None"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Split it: Birr 350,000 in the 12-month deposit, Birr 42,000 at maturity, and Birr 150,000 in savings for the wedding; explain the early-withdrawal term.",
+            "score": 3,
+            "effects": {
+              "service": 10,
+              "compliance": 4,
+              "efficiency": 3
+            },
+            "outcome": "Right: 350,000 x 12% = Birr 42,000, and 150,000 x 8% x 5/12 = Birr 5,000. The split matches each part of the money to when he needs it, and he signs knowing the terms. Quote only the board-approved rate sheet."
+          },
+          {
+            "text": "Put all Birr 500,000 in the 12-month fixed deposit to earn the full Birr 60,000, and tell him he can break the deposit in 5 months when the wedding comes.",
+            "score": 1,
+            "effects": {
+              "service": -6,
+              "compliance": -2
+            },
+            "outcome": "Birr 60,000 is earned only if the money stays for the full term. Breaking the deposit at 5 months forfeits the fixed interest under the certificate terms, so he would likely earn less than with the split."
+          },
+          {
+            "text": "Book all Birr 500,000 at the 14% the RM promised last week, since the bank must keep its word, and send the rate exception to head office afterwards.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -6,
+              "service": 6
+            },
+            "outcome": "Under NBE/INT/13/2026 deposit rates are set by the board in writing on explicit criteria and reported to the NBE. There is no approval on file for 14%, so it cannot be booked; tell the branch manager about the RM's promise."
+          },
+          {
+            "text": "Keep the full Birr 500,000 in savings at 8%, about Birr 40,000 a year, so he can draw the wedding money and meet any other need without conditions.",
+            "score": 2,
+            "effects": {
+              "service": 3,
+              "efficiency": 2
+            },
+            "outcome": "Safe and flexible, but it earns less: after the wedding withdrawal, savings pays about 350,000 x 8% + 5,000 = Birr 33,000, against Birr 47,000 for the split. A good officer matches the product to the need."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "no-passbook",
+        "when": "Tuesday 09:05",
+        "from": "Teller, Hawassa branch",
+        "channel": "call",
+        "subject": "Ato Dereje wants Birr 60,000 but has no passbook",
+        "body": [
+          "Ato Dereje Kassa, a well-known hardware trader, wants to withdraw Birr 60,000 from his savings account. He shows his Fayda ID but left his passbook at home. He has a supplier waiting outside.",
+          "The branch manager is at a district meeting until 11:00. The teller says: \"You are the assistant manager, you can approve it for him.\""
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Approve it myself: as assistant manager I authorize above Birr 20,000 every day, his Fayda ID matches, and Birr 60,000 is well within my limit.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "control": -8,
+              "service": 5
+            },
+            "outcome": "The amount limit is not the issue. When the passbook is not presented, the branch manager must approve. Being a senior authorizer does not replace that rule."
+          },
+          {
+            "text": "Verify his ID, explain the rule politely, and offer branch manager approval at 11:00 or payment as soon as he brings the passbook.",
+            "score": 3,
+            "effects": {
+              "compliance": 6,
+              "control": 5,
+              "service": 2
+            },
+            "outcome": "Right. Without the passbook, the branch manager approves. A clear explanation and a firm time keep a good customer on side while the control holds."
+          },
+          {
+            "text": "Tell the teller to pay against his Fayda ID and signature, since Ato Dereje has banked here for years and his supplier is waiting outside.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "control": -10,
+              "service": 4
+            },
+            "outcome": "Knowing a customer is not a control. A passbook, or the branch manager's approval, is what protects him and the bank if someone else ever presents his ID."
+          },
+          {
+            "text": "Decline and ask him to fetch the passbook, because without it the teller cannot confirm the balance and the entries he is drawing on.",
+            "score": 1,
+            "effects": {
+              "service": -10,
+              "efficiency": -3
+            },
+            "outcome": "The control holds, but the procedure offers a lawful route today: branch manager approval. Sending a good customer away when there is a path costs the relationship."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "till-close",
+        "when": "Tuesday 17:10",
+        "from": "Kalkidan Abebe, teller",
+        "channel": "visit",
+        "subject": "My till does not balance",
+        "body": [
+          "Kalkidan brings her day-end sheet. She has counted her cash twice by denomination. A colleague has suggested she put the difference in an envelope in her drawer \"in case you are short tomorrow\", so the day can close on time."
+        ],
+        "exhibit": {
+          "title": "Kalkidan's till at day end",
+          "rows": [
+            {
+              "label": "Opening float from the head till",
+              "value": "Birr 250,000"
+            },
+            {
+              "label": "Cash deposits received",
+              "value": "Birr 2,860,000"
+            },
+            {
+              "label": "Cash withdrawals paid",
+              "value": "Birr 1,415,000"
+            },
+            {
+              "label": "Surplus returned to the head till during the day",
+              "value": "Birr 1,600,000"
+            },
+            {
+              "label": "Cash counted",
+              "value": "Birr 96,000"
+            }
+          ]
+        },
+        "ask": "What is the position, and what do you tell her?",
+        "options": [
+          {
+            "text": "She is Birr 1,000 over against Birr 95,000 expected: trace the vouchers to find the short-credited customer and report the excess today.",
+            "score": 3,
+            "effects": {
+              "control": 8,
+              "compliance": 6,
+              "service": 3
+            },
+            "outcome": "Correct: 250,000 + 2,860,000 minus 1,415,000 minus 1,600,000 = Birr 95,000 expected, against 96,000 counted. An excess is usually a customer's money; it is reported the same day and traced, never kept aside."
+          },
+          {
+            "text": "Her till is Birr 1,000 short; report the shortage to the cash supervisor before the close and re-count the Birr 200 bundles with a second teller.",
+            "score": 1,
+            "effects": {
+              "control": -3,
+              "efficiency": -3
+            },
+            "outcome": "Reporting is right, but the arithmetic is wrong: she counted Birr 96,000 against 95,000 expected, so she is over, not short. A wrong diagnosis sends the search in the wrong direction."
+          },
+          {
+            "text": "Agree to the envelope so the day closes on time; Kalkidan logs it in her notebook and hands it to the cash supervisor if it is still there on Friday.",
+            "score": 0,
+            "effects": {
+              "control": -15,
+              "compliance": -12,
+              "efficiency": 4
+            },
+            "outcome": "Hiding a difference, short or over, breaks the audit trail and is exactly how small frauds start. Differences are reported the same day, never covered or held aside."
+          },
+          {
+            "text": "Edit the last deposit entry in the system by Birr 1,000 so the till balances tonight, and look for the affected customer first thing tomorrow.",
+            "score": 0,
+            "effects": {
+              "control": -12,
+              "compliance": -10
+            },
+            "outcome": "After a transaction is committed, an error is fixed only by a reversal approved by the checker, never by editing. And you do not yet know which entry is wrong."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "payee-only",
+        "when": "Wednesday 10:30",
+        "from": "Teller, Hawassa branch",
+        "channel": "visit",
+        "subject": "Account payee only check: the drawer says pay cash",
+        "body": [
+          "Ato Henok Mesfin presents a Birr 140,000 check drawn on Bank A by Lakeview Furniture PLC, payable to him and crossed \"account payee only\". He has no account at Bank A and wants cash to pay his workers.",
+          "The owner of Lakeview Furniture, a valued customer, phones you: \"Just pay him cash, I approve it. Don't make my supplier wait.\""
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Pay Henok the Birr 140,000 in cash on the owner's phone instruction: Lakeview is the drawer, a valued customer, and I know the owner's voice well.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "control": -10,
+              "service": 5
+            },
+            "outcome": "A crossing is deleted only with the drawer's written confirmation. A phone call cannot be verified against a specimen signature and leaves the bank with no defense if the payment is disputed."
+          },
+          {
+            "text": "Ask Henok, as the named payee, to cross out the \"account payee only\" words and sign beside them, then pay him with supervisor authorization.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "control": -10
+            },
+            "outcome": "Only the drawer can remove a crossing, and only in writing. A payee cancelling the crossing himself has no effect under the Commercial Code."
+          },
+          {
+            "text": "Offer to credit his own account; pay cash only if Lakeview's signatories delete the crossing in writing, verified, with authorization above Birr 100,000.",
+            "score": 3,
+            "effects": {
+              "compliance": 6,
+              "control": 6,
+              "service": 4
+            },
+            "outcome": "Right. The crossing is respected, the customer gets two lawful paths, and if the drawer removes it properly the payment is still authorized at the right level for its amount."
+          },
+          {
+            "text": "Return the check to Henok and tell him an account payee only check can never be paid in cash at this branch, whoever the drawer is.",
+            "score": 1,
+            "effects": {
+              "service": -10,
+              "efficiency": -2
+            },
+            "outcome": "Paying cash was not possible, but refusing without explaining the options leaves two customers unhappy. The officer's job is to find the lawful route."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "second-bounce",
+        "when": "Wednesday 15:10",
+        "from": "Inward clearing, core banking system",
+        "channel": "system",
+        "subject": "Dilla Agro Inputs PLC: Birr 950,000 check returned for insufficient funds",
+        "body": [
+          "A Birr 950,000 check drawn by Dilla Agro Inputs PLC has been returned in inward clearing for insufficient funds. The returned check register is below.",
+          "Twenty minutes later the owner calls: \"Please record a stop payment on that check so the payee cannot present it again. We will pay him next month.\" The check is not lost or stolen."
+        ],
+        "exhibit": {
+          "title": "Dilla Agro Inputs PLC: returned check register and fines",
+          "rows": [
+            {
+              "label": "First return",
+              "value": "5 months ago, Birr 300,000; written warning issued, payee paid"
+            },
+            {
+              "label": "Today's return",
+              "value": "Birr 950,000"
+            },
+            {
+              "label": "Second offense within 12 months (2018 manual, for practice)",
+              "value": "Fine 3%, capped at Birr 25,000, and final warning"
+            },
+            {
+              "label": "Third offense within 24 months",
+              "value": "Fine 5%, capped at Birr 50,000; close all checking accounts; report to the NBE within 5 working days"
+            }
+          ]
+        },
+        "ask": "What does the branch do?",
+        "options": [
+          {
+            "text": "Second offense: block debits until the payee is paid, fine Birr 25,000 (capped), final warning; refuse the stop, as the check is not lost.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "control": 6,
+              "service": -2
+            },
+            "outcome": "Correct: a second return within 12 months is a second offense. 3% of 950,000 is Birr 28,500, above the cap, so the fine is Birr 25,000. A stop payment is never a tool to avoid an insufficient-fund return."
+          },
+          {
+            "text": "Second offense: charge 3% of Birr 950,000, a Birr 28,500 fine, issue the final warning and block debits until the payee is paid.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "service": -6
+            },
+            "outcome": "Right offense, wrong fine. 3% of 950,000 is 28,500, but the cap is Birr 25,000. Overcharging a customer is a fair treatment issue and will be reversed."
+          },
+          {
+            "text": "Third strike: close all the company's checking accounts, charge the 5% fine and report the company to the NBE within 5 working days.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "service": -12
+            },
+            "outcome": "Closure and NBE reporting apply only to a third offense within 24 months. Applying the third-strike penalty on a second return harms the customer without legal basis."
+          },
+          {
+            "text": "Record the stop payment the owner asked for, charge the stop fee and a written warning, and ask him to settle with the payee next month.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "control": -10,
+              "service": 5
+            },
+            "outcome": "A customer stop payment is only for a lost or stolen check, with police evidence within 15 working days. Using it to block a payee is a misuse the bank must not support.",
+            "next": "dilla-later"
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "suspense-review",
+        "when": "Thursday 09:40",
+        "from": "Rahel Bekele, non-cash supervisor",
+        "channel": "memo",
+        "subject": "Suspense ageing before the district review",
+        "body": [
+          "Rahel sends the suspense ageing for the district review on Monday. The Birr 56,000 item is an incoming transfer whose beneficiary name does not match any Hawassa customer; a letter went to the remitting branch at day 45 with no reply.",
+          "A teller has suggested posting it to \"Mesfin Woldu\", the customer with the closest name, to clear it before the review."
+        ],
+        "exhibit": {
+          "title": "Hawassa branch suspense ageing (example routine)",
+          "rows": [
+            {
+              "label": "Under 30 days",
+              "value": "5 items, Birr 88,000"
+            },
+            {
+              "label": "30 to 45 days: follow up",
+              "value": "2 items, Birr 41,500"
+            },
+            {
+              "label": "45 to 90 days: letter sent",
+              "value": "3 items, Birr 156,000, including one Birr 56,000 transfer at day 85"
+            },
+            {
+              "label": "Over 90 days",
+              "value": "2 items, Birr 15,000 and Birr 8,600"
+            },
+            {
+              "label": "Total open",
+              "value": "12 items, Birr 309,100"
+            }
+          ]
+        },
+        "ask": "What do you instruct?",
+        "options": [
+          {
+            "text": "Report the two items over 90 days, Birr 23,600, today, and give the Birr 56,000 item an owner to trace and clear or return within 5 days.",
+            "score": 3,
+            "effects": {
+              "control": 8,
+              "compliance": 6,
+              "efficiency": 4
+            },
+            "outcome": "Right: 15,000 + 8,600 = Birr 23,600 is past 90 days and must be reported, and the day-85 item has 5 days left. Old open items hide errors and fraud, so they get an owner and a documented plan."
+          },
+          {
+            "text": "Post the Birr 56,000 to Mesfin Woldu, whose name is closest to the beneficiary, ask him to confirm on his next visit, and report the rest as listed.",
+            "score": 0,
+            "effects": {
+              "control": -12,
+              "compliance": -10,
+              "efficiency": 3
+            },
+            "outcome": "Guessing a beneficiary credits the wrong person and makes the money harder to trace. Suspense items are cleared on evidence, never on a similar name."
+          },
+          {
+            "text": "Take the two items over 90 days, Birr 23,600, to income before Monday so the district sees a clean ageing, and keep chasing the Birr 56,000.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "control": -10
+            },
+            "outcome": "Suspense money belongs to someone. Taking it to income hides the problem and breaks the unclaimed balance procedure; it must be reported and resolved."
+          },
+          {
+            "text": "Hold all 12 items, Birr 309,100, for the month-end review, when Rahel can follow them up together and write to every remitting branch at once.",
+            "score": 1,
+            "effects": {
+              "control": -5,
+              "efficiency": -4
+            },
+            "outcome": "Two items are already past 90 days and one will pass it within the week. The routine of 30, 45 and 90 days only works if someone acts at each step."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "urgent-transfer",
+        "when": "Thursday 14:20",
+        "from": "\"Finance manager, Hawassa Lakeside Hotel PLC\"",
+        "channel": "email",
+        "subject": "URGENT: transfer Birr 2.1 million to our new supplier today",
+        "body": [
+          "A scanned transfer request arrives for Birr 2,100,000 from Hawassa Lakeside Hotel PLC's current account to a new beneficiary at a peer bank in Adama. The two signatures look like those of the mandated signatories, Tsegaye Abera and Meron Wolde.",
+          "The email comes from an address that is not in the mandate file. Ten minutes later a man calls, says he is the hotel's new finance manager and that the supplier will cancel the order unless the money moves before 15:00. He gives a mobile number to call back."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Process it before 15:00: both signatures match the specimens on file, the hotel is a long-standing customer and the amount is within its balance.",
+            "score": 0,
+            "effects": {
+              "control": -15,
+              "compliance": -10,
+              "efficiency": 4
+            },
+            "outcome": "Signatures can be copied from leaked documents. A new email address, a new beneficiary and manufactured urgency are classic fraud signs; urgency is the fraudster's favorite tool.",
+            "next": "hotel-later"
+          },
+          {
+            "text": "Call back the mobile number the new finance manager gave, confirm the beneficiary details with him, and release the transfer if he confirms.",
+            "score": 1,
+            "effects": {
+              "control": -5,
+              "compliance": -3
+            },
+            "outcome": "Calling a number supplied by the person making the request confirms nothing. Verification uses the contacts recorded in the mandate file."
+          },
+          {
+            "text": "Hold it and call Tsegaye on the mandate-file number; if he does not confirm, stop it, log it, tell compliance and prepare a suspicious transaction report.",
+            "score": 3,
+            "effects": {
+              "control": 10,
+              "compliance": 8,
+              "service": 4
+            },
+            "outcome": "Right. Tsegaye knows nothing about it, the transfer is stopped, and the hotel learns that someone has its account details. Verify originals, never rush, and escalate doubts."
+          },
+          {
+            "text": "Reject the request and block all debits on the hotel's account until Tsegaye and Meron both come to the branch in person with their IDs.",
+            "score": 1,
+            "effects": {
+              "control": 4,
+              "service": -12,
+              "efficiency": -5
+            },
+            "outcome": "Rejecting is safe, but blocking the whole account stops the hotel's payroll and suppliers without first checking with the real signatories. One call to the recorded number would have settled it."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "dormant-poa",
+        "when": "Friday 09:15",
+        "from": "Teller, Hawassa branch",
+        "channel": "visit",
+        "subject": "Power of attorney on a dormant savings account",
+        "body": [
+          "Ato Yohannes Girma presents an authenticated power of attorney from his uncle, Ato Gebre Desta, the passbook, and a voucher to withdraw Birr 120,000. The savings account has not moved for three years. The power of attorney gives him the right \"to operate the savings account\".",
+          "He also asks to open a new account in his uncle's name and move the rest of the balance there, \"so it is easier for the family\". Ato Gebre's recorded phone number did not answer when the teller called."
+        ],
+        "ask": "What do you instruct?",
+        "options": [
+          {
+            "text": "Pay the Birr 120,000: the power of attorney is authenticated, Yohannes holds the passbook, and his signature matches the agent's specimen.",
+            "score": 0,
+            "effects": {
+              "control": -12,
+              "compliance": -10,
+              "efficiency": 3
+            },
+            "outcome": "A dormant account needs the branch manager's approval for any withdrawal, and a silent owner is exactly the risk dormancy rules guard against. An authenticated document does not remove the need to verify with the owner."
+          },
+          {
+            "text": "Refer the withdrawal to the branch manager as dormant, keep trying the owner on his recorded contacts, and decline the new account.",
+            "score": 3,
+            "effects": {
+              "control": 10,
+              "compliance": 6,
+              "service": -2
+            },
+            "outcome": "Right. Dormant account rules, verification through recorded contacts and the exact wording of the power of attorney all point the same way. The account is reactivated only when the owner updates his information."
+          },
+          {
+            "text": "Open the new account in Ato Gebre's name as Yohannes asks, since the money stays within Bank A, but hold the withdrawal until the uncle answers.",
+            "score": 1,
+            "effects": {
+              "compliance": -8,
+              "control": -4
+            },
+            "outcome": "The power of attorney covers operating the existing account only. Opening a new account on it exceeds the agent's authority, wherever the money ends up."
+          },
+          {
+            "text": "Pay Birr 60,000 today against the authenticated power of attorney and release the other Birr 60,000 once the uncle answers his phone.",
+            "score": 0,
+            "effects": {
+              "control": -10,
+              "compliance": -8
+            },
+            "outcome": "Half of an unverified payment is still an unverified payment. Stop, escalate to the branch manager and verify with the owner first."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "tabor-later",
+        "when": "Three weeks later",
+        "from": "Branch auditor",
+        "channel": "memo",
+        "subject": "Tabor Grain Traders PLC: file still incomplete, unusual activity",
+        "body": [
+          "The file review finds Ermias Tadesse's ID still expired. The Birr 5 million arrived in cash, and Birr 4.6 million left within ten days in eleven transfers just under Birr 500,000 each, to accounts at different banks. The activity does not fit a grain trader's normal pattern."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Ask the RM to tell the owners that compliance is reviewing their recent transfers, so they can send an explanation before any report is filed.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "control": -6
+            },
+            "outcome": "Telling the customer about a possible report is tipping off. Suspicious transactions are reported to the Financial Intelligence Service without informing the customer."
+          },
+          {
+            "text": "Obtain and verify Ermias's valid Fayda ID today, update the beneficial owner file, and close the auditor's finding as resolved.",
+            "score": 1,
+            "effects": {
+              "compliance": 2,
+              "control": 2
+            },
+            "outcome": "The file gap is fixed, but the pattern of near-threshold transfers is the real issue and still needs to be assessed."
+          },
+          {
+            "text": "Complete the owner file, review the transfers against the profile, and pass it to compliance for a report decision, without telling the customer.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "control": 6
+            },
+            "outcome": "The right recovery: complete due diligence, assess the activity and report through the proper channel. The lesson stands: identify every beneficial owner before the account opens."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "dilla-later",
+        "when": "The following Monday",
+        "from": "Payee's bank, through the branch manager",
+        "channel": "memo",
+        "subject": "Dilla Agro Inputs check re-presented and blocked by a stop payment",
+        "body": [
+          "The payee re-presented the Birr 950,000 check through his bank. It was returned again, this time because of your stop payment. The payee has complained in writing that the check was never lost, and internal audit has flagged the stop as improper."
+        ],
+        "ask": "How do you recover?",
+        "options": [
+          {
+            "text": "Keep the stop in place: the drawer asked for it in writing, and lifting it now exposes the company to a third return within 24 months.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "service": -6
+            },
+            "outcome": "A stop on a check that is not lost or stolen has no basis. Keeping it compounds the breach and the payee's complaint."
+          },
+          {
+            "text": "Lift the stop, apply the second-offense measures, log the payee's complaint and answer in writing; treat the next presentment on its merits.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "control": 4,
+              "service": 5
+            },
+            "outcome": "The right recovery: correct the error, apply the insufficient-fund rules as written and treat the complaining payee fairly. Stop payment is for lost or stolen checks only."
+          },
+          {
+            "text": "Tell the payee's bank the check was reported lost, which keeps the stop valid, and ask the drawer for a police report within 15 working days.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "service": -8
+            },
+            "outcome": "Giving a false reason to a payee is misleading and makes the bank party to the drawer's evasion. Correct the stop and tell the truth."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "hotel-later",
+        "when": "Thursday 17:30",
+        "from": "Tsegaye Abera, Hawassa Lakeside Hotel PLC",
+        "channel": "call",
+        "subject": "We never asked for a Birr 2.1 million transfer",
+        "body": [
+          "Tsegaye calls after seeing the debit on mobile banking. The hotel never sent the request; a former clerk had copies of the signatories' IDs. The money reached the account in Adama about three hours ago."
+        ],
+        "ask": "What do you do first?",
+        "options": [
+          {
+            "text": "Ask the receiving bank through the fraud channel to hold the funds, ask compliance to seek a freeze, log the loss, report it, and brief the hotel.",
+            "score": 3,
+            "effects": {
+              "control": 8,
+              "compliance": 8,
+              "service": 6
+            },
+            "outcome": "Speed decides how much is recovered; the NBE may freeze suspect funds for up to 10 days. Losses of Birr 20,000 or more go in the loss database, gross and recovered amounts both, so management sees the control that failed."
+          },
+          {
+            "text": "Credit the hotel Birr 2.1 million from branch income tonight to keep a good customer, and close the matter quietly once the money is traced.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "control": -10,
+              "service": 4
+            },
+            "outcome": "Hiding a loss stops anyone tracing the money or fixing the control. Operational losses are recorded and suspicious transactions reported."
+          },
+          {
+            "text": "Ask for a formal letter signed by both signatories, and start the recovery with the receiving bank as soon as that letter reaches the branch.",
+            "score": 1,
+            "effects": {
+              "control": -6,
+              "service": -8
+            },
+            "outcome": "Paperwork matters, but every hour lets the money move further. Act on the fraud channel now and collect the letter in parallel."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-week hand-over note to the branch manager, Tigist Alemu.",
+      "guide": [
+        "The two decisions you are most sure of this week, and the rule behind each.",
+        "Any control that came under pressure (vault, passbook, crossing, signatures) and what you changed so it holds next time.",
+        "Open items with dates: the suspense item, the court order shortfall, the dormant account, any fines or warnings issued.",
+        "Incidents to report or follow up with compliance, and what the customers were told."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Bank A's Merkato branch is short of staff. Which arrangement keeps maker-checker intact?",

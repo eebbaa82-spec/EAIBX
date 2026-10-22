@@ -2021,6 +2021,968 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A month as senior credit risk officer at Bank A head office",
+    "role": "Senior credit risk and workout officer",
+    "setting": [
+      "You have joined the Credit Portfolio and Workout Department at Bank A's head office in Addis Ababa. Bank A has total capital of Birr 4,000 million and a loan book of about Birr 30,000 million. Your desk reviews project loans before they reach the head office committee, watches the book for early warning signals, classifies and provisions problem loans, negotiates workouts and prepares the portfolio reports that go to the board risk committee.",
+      "You report to the Director of Credit Portfolio and Workout. Branches, corporate relationship managers and the credit committees all depend on your numbers, and several of them would like those numbers to be kinder than they are.",
+      "This month the bank wants to keep growing now that the NBE credit growth cap has been removed, while holding NPLs and concentrations under control. Items arrive in the order below over four weeks. Some decisions come back later in the month. Do the numbers yourself and choose the action you would defend before the board risk committee and an NBE examiner."
+    ],
+    "authority": {
+      "title": "Your department's rules and limits",
+      "rows": [
+        {
+          "label": "Project loans",
+          "value": "Owner's own equity at least 30%, paid in first and verified at each disbursement; borrowed money is not equity; approved at head office"
+        },
+        {
+          "label": "Long-term tenor and grace",
+          "value": "Over 5 and up to 10 years excluding grace; grace on principal generally up to 24 months, interest paid or pre-funded; tenor within project life"
+        },
+        {
+          "label": "Return and debt tests",
+          "value": "Hurdle rate 15% (NPV above zero, IRR above hurdle); DSCR comfortably above 1 in every year"
+        },
+        {
+          "label": "Follow-up",
+          "value": "Watch list for Grades 3 to 8 with a written action plan, owner and deadline; overdraft debits blocked once a loan is a problem loan"
+        },
+        {
+          "label": "Classification (SBB/90/2024)",
+          "value": "Special mention 30 to 89 days, 3%; substandard 90 to 179, 20%; doubtful 180 to 359, 50%; loss 360 or more, 100%; pass 1%; non-accrual on every NPL"
+        },
+        {
+          "label": "Provision base",
+          "value": "Principal less cash and cash substitutes, and less physical collateral at the recovery rate (50% used here, illustrative)"
+        },
+        {
+          "label": "Workout",
+          "value": "Bank's choice, for viable borrowers; fresh money to Grades 6 and 7 needs concrete justification; compare options by expected present value at 15%"
+        },
+        {
+          "label": "Concentration (SBB/87/2024)",
+          "value": "One counterparty group at most 25% of capital (Birr 1,000 million); large exposure 10% or more, reported monthly; only cash or cash substitutes exempt"
+        },
+        {
+          "label": "Related parties (SBB/88/2024)",
+          "value": "15% of capital per party, 35% in total, arm's-length terms; board approval above Birr 15 million after an Audit Committee opinion; conflicted members take no part"
+        },
+        {
+          "label": "Internal limits",
+          "value": "No sector above 40% of loans; unsecured lending and excess drawings within 15% of the portfolio"
+        }
+      ],
+      "note": "These follow the course, NBE directives and a typical Ethiopian bank manual; the recovery rate is illustrative. Your own bank's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "quality",
+        "label": "Portfolio quality",
+        "help": "Rises with sound structures, early action on warning signals and honest classification; falls when risk is hidden or ignored."
+      },
+      {
+        "id": "recovery",
+        "label": "Recoveries and income",
+        "help": "Rises when workouts recover the most in today's money and good business is kept; falls with avoidable losses and lost customers."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of NBE directives, approval authority or the bank's policy."
+      },
+      {
+        "id": "trust",
+        "label": "Committee trust",
+        "help": "Rises when your papers are clear, accurate and decisive; falls when numbers are wrong, softened or late."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "bishoftu-project",
+        "when": "Week 1, Monday 09:00",
+        "from": "Head of corporate banking",
+        "channel": "email",
+        "subject": "Bishoftu Tomato Paste: IRR 17%, please clear it for committee as proposed",
+        "body": [
+          "Bishoftu Tomato Paste PLC plans a Birr 80 million processing plant. The market, technical and environmental reviews are positive and the sponsor has signed supply agreements with farmer cooperatives. The head of corporate banking writes: \"IRR is 17% against our 15% hurdle. The sponsor is an important client. Clear it as proposed so it makes this month's committee.\"",
+          "The sponsor proposes 30% equity and a loan at 15% with 2 years' grace on principal, interest paid, then 5 equal annual principal payments."
+        ],
+        "exhibit": {
+          "title": "Bishoftu Tomato Paste: sponsor's proposal (Birr millions)",
+          "rows": [
+            {
+              "label": "Project cost",
+              "value": "80.0"
+            },
+            {
+              "label": "Sponsor equity (30%)",
+              "value": "24.0"
+            },
+            {
+              "label": "Loan at 15%",
+              "value": "56.0"
+            },
+            {
+              "label": "Repayment",
+              "value": "2 years' grace, then 5 equal annual principal payments"
+            },
+            {
+              "label": "Operating cash flow, year 3",
+              "value": "18.0"
+            },
+            {
+              "label": "IRR / hurdle rate",
+              "value": "17% / 15%"
+            }
+          ]
+        },
+        "ask": "What do you put in your review?",
+        "options": [
+          {
+            "text": "Year 3 DSCR is 18 / 19.6 = 0.92, so restructure: 40% equity and a Birr 48 million loan with 8 annual payments after grace, giving about 1.36.",
+            "score": 3,
+            "effects": {
+              "quality": 12,
+              "trust": 8,
+              "recovery": 4,
+              "compliance": 3
+            },
+            "outcome": "Correct: 56 / 5 = 11.2 principal plus 56 x 15% = 8.4 interest. With Birr 48 million, year 3 service is 6.0 + 7.2 = 13.2 and 18 / 13.2 = 1.36, within the 10-year and 24-month grace limits. A project worth doing can still carry an unserviceable loan; fix the structure, not the conclusion."
+          },
+          {
+            "text": "Clear it as proposed: IRR is 17% against a 15% hurdle, the market and technical reviews are positive, and supply agreements with cooperatives are already signed.",
+            "score": 0,
+            "effects": {
+              "quality": -15,
+              "trust": -6,
+              "recovery": 3
+            },
+            "outcome": "IRR tests whether the project creates value; DSCR tests whether this debt can be paid. At 0.92 in year 3 the project cannot meet its installments even in the base case."
+          },
+          {
+            "text": "Recommend a decline: a year 3 DSCR of 0.92 means the plant cannot carry its debt, so the project should not go ahead in any form.",
+            "score": 1,
+            "effects": {
+              "recovery": -6,
+              "trust": -3,
+              "quality": 2
+            },
+            "outcome": "The project clears the hurdle, so it creates value. The problem is the loan structure, which can be redesigned with more equity and a longer repayment period."
+          },
+          {
+            "text": "Clear it as proposed and let any year 3 shortfall be capitalized into the loan, since cash flow grows after year 3 as the plant ramps up.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -5,
+              "trust": -4
+            },
+            "outcome": "Capitalizing a known shortfall only hides it and makes the loan larger as the project struggles. A structure that needs capitalized arrears from day one is not bankable."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "ziway-tranche",
+        "when": "Week 1, Wednesday 11:00",
+        "from": "Owner, Ziway Agro Processing PLC",
+        "channel": "call",
+        "subject": "Release the third tranche today, the contractor is waiting",
+        "body": [
+          "Ziway Agro Processing has a Birr 30 million project loan disbursed in stages. The contractor has asked for the third tranche of Birr 6 million. Yesterday's site report shows building work at 45% against 60% planned, and the owner's last Birr 2 million of equity has not been deposited.",
+          "The owner says: \"The equity will come next month: Bank B has agreed to lend it to me. Please pay the tranche into my account today so the contractor does not leave the site.\""
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Hold the tranche until the owner's own Birr 2 million is in and progress is certified; a Bank B loan is not equity. Then pay the contractor directly.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 8,
+              "trust": 4,
+              "recovery": -2
+            },
+            "outcome": "Correct. Staged disbursement keeps the owner's equity in first and matches the bank's money to physical progress. Borrowed money cannot count as equity, and direct payment keeps control of end use."
+          },
+          {
+            "text": "Release the Birr 6 million to the owner's account today so the contractor stays on site; a delay now would push back start-up and the first repayments.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -10,
+              "recovery": 3
+            },
+            "outcome": "This releases bank money ahead of the owner's equity and ahead of progress, and paying the owner rather than the contractor weakens end-use control. It is the riskiest moment of a project loan.",
+            "next": "ziway-later"
+          },
+          {
+            "text": "Accept the Bank B loan as the owner's equity, since the money will be in the project either way, and release the tranche once it arrives next month.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -8
+            },
+            "outcome": "Equity must be the owner's own funds. Equity borrowed from another bank is debt, so the project would be financed almost entirely by lenders, with the owner risking nothing."
+          },
+          {
+            "text": "Release half the tranche, Birr 3 million, now to keep the contractor on site, and the other half when the equity is deposited.",
+            "score": 1,
+            "effects": {
+              "quality": -5,
+              "compliance": -4,
+              "recovery": 2
+            },
+            "outcome": "A smaller release is still a release ahead of equity and ahead of certified progress. The order matters: equity first, then bank money against progress."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "watch-list",
+        "when": "Week 1, Thursday 14:00",
+        "from": "Loan follow-up system",
+        "channel": "system",
+        "subject": "Monthly extract: six accounts for your watch list review",
+        "body": [
+          "The director asks you to decide which of six accounts go on the watch list this month and which one needs action first."
+        ],
+        "exhibit": {
+          "title": "Monthly extract",
+          "rows": [
+            {
+              "label": "A: overdraft Birr 9 m",
+              "value": "100% used, no credit balance for 4 months"
+            },
+            {
+              "label": "B: term loan Birr 15 m",
+              "value": "Paid on due date, no other signal"
+            },
+            {
+              "label": "C: merchandise loan Birr 5 m",
+              "value": "Pledged stock 25% below the pledged list at last visit"
+            },
+            {
+              "label": "D: term loan Birr 18 m",
+              "value": "Paid on time; the owner's sister company is being sued by a supplier for Birr 6 m"
+            },
+            {
+              "label": "E: overdraft Birr 4 m",
+              "value": "Turnover 4.5 times, credit balance last month"
+            },
+            {
+              "label": "F: pre-shipment advance Birr 8 m",
+              "value": "Sales contract still not converted to an L/C after 75 days; the facility allows 60"
+            }
+          ]
+        },
+        "ask": "What goes on the list, and what comes first?",
+        "options": [
+          {
+            "text": "A, C, D and F go on the list with an owner, action and deadline; C comes first, since pledged stock may have been sold.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "trust": 6,
+              "recovery": 3
+            },
+            "outcome": "Correct. A is a hard-core overdraft, D carries group contagion, F is beyond the period the facility allows, and C is possible diversion of pledged goods, the most urgent. B and E show no warning signal."
+          },
+          {
+            "text": "A, C, D and F go on the list with an owner and a deadline. A comes first: it is the largest overdraft and has had no credit balance for 4 months.",
+            "score": 2,
+            "effects": {
+              "quality": 4,
+              "trust": 2
+            },
+            "outcome": "The list is right, but urgency follows the risk, not the size. Missing stock under a pledge can disappear within days, so C needs a visit before A."
+          },
+          {
+            "text": "A, C and F only: D is paid on time, and the lawsuit is against its sister company, which banks elsewhere.",
+            "score": 1,
+            "effects": {
+              "quality": -5,
+              "trust": -2
+            },
+            "outcome": "Common ownership means cash can be moved from D to defend the sued company. The watch list exists to catch risk before default, not after it."
+          },
+          {
+            "text": "Put all six on the list this month, so that every account above Birr 4 million gets a monthly review.",
+            "score": 1,
+            "effects": {
+              "trust": -5,
+              "quality": -2
+            },
+            "outcome": "A list with every account on it is noise. Follow-up time goes to accounts with real signals, and B and E have none."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "fruit-utilization",
+        "when": "Week 2, Monday 10:00",
+        "from": "Relationship manager, Hawassa branch",
+        "channel": "email",
+        "subject": "Hawassa Fruit Processing: all fine, no installment late",
+        "body": [
+          "Hawassa Fruit Processing PLC's juice plant was financed on 65% plant utilization. Its monthly reports show 48% for the last four months because mango deliveries from contracted farmers are late. The loan is in its grace period with interest pre-funded in a blocked account, and the first principal payment falls due in nine months.",
+          "The RM writes: \"Nothing is late. Please don't put them on the watch list; it will upset a good customer.\""
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Flag it as a warning signal, ask for a revised supply plan and cash flow, and retest the year 3 DSCR on actual utilization.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "trust": 5,
+              "recovery": 3,
+              "compliance": 2
+            },
+            "outcome": "Correct. Pre-funded interest hides the problem until principal starts. Acting nine months early, while there is time to fix supply or the structure, is exactly what follow-up is for."
+          },
+          {
+            "text": "Agree with the RM: no installment is late, interest is pre-funded, and principal is nine months away, so there is time to wait and see the next season.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "trust": -4
+            },
+            "outcome": "A good payment record is no guarantee for the future, and here the record is good only because interest was pre-funded. The cheapest moment to fix a loan is the first month a warning sign appears.",
+            "next": "fruit-later"
+          },
+          {
+            "text": "Call the loan now, before the first principal falls due and the pre-funded interest runs out.",
+            "score": 1,
+            "effects": {
+              "recovery": -8,
+              "quality": -3
+            },
+            "outcome": "Calling a performing project loan for a utilization gap is premature and would destroy the value the bank is trying to protect. Diagnose and plan first."
+          },
+          {
+            "text": "Downgrade the loan to loss now so the full provision is in place before the first principal payment falls due.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "recovery": -6,
+              "trust": -3
+            },
+            "outcome": "Classification follows days past due and the directive's criteria, not fear. A current loan in grace is not loss; overstating risk misstates the books as surely as understating it."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "provision-three",
+        "when": "Week 2, Tuesday 15:00",
+        "from": "Finance department",
+        "channel": "memo",
+        "subject": "Month-end provisions for three problem accounts",
+        "body": [
+          "Finance needs your provision figure for three accounts before the books close. The branch file recorded account A as special mention \"because the building covers it\" and account B as substandard. Use the 50% recovery rate on physical collateral."
+        ],
+        "exhibit": {
+          "title": "Three accounts at month end (Birr millions)",
+          "rows": [
+            {
+              "label": "A: principal 10.0, 150 days past due",
+              "value": "Building valued at 8.0"
+            },
+            {
+              "label": "B: principal 6.0, 250 days past due",
+              "value": "Cash deposit pledged, 2.0"
+            },
+            {
+              "label": "C: principal 3.0, 400 days past due",
+              "value": "No collateral"
+            },
+            {
+              "label": "Recovery rate on physical collateral",
+              "value": "50% (illustrative)"
+            }
+          ]
+        },
+        "ask": "What total minimum provision do you report?",
+        "options": [
+          {
+            "text": "Birr 6.2 million: A substandard (10 - 4) x 20% = 1.2; B doubtful (6 - 2) x 50% = 2.0; C loss 3.0. All three go on non-accrual.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "trust": 8,
+              "quality": 4,
+              "recovery": -3
+            },
+            "outcome": "Correct. Days past due set the class: 150 is substandard, 250 doubtful, 400 loss. The building counts at 8.0 x 50% = 4.0, the cash deposit in full, and interest on every NPL goes to a memorandum account."
+          },
+          {
+            "text": "Birr 8.0 million: apply each rate to the full principal with no deductions.",
+            "score": 2,
+            "effects": {
+              "compliance": 4,
+              "recovery": -6,
+              "trust": 2
+            },
+            "outcome": "The classes are right and nothing is understated, but the directive allows cash and physical collateral at the recovery rate to be deducted. Over-providing by Birr 1.8 million cuts reported profit for no reason."
+          },
+          {
+            "text": "Birr 5.4 million: A (10 - 8) x 20% = 0.4 with the building at its full value, B 2.0, C 3.0.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "trust": -5
+            },
+            "outcome": "Physical collateral is deducted at its net recoverable value using the recovery rate, not at the valuation. (10 - 8) x 20% = 0.4 understates A's provision by Birr 0.8 million."
+          },
+          {
+            "text": "Birr 4.1 million, using the branch's classes: A special mention 0.3 because the building covers it, B substandard 0.8, C loss 3.0.",
+            "score": 0,
+            "effects": {
+              "compliance": -18,
+              "trust": -6,
+              "quality": -4
+            },
+            "outcome": "Collateral is ignored when classifying. A at 150 days is substandard and B at 250 days is doubtful, whatever the security. Accepting the branch's classes understates the provision by Birr 2.1 million."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "kombolcha-workout",
+        "when": "Week 2, Thursday 10:00",
+        "from": "Owner, Kombolcha Freight PLC",
+        "channel": "meeting",
+        "subject": "A rescue offer for a loan 210 days past due",
+        "body": [
+          "Kombolcha Freight owes Birr 24.0 million principal, 3.1 million interest and 0.2 million costs, 210 days past due after freight rates fell. The owner now has a four-year haulage contract with a cement plant and offers Birr 3.0 million now and Birr 6.5 million a year for 4 years, with the contract proceeds paid into his account at Bank A.",
+          "You have estimated both options at the bank's 15% discount rate. Your team puts the chance that the rescue succeeds at 55%."
+        ],
+        "exhibit": {
+          "title": "Kombolcha Freight: options (Birr millions, 15% discount rate)",
+          "rows": [
+            {
+              "label": "A: foreclose now: (10 trucks + 8 building) x 70% less 0.6 costs",
+              "value": "12.0 received in 1 year"
+            },
+            {
+              "label": "B succeeds: 3.0 now + 6.5 a year for 4 years",
+              "value": "4-year annuity factor 2.855"
+            },
+            {
+              "label": "B fails: 3.0 now, then foreclose in year 2",
+              "value": "Present value 10.2"
+            },
+            {
+              "label": "Chance B succeeds",
+              "value": "55%"
+            }
+          ]
+        },
+        "ask": "What do you recommend to the committee?",
+        "options": [
+          {
+            "text": "Restructure: B is worth about 16.5 against 10.4 for foreclosure. Take the 3.0 down payment before signing, the contract proceeds, a guarantee and a legal trigger.",
+            "score": 3,
+            "effects": {
+              "recovery": 12,
+              "quality": 6,
+              "trust": 6,
+              "compliance": 2
+            },
+            "outcome": "Correct: A is 12.0 / 1.15 = 10.4. B succeeds at 3.0 + 6.5 x 2.855 = 21.6, so B is worth 55% x 21.6 + 45% x 10.2 = 16.5, about Birr 6 million more. The conditions protect the choice, and the loan stays non-performing until it meets the NBE conditions for upgrading."
+          },
+          {
+            "text": "Foreclose now: the trucks and the building give a certain 10.4 in today's money, while the rescue depends on a freight market that has already failed the owner once.",
+            "score": 1,
+            "effects": {
+              "recovery": -8,
+              "trust": -2
+            },
+            "outcome": "Even the failure case recovers about as much as foreclosing now, so the rescue has little downside and a large upside. Compare options by expected present value, not by certainty."
+          },
+          {
+            "text": "Restructure and reclassify the loan as pass on signing, reversing the Birr 3.1 million of suspended interest to income this quarter.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "trust": -6,
+              "recovery": 4
+            },
+            "outcome": "Restructuring does not upgrade a loan by itself. It stays non-performing, with interest held in memorandum, until it meets the NBE conditions for upgrading."
+          },
+          {
+            "text": "Restructure: 3.0 + 4 x 6.5 = 29.0 repays the full 27.3 owed, and the cement contract makes the plan safe enough without extra conditions.",
+            "score": 1,
+            "effects": {
+              "recovery": 2,
+              "quality": -5,
+              "trust": -3
+            },
+            "outcome": "The decision is right but the reasoning is not. Headline amounts ignore the time value of money and the 45% chance of failure, and a rescue without conditions leaves the bank with no leverage when an installment is missed."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "wolkite-fresh-money",
+        "when": "Week 3, Monday 09:30",
+        "from": "Director of Credit Portfolio and Workout",
+        "channel": "memo",
+        "subject": "Wolkite Textile wants Birr 4 million more to restart a line",
+        "body": [
+          "Wolkite Textile PLC, Grade 6, owes Birr 15 million and is in workout. The owner asks for a new Birr 4 million working capital loan to restart one spinning line, saying that without it the existing loan cannot be repaid. He offers no new collateral and no cash flow forecast, and has called the director twice this week."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Decline as presented: consider fresh money only with a credible cash flow forecast for the line, an owner contribution and more security.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 5,
+              "trust": 5,
+              "recovery": 2
+            },
+            "outcome": "Correct. Fresh money to a Grade 6 borrower is discouraged and needs concrete justification. Without a forecast it risks turning a Birr 15 million problem into a Birr 19 million one."
+          },
+          {
+            "text": "Approve: without the Birr 4 million the line stays idle and the existing Birr 15 million cannot be repaid, so the new money protects the old.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "recovery": -6,
+              "compliance": -5
+            },
+            "outcome": "\"Lend more or lose what you lent\" is the classic workout trap. Unless the restarted line is shown to generate cash, the new money only adds to the loss."
+          },
+          {
+            "text": "Approve half, Birr 2 million, as a compromise, secured on the restarted spinning line's stock.",
+            "score": 1,
+            "effects": {
+              "quality": -6,
+              "recovery": -2
+            },
+            "outcome": "A smaller amount with the same missing evidence is still unjustified. The question is whether the line can repay, not how much feels reasonable."
+          },
+          {
+            "text": "Transfer the case straight to legal for foreclosure: a Grade 6 borrower asking for more money with no forecast has shown it is not viable.",
+            "score": 1,
+            "effects": {
+              "recovery": -6,
+              "trust": -2
+            },
+            "outcome": "The bank's principle is to rescue viable companies rather than liquidate them. You have not yet tested whether Wolkite is viable, so legal action is premature."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "getahun-group",
+        "when": "Week 3, Wednesday 14:00",
+        "from": "Corporate relationship manager",
+        "channel": "email",
+        "subject": "Getahun Trading: Birr 120 million more, secured by a Birr 300 million building",
+        "body": [
+          "Getahun Trading PLC asks for a further Birr 120 million to import raw materials and offers a commercial building valued at Birr 300 million. The RM writes: \"On its own Getahun Trading owes 520, which is only 13% of capital. With this building it is very safe.\"",
+          "Your group chart shows that Ato Getahun also owns Getahun Cement Distribution PLC and 70% of Mojo Haulage PLC."
+        ],
+        "exhibit": {
+          "title": "Getahun group at Bank A (Birr millions)",
+          "rows": [
+            {
+              "label": "Bank A total capital",
+              "value": "4,000"
+            },
+            {
+              "label": "Getahun Trading PLC",
+              "value": "520"
+            },
+            {
+              "label": "Getahun Cement Distribution PLC",
+              "value": "300"
+            },
+            {
+              "label": "Mojo Haulage PLC (70% owned)",
+              "value": "140"
+            },
+            {
+              "label": "New request",
+              "value": "120, secured by a building worth 300"
+            }
+          ]
+        },
+        "ask": "What do you advise the committee?",
+        "options": [
+          {
+            "text": "The group is at 960, 24%; adding 120 makes 1,080, 27%. Offer up to Birr 40 million, with the rest only against cash cover or through a syndication.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "quality": 5,
+              "recovery": 4,
+              "trust": 5
+            },
+            "outcome": "Correct: 520 + 300 + 140 = 960, and 1,000 less 960 leaves Birr 40 million of room. A building does not exempt an exposure; only cash or cash substitutes do. The group is also a large exposure, reported monthly."
+          },
+          {
+            "text": "Approve Birr 120 million to Getahun Trading: on its own it would owe 640, 16% of capital, and Mojo Haulage is only 70% owned, so it should not be counted.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "quality": -8,
+              "recovery": 4
+            },
+            "outcome": "Companies under common control are one counterparty group. Testing Getahun Trading alone hides a 27% group exposure, above the 25% limit.",
+            "next": "getahun-later"
+          },
+          {
+            "text": "Approve Birr 120 million: the Birr 300 million building covers the request 2.5 times, so the bank is well protected.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "quality": -6,
+              "trust": -4
+            },
+            "outcome": "Collateral does not change the limit. The 25% cap measures how much the bank depends on one group, however well secured."
+          },
+          {
+            "text": "Decline the whole request: the group is already a large exposure, so the bank should not add to it.",
+            "score": 1,
+            "effects": {
+              "recovery": -6,
+              "trust": -2
+            },
+            "outcome": "Large exposures are allowed up to 25% and reported monthly. There is Birr 40 million of room, and cash cover or a syndication could carry the rest."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "stress-test",
+        "when": "Week 3, Friday 11:00",
+        "from": "Chair, board risk committee",
+        "channel": "meeting",
+        "subject": "What if construction and transport slip at once?",
+        "body": [
+          "The board risk committee asks for a quick stress test. Transport is 4% of loans with a 15% NPL ratio, and building and construction is about 8% with a 9% NPL ratio. No sector is above the 40% internal limit. The chair asks what happens if part of both books goes straight to doubtful."
+        ],
+        "exhibit": {
+          "title": "Stress assumptions (Birr millions)",
+          "rows": [
+            {
+              "label": "Construction loans / share migrating",
+              "value": "2,500 / 30%"
+            },
+            {
+              "label": "Transport loans / share migrating",
+              "value": "1,200 / 25%"
+            },
+            {
+              "label": "Net provisioning base after collateral",
+              "value": "60% of migrating loans"
+            },
+            {
+              "label": "Class assumed",
+              "value": "Doubtful, 50%"
+            },
+            {
+              "label": "Profit before provisions / total capital",
+              "value": "900 / 4,000"
+            }
+          ]
+        },
+        "ask": "What do you report and recommend?",
+        "options": [
+          {
+            "text": "Birr 315 million, about 35% of profit and 7.9% of capital: absorbable, but cut the transport limit, tighten construction terms and step up follow-up.",
+            "score": 3,
+            "effects": {
+              "trust": 10,
+              "quality": 8,
+              "compliance": 3
+            },
+            "outcome": "Correct: 750 + 300 = 1,050 migrating, 1,050 x 60% = 630 net, and 630 x 50% = 315. A stress test is only useful when it turns into limits, terms and follow-up."
+          },
+          {
+            "text": "Birr 126 million: 1,050 migrating x 60% net base x 20%, the substandard rate, since loans usually pass through substandard before doubtful.",
+            "score": 1,
+            "effects": {
+              "trust": -5,
+              "quality": -3
+            },
+            "outcome": "The committee asked about migration to doubtful, at 50%. Using the substandard rate answers a milder question and understates the shock by Birr 189 million."
+          },
+          {
+            "text": "Birr 525 million: 1,050 x 50%, with no collateral deduction, because property values would fall in the same shock.",
+            "score": 1,
+            "effects": {
+              "trust": -4,
+              "recovery": -2
+            },
+            "outcome": "The provision base is net of eligible collateral, 60% of the migrating loans here. Skipping the deduction overstates the shock by Birr 210 million and could push the board into needless cuts."
+          },
+          {
+            "text": "Report that no action is needed: no sector is above the 40% internal limit, and transport and construction together are only about 12% of the Birr 30,000 million book.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "trust": -8
+            },
+            "outcome": "Size is only half of the picture. Small sectors with high NPL ratios are often where the next losses come from, and the committee asked a what-if question that deserves a number."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "shareholder-rate",
+        "when": "Week 4, Tuesday 09:00",
+        "from": "Office of the CEO",
+        "channel": "email",
+        "subject": "A loyal shareholder's Birr 40 million request",
+        "body": [
+          "Ato Bereket Lemma, who holds 3% of Bank A's shares, applies for a Birr 40 million term loan for his flour mill at 2 points below the standard rate, \"in recognition of 15 years of loyalty\". The CEO's office asks you to prepare the paper for the management credit committee this week, because the board does not meet until next month.",
+          "The bank's related party exposure stands at 31% of capital."
+        ],
+        "ask": "How do you prepare the paper?",
+        "options": [
+          {
+            "text": "Assess it at arm's length on the standard rate, add it to the related party register, and route it to the board after an Audit Committee opinion.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "trust": 6,
+              "quality": 3,
+              "recovery": 2
+            },
+            "outcome": "Correct. A 2% or more shareholder is a related party. Related parties may not get better terms, and above Birr 15 million the board approves after an Audit Committee opinion. Birr 40 million is 1% of capital, taking the total to 32%, within 35%."
+          },
+          {
+            "text": "Prepare it at 2 points below standard as a loyalty reward for management committee approval this week; at Birr 40 million it is only 1% of capital.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "recovery": -4,
+              "trust": -4
+            },
+            "outcome": "Two breaches at once: better terms for a related party, and approval below the board for an exposure above Birr 15 million."
+          },
+          {
+            "text": "Use the standard rate, take it to the management committee this week as the CEO's office asks, and report it to the board next month.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "trust": -3
+            },
+            "outcome": "Pricing is now right, but the authority is not. Related party exposure above Birr 15 million needs board approval after an Audit Committee opinion before it is granted, not after."
+          },
+          {
+            "text": "Recommend a decline: a loan to a 3% shareholder creates a conflict of interest, and related party exposure is already at 31% of capital.",
+            "score": 1,
+            "effects": {
+              "recovery": -5,
+              "trust": -2
+            },
+            "outcome": "The directive limits and controls related party lending; it does not ban it. A sound request on arm's-length terms can be approved through the right route."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "bole-committee",
+        "when": "Week 4, Thursday 10:00",
+        "from": "Senior management credit committee",
+        "channel": "meeting",
+        "subject": "Bole group: one paper, five decisions",
+        "body": [
+          "Bole Edible Oil PLC's term loan is 95 days past due, its overdraft has been fully drawn for 7 months, and crude supply is erratic. Bole asks to reschedule over 7 years and asks for a fresh Birr 5 million overdraft for its sister company Selam Packaging PLC, which owes Birr 22 million and is current. The founder holds 2.5% of Bank A's shares.",
+          "Bole's exposure is Birr 33 million against net collateral recovery of Birr 20 million. At the start of the meeting a committee member mentions that his company supplies bottles to Selam."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Bole substandard, provision 2.6; reschedule only with a down payment, conversion and the founder's guarantee; decline Selam; the bottle supplier steps out.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 10,
+              "trust": 8,
+              "recovery": 3
+            },
+            "outcome": "Correct: 20% x (33 - 20) = 2.6. The group of Birr 55 million is far within the limits, so the issues are credit quality, related party governance and the conflict. Linked lending takes the worst grade in the group, so Selam inherits Bole's."
+          },
+          {
+            "text": "Approve Selam's Birr 5 million because it is current and the group is far within limits, and reschedule Bole over 7 years as requested, so the group keeps operating.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "recovery": -5,
+              "compliance": -5
+            },
+            "outcome": "New money to a weakening group linked to a non-performing borrower is a credit decline, not a limit question. A rescheduling without a down payment and conditions gives away the bank's leverage."
+          },
+          {
+            "text": "Route Selam's request to the next higher committee as an exception, and let the bottle supplier vote since he declared the link at the start.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "trust": -5
+            },
+            "outcome": "This is not a routing question, and declaring is not enough: a conflicted member steps out of the case and does not vote."
+          },
+          {
+            "text": "Bole substandard at 2.6, decline Selam, but let the bottle supplier stay and vote on Bole, since his link is only to Selam.",
+            "score": 1,
+            "effects": {
+              "compliance": -6,
+              "quality": 4,
+              "trust": -2
+            },
+            "outcome": "The credit view is right, but Bole and Selam are one group decided in one paper. A member with a business interest in the group steps out of the whole case; the appearance of a conflict harms the committee too."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "ziway-later",
+        "when": "Three months later",
+        "from": "Project follow-up officer",
+        "channel": "memo",
+        "subject": "Ziway Agro Processing: tranche spent, site still at 50%",
+        "body": [
+          "The Birr 6 million paid into the owner's account has been spent, but the site is only at 50%. The contractor says he received Birr 3.5 million. The owner's last Birr 2 million of equity is still missing, and he now asks for the fourth tranche."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Stop disbursement, trace the missing Birr 2.5 million, require the equity and an overrun undertaking, and pay only the contractor against certified progress.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 8,
+              "trust": 3
+            },
+            "outcome": "This restores the controls the project should have had: equity first, money against progress, paid direct. The lesson stands: the implementation period is when the bank is most exposed."
+          },
+          {
+            "text": "Release the fourth tranche direct to the contractor so the plant can be finished and start earning, and chase the missing equity after start-up.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "recovery": -5
+            },
+            "outcome": "More money without equity or end-use control only grows an exposure that is already partly diverted."
+          },
+          {
+            "text": "Call the loan and start foreclosure on the site, since Birr 2.5 million of the last tranche cannot be accounted for and the owner's equity is still missing after three months.",
+            "score": 1,
+            "effects": {
+              "recovery": -8,
+              "trust": -2
+            },
+            "outcome": "A half-built plant recovers very little at auction. Restore control and test viability before choosing legal recovery."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "fruit-later",
+        "when": "Nine months later",
+        "from": "Loan follow-up system",
+        "channel": "system",
+        "subject": "Hawassa Fruit Processing: first principal installment missed",
+        "body": [
+          "The pre-funded interest has run out and the first principal installment of the juice plant loan is 20 days late. Utilization is still about 50%, and the year 3 DSCR on actual figures is 0.85."
+        ],
+        "ask": "What do you recommend now?",
+        "options": [
+          {
+            "text": "Put it on the watch list, ask for a revised supply plan and cash flow, and prepare a restructuring proposal for the senior committee.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "recovery": 5,
+              "trust": 3
+            },
+            "outcome": "Late, but still in time: the loan is not yet non-performing. Restructuring goes to the senior committee, and the conditions must fix the supply gap that caused the shortfall."
+          },
+          {
+            "text": "Wait to see whether the next installment is paid: 20 days late is still pass, and the owner says mango deliveries will improve next season.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "recovery": -5
+            },
+            "outcome": "Waiting a second time lets a 20-day delay become a non-performing loan. The warning was visible nine months ago."
+          },
+          {
+            "text": "Lend a further Birr 5 million of working capital to lift utilization above 60% and restore the DSCR.",
+            "score": 1,
+            "effects": {
+              "quality": -6,
+              "compliance": -2
+            },
+            "outcome": "The constraint is fruit supply, not cash. Fresh money without evidence that it fixes the cause only adds exposure."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "getahun-later",
+        "when": "The following month",
+        "from": "NBE examination team",
+        "channel": "meeting",
+        "subject": "Getahun group at 27% of capital",
+        "body": [
+          "The NBE examiners have combined the three Getahun companies and find the group at Birr 1,080 million, 27% of capital, above the 25% limit. They ask what the bank will do and why the breach was not reported."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Acknowledge and report the breach, stop new lending to the group, and present a dated plan to bring it within 25%: cash cover, syndication or repayment.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "trust": 5
+            },
+            "outcome": "Breaches are reported immediately and corrected with a plan. Owning it now limits the damage; the root cause was testing one company instead of the group."
+          },
+          {
+            "text": "Argue that the three companies are separate legal entities with their own accounts and boards, and each is well within the 25% limit on its own.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "trust": -5
+            },
+            "outcome": "The directive combines companies under common control as one counterparty group. Arguing otherwise in front of the examiners deepens the finding."
+          },
+          {
+            "text": "Ask Getahun Trading to repay Birr 80 million before the examiners' report is final, which brings the group back to exactly 25%.",
+            "score": 1,
+            "effects": {
+              "compliance": -3,
+              "recovery": -3
+            },
+            "outcome": "Reducing the exposure is part of the cure, but it does not replace reporting the breach and a documented plan."
+          }
+        ],
+        "module": "s4"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-month hand-over note to the Director of Credit Portfolio and Workout.",
+      "guide": [
+        "The three numbers from this month the board should remember, and what they mean.",
+        "Accounts on the watch list and in workout, each with its next action, owner and date.",
+        "Limit positions: the largest group, related parties in total, and any sector you would cap.",
+        "The decision you would revisit, and what new evidence would change it.",
+        "One change to policy or procedure you would propose to the risk committee."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "A project has IRR of 18% at a 15% hurdle, but its year 3 DSCR is 0.95. What do you recommend?",

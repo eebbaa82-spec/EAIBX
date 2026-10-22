@@ -20,6 +20,20 @@ type SimState = { picks: Record<string, number>; memo: string; finished?: string
 type Store = Record<string, SimState>;
 const blank = (): SimState => ({ picks: {}, memo: "" });
 
+// Options are written best-first or in any order; show them in a fixed order
+// shuffled by the item's id, so the best answer's place gives nothing away.
+function shuffled(task: SimTask): number[] {
+  let h = 2166136261;
+  for (const ch of task.id) h = Math.imul(h ^ ch.charCodeAt(0), 16777619) >>> 0;
+  const idx = task.options.map((_, i) => i);
+  for (let i = idx.length - 1; i > 0; i--) {
+    h = Math.imul(h ^ (h >>> 15), 2246822519) >>> 0;
+    const j = h % (i + 1);
+    [idx[i], idx[j]] = [idx[j], idx[i]];
+  }
+  return idx;
+}
+
 let visit: Store | null = null;
 
 function read(): Store {
@@ -258,7 +272,8 @@ export function SimulationDesk({ course }: { course: ProCourse }) {
               {shown.exhibit && <Exhibit e={shown.exhibit} />}
               <p className="mt-5 font-semibold text-ink">{shown.ask}</p>
               <ul className="mt-3 space-y-2">
-                {shown.options.map((o, i) => {
+                {shuffled(shown).map((i) => {
+                  const o = shown.options[i];
                   const isPicked = picked === i;
                   const best = picked !== undefined && o.score === 3;
                   return (

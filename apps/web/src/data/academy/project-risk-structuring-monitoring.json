@@ -1918,6 +1918,987 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A quarter as senior project analyst at Bank A, Project Finance Department",
+    "role": "Senior project analyst",
+    "setting": [
+      "You are a senior analyst in the Project Finance Department at Bank A's head office in Addis Ababa. The department appraises new project loans, structures the large ones, and monitors about 40 projects under construction or in their first years of operation. Bank A's total capital is Birr 4,000 million, and the board's appetite for any single project is 15% of capital.",
+      "This quarter you carry three kinds of work: a new Birr 64 million biscuit plant, Akaki Biscuit PLC, that needs stress testing and a support package; a large cement syndication that Bank A has been asked to lead; and a watch list of projects where construction or early operations are going off plan.",
+      "You report to the head of department and present to the head office credit committee. Expect pressure from relationship managers who want deals closed and from committee members who want short answers. Do the numbers on paper or a spreadsheet, and choose the action you would defend in front of the committee and an NBE examiner."
+    ],
+    "authority": {
+      "title": "Your department's rules and targets",
+      "rows": [
+        {
+          "label": "Risk analysis",
+          "value": "Sensitivity and switching values on price, main input cost, investment cost and delay; a plausible downside scenario tested on DSCR year by year"
+        },
+        {
+          "label": "Cash support",
+          "value": "Downside DSCR below 1.0 calls for a sponsor-funded DSRA (about 6 months of debt service, funded before first repayment) and sponsor undertakings"
+        },
+        {
+          "label": "Large exposures (SBB/87/2024)",
+          "value": "Up to 25% of total capital per counterparty group (Birr 1,000 million); board appetite 15% per project (Birr 600 million)"
+        },
+        {
+          "label": "Syndicated loans",
+          "value": "Participation agreement among all lenders; amendments need all lenders' consent; approval by the highest management credit committee"
+        },
+        {
+          "label": "Environment",
+          "value": "EIA approval and costed mitigation before disbursement on large projects (Proclamations No. 299/2002 and 300/2002)"
+        },
+        {
+          "label": "Construction follow-up",
+          "value": "Tranches only against independent engineer's verified progress; visits at each disbursement phase, then yearly, and at any warning sign"
+        },
+        {
+          "label": "Restructuring",
+          "value": "Decide on future cash flows only; sponsors fund first; rescheduling approved by the committee holding that authority"
+        },
+        {
+          "label": "Classification (SBB/90/2024)",
+          "value": "By days past due: pass 1%, special mention 3%, substandard 20%, doubtful 50%, loss 100% minimum provision"
+        }
+      ],
+      "note": "These follow the course, the NBE directives cited in it and a typical Ethiopian bank manual. Your own bank's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "quality",
+        "label": "Portfolio quality",
+        "help": "Rises when risks are measured, mitigated and monitored early; falls when weak structures or early releases leave the bank carrying risk it did not price."
+      },
+      {
+        "id": "committee",
+        "label": "Committee confidence",
+        "help": "Rises with honest numbers and clear recommendations; falls when the committee finds what you missed or softened."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of NBE directives, environmental law or the bank's policy."
+      },
+      {
+        "id": "relationship",
+        "label": "Sponsor and lender relationships",
+        "help": "Rises when sponsors and partner banks get workable, timely structures; falls with needless refusals or one-sided terms."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "akaki-switching",
+        "when": "Week 1, Monday 09:00",
+        "from": "Relationship manager, corporate banking",
+        "channel": "email",
+        "subject": "Akaki Biscuit: spend the consultant's day on construction quotes",
+        "body": [
+          "Akaki Biscuit PLC's model is ready. You have one day of a market consultant's time before the appraisal closes. The RM writes: 'Construction is the biggest cash outlay. Use the consultant to re-check the building and machinery quotations.'",
+          "Your sensitivity table is below. Biscuit prices in the market have moved a lot over the last three years, and the main input is wheat flour."
+        ],
+        "exhibit": {
+          "title": "Akaki Biscuit: sensitivity results (NPV at 16%, Birr millions)",
+          "rows": [
+            {
+              "label": "Base case",
+              "value": "+24.0"
+            },
+            {
+              "label": "Selling price minus 10%",
+              "value": "minus 21.6"
+            },
+            {
+              "label": "Variable costs (mainly flour) plus 10%",
+              "value": "minus 6.0"
+            },
+            {
+              "label": "Investment cost plus 15%",
+              "value": "+12.0"
+            },
+            {
+              "label": "One-year delay in start-up",
+              "value": "+2.0"
+            }
+          ]
+        },
+        "ask": "Where does the consultant's day go?",
+        "options": [
+          {
+            "text": "Price fails at about minus 5.3% and flour cost at plus 8%, against 30% for investment: spend the day on price and flour.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 6,
+              "relationship": -1
+            },
+            "outcome": "Correct: price moves NPV by 45.6 per 10%, or 4.56 per 1%, so 24.0 / 4.56 = about 5.3%; variable cost 30.0 per 10%, so 24.0 / 3.0 = 8%; investment 12.0 per 15%, so 24.0 / 0.8 = 30%. The smallest switching value marks the assumption that deserves the scarce expert time."
+          },
+          {
+            "text": "Follow the RM: construction is the largest cash outlay and the first money at risk, so firm up the building and machinery quotations.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "committee": -5,
+              "relationship": 3
+            },
+            "outcome": "Size of outlay is not size of risk. The table shows a 15% overrun still leaves NPV positive, while a 10% price fall wipes out almost twice the base value."
+          },
+          {
+            "text": "Price fails at about 0.5% (24.0 / 45.6), so the project is far too fragile for any due diligence to rescue: recommend decline.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "committee": -4
+            },
+            "outcome": "The switching value is base NPV divided by the change per 1% move, not by the change per 10%. The real figure, about 5.3%, is tight but workable with evidence and mitigants."
+          },
+          {
+            "text": "Spread the consultant's day across all five tested assumptions, so the committee sees that every input has an independent check.",
+            "score": 1,
+            "effects": {
+              "quality": -2,
+              "committee": -2
+            },
+            "outcome": "Even coverage means thin coverage of the two assumptions that decide the project's fate. Sensitivity results are a ranking; use them to focus effort."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "akaki-downside",
+        "when": "Week 1, Thursday 14:00",
+        "from": "Head of Project Finance Department",
+        "channel": "meeting",
+        "subject": "Akaki Biscuit: downside DSCR below 1.0",
+        "body": [
+          "Your downside scenario, slower ramp-up with price down 5%, shows DSCR below 1.0 in the first two years, recovering after. The sponsors run two profitable bakeries and have Birr 28 million of equity committed, 30.4% of project cost.",
+          "Akaki's Birr 64 million loan at 16% has one year of grace; the first full repayment year has principal of Birr 8.0 million, with about Birr 56 million outstanding on average. The head of department asks for your recommendation."
+        ],
+        "exhibit": {
+          "title": "Akaki Biscuit: DSCR and debt service (Birr millions)",
+          "rows": [
+            {
+              "label": "Base case minimum DSCR",
+              "value": "1.34"
+            },
+            {
+              "label": "Downside DSCR, years 1 / 2 / 3 / 5",
+              "value": "0.82 / 0.90 / 1.18 / 1.33"
+            },
+            {
+              "label": "First full repayment year principal",
+              "value": "8.0"
+            },
+            {
+              "label": "Interest at 16% on about 56.0 outstanding",
+              "value": "to calculate"
+            },
+            {
+              "label": "DSRA standard",
+              "value": "6 months of debt service"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Approve with a sponsor-funded DSRA of about Birr 8.5 million, a shortfall undertaking and flour supply contracts.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 8,
+              "relationship": 2
+            },
+            "outcome": "Correct: interest 56.0 x 16% = 8.96; debt service 8.0 + 8.96 = 16.96; six months is about 8.5. The shortfall is temporary and the project recovers, so the answer is cash support in place before it happens."
+          },
+          {
+            "text": "Approve as proposed: the base case minimum DSCR of 1.34 clears 1.25, and the sponsors' two bakeries can step in if needed.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "relationship": 4
+            },
+            "outcome": "The downside is plausible, and in it the bank is not paid in full from operating cash in years 1 and 2. Approving without support leaves that gap with the bank.",
+            "next": "downside-later"
+          },
+          {
+            "text": "Decline: a downside DSCR of 0.82 and 0.90 in the first two years means the plant cannot pay the bank from its own cash.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "committee": -2
+            },
+            "outcome": "A downside below 1.0 tells the bank how much support it needs, not that it must refuse. Strong sponsors and a recovering cash flow make this financeable with the right package."
+          },
+          {
+            "text": "Approve with a DSRA of six months of interest, about Birr 4.5 million (8.96 / 2), funded before the first repayment date.",
+            "score": 1,
+            "effects": {
+              "quality": 2,
+              "committee": -2
+            },
+            "outcome": "A DSRA covers debt service, principal and interest. Six months of interest alone covers only about half of what the bank must be paid."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "akaki-pushback",
+        "when": "Week 2, Tuesday 10:30",
+        "from": "Akaki Biscuit PLC, sponsors",
+        "channel": "visit",
+        "subject": "We will accept one protection, not three",
+        "body": [
+          "The sponsors accept the loan terms but say the package is too heavy. They will give one of three: the cost overrun undertaking, the DSRA, or flour supply contracts with a price formula. 'Choose one, or we will talk to another bank.'",
+          "Your switching values showed margin, price against flour cost, as the main risk. The RM asks you to drop two protections to keep the deal."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Keep the cost overrun undertaking only: construction is where the bank's money goes in first, so protect that stage.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "committee": -5,
+              "relationship": 3
+            },
+            "outcome": "Your own analysis says construction is the least of the three risks. Keeping only the overrun undertaking leaves the margin squeeze and the early-year cash shortfall with the bank."
+          },
+          {
+            "text": "Keep all three as the cover for the biggest risks; negotiate timing, such as a staged DSRA, or offer a smaller loan.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "committee": 6,
+              "relationship": 1
+            },
+            "outcome": "A committee should not trade away cover for the largest risks. Negotiating the mechanics keeps the protection while showing the sponsors flexibility; a smaller loan is the fallback, not dropping the protections."
+          },
+          {
+            "text": "Keep the DSRA only: Birr 8.5 million of blocked cash is the most direct protection when the downside years arrive.",
+            "score": 1,
+            "effects": {
+              "quality": -3,
+              "committee": -2,
+              "relationship": 2
+            },
+            "outcome": "The DSRA helps in the first shortfall, but without supply contracts the margin risk that causes it stays open, and an overrun would fall on the bank. One protection is not a package."
+          },
+          {
+            "text": "Drop all three to keep the deal: the plant, machinery and land mortgage give collateral cover above the Birr 64 million loan.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "compliance": -3
+            },
+            "outcome": "Collateral is the second way out. A project loan is repaid from cash flow, and the protections exist so that it can be."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "burayu-effluent",
+        "when": "Week 3, Monday 09:30",
+        "from": "Relationship manager, corporate banking",
+        "channel": "email",
+        "subject": "Burayu Textile Dyeing PLC: Birr 110 million expansion, strong exporter",
+        "body": [
+          "Burayu Textile Dyeing PLC exports dyed fabric and earns about USD 5 million a year through Bank A. It asks for Birr 110 million to double capacity. Bank A already lends it Birr 90 million.",
+          "The site file shows that the existing plant discharges partly treated dye effluent into a stream. Residents have complained, and the regional environmental authority has issued a warning letter. The expansion budget has no effluent treatment plant. The RM writes: 'Great exporter. Let us approve and add an environmental covenant.'"
+        ],
+        "ask": "What do you recommend on the request as submitted?",
+        "options": [
+          {
+            "text": "Approve with a covenant to install effluent treatment within five years, reported to the bank, given the strong export record.",
+            "score": 1,
+            "effects": {
+              "compliance": -8,
+              "quality": -6,
+              "relationship": 3
+            },
+            "outcome": "A five-year covenant leaves the plant exposed to closure tomorrow. The warning letter already puts the bank's existing Birr 90 million at risk, not only the new loan."
+          },
+          {
+            "text": "Not as designed: put an effluent plant in the cost, require authority approval before disbursement, and audit the plant.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 8,
+              "committee": 4,
+              "relationship": -2
+            },
+            "outcome": "Regulatory closure would stop repayment on every loan to the company. Building the fix in before money moves makes the expansion financeable on its merits, and buyers increasingly ask for environmental certification too."
+          },
+          {
+            "text": "Approve: USD 5 million of export earnings through Bank A outweighs one complaint, and the warning letter is not a closure order.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -10,
+              "relationship": 4
+            },
+            "outcome": "For big projects the bank must assess the legislation that could harm operations and the waste disposal method before deciding. A strong exporter that is closed by the regulator earns nothing."
+          },
+          {
+            "text": "Approve Birr 55 million now for the new line and release the rest once the residents' complaint has been resolved.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "quality": -6
+            },
+            "outcome": "Half the money still goes into a plant that may be closed, and nothing in the structure fixes the cause. The environmental fix comes before disbursement, not after."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "dukem-fx",
+        "when": "Week 4, Wednesday 11:00",
+        "from": "Dukem Glass Bottles PLC, finance director",
+        "channel": "call",
+        "subject": "We save foreign exchange, so it is not our risk",
+        "body": [
+          "Dukem Glass Bottles PLC will make glass bottles for local beverage companies, replacing imports. It will import soda ash and other inputs, and plans to buy its USD 6 million furnace on three-year supplier credit.",
+          "The finance director says: 'We save the country foreign exchange, so foreign exchange is not a risk for us. And your manual says supplier credit needs NBE approval, which will take months, so let us skip it and pay cash later.'"
+        ],
+        "exhibit": {
+          "title": "Dukem Glass Bottles: foreign exchange profile (a year, from year 2)",
+          "rows": [
+            {
+              "label": "Imported soda ash and inputs",
+              "value": "USD 3.2 million spent"
+            },
+            {
+              "label": "Imported bottles replaced",
+              "value": "USD 5.0 million saved"
+            },
+            {
+              "label": "Supplier credit on the furnace",
+              "value": "USD 6.0 million over 3 years"
+            },
+            {
+              "label": "Sales",
+              "value": "All in Birr, to local beverage companies"
+            }
+          ]
+        },
+        "ask": "What do you put in the appraisal?",
+        "options": [
+          {
+            "text": "Accept the director's view: the plant saves the country USD 5.0 million a year, so foreign exchange risk is low for the project.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 6,
+              "committee": 4
+            },
+            "outcome": "Correct: 5.0 minus 3.2 = USD 1.8 million net. A plant that sells only in Birr still needs every dollar at the right time. Since FXD/04/2026 banks may approve supplier credits without prior NBE approval, with monthly reporting, so check the directive on the day rather than an older manual."
+          },
+          {
+            "text": "Count the USD 1.8 million net saving as a benefit, but require a month-by-month FX plan and add an FX delay to the downside.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "committee": -4
+            },
+            "outcome": "The saving goes to the economy; the cost falls on the plant. Machinery and inputs that wait months for dollars stop production while interest keeps running."
+          },
+          {
+            "text": "Hold the file until the NBE approves the USD 6 million supplier credit, as Bank A's credit manual requires for supplier credit.",
+            "score": 1,
+            "effects": {
+              "relationship": -6,
+              "compliance": 1
+            },
+            "outcome": "The manual predates the February 2026 amendment that lets banks approve supplier credits, with monthly reporting. Following an outdated rule delays a sound project for no reason."
+          },
+          {
+            "text": "Decline: a plant selling only in Birr cannot carry USD 3.2 million of inputs a year plus a USD 6 million supplier credit.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": 1
+            },
+            "outcome": "Import-substituting projects are often priority lending. The risk is real but manageable with a foreign exchange plan and a downside test."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "butajira-syndication",
+        "when": "Week 5, Monday 09:00",
+        "from": "Relationship manager, corporate banking",
+        "channel": "email",
+        "subject": "Butajira Cement: let us take Birr 1,000 million, the full legal limit",
+        "body": [
+          "Bank A has been asked to lead the debt for Butajira Cement PLC, a new plant costing Birr 2,400 million. Sponsors offer 35% equity. The debt is to be repaid over 10 years: 2 years of grace, then 8 equal annual principal payments, at 15%.",
+          "The RM writes: 'Take Birr 1,000 million. It is within the 25% limit and the fees are excellent.'"
+        ],
+        "exhibit": {
+          "title": "Butajira Cement: sizing inputs (Birr millions)",
+          "rows": [
+            {
+              "label": "Project cost",
+              "value": "2,400"
+            },
+            {
+              "label": "Sponsors' equity",
+              "value": "35%"
+            },
+            {
+              "label": "Bank A total capital",
+              "value": "4,000"
+            },
+            {
+              "label": "Large exposure ceiling",
+              "value": "25% of total capital"
+            },
+            {
+              "label": "Board appetite per project",
+              "value": "15% of total capital"
+            },
+            {
+              "label": "Repayment",
+              "value": "2 years grace, 8 equal principal payments, 15%"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Debt is 1,560: hold Birr 600 million, the board's appetite, and syndicate 960 to other banks with a DSRA of about 215.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 8,
+              "committee": 6,
+              "relationship": 1
+            },
+            "outcome": "Correct: 65% x 2,400 = 1,560; 15% x 4,000 = 600; 1,560 minus 600 = 960; principal 1,560 / 8 = 195 plus interest 1,560 x 15% = 234, so 429. The board's appetite is the practical ceiling even though the law allows more."
+          },
+          {
+            "text": "Take Birr 1,000 million: it is within the 25% large exposure limit, and the arranger's fees grow with the share it keeps.",
+            "score": 1,
+            "effects": {
+              "compliance": -8,
+              "committee": -4,
+              "relationship": 2
+            },
+            "outcome": "Legal is not the same as approved. The board's single-project appetite of Birr 600 million binds internally, and taking the full legal limit leaves no room for any other exposure to the sponsor group."
+          },
+          {
+            "text": "Take the whole Birr 1,560 million at signing and sell down to other banks within six months, so the sponsor gets certainty.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "quality": -8
+            },
+            "outcome": "Birr 1,560 million is 39% of capital, far above the 25% ceiling under SBB/87/2024. A planned sell-down does not cure a breach on the day of booking."
+          },
+          {
+            "text": "Decline the lead role: a Birr 1,560 million debt package is too big for Bank A, and another bank can arrange it.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "committee": -2
+            },
+            "outcome": "Projects larger than one bank can carry are exactly what syndication is for. Leading with a Birr 600 million share keeps the relationship and the fees within policy."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "gelan-progress",
+        "when": "Week 7, Tuesday 09:30",
+        "from": "Gelan Pharmaceutical PLC, contractor",
+        "channel": "email",
+        "subject": "Month 10 progress report and tranche request of Birr 6 million",
+        "body": [
+          "Gelan Pharmaceutical PLC's plant is in month 10 of construction. The contractor's report says the works are 'on track' and asks for the next building tranche of Birr 6 million. It also mentions a variation claim of Birr 4 million for 'design changes'. The sponsors signed a cost overrun undertaking at approval.",
+          "The independent engineer's certificate and the cost report arrived the same day."
+        ],
+        "exhibit": {
+          "title": "Gelan Pharmaceutical: month 10 building status (Birr millions)",
+          "rows": [
+            {
+              "label": "Building budget",
+              "value": "48.0"
+            },
+            {
+              "label": "Completion: plan / actual (independent engineer)",
+              "value": "70% / 50%"
+            },
+            {
+              "label": "Building cost spent: plan / actual",
+              "value": "33.6 / 30.0"
+            },
+            {
+              "label": "Contractor's variation claim",
+              "value": "4.0"
+            },
+            {
+              "label": "Sponsors' equity: plan / spent",
+              "value": "30.0 / 30.0"
+            }
+          ]
+        },
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Release the Birr 6 million: building cost spent is 30.0 against a plan of 33.6, so the project is running under budget.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -6,
+              "relationship": 3
+            },
+            "outcome": "Spending is below plan only because progress is far below plan. Compared with progress, spending of 62.5% runs well ahead of 50% complete, the classic sign that an overrun is coming.",
+            "next": "tranche-later"
+          },
+          {
+            "text": "Hold building tranches: cost at completion is about Birr 60 million, a 12 million overrun; call the overrun undertaking.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 6,
+              "compliance": 3,
+              "relationship": -2
+            },
+            "outcome": "Correct: 30.0 / 0.50 = 60.0, against a 48.0 budget. Acting at month 10, while the gap is still measurable, keeps the overrun with the sponsors who undertook to fund it."
+          },
+          {
+            "text": "Note an overrun of Birr 6 million (30.0 spent less 50% of 48.0 earned) and release half the tranche, Birr 3 million, to the contractor.",
+            "score": 1,
+            "effects": {
+              "quality": -4,
+              "committee": -3
+            },
+            "outcome": "Birr 6 million is the overspend to date, not the expected final overrun. If the same ratio continues, the building will cost about 60.0, double that figure, and any release now funds work not yet verified."
+          },
+          {
+            "text": "Stop the project and refer it for foreclosure: spending is ahead of progress and the contractor is already claiming Birr 4 million.",
+            "score": 0,
+            "effects": {
+              "relationship": -12,
+              "quality": -6
+            },
+            "outcome": "An overrun caught early is a problem to manage, not a reason to destroy the project. The sponsors' undertaking exists for exactly this."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "adama-wc",
+        "when": "Week 8, Thursday 15:00",
+        "from": "Adama Ceramic Sanitary PLC, managing director",
+        "channel": "call",
+        "subject": "Please release the working capital line early",
+        "body": [
+          "Four months before scheduled completion, the managing director asks you to release the Birr 7 million initial working capital tranche now, 'to buy clay and glaze while prices are low'.",
+          "The latest engineer's report is two months overdue. The NBE Credit Reference Bureau report run last week shows a new Birr 5 million short-term loan from another bank to one of the sponsors."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Release the Birr 7 million now: buying clay and glaze while prices are low cuts the plant's first-year costs sharply.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -5,
+              "relationship": 3
+            },
+            "outcome": "An early working capital request, an overdue progress report and new short-term borrowing by a sponsor are three warning signs together. They often mean construction money has run out."
+          },
+          {
+            "text": "Hold the release, get a current engineer's report and cost to date, and ask the sponsor about the new borrowing.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 4,
+              "compliance": 3,
+              "relationship": -2
+            },
+            "outcome": "Verify before releasing. If equity has been replaced by short-term borrowing, the project carries debt the bank did not appraise, and the committee needs to know now, while options are still open."
+          },
+          {
+            "text": "Release Birr 3.5 million now for inputs and the other Birr 3.5 million at completion, once the engineer reports.",
+            "score": 0,
+            "effects": {
+              "quality": -6,
+              "compliance": -3
+            },
+            "outcome": "Half a release is still money released without knowing why it is needed. The warning signs call for facts first."
+          },
+          {
+            "text": "Cancel the undisbursed loan: three warning signs together show the sponsors are no longer reliable partners.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "quality": -2
+            },
+            "outcome": "Cancelling before you know the facts could leave a nearly finished plant without the money to start. Warning signs call for a visit and a diagnosis, then action."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "gelan-restructure",
+        "when": "Week 10, Monday 10:00",
+        "from": "Credit committee member",
+        "channel": "meeting",
+        "subject": "Gelan Pharmaceutical: the NPV is negative, stop and foreclose",
+        "body": [
+          "The engineer has settled Gelan's overrun at Birr 14 million in total. Bank A has disbursed Birr 55 million of the Birr 70 million loan; Birr 15 million remains for machinery and installation. The sponsors can fund Birr 8 million of the overrun now under their undertaking.",
+          "A committee member says: 'The re-run NPV on the original basis is minus Birr 15 million. The project destroys value. Stop disbursing and foreclose.'"
+        ],
+        "exhibit": {
+          "title": "Gelan Pharmaceutical: complete or stop? (Birr millions)",
+          "rows": [
+            {
+              "label": "Already disbursed by Bank A",
+              "value": "55.0"
+            },
+            {
+              "label": "Remaining approved loan",
+              "value": "15.0"
+            },
+            {
+              "label": "Overrun / sponsors' injection now",
+              "value": "14.0 / 8.0"
+            },
+            {
+              "label": "Stop: forced sale value of the half-built plant",
+              "value": "about 25"
+            },
+            {
+              "label": "Complete: PV at 16% of future cash flow from the finished plant",
+              "value": "about 105"
+            },
+            {
+              "label": "Re-run NPV on the original basis",
+              "value": "minus 15"
+            }
+          ]
+        },
+        "ask": "What is your reply?",
+        "options": [
+          {
+            "text": "Agree: a re-run NPV of minus Birr 15 million means the project destroys value, so stop disbursing and foreclose now.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "relationship": -6
+            },
+            "outcome": "The re-run NPV includes Birr 55 million already spent, which no decision can recover. Stopping recovers about 25 of it; completing protects far more."
+          },
+          {
+            "text": "The 55 is sunk: completing (15 plus a 6 gap) yields a plant worth about 105 against 25 if stopped; complete, sponsors first.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 8,
+              "relationship": 3
+            },
+            "outcome": "Restructuring compares only future cash flows. Sponsors fund first, fresh bank money needs concrete justification, and the rescheduling goes to the committee holding that authority."
+          },
+          {
+            "text": "Complete, with Bank A funding the full Birr 14 million overrun at once, so the plant starts earning and repaying sooner.",
+            "score": 1,
+            "effects": {
+              "quality": -6,
+              "compliance": -4,
+              "relationship": 4
+            },
+            "outcome": "Completion is right, but the sponsors signed an overrun undertaking and can put in 8 now. Bank money for the overrun comes last, after sponsor equity, with extra security."
+          },
+          {
+            "text": "Wait a year before deciding, so the committee can see whether the market for the plant's products improves first.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "committee": -4
+            },
+            "outcome": "A half-built plant loses value every month while interest accrues. Delay is a decision too, and the worst one here."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "woliso-classify",
+        "when": "Week 11, Wednesday 09:00",
+        "from": "Risk management department",
+        "channel": "memo",
+        "subject": "Woliso Flour Mill: classify as substandard?",
+        "body": [
+          "Woliso Flour Mill PLC was rescheduled last year after a construction delay. Its DSCR for the latest year was 0.92. Every installment has been paid on time, partly from the DSRA, which is now below its six-month level. Outstanding is Birr 80 million.",
+          "A risk officer proposes classifying the loan as substandard 'because the DSCR is below 1.0'."
+        ],
+        "exhibit": {
+          "title": "Woliso Flour Mill: provision at each class (Birr millions)",
+          "rows": [
+            {
+              "label": "Outstanding",
+              "value": "80.0"
+            },
+            {
+              "label": "Days past due",
+              "value": "0"
+            },
+            {
+              "label": "Pass, 1% minimum provision",
+              "value": "to calculate"
+            },
+            {
+              "label": "Special mention, 3%",
+              "value": "to calculate"
+            },
+            {
+              "label": "Substandard, 20%",
+              "value": "to calculate"
+            }
+          ]
+        },
+        "ask": "What do you advise?",
+        "options": [
+          {
+            "text": "Classify by days past due: with no arrears it stays pass, about Birr 0.8 million of provision, under close watch.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 6,
+              "committee": 4
+            },
+            "outcome": "Correct: 1% x 80 = 0.8; 20% x 80 = 16.0; the difference is 15.2. A weak DSCR is a monitoring signal, not a classification rule, and keeping the DSRA funded protects the bank's own profit."
+          },
+          {
+            "text": "Agree: substandard at 20%, Birr 16.0 million, because a DSCR of 0.92 means the loan cannot be repaid from cash flow.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "relationship": -6,
+              "committee": -3
+            },
+            "outcome": "SBB/90/2024 classifies by days past due, ignoring collateral. Misclassifying a performing loan overstates provisions by about Birr 15 million and misreports the book."
+          },
+          {
+            "text": "Compromise at special mention, 3% or about Birr 2.4 million, to be prudent while the DSRA is below its six-month level.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "committee": -1
+            },
+            "outcome": "Special mention means 30 to 89 days past due. Prudence belongs in monitoring and the DSRA top-up, not in a class the facts do not support."
+          },
+          {
+            "text": "Loss at 100%: a rescheduled loan whose DSCR is still below 1.0 should be fully provided before it costs the bank more.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -4
+            },
+            "outcome": "Loss is 360 days or more past due. Rescheduled status calls for closer watch, not a 100% provision on a loan that is being paid."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "woliso-capstone",
+        "when": "Week 12, Thursday 10:00",
+        "from": "Head office credit committee",
+        "channel": "meeting",
+        "subject": "Woliso Flour Mill: pasta line expansion and a second bank's stock line",
+        "body": [
+          "Woliso's sponsors now propose a Birr 20 million pasta line, 60% bank financed, to use idle space. The existing loan's DSCR has been 1.08 for the last two quarters. The dust filters required by the environmental audit are still not installed, and the machinery insurance lapsed for six weeks last year.",
+          "The sponsors also tell you a second bank will lend them Birr 10 million of working capital secured on flour and wheat stock. Your loan agreement has a negative pledge and a covenant that sales pass through Bank A. The chair asks for your recommendation in one minute."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Approve the pasta line now: a second product uses idle space, raises group cash flow and helps the existing loan recover fast.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "committee": -6,
+              "relationship": 4
+            },
+            "outcome": "That is a rescue dressed up as growth. The expansion must be appraised on its own cash flows, and new money should wait until the existing loan is stable and the sponsors have cured their breaches."
+          },
+          {
+            "text": "Defer the pasta line until DSCR is 1.20 for two quarters; make the breaches conditions and require an intercreditor deal.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "committee": 10,
+              "compliance": 5,
+              "relationship": -2
+            },
+            "outcome": "This separates the existing loan from the new request, turns the breaches into conditions and protects the bank's security and cash control. It is the recommendation committees approve because every element answers a named risk."
+          },
+          {
+            "text": "Let the second bank lend Birr 10 million on stock: stock is outside our security, and the sponsors need working capital.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "quality": -8,
+              "relationship": 3
+            },
+            "outcome": "The negative pledge exists to stop another lender taking security that weakens Bank A's position, and stock-secured lending usually pulls sales proceeds away from the collection account.",
+            "next": "pledge-later"
+          },
+          {
+            "text": "Decline the pasta line and call the existing loan: the dust filters and insurance lapse breach the conditions we set.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "quality": -4
+            },
+            "outcome": "The loan is performing and the breaches can be cured as conditions. Calling it would turn a manageable watch-list loan into a loss."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "downside-later",
+        "when": "First repayment year",
+        "from": "Portfolio monitoring unit",
+        "channel": "memo",
+        "subject": "Akaki Biscuit: DSCR 0.85, first principal due next month",
+        "body": [
+          "Biscuit prices fell about 5% after two competitors expanded, and ramp-up was slower than planned. Akaki's DSCR for the year is 0.85. There is no DSRA and no sponsor undertaking. The first principal installment of Birr 8.0 million falls due next month, and the company asks for 'flexibility'."
+        ],
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Negotiate a sponsor injection or shortfall undertaking and propose a documented re-sculpting to the committee.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "committee": 5,
+              "relationship": 2
+            },
+            "outcome": "This puts in place, late, the support the downside called for at approval. The lesson stands: the plausible downside happened, and the structure had nothing to absorb it."
+          },
+          {
+            "text": "Grant a short-term loan of Birr 8 million to pay the installment, repayable once the biscuit market recovers next year.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -6
+            },
+            "outcome": "Lending to pay an installment hides the problem and grows the exposure. It also keeps the committee from seeing the real position."
+          },
+          {
+            "text": "Let it fall into arrears and classify it when it reaches 90 days, rather than act before a payment is missed.",
+            "score": 1,
+            "effects": {
+              "quality": -6,
+              "relationship": -6
+            },
+            "outcome": "Waiting for arrears gives up the options that early action still offers, and the provision cost rises with every band."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "tranche-later",
+        "when": "Two months later",
+        "from": "Independent engineer",
+        "channel": "visit",
+        "subject": "Gelan Pharmaceutical: 54% complete, Birr 36 million spent",
+        "body": [
+          "On the next visit the building is 54% complete and Birr 36.0 million has been spent, including the Birr 6 million tranche. The contractor has moved part of his crew to another job and is pressing the variation claim."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Stop all building releases, call the overrun undertaking in writing, and report to the committee.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 5,
+              "committee": 3
+            },
+            "outcome": "Estimated cost at completion is now 36.0 / 0.54 = about Birr 66.7 million. Stopping releases until progress catches up and calling the undertaking puts the overrun back with the sponsors."
+          },
+          {
+            "text": "Release the next tranche so the contractor brings his crew back and the building keeps moving this month.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -5
+            },
+            "outcome": "More money ahead of progress only widens the gap. Releases follow verified progress, not the contractor's leverage."
+          },
+          {
+            "text": "Refer the project for foreclosure: at 54% complete the overrun is now beyond the sponsors' means.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": -4
+            },
+            "outcome": "The plant is half built and the sponsors have an undertaking to fund overruns. Foreclosing now recovers far less than completing under control."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "pledge-later",
+        "when": "Four months later",
+        "from": "Credit administration",
+        "channel": "email",
+        "subject": "Woliso: second bank has registered security on stock, sales moved",
+        "body": [
+          "The second bank has registered its security over Woliso's stock on the movable collateral registry, and about 40% of sales proceeds now go to an account at that bank. Bank A's collection account balance has fallen, and the next installment is due in three weeks."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Give formal notice of the covenant breaches, negotiate an intercreditor agreement and restore the collection account.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 6
+            },
+            "outcome": "Acting on the covenants restores control of cash while keeping the project running. An intercreditor agreement makes ranking clear for both banks."
+          },
+          {
+            "text": "Do nothing until an installment is missed: the mill is still paying, and a dispute could unsettle the second bank.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -6
+            },
+            "outcome": "By the time an installment is missed, the cash that should have paid it is already at the other bank. Covenants are only useful if they are enforced."
+          },
+          {
+            "text": "Call the whole loan immediately, so Bank A enforces its security before the second bank takes more of the cash.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": -3
+            },
+            "outcome": "Calling the loan of a performing mill may trigger a race between lenders and destroy value. Use the covenants to restore control first."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-quarter hand-over note to the head of the Project Finance Department.",
+      "guide": [
+        "For each new project, the critical assumption, its switching value and the protection you put against it.",
+        "The watch-list projects: where progress, spending and equity stand, and what you stopped or restructured.",
+        "Compliance and syndication points: exposure limits, participation terms, classification decisions.",
+        "One decision you would revisit, and the evidence that would change your mind."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Sebeta's base NPV is Birr 19.6 million and falls by Birr 4.8 million for each 1% fall in price. Its contribution margin is 38%. What is the price switching value and what does it imply?",

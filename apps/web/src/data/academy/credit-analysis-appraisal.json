@@ -1851,7 +1851,7 @@
                 "Sits at the limit all year",
                 "Never shows a credit balance",
                 "Credits barely equal the limit",
-                "Interest capitalised month after month"
+                "Interest capitalized month after month"
               ]
             }
           }
@@ -1860,7 +1860,7 @@
           "id": "overdraft-remedies",
           "title": "When an overdraft goes hard-core",
           "body": [
-            "An overdraft that never swings into credit has become permanent finance, usually for a long-term need such as unpaid receivables or fixed assets bought with working capital. Its interest is capitalised at month end, so the balance can quietly grow.",
+            "An overdraft that never swings into credit has become permanent finance, usually for a long-term need such as unpaid receivables or fixed assets bought with working capital. Its interest is capitalized at month end, so the balance can quietly grow.",
             "The remedies are to call the facility back, reduce the limit, convert all or part into a term loan with a proper schedule, or require additional security. The analyst first asks why the money is stuck, because the remedy must fit the cause."
           ],
           "scenario": {
@@ -2191,7 +2191,7 @@
     "role": "Credit analyst",
     "setting": [
       "You have just joined the credit desk of Bank A's Adama branch, a busy trade and agro-processing hub on the Addis to Djibouti corridor. The branch has a loan book of about Birr 900 million, mostly overdrafts, merchandise loans and term loans to small and medium manufacturers and traders.",
-      "Your job this week: analyse every request that reaches the desk, recommend a decision and a structure, and protect the bank's portfolio without losing good customers. The branch manager and the district credit committee rely on your work. Every item comes in the order it reaches you, and each decision has consequences later in the week.",
+      "Your job this week: analyze every request that reaches the desk, recommend a decision and a structure, and protect the bank's portfolio without losing good customers. The branch manager and the district credit committee rely on your work. Every item comes in the order it reaches you, and each decision has consequences later in the week.",
       "Work it as you would on the job: read the facts, do the numbers on paper or a spreadsheet, and choose the action you would defend in front of the committee and the NBE examiner."
     ],
     "authority": {
@@ -2264,7 +2264,7 @@
         "ask": "What is your first move?",
         "options": [
           {
-            "text": "Back the growth story and fast-track the application: the owner is reputable and competitors are waiting.",
+            "text": "Back the growth story and fast-track it for Wednesday's committee: sales rose 40% in two years, the owner is well known in town and two other banks are chasing him.",
             "score": 0,
             "effects": {
               "quality": -15,
@@ -2275,7 +2275,7 @@
             "next": "adama-later"
           },
           {
-            "text": "Spread the statements, work out the cash conversion cycle and ask the customer about the slower collections and the qualified stock count before sizing anything.",
+            "text": "Spread the statements, work out the cash conversion cycle, and ask about the slower collections and the stock count qualification before sizing.",
             "score": 3,
             "effects": {
               "quality": 10,
@@ -2285,16 +2285,16 @@
             "outcome": "Right order. Spreading shows that most of the new money would finance slower collections, and the qualification needs an answer before stock can be relied on. You can still meet the RM's timetable with a better-founded proposal."
           },
           {
-            "text": "Decline straight away: a qualified audit opinion rules the company out.",
+            "text": "Decline in writing today: a qualified audit opinion means the stock figure cannot be relied on, and the grading model deducts points for it.",
             "score": 1,
             "effects": {
               "relationship": -12,
               "income": -5
             },
-            "outcome": "Too blunt. A qualification is a question to resolve, not an automatic refusal; the grading model deducts points for it. You lose a potentially sound customer without analysing the business."
+            "outcome": "Too blunt. A qualification is a question to resolve, not an automatic refusal; the grading model deducts points for it. You lose a potentially sound customer without analyzing the business."
           },
           {
-            "text": "Ask for a building as collateral first; if it covers the limit, the analysis can be light.",
+            "text": "Ask for a building worth at least the Birr 12 million limit first; with full cover in place, the cash flow analysis can be kept light.",
             "score": 0,
             "effects": {
               "quality": -10,
@@ -2347,7 +2347,7 @@
         "ask": "What limit do you recommend?",
         "options": [
           {
-            "text": "Birr 12 million, as requested: the business is growing.",
+            "text": "Birr 12 million as requested: the distributors have now agreed 45-day terms, so the old slow collections will not come back.",
             "score": 1,
             "effects": {
               "quality": -6,
@@ -2367,7 +2367,7 @@
             "outcome": "Correct: receivables 72,000 x 45 / 365 = 8,877, inventory 57,600 x 60 / 365 = 9,468, payables 57,600 x 30 / 365 = 4,734, gap 13,611, bank share 75% = 10,208. The covenants keep the cycle where the limit assumes it is."
           },
           {
-            "text": "Birr 13.6 million, the full working capital gap.",
+            "text": "Birr 13.6 million, the full working capital gap, so the mill never runs short of cash to buy wheat at harvest.",
             "score": 0,
             "effects": {
               "quality": -10,
@@ -2376,7 +2376,7 @@
             "outcome": "Funding 100% of the gap leaves the owners with no stake in their own trading cycle and the bank with no cushion if sales or prices fall. The owner's margin is a basic rule from Module 2."
           },
           {
-            "text": "Birr 6 million to be safe, and review in a year.",
+            "text": "Birr 6 million to be safe, with a review in twelve months once the new 45-day terms are proven.",
             "score": 1,
             "effects": {
               "relationship": -8,
@@ -2425,7 +2425,7 @@
         "ask": "What do you recommend?",
         "options": [
           {
-            "text": "Approve as requested: the building covers 150% of the loan.",
+            "text": "Approve as requested: Wonji has a clean five-year record with the bank, and the Birr 9 million building covers 150% of the loan if anything goes wrong.",
             "score": 0,
             "effects": {
               "quality": -12,
@@ -2444,7 +2444,7 @@
             "outcome": "With grace, year-one service is 1,000 + 900 = 1,900 and DSCR = 3,100 / 1,900 = 1.63. Grace matches repayment to when the machine earns. You still owe the committee the year-2 test with realistic margins."
           },
           {
-            "text": "Stretch the tenor to 10 years so the installments fall.",
+            "text": "Stretch the tenor to 10 years so annual principal falls to Birr 600,000 and the DSCR clears 1.0 in year one.",
             "score": 1,
             "effects": {
               "quality": -5
@@ -2452,7 +2452,7 @@
             "outcome": "The machine lasts 7 years. A loan that outlives its asset leaves the bank financing scrap in the last years. Fix the timing with grace, not with a tenor longer than the asset's life."
           },
           {
-            "text": "Decline: a DSCR below 1.0 means the loan cannot work.",
+            "text": "Decline: a DSCR of 0.91 in year one means the business cannot carry this loan under the 1.25 rule.",
             "score": 1,
             "effects": {
               "relationship": -10,
@@ -2471,12 +2471,12 @@
         "subject": "Renew and raise our overdraft to Birr 16 million",
         "body": [
           "Bole's overdraft of Birr 10.5 million is due for its annual renewal. The general manager asks to raise it to Birr 16 million and says business is booming.",
-          "The account statement for the last 12 months shows the balance never below Birr 9.8 million and never in credit. Credit turnover was 0.9 times the limit. Interest has been capitalised every month. Two months ago Bole paid for a new filling machine from the overdraft."
+          "The account statement for the last 12 months shows the balance never below Birr 9.8 million and never in credit. Credit turnover was 0.9 times the limit. Interest has been capitalized every month. Two months ago Bole paid for a new filling machine from the overdraft."
         ],
         "ask": "What do you propose at renewal?",
         "options": [
           {
-            "text": "Renew and raise to Birr 16 million: Bole is a six-year customer.",
+            "text": "Renew and raise to Birr 16 million: Bole is a six-year customer, the limit is fully used every month, and the general manager reports that sales are booming.",
             "score": 0,
             "effects": {
               "quality": -15,
@@ -2486,7 +2486,7 @@
             "outcome": "The overdraft is hard-core: it never swings and turns over less than once, so it is financing fixed assets and slow receivables. Raising it adds to the problem the account is already showing."
           },
           {
-            "text": "Find out why the money is stuck, convert the hard-core part, including the machine, into a term loan with a schedule, and renew a smaller revolving limit sized on the cycle.",
+            "text": "Find out why the money is stuck, move the hard-core part and the machine into a scheduled term loan, and renew a smaller revolving limit.",
             "score": 3,
             "effects": {
               "quality": 12,
@@ -2497,7 +2497,7 @@
             "outcome": "The remedy fits the cause: the machine belongs on a term loan, and the revolving limit goes back to financing the trading cycle. Turnover of 1 time or less is poor under a typical manual, and conversion is one of the standard remedies."
           },
           {
-            "text": "Call back the whole overdraft now.",
+            "text": "Call back the whole Birr 10.5 million now, since turnover of 0.9 times is rated poor under the manual.",
             "score": 1,
             "effects": {
               "relationship": -15,
@@ -2506,12 +2506,12 @@
             "outcome": "Calling the full balance from a going concern that cannot repay at once pushes it into default. Calling back is a remedy of last resort, used after the cause is understood."
           },
           {
-            "text": "Renew unchanged for another year and look again then.",
+            "text": "Renew unchanged at Birr 10.5 million for another year and ask for audited accounts before the next review.",
             "score": 1,
             "effects": {
               "quality": -6
             },
-            "outcome": "Renewing a hard-core overdraft unchanged lets the balance keep growing with capitalised interest. The annual review exists to catch exactly this."
+            "outcome": "Renewing a hard-core overdraft unchanged lets the balance keep growing with capitalized interest. The annual review exists to catch exactly this."
           }
         ],
         "module": "s5"
@@ -2528,7 +2528,7 @@
         "ask": "How do you respond?",
         "options": [
           {
-            "text": "Propose it unsecured as asked.",
+            "text": "Propose the Birr 3 million unsecured as the branch manager asks, noting the strong account conduct and the chairman's standing in town.",
             "score": 0,
             "effects": {
               "compliance": -20,
@@ -2538,7 +2538,7 @@
             "outcome": "Unsecured lending is open only to Grades 1 and 2. Proposing it for a Grade 4 borrower is a policy breach that you, as the analyst, would be signing."
           },
           {
-            "text": "Re-score management as 'strong' so the grade improves to 2.",
+            "text": "Re-score management as 'strong' after a call with the chairman, which lifts the grade to 2 and makes unsecured lending possible.",
             "score": 0,
             "effects": {
               "compliance": -25,
@@ -2547,7 +2547,7 @@
             "outcome": "Changing a score without written evidence to reach a wanted answer is manipulating the grading. It is exactly what internal audit and NBE examiners look for."
           },
           {
-            "text": "Propose a secured facility with an action plan for Grade 4, and explain the rule to the branch manager in writing.",
+            "text": "Propose a secured facility with a Grade 4 action plan, and explain the unsecured rule to the branch manager in writing.",
             "score": 3,
             "effects": {
               "compliance": 8,
@@ -2557,7 +2557,7 @@
             "outcome": "You keep the customer within policy. Grades 3 to 8 need an action plan, and the written note protects both you and the branch manager."
           },
           {
-            "text": "Decline the application.",
+            "text": "Decline the application: at Grade 4, with high leverage and thin management, the risk is outside what the bank should take.",
             "score": 1,
             "effects": {
               "relationship": -10,
@@ -2605,7 +2605,7 @@
         "ask": "What coverage do you report?",
         "options": [
           {
-            "text": "Birr 26 million, 130%: count everything at its value.",
+            "text": "Birr 26 million, 130%: count all three items at the valuation and insurance values the loan officer sent.",
             "score": 0,
             "effects": {
               "quality": -12,
@@ -2624,7 +2624,7 @@
             "outcome": "Correct: 15 + (8 x 75%) = 21, and 21 / 20 = 105%, strongly secured. Truck B is past the 10-year limit, so it does not count."
           },
           {
-            "text": "Birr 22.5 million, 112.5%: Truck B at 50% as old machinery.",
+            "text": "Birr 22.5 million, 112.5%: Truck B counted at 50% under the 5 to 7 year machinery haircut.",
             "score": 1,
             "effects": {
               "quality": -3,
@@ -2633,7 +2633,7 @@
             "outcome": "Truck B is a vehicle more than 10 years from manufacture: the manual does not accept it at all, so no haircut makes it eligible."
           },
           {
-            "text": "Birr 15 million, 75%: only buildings count, so ask for more collateral.",
+            "text": "Birr 15 million, 75%: only the warehouse counts for an exposure this size, so ask the customer for more collateral.",
             "score": 1,
             "effects": {
               "relationship": -6
@@ -2656,7 +2656,7 @@
         "ask": "What price do you put in the proposal?",
         "options": [
           {
-            "text": "13%, to win the customer.",
+            "text": "13%, to win the account now: Merkato is a Grade 5 customer and the extra volume will cover the thinner margin.",
             "score": 0,
             "effects": {
               "income": -12,
@@ -2677,7 +2677,7 @@
             "outcome": "Rates must follow the board's written criteria, which are reported to the NBE. A Grade 5 borrower that only stays at 13% is a customer another bank is underpricing, not one to chase."
           },
           {
-            "text": "15% as a 'relationship rate', agreed verbally with the RM.",
+            "text": "15% as a 'relationship rate', agreed verbally with the RM and reviewed after six months of account conduct.",
             "score": 1,
             "effects": {
               "income": -4,
@@ -2686,7 +2686,7 @@
             "outcome": "Any exception must be approved in writing by whoever holds that authority. A verbal discount is still underpricing, and now it is undocumented."
           },
           {
-            "text": "13% on paper, with extra service fees to make up the difference.",
+            "text": "13% on paper to match the competitor, with extra service fees on the account to make up the difference.",
             "score": 0,
             "effects": {
               "compliance": -15,
@@ -2710,7 +2710,7 @@
         "ask": "How do you handle it?",
         "options": [
           {
-            "text": "Process at the preferential rate as a courtesy to the director.",
+            "text": "Process at the preferential rate the director's office asks for; Birr 70 million is only 1.75% of capital, far inside the 15% limit.",
             "score": 0,
             "effects": {
               "compliance": -20,
@@ -2719,7 +2719,7 @@
             "outcome": "Related party credit must be on arm's-length terms: the same rate and conditions as any other customer. A preferential rate is exactly the abuse the related party directive prevents."
           },
           {
-            "text": "Split it into five loans of Birr 14 million, each below the board approval threshold.",
+            "text": "Book it as five loans of Birr 14 million, each below the Birr 15 million board threshold, so it can be approved this week.",
             "score": 0,
             "effects": {
               "compliance": -30,
@@ -2729,7 +2729,7 @@
             "next": "related-later"
           },
           {
-            "text": "Analyse it like any other request, on arm's-length terms, send it for board approval and show the related party check in the compliance section.",
+            "text": "Analyze it like any other request on arm's-length terms, send it for board approval, and record the related party check in the file.",
             "score": 3,
             "effects": {
               "compliance": 10,
@@ -2739,7 +2739,7 @@
             "outcome": "Correct. Birr 70 million is 1.75% of capital, well within the 15% per related party limit, but above Birr 15 million it needs board approval, and the director must not take part in that decision."
           },
           {
-            "text": "Refuse: the bank should not lend to companies linked to directors.",
+            "text": "Refuse politely: lending to a company linked to a director creates a conflict the bank is better off avoiding.",
             "score": 1,
             "effects": {
               "relationship": -8,
@@ -2791,7 +2791,7 @@
         "ask": "What do you tell the committee?",
         "options": [
           {
-            "text": "Assure them the margin will not fall that far: the new line improves efficiency.",
+            "text": "Assure them the margin will not fall to 5%: the new packaging line cuts unit costs, and Bole's volumes have grown in each of the last six years.",
             "score": 0,
             "effects": {
               "quality": -10,
@@ -2800,7 +2800,7 @@
             "outcome": "You had the answer and did not share it. Committees decide on the downside; an analyst who hides a sensitivity loses the committee's trust for every future proposal."
           },
           {
-            "text": "Show the 0.96 DSCR and propose protections: a margin covenant, quarterly monitoring, no dividends while DSCR is below 1.25, and an owners' undertaking to inject funds.",
+            "text": "Show the 0.96 DSCR and propose a margin covenant, quarterly monitoring, no dividends below 1.25 DSCR and an owners' undertaking to inject funds.",
             "score": 3,
             "effects": {
               "quality": 10,
@@ -2810,7 +2810,7 @@
             "outcome": "Exactly the expected answer: at 5% Bole cannot meet term debt even with grace. The covenants are the early warning, and the owners' undertaking is the backstop. The committee approves with conditions."
           },
           {
-            "text": "Withdraw the proposal for more work.",
+            "text": "Withdraw the proposal for more work and bring it back next month with a full downside case and new covenants.",
             "score": 1,
             "effects": {
               "relationship": -6
@@ -2818,7 +2818,7 @@
             "outcome": "The proposal is sound in the base case. The committee needed to hear the downside and how it is controlled, not a withdrawal."
           },
           {
-            "text": "Re-run the projection at 7.5% so the committee sees a better DSCR.",
+            "text": "Re-run the projection at a 7.5% margin, the average of the last three years, so the committee sees a DSCR above 1.25.",
             "score": 0,
             "effects": {
               "quality": -8,
@@ -2841,7 +2841,7 @@
         "ask": "What do you do?",
         "options": [
           {
-            "text": "Release it today: the approval is on file.",
+            "text": "Release it today: the approval is on file, the owner is a good customer and harvest buying starts Monday, so the endorsement can follow.",
             "score": 0,
             "effects": {
               "compliance": -15,
@@ -2851,7 +2851,7 @@
             "outcome": "The approval lapsed after 90 days, and a condition precedent, the endorsed insurance, is unmet. Disbursing now breaks two rules at once."
           },
           {
-            "text": "Explain that the approval has lapsed, send it back for quick re-approval with updated information, and get the endorsed policy before any drawing.",
+            "text": "Explain that the approval has lapsed, send it back for quick re-approval, and get the endorsed policy before any drawing.",
             "score": 3,
             "effects": {
               "compliance": 10,
@@ -2861,7 +2861,7 @@
             "outcome": "Correct. Re-approval refreshes the information the decision rests on, and the endorsed policy protects the bank's security. Warning the customer today gives him time to arrange both before Monday."
           },
           {
-            "text": "Release half now and sort out the insurance next week.",
+            "text": "Release half today so harvest buying can start, and release the rest once the insurer endorses the policy next week.",
             "score": 0,
             "effects": {
               "compliance": -12,
@@ -2894,7 +2894,7 @@
         "ask": "What do you recommend now?",
         "options": [
           {
-            "text": "Increase the limit so the mill can keep operating.",
+            "text": "Increase the limit to Birr 15 million so the mill can keep buying wheat while the disputed invoices with the large distributor are being settled.",
             "score": 0,
             "effects": {
               "quality": -12,
@@ -2903,16 +2903,16 @@
             "outcome": "More money into a stuck cycle only grows the exposure that is already at risk. This is how a performing loan becomes a non-performing one."
           },
           {
-            "text": "Freeze the limit, visit the mill, verify receivables and stock, require additional security and a plan to collect, and watch it for special mention.",
+            "text": "Freeze the limit, visit the mill, verify receivables and stock, ask for more security and a collection plan, and watch for special mention.",
             "score": 3,
             "effects": {
               "quality": 8,
               "compliance": 4
             },
-            "outcome": "The right recovery steps: understand the cause, protect the bank, and classify honestly if it deteriorates. The lesson stands: analyse before you fast-track."
+            "outcome": "The right recovery steps: understand the cause, protect the bank, and classify honestly if it deteriorates. The lesson stands: analyze before you fast-track."
           },
           {
-            "text": "Call back the full overdraft immediately.",
+            "text": "Call back the full overdraft immediately, since it has not swung once in three months.",
             "score": 1,
             "effects": {
               "relationship": -10,
@@ -2935,7 +2935,7 @@
         "ask": "How do you respond?",
         "options": [
           {
-            "text": "Say the difference is small and leave it.",
+            "text": "Tell the committee verbally that the difference is small: 105% is still strongly secured, so the approval stands as it is.",
             "score": 0,
             "effects": {
               "compliance": -8
@@ -2943,7 +2943,7 @@
             "outcome": "The committee approved on a wrong figure. Errors in a credit report are corrected in writing, not explained away."
           },
           {
-            "text": "Correct the coverage in a written memo, confirm 105% is still strongly secured, and ask the committee to note the change.",
+            "text": "Correct the coverage in a written memo, confirm 105% is still strongly secured, and ask the committee to note it.",
             "score": 3,
             "effects": {
               "compliance": 6,
@@ -2952,7 +2952,7 @@
             "outcome": "Owning and correcting the error keeps the file honest. 105% still meets the strongly secured band, so the decision can stand with the corrected figure."
           },
           {
-            "text": "Ask the customer for another building to restore 130%.",
+            "text": "Ask the customer for another building so coverage returns to the 130% the committee approved.",
             "score": 1,
             "effects": {
               "relationship": -6
@@ -2974,7 +2974,7 @@
         "ask": "What do you do?",
         "options": [
           {
-            "text": "Argue that each loan was within your approval authority.",
+            "text": "Argue that each Birr 14 million loan was within your approval authority and was booked under the manual's rules.",
             "score": 0,
             "effects": {
               "compliance": -10
@@ -2990,7 +2990,7 @@
             "outcome": "Fixing the breach openly is the only way forward. It is also the reason the rule exists: board oversight of lending to insiders."
           },
           {
-            "text": "Ask the customer to repay two of the loans quickly so the total looks smaller.",
+            "text": "Ask the customer to repay two of the loans quickly so the total falls to Birr 42 million before the audit report goes to the board.",
             "score": 0,
             "effects": {
               "compliance": -8,
