@@ -43,6 +43,9 @@ import genderSensitiveFinancialServices from "./gender-sensitive-financial-servi
 import digitalMarketingDigitalBanking from "./digital-marketing-digital-banking.json";
 import socialMediaManagement from "./social-media-management.json";
 import strategicLeadershipChangeManagement from "./strategic-leadership-change-management.json";
+import taxComplianceEssentials from "./tax-compliance-essentials.json";
+import businessTaxManagement from "./business-tax-management.json";
+import strategicTaxManagement from "./strategic-tax-management.json";
 import organizationalCultureWorkplaceMindset from "./organizational-culture-workplace-mindset.json";
 import organizationalCultureHighPerformance from "./organizational-culture-high-performance.json";
 import organizationalCultureChampions from "./organizational-culture-champions.json";
@@ -93,6 +96,9 @@ export const proCourses = [
   digitalMarketingDigitalBanking,
   socialMediaManagement,
   strategicLeadershipChangeManagement,
+  taxComplianceEssentials,
+  businessTaxManagement,
+  strategicTaxManagement,
   organizationalCultureWorkplaceMindset,
   organizationalCultureHighPerformance,
   organizationalCultureChampions,
@@ -111,6 +117,12 @@ export const tracks: { id: ProCourse["track"]; name: string; intro: string }[] =
       name: "Project Finance Program",
       intro:
         "Project lending from feasibility studies to financial appraisal, structuring, risk, monitoring and syndication.",
+    },
+    {
+      id: "ifb",
+      name: "Interest Free Banking Program",
+      intro:
+        "Interest free financing from Sharia'h principles and contracts to processing, approval, follow-up, problem finance and portfolio management.",
     },
     {
       id: "banking",
@@ -172,9 +184,9 @@ export const folders: {
     name: "Bank and MFI",
     audience: "Bank and MFI staff",
     intro:
-      "Credit, project finance, banking fundamentals and branch operations, built on Ethiopian bank practice and NBE directives.",
+      "Credit, project finance, interest free banking, banking fundamentals and branch operations, built on Ethiopian bank practice and NBE directives.",
     icon: "bank",
-    tracks: ["credit", "project", "banking", "operations"],
+    tracks: ["credit", "project", "ifb", "banking", "operations"],
   },
   {
     id: "financial-management",
