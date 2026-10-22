@@ -11,10 +11,22 @@ import type { LineId } from "./spread";
 
 export type Progress = (msg: string) => void;
 
-async function pdfTokens(buf: ArrayBuffer, progress: Progress): Promise<{ tokens: Token[]; ocr: boolean }> {
+const vendor = () => `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/vendor`;
+
+async function pdfTokens(buf: ArrayBuffer, progress: Progress, forceOcr = false): Promise<{ tokens: Token[]; ocr: boolean }> {
   const pdfjs = await import("pdfjs-dist/legacy/build/pdf.mjs");
   pdfjs.GlobalWorkerOptions.workerSrc = new URL("pdfjs-dist/legacy/build/pdf.worker.min.mjs", import.meta.url).toString();
-  const doc = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise;
+  // Scanners often compress pages as JBIG2 or JPEG 2000, which pdf.js decodes with
+  // its WebAssembly modules; fonts and character maps cover older text PDFs.
+  const base = `${vendor()}/pdfjs`;
+  const doc = await pdfjs.getDocument({
+    data: new Uint8Array(buf),
+    wasmUrl: `${base}/wasm/`,
+    cMapUrl: `${base}/cmaps/`,
+    cMapPacked: true,
+    standardFontDataUrl: `${base}/standard_fonts/`,
+    iccUrl: `${base}/iccs/`,
+  }).promise;
   const tokens: Token[] = [];
   const scanned: number[] = [];
   const pages = Math.min(doc.numPages, 40);
@@ -38,14 +50,14 @@ async function pdfTokens(buf: ArrayBuffer, progress: Progress): Promise<{ tokens
         chars += part.length;
       }
     }
-    if (chars < 40) scanned.push(p);
+    if (chars < 40 || forceOcr) scanned.push(p);
   }
-  if (scanned.length < pages / 2) return { tokens, ocr: false };
+  if (scanned.length < pages / 2 && !forceOcr) return { tokens, ocr: false };
 
   // Scanned statements: render each page and read it with OCR.
   const { createWorker, PSM } = await import("tesseract.js");
-  const base = `${window.location.origin}${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/vendor/ocr`;
-  const worker = await createWorker("eng", 1, { workerPath: `${base}/worker.min.js`, corePath: base, langPath: base, gzip: true, workerBlobURL: false });
+  const ocrBase = `${vendor()}/ocr`;
+  const worker = await createWorker("eng", 1, { workerPath: `${ocrBase}/worker.min.js`, corePath: ocrBase, langPath: ocrBase, gzip: true, workerBlobURL: false });
   await worker.setParameters({ tessedit_pageseg_mode: PSM.SPARSE_TEXT, preserve_interword_spaces: "1" });
   const ocrTokens: Token[] = [];
   try {
@@ -159,7 +171,13 @@ export async function readStatements(file: File, progress: Progress): Promise<Pa
   if (name.endsWith(".pdf") || file.type === "application/pdf") {
     progress("Reading the PDF...");
     const { tokens, ocr } = await pdfTokens(buf, progress);
-    return parseStatement(tokens, ocr ? "ocr" : "text");
+    let r = parseStatement(tokens, ocr ? "ocr" : "text");
+    // A text layer that gives no statements (a scan with a poor hidden text layer): read the pages again with OCR.
+    if (!r && !ocr) {
+      const again = await pdfTokens(buf, progress, true);
+      r = parseStatement(again.tokens, "ocr");
+    }
+    return r && /audit/i.test(file.name) ? { ...r, audited: true } : r;
   }
   return null;
 }
