@@ -32,6 +32,22 @@ export const riskKeys = [
 ] as const;
 export type RiskKey = (typeof riskKeys)[number]["key"];
 
+/** Non-financial questions the analyst answers for every case. */
+export const questions = [
+  { key: "management", label: "Management", ask: "How experienced is the management team in this business, and what is its track record?" },
+  { key: "governance", label: "Ownership and succession", ask: "Who controls the business? Is it dependent on one person, and is there a successor?" },
+  { key: "market", label: "Market position", ask: "How strong is the business against its competitors? Is demand for its products growing?" },
+  { key: "customers", label: "Customers", ask: "Is the business dependent on a few customers? Do customers pay on time?" },
+  { key: "suppliers", label: "Suppliers and inputs", ask: "Are inputs readily available? How much depends on imports or foreign currency?" },
+  { key: "operations", label: "Operations and capacity", ask: "Are premises, equipment and staff adequate? How much of capacity is used?" },
+  { key: "compliance", label: "Licences and tax compliance", ask: "Are the trade licence, permits and tax clearance valid and up to date?" },
+  { key: "plan", label: "Use of the loan and repayment", ask: "Is the purpose sound, and will the financed activity generate the cash to repay?" },
+  { key: "character", label: "Character and conduct", ask: "What is the borrower's reputation, and how have they conducted their accounts and commitments?" },
+  { key: "environment", label: "Environment, safety and insurance", ask: "Does the business manage environmental and safety risks, and are its assets insured?" },
+] as const;
+export type QuestionKey = (typeof questions)[number]["key"];
+export type Rating = "Strong" | "Adequate" | "Weak" | "";
+
 export const ownershipTypes = ["Sole proprietorship", "Private limited company (PLC)", "Share company", "Partnership", "Cooperative", "Public enterprise", "Other"];
 export const facilityTypes = ["Overdraft", "Term loan", "Revolving loan", "Merchandise loan", "Pre-shipment export loan", "Letter of credit facility", "Letter of guarantee", "Lease financing", "Other"];
 /**
@@ -112,6 +128,7 @@ export type CreditCase = {
   salesMix: string;
   notes: Record<string, string>;
   risks: Record<RiskKey, { level: Level; note: string }>;
+  assessment: Partial<Record<QuestionKey, { rating: Rating; note: string }>>;
   gradeJustification: string;
   swot: { s: string; w: string; o: string; t: string };
   recommendations: Recommendation[];
@@ -181,6 +198,7 @@ export const emptyCase = (): CreditCase => ({
   salesMix: "",
   notes: {},
   risks: Object.fromEntries(riskKeys.map((r) => [r.key, { level: "", note: "" }])) as CreditCase["risks"],
+  assessment: {},
   gradeJustification: "",
   swot: { s: "", w: "", o: "", t: "" },
   recommendations: [{ type: "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }],
@@ -427,3 +445,88 @@ export function swotHints(k: CreditCase, a: CaseAnalysis) {
 
 export const daysOld = (iso: string) => (iso ? Math.floor((Date.now() - Date.parse(iso)) / 864e5) : NaN);
 export { change };
+
+const pctText = (n: number) => `${(n * 100).toFixed(0)}%`;
+
+/** Risk levels suggested from the figures, used where the analyst left a level blank. */
+export function suggestedRisks(k: CreditCase, a: CaseAnalysis): Partial<Record<RiskKey, { level: Level; why: string }>> {
+  const L = a.latest;
+  const rating = (q: QuestionKey) => k.assessment[q]?.rating ?? "";
+  const fromRating = (q: QuestionKey): Level => (rating(q) === "Strong" ? "Low" : rating(q) === "Adequate" ? "Medium" : rating(q) === "Weak" ? "High" : "");
+  const out: Partial<Record<RiskKey, { level: Level; why: string }>> = {};
+  if (fromRating("market")) out.market = { level: fromRating("market"), why: `market position rated ${rating("market").toLowerCase()}` };
+  if (fromRating("suppliers")) out.supplier = { level: fromRating("suppliers"), why: `suppliers and inputs rated ${rating("suppliers").toLowerCase()}` };
+  else if (k.importer) out.supplier = { level: "Medium", why: "the business depends on imports and foreign currency" };
+  if (fromRating("environment")) out.environmental = { level: fromRating("environment"), why: `environment, safety and insurance rated ${rating("environment").toLowerCase()}` };
+  if (L) {
+    if (L.netProfit < 0) out.profitability = { level: "High", why: "the latest period shows a loss" };
+    else if (L.npMargin < 0.03) out.profitability = { level: "Medium", why: `net margin is thin at ${pctText(L.npMargin)}` };
+    else out.profitability = { level: "Low", why: `net margin is ${pctText(L.npMargin)}` };
+    if (Number.isFinite(L.salesGrowth) && L.salesGrowth < -0.1 && !out.market) out.market = { level: "High", why: `annualized sales fell ${pctText(-L.salesGrowth)}` };
+  }
+  if (Number.isFinite(a.coverRecommended)) {
+    const uninsured = k.otherCollateral.some((o) => o.insured === "No");
+    out.collateral =
+      a.coverRecommended >= 1.25 && !uninsured
+        ? { level: "Low", why: `collateral covers ${pctText(a.coverRecommended)} of exposure` }
+        : a.coverRecommended >= 1
+          ? { level: "Medium", why: `collateral covers ${pctText(a.coverRecommended)} of exposure${uninsured ? " and some items are uninsured" : ""}` }
+          : { level: "High", why: `collateral covers only ${pctText(a.coverRecommended)} of exposure` };
+  }
+  return out;
+}
+
+export type Scored = { criterion: string; result: string; verdict: "Meets" | "Watch" | "Concern" | "Not assessed" };
+
+/** The decision scorecard: each test the figures and the analyst's answers support. */
+export function scorecard(k: CreditCase, a: CaseAnalysis): Scored[] {
+  const L = a.latest;
+  const out: Scored[] = [];
+  const add = (criterion: string, result: string, verdict: Scored["verdict"]) => out.push({ criterion, result, verdict });
+  if (L) {
+    add("Profitability", `Net margin ${Number.isFinite(L.npMargin) ? pctText(L.npMargin) : "-"}`, L.netProfit < 0 ? "Concern" : L.npMargin < 0.03 ? "Watch" : "Meets");
+    if (Number.isFinite(L.currentRatio)) add("Liquidity", `Current ratio ${L.currentRatio.toFixed(2)}x`, L.currentRatio < 1 ? "Concern" : L.currentRatio < 1.2 ? "Watch" : "Meets");
+    add("Leverage", L.tnw > 0 ? `Liabilities ${L.tlToTnw.toFixed(2)}x net worth` : "Negative net worth", L.tnw <= 0 || L.tlToTnw > 3 ? "Concern" : L.tlToTnw > 2 ? "Watch" : "Meets");
+    if (Number.isFinite(L.interestCover)) add("Interest cover", `${L.interestCover.toFixed(2)}x`, L.interestCover < 1 ? "Concern" : L.interestCover < 2 ? "Watch" : "Meets");
+    if (Number.isFinite(L.salesGrowth)) add("Sales trend", `${L.salesGrowth >= 0 ? "Up" : "Down"} ${pctText(Math.abs(L.salesGrowth))} annualized`, L.salesGrowth < -0.1 ? "Concern" : L.salesGrowth < 0 ? "Watch" : "Meets");
+  } else add("Financial statements", "Not entered", "Not assessed");
+  if (Number.isFinite(a.coverRecommended)) add("Collateral coverage", pctText(a.coverRecommended), a.coverRecommended < 1 ? "Concern" : a.coverRecommended < 1.25 ? "Watch" : "Meets");
+  else add("Collateral coverage", "No collateral entered", "Not assessed");
+  const ob = otherBanks(k);
+  if (ob) add("Conduct at other banks", ob.inArrears ? `${ob.inArrears} facilit${ob.inArrears === 1 ? "y" : "ies"} in arrears` : ob.active.length ? "All facilities current" : "No active facilities", ob.inArrears ? "Concern" : "Meets");
+  else add("Conduct at other banks", "No credit reference report", "Not assessed");
+  if (k.facilities.length) {
+    const bad = k.facilities.filter((f) => f.status !== "Pass").length;
+    add("Present facilities with us", bad ? `${bad} not classified pass` : "All pass", bad ? "Concern" : "Meets");
+  }
+  const rated = questions.filter((q) => k.assessment[q.key]?.rating);
+  const weak = rated.filter((q) => k.assessment[q.key]?.rating === "Weak");
+  if (rated.length) add("Non-financial assessment", `${rated.length} of ${questions.length} areas rated, ${weak.length} weak`, weak.length >= 3 ? "Concern" : weak.length ? "Watch" : rated.length < questions.length ? "Watch" : "Meets");
+  else add("Non-financial assessment", "Not completed", "Not assessed");
+  return out;
+}
+
+export function overallVerdict(card: Scored[]) {
+  const concerns = card.filter((c) => c.verdict === "Concern").length;
+  const watch = card.filter((c) => c.verdict === "Watch").length;
+  if (concerns === 0 && watch <= 1) return "Favorable";
+  if (concerns <= 2) return "Favorable with conditions";
+  return "Not favorable unless the concerns are mitigated";
+}
+
+/** SWOT built from the figures, the credit report, the analyst's ratings and the context. */
+export function autoSwot(k: CreditCase, a: CaseAnalysis, ctxText: { opportunities: string[]; threats: string[] }) {
+  const h = swotHints(k, a);
+  const s = [...h.s];
+  const w = [...h.w];
+  for (const q of questions) {
+    const r = k.assessment[q.key];
+    if (r?.rating === "Strong") s.push(`${q.label}: ${r.note.trim() || "rated strong"}`.replace(/\.?$/, "."));
+    if (r?.rating === "Weak") w.push(`${q.label}: ${r.note.trim() || "rated weak"}`.replace(/\.?$/, "."));
+  }
+  if (k.relationshipSince) {
+    const years = Math.floor((Date.now() - Date.parse(k.relationshipSince)) / (365.25 * 864e5));
+    if (years >= 3) s.push(`Banking relationship of ${years} years.`);
+  }
+  return { s, w, o: ctxText.opportunities, t: ctxText.threats };
+}

@@ -3,29 +3,33 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   analyseCase,
+  autoSwot,
   birr,
   draftCommentary,
   emptyCase,
   facilityTypes,
   grades,
   ownershipTypes,
+  questions,
   sectorReportFor,
   riskKeys,
-  swotHints,
+  suggestedRisks,
   type AnalystFile,
   type CreditCase,
   type ExportRow,
   type Facility,
   type OtherCollateral,
   type Project,
+  type Rating,
 } from "@/lib/credit/case";
 import { sectors } from "@/data/credit/profile";
 import type { AnalysisContext, Cited } from "@/lib/credit/context";
-import { isPicked, regionNames, slugOf } from "@/lib/credit/select";
+import { contextSwot, isPicked, regionNames, selection, slugOf } from "@/lib/credit/select";
 import { deleteFile, getFile, putFile } from "@/lib/docs/store";
 import { Area, AnythingToAdd, Block, Check, Grid, Pick, smallButton, TableEditor, Text, inputClass } from "./creditFields";
 import { CrbUpload } from "./CreditCrb";
 import { CreditReport } from "./CreditReport";
+import { StatementsImport } from "./StatementsImport";
 import { SpreadEntry, SpreadOutcomes } from "./CreditSpread";
 
 /**
@@ -41,10 +45,11 @@ const steps = [
   { key: "borrower", title: "Borrower and request", laf: "Sections 1 to 3" },
   { key: "facilities", title: "Facilities and collateral", laf: "Sections 4 and 5" },
   { key: "background", title: "Background", laf: "Section 6" },
+  { key: "assessment", title: "Business assessment", laf: "Non-financial" },
   { key: "banking", title: "Banking relationship", laf: "Section 7" },
   { key: "statements", title: "Financial statements", laf: "Financial analysis form" },
   { key: "outcomes", title: "Outcomes", laf: "Ratios and trends" },
-  { key: "context", title: "Sector and region", laf: "Official sources" },
+  { key: "context", title: "Sector and region", laf: "Operating environment" },
   { key: "analysis", title: "Analysis and risk", laf: "Sections 8 and 9" },
   { key: "recommendation", title: "Recommendation and documents", laf: "Section 10" },
   { key: "report", title: "Report", laf: "Print or save as PDF" },
@@ -66,7 +71,7 @@ function merge(raw: Partial<CreditCase>): CreditCase {
   if (raw.sector && raw.sectorReport === undefined && !sectors.includes(raw.sector)) {
     raw = { ...raw, sectorReport: raw.sector, sector: "" };
   }
-  return { ...base, ...raw, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) } };
+  return { ...base, ...raw, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
 }
 function save(k: CreditCase) {
   try {
@@ -97,6 +102,8 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
   const set = (patch: Partial<CreditCase>) => setK((prev) => ({ ...prev, ...patch }));
   const a = useMemo(() => analyseCase(k), [k]);
   const drafts = useMemo(() => draftCommentary(k, a), [k, a]);
+  const suggested = useMemo(() => suggestedRisks(k, a), [k, a]);
+  const swot = useMemo(() => autoSwot(k, a, contextSwot(selection(k, ctx))), [k, a, ctx]);
   const go = (i: number) => {
     setStep(i);
     top.current?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -344,6 +351,9 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
       {add("background", "the background")}
     </div>,
 
+    /* Non-financial assessment */
+    <Assessment key="assessment" k={k} set={set} />,
+
     /* 7 */
     <div key="banking" className="space-y-6">
       <Block title="7. Banking relationship">
@@ -397,6 +407,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
 
     /* Spread entry */
     <div key="statements" className="space-y-6">
+      <StatementsImport k={k} set={set} onDone={() => go(steps.findIndex((s) => s.key === "outcomes"))} />
       <Block
         title="Financial analysis form"
         intro={
@@ -457,7 +468,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           </div>
         ))}
       </Block>
-      <Block title="8.8 Risk assessment">
+      <Block title="8.8 Risk assessment" intro="Levels marked Auto are set from the figures and your business assessment. Choose a level to override one.">
         <div className="space-y-4">
           {riskKeys.map((r) => (
             <div key={r.key} className="grid gap-2 sm:grid-cols-[12rem_8rem_1fr] sm:items-start">
@@ -468,11 +479,11 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
               <select aria-label={`${r.label} level`} value={k.risks[r.key].level} onChange={(e) => set({ risks: { ...k.risks, [r.key]: { ...k.risks[r.key], level: e.target.value as "" } } })} className={inputClass}>
                 {["", "Low", "Medium", "High"].map((l) => (
                   <option key={l} value={l}>
-                    {l || "Level"}
+                    {l || (suggested[r.key] ? `Auto: ${suggested[r.key]?.level}` : "Level")}
                   </option>
                 ))}
               </select>
-              <textarea aria-label={`${r.label} note`} rows={2} value={k.risks[r.key].note} onChange={(e) => set({ risks: { ...k.risks, [r.key]: { ...k.risks[r.key], note: e.target.value } } })} className={inputClass} />
+              <textarea aria-label={`${r.label} note`} rows={2} value={k.risks[r.key].note} placeholder={suggested[r.key] ? `Suggested ${suggested[r.key]?.level.toLowerCase()}: ${suggested[r.key]?.why}.` : undefined} onChange={(e) => set({ risks: { ...k.risks, [r.key]: { ...k.risks[r.key], note: e.target.value } } })} className={inputClass} />
             </div>
           ))}
         </div>
@@ -485,13 +496,30 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           />
         )}
       </Block>
-      <Block title="9. Summary (SWOT)">
-        <SwotHints k={k} a={a} ctx={ctx} />
+      <Block title="9. Summary (SWOT)" intro="The SWOT is written automatically from the figures, the credit reference report, your business assessment and the sector and region. Add your own points under each heading.">
         <Grid>
-          <Area label="Strengths" value={k.swot.s} onChange={(v) => set({ swot: { ...k.swot, s: v } })} />
-          <Area label="Weaknesses" value={k.swot.w} onChange={(v) => set({ swot: { ...k.swot, w: v } })} />
-          <Area label="Opportunities" value={k.swot.o} onChange={(v) => set({ swot: { ...k.swot, o: v } })} />
-          <Area label="Threats" value={k.swot.t} onChange={(v) => set({ swot: { ...k.swot, t: v } })} />
+          {(
+            [
+              ["s", "Strengths"],
+              ["w", "Weaknesses"],
+              ["o", "Opportunities"],
+              ["t", "Threats"],
+            ] as const
+          ).map(([key, label]) => (
+            <div key={key} className="space-y-2">
+              <p className="font-semibold text-ink">{label}</p>
+              {swot[key].length ? (
+                <ul className="list-disc space-y-1 pl-5 text-sm text-muted">
+                  {swot[key].map((x) => (
+                    <li key={x}>{x}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm text-muted">Nothing found automatically yet.</p>
+              )}
+              <Area label={`Add to ${label.toLowerCase()}`} value={k.swot[key]} onChange={(v) => set({ swot: { ...k.swot, [key]: v } })} rows={2} />
+            </div>
+          ))}
         </Grid>
       </Block>
       {add("analysis", "the analysis")}
@@ -662,7 +690,7 @@ function PickList({ title, prefix, items, k, ctx, set, note }: { title: string; 
                     {it.label && <span className="font-semibold">{it.label}: </span>}
                     {it.text}
                     {it.period && <span className="text-muted"> ({it.period})</span>}
-                    {it.cite && <span className="block text-xs text-muted">Source: {it.cite}</span>}
+                    {it.cite && <span className="block text-xs text-muted">{it.cite}</span>}
                   </>
                 }
               />
@@ -681,8 +709,8 @@ function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set
   return (
     <div className="space-y-6">
       <p className="text-muted">
-        Tick the items to include in this borrower&apos;s report. Figures come from Ethiopian government bodies and international institutions, with the source and date shown. The sector
-        and regional data is refreshed every month.
+        Tick the facts to use in this borrower&apos;s analysis. Ticked figures go into the trading outlook, opportunities into the SWOT, and points to consider into the threats. The
+        sector and regional data is refreshed every month.
       </p>
       {ctx.economy && (
         <Block title="National economy">
@@ -714,28 +742,11 @@ function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set
           </>
         )}
       </Block>
-      <Block title="Laws and directives" intro="Suggested from the borrower's sector and trade activity. Tick any others that apply.">
-        <ul className="space-y-2">
-          {ctx.regulations.map((r) => (
-            <li key={r.id}>
-              <Check
-                checked={isPicked(k, `reg:${r.id}`, ctx)}
-                onChange={(v) => set({ picked: { ...k.picked, [`reg:${r.id}`]: v } })}
-                label={
-                  <>
-                    <span className="font-semibold">{r.number}</span> {r.title} <span className="text-muted">({r.status})</span>
-                  </>
-                }
-              />
-            </li>
-          ))}
-        </ul>
-      </Block>
       <div className="rounded-2xl border border-gold-400 bg-gold-100 p-5">
         <p className="font-semibold text-ink">Do you have more recent or local information?</p>
         <p className="mt-1 text-sm text-muted">
-          For example, a new directive, local market prices, a regional bureau&apos;s figures or what you saw on the business visit. It appears in the report as the analyst&apos;s own
-          information, separate from the official sources.
+          For example, a new directive, local market prices, a regional bureau&apos;s figures or what you saw on the business visit. It is added to the trading outlook in the
+          report.
         </p>
         <textarea aria-label="Analyst's sector and regional information" rows={4} value={k.contextUpdate} onChange={(e) => set({ contextUpdate: e.target.value })} className={inputClass} />
       </div>
@@ -743,26 +754,45 @@ function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set
   );
 }
 
-function SwotHints({ k, a, ctx }: { k: CreditCase; a: ReturnType<typeof analyseCase>; ctx: AnalysisContext }) {
-  const h = swotHints(k, a);
-  const sector = ctx.sectors.find((s) => s.slug === k.sectorReport);
-  const region = ctx.regions.find((r) => r.slug === k.region);
-  const o = [...(sector?.opportunities.slice(0, 2) ?? []), ...(region?.opportunities.slice(0, 1) ?? [])].map((x) => x.label ?? x.text);
-  if (!h.s.length && !h.w.length && !o.length) return null;
+const ratings: Rating[] = ["Strong", "Adequate", "Weak"];
+
+function Assessment({ k, set }: { k: CreditCase; set: (p: Partial<CreditCase>) => void }) {
+  const done = questions.filter((q) => k.assessment[q.key]?.rating).length;
   return (
-    <div className="rounded-xl bg-canvas p-4 text-sm">
-      <p className="font-semibold text-ink">Starting points from the figures and context</p>
-      <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
-        {h.s.map((x) => (
-          <li key={x}>Strength: {x}</li>
-        ))}
-        {h.w.map((x) => (
-          <li key={x}>Weakness: {x}</li>
-        ))}
-        {o.map((x) => (
-          <li key={x}>Opportunity: {x}</li>
-        ))}
-      </ul>
+    <div className="space-y-6">
+      <Block
+        title="Business assessment"
+        intro={`Rate each area from what you know of the borrower: interviews, the business visit, references and documents. Your ratings feed the risk assessment, the SWOT and the decision summary. ${done} of ${questions.length} rated.`}
+      >
+        <div className="space-y-5">
+          {questions.map((q) => {
+            const v = k.assessment[q.key] ?? { rating: "" as Rating, note: "" };
+            const put = (p: Partial<typeof v>) => set({ assessment: { ...k.assessment, [q.key]: { ...v, ...p } } });
+            return (
+              <fieldset key={q.key} className="min-w-0 border-t border-line pt-4">
+                <legend className="sr-only">{q.label}</legend>
+                <p className="font-semibold text-ink">{q.label}</p>
+                <p className="text-sm text-muted">{q.ask}</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {ratings.map((r) => (
+                    <button
+                      key={r}
+                      type="button"
+                      aria-pressed={v.rating === r}
+                      onClick={() => put({ rating: v.rating === r ? "" : r })}
+                      className={`rounded-full border px-4 py-1.5 text-sm font-semibold ${v.rating === r ? (r === "Weak" ? "border-red-700 bg-red-700 text-white" : "border-brand-600 bg-brand-600 text-white") : "border-line bg-white text-ink hover:border-brand-600"}`}
+                    >
+                      {r}
+                    </button>
+                  ))}
+                </div>
+                <textarea aria-label={`${q.label}: what you found`} rows={2} value={v.note} placeholder="What you found, in a sentence or two" onChange={(e) => put({ note: e.target.value })} className={inputClass} />
+              </fieldset>
+            );
+          })}
+        </div>
+      </Block>
+      <AnythingToAdd value={k.additions.assessment ?? ""} onChange={(v) => set({ additions: { ...k.additions, assessment: v } })} what="the business assessment" />
     </div>
   );
 }

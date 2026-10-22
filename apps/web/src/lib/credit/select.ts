@@ -75,3 +75,36 @@ export function selection(k: CreditCase, ctx: AnalysisContext) {
   };
 }
 export type Selection = ReturnType<typeof selection>;
+
+const clean = (s: string) => s.replace(/\s*\([^)]*\)/g, "").trim();
+const firstSentence = (s: string) => {
+  const t = s.trim().match(/^.*?[.!?](?=\s|$)/)?.[0] ?? s.trim();
+  return /[.!?]$/.test(t) ? t : `${t}.`;
+};
+const firstClause = (s: string) => s.split(/;|\s\(|, up from|, compared with/)[0].trim().replace(/[.,]$/, "");
+const facts = (xs: Picked) => xs.filter(({ item }) => item.label).map(({ item }) => `${clean(item.label ?? "")} ${firstClause(item.text)}`);
+
+/** The selected sector and regional facts as plain prose for the trading outlook. */
+export function outlookFacts(k: CreditCase, sel: Selection) {
+  const out: string[] = [];
+  const list = (xs: string[]) => (xs.length ? `${xs.join("; ")}.` : "");
+  if (sel.economy.length) out.push(`National economy: ${list(facts(sel.economy))}`);
+  if (sel.sector) out.push(sel.sector.summary);
+  if (sel.region) {
+    const parks = sel.regionParks.map(({ item }) => clean(item.label ?? item.text));
+    out.push(
+      [`${sel.region.name}: ${sel.region.summary}`, list(facts(sel.regionIndicators)), parks.length && `Industrial parks and zones in the region include ${parks.join(", ")}.`].filter(Boolean).join(" "),
+    );
+  }
+  if (k.contextUpdate.trim()) out.push(k.contextUpdate.trim());
+  return out.join("\n\n");
+}
+
+/** Opportunities and threats for the SWOT, from the selected sector and regional items. */
+export function contextSwot(sel: Selection) {
+  const opp = (xs: Picked) => xs.map(({ item }) => (item.label ? `${clean(item.label)}: ${firstSentence(item.text)}` : firstSentence(item.text)));
+  return {
+    opportunities: [...opp(sel.sectorOpportunities).slice(0, 3), ...opp(sel.regionOpportunities).slice(0, 2), ...opp(sel.sectorIncentives).slice(0, 1)],
+    threats: [...sel.sectorPoints.slice(0, 3), ...sel.regionConsiderations.slice(0, 2)].map(({ item }) => firstSentence(item.text)),
+  };
+}

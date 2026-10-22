@@ -14,7 +14,7 @@ async function inflate(data: Uint8Array, format: "deflate" | "deflate-raw") {
 }
 
 /** Returns one file from a zip archive, or null. */
-async function unzipEntry(buf: Uint8Array, wanted: string) {
+export async function unzipEntry(buf: Uint8Array, wanted: string) {
   const view = new DataView(buf.buffer, buf.byteOffset, buf.byteLength);
   let eocd = -1;
   for (let i = buf.length - 22; i >= Math.max(0, buf.length - 65557); i--) {

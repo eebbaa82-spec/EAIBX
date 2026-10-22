@@ -1,10 +1,10 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { amount, birr, discounted, otherBanks, periodLabel, riskKeys, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
+import { amount, autoSwot, birr, discounted, otherBanks, overallVerdict, periodLabel, questions, riskKeys, scorecard, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { titleCase } from "./CreditCrb";
-import type { AnalysisContext, Cited } from "@/lib/credit/context";
-import { selection, type Picked } from "@/lib/credit/select";
+import type { AnalysisContext } from "@/lib/credit/context";
+import { contextSwot, outlookFacts, selection } from "@/lib/credit/select";
 import { balanceSheet, fmt, profitLoss, ratioRows, type Column } from "@/lib/credit/spread";
 
 /**
@@ -28,6 +28,16 @@ function H({ n, children }: { n?: string; children: ReactNode }) {
       {n && <span className="mr-2">{n}.</span>}
       {children}
     </h2>
+  );
+}
+function Points({ items }: { items: string[] }) {
+  if (!items.length) return <p>-</p>;
+  return (
+    <ul className="list-disc space-y-0.5 pl-4">
+      {items.map((x) => (
+        <li key={x}>{x}</li>
+      ))}
+    </ul>
   );
 }
 function H3({ children }: { children: ReactNode }) {
@@ -92,29 +102,6 @@ function Note({ text }: { text?: string }) {
     </div>
   );
 }
-function CitedList({ items }: { items: Picked }) {
-  if (!items.length) return null;
-  return (
-    <ul className="mt-1 list-disc space-y-0.5 pl-5">
-      {items.map(({ id, item }) => (
-        <li key={id} className="text-justify">
-          <Cite item={item} />
-        </li>
-      ))}
-    </ul>
-  );
-}
-function Cite({ item }: { item: Cited }) {
-  return (
-    <>
-      {item.label && <span className="font-semibold">{item.label}: </span>}
-      {item.text}
-      {item.period && ` (${item.period})`}
-      {item.cite && <span className="text-[8.5pt] text-slate-600"> [{item.cite}]</span>}
-    </>
-  );
-}
-
 function SpreadTable({ cols, unit, groups }: { cols: Column[]; unit: string; groups: typeof balanceSheet }) {
   return (
     <div className="overflow-x-auto print:overflow-visible">
@@ -220,8 +207,28 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const sectorName = k.sector;
   const address = [k.city, k.woreda, k.kebele, sel.regionName].filter(Boolean).join(", ");
   const text = (n: string) => (k.notes[n]?.trim() ? k.notes[n] : drafts[n] ?? "");
-  const anyRegionItem = sel.regionIndicators.length + sel.regionEconomy.length + sel.regionParks.length + sel.regionOpportunities.length + sel.regionConsiderations.length > 0;
-  const sources = [sel.sector && `${sel.sector.name} sector report (as of ${sel.sector.asOf})`, ctx.economy && `Economy overview (as of ${ctx.economy.asOf})`, sel.region && `Regional facts (as of ${sel.region.asOf})`].filter(Boolean);
+  const suggested = suggestedRisks(k, a);
+  const swot = autoSwot(k, a, contextSwot(sel));
+  const card = scorecard(k, a);
+  const verdict = overallVerdict(card);
+  const outlook = [text("8.7"), outlookFacts(k, sel)].filter((x) => x.trim()).join("\n\n");
+  const risks = riskKeys
+    .map((r) => {
+      const own = k.risks[r.key];
+      const auto = suggested[r.key];
+      if (own.level || !auto) return { label: r.label, level: own.level, note: own.note.trim() };
+      return { label: r.label, level: auto.level, note: own.note.trim() || `${auto.why[0].toUpperCase()}${auto.why.slice(1)}.` };
+    })
+    .filter((r) => r.level || r.note);
+  const extra = (x: string) =>
+    x
+      .split(/\n+/)
+      .map((l) => l.replace(/^[-*•]\s*/, "").trim())
+      .filter(Boolean);
+  const all = { s: [...swot.s, ...extra(k.swot.s)], w: [...swot.w, ...extra(k.swot.w)], o: [...swot.o, ...extra(k.swot.o)], t: [...swot.t, ...extra(k.swot.t)] };
+  const rated = questions.filter((q) => k.assessment[q.key]?.rating || k.assessment[q.key]?.note.trim());
+  const recs = k.recommendations.filter((r) => r.amount || r.collateral);
+  const recTotal = recs.reduce((n, r) => n + (Number.isFinite(amount(r.amount)) ? amount(r.amount) : 0), 0);
 
   return (
     <article className="bank-pack rounded-2xl border border-line bg-white p-6 font-serif text-[10.5pt] leading-snug text-black sm:p-10 print:rounded-none print:border-0 print:p-0">
@@ -373,65 +380,13 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
       )}
       <Note text={k.additions.background} />
 
-      <H3>Operating environment</H3>
-      <P>The following context is taken from Ethiopian government bodies and international institutions, as cited. It was selected for this borrower&apos;s sector and region.</P>
-      {sel.economy.length > 0 && (
+      {rated.length > 0 && (
         <>
-          <p className="mt-2 font-semibold">National economy</p>
-          <CitedList items={sel.economy} />
+          <H3>Business assessment</H3>
+          <Table head={["Area", "Rating", "Findings"]} rows={rated.map((q) => [q.label, k.assessment[q.key]?.rating || "-", k.assessment[q.key]?.note || "-"])} />
         </>
       )}
-      {sel.sector && (
-        <>
-          <p className="mt-2 font-semibold">Sector: {sel.sector.name}</p>
-          <P>{sel.sector.summary}</P>
-          <CitedList items={sel.sectorIndicators} />
-          {sel.sectorOpportunities.length > 0 && <p className="mt-1.5 italic">Opportunities</p>}
-          <CitedList items={sel.sectorOpportunities} />
-          {sel.sectorIncentives.length > 0 && <p className="mt-1.5 italic">Incentives</p>}
-          <CitedList items={sel.sectorIncentives} />
-          {sel.sectorPoints.length > 0 && <p className="mt-1.5 italic">Points to consider</p>}
-          <CitedList items={sel.sectorPoints} />
-        </>
-      )}
-      {sel.region && anyRegionItem && (
-        <>
-          <p className="mt-2 font-semibold">
-            Region: {sel.region.name}
-            {sel.region.capital && ` (capital ${sel.region.capital})`}
-          </p>
-          <P>{sel.region.summary}</P>
-          <CitedList items={sel.regionIndicators} />
-          <CitedList items={sel.regionEconomy} />
-          {sel.regionParks.length > 0 && <p className="mt-1.5 italic">Industrial parks and zones</p>}
-          <CitedList items={sel.regionParks} />
-          {sel.regionOpportunities.length > 0 && <p className="mt-1.5 italic">Investment opportunities</p>}
-          <CitedList items={sel.regionOpportunities} />
-          {sel.regionConsiderations.length > 0 && <p className="mt-1.5 italic">Points to consider</p>}
-          <CitedList items={sel.regionConsiderations} />
-        </>
-      )}
-      {sel.regulations.length > 0 && (
-        <>
-          <p className="mt-2 font-semibold">Laws and directives that apply</p>
-          <ul className="mt-1 list-disc space-y-0.5 pl-5">
-            {sel.regulations.map((r) => (
-              <li key={r.id} className="text-justify">
-                <span className="font-semibold">
-                  {r.number}, {r.title}
-                </span>{" "}
-                ({r.issuer}, {r.status}). {r.relevance}
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-      {k.contextUpdate.trim() && (
-        <div className="mt-2 break-inside-avoid border-l-4 border-slate-500 bg-slate-50 px-3 py-1.5">
-          <p className="text-[9pt] font-semibold uppercase tracking-wide">Information added by the analyst</p>
-          <p className="whitespace-pre-line text-justify">{k.contextUpdate.trim()}</p>
-        </div>
-      )}
+      <Note text={k.additions.assessment} />
 
       <H n="7">Banking relationship</H>
       {k.repaymentHistory.trim() && (
@@ -498,11 +453,11 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
           <H3>
             {n} {title}
           </H3>
-          <P>{text(n) || "No comment."}</P>
+          <P>{(n === "8.7" ? outlook : text(n)) || "No comment."}</P>
         </div>
       ))}
       <H3>8.8 Risk assessment</H3>
-      <Table head={["Risk", "Level", "Comment"]} rows={riskKeys.filter((r) => k.risks[r.key].level || k.risks[r.key].note).map((r) => [r.label, k.risks[r.key].level || "-", k.risks[r.key].note])} />
+      <Table head={["Risk", "Level", "Comment"]} rows={risks.map((r) => [r.label, r.level || "-", r.note])} />
       {k.gradeJustification.trim() && (
         <>
           <p className="mt-2 font-semibold">Grade justification (current grade {k.gradeNow})</p>
@@ -517,21 +472,21 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
           <tr>
             <td className="w-1/2 border border-slate-400 px-2 py-1 align-top">
               <p className="font-bold">Strengths</p>
-              <p className="whitespace-pre-line">{k.swot.s || "-"}</p>
+              <Points items={all.s} />
             </td>
             <td className="w-1/2 border border-slate-400 px-2 py-1 align-top">
               <p className="font-bold">Weaknesses</p>
-              <p className="whitespace-pre-line">{k.swot.w || "-"}</p>
+              <Points items={all.w} />
             </td>
           </tr>
           <tr>
             <td className="border border-slate-400 px-2 py-1 align-top">
               <p className="font-bold">Opportunities</p>
-              <p className="whitespace-pre-line">{k.swot.o || "-"}</p>
+              <Points items={all.o} />
             </td>
             <td className="border border-slate-400 px-2 py-1 align-top">
               <p className="font-bold">Threats</p>
-              <p className="whitespace-pre-line">{k.swot.t || "-"}</p>
+              <Points items={all.t} />
             </td>
           </tr>
         </tbody>
@@ -551,6 +506,41 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         </>
       )}
       <Note text={k.additions.recommendation} />
+      </div>
+
+      <section className="break-inside-avoid">
+        <H n="11">Decision summary</H>
+        <div className="mt-2 border-2 border-black p-3">
+          <p className="text-[11pt]">
+            Indicative assessment: <span className="font-bold">{verdict}</span>
+          </p>
+          <Table head={["Test", "Result", "Assessment"]} rows={card.map((c) => [c.criterion, c.result, c.verdict])} />
+          <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2 print:grid-cols-2">
+            <div>
+              <p className="font-bold">Key strengths</p>
+              <Points items={all.s.slice(0, 4)} />
+            </div>
+            <div>
+              <p className="font-bold">Key concerns</p>
+              <Points
+                items={[
+                  ...card.filter((c) => c.verdict === "Concern").map((c) => `${c.criterion}: ${c.result}.`),
+                  ...questions.filter((q) => k.assessment[q.key]?.rating === "Weak").map((q) => `${q.label}: ${k.assessment[q.key]?.note.trim() || "rated weak"}.`.replace(/\.\.$/, ".")),
+                  ...card.filter((c) => c.verdict === "Watch").map((c) => `${c.criterion}: ${c.result}.`),
+                ].slice(0, 5)}
+              />
+            </div>
+          </div>
+          <P>
+            {recs.length
+              ? `The officer recommends ${recs.map((r) => `${r.type ? r.type.toLowerCase() : "a facility"} of ${etb(r.amount)}${r.tenure ? ` for ${r.tenure} months` : ""}`).join(", ")}${recs.length > 1 && recTotal ? `, ${birr(recTotal)} in total` : ""}${recs.some((r) => r.collateral) ? `, secured by ${recs.map((r) => r.collateral).filter(Boolean).join("; ")}` : ""}.${k.conditions.trim() ? " Approval is subject to the conditions and covenants in section 10." : ""}`
+              : "No facility is recommended yet."}
+          </P>
+          <p className="mt-1.5 text-[9pt] italic">The assessment follows from the figures, the credit reference report and the analyst&apos;s ratings. The credit decision rests with the approving authority.</p>
+        </div>
+      </section>
+
+      <div className="break-inside-avoid">
       <div className="mt-10 grid break-inside-avoid grid-cols-2 gap-10">
         <div>
           <p className="border-t border-black pt-1 font-semibold">Recommended by (loan officer)</p>
@@ -586,9 +576,8 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
 
       <footer className="mt-8 border-t border-slate-400 pt-2 text-[8.5pt] text-slate-700">
         <p className="text-justify">
-          Prepared with the Investopia credit analysis workspace from information supplied by the borrower and the analyst. Context data comes from Ethiopian government bodies and
-          international institutions, cited by publisher and date{sources.length ? `: ${sources.join("; ")}` : ""}. The figures and judgments in this report are the analyst&apos;s
-          responsibility; the credit decision rests with the lending institution under its own policies and National Bank of Ethiopia directives.
+          Prepared with the Investopia credit analysis workspace from information supplied by the borrower and the analyst. The figures and judgments in this report are the analyst&apos;s
+          responsibility; the credit decision rests with the lending institution under its own credit policy.
         </p>
       </footer>
     </article>
