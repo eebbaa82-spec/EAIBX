@@ -33,7 +33,7 @@ export function suggestedRegulation(k: CreditCase, r: RegulationContext) {
   if (/Interest rates/i.test(r.topic)) return true;
   if (/1395\/2025|1341\/2024/.test(r.number)) return true;
   if ((k.exporter || k.importer) && /Foreign exchange/i.test(r.topic) && !/^Directive No\. SBB/.test(r.number)) return true;
-  if (["manufacturing", "agriculture-agro-processing", "health-pharmaceuticals", "ict-digital", "energy"].includes(k.sector) && /Special economic zones|Industrial parks|^Incentives$/i.test(r.topic)) return true;
+  if (["manufacturing", "agriculture-agro-processing", "health-pharmaceuticals", "ict-digital", "energy"].includes(k.sectorReport) && /Special economic zones|Industrial parks|^Incentives$/i.test(r.topic)) return true;
   return false;
 }
 
@@ -54,7 +54,7 @@ export function isPicked(k: CreditCase, id: string, ctx?: AnalysisContext): bool
 export type Picked = { id: string; item: Cited }[];
 
 export function selection(k: CreditCase, ctx: AnalysisContext) {
-  const sector = ctx.sectors.find((s) => s.slug === k.sector) ?? null;
+  const sector = ctx.sectors.find((s) => s.slug === k.sectorReport) ?? null;
   const region = ctx.regions.find((r) => r.slug === k.region) ?? null;
   const take = (prefix: string, items: Cited[] = []): Picked => items.map((item, i) => ({ id: `${prefix}:${i}`, item })).filter((x) => isPicked(k, x.id, ctx));
   return {

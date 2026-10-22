@@ -33,6 +33,23 @@ export type RiskKey = (typeof riskKeys)[number]["key"];
 
 export const ownershipTypes = ["Sole proprietorship", "Private limited company (PLC)", "Share company", "Partnership", "Cooperative", "Public enterprise", "Other"];
 export const facilityTypes = ["Overdraft", "Term loan", "Revolving loan", "Merchandise loan", "Pre-shipment export loan", "Letter of credit facility", "Letter of guarantee", "Lease financing", "Other"];
+/**
+ * The borrower profile builder's sectors (data/credit/profile.ts), each with the
+ * sector report used for context by default. The analyst can pick another report.
+ */
+export const sectorReportFor: Record<string, string> = {
+  Agriculture: "agriculture-agro-processing",
+  "Domestic trade": "",
+  "Services (hotel, health, education, other)": "tourism-hospitality",
+  "Manufacturing and industry": "manufacturing",
+  Export: "",
+  Import: "",
+  "Building and construction": "real-estate-construction",
+  Transport: "logistics-transport",
+  "Personal or household": "",
+  Other: "",
+};
+
 export const grades = ["", "1", "2", "3", "4", "5", "6", "7"];
 
 export type CreditCase = {
@@ -49,6 +66,7 @@ export type CreditCase = {
   cif: string;
   ownership: string;
   sector: string;
+  sectorReport: string;
   activity: string;
   exporter: boolean;
   importer: boolean;
@@ -115,6 +133,7 @@ export const emptyCase = (): CreditCase => ({
   cif: "",
   ownership: ownershipTypes[1],
   sector: "",
+  sectorReport: "",
   activity: "",
   exporter: false,
   importer: false,

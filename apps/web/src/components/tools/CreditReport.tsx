@@ -161,7 +161,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const sel = selection(k, ctx);
   const L = a.latest;
   const shown = a.cols.filter((c) => c.filled);
-  const sectorName = sel.sector?.name ?? (k.sector === "trade" ? "Trade and commerce" : k.sector === "other" ? "Other" : "");
+  const sectorName = k.sector;
   const address = [k.city, k.woreda, k.kebele, sel.regionName].filter(Boolean).join(", ");
   const text = (n: string) => (k.notes[n]?.trim() ? k.notes[n] : drafts[n] ?? "");
   const anyRegionItem = sel.regionIndicators.length + sel.regionEconomy.length + sel.regionParks.length + sel.regionOpportunities.length + sel.regionConsiderations.length > 0;

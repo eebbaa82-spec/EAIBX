@@ -9,6 +9,7 @@ import {
   facilityTypes,
   grades,
   ownershipTypes,
+  sectorReportFor,
   riskKeys,
   swotHints,
   type AnalystFile,
@@ -18,6 +19,7 @@ import {
   type OtherCollateral,
   type Project,
 } from "@/lib/credit/case";
+import { sectors } from "@/data/credit/profile";
 import type { AnalysisContext, Cited } from "@/lib/credit/context";
 import { isPicked, regionNames, slugOf } from "@/lib/credit/select";
 import { deleteFile, getFile, putFile } from "@/lib/docs/store";
@@ -60,6 +62,9 @@ function load(): CreditCase | null {
 }
 function merge(raw: Partial<CreditCase>): CreditCase {
   const base = emptyCase();
+  if (raw.sector && raw.sectorReport === undefined && !sectors.includes(raw.sector)) {
+    raw = { ...raw, sectorReport: raw.sector, sector: "" };
+  }
   return { ...base, ...raw, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) } };
 }
 function save(k: CreditCase) {
@@ -98,13 +103,9 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
   const add = (key: string, what?: string) => <AnythingToAdd value={k.additions[key] ?? ""} onChange={(v) => set({ additions: { ...k.additions, [key]: v } })} what={what} />;
 
   const regionOptions = [{ value: "", label: "Select region" }, ...(ctx.regions.length ? ctx.regions.map((r) => ({ value: r.slug, label: r.name })) : regionNames.map((n) => ({ value: slugOf(n), label: n })))];
-  const sectorOptions = [
-    { value: "", label: "Select sector" },
-    ...ctx.sectors.map((s) => ({ value: s.slug, label: s.name })),
-    { value: "trade", label: "Trade and commerce" },
-    { value: "other", label: "Other" },
-  ];
-  const construction = k.sector === "real-estate-construction";
+  const sectorOptions = [{ value: "", label: "Select sector" }, ...sectors.map((s) => ({ value: s, label: s }))];
+  const reportOptions = [{ value: "", label: "National economy only" }, ...ctx.sectors.map((s) => ({ value: s.slug, label: s.name }))];
+  const construction = k.sector === "Building and construction";
 
   const body: ReactNode[] = [
     /* 1 to 3 */
@@ -122,7 +123,21 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           <Text label="Date established" type="date" value={k.established} onChange={(v) => set({ established: v })} />
           <Text label="Relationship with us since" type="date" value={k.relationshipSince} onChange={(v) => set({ relationshipSince: v })} />
           <Pick label="Ownership type" value={k.ownership} onChange={(v) => set({ ownership: v })} options={ownershipTypes} />
-          <Pick label="Sector" value={k.sector} onChange={(v) => set({ sector: v })} options={sectorOptions} hint="Drives the sector context in the report." />
+          <Pick
+            label="Sector"
+            value={k.sector}
+            onChange={(v) =>
+              set({ sector: v, sectorReport: sectorReportFor[v] ?? "", ...(v === "Export" ? { exporter: true } : {}), ...(v === "Import" ? { importer: true } : {}) })
+            }
+            options={sectorOptions}
+          />
+          <Pick
+            label="Sector report for context"
+            value={k.sectorReport}
+            onChange={(v) => set({ sectorReport: v })}
+            options={reportOptions}
+            hint="Set from the sector. Change it to the report closest to the borrower's activity, for example coffee exports under agriculture."
+          />
           <Text label="Type of business (main activity)" value={k.activity} onChange={(v) => set({ activity: v })} wide />
           <div className="space-y-2 sm:col-span-2">
             <Check label="The borrower exports" checked={k.exporter} onChange={(v) => set({ exporter: v })} />
@@ -317,7 +332,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           />
         </Block>
       )}
-      {!construction && !k.exporter && <p className="text-sm text-muted">Construction project tables appear when the sector is real estate and construction; export tables appear when the borrower exports.</p>}
+      {!construction && !k.exporter && <p className="text-sm text-muted">Construction project tables appear when the sector is building and construction; export tables appear when the borrower exports.</p>}
       <Block title="Business visit">
         <Grid>
           <Text label="Date of visit" type="date" value={k.visitDate} onChange={(v) => set({ visitDate: v })} />
@@ -658,7 +673,7 @@ function PickList({ title, prefix, items, k, ctx, set, note }: { title: string; 
 }
 
 function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set: (p: Partial<CreditCase>) => void }) {
-  const sector = ctx.sectors.find((s) => s.slug === k.sector);
+  const sector = ctx.sectors.find((s) => s.slug === k.sectorReport);
   const region = ctx.regions.find((r) => r.slug === k.region);
   const props = { k, ctx, set };
   return (
@@ -672,7 +687,7 @@ function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set
           <PickList title="Indicators" prefix="e:ind" items={ctx.economy.indicators} {...props} />
         </Block>
       )}
-      <Block title={sector ? `Sector: ${sector.name}` : "Sector"} intro={sector ? `${sector.summary} (as of ${sector.asOf})` : "Choose the borrower's sector on step 1 to see sector figures, opportunities and points to consider. Trade and other sectors use the national economy only."}>
+      <Block title={sector ? `Sector: ${sector.name}` : "Sector"} intro={sector ? `${sector.summary} (as of ${sector.asOf})` : "Choose a sector report on step 1 to see sector figures, opportunities and points to consider. Without one, the report uses the national economy only."}>
         {sector && (
           <>
             <PickList title="Indicators" prefix="s:ind" items={sector.indicators} {...props} />
@@ -728,7 +743,7 @@ function ContextStep({ k, ctx, set }: { k: CreditCase; ctx: AnalysisContext; set
 
 function SwotHints({ k, a, ctx }: { k: CreditCase; a: ReturnType<typeof analyseCase>; ctx: AnalysisContext }) {
   const h = swotHints(k, a);
-  const sector = ctx.sectors.find((s) => s.slug === k.sector);
+  const sector = ctx.sectors.find((s) => s.slug === k.sectorReport);
   const region = ctx.regions.find((r) => r.slug === k.region);
   const o = [...(sector?.opportunities.slice(0, 2) ?? []), ...(region?.opportunities.slice(0, 1) ?? [])].map((x) => x.label ?? x.text);
   if (!h.s.length && !h.w.length && !o.length) return null;
