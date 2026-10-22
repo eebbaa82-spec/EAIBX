@@ -2186,6 +2186,832 @@
       ]
     }
   ],
+  "simulation": {
+    "title": "A week as credit analyst at Bank A, Adama branch",
+    "role": "Credit analyst",
+    "setting": [
+      "You have just joined the credit desk of Bank A's Adama branch, a busy trade and agro-processing hub on the Addis to Djibouti corridor. The branch has a loan book of about Birr 900 million, mostly overdrafts, merchandise loans and term loans to small and medium manufacturers and traders.",
+      "Your job this week: analyse every request that reaches the desk, recommend a decision and a structure, and protect the bank's portfolio without losing good customers. The branch manager and the district credit committee rely on your work. Every item comes in the order it reaches you, and each decision has consequences later in the week.",
+      "Work it as you would on the job: read the facts, do the numbers on paper or a spreadsheet, and choose the action you would defend in front of the committee and the NBE examiner."
+    ],
+    "authority": {
+      "title": "Your desk's rules and targets",
+      "rows": [
+        {
+          "label": "Overdraft sizing",
+          "value": "Up to 75% of the working capital gap (bank's teaching rule)"
+        },
+        {
+          "label": "Term loans",
+          "value": "DSCR of 1.25 or more in every year; tenor within the asset's useful life"
+        },
+        {
+          "label": "Unsecured lending",
+          "value": "Grades 1 and 2 only; action plan for Grades 3 to 8"
+        },
+        {
+          "label": "Vehicles and machinery",
+          "value": "Not accepted more than 10 years from manufacture"
+        },
+        {
+          "label": "Pricing",
+          "value": "Board-approved written criteria; exceptions approved in writing"
+        },
+        {
+          "label": "Bank A total capital",
+          "value": "Birr 4,000 million; related party limit 15% per party, board approval above Birr 15 million"
+        },
+        {
+          "label": "Disbursement",
+          "value": "Within 90 days of approval (180 days for asset purchases), or back for re-approval"
+        }
+      ],
+      "note": "These follow the course and a typical Ethiopian bank manual. Your own bank's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "quality",
+        "label": "Portfolio quality",
+        "help": "Rises with sound analysis and structure; falls when risk is approved without being understood."
+      },
+      {
+        "id": "relationship",
+        "label": "Customer relationships",
+        "help": "Rises when good customers are served well and quickly; falls with needless refusals or delays."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of NBE directives or the bank's policy, hidden or not."
+      },
+      {
+        "id": "income",
+        "label": "Branch income",
+        "help": "Rises with well-priced business; falls with underpriced loans and losses."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "adama-flour",
+        "when": "Monday 08:45",
+        "from": "Relationship manager, Adama branch",
+        "channel": "email",
+        "subject": "New customer: Adama Flour Mill PLC, Birr 12 million overdraft, urgent",
+        "body": [
+          "Great news: Adama Flour Mill PLC wants to move its banking to us. Sales grew 40% in two years, from Birr 51 million to Birr 72 million. They need a Birr 12 million overdraft before the harvest season. The owner is well known in town and other banks are chasing him. Can we get this to committee by Wednesday?",
+          "Attached: three years of statements. Your quick look shows receivable days rising from 48 to 95 and the operating margin falling from 8% to 5%. The latest audit opinion is qualified: the auditor could not observe the year-end stock count."
+        ],
+        "ask": "What is your first move?",
+        "options": [
+          {
+            "text": "Back the growth story and fast-track the application: the owner is reputable and competitors are waiting.",
+            "score": 0,
+            "effects": {
+              "quality": -15,
+              "relationship": 8,
+              "income": 5
+            },
+            "outcome": "The application moves fast, but nobody asked why the cash is stuck in receivables or what the qualified opinion hides. Growth funded by slow collections is the classic trap from Module 1.",
+            "next": "adama-later"
+          },
+          {
+            "text": "Spread the statements, work out the cash conversion cycle and ask the customer about the slower collections and the qualified stock count before sizing anything.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "relationship": 2,
+              "compliance": 3
+            },
+            "outcome": "Right order. Spreading shows that most of the new money would finance slower collections, and the qualification needs an answer before stock can be relied on. You can still meet the RM's timetable with a better-founded proposal."
+          },
+          {
+            "text": "Decline straight away: a qualified audit opinion rules the company out.",
+            "score": 1,
+            "effects": {
+              "relationship": -12,
+              "income": -5
+            },
+            "outcome": "Too blunt. A qualification is a question to resolve, not an automatic refusal; the grading model deducts points for it. You lose a potentially sound customer without analysing the business."
+          },
+          {
+            "text": "Ask for a building as collateral first; if it covers the limit, the analysis can be light.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -5
+            },
+            "outcome": "Collateral is the second way out, never the first. A loan that can only be repaid by selling the building is a bad loan, whatever it is secured on."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "adama-sizing",
+        "when": "Monday 14:30",
+        "from": "Relationship manager, Adama branch",
+        "channel": "meeting",
+        "subject": "Sizing the overdraft for Adama Flour Mill",
+        "body": [
+          "The customer explains that two large distributors paid late last year; both have now agreed 45-day terms. The auditor confirms the stock count issue was a timing problem and has re-counted. The customer still asks for Birr 12 million.",
+          "Next year's plan: sales of Birr 72 million, cost of sales at 80%. Target cycle agreed with the customer: receivables 45 days, inventory 60 days, payables 30 days."
+        ],
+        "exhibit": {
+          "title": "Inputs for the working capital gap (Birr thousands)",
+          "rows": [
+            {
+              "label": "Projected sales",
+              "value": "72,000"
+            },
+            {
+              "label": "Cost of sales (80%)",
+              "value": "57,600"
+            },
+            {
+              "label": "Receivable days",
+              "value": "45 (on sales)"
+            },
+            {
+              "label": "Inventory days",
+              "value": "60 (on cost of sales)"
+            },
+            {
+              "label": "Payable days",
+              "value": "30 (on cost of sales)"
+            },
+            {
+              "label": "Bank share of the gap",
+              "value": "up to 75%"
+            }
+          ]
+        },
+        "ask": "What limit do you recommend?",
+        "options": [
+          {
+            "text": "Birr 12 million, as requested: the business is growing.",
+            "score": 1,
+            "effects": {
+              "quality": -6,
+              "relationship": 4,
+              "income": 3
+            },
+            "outcome": "The gap is 8,877 + 9,468 minus 4,734 = Birr 13,611 thousand, and 75% of it is about Birr 10.2 million. Birr 12 million would fund the slow collections you were told have been fixed, with no owner margin left."
+          },
+          {
+            "text": "About Birr 10.2 million, with covenants holding receivables to 45 days and inventory to 60 days.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "relationship": 2,
+              "income": 4
+            },
+            "outcome": "Correct: receivables 72,000 x 45 / 365 = 8,877, inventory 57,600 x 60 / 365 = 9,468, payables 57,600 x 30 / 365 = 4,734, gap 13,611, bank share 75% = 10,208. The covenants keep the cycle where the limit assumes it is."
+          },
+          {
+            "text": "Birr 13.6 million, the full working capital gap.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "income": 4
+            },
+            "outcome": "Funding 100% of the gap leaves the owners with no stake in their own trading cycle and the bank with no cushion if sales or prices fall. The owner's margin is a basic rule from Module 2."
+          },
+          {
+            "text": "Birr 6 million to be safe, and review in a year.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "income": -4
+            },
+            "outcome": "Under-lending is also a risk: a mill that cannot buy wheat at harvest misses sales, stretches suppliers and may end up borrowing elsewhere. Size to the need, then control it with covenants."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "wonji-term",
+        "when": "Tuesday 09:20",
+        "from": "Wonji Packaging PLC, finance manager",
+        "channel": "visit",
+        "subject": "Birr 6 million, 4-year term loan for a carton machine",
+        "body": [
+          "Wonji Packaging, a customer for five years with a clean record, wants a Birr 6 million term loan over 4 years, with equal annual principal, to buy a carton-making machine with a useful life of 7 years. The machine takes about 9 months to install and run in. The owner offers a building worth Birr 9 million as collateral.",
+          "You projected the first year with the new loan."
+        ],
+        "exhibit": {
+          "title": "Wonji Packaging, first year with the new loan (Birr thousands)",
+          "rows": [
+            {
+              "label": "Net profit after tax",
+              "value": "1,500"
+            },
+            {
+              "label": "Depreciation",
+              "value": "700"
+            },
+            {
+              "label": "Interest on all term debt",
+              "value": "900"
+            },
+            {
+              "label": "Principal due: existing loan",
+              "value": "1,000"
+            },
+            {
+              "label": "Principal due: new loan (6,000 / 4)",
+              "value": "1,500"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Approve as requested: the building covers 150% of the loan.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "relationship": 5
+            },
+            "outcome": "DSCR = (1,500 + 700 + 900) / (2,500 + 900) = 3,100 / 3,400 = 0.91. The business cannot pay this schedule from operations in year one. Collateral does not change that; it only tells you what you lose if it fails."
+          },
+          {
+            "text": "Restructure: 12 months' grace on the new principal while the machine is installed, then test year 2, when principal starts.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "relationship": 5,
+              "income": 3
+            },
+            "outcome": "With grace, year-one service is 1,000 + 900 = 1,900 and DSCR = 3,100 / 1,900 = 1.63. Grace matches repayment to when the machine earns. You still owe the committee the year-2 test with realistic margins."
+          },
+          {
+            "text": "Stretch the tenor to 10 years so the installments fall.",
+            "score": 1,
+            "effects": {
+              "quality": -5
+            },
+            "outcome": "The machine lasts 7 years. A loan that outlives its asset leaves the bank financing scrap in the last years. Fix the timing with grace, not with a tenor longer than the asset's life."
+          },
+          {
+            "text": "Decline: a DSCR below 1.0 means the loan cannot work.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "income": -3
+            },
+            "outcome": "The ratio is below 1.0 only because principal falls due before the machine produces. A good analyst redesigns the repayment before declining a sound customer."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "bole-hardcore",
+        "when": "Tuesday 15:00",
+        "from": "Bole Edible Oil PLC, general manager",
+        "channel": "call",
+        "subject": "Renew and raise our overdraft to Birr 16 million",
+        "body": [
+          "Bole's overdraft of Birr 10.5 million is due for its annual renewal. The general manager asks to raise it to Birr 16 million and says business is booming.",
+          "The account statement for the last 12 months shows the balance never below Birr 9.8 million and never in credit. Credit turnover was 0.9 times the limit. Interest has been capitalised every month. Two months ago Bole paid for a new filling machine from the overdraft."
+        ],
+        "ask": "What do you propose at renewal?",
+        "options": [
+          {
+            "text": "Renew and raise to Birr 16 million: Bole is a six-year customer.",
+            "score": 0,
+            "effects": {
+              "quality": -15,
+              "relationship": 6,
+              "income": 3
+            },
+            "outcome": "The overdraft is hard-core: it never swings and turns over less than once, so it is financing fixed assets and slow receivables. Raising it adds to the problem the account is already showing."
+          },
+          {
+            "text": "Find out why the money is stuck, convert the hard-core part, including the machine, into a term loan with a schedule, and renew a smaller revolving limit sized on the cycle.",
+            "score": 3,
+            "effects": {
+              "quality": 12,
+              "relationship": 2,
+              "compliance": 3,
+              "income": 2
+            },
+            "outcome": "The remedy fits the cause: the machine belongs on a term loan, and the revolving limit goes back to financing the trading cycle. Turnover of 1 time or less is poor under a typical manual, and conversion is one of the standard remedies."
+          },
+          {
+            "text": "Call back the whole overdraft now.",
+            "score": 1,
+            "effects": {
+              "relationship": -15,
+              "quality": -3
+            },
+            "outcome": "Calling the full balance from a going concern that cannot repay at once pushes it into default. Calling back is a remedy of last resort, used after the cause is understood."
+          },
+          {
+            "text": "Renew unchanged for another year and look again then.",
+            "score": 1,
+            "effects": {
+              "quality": -6
+            },
+            "outcome": "Renewing a hard-core overdraft unchanged lets the balance keep growing with capitalised interest. The annual review exists to catch exactly this."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "grade-unsecured",
+        "when": "Wednesday 10:00",
+        "from": "Branch manager",
+        "channel": "memo",
+        "subject": "Unsecured overdraft for Nazret Transport S.C.",
+        "body": [
+          "Your grading of Nazret Transport S.C. comes out at Grade 4, exceptionally bankable: strong account conduct but high leverage and weak management depth. The branch manager writes: 'The chairman is an important person in town. Propose a Birr 3 million unsecured overdraft; we can't ask him for collateral.'"
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Propose it unsecured as asked.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "quality": -8,
+              "relationship": 5
+            },
+            "outcome": "Unsecured lending is open only to Grades 1 and 2. Proposing it for a Grade 4 borrower is a policy breach that you, as the analyst, would be signing."
+          },
+          {
+            "text": "Re-score management as 'strong' so the grade improves to 2.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "quality": -10
+            },
+            "outcome": "Changing a score without written evidence to reach a wanted answer is manipulating the grading. It is exactly what internal audit and NBE examiners look for."
+          },
+          {
+            "text": "Propose a secured facility with an action plan for Grade 4, and explain the rule to the branch manager in writing.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "quality": 6,
+              "relationship": -2
+            },
+            "outcome": "You keep the customer within policy. Grades 3 to 8 need an action plan, and the written note protects both you and the branch manager."
+          },
+          {
+            "text": "Decline the application.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "income": -3
+            },
+            "outcome": "Grade 4 is bankable as an exception, with security and an action plan. Declining loses a customer the bank could serve safely."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "collateral-count",
+        "when": "Wednesday 14:15",
+        "from": "Loan officer",
+        "channel": "email",
+        "subject": "Collateral coverage for a Birr 20 million package",
+        "body": [
+          "Please confirm the collateral coverage for Metehara Logistics PLC's Birr 20 million total exposure. Offered: a warehouse, valued by the bank engineer at Birr 15 million; Truck A, 4 years old, insurance value Birr 8 million; Truck B, manufactured 12 years ago, insurance value Birr 3 million."
+        ],
+        "exhibit": {
+          "title": "Haircuts in your bank's manual",
+          "rows": [
+            {
+              "label": "Buildings",
+              "value": "Bank engineer's valuation"
+            },
+            {
+              "label": "Vehicles about 2 years old",
+              "value": "90% of the lower of invoice or insurance value"
+            },
+            {
+              "label": "Vehicles about 4 years old",
+              "value": "75%"
+            },
+            {
+              "label": "Machinery 5 to 7 years old",
+              "value": "50%"
+            },
+            {
+              "label": "Vehicles over 10 years from manufacture",
+              "value": "Not accepted"
+            }
+          ]
+        },
+        "ask": "What coverage do you report?",
+        "options": [
+          {
+            "text": "Birr 26 million, 130%: count everything at its value.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "compliance": -6
+            },
+            "outcome": "Collateral counts at what the bank would recover in a forced sale. Ignoring haircuts and the age limit overstates your protection by Birr 5 million.",
+            "next": "collateral-later"
+          },
+          {
+            "text": "Birr 21 million, 105%: the warehouse plus Truck A at 75%; Truck B is not acceptable.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 5
+            },
+            "outcome": "Correct: 15 + (8 x 75%) = 21, and 21 / 20 = 105%, strongly secured. Truck B is past the 10-year limit, so it does not count."
+          },
+          {
+            "text": "Birr 22.5 million, 112.5%: Truck B at 50% as old machinery.",
+            "score": 1,
+            "effects": {
+              "quality": -3,
+              "compliance": -3
+            },
+            "outcome": "Truck B is a vehicle more than 10 years from manufacture: the manual does not accept it at all, so no haircut makes it eligible."
+          },
+          {
+            "text": "Birr 15 million, 75%: only buildings count, so ask for more collateral.",
+            "score": 1,
+            "effects": {
+              "relationship": -6
+            },
+            "outcome": "Vehicles are acceptable movable collateral when registered and within the age limit. Ignoring Truck A understates coverage and sends the customer looking for collateral it does not need."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "pricing-match",
+        "when": "Thursday 09:30",
+        "from": "Relationship manager, Adama branch",
+        "channel": "call",
+        "subject": "Match a competitor's 13% for Merkato Wholesale",
+        "body": [
+          "Merkato Wholesale, graded 5 (very exceptionally bankable), wants a Birr 5 million overdraft. Another bank has offered 13%. The RM asks you to price at 13% to win the account.",
+          "Your bank's approved build-up: cost of funds 7.5%, operating cost 3.0%, target margin 3.0%, risk premium = probability of default x loss given default. For Merkato, PD is about 8% and LGD about 45%."
+        ],
+        "ask": "What price do you put in the proposal?",
+        "options": [
+          {
+            "text": "13%, to win the customer.",
+            "score": 0,
+            "effects": {
+              "income": -12,
+              "quality": -4,
+              "compliance": -6
+            },
+            "outcome": "The risk premium alone is 8% x 45% = 3.6%, so the rate that covers costs and risk is 7.5 + 3.0 + 3.0 + 3.6 = 17.1%. At 13% the bank loses money on a risky customer, outside its board-approved criteria."
+          },
+          {
+            "text": "About 17.1%, following the approved criteria, or decline if the customer will not pay for its risk.",
+            "score": 3,
+            "effects": {
+              "income": 8,
+              "quality": 5,
+              "compliance": 5,
+              "relationship": -3
+            },
+            "outcome": "Rates must follow the board's written criteria, which are reported to the NBE. A Grade 5 borrower that only stays at 13% is a customer another bank is underpricing, not one to chase."
+          },
+          {
+            "text": "15% as a 'relationship rate', agreed verbally with the RM.",
+            "score": 1,
+            "effects": {
+              "income": -4,
+              "compliance": -8
+            },
+            "outcome": "Any exception must be approved in writing by whoever holds that authority. A verbal discount is still underpricing, and now it is undocumented."
+          },
+          {
+            "text": "13% on paper, with extra service fees to make up the difference.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "relationship": -5
+            },
+            "outcome": "Hiding the real price in fees misleads the customer and breaks transparency rules on charges. If it surfaces, it costs the bank its reputation as well."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "related-party",
+        "when": "Thursday 14:00",
+        "from": "Assistant to a member of the board",
+        "channel": "email",
+        "subject": "Birr 70 million overdraft for Gara Mulata Trading",
+        "body": [
+          "Gara Mulata Trading S.C., in which one of Bank A's directors holds 30%, applies for a Birr 70 million overdraft. The director's assistant writes: 'Please process quickly and at a preferential rate. If board approval is a problem, it could be arranged as five loans of Birr 14 million.'",
+          "Bank A's total capital is Birr 4,000 million."
+        ],
+        "ask": "How do you handle it?",
+        "options": [
+          {
+            "text": "Process at the preferential rate as a courtesy to the director.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "income": -6
+            },
+            "outcome": "Related party credit must be on arm's-length terms: the same rate and conditions as any other customer. A preferential rate is exactly the abuse the related party directive prevents."
+          },
+          {
+            "text": "Split it into five loans of Birr 14 million, each below the board approval threshold.",
+            "score": 0,
+            "effects": {
+              "compliance": -30,
+              "quality": -8
+            },
+            "outcome": "Splitting to avoid board approval is a deliberate breach, and internal audit will find it.",
+            "next": "related-later"
+          },
+          {
+            "text": "Analyse it like any other request, on arm's-length terms, send it for board approval and show the related party check in the compliance section.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 5,
+              "income": 4
+            },
+            "outcome": "Correct. Birr 70 million is 1.75% of capital, well within the 15% per related party limit, but above Birr 15 million it needs board approval, and the director must not take part in that decision."
+          },
+          {
+            "text": "Refuse: the bank should not lend to companies linked to directors.",
+            "score": 1,
+            "effects": {
+              "relationship": -8,
+              "income": -4
+            },
+            "outcome": "The directive does not ban related party lending; it limits and controls it. Refusing a sound request outright is not required and loses business."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "committee-sensitivity",
+        "when": "Friday 10:00",
+        "from": "District credit committee",
+        "channel": "meeting",
+        "subject": "Bole Edible Oil: what if the margin falls to 5%?",
+        "body": [
+          "You present Bole's term loan with a 12-month grace period, which gives a DSCR of 1.25 on a 7% EBIT margin. A committee member asks: 'Bole's margin fell from 9% to 6.5% in three years. What happens at 5%?' You ran the sensitivity last night."
+        ],
+        "exhibit": {
+          "title": "Bole FY4 with EBIT margin at 5% (Birr thousands)",
+          "rows": [
+            {
+              "label": "EBIT: 96,000 x 5%",
+              "value": "4,800"
+            },
+            {
+              "label": "Total interest (unchanged)",
+              "value": "4,880"
+            },
+            {
+              "label": "Profit before tax",
+              "value": "minus 80, so no tax"
+            },
+            {
+              "label": "Cash available: minus 80 + 1,900 + 2,780",
+              "value": "4,600"
+            },
+            {
+              "label": "Term debt service with 12-month grace",
+              "value": "4,780"
+            },
+            {
+              "label": "DSCR",
+              "value": "0.96"
+            }
+          ]
+        },
+        "ask": "What do you tell the committee?",
+        "options": [
+          {
+            "text": "Assure them the margin will not fall that far: the new line improves efficiency.",
+            "score": 0,
+            "effects": {
+              "quality": -10,
+              "compliance": -4
+            },
+            "outcome": "You had the answer and did not share it. Committees decide on the downside; an analyst who hides a sensitivity loses the committee's trust for every future proposal."
+          },
+          {
+            "text": "Show the 0.96 DSCR and propose protections: a margin covenant, quarterly monitoring, no dividends while DSCR is below 1.25, and an owners' undertaking to inject funds.",
+            "score": 3,
+            "effects": {
+              "quality": 10,
+              "compliance": 4,
+              "relationship": 2
+            },
+            "outcome": "Exactly the expected answer: at 5% Bole cannot meet term debt even with grace. The covenants are the early warning, and the owners' undertaking is the backstop. The committee approves with conditions."
+          },
+          {
+            "text": "Withdraw the proposal for more work.",
+            "score": 1,
+            "effects": {
+              "relationship": -6
+            },
+            "outcome": "The proposal is sound in the base case. The committee needed to hear the downside and how it is controlled, not a withdrawal."
+          },
+          {
+            "text": "Re-run the projection at 7.5% so the committee sees a better DSCR.",
+            "score": 0,
+            "effects": {
+              "quality": -8,
+              "compliance": -10
+            },
+            "outcome": "Answering a downside question with a more optimistic projection is misleading the committee."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "disbursement",
+        "when": "Friday 15:30",
+        "from": "Dire Sugar Traders, owner",
+        "channel": "call",
+        "subject": "Please release the overdraft today",
+        "body": [
+          "An overdraft for another customer, Dire Sugar Traders, was approved 96 days ago but never drawn. The owner now calls: harvest purchases start Monday and he wants to draw today. The file shows the insurance policy on the pledged warehouse has not been endorsed to the bank."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Release it today: the approval is on file.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "quality": -6,
+              "relationship": 5
+            },
+            "outcome": "The approval lapsed after 90 days, and a condition precedent, the endorsed insurance, is unmet. Disbursing now breaks two rules at once."
+          },
+          {
+            "text": "Explain that the approval has lapsed, send it back for quick re-approval with updated information, and get the endorsed policy before any drawing.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "quality": 4,
+              "relationship": -2
+            },
+            "outcome": "Correct. Re-approval refreshes the information the decision rests on, and the endorsed policy protects the bank's security. Warning the customer today gives him time to arrange both before Monday."
+          },
+          {
+            "text": "Release half now and sort out the insurance next week.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "quality": -4
+            },
+            "outcome": "A partial release is still a release on a lapsed approval without its conditions precedent."
+          },
+          {
+            "text": "Extend the approval by 30 days yourself and release once the insurance is endorsed.",
+            "score": 1,
+            "effects": {
+              "compliance": -6
+            },
+            "outcome": "Getting the insurance first is right, but an analyst cannot extend an approval: it goes back to whoever holds the approval authority."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "adama-later",
+        "when": "Three months later",
+        "from": "Branch manager",
+        "channel": "memo",
+        "subject": "Adama Flour Mill: the overdraft was approved at Birr 12 million on your fast-track memo",
+        "body": [
+          "Adama Flour Mill's overdraft is fully drawn and has not swung once. Receivables have reached 120 days, one large distributor is disputing invoices, and the RM now asks for an increase to Birr 15 million."
+        ],
+        "ask": "What do you recommend now?",
+        "options": [
+          {
+            "text": "Increase the limit so the mill can keep operating.",
+            "score": 0,
+            "effects": {
+              "quality": -12,
+              "income": -4
+            },
+            "outcome": "More money into a stuck cycle only grows the exposure that is already at risk. This is how a performing loan becomes a non-performing one."
+          },
+          {
+            "text": "Freeze the limit, visit the mill, verify receivables and stock, require additional security and a plan to collect, and watch it for special mention.",
+            "score": 3,
+            "effects": {
+              "quality": 8,
+              "compliance": 4
+            },
+            "outcome": "The right recovery steps: understand the cause, protect the bank, and classify honestly if it deteriorates. The lesson stands: analyse before you fast-track."
+          },
+          {
+            "text": "Call back the full overdraft immediately.",
+            "score": 1,
+            "effects": {
+              "relationship": -10,
+              "quality": -2
+            },
+            "outcome": "Calling back without a plan pushes a going concern into default and lowers what the bank recovers."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "collateral-later",
+        "when": "The following Monday",
+        "from": "Legal and collateral unit",
+        "channel": "email",
+        "subject": "Truck B cannot be registered as collateral",
+        "body": [
+          "The collateral unit rejects Truck B: it is past the age limit and its insurer will not renew the policy. Metehara Logistics' package was approved on your 130% figure, so actual acceptable coverage is now 105%, and the committee asks why."
+        ],
+        "ask": "How do you respond?",
+        "options": [
+          {
+            "text": "Say the difference is small and leave it.",
+            "score": 0,
+            "effects": {
+              "compliance": -8
+            },
+            "outcome": "The committee approved on a wrong figure. Errors in a credit report are corrected in writing, not explained away."
+          },
+          {
+            "text": "Correct the coverage in a written memo, confirm 105% is still strongly secured, and ask the committee to note the change.",
+            "score": 3,
+            "effects": {
+              "compliance": 6,
+              "quality": 3
+            },
+            "outcome": "Owning and correcting the error keeps the file honest. 105% still meets the strongly secured band, so the decision can stand with the corrected figure."
+          },
+          {
+            "text": "Ask the customer for another building to restore 130%.",
+            "score": 1,
+            "effects": {
+              "relationship": -6
+            },
+            "outcome": "The facility is still strongly secured at 105%. Asking for collateral the policy does not require damages the relationship to cover your own error."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "related-later",
+        "when": "The following Monday",
+        "from": "Internal audit",
+        "channel": "email",
+        "subject": "Five Birr 14 million loans to one related company",
+        "body": [
+          "Internal audit has flagged five Birr 14 million loans to Gara Mulata Trading booked on the same day, all below the board approval threshold. The audit report goes to the board audit committee and must be reported to the NBE."
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Argue that each loan was within your approval authority.",
+            "score": 0,
+            "effects": {
+              "compliance": -10
+            },
+            "outcome": "Each loan is part of one exposure to one related party. Splitting is the breach, and defending it makes it worse."
+          },
+          {
+            "text": "Acknowledge the breach, consolidate the exposure into one facility and submit it for board approval on arm's-length terms.",
+            "score": 3,
+            "effects": {
+              "compliance": 8
+            },
+            "outcome": "Fixing the breach openly is the only way forward. It is also the reason the rule exists: board oversight of lending to insiders."
+          },
+          {
+            "text": "Ask the customer to repay two of the loans quickly so the total looks smaller.",
+            "score": 0,
+            "effects": {
+              "compliance": -8,
+              "relationship": -4
+            },
+            "outcome": "Window dressing a breach does not cure it and deepens the problem."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-week hand-over note to the branch manager.",
+      "guide": [
+        "The two decisions you are most sure of, and why.",
+        "The decision you would revisit, and what you would check.",
+        "Conditions and covenants that must be followed up next week, with dates.",
+        "One risk in the branch portfolio you want the manager to watch."
+      ]
+    }
+  },
   "exam": [
     {
       "q": "Receivables Birr 8 million, sales Birr 64 million. Receivable days?",

@@ -151,4 +151,4 @@ export const levelNames = {
   3: "Advanced",
 } as const;
 
-export { academyPath, examHref, passMark, proCourseHref } from "./paths";
+export { academyPath, examHref, passMark, proCourseHref, simulationHref } from "./paths";

@@ -30,6 +30,50 @@ export type Worked = {
   note?: string; // the conclusion an analyst draws
 };
 
+/**
+ * The officer simulation: the learner works a week (or a cycle) as an officer at
+ * a fictional bank, handling an inbox of realistic items in order. Each choice
+ * moves the desk's meters and is scored; some choices bring a follow-up item
+ * that shows the consequence. Passing it, with the final exam, earns the certificate.
+ */
+export type SimMeter = {
+  id: string; // e.g. "quality"
+  label: string; // e.g. "Portfolio quality"
+  help: string; // what moves it, one sentence
+};
+
+export type SimOption = {
+  text: string; // the action, in the officer's words
+  score: 0 | 1 | 2 | 3; // 3 best practice, 2 acceptable, 1 weak, 0 wrong or non-compliant
+  effects: Record<string, number>; // meter id -> change, -30 to +15
+  outcome: string; // what happens next and why, 2-3 sentences, naming the rule or lesson
+  next?: string; // id of a follow-up item that this choice triggers
+};
+
+export type SimTask = {
+  id: string;
+  when: string; // e.g. "Monday 09:10"
+  from: string; // e.g. "Relationship manager, Adama branch"
+  channel: "email" | "call" | "visit" | "memo" | "meeting" | "system";
+  subject: string;
+  body: string[]; // the facts, as the officer receives them
+  exhibit?: Worked; // figures to work with; the learner does the analysis
+  ask: string; // the decision to make
+  options: SimOption[]; // 3 or 4
+  module: string; // module id the item draws on, e.g. "s2"
+};
+
+export type Simulation = {
+  title: string; // e.g. "A week as credit analyst at Bank A, Adama branch"
+  role: string; // the learner's job title
+  setting: string[]; // the bank, the desk, the portfolio: 2-4 short paragraphs
+  authority?: Worked; // limits, policies and targets the officer works under
+  meters: SimMeter[]; // 3 or 4, each starts at 60 out of 100
+  tasks: SimTask[]; // the inbox, in order: 8 to 12 items
+  followUps?: SimTask[]; // items that appear only after a choice's `next`
+  memo: { prompt: string; guide: string[] }; // the written hand-over at the end
+};
+
 export type ProLesson = Lesson & {
   scenario?: Scenario;
   regulation?: Regulation;
@@ -64,6 +108,7 @@ export type ProCourse = {
   objectives: string[];
   runningCase?: { name: string; text: string }; // the fictional company used throughout
   modules: ProModule[];
+  simulation?: Simulation;
   exam: QuizQuestion[]; // 20, covering every module
   sources: string[]; // what the course draws on, institutions named only if public (NBE, laws)
 };

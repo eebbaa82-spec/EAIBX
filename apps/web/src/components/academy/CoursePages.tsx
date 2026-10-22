@@ -4,6 +4,7 @@ import { Icon } from "@/components/financial-literacy/Icon";
 import { Visual } from "@/components/financial-literacy/Visual";
 import {
   examHref,
+  simulationHref,
   levelLabel,
   passMark,
   proCourseHref,
@@ -12,6 +13,7 @@ import {
 } from "@/data/academy";
 import type { ProCourse, ProLesson, ProModule } from "@/data/academy/types";
 import { AcademyGate, AccessBadge } from "./Access";
+import { SimulationDesk } from "./Simulation";
 import {
   Certificate,
   CourseProgress,
@@ -220,6 +222,30 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
                 </Link>
               </li>
             ))}
+            {c.simulation && (
+              <li>
+                <Link
+                  href={simulationHref(c.slug)}
+                  className="group flex h-full gap-4 rounded-xl border border-gold-400 bg-gold-100 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                >
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-600 text-white">
+                    <Icon name="bank" className="h-7 w-7" />
+                  </span>
+                  <span className="flex-1">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-700">
+                      Officer simulation
+                    </span>
+                    <span className="mt-1 block text-lg font-semibold text-ink">
+                      {c.simulation.title}
+                    </span>
+                    <span className="mt-1 block text-muted">
+                      Work as {c.simulation.role.toLowerCase()}: {c.simulation.tasks.length} real-life items, decisions with consequences and a
+                      hand-over note. Pass with {passMark}% to qualify for the certificate.
+                    </span>
+                  </span>
+                </Link>
+              </li>
+            )}
             <li>
               <Link
                 href={examHref(c.slug)}
@@ -502,20 +528,47 @@ export function ProModulePage({
               </Link>
             )}
             <Link
-              href={next ? proCourseHref(c.slug, next.slug) : examHref(c.slug)}
+              href={next ? proCourseHref(c.slug, next.slug) : c.simulation ? simulationHref(c.slug) : examHref(c.slug)}
               className="rounded-xl bg-brand-600 p-4 text-right text-white hover:bg-brand-700"
             >
               <span className="text-sm text-brand-100">
-                {next ? "Next module" : "Final exam"} →
+                {next ? "Next module" : c.simulation ? "Officer simulation" : "Final exam"} →
               </span>
               <span className="mt-1 block font-semibold">
-                {next ? next.title : "Final exam and certificate"}
+                {next ? next.title : c.simulation ? c.simulation.title : "Final exam and certificate"}
               </span>
             </Link>
           </nav>
         </article>
       </Container>
       <Sources course={c} />
+    </div>
+  );
+}
+
+export function ProSimulationPage({ course: c }: { course: ProCourse }) {
+  const sim = c.simulation!;
+  return (
+    <div>
+      <div className="print:hidden">
+        <Hero
+          eyebrow={
+            <Link href={proCourseHref(c.slug)} className="text-sm font-semibold text-brand-100 hover:text-white">
+              ← {c.title}
+            </Link>
+          }
+          title="Officer simulation"
+        >
+          <p className="mt-3 max-w-3xl text-lg text-brand-100">
+            {sim.title}. Handle each item as it reaches your desk, using what you learned in the five modules. Your choices have consequences later.
+          </p>
+        </Hero>
+      </div>
+      <Container className="py-12 print:max-w-none print:p-0">
+        <AcademyGate need="full" course={c.slug}>
+          <SimulationDesk course={c} />
+        </AcademyGate>
+      </Container>
     </div>
   );
 }

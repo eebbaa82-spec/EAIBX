@@ -2,6 +2,8 @@
 export const academyPath = "/academy/courses";
 export const proCourseHref = (course: string, module?: string) =>
   `${academyPath}/${course}/${module ? `${module}/` : ""}`;
+export const simulationHref = (course: string) =>
+  `${academyPath}/${course}/simulation/`;
 export const examHref = (course: string) =>
   `${academyPath}/${course}/final-exam/`;
 

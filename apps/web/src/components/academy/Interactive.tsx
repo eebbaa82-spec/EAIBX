@@ -6,6 +6,7 @@ import type { ProCourse, QuizQuestion, Scenario } from "@/data/academy/types";
 import { examHref, passMark, proCourseHref, verifyUrl } from "@/data/academy/paths";
 import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components/forms";
 import { savedCode } from "./Access";
+import { simulationHref, useSimulationResult } from "./Simulation";
 
 /**
  * Progress, quizzes, decision scenarios, the final exam and the certificate.
@@ -323,6 +324,7 @@ export function Certificate({ course }: { course: ProCourse }) {
   const [code, setCode] = useState("");
   const [qr, setQr] = useState("");
   const [state, setState] = useState<{ busy: boolean; error?: string }>({ busy: false });
+  const sim = useSimulationResult(course);
   useEffect(() => {
     const t = setTimeout(() => {
       setName(exam?.name ?? "");
@@ -335,6 +337,19 @@ export function Certificate({ course }: { course: ProCourse }) {
   }, [exam?.id]);
   if (!exam || exam.score / exam.total < passMark / 100) return null;
   const pct = Math.round((exam.score / exam.total) * 100);
+  if (!sim.passed)
+    return (
+      <section className="mt-12 rounded-2xl border border-gold-400 bg-gold-100 p-6 print:hidden">
+        <h2 className="text-xl font-bold text-ink">One step to your certificate</h2>
+        <p className="mt-1 text-ink">
+          You passed the exam. The certificate also needs the officer simulation, where you work as {course.simulation!.role.toLowerCase()} and manage real
+          cases with what you learned. {sim.done ? `Your last run scored ${sim.score}%; you need ${passMark}%.` : `Pass it with ${passMark}% or more.`}
+        </p>
+        <Link href={simulationHref(course.slug)} className="mt-4 inline-block rounded-lg bg-brand-600 px-5 py-2.5 font-semibold text-white hover:bg-brand-700">
+          Go to the officer simulation →
+        </Link>
+      </section>
+    );
   const live = liveHost();
 
   async function issue(e: FormEvent<HTMLFormElement>) {
@@ -421,7 +436,8 @@ export function Certificate({ course }: { course: ProCourse }) {
           <p className="mt-5 text-[12pt]">This certifies that</p>
           <p className="mt-3 border-b border-black px-10 pb-1 text-[24pt] font-bold">{name || exam.name}</p>
           <p className="mt-5 max-w-[200mm] text-[12pt]">
-            has completed the online course <strong>{course.title}</strong> ({course.subtitle}) and passed its final examination with a score of {pct}%.
+            has completed the online course <strong>{course.title}</strong> ({course.subtitle}) and passed its final examination with a score of {pct}%
+            {sim.required ? `, and its officer simulation as ${course.simulation!.role.toLowerCase()} with ${sim.score}%` : ""}.
           </p>
           <div className="mt-10 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.6fr] items-end gap-10 text-[10pt]">
             <p className="border-t border-black pt-1">Date: {longDate(exam.date)}</p>
