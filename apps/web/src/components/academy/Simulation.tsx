@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import type { ProCourse, SimOption, SimTask, Simulation } from "@/data/academy/types";
 import { examHref, passMark, proCourseHref } from "@/data/academy/paths";
+import { reportProgress } from "./seat";
 export { simulationHref } from "@/data/academy/paths";
 
 /**
@@ -193,7 +194,10 @@ export function SimulationDesk({ course }: { course: ProCourse }) {
 
   function decide() {
     if (!shown || choice === null) return;
-    write(course.slug, { ...s, picks: { ...s.picks, [shown.id]: choice } });
+    const picks = { ...s.picks, [shown.id]: choice };
+    write(course.slug, { ...s, picks });
+    const after = results(sim, picks);
+    if (after.done) reportProgress(course.slug, { score: after.score, done: true });
     setJustDecided(shown.id);
     setChoice(null);
   }

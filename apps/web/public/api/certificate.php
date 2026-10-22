@@ -5,6 +5,8 @@
 // creates a unique certificate number and keeps the record outside the web
 // folder (~/investopia-submissions/certificates.csv). The same learner, code
 // and course get the same number back.
+// Institutional staff use their seat code instead (see _seats.php), and the
+// certificate then shows on their training department's dashboard.
 // GET ?id=<number> looks the number up, so anyone holding a certificate can
 // check it is genuine on /academy/verify/ (the QR code on the certificate).
 
@@ -14,6 +16,7 @@ header('X-Robots-Tag: noindex');
 header('Cache-Control: no-store');
 
 require __DIR__ . '/_common.php';
+require __DIR__ . '/_seats.php';
 $dir = data_dir();
 $csv = $dir . '/certificates.csv';
 const COLUMNS = ['id', 'issued', 'name', 'course', 'course_title', 'score', 'code_hash', 'email'];
@@ -92,8 +95,31 @@ if ($score < 70 || $score > 100) {
     reply(400, ['ok' => false, 'error' => 'A pass in the final exam is required']);
 }
 $codeHash = hash('sha256', $code);
-if (!in_array($codeHash, require __DIR__ . '/_academy-codes.php', true)) {
+// Individual subscribers hold an access code; institutional staff a seat code.
+$seat = in_array($codeHash, require __DIR__ . '/_academy-codes.php', true) ? null : find_seat($code);
+if (!$seat && !in_array($codeHash, require __DIR__ . '/_academy-codes.php', true)) {
     reply(403, ['ok' => false, 'error' => 'That access code is not valid']);
+}
+if ($seat && $seat[2]['courses'] && !in_array($course, $seat[2]['courses'], true)) {
+    reply(403, ['ok' => false, 'error' => 'This course is not assigned to your seat']);
+}
+
+/** Puts the certificate on the institution's dashboard when a member of staff earns it. */
+function record_on_seat(?array $seat, string $course, string $id, int $score): void
+{
+    if (!$seat) {
+        return;
+    }
+    $now = gmdate('Y-m-d H:i');
+    with_institution($seat[0], function ($staff, $progress) use ($seat, $course, $id, $score, $now) {
+        $c = $progress[$seat[2]['code']][$course] ?? ['started' => $now, 'done' => []];
+        $c['certificate'] = $id;
+        $c['completed'] = $c['completed'] ?? $now;
+        $c['exam'] = max((int) ($c['exam'] ?? 0), $score);
+        $c['last'] = $now;
+        $progress[$seat[2]['code']][$course] = $c;
+        return [$staff, $progress, null];
+    });
 }
 
 $handle = @fopen($csv, 'c+');
@@ -112,6 +138,7 @@ foreach ($existing as $record) {
     if ($record['course'] === $course && $record['code_hash'] === $codeHash && strcasecmp($record['name'], $name) === 0) {
         flock($handle, LOCK_UN);
         fclose($handle);
+        record_on_seat($seat, $course, $record['id'], $score);
         reply(200, ['ok' => true, 'id' => $record['id'], 'issued' => $record['issued']]);
     }
 }
@@ -134,5 +161,6 @@ fputcsv($handle, [$id, $issued, $name, $course, $title, (string) $score, $codeHa
 fflush($handle);
 flock($handle, LOCK_UN);
 fclose($handle);
+record_on_seat($seat, $course, $id, $score);
 
 reply(200, ['ok' => true, 'id' => $id, 'issued' => $issued]);

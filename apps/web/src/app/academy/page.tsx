@@ -127,8 +127,8 @@ export default function AcademyPage() {
               body: "Assign the right credit, treasury, trade finance or capital markets path to each team.",
             },
             {
-              title: "Manager dashboard.",
-              body: "See enrollment, completion, assessment scores and certificates by branch, department or employee.",
+              title: "Training department dashboard.",
+              body: "Give staff their seat codes, assign courses and due dates, and see enrollment, completion, exam and simulation scores and certificates by branch, department or employee.",
             },
             {
               title: "Blended delivery.",
@@ -147,6 +147,9 @@ export default function AcademyPage() {
         />
         <div className="mt-8 flex flex-wrap gap-3">
           <ButtonLink href="/contact">Get an enterprise quote</ButtonLink>
+          <ButtonLink href="/academy/institution/" variant="secondary">
+            Institution dashboard (sign in or see the demo)
+          </ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
             Download the course catalog (PDF)
           </ButtonLink>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { accessCodeHashes } from "@/data/academy/access";
 import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components/forms";
+import { claimSeat, forgetSeat, isSeatCode, seatAllows, seatInfo, seatStillValid } from "./seat";
 
 /**
  * Who may open Academy professional courses. Until member accounts and payments
@@ -11,7 +12,9 @@ import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components
  * - registered: signed up once (the Academy, the borrower profile builder or the
  *   free course all count). Opens the first module of every course as a preview.
  * - subscriber: entered an access code that Erudite issues after payment. Opens
- *   every module and the final exam.
+ *   every module and the final exam. Staff of a subscribing bank enter the seat
+ *   code their training department gave them instead (see seat.ts); it may
+ *   open only the courses assigned to them.
  * Storage can be blocked; access then lasts for the visit.
  */
 type Access = "loading" | "guest" | "registered" | "subscriber";
@@ -53,6 +56,19 @@ export function useAccess() {
   useEffect(() => {
     const sync = () => setAccess(current());
     const t = setTimeout(sync, 0);
+    seatStillValid().then((valid) => {
+      if (valid) return;
+      // The training department revoked this seat: back to the free preview.
+      delete visit[SUBSCRIBER];
+      try {
+        window.localStorage.removeItem(SUBSCRIBER);
+        window.localStorage.removeItem(CODE);
+      } catch {
+        // Nothing stored.
+      }
+      forgetSeat();
+      sync();
+    });
     window.addEventListener(EVENT, sync);
     window.addEventListener("storage", sync);
     return () => {
@@ -86,9 +102,27 @@ const labelClass = "block text-sm font-semibold text-ink";
 export function AcademyGate({ need, course, children }: { need: "preview" | "full"; course: string; children: ReactNode }) {
   const access = useAccess();
   if (access === "loading") return <div className="min-h-64" aria-busy="true" />;
+  if (access === "subscriber" && !seatAllows(course)) return <NotAssigned />;
   if (access === "subscriber" || (need === "preview" && access === "registered")) return <>{children}</>;
   if (need === "preview") return <RegisterPanel />;
   return <SubscribePanel course={course} />;
+}
+
+function NotAssigned() {
+  const seat = seatInfo();
+  return (
+    <section className="mt-8 rounded-2xl border border-gold-400 bg-gold-100 p-6 sm:p-8">
+      <h2 className="text-2xl font-bold text-ink">This course is not assigned to you</h2>
+      <p className="mt-2 text-ink">
+        Your Academy seat comes from {seat?.institution ?? "your institution"}, and its training department has assigned you specific courses. Ask them to
+        add this one, or open your assigned courses from the{" "}
+        <Link href="/academy/courses/" className="font-semibold text-brand-700 underline">
+          course catalog
+        </Link>
+        .
+      </p>
+    </section>
+  );
 }
 
 function Consent() {
@@ -248,12 +282,23 @@ export function SubscribePanel({ course }: { course: string }) {
 
 function CodeForm() {
   const [code, setCode] = useState("");
-  const [state, setState] = useState<"idle" | "checking" | "wrong">("idle");
+  const [state, setState] = useState<"idle" | "checking" | "wrong" | "seat-preview">("idle");
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setState("checking");
     const clean = code.trim().toUpperCase().replace(/\s+/g, "");
-    const ok = accessCodeHashes.has(await sha256(clean));
+    let ok = accessCodeHashes.has(await sha256(clean));
+    if (ok) forgetSeat();
+    if (!ok && isSeatCode(clean)) {
+      if (!liveHost()) {
+        setState("seat-preview");
+        return;
+      }
+      ok = await claimSeat(clean).then(
+        () => true,
+        () => false,
+      );
+    }
     if (ok) {
       try {
         window.localStorage.setItem(CODE, clean);
@@ -282,6 +327,11 @@ function CodeForm() {
           className="mt-1 w-full rounded-lg border border-white/30 bg-white px-3 py-2.5 font-mono tracking-wider text-ink uppercase focus:outline-none focus:ring-2 focus:ring-gold-400"
         />
       </label>
+      {state === "seat-preview" && (
+        <p role="alert" className="mt-2 text-sm text-gold-400">
+          Staff seat codes from your training department work on investopia.et, not on this preview site.
+        </p>
+      )}
       {state === "wrong" && (
         <p role="alert" className="mt-2 text-sm text-gold-400">
           That code is not valid. Check it and try again, or contact investopia@eruditeafrica.com.
@@ -290,7 +340,10 @@ function CodeForm() {
       <button type="submit" disabled={state === "checking"} className="mt-4 rounded-lg bg-gold-400 px-5 py-2.5 font-semibold text-ink hover:bg-gold-500 disabled:opacity-60">
         Unlock the Academy
       </button>
-      <p className="mt-3 text-sm text-brand-100">The code is sent by email when your subscription is active. Enter it once on each device you use.</p>
+      <p className="mt-3 text-sm text-brand-100">
+        The code is sent by email when your subscription is active; staff of a subscribing bank get theirs from their training department. Enter it once on
+        each device you use.
+      </p>
     </form>
   );
 }

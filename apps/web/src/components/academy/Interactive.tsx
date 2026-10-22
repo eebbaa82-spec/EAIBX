@@ -6,6 +6,7 @@ import type { ProCourse, QuizQuestion, Scenario } from "@/data/academy/types";
 import { examHref, passMark, proCourseHref, verifyUrl } from "@/data/academy/paths";
 import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components/forms";
 import { savedCode } from "./Access";
+import { reportProgress } from "./seat";
 import { simulationHref, useSimulationResult } from "./Simulation";
 
 /**
@@ -57,12 +58,14 @@ function markDone(course: string, module: string) {
   const p = read();
   const c = p[course] ?? { done: [] };
   if (!c.done.includes(module)) write({ ...p, [course]: { ...c, done: [...c.done, module] } });
+  reportProgress(course);
 }
 
 function saveExam(course: string, r: Result) {
   const p = read();
   const c = p[course] ?? { done: [] };
   if (!c.exam || r.score / r.total >= c.exam.score / c.exam.total) write({ ...p, [course]: { ...c, exam: r } });
+  reportProgress(course);
 }
 
 export function CourseProgress({ course }: { course: ProCourse }) {
