@@ -2,9 +2,8 @@
 // Academy certificate register on the cPanel host (investopia.et).
 // POST issues a certificate: the learner's browser sends the course, the name,
 // the exam score and the subscriber access code; the server checks the code,
-// creates a unique certificate number and keeps the record outside the web
-// folder (~/investopia-submissions/certificates.csv). The same learner, code
-// and course get the same number back.
+// creates a unique certificate number and keeps the record in the Academy
+// database (_db.php). The same learner, code and course get the same number back.
 // Institutional staff use their seat code instead (see _seats.php), and the
 // certificate then shows on their training department's dashboard.
 // GET ?id=<number> looks the number up, so anyone holding a certificate can
@@ -18,33 +17,11 @@ header('Cache-Control: no-store');
 require __DIR__ . '/_common.php';
 require __DIR__ . '/_seats.php';
 $dir = data_dir();
-$csv = $dir . '/certificates.csv';
-const COLUMNS = ['id', 'issued', 'name', 'course', 'course_title', 'score', 'code_hash', 'email'];
 
 function clean(string $value, int $max): string
 {
     $value = trim(preg_replace('/\s+/u', ' ', str_replace("\0", '', $value)) ?? '');
     return function_exists('mb_substr') ? mb_substr($value, 0, $max) : substr($value, 0, $max);
-}
-
-/** Every certificate on record, keyed by number. */
-function records(string $csv): array
-{
-    $rows = [];
-    if (!is_file($csv) || !($handle = @fopen($csv, 'r'))) {
-        return $rows;
-    }
-    flock($handle, LOCK_SH);
-    fgetcsv($handle);
-    while (($row = fgetcsv($handle)) !== false) {
-        if (count($row) === count(COLUMNS)) {
-            $record = array_combine(COLUMNS, $row);
-            $rows[$record['id']] = $record;
-        }
-    }
-    flock($handle, LOCK_UN);
-    fclose($handle);
-    return $rows;
 }
 
 $method = $_SERVER['REQUEST_METHOD'] ?? '';
@@ -54,9 +31,12 @@ if ($method === 'GET') {
     if (!preg_match('#^INV/ACAD/[A-Z0-9-]{1,20}/[0-9]{4}/[A-Z0-9]{8}$#', $id)) {
         reply(200, ['ok' => true, 'found' => false]);
     }
-    // A short pause per lookup makes guessing numbers slow.
-    usleep(300000);
-    $record = records($csv)[$id] ?? null;
+    // No pause needed: the 8 random characters give about a trillion possible
+    // numbers per course and year, too many to guess, and a pause would tie up
+    // the host's limited PHP workers.
+    $q = db()->prepare('SELECT * FROM academy_certificates WHERE id = ?');
+    $q->execute([$id]);
+    $record = $q->fetch();
     if (!$record) {
         reply(200, ['ok' => true, 'found' => false]);
     }
@@ -111,56 +91,44 @@ function record_on_seat(?array $seat, string $course, string $id, int $score): v
         return;
     }
     $now = gmdate('Y-m-d H:i');
-    with_institution($seat[0], function ($staff, $progress) use ($seat, $course, $id, $score, $now) {
-        $c = $progress[$seat[2]['code']][$course] ?? ['started' => $now, 'done' => []];
+    progress_change($seat[2]['code'], $course, function ($c) use ($id, $score, $now) {
         $c['certificate'] = $id;
         $c['completed'] = $c['completed'] ?? $now;
         $c['exam'] = max((int) ($c['exam'] ?? 0), $score);
         $c['last'] = $now;
-        $progress[$seat[2]['code']][$course] = $c;
-        return [$staff, $progress, null];
+        return $c;
     });
 }
 
-$handle = @fopen($csv, 'c+');
-if (!$handle || !flock($handle, LOCK_EX)) {
-    reply(500, ['ok' => false, 'error' => 'Could not issue the certificate. Please try again']);
-}
-$existing = [];
-$header = fgetcsv($handle);
-while (($row = fgetcsv($handle)) !== false) {
-    if (count($row) === count(COLUMNS)) {
-        $existing[] = array_combine(COLUMNS, $row);
-    }
-}
 // Same learner, code and course: give the number already issued.
-foreach ($existing as $record) {
-    if ($record['course'] === $course && $record['code_hash'] === $codeHash && strcasecmp($record['name'], $name) === 0) {
-        flock($handle, LOCK_UN);
-        fclose($handle);
+$q = db()->prepare('SELECT id, issued, name FROM academy_certificates WHERE code_hash = ? AND course = ?');
+$q->execute([$codeHash, $course]);
+foreach ($q->fetchAll() as $record) {
+    if (strcasecmp($record['name'], $name) === 0) {
         record_on_seat($seat, $course, $record['id'], $score);
         reply(200, ['ok' => true, 'id' => $record['id'], 'issued' => $record['issued']]);
     }
 }
-$taken = array_column($existing, 'id');
+
 $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-do {
+$issued = gmdate('Y-m-d');
+$insert = db()->prepare('INSERT INTO academy_certificates (id, issued, name, course, course_title, score, code_hash, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
+for ($try = 0; ; $try++) {
     $suffix = '';
     for ($i = 0; $i < 8; $i++) {
         $suffix .= $alphabet[random_int(0, 31)];
     }
     $id = 'INV/ACAD/' . $courseId . '/' . gmdate('Y') . '/' . $suffix;
-} while (in_array($id, $taken, true));
-
-$issued = gmdate('Y-m-d');
-fseek($handle, 0, SEEK_END);
-if ($header === false) {
-    fputcsv($handle, COLUMNS);
+    try {
+        $insert->execute([$id, $issued, $name, $course, $title, $score, $codeHash, $email]);
+        break;
+    } catch (PDOException $e) {
+        // The number is taken (about one in a trillion): draw another, a few times at most.
+        if ($try >= 4) {
+            reply(500, ['ok' => false, 'error' => 'Could not issue the certificate. Please try again']);
+        }
+    }
 }
-fputcsv($handle, [$id, $issued, $name, $course, $title, (string) $score, $codeHash, $email]);
-fflush($handle);
-flock($handle, LOCK_UN);
-fclose($handle);
 record_on_seat($seat, $course, $id, $score);
 
 reply(200, ['ok' => true, 'id' => $id, 'issued' => $issued]);

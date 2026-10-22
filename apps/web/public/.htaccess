@@ -19,6 +19,12 @@ ServerSignature Off
   RewriteRule ^ https://investopia.et%{REQUEST_URI} [R=301,L]
 </IfModule>
 
+# Compress pages, scripts and data: a course page and its scripts shrink from about
+# 1 MB to under 300 KB, which matters most on mobile connections.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"

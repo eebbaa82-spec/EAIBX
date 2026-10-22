@@ -72,21 +72,14 @@ function session_institution(string $dir): array
     return [$parts[0], $list[$parts[0]]];
 }
 
-function new_code(array $taken): string
+function new_code(): string
 {
     $alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-    do {
-        $code = 'INS-';
-        for ($i = 0; $i < 10; $i++) {
-            $code .= ($i === 5 ? '-' : '') . $alphabet[random_int(0, 31)];
-        }
-    } while (isset($taken[$code]));
+    $code = 'INS-';
+    for ($i = 0; $i < 10; $i++) {
+        $code .= ($i === 5 ? '-' : '') . $alphabet[random_int(0, 31)];
+    }
     return $code;
-}
-
-function active_seats(array $staff): int
-{
-    return count(array_filter($staff, fn ($s) => ($s['status'] ?? '') === 'active'));
 }
 
 $action = (string) ($_POST['action'] ?? '');
@@ -108,12 +101,11 @@ if ($action === 'login') {
 
 if ($action === 'overview') {
     [$id, $inst] = session_institution($dir);
-    [$staff, $progress] = with_institution($id, fn ($s, $p) => [$s, $p, [$s, $p]]);
     reply(200, [
         'ok' => true,
         'institution' => ['id' => $id, 'name' => $inst['name'], 'seats' => (int) $inst['seats'], 'expires' => $inst['expires'] ?? ''],
-        'staff' => array_values($staff),
-        'progress' => (object) $progress,
+        'staff' => seats_of($id),
+        'progress' => (object) progress_of($id),
     ]);
 }
 
@@ -123,76 +115,71 @@ if ($action === 'add') {
     if (!is_array($rows) || !$rows || count($rows) > MAX_STAFF_PER_ADD) {
         reply(400, ['ok' => false, 'error' => 'Add between 1 and ' . MAX_STAFF_PER_ADD . ' staff at a time']);
     }
-    $result = with_institution($id, function ($staff, $progress) use ($rows, $inst) {
-        $free = (int) $inst['seats'] - active_seats($staff);
-        if (count($rows) > $free) {
-            return [$staff, $progress, ['error' => "Only $free seats are left on your subscription. Revoke unused seats or contact Investopia for more."]];
-        }
-        $added = [];
-        foreach ($rows as $row) {
-            $name = clip($row['name'] ?? '', 120);
-            if ($name === '') {
-                continue;
-            }
-            $code = new_code($staff);
-            $staff[$code] = [
-                'code' => $code,
-                'name' => $name,
-                'staff_id' => clip($row['staff_id'] ?? '', 40),
-                'email' => clip($row['email'] ?? '', 160),
-                'department' => clip($row['department'] ?? '', 120),
-                'branch' => clip($row['branch'] ?? '', 120),
-                'courses' => courses_list($row['courses'] ?? []),
-                'due' => due_date($row['due'] ?? ''),
-                'status' => 'active',
-                'added' => gmdate('Y-m-d'),
-            ];
-            $added[] = $staff[$code];
-        }
-        return [$staff, $progress, ['added' => $added]];
-    });
-    if (isset($result['error'])) {
-        reply(400, ['ok' => false, 'error' => $result['error']]);
+    $pdo = db();
+    $pdo->beginTransaction();
+    $free = (int) $inst['seats'] - active_seat_count($id);
+    if (count($rows) > $free) {
+        $pdo->rollBack();
+        reply(400, ['ok' => false, 'error' => "Only $free seats are left on your subscription. Revoke unused seats or contact Investopia for more."]);
     }
-    reply(200, ['ok' => true, 'added' => $result['added']]);
+    $insert = $pdo->prepare('INSERT INTO academy_seats (code, institution, name, staff_id, email, department, branch, courses, due, status, added) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+    $added = [];
+    foreach ($rows as $row) {
+        $name = clip($row['name'] ?? '', 120);
+        if ($name === '') {
+            continue;
+        }
+        do {
+            $code = new_code();
+        } while (seat_get($code));
+        $seat = [
+            'code' => $code,
+            'name' => $name,
+            'staff_id' => clip($row['staff_id'] ?? '', 40),
+            'email' => clip($row['email'] ?? '', 160),
+            'department' => clip($row['department'] ?? '', 120),
+            'branch' => clip($row['branch'] ?? '', 120),
+            'courses' => courses_list($row['courses'] ?? []),
+            'due' => due_date($row['due'] ?? ''),
+            'status' => 'active',
+            'added' => gmdate('Y-m-d'),
+        ];
+        $insert->execute([$code, $id, $seat['name'], $seat['staff_id'], $seat['email'], $seat['department'], $seat['branch'], json_encode($seat['courses']), $seat['due'], 'active', $seat['added']]);
+        $added[] = $seat;
+    }
+    $pdo->commit();
+    reply(200, ['ok' => true, 'added' => $added]);
 }
 
 if ($action === 'update') {
     [$id, $inst] = session_institution($dir);
     $code = seat_code((string) ($_POST['code'] ?? ''));
     $changes = json_decode((string) ($_POST['changes'] ?? '{}'), true);
-    if (!is_array($changes)) {
-        reply(400, ['ok' => false, 'error' => 'Nothing to change']);
+    $row = seat_get($code);
+    if (!is_array($changes) || !$row || $row['institution'] !== $id) {
+        reply(400, ['ok' => false, 'error' => 'No such seat']);
     }
-    $result = with_institution($id, function ($staff, $progress) use ($code, $changes, $inst) {
-        if (!isset($staff[$code])) {
-            return [$staff, $progress, ['error' => 'No such seat']];
+    $seat = seat_row($row);
+    if (isset($changes['status']) && in_array($changes['status'], ['active', 'revoked'], true)) {
+        if ($changes['status'] === 'active' && $seat['status'] !== 'active' && active_seat_count($id) >= (int) $inst['seats']) {
+            reply(400, ['ok' => false, 'error' => 'All seats are in use. Revoke another seat first']);
         }
-        $seat = $staff[$code];
-        if (isset($changes['status']) && in_array($changes['status'], ['active', 'revoked'], true)) {
-            if ($changes['status'] === 'active' && $seat['status'] !== 'active' && active_seats($staff) >= (int) $inst['seats']) {
-                return [$staff, $progress, ['error' => 'All seats are in use. Revoke another seat first']];
-            }
-            $seat['status'] = $changes['status'];
-        }
-        foreach (['name' => 120, 'staff_id' => 40, 'email' => 160, 'department' => 120, 'branch' => 120] as $field => $max) {
-            if (isset($changes[$field])) {
-                $seat[$field] = clip($changes[$field], $max);
-            }
-        }
-        if (isset($changes['courses'])) {
-            $seat['courses'] = courses_list($changes['courses']);
-        }
-        if (isset($changes['due'])) {
-            $seat['due'] = due_date($changes['due']);
-        }
-        $staff[$code] = $seat;
-        return [$staff, $progress, ['seat' => $seat]];
-    });
-    if (isset($result['error'])) {
-        reply(400, ['ok' => false, 'error' => $result['error']]);
+        $seat['status'] = $changes['status'];
     }
-    reply(200, ['ok' => true, 'seat' => $result['seat']]);
+    foreach (['name' => 120, 'staff_id' => 40, 'email' => 160, 'department' => 120, 'branch' => 120] as $field => $max) {
+        if (isset($changes[$field])) {
+            $seat[$field] = clip($changes[$field], $max);
+        }
+    }
+    if (isset($changes['courses'])) {
+        $seat['courses'] = courses_list($changes['courses']);
+    }
+    if (isset($changes['due'])) {
+        $seat['due'] = due_date($changes['due']);
+    }
+    db()->prepare('UPDATE academy_seats SET name = ?, staff_id = ?, email = ?, department = ?, branch = ?, courses = ?, due = ?, status = ? WHERE code = ?')
+        ->execute([$seat['name'], $seat['staff_id'], $seat['email'], $seat['department'], $seat['branch'], json_encode($seat['courses']), $seat['due'], $seat['status'], $code]);
+    reply(200, ['ok' => true, 'seat' => $seat]);
 }
 
 if ($action === 'seat' || $action === 'report') {
@@ -205,14 +192,13 @@ if ($action === 'seat' || $action === 'report') {
     $code = $seat['code'];
 
     if ($action === 'seat') {
-        $mine = with_institution($id, fn ($s, $p) => [$s, $p, $p[$code] ?? []]);
         reply(200, [
             'ok' => true,
             'institution' => $inst['name'],
             'name' => $seat['name'],
             'courses' => $seat['courses'],
             'due' => $seat['due'],
-            'progress' => (object) $mine,
+            'progress' => (object) (progress_of('', $code)[$code] ?? []),
         ]);
     }
 
@@ -226,10 +212,8 @@ if ($action === 'seat' || $action === 'report') {
     $simScore = (int) ($_POST['sim_score'] ?? -1);
     $simDone = ($_POST['sim_done'] ?? '') === '1';
     $now = gmdate('Y-m-d H:i');
-    with_institution($id, function ($staff, $progress) use ($code, $course, $done, $examScore, $examTotal, $simScore, $simDone, $now) {
-        $all = $progress[$code] ?? [];
-        $c = $all[$course] ?? ['started' => $now, 'done' => []];
-        $c['done'] = array_values(array_unique(array_merge($c['done'] ?? [], array_slice($done, 0, 20))));
+    progress_change($code, $course, function ($c) use ($done, $examScore, $examTotal, $simScore, $simDone, $now) {
+        $c['done'] = array_slice(array_values(array_unique(array_merge($c['done'] ?? [], array_slice($done, 0, 20)))), 0, 20);
         if ($examTotal > 0 && $examTotal <= 200 && $examScore >= 0 && $examScore <= $examTotal) {
             $pct = (int) round($examScore * 100 / $examTotal);
             if ($pct >= (int) ($c['exam'] ?? -1)) {
@@ -241,9 +225,7 @@ if ($action === 'seat' || $action === 'report') {
             $c['sim'] = $simScore;
         }
         $c['last'] = $now;
-        $all[$course] = $c;
-        $progress[$code] = $all;
-        return [$staff, $progress, null];
+        return $c;
     });
     reply(200, ['ok' => true]);
 }
