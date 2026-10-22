@@ -46,6 +46,9 @@ import strategicLeadershipChangeManagement from "./strategic-leadership-change-m
 import taxComplianceEssentials from "./tax-compliance-essentials.json";
 import businessTaxManagement from "./business-tax-management.json";
 import strategicTaxManagement from "./strategic-tax-management.json";
+import smeFinancialLiteracy from "./sme-financial-literacy.json";
+import smeFinancialControl from "./sme-financial-control.json";
+import smeStrategicFinancialManagement from "./sme-strategic-financial-management.json";
 import organizationalCultureWorkplaceMindset from "./organizational-culture-workplace-mindset.json";
 import organizationalCultureHighPerformance from "./organizational-culture-high-performance.json";
 import organizationalCultureChampions from "./organizational-culture-champions.json";
@@ -99,6 +102,9 @@ export const proCourses = [
   taxComplianceEssentials,
   businessTaxManagement,
   strategicTaxManagement,
+  smeFinancialLiteracy,
+  smeFinancialControl,
+  smeStrategicFinancialManagement,
   organizationalCultureWorkplaceMindset,
   organizationalCultureHighPerformance,
   organizationalCultureChampions,
