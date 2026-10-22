@@ -1,3 +1,4 @@
+import { bankKey, isClosed, worse, type CrbReport } from "./crb";
 import { computeSpread, fmt, PERIODS, unbalanced, type Column, type SpreadInput } from "./spread";
 
 /**
@@ -99,6 +100,8 @@ export type CreditCase = {
   repaymentHistory: string;
   od: OdRow[];
   lcs: LcRow[];
+  crb: CrbReport | null;
+  ownBank: string;
   crsRef: string;
   crsDate: string;
   otherBanks: string;
@@ -166,6 +169,8 @@ export const emptyCase = (): CreditCase => ({
   repaymentHistory: "",
   od: [],
   lcs: [],
+  crb: null,
+  ownBank: "",
   crsRef: "",
   crsDate: "",
   otherBanks: "",
@@ -242,6 +247,54 @@ export function analyseCase(k: CreditCase) {
   };
 }
 export type CaseAnalysis = ReturnType<typeof analyseCase>;
+
+/**
+ * Other banks from the credit reference report: every account and application
+ * except those of the analyst's own institution, which the annex reports elsewhere.
+ */
+export function otherBanks(k: CreditCase) {
+  const r = k.crb;
+  if (!r) return null;
+  const own = k.ownBank ? bankKey(k.ownBank) : "";
+  const notOwn = (inst: string) => !own || bankKey(inst) !== own;
+  const accounts = r.accounts.filter((a) => notOwn(a.institution));
+  const active = accounts.filter((a) => !isClosed(a));
+  const settled = accounts.filter((a) => isClosed(a));
+  const names = [...new Set(accounts.map((a) => a.institution))];
+  const byBank = names
+    .map((name) => {
+      const act = active.filter((a) => a.institution === name);
+      return {
+        name,
+        active: act.length,
+        approved: act.reduce((s, a) => s + a.approved, 0),
+        outstanding: act.reduce((s, a) => s + a.balance, 0),
+        overdue: act.reduce((s, a) => s + a.overdue, 0),
+        worst: act.reduce((w, a) => (a.classification ? worse(a.classification, w) : w), act.length ? "PASS" : ""),
+        maxDays: act.reduce((m, a) => Math.max(m, a.daysInArrears), 0),
+        settled: settled.filter((a) => a.institution === name).length,
+      };
+    })
+    .sort((a, b) => b.outstanding - a.outstanding);
+  const cutoff = r.reportDate ? Date.parse(r.reportDate) - 730 * 864e5 : 0;
+  const applications = r.applications.filter((a) => notOwn(a.institution) && (!a.date || Date.parse(a.date) >= cutoff));
+  const total = (key: "approved" | "balance" | "overdue") => active.reduce((s, a) => s + a[key], 0);
+  return {
+    active,
+    settled,
+    byBank,
+    applications,
+    approved: total("approved"),
+    outstanding: total("balance"),
+    overdue: total("overdue"),
+    inArrears: active.filter((a) => a.overdue > 0 || a.daysInArrears > 0).length,
+    worst: active.reduce((w, a) => (a.classification ? worse(a.classification, w) : w), "PASS"),
+    banks: byBank.filter((b) => b.active > 0).length,
+  };
+}
+
+/** Grouping of bureau credit types into the annex's exposure lines. */
+export const exposureLine = (creditType: string) => (/overdraft/i.test(creditType) ? "Overdraft" : /installment|term|loan/i.test(creditType) ? "Term loan" : /letter of credit|l\/c/i.test(creditType) ? "L/C margin" : "Others");
 
 const money = (n: number, unit: string) => `${fmt(n, "amount")} (${unit})`;
 const change = (a: number, b: number) => (b !== 0 ? (a - b) / Math.abs(b) : NaN);
@@ -366,6 +419,9 @@ export function swotHints(k: CreditCase, a: CaseAnalysis) {
   if (a.coverRecommended >= 1.25) s.push(`Collateral covers ${pct(a.coverRecommended)} of total exposure.`);
   if (Number.isFinite(a.coverRecommended) && a.coverRecommended < 1) w.push(`Collateral covers only ${pct(a.coverRecommended)} of total exposure.`);
   if (k.facilities.some((f) => f.status !== "Pass")) w.push("At least one existing facility is not classified as pass.");
+  const ob = otherBanks(k);
+  if (ob && ob.inArrears > 0) w.push(`${ob.inArrears} facilit${ob.inArrears === 1 ? "y" : "ies"} at other banks in arrears (credit reference report).`);
+  if (ob && ob.active.length > 0 && ob.inArrears === 0) s.push("All facilities at other banks are current (credit reference report).");
   return { s, w };
 }
 

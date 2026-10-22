@@ -1,7 +1,8 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { amount, birr, discounted, periodLabel, riskKeys, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
+import { amount, birr, discounted, otherBanks, periodLabel, riskKeys, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
+import { titleCase } from "./CreditCrb";
 import type { AnalysisContext, Cited } from "@/lib/credit/context";
 import { selection, type Picked } from "@/lib/credit/select";
 import { balanceSheet, fmt, profitLoss, ratioRows, type Column } from "@/lib/credit/spread";
@@ -53,7 +54,7 @@ function Table({ head, rows, right = [] }: { head: ReactNode[]; rows: ReactNode[
         {rows.map((r, i) => (
           <tr key={i}>
             {r.map((c, j) => (
-              <td key={j} className={`border border-slate-400 px-1.5 py-0.5 align-top ${right.includes(j) ? "text-right tabular-nums" : ""}`}>
+              <td key={j} className={`border border-slate-400 px-1.5 py-0.5 align-top ${right.includes(j) ? "text-right tabular-nums" : ""} ${typeof c === "string" && /^\d{4}-\d{2}-\d{2}$/.test(c) ? "whitespace-nowrap" : ""}`}>
                 {c}
               </td>
             ))}
@@ -154,6 +155,61 @@ function SpreadTable({ cols, unit, groups }: { cols: Column[]; unit: string; gro
       ))}
     </table>
     </div>
+  );
+}
+
+const whole = (n: number) => Math.round(n).toLocaleString("en-US");
+
+function OtherBanks({ k, a }: { k: CreditCase; a: CaseAnalysis }) {
+  const ob = otherBanks(k);
+  const r = k.crb;
+  const ref = [k.crsRef || r?.enquiryId ? `enquiry ${k.crsRef || r?.enquiryId}` : "", k.crsDate || r?.reportDate ? `dated ${longDate(k.crsDate || r?.reportDate)}` : ""].filter(Boolean).join(", ");
+  const stale = Number.isFinite(a.crsAgeDays) && a.crsAgeDays > 60;
+  if (!ob)
+    return (
+      <P>
+        {[ref && `Credit reference report ${ref}.`, stale ? "The report is more than two months old and should be updated." : "", k.otherBanks].filter(Boolean).join(" ") ||
+          "No credit reference report was attached."}
+      </P>
+    );
+  const summary =
+    ob.active.length === 0
+      ? "The borrower has no active facilities at other banks."
+      : `The borrower has ${ob.active.length} active facilit${ob.active.length === 1 ? "y" : "ies"} at ${ob.banks} other bank${ob.banks === 1 ? "" : "s"}, with ${birr(ob.outstanding)} outstanding against ${birr(ob.approved)} approved. ${
+          ob.inArrears ? `${ob.inArrears} ${ob.inArrears === 1 ? "is" : "are"} in arrears, with ${birr(ob.overdue)} overdue; the worst classification is ${titleCase(ob.worst).toLowerCase()}.` : "All are current and within terms."
+        }`;
+  return (
+    <>
+      <P>
+        {`Source: National Bank of Ethiopia credit reference report${ref ? `, ${ref}` : ""}. Facilities with our institution are excluded. ${summary}`}
+        {ob.settled.length > 0 ? ` A further ${ob.settled.length} facilit${ob.settled.length === 1 ? "y has" : "ies have"} been settled.` : ""}
+        {stale ? " The report is more than two months old and should be updated." : ""}
+      </P>
+      {ob.active.length > 0 && (
+        <Table
+          head={["Bank", "Facility", "Opened", "Maturity", "Approved", "Outstanding", "Overdue", "Days in arrears", "Classification"]}
+          right={[4, 5, 6, 7]}
+          rows={[
+            ...ob.active.map((x) => [x.institution, x.creditType, x.opened, x.maturity, whole(x.approved), whole(x.balance), whole(x.overdue), x.daysInArrears ? String(x.daysInArrears) : "-", titleCase(x.classification || "-")]),
+            [<b key="t">Total</b>, "", "", "", <b key="a">{whole(ob.approved)}</b>, <b key="o">{whole(ob.outstanding)}</b>, <b key="d">{whole(ob.overdue)}</b>, "", ""],
+          ]}
+        />
+      )}
+      {ob.byBank.length > 1 && (
+        <Table
+          head={["Bank", "Active facilities", "Outstanding (ETB)", "Overdue (ETB)", "Worst classification", "Settled facilities"]}
+          right={[1, 2, 3, 5]}
+          rows={ob.byBank.map((b) => [b.name, String(b.active), whole(b.outstanding), whole(b.overdue), b.worst ? titleCase(b.worst) : "-", String(b.settled)])}
+        />
+      )}
+      {ob.applications.length > 0 && (
+        <>
+          <p className="mt-2 font-semibold">Credit applications at other banks (24 months before the report)</p>
+          <Table head={["Bank", "Date", "Amount (ETB)", "Approved (ETB)", "Status"]} right={[2, 3]} rows={ob.applications.map((x) => [x.institution, x.date, whole(x.amount), x.approved ? whole(x.approved) : "-", x.status])} />
+        </>
+      )}
+      {k.otherBanks.trim() && <P>{k.otherBanks}</P>}
+    </>
   );
 }
 
@@ -393,15 +449,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
       <H3>Letters of credit (last five)</H3>
       <Table head={["Reference", "Amount", "Opened", "Settled", "Remark"]} rows={k.lcs.map((l) => [l.ref, l.amount, l.opened ? longDate(l.opened) : "-", l.settled ? longDate(l.settled) : "-", l.remark])} />
       <H3>Relationship with other banks</H3>
-      <P>
-        {[
-          k.crsRef || k.crsDate ? `Credit reference report ${k.crsRef || ""}${k.crsDate ? ` dated ${longDate(k.crsDate)}` : ""}.` : "",
-          Number.isFinite(a.crsAgeDays) && a.crsAgeDays > 60 ? "The report is more than two months old and should be updated." : "",
-          k.otherBanks,
-        ]
-          .filter(Boolean)
-          .join(" ") || "Not stated."}
-      </P>
+      <OtherBanks k={k} a={a} />
       <Note text={k.additions.banking} />
 
       <H n="8">Financial analysis</H>

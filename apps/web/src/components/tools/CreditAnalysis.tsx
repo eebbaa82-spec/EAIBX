@@ -24,6 +24,7 @@ import type { AnalysisContext, Cited } from "@/lib/credit/context";
 import { isPicked, regionNames, slugOf } from "@/lib/credit/select";
 import { deleteFile, getFile, putFile } from "@/lib/docs/store";
 import { Area, AnythingToAdd, Block, Check, Grid, Pick, smallButton, TableEditor, Text, inputClass } from "./creditFields";
+import { CrbUpload } from "./CreditCrb";
 import { CreditReport } from "./CreditReport";
 import { SpreadEntry, SpreadOutcomes } from "./CreditSpread";
 
@@ -378,6 +379,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
             { key: "remark", label: "Settlement remark" },
           ]}
         />
+        <CrbUpload k={k} set={set} />
         <Grid>
           <Text label="Credit reference (CRS) report number" value={k.crsRef} onChange={(v) => set({ crsRef: v })} />
           <Text
@@ -387,7 +389,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
             onChange={(v) => set({ crsDate: v })}
             hint={Number.isFinite(a.crsAgeDays) && a.crsAgeDays > 60 ? "This report is more than two months old. Update it before the credit committee." : "Update the report if it is more than two months old."}
           />
-          <Area label="Relationship with other banks" value={k.otherBanks} onChange={(v) => set({ otherBanks: v })} rows={3} />
+          <Area label="Relationship with other banks: your comments" value={k.otherBanks} onChange={(v) => set({ otherBanks: v })} rows={3} />
         </Grid>
       </Block>
       {add("banking", "the banking relationship")}
