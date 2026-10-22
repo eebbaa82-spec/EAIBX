@@ -7,6 +7,9 @@ import projectFinanceFoundations from "./project-finance-foundations.json";
 import financialAppraisalLoanStructuring from "./financial-appraisal-loan-structuring.json";
 import projectRiskStructuringMonitoring from "./project-risk-structuring-monitoring.json";
 import syndicatedLoansCrossBorderProjectFinance from "./syndicated-loans-cross-border-project-finance.json";
+import ifbFinancingFoundation from "./ifb-financing-foundation.json";
+import ifbFinancingPractitioner from "./ifb-financing-practitioner.json";
+import ifbFinancingAdvanced from "./ifb-financing-advanced.json";
 import ethiopianBankingLawRegulation from "./ethiopian-banking-law-regulation.json";
 import resourceMobilization from "./resource-mobilization.json";
 import internationalTradeFinance from "./international-trade-finance.json";
@@ -63,6 +66,9 @@ export const proCourses = [
   financialAppraisalLoanStructuring,
   projectRiskStructuringMonitoring,
   syndicatedLoansCrossBorderProjectFinance,
+  ifbFinancingFoundation,
+  ifbFinancingPractitioner,
+  ifbFinancingAdvanced,
   ethiopianBankingLawRegulation,
   resourceMobilization,
   internationalTradeFinance,
