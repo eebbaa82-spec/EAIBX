@@ -41,7 +41,7 @@ type RawRegion = {
   type: string;
   capital: string;
   summary: string;
-  investmentOffice?: string;
+  investmentOffice?: string | null;
   indicators?: { label: string; value: string; period?: string; source: string }[];
   economy?: { detail: string; source: string }[];
   industrialParks?: { name: string; detail: string; source: string }[];
@@ -60,7 +60,8 @@ function regions(): RegionContext[] {
       slug: slugOf(r.name),
       name: r.name,
       type: r.type,
-      capital: r.capital,
+      // Multi-center regions have no single seat, and a city is its own capital.
+      capital: /multi-center/i.test(r.capital) || r.capital.startsWith(r.name) ? "" : r.capital,
       summary: r.summary,
       asOf: data.asOf,
       office: r.investmentOffice ?? "",
