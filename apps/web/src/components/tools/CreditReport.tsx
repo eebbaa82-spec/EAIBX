@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, overallVerdict, periodLabel, questions, riskAreas, scorecard, stressTests, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { titleCase } from "./CreditCrb";
 import { lineLabel, projectionLines } from "./CreditProjection";
-import { saleProfit, screeningLimits } from "@/data/credit/ifb";
+import { saleProfit, screeningLimits, termModeNote } from "@/data/credit/ifb";
 import { ifbProduct, ifbScreening, productByName } from "@/lib/credit/ifbcase";
 import { projection } from "@/lib/credit/projection";
 import { appraise } from "@/lib/credit/project";
@@ -340,6 +340,11 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
             />
           )}
           <P>{`Conditions of the contract: ${ifb.mode.conditions.join(" ")}`}</P>
+          {(() => {
+            const months = Math.max(0, ...priced.filter((x) => x.type === ifb.product.name).map((x) => x.months));
+            const note = termModeNote(ifb.product, ifb.mode.id, months);
+            return note ? <P>{`Mode of financing: ${note}`}</P> : null;
+          })()}
           <p className="mt-2 font-semibold">Contract documents to be signed after approval</p>
           <Points items={ifb.mode.docs} />
         </>

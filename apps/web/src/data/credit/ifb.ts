@@ -388,7 +388,6 @@ export const ifbProducts: IfbProduct[] = [
     tips: [
       "You contribute at least 50% of the price, deposited in a blocked account; lenders adjust this for your business and risk grade.",
       "The vehicle is registered as collateral, preferably brand new, and spare parts are not financed.",
-      "For terms over three years, use Ijarah or Diminishing Musharakah rather than Murabaha.",
     ],
   },
   {
@@ -404,7 +403,6 @@ export const ifbProducts: IfbProduct[] = [
     tips: [
       "You contribute at least 50% of the price, deposited in a blocked account; advances already paid to the supplier count.",
       "The machinery is registered as collateral, preferably brand new, and spare parts are not financed.",
-      "For terms over three years, use Ijarah or Diminishing Musharakah rather than Murabaha.",
     ],
   },
   {
@@ -543,6 +541,9 @@ export const ifbEligibility = [
   "A risk grade of 1 to 5 (new customers and new businesses start at grade 4)",
   "An interest-free deposit account with the lender",
 ];
+
+/** Lower-cases a list item for use mid-sentence, keeping proper nouns such as Halal and Sharia'h. */
+export const midSentence = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
 
 export const prohibitedActivities = ["Alcoholic drinks", "Arms and weapons", "Pork, pork products and non-Halal meat", "Interest-based finance", "Other activities the Sharia'h Advisory Committee rules out"];
 

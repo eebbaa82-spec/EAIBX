@@ -20,7 +20,7 @@ import {
   type CollateralTypeId,
   type LoanTypeId,
 } from "@/data/credit/profile";
-import { ifbDocs, ifbProducts, modeById, productById, prohibitedActivities, saleProfit, screen, termModeNote, type IfbModeId, type IfbProductId } from "@/data/credit/ifb";
+import { ifbDocs, ifbProducts, modeById, productById, midSentence, prohibitedActivities, saleProfit, screen, termModeNote, type IfbModeId, type IfbProductId } from "@/data/credit/ifb";
 import { frequencies, installmentCount, installmentFor, type Frequency } from "@/lib/calc/loan";
 import { findDetails, readText, type Found } from "@/lib/docs/extract";
 import { clearFiles, deleteFile, getFile, putFile } from "@/lib/docs/store";
@@ -878,7 +878,7 @@ export function ProfileBuilder() {
               <fieldset className="mt-8 space-y-4">
                 <legend className="font-semibold text-ink">Sharia&apos;h screening</legend>
                 <p className="text-sm text-muted">
-                  Lenders check that the business and the transaction are permissible. A business whose main activity involves {prohibitedActivities.map((x) => x.toLowerCase()).join(", ")} is not eligible. For other businesses, non-Halal income such as interest on deposits should be no more than 5% of total income, and a business that mainly borrows from conventional banks is referred for a special decision.
+                  Lenders check that the business and the transaction are permissible. A business whose main activity involves {prohibitedActivities.map(midSentence).join(", ")} is not eligible. For other businesses, non-Halal income such as interest on deposits should be no more than 5% of total income, and a business that mainly borrows from conventional banks is referred for a special decision.
                 </p>
                 <Grid>
                   <Choice
@@ -904,7 +904,7 @@ export function ProfileBuilder() {
                       ]}
                     />
                   )}
-                  {isBusiness && <Money label="Interest and other non-permissible income a year" value={p.nonPermissibleIncome} onChange={(v) => set({ nonPermissibleIncome: v })} hint="For example interest on conventional deposits. Compared with sales." />}
+                  {isBusiness && <Money label="Interest and other non-Halal income a year" value={p.nonPermissibleIncome} onChange={(v) => set({ nonPermissibleIncome: v })} hint="For example interest on conventional deposits. Compared with sales." />}
                 </Grid>
                 {a.screening && (
                   <div className={`rounded-xl p-4 text-sm ${a.screening.decision === "Not eligible" ? "bg-red-50 text-red-900" : a.screening.decision === "Eligible" ? "bg-brand-50 text-brand-900" : "bg-amber-50 text-amber-900"}`}>

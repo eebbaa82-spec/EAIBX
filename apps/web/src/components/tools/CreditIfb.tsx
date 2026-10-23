@@ -1,6 +1,6 @@
 "use client";
 
-import { ifbCollateralCover, ifbEligibility, ifbProducts, modeById, productById, prohibitedActivities, screeningLimits, termModeNote, type IfbProductId } from "@/data/credit/ifb";
+import { ifbCollateralCover, ifbEligibility, ifbProducts, midSentence, modeById, productById, prohibitedActivities, screeningLimits, termModeNote, type IfbProductId } from "@/data/credit/ifb";
 import { amount, facilityTypes, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { ifbProduct, ifbScreening, type IfbInput } from "@/lib/credit/ifbcase";
 import { fmt } from "@/lib/credit/spread";
@@ -142,7 +142,7 @@ export function IfbScreeningBlock({ k, a, set }: { k: CreditCase; a: CaseAnalysi
           options={[
             { value: "", label: "Select" },
             { value: "Permissible", label: "Permissible" },
-            { value: "Prohibited", label: `Prohibited (${prohibitedActivities.join(", ").toLowerCase()})` },
+            { value: "Prohibited", label: `Prohibited (${prohibitedActivities.map(midSentence).join(", ")})` },
           ]}
           hint="Look at what the business actually earns from, not only its licence: ask for an income breakdown and record what you saw on the visit."
         />
