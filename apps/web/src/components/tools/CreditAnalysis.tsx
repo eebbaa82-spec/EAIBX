@@ -29,6 +29,7 @@ import { contextSwot, isPicked, regionNames, selection, slugOf } from "@/lib/cre
 import { deleteFile, getFile, putFile } from "@/lib/docs/store";
 import { Area, AnythingToAdd, Block, Check, Grid, Pick, smallButton, TableEditor, Text, inputClass } from "./creditFields";
 import { CrbUpload } from "./CreditCrb";
+import { CreditProject } from "./CreditProject";
 import { CreditProjection } from "./CreditProjection";
 import { CreditReport } from "./CreditReport";
 import { StatementsImport } from "./StatementsImport";
@@ -51,6 +52,7 @@ const steps = [
   { key: "banking", title: "Banking relationship", laf: "Section 7" },
   { key: "statements", title: "Financial statements", laf: "Financial analysis form" },
   { key: "outcomes", title: "Outcomes", laf: "Ratios and trends" },
+  { key: "project", title: "Project appraisal", laf: "Feasibility study" },
   { key: "context", title: "Sector and region", laf: "Operating environment" },
   { key: "analysis", title: "Analysis and risk", laf: "Sections 8 and 9" },
   { key: "recommendation", title: "Recommendation and documents", laf: "Section 10" },
@@ -73,7 +75,7 @@ function merge(raw: Partial<CreditCase>): CreditCase {
   if (raw.sector && raw.sectorReport === undefined && !sectors.includes(raw.sector)) {
     raw = { ...raw, sectorReport: raw.sector, sector: "" };
   }
-  return { ...base, ...raw, projection: { ...base.projection, ...(raw.projection ?? {}) }, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
+  return { ...base, ...raw, projection: { ...base.projection, ...(raw.projection ?? {}) }, project: { ...base.project, ...(raw.project ?? {}) }, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
 }
 function save(k: CreditCase) {
   try {
@@ -434,6 +436,9 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
       <SpreadOutcomes cols={a.cols} unit={k.unit} />
       {add("outcomes", "the outcomes")}
     </div>,
+
+    /* Project appraisal */
+    <CreditProject key="project" k={k} set={set} projectionsTemplate={templateHref.replace(/[^/]+$/, "Investopia-Project-Projections-Template.xlsx")} />,
 
     /* Context */
     <ContextStep key="context" k={k} ctx={ctx} set={set} />,

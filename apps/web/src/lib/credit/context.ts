@@ -10,7 +10,7 @@ import { slugOf } from "./select";
  * Sources are cited by publisher and date only: pages never carry source URLs.
  */
 
-export type Cited = { text: string; cite: string; label?: string; period?: string };
+export type Cited = { text: string; cite: string; ref?: string; label?: string; period?: string };
 export type SectorContext = { slug: string; name: string; asOf: string; summary: string; indicators: Cited[]; opportunities: Cited[]; incentives: Cited[]; points: Cited[] };
 export type RegionContext = {
   slug: string;
@@ -29,10 +29,15 @@ export type RegionContext = {
 export type RegulationContext = { id: string; number: string; title: string; issuer: string; date: string; status: string; topic: string; relevance: string; category: string };
 export type AnalysisContext = { sectors: SectorContext[]; economy: SectorContext | null; regions: RegionContext[]; regulations: RegulationContext[] };
 
-type RawSource = Pick<SectorSource, "id" | "publisher" | "date">;
+type RawSource = Pick<SectorSource, "id" | "publisher" | "date"> & { title?: string };
 const citer = (sources: RawSource[]) => (id: string) => {
   const s = sources.find((x) => x.id === id);
   return s ? `${s.publisher}${s.date ? `, ${s.date}` : ""}` : "";
+};
+/** The full reference, for the list at the end of a report. */
+const referencer = (sources: RawSource[]) => (id: string) => {
+  const s = sources.find((x) => x.id === id);
+  return s ? `${s.publisher}${s.date ? ` (${s.date})` : ""}${s.title ? `. ${s.title}` : ""}.` : "";
 };
 
 type RawRegion = {
@@ -56,6 +61,7 @@ function regions(): RegionContext[] {
   const data = JSON.parse(readFileSync(file, "utf8")) as { asOf: string; regions: RawRegion[] };
   return data.regions.map((r) => {
     const cite = citer(r.sources);
+    const ref = referencer(r.sources);
     return {
       slug: slugOf(r.name),
       name: r.name,
@@ -65,11 +71,11 @@ function regions(): RegionContext[] {
       summary: r.summary,
       asOf: data.asOf,
       office: r.investmentOffice ?? "",
-      indicators: (r.indicators ?? []).map((i) => ({ label: i.label, text: i.value, period: i.period, cite: cite(i.source) })),
-      economy: (r.economy ?? []).map((i) => ({ text: i.detail, cite: cite(i.source) })),
-      parks: (r.industrialParks ?? []).map((i) => ({ label: i.name, text: i.detail, cite: cite(i.source) })),
-      opportunities: (r.opportunities ?? []).map((i) => ({ label: i.title, text: i.detail, cite: cite(i.source) })),
-      considerations: (r.considerations ?? []).map((i) => ({ text: i.detail, cite: cite(i.source) })),
+      indicators: (r.indicators ?? []).map((i) => ({ label: i.label, text: i.value, period: i.period, cite: cite(i.source), ref: ref(i.source) })),
+      economy: (r.economy ?? []).map((i) => ({ text: i.detail, cite: cite(i.source), ref: ref(i.source) })),
+      parks: (r.industrialParks ?? []).map((i) => ({ label: i.name, text: i.detail, cite: cite(i.source), ref: ref(i.source) })),
+      opportunities: (r.opportunities ?? []).map((i) => ({ label: i.title, text: i.detail, cite: cite(i.source), ref: ref(i.source) })),
+      considerations: (r.considerations ?? []).map((i) => ({ text: i.detail, cite: cite(i.source), ref: ref(i.source) })),
     };
   });
 }
@@ -77,15 +83,16 @@ function regions(): RegionContext[] {
 export function getAnalysisContext(): AnalysisContext {
   const reports = getSectorReports().map((r): SectorContext => {
     const cite = citer(r.sources);
+    const ref = referencer(r.sources);
     return {
       slug: r.slug,
       name: r.name,
       asOf: r.asOf,
       summary: r.summary,
-      indicators: r.indicators.map((i) => ({ label: i.label, text: i.value, period: i.period, cite: cite(i.source) })),
-      opportunities: r.opportunities.map((o) => ({ label: o.title, text: o.detail, cite: cite(o.source) })),
-      incentives: r.incentives.map((o) => ({ text: o.detail, cite: cite(o.source) })),
-      points: r.risks.map((o) => ({ text: o.detail, cite: cite(o.source) })),
+      indicators: r.indicators.map((i) => ({ label: i.label, text: i.value, period: i.period, cite: cite(i.source), ref: ref(i.source) })),
+      opportunities: r.opportunities.map((o) => ({ label: o.title, text: o.detail, cite: cite(o.source), ref: ref(o.source) })),
+      incentives: r.incentives.map((o) => ({ text: o.detail, cite: cite(o.source), ref: ref(o.source) })),
+      points: r.risks.map((o) => ({ text: o.detail, cite: cite(o.source), ref: ref(o.source) })),
     };
   });
   const regulations = getLibrary().flatMap((cat) =>

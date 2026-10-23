@@ -5,6 +5,7 @@ import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, o
 import { titleCase } from "./CreditCrb";
 import { projectionLines } from "./CreditProjection";
 import { projection } from "@/lib/credit/projection";
+import { appraise } from "@/lib/credit/project";
 import type { AnalysisContext } from "@/lib/credit/context";
 import { contextSwot, outlookFacts, selection } from "@/lib/credit/select";
 import { balanceSheet, fmt, profitLoss, ratioRows, type Column } from "@/lib/credit/spread";
@@ -212,6 +213,17 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const suggested = suggestedRisks(k, a);
   const stress = stressTests(k, a);
   const proj = projection(k, a);
+  const pj = k.project;
+  const ap = pj.has ? appraise(pj) : null;
+  const refs = [
+    ...new Set(
+      [sel.economy, sel.sectorIndicators, sel.sectorOpportunities, sel.sectorIncentives, sel.sectorPoints, sel.regionIndicators, sel.regionEconomy, sel.regionParks, sel.regionOpportunities, sel.regionConsiderations]
+        .flat()
+        .map((x) => x.item.ref ?? "")
+        .filter(Boolean),
+    ),
+  ].sort();
+  const birrOr = (n: number) => (Number.isFinite(n) ? birr(n) : "-");
   const checklist = originationChecklist(k, a);
   const swot = autoSwot(k, a, contextSwot(sel));
   const card = scorecard(k, a);
@@ -510,6 +522,90 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         </div>
       )}
 
+      {pj.has && (
+        <section>
+          <H n="8A">Project appraisal</H>
+          <H3>Project overview</H3>
+          <P>
+            {[
+              pj.name && `${pj.name}.`,
+              pj.description,
+              pj.location && `Location: ${pj.location}.`,
+              pj.capacity && `Capacity: ${pj.capacity}.`,
+              pj.products && `Products or services: ${pj.products}.`,
+              pj.schedule && `Implementation: ${pj.schedule}.`,
+              pj.studyName && `Appraised from the feasibility study or business plan provided by the client and the client's projections${pj.projections ? ` (${pj.projections.years[0]} to ${pj.projections.years[pj.projections.years.length - 1]})` : ""}.`,
+            ]
+              .filter(Boolean)
+              .join(" ")
+              .replace(/\.\./g, ".") || "Not described."}
+          </P>
+          <H3>Market and demand</H3>
+          <P>
+            {[pj.market, sel.sector?.summary, sel.sectorOpportunities.length > 0 && `Opportunities in the sector include ${sel.sectorOpportunities.map((x) => (x.item.label ?? x.item.text).toLowerCase()).join("; ")}.`]
+              .filter(Boolean)
+              .join("\n\n") || "No market assessment entered."}
+          </P>
+          <H3>Technical and operational</H3>
+          <P>{pj.technical || "No technical assessment entered."}</P>
+          <H3>Investment cost and financing</H3>
+          <Table
+            head={["Item", "Amount (ETB)"]}
+            right={[1]}
+            rows={[...pj.investment.filter((x) => x.amount.trim()).map((x) => [x.item, etb(x.amount).replace("ETB ", "")]), ...(ap ? [["Total investment", birrOr(ap.totalInvestment).replace("ETB ", "")]] : [])]}
+          />
+          {ap && (
+            <P>
+              {`Financed by equity of ${birrOr(ap.equity)} (${pctOr(ap.equityShare)}) and a loan of ${birrOr(ap.loan)}, against a minimum equity of ${pj.minEquity || 25}%. The loan is assumed at ${pj.rate || 16}% over ${pj.tenure || 5} years${Number(pj.grace) > 0 ? ` with ${pj.grace} year${Number(pj.grace) === 1 ? "" : "s"} of grace` : ""}.`}
+            </P>
+          )}
+          {pj.assumptions.trim() && (
+            <>
+              <H3>Key assumptions</H3>
+              <P>{pj.assumptions}</P>
+            </>
+          )}
+          {ap && pj.projections && (
+            <>
+              <H3>Projected results (ETB)</H3>
+              <Table
+                head={["", ...ap.years.map((y) => y.year)]}
+                right={ap.years.map((_, i) => i + 1)}
+                rows={[
+                  ["Revenue", ...ap.years.map((y) => fmt(y.revenue, "amount"))],
+                  ["Operating cash profit", ...ap.years.map((y) => fmt(y.ebitda, "amount"))],
+                  ["Net profit", ...ap.years.map((y) => fmt(y.netProfit, "amount"))],
+                  ["Project cash flow", ...ap.years.map((y) => fmt(y.fcf, "amount"))],
+                  ["Debt service", ...ap.years.map((y) => fmt(y.interest + y.principal, "amount"))],
+                  ["Debt service cover", ...ap.years.map((y) => timesOr(y.dscr))],
+                ]}
+              />
+              <H3>Financial viability</H3>
+              <Table
+                head={["Measure", "Appraisal", "Stated in the study"]}
+                rows={[
+                  [`NPV at ${(ap.discount * 100).toFixed(0)}%`, birrOr(ap.base.npv), (() => { const f = pj.facts.find((x) => x.key === "npv"); return f ? birr(Number(f.value)) : "-"; })()],
+                  ["IRR", pctOr(ap.base.irr), (() => { const f = pj.facts.find((x) => x.key === "irr"); return f ? `${f.value}%` : "-"; })()],
+                  ["Payback period", Number.isFinite(ap.base.payback) ? `${ap.base.payback.toFixed(1)} years` : "Not within the period", (() => { const f = pj.facts.find((x) => x.key === "payback"); return f ? `${f.value} years` : "-"; })()],
+                  ["Lowest debt service cover", timesOr(ap.base.minDscr), "-"],
+                  ["Average debt service cover", timesOr(ap.base.avgDscr), "-"],
+                ]}
+              />
+              <H3>Sensitivity</H3>
+              <Table
+                head={["Case", "NPV", "IRR", "Lowest cover"]}
+                right={[1, 2, 3]}
+                rows={[{ name: "Base case", v: ap.base }, ...ap.sensitivity].map((s) => [s.name, birrOr(s.v.npv), pctOr(s.v.irr), timesOr(s.v.minDscr)])}
+              />
+            </>
+          )}
+          <H3>Environmental, social and economic</H3>
+          <P>{[pj.employment && `The project creates ${Number(pj.employment).toLocaleString("en-US")} jobs.`, pj.environment].filter(Boolean).join(" ") || "Not assessed."}</P>
+          <H3>Appraisal conclusion</H3>
+          <P>{ap ? `${ap.verdict}. ${ap.reasons.join(" ")}` : "The client's projections are needed to complete the financial appraisal."}</P>
+        </section>
+      )}
+
       <H n="9">Summary (SWOT)</H>
       <table className="mt-2 w-full break-inside-avoid border-collapse text-[9.5pt]">
         <tbody>
@@ -617,6 +713,17 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         <>
           <H>Annex B. Documents provided by the analyst</H>
           <Table head={["Document", "What it shows"]} rows={k.files.map((f) => [f.name, f.note || "-"])} />
+        </>
+      )}
+
+      {refs.length > 0 && (
+        <>
+          <H>References</H>
+          <ol className="mt-1 list-decimal space-y-0.5 pl-5 text-[9pt]">
+            {refs.map((r) => (
+              <li key={r}>{r}</li>
+            ))}
+          </ol>
         </>
       )}
 

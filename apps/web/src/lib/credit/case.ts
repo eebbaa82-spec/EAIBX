@@ -1,4 +1,5 @@
 import { bankKey, isClosed, worse, type CrbReport } from "./crb";
+import { appraise, emptyProject, type ProjectInput } from "./project";
 import { emptyProjection, projection, type ProjectionInput } from "./projection";
 import { computeSpread, fmt, PERIODS, unbalanced, type Column, type SpreadInput } from "./spread";
 
@@ -137,6 +138,7 @@ export type CreditCase = {
   importShare: string;
   lenderCapital: string;
   projection: ProjectionInput;
+  project: ProjectInput;
   assessment: Partial<Record<QuestionKey, { rating: Rating; note: string }>>;
   gradeJustification: string;
   swot: { s: string; w: string; o: string; t: string };
@@ -211,6 +213,7 @@ export const emptyCase = (): CreditCase => ({
   importShare: "",
   lenderCapital: "",
   projection: emptyProjection(),
+  project: emptyProject(),
   gradeJustification: "",
   swot: { s: "", w: "", o: "", t: "" },
   recommendations: [{ type: "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }],
@@ -630,6 +633,14 @@ export function scorecard(k: CreditCase, a: CaseAnalysis): Scored[] {
       b.result === "Shortfall" ? "Concern" : b.result === "Tight" || sev.result === "Shortfall" ? "Watch" : "Meets",
     );
   }
+  const ap = k.project.has ? appraise(k.project) : null;
+  if (ap) {
+    const b = ap.base;
+    if (Number.isFinite(b.irr)) add("Project return (IRR)", `${(b.irr * 100).toFixed(1)}% against ${(ap.discount * 100).toFixed(0)}% required`, b.irr < ap.discount ? "Concern" : b.irr < ap.discount + 0.03 ? "Watch" : "Meets");
+    add("Project NPV", `ETB ${Math.round(b.npv).toLocaleString("en-US")}`, b.npv < 0 ? "Concern" : "Meets");
+    if (Number.isFinite(b.minDscr)) add("Project debt service cover", `Lowest ${b.minDscr.toFixed(2)}x`, b.minDscr < 1 ? "Concern" : b.minDscr < 1.25 ? "Watch" : "Meets");
+    if (Number.isFinite(ap.equityShare)) add("Equity contribution", `${(ap.equityShare * 100).toFixed(0)}% of the investment`, ap.equityShare < (Number(k.project.minEquity) || 25) / 100 ? "Watch" : "Meets");
+  } else if (k.project.has) add("Project appraisal", "Client's projections not uploaded", "Not assessed");
   const combined = stressTests(k, a).find((x) => x.name === "Combined");
   if (combined) add("Stress test", `Combined scenario: ${combined.result.toLowerCase()}`, combined.result === "Fails" ? "Concern" : combined.result === "Weakens" ? "Watch" : "Meets");
   if (Number.isFinite(a.coverRecommended)) add("Collateral coverage", pctText(a.coverRecommended), a.coverRecommended < 1 ? "Concern" : a.coverRecommended < 1.25 ? "Watch" : "Meets");

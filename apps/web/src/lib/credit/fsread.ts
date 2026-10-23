@@ -1,5 +1,7 @@
 import { unzipEntry } from "@/lib/docs/extract";
-import { parseStatement, type ParsedStatement, type Token } from "./fsparse";
+import { readText } from "@/lib/docs/extract";
+import { parseStatement, toLines, type ParsedStatement, type Token } from "./fsparse";
+import { matchOrder, projLines, type ProjKey, type Projections } from "./project";
 import type { LineId } from "./spread";
 
 /**
@@ -142,7 +144,7 @@ const templateRows: Record<number, LineId> = {
   74: "interestIncome", 75: "otherIncome", 78: "tax", 79: "extraordinary", 82: "dividendsPaid", 92: "assetsSold", 94: "revaluation",
 };
 
-async function excelStatement(buf: Uint8Array): Promise<ParsedStatement | null> {
+async function loadWorkbook(buf: Uint8Array) {
   const dec = new TextDecoder();
   const sharedXml = await unzipEntry(buf, "xl/sharedStrings.xml");
   const shared = sharedXml ? [...dec.decode(sharedXml).matchAll(/<si>([\s\S]*?)<\/si>/g)].map((m) => (m[1].match(/<t[^>]*>([\s\S]*?)<\/t>/g) ?? []).map((x) => x.replace(/<[^>]+>/g, "")).join("")) : [];
@@ -154,6 +156,11 @@ async function excelStatement(buf: Uint8Array): Promise<ParsedStatement | null> 
     if (!xml) break;
     sheets.push(xmlCells(dec.decode(xml), shared, dates));
   }
+  return sheets;
+}
+
+async function excelStatement(buf: Uint8Array): Promise<ParsedStatement | null> {
+  const sheets = await loadWorkbook(buf);
   // Investopia's financial analysis template (or the lender's original form).
   const sheetText = (c: Map<string, Cell>, ref: string) => c.get(ref)?.value ?? "";
   const found = sheets.find((c) => /land and building/i.test(sheetText(c, "A9")) && /net sales/i.test(sheetText(c, "A60")));
@@ -259,4 +266,75 @@ export async function readStatements(file: File, progress: Progress): Promise<Pa
     return r && /audit/i.test(file.name) ? { ...r, audited: true } : r;
   }
   return null;
+}
+
+/* ---------- Project projections ---------- */
+
+const yearHead = (c: Cell) => {
+  if (c.date) return String(c.date.getUTCFullYear());
+  const v = c.value.trim();
+  if (/^(year|yr|y)\s*-?\s*\d{1,2}$/i.test(v) || /^(19|20)\d{2}(\s*[/-]\s*\d{2,4})?$/.test(v)) return v;
+  return "";
+};
+
+/**
+ * The client's projected figures for the study period: a row of year headings
+ * (Year 0, Year 1... or 2026, 2027...) and a row for each line, on any sheet.
+ * Each line is matched by name; the first match in the workbook wins.
+ */
+export async function readProjections(file: File): Promise<Projections | null> {
+  const name = file.name.toLowerCase();
+  if (name.endsWith(".xls")) throw new OldExcelFormat();
+  if (!name.endsWith(".xlsx") && !name.endsWith(".xlsm")) return null;
+  const sheets = await loadWorkbook(new Uint8Array(await file.arrayBuffer()));
+  let years: string[] = [];
+  const lines: Projections["lines"] = {};
+  const labels: Projections["labels"] = {};
+  for (const cells of sheets) {
+    const rows = new Map<number, { col: number; cell: Cell }[]>();
+    for (const [ref, cell] of cells) {
+      const r = Number(ref.replace(/[A-Z]+/g, ""));
+      if (!rows.has(r)) rows.set(r, []);
+      rows.get(r)!.push({ col: colIndex(ref), cell });
+    }
+    const order = [...rows.keys()].sort((a, b) => a - b);
+    const head = order.find((r) => rows.get(r)!.filter((x) => yearHead(x.cell)).length >= 3);
+    if (head === undefined) continue;
+    const cols = rows.get(head)!.filter((x) => yearHead(x.cell)).sort((a, b) => a.col - b.col);
+    if (!years.length) years = cols.map((x) => yearHead(x.cell).replace(/^(year|yr|y)\s*-?\s*/i, "Year "));
+    for (const r of order.filter((r) => r > head)) {
+      const cellsInRow = rows.get(r)!.sort((a, b) => a.col - b.col);
+      const label = cellsInRow.find((x) => x.col < cols[0].col && /[a-z]{3,}/i.test(x.cell.value))?.cell.value.trim() ?? "";
+      if (!label) continue;
+      const hit = matchOrder.map((k) => projLines.find((l) => l.key === k)!).find((l) => l.re.test(label));
+      if (!hit || lines[hit.key as ProjKey]) continue;
+      const values = cols.slice(0, years.length).map((c) => {
+        const v = cellsInRow.find((x) => x.col === c.col)?.cell.value ?? "";
+        const n = Number(v.replace(/[,\s]/g, "").replace(/^\((.*)\)$/, "-$1"));
+        return v.trim() === "" || v.trim() === "-" || !Number.isFinite(n) ? null : n;
+      });
+      if (values.every((v) => v === null)) continue;
+      lines[hit.key] = values;
+      labels[hit.key] = label;
+    }
+  }
+  if (!years.length || !Object.keys(lines).length) return null;
+  // Template columns the client left empty at the end are not part of the study period.
+  let n = years.length;
+  while (n > 1 && Object.values(lines).every((v) => v?.[n - 1] === null || v?.[n - 1] === undefined)) n--;
+  for (const key of Object.keys(lines) as ProjKey[]) lines[key] = lines[key]!.slice(0, n);
+  return { file: file.name, years: years.slice(0, n), lines, labels };
+}
+
+/** The text of a feasibility study or business plan: Word, or PDF (scanned pages are read with OCR). */
+export async function documentText(file: File, progress: Progress): Promise<string> {
+  const name = file.name.toLowerCase();
+  if (name.endsWith(".pdf") || file.type === "application/pdf") {
+    progress("Reading the document...");
+    const { tokens } = await pdfTokens(await file.arrayBuffer(), progress);
+    return toLines(tokens)
+      .map((l) => l.map((t) => t.text).join(" "))
+      .join("\n");
+  }
+  return readText(file);
 }
