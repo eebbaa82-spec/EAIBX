@@ -1,0 +1,9 @@
+:HL["/EAIBX/_next/static/chunks/1cog-wn6f0ke-.css","style"]
+:HL["/EAIBX/_next/static/media/276ff8de80749a43-s.p.29e-66-z_wi5x.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/EAIBX/_next/static/media/83afe278b6a6bb3c-s.p.2bn3s6zvc0dyp.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+5:[["children",{"s":"__PAGE__","h":160}]]
+4:[["children",{"s":{"n":"slug","t":"d","k":"budgeting","s":[]},"h":65632,"c":"$Q5"}]]
+3:[["children",{"s":"financial-literacy","h":131168,"c":"$Q4"}]]
+2:[["children",{"s":"academy","h":131168,"c":"$Q3"}]]
+1:[["children",{"s":"am","h":131168,"c":"$Q2"}]]
+0:{"b":"bT4voBycvCK2Cc7qV8sbC","t":{"t":{"s":"","h":131152,"c":"$Q1"}}}
