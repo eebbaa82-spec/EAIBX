@@ -86,17 +86,42 @@ async function pdfTokens(buf: ArrayBuffer, progress: Progress, forceOcr = false)
 
 /* ---------- Excel ---------- */
 
-function xmlCells(sheet: string, shared: string[]) {
-  const cells = new Map<string, string>();
+type Cell = { value: string; date?: Date };
+
+const unescape = (s: string) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&apos;/g, "'").replace(/&quot;/g, '"');
+
+/** Which cell styles show dates: built-in date formats and custom ones made of d, m and y. */
+function dateStyles(styles: string) {
+  const custom = new Map<number, string>();
+  for (const m of styles.matchAll(/<numFmt [^>]*numFmtId="(\d+)"[^>]*formatCode="([^"]*)"/g)) custom.set(Number(m[1]), unescape(m[2]));
+  const xfs = styles.match(/<cellXfs[^>]*>([\s\S]*?)<\/cellXfs>/)?.[1] ?? "";
+  return [...xfs.matchAll(/<xf [^>]*?numFmtId="(\d+)"/g)].map((m) => {
+    const id = Number(m[1]);
+    if ((id >= 14 && id <= 22) || (id >= 27 && id <= 36) || (id >= 45 && id <= 47) || (id >= 50 && id <= 58)) return true;
+    const code = (custom.get(id) ?? "").replace(/"[^"]*"|\[[^\]]*\]/g, "");
+    return /[dy]/i.test(code) && !/[#0]/.test(code);
+  });
+}
+
+function xmlCells(sheet: string, shared: string[], dates: boolean[]) {
+  const cells = new Map<string, Cell>();
   for (const m of sheet.matchAll(/<c r="([A-Z]+\d+)"([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g)) {
     const [, ref, attrs, inner = ""] = m;
     const v = inner.match(/<v>([\s\S]*?)<\/v>/)?.[1];
     const t = attrs.match(/t="(\w+)"/)?.[1];
+    const style = Number(attrs.match(/ s="(\d+)"/)?.[1] ?? 0);
     let value = "";
     if (t === "s" && v !== undefined) value = shared[Number(v)] ?? "";
     else if (t === "inlineStr") value = (inner.match(/<t[^>]*>([\s\S]*?)<\/t>/g) ?? []).map((x) => x.replace(/<[^>]+>/g, "")).join("");
     else if (v !== undefined) value = v;
-    cells.set(ref, value.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&apos;/g, "'").replace(/&quot;/g, '"'));
+    const serial = Number(value);
+    const date =
+      t === "d" && !Number.isNaN(Date.parse(value))
+        ? new Date(Date.parse(value))
+        : (!t || t === "n") && dates[style] && Number.isFinite(serial) && serial > 20000
+          ? new Date(Date.UTC(1899, 11, 30) + serial * 864e5)
+          : undefined;
+    cells.set(ref, { value: unescape(value), date });
   }
   return cells;
 }
@@ -107,6 +132,7 @@ const excelDate = (serial: string) => {
   if (!Number.isFinite(n) || n < 20000) return "";
   return new Date(Date.UTC(1899, 11, 30) + n * 864e5).toISOString().slice(0, 10);
 };
+const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const templateRows: Record<number, LineId> = {
   9: "landBuilding", 10: "machinery", 11: "otherFixed", 13: "cash", 14: "stock", 15: "tradeDebtors", 16: "otherDebtors", 17: "interCoDebtors", 18: "otherCurrent",
@@ -120,15 +146,19 @@ async function excelStatement(buf: Uint8Array): Promise<ParsedStatement | null> 
   const dec = new TextDecoder();
   const sharedXml = await unzipEntry(buf, "xl/sharedStrings.xml");
   const shared = sharedXml ? [...dec.decode(sharedXml).matchAll(/<si>([\s\S]*?)<\/si>/g)].map((m) => (m[1].match(/<t[^>]*>([\s\S]*?)<\/t>/g) ?? []).map((x) => x.replace(/<[^>]+>/g, "")).join("")) : [];
-  const sheets: Map<string, string>[] = [];
+  const stylesXml = await unzipEntry(buf, "xl/styles.xml");
+  const dates = stylesXml ? dateStyles(dec.decode(stylesXml)) : [];
+  const sheets: Map<string, Cell>[] = [];
   for (let i = 1; i <= 12; i++) {
     const xml = await unzipEntry(buf, `xl/worksheets/sheet${i}.xml`);
     if (!xml) break;
-    sheets.push(xmlCells(dec.decode(xml), shared));
+    sheets.push(xmlCells(dec.decode(xml), shared, dates));
   }
   // Investopia's financial analysis template (or the lender's original form).
-  const form = sheets.find((c) => /land and building/i.test(c.get("A9") ?? "") && /net sales/i.test(c.get("A60") ?? ""));
-  if (form) {
+  const sheetText = (c: Map<string, Cell>, ref: string) => c.get(ref)?.value ?? "";
+  const found = sheets.find((c) => /land and building/i.test(sheetText(c, "A9")) && /net sales/i.test(sheetText(c, "A60")));
+  if (found) {
+    const form = { get: (ref: string) => found.get(ref)?.value };
     const cols = ["B", "C", "D", "E", "F"];
     const used = cols.filter((c) => form.get(`${c}6`) || Object.keys(templateRows).some((r) => form.get(`${c}${r}`)));
     return {
@@ -149,25 +179,74 @@ async function excelStatement(buf: Uint8Array): Promise<ParsedStatement | null> 
       checks: [],
     };
   }
-  // Any other workbook: each row becomes a line of tokens, laid out by column.
+  // Any other workbook: each row becomes a line of words, laid out by column, and
+  // read like a page of statements.
   const tokens: Token[] = [];
   sheets.forEach((cells, s) => {
-    for (const [ref, value] of cells) {
-      if (!value) continue;
+    for (const [ref, cell] of cells) {
+      const { value, date } = cell;
+      if (!value.trim()) continue;
       const row = Number(ref.replace(/[A-Z]+/g, ""));
-      const col = colIndex(ref);
-      const isNum = /^-?\d+(\.\d+)?(E-?\d+)?$/i.test(value);
-      const text = isNum ? Math.round(Number(value)).toLocaleString("en-US") : value;
-      tokens.push({ page: s + 1, x0: col * 100, x1: col * 100 + 90, y: row * 10, text: isNum && Number(value) < 0 ? `(${text.replace("-", "")})` : text });
+      const x = colIndex(ref) * 200;
+      const put = (text: string, i = 0, n = 1) => tokens.push({ page: s + 1, x0: x + (i * 90) / n, x1: x + ((i + 1) * 90) / n, y: row * 100, text });
+      if (date) {
+        // A date heading: day, month and year, so the year labels the column.
+        const parts = [String(date.getUTCDate()), MONTH_NAMES[date.getUTCMonth()], String(date.getUTCFullYear())];
+        parts.forEach((p, i) => put(p, i, parts.length));
+        continue;
+      }
+      if (/^-?\d+(\.\d+)?(E-?\d+)?$/i.test(value)) {
+        const n = Number(value);
+        const yearLike = Number.isInteger(n) && n >= 1990 && n <= 2100 && !/[a-z]{3,}/i.test(cells.get(`A${row}`)?.value ?? "") ;
+        const text = yearLike ? String(n) : Math.abs(n).toLocaleString("en-US", { maximumFractionDigits: 2 });
+        put(n < 0 ? `(${text})` : text);
+        continue;
+      }
+      const words = value.trim().split(/\s+/);
+      words.forEach((w, i) => put(w, i, words.length));
     }
   });
   return parseStatement(tokens, "excel");
 }
 
+/** A CSV export: each row becomes a line, each cell a column, as in a workbook. */
+function csvStatement(text: string): ParsedStatement | null {
+  const tokens: Token[] = [];
+  const sep = (text.split("\n")[0].match(/;/g)?.length ?? 0) > (text.split("\n")[0].match(/,/g)?.length ?? 0) ? ";" : ",";
+  text.split(/\r?\n/).forEach((line, row) => {
+    const cells: string[] = [];
+    let cur = "";
+    let quoted = false;
+    for (const ch of line) {
+      if (ch === '"') quoted = !quoted;
+      else if (ch === sep && !quoted) {
+        cells.push(cur);
+        cur = "";
+      } else cur += ch;
+    }
+    cells.push(cur);
+    cells.forEach((cell, col) => {
+      const v = cell.trim();
+      if (!v) return;
+      const words = v.split(/\s+/);
+      const x = (col + 1) * 200;
+      words.forEach((w, i) => tokens.push({ page: 1, x0: x + (i * 90) / words.length, x1: x + ((i + 1) * 90) / words.length, y: (row + 1) * 100, text: w }));
+    });
+  });
+  return parseStatement(tokens, "excel");
+}
+
+export class OldExcelFormat extends Error {}
+
 export async function readStatements(file: File, progress: Progress): Promise<ParsedStatement | null> {
   const name = file.name.toLowerCase();
+  if (name.endsWith(".xls")) throw new OldExcelFormat();
   const buf = await file.arrayBuffer();
-  if (name.endsWith(".xlsx") || name.endsWith(".xlsm")) return excelStatement(new Uint8Array(buf));
+  if (name.endsWith(".csv")) return csvStatement(new TextDecoder().decode(buf));
+  if (name.endsWith(".xlsx") || name.endsWith(".xlsm")) {
+    const r = await excelStatement(new Uint8Array(buf));
+    return r && /audit/i.test(file.name) ? { ...r, audited: true } : r;
+  }
   if (name.endsWith(".pdf") || file.type === "application/pdf") {
     progress("Reading the PDF...");
     const { tokens, ocr } = await pdfTokens(buf, progress);

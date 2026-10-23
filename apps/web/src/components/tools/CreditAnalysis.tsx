@@ -409,17 +409,13 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
 
     /* Spread entry */
     <div key="statements" className="space-y-6">
-      <StatementsImport k={k} set={set} onDone={() => go(steps.findIndex((s) => s.key === "outcomes"))} />
+      <StatementsImport k={k} set={set} templateHref={templateHref} onDone={() => go(steps.findIndex((s) => s.key === "outcomes"))} />
       <Block
         title="Financial analysis form"
         intro={
           <>
-            Enter up to five periods, newest on the left, in the same lines as the workbook. To bring figures from the Excel template, copy cells B9 to F82 and paste them into the first
-            cell (land and building, latest period); totals and headings in the block are skipped. Prefer to work offline?{" "}
-            <a href={templateHref} className="font-semibold text-brand-700 underline-offset-4 hover:underline" download>
-              Download the Excel template
-            </a>{" "}
-            and paste its figures here later.
+            The figures from the uploaded statements appear here, up to five periods, newest on the left. Check them, or enter and correct figures directly. You can also paste
+            cells B9 to F82 of the Excel template into the first cell (land and building, latest period); totals and headings in the block are skipped.
           </>
         }
       >

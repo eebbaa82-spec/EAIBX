@@ -47,7 +47,8 @@ export function parseAmount(s: string): number | null {
   return Number.isFinite(v) ? (neg ? -v : v) : null;
 }
 
-const isYear = (s: string) => /^(19|20)\d{2}$/.test(s.replace(/[^\d]/g, "")) && s.replace(/[^\d]/g, "").length === 4;
+// A year heading: four digits, perhaps with brackets or punctuation, never with a thousands separator.
+const isYear = (s: string) => /^[^\d,]*(19|20)\d{2}[^\d,.]*$/.test(s.trim());
 
 /** The statement's year-end date, as ISO, if the text names one. */
 export function yearEnd(text: string): { day: number; month: number } | null {
@@ -180,10 +181,16 @@ export function parseStatement(tokens: Token[], source: ParsedStatement["source"
         if (!c.label) c.label = String(i < leftFirst ? Math.max(...years) + (leftFirst - i) : Math.min(...years) - (i - cols.indexOf(labeled[labeled.length - 1])));
       });
     }
+    // No year anywhere: name the columns by position, newest assumed first.
+    cols.forEach((c, i) => (c.label ||= `Column ${i + 1}`));
     pageCols.set(p, cols);
   }
   if (!pageCols.size) return null;
-  const allLabels = [...new Set([...pageCols.values()].flat().map((c) => c.label))].sort((a, b) => Number(b) - Number(a)).slice(0, 5);
+  const allLabels = [...new Set([...pageCols.values()].flat().map((c) => c.label))]
+    .map((label, i) => ({ label, i }))
+    .sort((a, b) => (/^\d{4}$/.test(a.label) && /^\d{4}$/.test(b.label) ? Number(b.label) - Number(a.label) : a.i - b.i))
+    .map((x) => x.label)
+    .slice(0, 5);
   const colsFor = (p: number) => pageCols.get(p) ?? pageCols.get([...pageCols.keys()].filter((k) => k < p).pop() ?? [...pageCols.keys()][0])!;
 
   // A statement line's label: the words from the left margin, up to a wide gap

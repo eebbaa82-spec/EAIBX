@@ -16,7 +16,7 @@ const lineOptions = [...balanceSheet, ...profitLoss, { title: "Fixed asset recon
 const unitScale: Record<string, number> = { "ETB '000": 1000, ETB: 1, "ETB million": 1000000 };
 const fmt = (n: number | null) => (n === null ? "" : n < 0 ? `(${Math.abs(n).toLocaleString("en-US")})` : n.toLocaleString("en-US"));
 
-export function StatementsImport({ k, set, onDone }: { k: CreditCase; set: (p: Partial<CreditCase>) => void; onDone: () => void }) {
+export function StatementsImport({ k, set, onDone, templateHref }: { k: CreditCase; set: (p: Partial<CreditCase>) => void; onDone: () => void; templateHref: string }) {
   const [parsed, setParsed] = useState<ParsedStatement | null>(null);
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
@@ -35,10 +35,19 @@ export function StatementsImport({ k, set, onDone }: { k: CreditCase; set: (p: P
     setMsg("");
     setParsed(null);
     try {
-      const { readStatements } = await import("@/lib/credit/fsread");
-      const r = await readStatements(file, setMsg);
+      const { readStatements, OldExcelFormat } = await import("@/lib/credit/fsread");
+      const r = await readStatements(file, setMsg).catch((e) => {
+        if (e instanceof OldExcelFormat) {
+          setMsg("This is the older Excel format (.xls). Open it in Excel, choose Save As, pick \"Excel Workbook (.xlsx)\", and upload the saved file.");
+          return undefined;
+        }
+        throw e;
+      });
+      if (r === undefined) return;
       if (!r) {
-        setMsg("No balance sheet or profit and loss figures were found in this file. Check that it holds the financial statements, or enter the figures below.");
+        setMsg(
+          "No balance sheet or profit and loss figures were found in this file. Check that it holds the statement of financial position and the income statement, with line names in the first column and the amounts for each year in their own columns, or enter the figures below.",
+        );
         return;
       }
       setParsed(r);
@@ -50,7 +59,7 @@ export function StatementsImport({ k, set, onDone }: { k: CreditCase; set: (p: P
       );
     } catch (e) {
       console.error(e);
-      setMsg("This file could not be read. Try the PDF as issued by the auditor, or the Excel template.");
+      setMsg("This file could not be read. Upload the statements as an Excel workbook (.xlsx), or use the Excel template.");
     } finally {
       setBusy(false);
     }
@@ -94,26 +103,50 @@ export function StatementsImport({ k, set, onDone }: { k: CreditCase; set: (p: P
   return (
     <div className="space-y-4 rounded-2xl border border-gold-400 bg-gold-100 p-5">
       <div>
-        <p className="font-semibold text-ink">Upload the financial statements</p>
+        <p className="font-semibold text-ink">Upload the financial statements in Excel</p>
         <p className="mt-1 text-sm text-muted">
-          Upload the audited or interim statements as a PDF (scanned copies work too, more slowly) or the Excel template. The workspace finds the balance sheet and the profit and loss
-          account, puts each line into the form and calculates the analysis. Upload one file per set of statements; each fills the next empty periods. Files are read in this browser.
+          Upload the balance sheet and income statement as an Excel workbook (.xlsx), as prepared by the borrower or the auditor, or fill in the Investopia template. The workspace finds each
+          statement line and each year, puts the figures into the form and calculates the analysis. Excel gives exact figures, so there is nothing to retype or check against a scan.
+          Upload one workbook per set of statements; each fills the next empty periods. Files are read in this browser.
         </p>
       </div>
-      <label className={`${smallButton} relative inline-block cursor-pointer bg-white`}>
-        {busy ? "Reading..." : "Upload statements (PDF or Excel)"}
-        <input
-          type="file"
-          accept=".pdf,.xlsx,.xlsm,application/pdf"
-          className="sr-only"
-          disabled={busy}
-          onChange={(e) => {
-            const f = e.target.files?.[0];
-            e.target.value = "";
-            read(f);
-          }}
-        />
-      </label>
+      <div className="flex flex-wrap items-center gap-3">
+        <label className={`relative inline-block cursor-pointer rounded-full bg-brand-600 px-5 py-2 font-semibold text-white hover:bg-brand-700 ${busy ? "opacity-60" : ""}`}>
+          {busy ? "Reading..." : "Upload Excel statements"}
+          <input
+            type="file"
+            accept=".xlsx,.xlsm,.xls,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            className="sr-only"
+            disabled={busy}
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              e.target.value = "";
+              read(f);
+            }}
+          />
+        </label>
+        <a href={templateHref} download className="text-sm font-semibold text-brand-700 underline-offset-4 hover:underline">
+          Download the Excel template
+        </a>
+      </div>
+      <p className="text-sm text-muted">
+        Only have a PDF?{" "}
+        <label className="relative inline cursor-pointer font-semibold text-brand-700 underline-offset-4 hover:underline">
+          Upload the PDF instead
+          <input
+            type="file"
+            accept=".pdf,application/pdf"
+            className="sr-only"
+            disabled={busy}
+            onChange={(e) => {
+              const f = e.target.files?.[0];
+              e.target.value = "";
+              read(f);
+            }}
+          />
+        </label>
+        . Scanned copies are read with text recognition, which is slower; check every amount against the statements.
+      </p>
       {msg && (
         <p role="status" className="text-sm text-ink">
           {msg}
