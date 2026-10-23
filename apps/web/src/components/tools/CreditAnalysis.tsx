@@ -1,5 +1,7 @@
 "use client";
 
+import { IfbRequest, IfbScreeningBlock } from "./CreditIfb";
+import { ifbFacilityTypes, ifbProduct } from "@/lib/credit/ifbcase";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   analyseCase,
@@ -12,7 +14,7 @@ import {
   ownershipTypes,
   questions,
   sectorReportFor,
-  riskKeys,
+  riskAreas,
   stressTests,
   suggestedRisks,
   type AnalystFile,
@@ -75,7 +77,7 @@ function merge(raw: Partial<CreditCase>): CreditCase {
   if (raw.sector && raw.sectorReport === undefined && !sectors.includes(raw.sector)) {
     raw = { ...raw, sectorReport: raw.sector, sector: "" };
   }
-  return { ...base, ...raw, projection: { ...base.projection, ...(raw.projection ?? {}) }, project: { ...base.project, ...(raw.project ?? {}) }, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
+  return { ...base, ...raw, projection: { ...base.projection, ...(raw.projection ?? {}) }, project: { ...base.project, ...(raw.project ?? {}) }, ifb: { ...base.ifb, ...(raw.ifb ?? {}) }, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
 }
 function save(k: CreditCase) {
   try {
@@ -184,14 +186,15 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           <Area label="Policy exceptions, if any" value={k.exceptions} onChange={(v) => set({ exceptions: v })} rows={2} />
         </Grid>
       </Block>
+      <IfbRequest k={k} set={set} />
       <Block title="2. Customer's request">
         <TableEditor
           rows={k.requests}
           onChange={(requests) => set({ requests })}
-          blank={{ type: "Term loan", amount: "", tenor: "", repayment: "" }}
+          blank={{ type: k.ifb.on ? ifbProduct(k.ifb).product.name : "Term loan", amount: "", tenor: "", repayment: "" }}
           addLabel="Add request"
           cols={[
-            { key: "type", label: "Type of facility", type: "select", options: facilityTypes },
+            { key: "type", label: "Type of facility", type: "select", options: k.ifb.on ? ifbFacilityTypes : facilityTypes },
             { key: "amount", label: "Amount (ETB)", type: "number" },
             { key: "tenor", label: "Tenor (months)", type: "number" },
             { key: "repayment", label: "Repayment" },
@@ -213,7 +216,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           blank={{ type: "Overdraft", limit: "", outstanding: "", expiry: "", status: "Pass" }}
           addLabel="Add facility"
           cols={[
-            { key: "type", label: "Facility", type: "select", options: facilityTypes },
+            { key: "type", label: "Facility", type: "select", options: k.ifb.on ? [...facilityTypes.slice(0, -1), ...ifbFacilityTypes] : facilityTypes },
             { key: "limit", label: "Limit (ETB)", type: "number" },
             { key: "outstanding", label: "Outstanding (ETB)", type: "number" },
             { key: "expiry", label: "Expiry", type: "date" },
@@ -484,7 +487,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
         </Grid>
         <StressTable stress={stress} unit={k.unit} />
         <div className="space-y-4">
-          {riskKeys.map((r) => (
+          {riskAreas(k).map((r) => (
             <div key={r.key} className="grid gap-2 sm:grid-cols-[12rem_8rem_1fr] sm:items-start">
               <div>
                 <p className="font-semibold text-ink">{r.label}</p>
@@ -510,6 +513,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
           />
         )}
       </Block>
+      <IfbScreeningBlock k={k} a={a} set={set} />
       <Block title="8.9 Cash flow projection and repayment capacity" intro="Projected cash flows for the life of the proposed facilities, and the borrower's capacity to repay them in a base case and two stress scenarios.">
         <CreditProjection k={k} a={a} set={set} />
       </Block>
@@ -548,12 +552,12 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
         <TableEditor
           rows={k.recommendations}
           onChange={(recommendations) => set({ recommendations })}
-          blank={{ type: "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }}
+          blank={{ type: k.ifb.on ? ifbProduct(k.ifb).product.name : "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }}
           addLabel="Add facility"
           cols={[
-            { key: "type", label: "Type of loan", type: "select", options: facilityTypes },
-            { key: "amount", label: "Amount (ETB)", type: "number" },
-            { key: "rate", label: "Rate %", type: "number" },
+            { key: "type", label: k.ifb.on ? "Product" : "Type of loan", type: "select", options: k.ifb.on ? ifbFacilityTypes : facilityTypes },
+            { key: "amount", label: k.ifb.on ? "Cost or amount (ETB)" : "Amount (ETB)", type: "number" },
+            { key: "rate", label: k.ifb.on ? "Profit rate %" : "Rate %", type: "number" },
             { key: "tenure", label: "Tenure (months)", type: "number" },
             { key: "repayment", label: "Repayment" },
             { key: "collateral", label: "Collateral" },

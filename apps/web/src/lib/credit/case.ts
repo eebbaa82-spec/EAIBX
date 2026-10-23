@@ -1,4 +1,5 @@
 import { bankKey, isClosed, worse, type CrbReport } from "./crb";
+import { emptyIfb, ifbChecklist, ifbScreening, type IfbInput } from "./ifbcase";
 import { appraise, emptyProject, type ProjectInput } from "./project";
 import { emptyProjection, projection, type ProjectionInput } from "./projection";
 import { computeSpread, fmt, PERIODS, unbalanced, type Column, type SpreadInput } from "./spread";
@@ -36,8 +37,20 @@ export const riskKeys = [
   { key: "strategic", label: "Strategic and market risk", hint: "Position in the sector, competition, management expertise and the sales trend." },
   { key: "reputation", label: "Reputation and integrity risk", hint: "Integrity, reputation and conduct of the borrower and its owners." },
   { key: "collateral", label: "Collateral risk", hint: "Coverage, marketability, legal title, insurance, and coverage if property values fall." },
+  { key: "sharia", label: "Sharia'h compliance risk", hint: "For interest-free financing: a permissible business, an approved product, and the bank's ownership of the asset before it sells or leases it." },
 ] as const;
 export type RiskKey = (typeof riskKeys)[number]["key"];
+
+/** The risk areas that apply to the case, with interest-free wording where it differs. */
+export function riskAreas(k: CreditCase) {
+  return riskKeys
+    .filter((r) => r.key !== "sharia" || k.ifb.on)
+    .map((r) =>
+      k.ifb.on && r.key === "interest"
+        ? { ...r, label: "Rate of return risk", hint: "How far higher market rates would raise the cost of other debt; the sale price of the interest-free financing is fixed once signed." }
+        : { ...r },
+    );
+}
 
 /** Non-financial questions the analyst answers for every case. */
 export const questions = [
@@ -139,6 +152,7 @@ export type CreditCase = {
   lenderCapital: string;
   projection: ProjectionInput;
   project: ProjectInput;
+  ifb: IfbInput;
   assessment: Partial<Record<QuestionKey, { rating: Rating; note: string }>>;
   gradeJustification: string;
   swot: { s: string; w: string; o: string; t: string };
@@ -214,6 +228,7 @@ export const emptyCase = (): CreditCase => ({
   lenderCapital: "",
   projection: emptyProjection(),
   project: emptyProject(),
+  ifb: emptyIfb(),
   gradeJustification: "",
   swot: { s: "", w: "", o: "", t: "" },
   recommendations: [{ type: "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }],
@@ -480,7 +495,8 @@ export function stressTests(k: CreditCase, a: CaseAnalysis): Stress[] {
   if (L) {
     const scale = unitScale[k.unit] ?? 1000;
     const year = (L.days || 365) / 365;
-    const newDebt = (a.recommended || a.requested || 0) / scale;
+    // An interest-free sale price is fixed once signed, so only other debt reprices.
+    const newDebt = k.ifb.on ? 0 : (a.recommended || a.requested || 0) / scale;
     const extraInterest = (pts: number) => (L.bankDebt + newDebt) * (pts / 100) * year;
     const direct = L.cogs + L.otherDirect;
     const importShare = Math.min(100, Math.max(0, amount(k.importShare) || (k.importer ? 50 : 0))) / 100;
@@ -494,7 +510,7 @@ export function stressTests(k: CreditCase, a: CaseAnalysis): Stress[] {
     run("Current position", "Latest period as reported", 0, 0);
     run("Lower sales", "Sales 20% lower, direct costs falling with them", 0.2 * L.grossProfit, 0);
     run("Higher input costs", "Direct costs 10% higher", 0.1 * direct, 0);
-    run("Higher interest rates", "Lending rates 3 points higher, proposed facility included", 0, extraInterest(3));
+    run("Higher interest rates", k.ifb.on ? "Lending rates 3 points higher on existing conventional debt; the interest-free sale price is fixed" : "Lending rates 3 points higher, proposed facility included", 0, extraInterest(3));
     if (importShare > 0) run("Weaker birr", `Birr 20% weaker against the dollar, ${Math.round(importShare * 100)}% of direct costs imported`, 0.2 * direct * importShare, 0);
     run("Combined", "Sales 10% lower, direct costs 5% higher and rates 3 points higher", 0.1 * L.grossProfit + 0.05 * direct, extraInterest(3));
   }
@@ -579,6 +595,15 @@ export function suggestedRisks(k: CreditCase, a: CaseAnalysis): Partial<Record<R
     const fall = st("Lower property values");
     note("collateral", a.coverRecommended >= 1.25 ? "Low" : a.coverRecommended >= 1 ? "Medium" : "High", `collateral covers ${pctText(a.coverRecommended)} of exposure${fall ? `, ${pctText(fall.cover)} if values fall 30%` : ""}`);
   }
+  // Sharia'h compliance risk, for interest-free financing.
+  if (k.ifb.on) {
+    const sc = ifbScreening(k.ifb, L);
+    if (sc.decision === "Not eligible") note("sharia", "High", sc.reasons.join(" ").replace(/\.$/, "").toLowerCase());
+    else if (sc.decision === "Eligible with conditions") note("sharia", "Medium", "eligible with conditions: " + sc.conditions.join(" ").replace(/\.$/, "").toLowerCase());
+    else if (sc.decision === "Eligible") note("sharia", "Low", "the business activity and the screening ratios are permissible");
+    else note("sharia", "Medium", "the business activity has not been screened");
+    if (!k.ifb.sacApproved) note("sharia", "Medium", "the product's approval by the Sharia'h Advisory Committee is not confirmed");
+  }
   // The highest level found sets the area's level; its reasons come first.
   const out: Partial<Record<RiskKey, { level: Level; why: string }>> = {};
   for (const [key, list] of Object.entries(parts) as [RiskKey, { level: Level; why: string }[]][]) {
@@ -606,6 +631,7 @@ export function originationChecklist(k: CreditCase, a: CaseAnalysis) {
     { point: "Terms and conditions to limit future changes in risk", done: !!k.conditions.trim() },
     { point: "Adequacy and enforceability of collateral, registration and insurance", done: a.collateral > 0 && insured },
     { point: "Credit risk grade", done: !!k.gradeNow },
+    ...(k.ifb.on ? ifbChecklist(k.ifb, a.latest, k.recommendations.some((x) => amount(x.amount) > 0 && amount(x.rate) >= 0)) : []),
   ];
 }
 
@@ -641,6 +667,10 @@ export function scorecard(k: CreditCase, a: CaseAnalysis): Scored[] {
     if (Number.isFinite(b.minDscr)) add("Project debt service cover", `Lowest ${b.minDscr.toFixed(2)}x`, b.minDscr < 1 ? "Concern" : b.minDscr < 1.25 ? "Watch" : "Meets");
     if (Number.isFinite(ap.equityShare)) add("Equity contribution", `${(ap.equityShare * 100).toFixed(0)}% of the investment`, ap.equityShare < (Number(k.project.minEquity) || 25) / 100 ? "Watch" : "Meets");
   } else if (k.project.has) add("Project appraisal", "Client's projections not uploaded", "Not assessed");
+  if (k.ifb.on) {
+    const sc = ifbScreening(k.ifb, L);
+    add("Sharia'h screening", sc.decision, sc.decision === "Not eligible" ? "Concern" : sc.decision === "Eligible" ? "Meets" : sc.decision === "Not screened" ? "Not assessed" : "Watch");
+  }
   const combined = stressTests(k, a).find((x) => x.name === "Combined");
   if (combined) add("Stress test", `Combined scenario: ${combined.result.toLowerCase()}`, combined.result === "Fails" ? "Concern" : combined.result === "Weakens" ? "Watch" : "Meets");
   if (Number.isFinite(a.coverRecommended)) add("Collateral coverage", pctText(a.coverRecommended), a.coverRecommended < 1 ? "Concern" : a.coverRecommended < 1.25 ? "Watch" : "Meets");

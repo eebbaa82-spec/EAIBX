@@ -29,6 +29,9 @@ export const projectionLines: { key: keyof YearRow; label: string; ratio?: boole
   { key: "cash", label: "Closing cash" },
 ];
 
+/** Interest-free financing pays profit fixed in the sale price, alongside any conventional interest. */
+export const lineLabel = (line: (typeof projectionLines)[number], ifb: boolean) => (ifb && line.key === "interest" ? "Interest and profit" : line.label);
+
 export const resultClass = (r: Scenario["result"]) => (r === "Shortfall" ? "text-red-700" : r === "Tight" ? "text-amber-700" : "text-brand-700");
 
 export function CreditProjection({ k, a, set }: { k: CreditCase; a: CaseAnalysis; set: (p: Partial<CreditCase>) => void }) {
@@ -50,14 +53,16 @@ export function CreditProjection({ k, a, set }: { k: CreditCase; a: CaseAnalysis
     <div className="space-y-5">
       <p className="text-sm text-muted">
         The projection runs for {years} year{years === 1 ? "" : "s"}, the longest tenure of the recommended facilities (or the request), starting from the latest period&apos;s annualized figures. Term
-        loans are repaid in equal yearly installments with interest on the balance; overdrafts and other revolving facilities pay interest only. Leave a box empty to use the figure shown.
+        loans are repaid in equal yearly installments with interest on the balance; overdrafts and other revolving facilities pay interest only.{" "}
+        {k.ifb.on && "For interest-free financing, the profit is fixed in the sale price (cost x profit rate x term) and paid evenly over the term, so higher market rates affect only existing conventional debt. "}
+        Leave a box empty to use the figure shown.
       </p>
       <div className="grid gap-4 sm:grid-cols-3">
         {field("growth", "Sales growth a year (%)", p1(input.growth), "From the sales trend, kept between -5% and 15%.")}
         {field("margin", "Gross margin before depreciation (%)", p1(input.margin))}
         {field("opex", "Operating expenses, % of sales", p1(input.opex), "Administration, selling and staff costs.")}
         {field("tax", "Profit tax rate (%)", p1(input.tax))}
-        {field("rate", "Interest rate on new facilities (%)", p1(input.rate), "Used where the recommendation gives no rate.")}
+        {field("rate", k.ifb.on ? "Profit rate on new financing (%)" : "Interest rate on new facilities (%)", p1(input.rate), "Used where the recommendation gives no rate.")}
         {field("capex", `Capital expenditure a year (${k.unit})`, String(Math.round(input.capex)), "Defaults to depreciation, to keep assets in working order.")}
       </div>
 
@@ -108,14 +113,14 @@ export function CreditProjection({ k, a, set }: { k: CreditCase; a: CaseAnalysis
           ))}
         </div>
         <div className="mt-3 overflow-x-auto rounded-xl border border-line bg-white">
-          <ProjectionTable s={sc} unit={k.unit} />
+          <ProjectionTable s={sc} unit={k.unit} ifb={k.ifb.on} />
         </div>
       </div>
     </div>
   );
 }
 
-export function ProjectionTable({ s, unit }: { s: Scenario; unit: string }) {
+export function ProjectionTable({ s, unit, ifb = false }: { s: Scenario; unit: string; ifb?: boolean }) {
   return (
     <table className="w-full min-w-[640px] text-left text-sm">
       <thead className="bg-canvas text-xs uppercase tracking-wide text-muted">
@@ -131,7 +136,7 @@ export function ProjectionTable({ s, unit }: { s: Scenario; unit: string }) {
       <tbody>
         {projectionLines.map((line) => (
           <tr key={line.key} className={`border-t border-line ${line.strong ? "font-semibold" : ""}`}>
-            <td className="px-2 py-1.5">{line.label}</td>
+            <td className="px-2 py-1.5">{lineLabel(line, ifb)}</td>
             {s.rows.map((r) => (
               <td key={r.year} className={`px-2 py-1.5 text-right tabular-nums ${line.key === "dscr" && r.dscr < 1 ? "text-red-700" : ""}`}>
                 {line.ratio ? x2(r[line.key] as number) : n0(r[line.key] as number)}

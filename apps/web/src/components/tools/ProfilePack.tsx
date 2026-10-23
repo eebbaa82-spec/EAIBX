@@ -98,9 +98,14 @@ export function defaultLetter(p: Profile, a: Analysis) {
   const intro = isBusiness
     ? `${name}, a ${borrowerLabel(p)} engaged in ${p.sector.toLowerCase()}${p.started ? ` since ${p.started}` : ""}${p.tin ? `, TIN ${p.tin}` : ""}, hereby applies for a ${a.loan.name.toLowerCase()} of ${amount}.`
     : `I, ${name}${p.tin ? `, TIN ${p.tin}` : ""}, hereby apply for a ${a.loan.name.toLowerCase()} of ${amount}.`;
+  const ifb = p.financing === "ifb";
   const purpose = p.purpose
-    ? ` The loan will finance ${p.purpose.replace(/\.$/, "")}.`
+    ? ` The ${a.words.loan} will finance ${p.purpose.replace(/\.$/, "")}.`
     : "";
+  const structure =
+    ifb && a.mode
+      ? ` We request that it be extended on the basis of ${a.mode.name.replace(/ \(.*\)/, "")}${has(a.salePrice) ? `, at an indicative sale price of ${birr(a.salePrice)}` : ""}, in compliance with Sharia'h principles.${a.screening?.decision.startsWith("Eligible") ? ` Our business activity is permissible, and we accept any screening conditions the bank's Sharia'h Advisory Committee sets.` : ""}`
+      : "";
   const term = p.termMonths
     ? ` We request a term of ${p.termMonths} months${p.graceMonths ? `, including a grace period of ${p.graceMonths} months` : ""}, repaid in ${freqLabel(p)} installments.`
     : "";
@@ -121,7 +126,7 @@ export function defaultLetter(p: Profile, a: Analysis) {
         })
         .join("; ")}.`
     : "";
-  const body = `${intro}${purpose}${term}${own}${source}${coll}
+  const body = `${intro}${purpose}${structure}${term}${own}${source}${coll}
 
 Enclosed please find our borrower profile, including our financial summary, banking record and collateral details, together with the supporting documents listed in the annex. We confirm that the information provided is true and complete, and we consent to the bank obtaining our credit information from the National Bank of Ethiopia's credit reference system.
 
@@ -644,15 +649,21 @@ export function BankPack({
           </>
         )}
 
-        <H>Loan request</H>
+        <H>{a.words.Loan} request</H>
         <table className="w-full border-collapse">
           <tbody>
             <Row label="Facility">
               {a.loan.name}
-              {p.loanType === "project" &&
+              {p.financing !== "ifb" && p.loanType === "project" &&
                 ` (${p.projectStage === "expansion" ? "expansion" : "new project"})`}
             </Row>
+            {a.mode && <Row label="Contract (mode of financing)">{a.mode.name}</Row>}
             <Row label="Amount">{has(a.amount) ? birr(a.amount) : ""}</Row>
+            {has(a.salePrice) && (
+              <Row label="Indicative sale price">
+                {`${birr(a.salePrice)} (cost ${birr(a.amount)} plus profit ${birr(a.profit)} at ${p.rate}% a year), fixed once signed`}
+              </Row>
+            )}
             <Row label="Purpose">{p.purpose}</Row>
             <Row label="Term">
               {p.termMonths &&
@@ -663,7 +674,9 @@ export function BankPack({
             </Row>
             <Row label="Estimated installment">
               {has(a.installment)
-                ? `${birr(a.installment)} (at ${p.rate}% a year, indicative)`
+                ? a.mode?.pricing === "none"
+                  ? `${birr(a.installment)} (no profit, indicative)`
+                  : `${birr(a.installment)} (at ${p.rate}% a year, indicative)`
                 : ""}
             </Row>
             <Row label="Total cost and own contribution">
@@ -672,7 +685,12 @@ export function BankPack({
                 : ""}
             </Row>
             <Row label="Source of repayment">{p.repaymentSource}</Row>
-            <Row label="Total borrowing after this facility">
+            {a.screening && (
+              <Row label="Sharia'h screening">
+                {`${a.screening.decision}. ${a.screening.reasons.join(" ")}${a.screening.conditions.length ? ` Conditions: ${a.screening.conditions.join(" ")}` : ""}`}
+              </Row>
+            )}
+            <Row label={`Total ${a.words.borrowing} after this facility`}>
               {a.exposure ? birr(a.exposure) : ""}
             </Row>
           </tbody>

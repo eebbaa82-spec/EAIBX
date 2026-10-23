@@ -20,6 +20,7 @@ import {
   type CollateralTypeId,
   type LoanTypeId,
 } from "@/data/credit/profile";
+import { ifbDocs, ifbProducts, modeById, productById, prohibitedActivities, saleProfit, screen, type IfbModeId, type IfbProductId } from "@/data/credit/ifb";
 import { frequencies, installmentCount, installmentFor, type Frequency } from "@/lib/calc/loan";
 import { findDetails, readText, type Found } from "@/lib/docs/extract";
 import { clearFiles, deleteFile, getFile, putFile } from "@/lib/docs/store";
@@ -58,6 +59,13 @@ export type Profile = {
   managers: Manager[];
   related: Related[];
   loanType: LoanTypeId;
+  /** Conventional loan, or interest-free (IFB) financing under Sharia'h principles. */
+  financing: "conventional" | "ifb";
+  ifbProduct: IfbProductId;
+  ifbMode: IfbModeId;
+  activity: "" | "Permissible" | "Prohibited";
+  interestDebt: string;
+  nonPermissibleIncome: string;
   amount: string;
   purpose: string;
   termMonths: string;
@@ -113,6 +121,12 @@ const emptyProfile = (): Profile => ({
   managers: [{ name: "", position: "", education: "", years: "" }],
   related: [],
   loanType: "working-capital",
+  financing: "conventional",
+  ifbProduct: "murabaha-merchandise",
+  ifbMode: "murabaha",
+  activity: "",
+  interestDebt: "",
+  nonPermissibleIncome: "",
   amount: "",
   purpose: "",
   termMonths: "",
@@ -273,10 +287,24 @@ function Rows<T>({
 
 /* ---------- analysis ---------- */
 
+export const isIfb = (p: Profile) => p.financing === "ifb";
+/** The product requested: a conventional loan type, or an interest-free product. */
+export const productOf = (p: Profile) => (isIfb(p) ? (productById(p.ifbProduct) ?? ifbProducts[0]) : loanTypes.find((l) => l.id === p.loanType)!);
+/** The interest-free mode, kept to one the product allows. */
+export const modeOf = (p: Profile) => {
+  const prod = productById(p.ifbProduct) ?? ifbProducts[0];
+  return modeById(prod.modes.includes(p.ifbMode) ? p.ifbMode : prod.modes[0])!;
+};
+/** Words that differ between a conventional loan and interest-free financing. */
+export const words = (p: Profile) => (isIfb(p) ? { loan: "financing", Loan: "Financing", rate: "profit rate", borrowing: "financing" } : { loan: "loan", Loan: "Loan", rate: "interest rate", borrowing: "borrowing" });
+
 type Flag = { level: "fix" | "check" | "good"; text: string };
 
 export function analyse(p: Profile) {
-  const loan = loanTypes.find((l) => l.id === p.loanType)!;
+  const loan = productOf(p);
+  const ifb = isIfb(p);
+  const mode = ifb ? modeOf(p) : null;
+  const w = words(p);
   const amount = num(p.amount);
   const term = num(p.termMonths);
   const rate = num(p.rate);
@@ -290,10 +318,19 @@ export function analyse(p: Profile) {
 
   let installment = NaN;
   let n = 0;
-  if (has(amount) && amount > 0 && has(term) && term > grace && has(rate)) {
+  let profit = NaN;
+  if (has(amount) && amount > 0 && has(term) && term > grace && (has(rate) || mode?.pricing === "none")) {
     n = installmentCount(term - grace, p.frequency).n;
-    if (n > 0) installment = installmentFor(amount, rate, p.frequency, n);
+    if (n > 0 && !mode) installment = installmentFor(amount, rate, p.frequency, n);
+    // A deferred sale fixes cost plus profit as the sale price, paid in equal installments.
+    else if (n > 0 && mode?.pricing === "sale") {
+      profit = saleProfit(amount, rate, term);
+      installment = (amount + profit) / n;
+    } else if (n > 0 && mode?.pricing === "rent") installment = installmentFor(amount, rate, p.frequency, n);
+    else if (n > 0 && mode?.pricing === "none") installment = amount / n;
   }
+  if (ifb && productById(p.ifbProduct)?.offBalance) installment = NaN;
+  const salePrice = has(profit) ? amount + profit : NaN;
   const perYear = frequencies.find((f) => f.value === p.frequency)!.perYear;
   const newAnnual = has(installment) ? installment * perYear : NaN;
   const annualService = (has(newAnnual) ? newAnnual : 0) + existingMonthly * 12;
@@ -320,6 +357,9 @@ export function analyse(p: Profile) {
   if (latest && has(latest.profit) && annualService > 0) ratios.push({ label: "Profit cover of repayments", value: times(latest.profit / annualService), note: "Yearly net profit over yearly loan repayments (new and existing). Lenders want comfortably above 1." });
 
   const ownShare = has(totalCost) && totalCost > 0 && has(amount) ? (totalCost - amount) / totalCost : NaN;
+  const debtRatio = has(num(p.interestDebt)) && has(ta) && ta > 0 ? num(p.interestDebt) / ta : NaN;
+  const incomeRatio = has(num(p.nonPermissibleIncome)) && latest && has(latest.sales) && latest.sales > 0 ? num(p.nonPermissibleIncome) / latest.sales : NaN;
+  const screening = ifb ? screen(p.activity, debtRatio, incomeRatio) : null;
 
   let counted = 0;
   let estimated = 0;
@@ -338,8 +378,16 @@ export function analyse(p: Profile) {
 
   if (!p.name.trim()) fix("Add the applicant's name.");
   if (!p.tin.trim()) fix("Get a Tax Identification Number (TIN). Every lender asks for it, and it is how your credit record is checked.");
-  if (!has(amount) || amount <= 0) fix("Enter the loan amount you need.");
-  if (!p.purpose.trim()) fix("Describe what the loan will pay for. Lenders check that the money is used for the stated purpose.");
+  if (!has(amount) || amount <= 0) fix(`Enter the ${w.loan} amount you need.`);
+  if (!p.purpose.trim()) fix(`Describe what the ${w.loan} will pay for. Lenders check that the money is used for the stated purpose.`);
+  if (screening) {
+    if (screening.decision === "Not eligible") fix(`Sharia'h screening: not eligible. ${screening.reasons.join(" ")} Interest-free financing cannot be offered unless this changes.`);
+    else if (screening.decision === "Not screened") fix("Confirm that your main business activity is permissible, so the lender can screen it for interest-free financing.");
+    else if (screening.decision === "Eligible with conditions") check(`Sharia'h screening: eligible with conditions. ${screening.conditions.join(" ")}`);
+    else good("Sharia'h screening: your business activity is permissible.");
+    if (isBusiness && (!has(debtRatio) || !has(incomeRatio))) check("Enter your interest-bearing borrowing and any interest or other non-permissible income, with total assets and sales, so the screening ratios can be checked.");
+    if (mode?.id === "murabaha" || mode?.id === "tijarah") check("The lender buys and owns the goods before selling them to you, so have supplier proforma invoices ready and expect the goods or their title documents to pass through the lender.");
+  }
   if (!p.repaymentSource.trim()) fix("Explain where repayments will come from. Lenders weigh your ability to repay above your collateral.");
 
   if (isBusiness) {
@@ -356,9 +404,9 @@ export function analyse(p: Profile) {
       else good(`In business since ${startedYear}.`);
     }
     if (exposure >= auditedAlwaysFrom && p.statements !== "audited")
-      fix(`With total borrowing of ${birr(exposure)}, lenders require audited financial statements from an auditor certified by the Accounting and Audit Board of Ethiopia.`);
+      fix(`With total ${w.borrowing} of ${birr(exposure)}, lenders require audited financial statements from an auditor certified by the Accounting and Audit Board of Ethiopia.`);
     else if (exposure >= auditedFrom && p.statements !== "audited")
-      check(`Total borrowing of ${birr(exposure)}: many lenders ask for audited statements from ETB 5 million, all from ETB 10 million.`);
+      check(`Total ${w.borrowing} of ${birr(exposure)}: many lenders ask for audited statements from ETB 5 million, all from ETB 10 million.`);
     if (p.statements === "none") check("Without formal books, you will complete and sign a commercial credit report, and the lender will verify the figures at your premises.");
     if (!latest) check("Add at least one year of sales and profit. Lenders analyse three years of statements.");
   }
@@ -388,8 +436,8 @@ export function analyse(p: Profile) {
   }
 
   const secured = p.collateral.some((c) => !collateralTypes.find((t) => t.id === c.type)!.unsecured);
-  if (!["overdrawal", "warehouse-receipt"].includes(p.loanType)) {
-    if (!secured) check("You have not listed any collateral. Unsecured loans are only for well-established, profitable businesses, at a higher interest rate.");
+  if (ifb ? mode?.pricing !== "none" : !["overdrawal", "warehouse-receipt"].includes(p.loanType)) {
+    if (!secured) check(ifb ? "You have not listed any collateral. Unsecured financing is only for well-established, profitable businesses." : "You have not listed any collateral. Unsecured loans are only for well-established, profitable businesses, at a higher interest rate.");
     else if (has(amount) && counted < amount) check(`Your listed collateral counts for about ${birr(counted)}, less than the loan. Lenders lend only part of what you pledge, so plan for collateral worth more than the loan.`);
     else if (has(amount)) good("Your listed collateral is worth more than the loan.");
   }
@@ -404,11 +452,11 @@ export function analyse(p: Profile) {
   }
   if (p.viaAgent) check("An agent applying for you needs a power of attorney authenticated by the Documents Authentication and Registration Service that clearly allows borrowing and mortgaging.");
 
-  return { loan, amount, exposure, installment, n, newAnnual, annualService, ratios, ownShare, counted, estimated, flags, latest };
+  return { loan, mode, words: w, amount, exposure, installment, n, profit, salePrice, newAnnual, annualService, ratios, ownShare, debtRatio, incomeRatio, screening, counted, estimated, flags, latest };
 }
 
 export function documents(p: Profile) {
-  const loan = loanTypes.find((l) => l.id === p.loanType)!;
+  const loan = productOf(p);
   const groups: { title: string; items: string[] }[] = [{ title: "Every applicant", items: [...generalDocs] }];
   if (p.borrowerType !== "individual") {
     const exposure = num(p.amount) + p.facilities.reduce((s, f) => s + (has(num(f.outstanding)) ? num(f.outstanding) : 0), 0);
@@ -431,8 +479,13 @@ export function documents(p: Profile) {
       ],
     });
   groups.push({ title: loan.name, items: loan.docs });
-  if (p.loanType === "project" && p.projectStage === "expansion") groups.push({ title: "Expanding an existing project", items: expansionDocs });
-  if (p.loanType === "project" && p.sector === "Agriculture") groups.push({ title: "Commercial agriculture projects", items: agricultureDocs });
+  if (isIfb(p)) {
+    const mode = modeOf(p);
+    groups.push({ title: "Interest-free financing", items: ifbDocs });
+    groups.push({ title: `${mode.name}: signed after approval`, items: mode.docs });
+  }
+  if (!isIfb(p) && p.loanType === "project" && p.projectStage === "expansion") groups.push({ title: "Expanding an existing project", items: expansionDocs });
+  if (!isIfb(p) && p.loanType === "project" && p.sector === "Agriculture") groups.push({ title: "Commercial agriculture projects", items: agricultureDocs });
   const seen = new Set<string>();
   const coll: string[] = [];
   for (const c of p.collateral)
@@ -558,7 +611,7 @@ export function ProfileBuilder() {
                   step === i ? "border-brand-600 bg-brand-600 text-white" : i === steps.length - 1 ? "border-gold-400 bg-gold-400/20 text-ink" : "border-line bg-white text-ink hover:border-brand-500"
                 }`}
               >
-                {i + 1}. {s}
+                {i + 1}. {s === "Loan request" && isIfb(p) ? "Financing request" : s}
               </button>
             </li>
           ))}
@@ -727,10 +780,45 @@ export function ProfileBuilder() {
         )}
 
         {at === "Loan request" && (
-          <Panel title="Loan request" intro="What you need, why, and how you will repay. The expected interest rate is only for estimating installments; ask your lender for its rate.">
+          <Panel
+            title={`${a.words.Loan} request`}
+            intro={`What you need, why, and how you will repay. The expected ${a.words.rate} is only for estimating installments; ask your lender for its rate.`}
+          >
             <Grid>
-              <Choice label="Loan type" value={p.loanType} onChange={(v) => set({ loanType: v })} options={loanTypes.map((l) => ({ value: l.id, label: l.name }))} wide />
-              {p.loanType === "project" && (
+              <Choice
+                label="Type of financing"
+                value={p.financing}
+                onChange={(v) => set({ financing: v })}
+                options={[
+                  { value: "conventional", label: "Conventional loan" },
+                  { value: "ifb", label: "Interest-free financing (IFB)" },
+                ]}
+                wide
+              />
+              {isIfb(p) ? (
+                <>
+                  <label className={`${labelClass} sm:col-span-2`}>
+                    Interest-free product
+                    <select value={p.ifbProduct} onChange={(e) => { const prod = productById(e.target.value)!; set({ ifbProduct: prod.id, ifbMode: prod.modes.includes(p.ifbMode) ? p.ifbMode : prod.modes[0] }); }} className={inputClass}>
+                      {(["Trade", "Export", "Guarantee", "Term", "Qard al-Hassan"] as const).map((g) => (
+                        <optgroup key={g} label={g === "Qard al-Hassan" ? g : `${g} financing`}>
+                          {ifbProducts.filter((x) => x.group === g).map((x) => (
+                            <option key={x.id} value={x.id}>
+                              {x.name}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
+                  </label>
+                  {productById(p.ifbProduct)!.modes.length > 1 && (
+                    <Choice label="Contract (mode of financing)" value={a.mode!.id} onChange={(v) => set({ ifbMode: v })} options={productById(p.ifbProduct)!.modes.map((m) => ({ value: m, label: modeById(m)!.name }))} wide />
+                  )}
+                </>
+              ) : (
+                <Choice label="Loan type" value={p.loanType} onChange={(v) => set({ loanType: v })} options={loanTypes.map((l) => ({ value: l.id, label: l.name }))} wide />
+              )}
+              {!isIfb(p) && p.loanType === "project" && (
                 <Choice
                   label="Project stage"
                   value={p.projectStage}
@@ -751,20 +839,74 @@ export function ProfileBuilder() {
                     <li key={t}>{t}</li>
                   ))}
                 </ul>
+                {a.mode && (
+                  <p className="mt-3">
+                    <strong>{a.mode.name}:</strong> {a.mode.how}
+                  </p>
+                )}
               </div>
               <Money label="Amount requested" value={p.amount} onChange={(v) => set({ amount: v })} />
-              <Money label="Total cost of what you are financing" value={p.totalCost} onChange={(v) => set({ totalCost: v })} hint="Loan plus your own contribution, for projects, buildings, vehicles and machinery." />
+              <Money label="Total cost of what you are financing" value={p.totalCost} onChange={(v) => set({ totalCost: v })} hint={`${a.words.Loan} plus your own contribution, for projects, buildings, vehicles and machinery.`} />
               <Text label="Purpose" value={p.purpose} onChange={(v) => set({ purpose: v })} wide />
               <Text label="Term (months)" value={p.termMonths} onChange={(v) => set({ termMonths: v })} />
               <Text label="Grace period requested (months)" value={p.graceMonths} onChange={(v) => set({ graceMonths: v })} hint="Up to 3 months short term, 6 to 12 medium term, up to 24 long term." />
               <Choice label="Repayment frequency" value={p.frequency} onChange={(v) => set({ frequency: v })} options={frequencies.map((f) => ({ value: f.value, label: f.label }))} />
-              <Text label="Expected interest rate (% a year)" value={p.rate} onChange={(v) => set({ rate: v })} />
+              {a.mode?.pricing === "none" ? null : (
+                <Text
+                  label={`Expected ${a.words.rate} (% a year)`}
+                  value={p.rate}
+                  onChange={(v) => set({ rate: v })}
+                  hint={a.mode?.pricing === "sale" ? "Profit = cost x rate x months / 12, fixed in the sale price." : a.mode?.pricing === "rent" ? "Sets the rent on the lender's share." : a.mode?.pricing === "fee" ? "Service charges apply instead; leave as is." : undefined}
+                />
+              )}
               <Text label="Source of repayment" value={p.repaymentSource} onChange={(v) => set({ repaymentSource: v })} hint="For example: sales of the business, rental income, salary, export proceeds." wide />
             </Grid>
             {has(a.installment) && (
               <p className="mt-6 rounded-xl border border-line bg-canvas p-4 text-ink">
-                Estimated installment: <strong>{birr(a.installment)}</strong> {frequencies.find((f) => f.value === p.frequency)!.label.toLowerCase()}, {a.n} installments after any grace period.
+                {has(a.salePrice) && (
+                  <>
+                    Cost {birr(a.amount)} plus profit {birr(a.profit)} gives a fixed sale price of <strong>{birr(a.salePrice)}</strong>.{" "}
+                  </>
+                )}
+                Estimated {a.mode?.pricing === "rent" ? "rent" : "installment"}: <strong>{birr(a.installment)}</strong> {frequencies.find((f) => f.value === p.frequency)!.label.toLowerCase()}, {a.n} installments after any grace period.
               </p>
+            )}
+            {isIfb(p) && (
+              <fieldset className="mt-8 space-y-4">
+                <legend className="font-semibold text-ink">Sharia&apos;h screening</legend>
+                <p className="text-sm text-muted">
+                  Lenders check that the business and the transaction are permissible. A business whose main activity involves {prohibitedActivities.map((x) => x.toLowerCase()).join(", ")} is not eligible. For other businesses, widely used benchmarks are interest-bearing debt up to 30% of total assets and non-permissible income up to 5% of revenue; each lender&apos;s Sharia&apos;h Advisory Committee sets its own.
+                </p>
+                <Grid>
+                  <Choice
+                    label="Your main business activity"
+                    value={p.activity}
+                    onChange={(v) => set({ activity: v })}
+                    options={[
+                      { value: "", label: "Select" },
+                      { value: "Permissible", label: "None of the activities above" },
+                      { value: "Prohibited", label: "Involves one of the activities above" },
+                    ]}
+                    wide
+                  />
+                  {isBusiness && <Money label="Interest-bearing borrowing (conventional loans)" value={p.interestDebt} onChange={(v) => set({ interestDebt: v })} hint="Compared with total assets in the next step." />}
+                  {isBusiness && <Money label="Interest and other non-permissible income a year" value={p.nonPermissibleIncome} onChange={(v) => set({ nonPermissibleIncome: v })} hint="For example interest on conventional deposits. Compared with sales." />}
+                </Grid>
+                {a.screening && (
+                  <div className={`rounded-xl p-4 text-sm ${a.screening.decision === "Not eligible" ? "bg-red-50 text-red-900" : a.screening.decision === "Eligible" ? "bg-brand-50 text-brand-900" : "bg-amber-50 text-amber-900"}`}>
+                    <p>
+                      <strong>{a.screening.decision}.</strong> {a.screening.reasons.join(" ")}
+                    </p>
+                    {a.screening.conditions.length > 0 && (
+                      <ul className="mt-2 list-disc space-y-1 pl-5">
+                        {a.screening.conditions.map((c) => (
+                          <li key={c}>{c}</li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                )}
+              </fieldset>
             )}
           </Panel>
         )}
@@ -1091,17 +1233,20 @@ function Result({ p, a, docs, onToggle }: { p: Profile; a: ReturnType<typeof ana
             </dl>
           </div>
           <div>
-            <h3 className="font-semibold text-ink">Loan request</h3>
+            <h3 className="font-semibold text-ink">{a.words.Loan} request</h3>
             <dl className="mt-2">
-              {row("Loan type", a.loan.name)}
+              {row(isIfb(p) ? "Product" : "Loan type", a.loan.name)}
+              {a.mode && row("Contract", a.mode.name)}
+              {a.screening && row("Sharia'h screening", a.screening.decision)}
               {row("Amount", has(a.amount) ? birr(a.amount) : "")}
               {row("Purpose", p.purpose)}
               {row("Term", p.termMonths && `${p.termMonths} months${p.graceMonths ? `, including ${p.graceMonths} months' grace` : ""}`)}
               {row("Repayment", frequencies.find((f) => f.value === p.frequency)!.label)}
-              {row("Estimated installment", has(a.installment) ? `${birr(a.installment)} at ${p.rate}% a year` : "")}
+              {has(a.salePrice) && row("Sale price", `${birr(a.salePrice)} (cost ${birr(a.amount)} plus profit ${birr(a.profit)})`)}
+              {row("Estimated installment", has(a.installment) ? (a.mode?.pricing === "none" ? birr(a.installment) : `${birr(a.installment)} at ${p.rate}% a year`) : "")}
               {row("Own contribution", has(a.ownShare) ? `${pct(a.ownShare)} of ${birr(num(p.totalCost))}` : "")}
               {row("Source of repayment", p.repaymentSource)}
-              {row("Total borrowing after this loan", a.exposure ? birr(a.exposure) : "")}
+              {row(`Total ${a.words.borrowing} after this ${a.words.loan}`, a.exposure ? birr(a.exposure) : "")}
             </dl>
           </div>
         </div>

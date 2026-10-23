@@ -1,9 +1,11 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, overallVerdict, periodLabel, questions, riskKeys, scorecard, stressTests, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
+import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, overallVerdict, periodLabel, questions, riskAreas, scorecard, stressTests, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { titleCase } from "./CreditCrb";
-import { projectionLines } from "./CreditProjection";
+import { lineLabel, projectionLines } from "./CreditProjection";
+import { saleProfit } from "@/data/credit/ifb";
+import { ifbProduct, ifbScreening, productByName } from "@/lib/credit/ifbcase";
 import { projection } from "@/lib/credit/projection";
 import { appraise } from "@/lib/credit/project";
 import type { AnalysisContext } from "@/lib/credit/context";
@@ -229,7 +231,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const card = scorecard(k, a);
   const verdict = overallVerdict(card);
   const outlook = [text("8.7"), outlookFacts(k, sel)].filter((x) => x.trim()).join("\n\n");
-  const risks = riskKeys
+  const risks = riskAreas(k)
     .map((r) => {
       const own = k.risks[r.key];
       const auto = suggested[r.key];
@@ -244,6 +246,14 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const all = { s: [...swot.s, ...extra(k.swot.s)], w: [...swot.w, ...extra(k.swot.w)], o: [...swot.o, ...extra(k.swot.o)], t: [...swot.t, ...extra(k.swot.t)] };
   const rated = questions.filter((q) => k.assessment[q.key]?.rating || k.assessment[q.key]?.note.trim());
   const recs = k.recommendations.filter((r) => r.amount || r.collateral);
+  const ifb = k.ifb.on ? ifbProduct(k.ifb) : null;
+  const screening = k.ifb.on ? ifbScreening(k.ifb, L) : null;
+  // Indicative sale prices of the recommended (or else requested) deferred-sale financings.
+  const priced = ifb
+    ? (recs.length ? recs.map((r) => ({ type: r.type, cost: amount(r.amount), rate: amount(r.rate), months: amount(r.tenure) })) : k.requests.map((r) => ({ type: r.type, cost: amount(r.amount), rate: NaN, months: amount(r.tenor) })))
+        .filter((x) => Number.isFinite(x.cost) && x.cost > 0 && Number.isFinite(x.rate) && Number.isFinite(x.months) && (productByName(x.type)?.modes ?? [ifb.mode.id]).some((m) => ["murabaha", "tijarah", "tawarruq", "istisna", "salam"].includes(m)) && !productByName(x.type)?.offBalance)
+        .map((x) => ({ ...x, profit: saleProfit(x.cost, x.rate, x.months) }))
+    : [];
   const recTotal = recs.reduce((n, r) => n + (Number.isFinite(amount(r.amount)) ? amount(r.amount) : 0), 0);
 
   return (
@@ -306,6 +316,34 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
 
       <H n="2">Customer&apos;s request</H>
       <Table head={["Type", "Amount (ETB)", "Tenor (months)", "Repayment"]} right={[1, 2]} rows={k.requests.filter((r) => r.amount || r.repayment).map((r) => [r.type, etb(r.amount), r.tenor || "-", r.repayment || "-"])} />
+
+      {ifb && (
+        <>
+          <H3>Interest-free financing structure</H3>
+          <KeyValues
+            rows={[
+              ["Product", ifb.product.name],
+              ["Contract (mode of financing)", ifb.mode.name],
+              ["How it works", ifb.mode.how],
+              ["Asset", k.ifb.asset],
+              ["Supplier, manufacturer or contractor", k.ifb.supplier],
+              ["Bank's possession before the sale or lease", k.ifb.possession],
+              ["Customer as the bank's agent (Wakalah)", ifb.mode.pricing === "sale" || ifb.mode.pricing === "rent" ? (k.ifb.agent ? "Yes" : "No") : ""],
+              ["Approved by the Sharia'h Advisory Committee", k.ifb.sacApproved ? "Yes" : "Not confirmed"],
+            ]}
+          />
+          {priced.length > 0 && (
+            <Table
+              head={["Financing", "Cost (ETB)", "Profit rate", "Term (months)", "Profit (ETB)", "Sale price (ETB)"]}
+              right={[1, 2, 3, 4, 5]}
+              rows={priced.map((x) => [x.type, birr(x.cost), `${x.rate}%`, String(x.months), birr(x.profit), birr(x.cost + x.profit)])}
+            />
+          )}
+          <P>{`Conditions of the contract: ${ifb.mode.conditions.join(" ")}`}</P>
+          <p className="mt-2 font-semibold">Contract documents to be signed after approval</p>
+          <Points items={ifb.mode.docs} />
+        </>
+      )}
 
       <H n="3">Purpose</H>
       <P>{k.purpose || "Not stated."}</P>
@@ -485,6 +523,21 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
           />
         </>
       )}
+      {screening && (
+        <>
+          <p className="mt-3 font-semibold">Sharia&apos;h screening</p>
+          <Table
+            head={["Test", `Figure (${k.unit})`, "Ratio", "Benchmark"]}
+            right={[1, 2]}
+            rows={[
+              ["Main business activity", k.ifb.activity || "Not screened", "", "Permissible"],
+              ["Interest-bearing debt to total assets", Number.isFinite(screening.debt) ? fmt(screening.debt, "amount") : "-", pctOr(screening.debtRatio), "30% or less"],
+              ["Non-permissible income to revenue", Number.isFinite(screening.income) ? fmt(screening.income, "amount") : "-", pctOr(screening.incomeRatio), "5% or less"],
+            ]}
+          />
+          <P>{`${screening.decision}. ${screening.reasons.join(" ")}${k.ifb.activityNote.trim() ? ` ${k.ifb.activityNote.trim().replace(/\.?$/, ".")}` : ""}${screening.conditions.length ? ` Conditions: ${screening.conditions.join(" ")}` : ""}`}</P>
+        </>
+      )}
       {k.gradeJustification.trim() && (
         <>
           <p className="mt-2 font-semibold">Grade justification (current grade {k.gradeNow})</p>
@@ -497,7 +550,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         <div>
           <H3>8.9 Cash flow projection and repayment capacity</H3>
           <P>
-            {`Cash flows are projected for ${proj.years} year${proj.years === 1 ? "" : "s"}, the life of the proposed facilities, from the latest period's annualized figures. Assumptions: sales growth of ${(proj.input.growth * 100).toFixed(1)}% a year, gross margin before depreciation of ${(proj.input.margin * 100).toFixed(1)}%, operating expenses of ${(proj.input.opex * 100).toFixed(1)}% of sales, profit tax at ${(proj.input.tax * 100).toFixed(0)}%, and capital expenditure of ${fmt(proj.input.capex, "amount")} (${k.unit}) a year. Term loans are repaid in equal yearly installments; revolving facilities pay interest only.`}
+            {`Cash flows are projected for ${proj.years} year${proj.years === 1 ? "" : "s"}, the life of the proposed facilities, from the latest period's annualized figures. Assumptions: sales growth of ${(proj.input.growth * 100).toFixed(1)}% a year, gross margin before depreciation of ${(proj.input.margin * 100).toFixed(1)}%, operating expenses of ${(proj.input.opex * 100).toFixed(1)}% of sales, profit tax at ${(proj.input.tax * 100).toFixed(0)}%, and capital expenditure of ${fmt(proj.input.capex, "amount")} (${k.unit}) a year. Term loans are repaid in equal yearly installments; revolving facilities pay interest only.${k.ifb.on ? " For the interest-free financing, the profit is fixed in the sale price and paid evenly over the term, so higher market rates affect only existing conventional debt." : ""}`}
           </P>
           <Table
             head={["Scenario", "Shock", "Lowest cover", "Average cover", "Years short", "Repayment capacity"]}
@@ -508,7 +561,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
           <Table
             head={["", ...proj.scenarios[0].rows.map((r) => `Year ${r.year}`)]}
             right={proj.scenarios[0].rows.map((_, i) => i + 1)}
-            rows={projectionLines.map((line) => [line.label, ...proj.scenarios[0].rows.map((r) => (line.ratio ? timesOr(r[line.key] as number) : fmt(r[line.key] as number, "amount")))])}
+            rows={projectionLines.map((line) => [lineLabel(line, k.ifb.on), ...proj.scenarios[0].rows.map((r) => (line.ratio ? timesOr(r[line.key] as number) : fmt(r[line.key] as number, "amount")))])}
           />
           <p className="mt-3 font-semibold">Debt service cover and closing cash by scenario</p>
           <Table
@@ -635,7 +688,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
       <div className="break-inside-avoid">
       <H n="10">Officer&apos;s recommendation</H>
       <Table
-        head={["Type of loan", "Amount (ETB)", "Rate", "Tenure (months)", "Repayment", "Collateral"]}
+        head={k.ifb.on ? ["Product", "Cost or amount (ETB)", "Profit rate", "Tenure (months)", "Repayment", "Collateral"] : ["Type of loan", "Amount (ETB)", "Rate", "Tenure (months)", "Repayment", "Collateral"]}
         right={[1, 2, 3]}
         rows={k.recommendations.filter((r) => r.amount || r.collateral).map((r) => [r.type, etb(r.amount), r.rate ? `${r.rate}%` : "-", r.tenure || "-", r.repayment, r.collateral])}
       />

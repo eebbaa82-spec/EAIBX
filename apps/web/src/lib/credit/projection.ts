@@ -1,4 +1,5 @@
 import { amount, type CaseAnalysis, type CreditCase } from "./case";
+import { productByName } from "./ifbcase";
 
 /**
  * Cash flow projection over the life of the proposed facilities, year by year,
@@ -30,8 +31,10 @@ export type Scenario = { key: "base" | "moderate" | "severe"; name: string; shoc
 const unitScale: Record<string, number> = { "ETB '000": 1000, ETB: 1, "ETB million": 1000000 };
 const pct = (v: string) => (v.trim() === "" || !Number.isFinite(Number(v)) ? NaN : Number(v) / 100);
 const clamp = (n: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, n));
-const revolving = (type: string) => /overdraft|revolving|merchandise|pre-shipment|working capital/i.test(type);
-const offBalance = (type: string) => /letter of (credit|guarantee)|guarantee|l\/c/i.test(type);
+const revolving = (type: string) => productByName(type)?.revolving ?? /overdraft|revolving|merchandise|pre-shipment|working capital/i.test(type);
+const offBalance = (type: string) => productByName(type)?.offBalance ?? /letter of (credit|guarantee)|guarantee|l\/c/i.test(type);
+/** Qard al-Hassan carries no profit. */
+const noProfit = (type: string) => productByName(type)?.modes.includes("qard") ?? false;
 
 /** Defaults from the latest period, each overridden by the analyst's own figure. */
 export function assumptions(k: CreditCase, a: CaseAnalysis): Assumptions | null {
@@ -105,10 +108,25 @@ export function projection(k: CreditCase, a: CaseAnalysis): { input: Assumptions
       let newInterest = 0;
       let newPrincipal = 0;
       loans.forEach((f, i) => {
+        const term = Math.max(1, Math.ceil((Number.isFinite(f.months) && f.months > 0 ? f.months : 12) / 12));
+        if (k.ifb.on) {
+          // Interest-free: the profit is fixed in the sale price (cost x rate x term) and
+          // spread evenly, so a rise in market rates does not change it.
+          const rate = noProfit(f.type) ? 0 : Number.isFinite(f.rate) && f.rate >= 0 ? f.rate / 100 : base.rate;
+          if (revolving(f.type)) {
+            newInterest += f.amount * rate;
+            return;
+          }
+          if (y > term) return;
+          newInterest += f.amount * rate;
+          const due = Math.min(balances[i], f.amount / term);
+          newPrincipal += due;
+          balances[i] -= due;
+          return;
+        }
         const rate = (Number.isFinite(f.rate) && f.rate > 0 ? f.rate / 100 : base.rate) + rateUp;
         newInterest += balances[i] * rate;
         if (revolving(f.type)) return; // renewed each year; interest only
-        const term = Math.max(1, Math.ceil((Number.isFinite(f.months) && f.months > 0 ? f.months : 12) / 12));
         const due = y <= term ? Math.min(balances[i], f.amount / term) : 0;
         newPrincipal += due;
         balances[i] -= due;
@@ -138,7 +156,7 @@ export function projection(k: CreditCase, a: CaseAnalysis): { input: Assumptions
     scenarios: [
       run("base", "Base case", "The assumptions as set", 0, 0, 0),
       run("moderate", "Moderate stress", "Sales 10% below the base case and gross margin 2 points lower", 0.1, 0.02, 0),
-      run("severe", "Severe stress", "Sales 20% below the base case, gross margin 4 points lower and interest rates 3 points higher", 0.2, 0.04, 0.03),
+      run("severe", "Severe stress", `Sales 20% below the base case, gross margin 4 points lower and interest rates 3 points higher${k.ifb.on ? " on existing conventional debt (the interest-free sale price is fixed)" : ""}`, 0.2, 0.04, 0.03),
     ],
   };
 }
