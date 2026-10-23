@@ -60,6 +60,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-bold tracking-tight">Send us a message</h2>
             <PreviewForm
+              formName="contact"
               className="mt-6"
               submitLabel="Send message"
               confirmation="Thank you. We have received your message and will reply within two working days."

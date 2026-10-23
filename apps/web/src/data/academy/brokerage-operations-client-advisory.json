@@ -1,0 +1,3172 @@
+{
+  "id": "t-2e",
+  "slug": "brokerage-operations-client-advisory",
+  "track": "capital",
+  "levels": "Foundational to Advanced",
+  "level": 1,
+  "icon": "handshake",
+  "title": "Brokerage Operations and Client Advisory",
+  "subtitle": "Onboard, trade, settle and advise on the Ethiopian Securities Exchange, then run a controlled, client-first brokerage",
+  "summary": "Follow one Addis Ababa broker through a trading day with three very different first-time clients, then build documented advice, model portfolios and the controls that keep client assets safe.",
+  "audience": "New staff of ECMA-licensed securities brokers, dealers and investment advisers, and bank staff who refer clients (Foundational modules 1 to 3); licensed representatives, operations and compliance managers and senior advisers (Advanced modules 4 and 5). Learners should have completed the Foundational courses Introduction to Capital Markets and Ethiopian Capital Markets Law and Regulation, or have equivalent knowledge.",
+  "hours": 48,
+  "objectives": [
+    "Onboard resident, diaspora and institutional clients with complete KYC, CDD, risk profiling and documentation",
+    "Take, execute and settle orders on the ESX and explain every fee to the client in Birr",
+    "Apply conduct rules: best execution, client money segregation, confidentiality and conflict management",
+    "Give suitable, documented advice and build model portfolios for client segments",
+    "Run brokerage operations with sound controls, firm liquidity limits, complaints handling and regulatory reporting",
+    "Grow a client book through investor education and ethical marketing"
+  ],
+  "runningCase": {
+    "name": "Sheba Hill Securities PLC",
+    "text": "Sheba Hill Securities PLC is a fictional ECMA-licensed securities broker and ESX member in Bole, Addis Ababa, with an operations officer, Meron Assefa, an adviser, Yonas Tekle, and a compliance reviewer, Hirut Mekonnen. In the Foundational modules it onboards three clients and takes them through a simulated trading day: Tigist Alemu, a mathematics teacher in Adama with ETB 60,000 to invest; Dawit Haile, a civil engineer in Washington DC sending USD 4,000; and the Lume Farmers' Cooperative Union near Mojo, authorised to invest up to ETB 1 million. In the Advanced modules its advisers build documented recommendations for a retiree in Dire Dawa, a young software developer and a Hawassa coffee trader, defend them to compliance, and review the firm's own operations controls. The securities traded, Rift Valley Cement S.C. on the Main Board and Sidama Coffee Processing S.C. on the Growth Board, are also fictional."
+  },
+  "modules": [
+    {
+      "id": "s1",
+      "slug": "broker-role-client-onboarding",
+      "icon": "people",
+      "minutes": 60,
+      "title": "The broker's role and client onboarding",
+      "summary": "Know who may do what in Ethiopia's securities market, then open an account properly: identity, source of funds, risk profile and a signed client agreement.",
+      "objectives": [
+        "Distinguish the ECMA licence types and ESX membership categories and the duties each owes to clients",
+        "Complete KYC and CDD for resident, diaspora and institutional clients, including Fayda-based identification",
+        "Run a risk profiling questionnaire and turn the score into a documented client profile",
+        "List what a client agreement must cover and how client data must be handled"
+      ],
+      "lessons": [
+        {
+          "id": "who-does-what",
+          "title": "Brokers, dealers, advisers and the exchange",
+          "body": [
+            "Since the Ethiopian Securities Exchange (ESX) opened on 10 January 2025, ordinary Ethiopians can buy listed shares and bonds, but only through licensed intermediaries. The Ethiopian Capital Market Authority (ECMA) licenses those intermediaries under the Capital Market Proclamation No. 1248/2021 and its licensing directive, and the ESX admits them as members.",
+            "The difference between categories matters to the client. A securities broker acts as the client's agent and earns a commission; a dealer trades for its own account and earns a spread; an investment adviser gives advice but does not hold client money unless separately licensed. Bank staff who refer customers are not brokers and must hand the order to the licensed firm.",
+            "Do not confuse the ESX with the Ethiopian Commodity Exchange (ECX). The ECX trades physical commodities such as coffee and sesame; the ESX trades securities: shares, bonds and, in time, other listed instruments."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "handshake",
+                "label": "Securities broker",
+                "text": "Executes client orders as agent; earns commission"
+              },
+              {
+                "icon": "scale",
+                "label": "Dealer",
+                "text": "Buys and sells for its own book; earns a spread"
+              },
+              {
+                "icon": "chart",
+                "label": "Market maker",
+                "text": "Quotes two-way prices to keep a security liquid"
+              },
+              {
+                "icon": "bank",
+                "label": "Investment bank",
+                "text": "Advises issuers, underwrites offers, may also trade"
+              },
+              {
+                "icon": "coins",
+                "label": "Dealing member bank",
+                "text": "A bank admitted to deal, mainly in fixed income"
+              }
+            ]
+          },
+          "example": {
+            "title": "Sheba Hill Securities PLC opens its doors",
+            "text": "Sheba Hill Securities PLC in Bole, Addis Ababa, holds an ECMA licence as a securities broker and is an ESX member in the securities broker category. Its operations officer, Meron Assefa, explains to new staff that the firm may take and execute client orders, hold client money in a segregated account and give advice linked to its broking service, but it may not trade for its own book: that would need a dealer licence."
+          },
+          "regulation": {
+            "source": "ECMA Directive No. 980/2024, Licensing and supervision of capital market service providers",
+            "text": "The directive sets 15 licence categories for capital market service providers, with minimum capital ranging from Birr 100,000 for an individual investment adviser to Birr 100 million for a bank-group investment bank or a custodian. Licensed firms must keep liquid assets of at least 40% of total assets and renew their licence every year."
+          },
+          "tip": "Before you answer a client's question, ask yourself: is this inside my firm's licence and my own authorisation?"
+        },
+        {
+          "id": "fees-and-duties",
+          "title": "ECMA fees and the duties owed to every client",
+          "body": [
+            "A licence is a cost of doing business, and new staff should know it. ECMA's fee directive sets what a broker pays to apply, to receive the licence and to renew it each year. These fees fall on the firm, never on a client account.",
+            "What the client buys is a set of duties. A licensed broker must act honestly and in the client's best interest, seek the best available result when executing orders, explain fees before the client trades, keep client money and securities apart from the firm's own, and keep client information confidential. Bank staff who refer clients share one duty: never promise returns or give advice they are not licensed to give."
+          ],
+          "points": [
+            "Honesty and fair dealing",
+            "Best execution of every order",
+            "Suitability of any advice given",
+            "Clear disclosure of fees and risks",
+            "Segregation of client assets",
+            "Confidentiality of client information"
+          ],
+          "worked": {
+            "title": "Sheba Hill's ECMA licence costs (Directive No. 996/2024)",
+            "rows": [
+              {
+                "label": "Application fee",
+                "value": "ETB 60,000"
+              },
+              {
+                "label": "Licence fee",
+                "value": "ETB 132,000"
+              },
+              {
+                "label": "Year 1 total",
+                "value": "ETB 192,000"
+              },
+              {
+                "label": "Annual renewal, years 2 and 3",
+                "value": "ETB 66,000 x 2 = ETB 132,000"
+              },
+              {
+                "label": "Three-year licence cost",
+                "value": "ETB 324,000"
+              }
+            ],
+            "note": "Licence costs are fixed overheads. A broker with few active clients must spread them across a small commission base, which is why growing the client book (Module 4) matters."
+          },
+          "regulation": {
+            "source": "ECMA Directive No. 996/2024, ECMA fees",
+            "text": "A securities broker pays ETB 60,000 to apply, ETB 132,000 for the licence and ETB 66,000 a year to renew."
+          },
+          "scenario": {
+            "title": "A bank customer wants shares today",
+            "situation": "Selamawit Bekele, a customer service officer at Bank A's Adama branch, refers customers to Sheba Hill under a referral arrangement. A customer hands her ETB 50,000 in cash and asks her to buy Rift Valley Cement S.C. shares for him. Bank A holds no ECMA licence.",
+            "question": "What should Selamawit do?",
+            "options": [
+              "Explain that she cannot take orders or money, and help him open an account with the licensed broker",
+              "Take the cash and pass the order to Sheba Hill by phone",
+              "Buy the shares through her own brokerage account and transfer them later",
+              "Advise him to wait until the price falls"
+            ],
+            "answer": 0,
+            "explain": "A referrer without a licence cannot accept orders, client money or give advice. Taking cash or using her own account would put client assets outside the regulated, segregated system; advising on timing is advice she is not licensed to give."
+          }
+        },
+        {
+          "id": "kyc-cdd",
+          "title": "Know your client: KYC and customer due diligence",
+          "body": [
+            "Every account starts with knowing who the client is and where the money comes from. Ethiopia's anti-money laundering law (reported as Proclamation No. 780/2013) and the customer due diligence rules require reporting institutions to identify and verify each client, identify the beneficial owner, understand the purpose of the account, keep records and report suspicious transactions to the Financial Intelligence Service.",
+            "Fayda, the national digital ID, makes identification faster: a Fayda number can be verified electronically, which supports digital onboarding. It does not replace the rest of CDD. The firm still records occupation, source of funds and expected activity, then risk rates the client: low, medium or high, with enhanced due diligence for high risk."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Identify",
+                "text": "Name, date of birth, address, Fayda number or passport"
+              },
+              {
+                "label": "Verify",
+                "text": "Check the ID electronically or against the original"
+              },
+              {
+                "label": "Beneficial owner",
+                "text": "Who really owns or controls the account"
+              },
+              {
+                "label": "Source of funds",
+                "text": "Salary, business income, remittance, sale of property"
+              },
+              {
+                "label": "Risk rate",
+                "text": "Low, medium or high; enhanced checks for high"
+              },
+              {
+                "label": "Monitor",
+                "text": "Compare activity with the profile; refresh periodically"
+              }
+            ]
+          },
+          "example": {
+            "title": "Onboarding Tigist Alemu in Adama",
+            "text": "Tigist Alemu, 34, teaches mathematics at a secondary school in Adama and earns ETB 14,000 a month. She has saved ETB 120,000 over five years in a savings account and wants to invest ETB 60,000. Meron verifies her Fayda number, records her salary as the source of funds with a recent payslip and three months of bank statements, notes the purpose (long-term savings) and rates her low risk."
+          },
+          "regulation": {
+            "source": "AML/CFT law (reported as Proclamation No. 780/2013) and CDD rules",
+            "text": "Reporting institutions must identify and verify customers and beneficial owners, keep identification and transaction records, apply enhanced due diligence to higher-risk customers and report suspicious transactions to the Financial Intelligence Service. The current CDD directive number should be confirmed before it is quoted."
+          },
+          "tip": "Record the source of funds in the client's own words, then attach the evidence. A vague entry such as \"savings\" will not survive a compliance review."
+        },
+        {
+          "id": "diaspora-institutional",
+          "title": "Diaspora and institutional clients",
+          "body": [
+            "Diaspora investors are a large share of first-time interest in the ESX, and their files need extra care. Collect a valid passport and, for a foreign national of Ethiopian origin, the identity document that confirms that status. Funds must arrive through the formal banking system into an account in the client's own name, under the foreign exchange rules for non-resident Ethiopians and foreign nationals of Ethiopian origin in FXD/01/2024.",
+            "Foreign investors who are not of Ethiopian origin follow separate rules: ECMA posted a draft Foreign Portfolio Investment Regulation for consultation on 29 September 2026, so staff must check the current position before accepting such a client.",
+            "An institution such as a cooperative union invests through its governing bodies. The broker needs the registration certificate, bylaws, a board or general assembly resolution authorising the investment and naming signatories, the signatories' IDs, and the beneficial ownership structure. Orders are accepted only from the authorised signatories, in the form the resolution requires."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Diaspora individual",
+              "items": [
+                "Passport, plus proof of Ethiopian origin where relevant",
+                "Overseas address and contact",
+                "Funds via formal channel into own account",
+                "FX conversion recorded with date and rate",
+                "Remote signing and video verification"
+              ]
+            },
+            "right": {
+              "title": "Cooperative union",
+              "items": [
+                "Registration certificate and bylaws",
+                "Resolution authorising the investment",
+                "Named signatories and signing rules",
+                "IDs of signatories and controllers",
+                "Audited accounts and investment policy"
+              ]
+            }
+          },
+          "regulation": {
+            "source": "NBE Directive No. FXD/01/2024, Foreign exchange (as amended)",
+            "text": "The directive covers foreign currency accounts for non-resident Ethiopians and foreign nationals of Ethiopian origin, alongside the rules for converting, holding and remitting foreign currency. Later amendments, including FXD/04/2026, relaxed several requirements, so check the current text before advising a diaspora client."
+          },
+          "scenario": {
+            "title": "Dawit's shortcut",
+            "situation": "Dawit Haile, a civil engineer in Washington DC, opens an account remotely. To save time he proposes to send USD 4,000 to his brother in Mekelle through an informal transfer agent, and have the brother deposit the Birr into Sheba Hill's client account.",
+            "question": "How should Meron respond?",
+            "options": [
+              "Accept, as long as the brother signs a letter",
+              "Accept, because the amount is small",
+              "Decline: funds must come through the formal banking system from an account in Dawit's own name",
+              "Ask the brother to open the account instead"
+            ],
+            "answer": 2,
+            "explain": "Third-party and informal funding hides the true source of funds and breaks the foreign exchange route the rules require. A letter or a small amount does not cure it, and opening the account in the brother's name would misstate the beneficial owner."
+          }
+        },
+        {
+          "id": "risk-profiling",
+          "title": "Risk profiling: turning answers into a profile",
+          "body": [
+            "A risk profiling questionnaire measures two different things. Risk tolerance is how much ups and downs the client can stomach; risk capacity is how much loss the client can afford, given income, savings, dependants and when the money is needed. Where they disagree, the lower one wins.",
+            "Most Ethiopian brokers use a short scored questionnaire covering time horizon, income stability, emergency savings, investment experience and reaction to a fall in value. The score maps to a profile such as conservative, moderate or growth, and the adviser records any adjustment and the reason."
+          ],
+          "visual": {
+            "type": "bars",
+            "unit": "points out of 6",
+            "items": [
+              {
+                "label": "Time horizon",
+                "value": 4
+              },
+              {
+                "label": "Income stability",
+                "value": 5
+              },
+              {
+                "label": "Emergency savings",
+                "value": 3
+              },
+              {
+                "label": "Experience",
+                "value": 1
+              },
+              {
+                "label": "Reaction to a 20% fall",
+                "value": 2
+              }
+            ],
+            "caption": "Tigist Alemu's questionnaire scores (Sheba Hill's illustrative five-question form)"
+          },
+          "worked": {
+            "title": "Tigist's risk profile",
+            "rows": [
+              {
+                "label": "Total score",
+                "value": "4 + 5 + 3 + 1 + 2 = 15 out of 30"
+              },
+              {
+                "label": "Sheba Hill's bands",
+                "value": "Up to 12 conservative; 13 to 21 moderate; 22 and over growth"
+              },
+              {
+                "label": "Score band",
+                "value": "Moderate"
+              },
+              {
+                "label": "Capacity check",
+                "value": "ETB 60,000 left invested after keeping ETB 60,000 in savings: about 4 months' salary"
+              },
+              {
+                "label": "Final profile",
+                "value": "Moderate, first-time investor; limit single-stock exposure"
+              }
+            ],
+            "note": "Her low experience score and nervous answer on falls justify keeping her at the cautious end of moderate, with written reasons."
+          },
+          "scenario": {
+            "title": "Brave answers, short horizon",
+            "situation": "Hanna Girma, 27, a software developer, scores 24 (growth) on the questionnaire. In the meeting she mentions that the ETB 300,000 she wants to invest is the deposit for an apartment she plans to buy in eight months.",
+            "question": "Which profile should the adviser record for this money?",
+            "options": [
+              "Growth, because the score says so",
+              "Conservative for this money, because the horizon is eight months, with the reason documented",
+              "Growth, but with a note that she was warned",
+              "No profile until she buys the apartment"
+            ],
+            "answer": 1,
+            "explain": "Capacity overrides tolerance: money needed in eight months cannot ride out a fall in share prices. The adviser records the lower profile and the reason; a warning does not make an unsuitable profile suitable, and refusing to profile her helps no one."
+          }
+        },
+        {
+          "id": "client-agreement-data",
+          "title": "The client agreement and client data",
+          "body": [
+            "The client agreement is the contract that sets the rules of the relationship. A clear agreement prevents most later disputes, because the client has seen in writing how orders are given, what is charged and how complaints are handled.",
+            "Client files hold sensitive personal data: ID numbers, salaries, family details and holdings. Ethiopia's personal data protection law (reported as Proclamation No. 1321/2024) governs how personal data is collected and processed. In practice, collect only what is needed, get informed consent, restrict access, and never share a client's details with a third party, including relatives, without authority."
+          ],
+          "points": [
+            "Services covered and any limits (execution only or advised)",
+            "How orders are given and confirmed: in person, phone, app",
+            "Commission, exchange and regulatory fees",
+            "Client money and securities: where held and how segregated",
+            "Statements: frequency and content",
+            "Risk disclosure, signed by the client",
+            "Complaints procedure",
+            "Consent to the use of personal data"
+          ],
+          "example": {
+            "title": "The Lume Farmers' Cooperative Union signs up",
+            "text": "The Lume Farmers' Cooperative Union near Mojo has ETB 2.4 million of surplus funds after a good teff season. Its general assembly passed a resolution allowing up to ETB 1 million in listed securities and government bonds, with any two of three named signatories to sign orders. Meron attaches the resolution to the agreement and sets the order system to reject any instruction carrying a single signature."
+          },
+          "tip": "Read the risk disclosure aloud with first-time investors and let them ask questions before they sign."
+        }
+      ],
+      "takeaways": [
+        "Only ECMA-licensed firms may take orders and hold client assets; referrers hand clients over, they do not trade for them.",
+        "A broker acts as agent for commission; a dealer trades for its own book; the licence defines what a firm may do.",
+        "CDD means identify, verify, find the beneficial owner, establish source of funds, risk rate and monitor; Fayda speeds identification but does not replace CDD.",
+        "Diaspora funds must come through the formal banking system into the client's own account; institutions act only through authorised signatories.",
+        "Where risk tolerance and risk capacity disagree, profile on the lower one and write down why."
+      ],
+      "quiz": [
+        {
+          "q": "Which intermediary trades for its own account and earns a spread?",
+          "options": [
+            "Securities broker",
+            "Investment adviser",
+            "Referring bank officer",
+            "Dealer"
+          ],
+          "answer": 3,
+          "explain": "A dealer trades as principal for its own book; a broker acts as the client's agent."
+        },
+        {
+          "q": "Under ECMA Directive No. 996/2024, what does a securities broker pay in its first year for application and licence?",
+          "options": [
+            "ETB 66,000",
+            "ETB 132,000",
+            "ETB 192,000",
+            "ETB 324,000"
+          ],
+          "answer": 2,
+          "explain": "ETB 60,000 application plus ETB 132,000 licence is ETB 192,000."
+        },
+        {
+          "q": "What does the ECX trade?",
+          "options": [
+            "Physical commodities such as coffee",
+            "Listed shares",
+            "Government bonds",
+            "Foreign currency"
+          ],
+          "answer": 0,
+          "explain": "The ECX is a commodity exchange; the ESX trades securities."
+        },
+        {
+          "q": "A Fayda number has been verified electronically. What else is still required?",
+          "options": [
+            "Nothing; CDD is complete",
+            "Only a signature",
+            "A police clearance",
+            "Source of funds, purpose, risk rating and monitoring"
+          ],
+          "answer": 3,
+          "explain": "Fayda identifies the client; the rest of CDD still applies."
+        },
+        {
+          "q": "A client scores \"growth\" but needs the money in six months. Which profile applies to that money?",
+          "options": [
+            "Growth",
+            "Conservative",
+            "Whatever the client prefers",
+            "No profile is needed"
+          ],
+          "answer": 1,
+          "explain": "Risk capacity, driven by the short horizon, overrides risk tolerance."
+        },
+        {
+          "q": "Who may sign orders for a cooperative union?",
+          "options": [
+            "The signatories named in the authorising resolution, in the required combination",
+            "Any member",
+            "The chairperson alone, always",
+            "The broker on its behalf"
+          ],
+          "answer": 0,
+          "explain": "Institutions act through the signatories and signing rules their resolution sets."
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "slug": "orders-trading-settlement",
+      "icon": "chart",
+      "minutes": 65,
+      "title": "Orders, trading and settlement on the ESX",
+      "summary": "Take an order from the client's instruction through the ESX trading day to settlement in the depository, and deal with partial fills, failed trades and corporate actions.",
+      "objectives": [
+        "Describe the ESX boards, trading day and lot size set by the ESX Rulebook",
+        "Choose and explain the right order type for a client and record a complete order ticket",
+        "Follow a trade from execution through clearing to settlement in CSD accounts",
+        "Handle a failed trade and process a corporate action such as a rights issue"
+      ],
+      "lessons": [
+        {
+          "id": "esx-structure",
+          "title": "How the ESX market is organised",
+          "body": [
+            "The ESX Rulebook (December 2024) organises listings into three segments. The Main Board is for larger, established companies; the Growth Board is for smaller and younger companies with lighter entry requirements; and the Fixed Income Market lists bonds, including government bonds.",
+            "Two features shape every client conversation. The lot size is one share, so a teacher with ETB 5,000 can buy a handful of shares. And listings are still few, so many securities trade thinly: a client may wait for a seller, and prices can move sharply on small orders."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "bank",
+                "label": "Main Board",
+                "text": "Larger, established companies"
+              },
+              {
+                "icon": "growth",
+                "label": "Growth Board",
+                "text": "Smaller, growing companies; higher risk"
+              },
+              {
+                "icon": "receipt",
+                "label": "Fixed Income Market",
+                "text": "Government and corporate bonds"
+              }
+            ]
+          },
+          "regulation": {
+            "source": "ESX Rulebook (December 2024)",
+            "text": "The Rulebook sets Main Board, Growth Board and Fixed Income Market listing rules, the membership categories (securities broker, dealer, market maker, investment bank, dealing member bank), trading from 9:00 to 15:00 with a 30-minute pre-open session, and a lot size of one share. It does not state a settlement cycle, tick size or price limits: those come from other rules and notices."
+          },
+          "example": {
+            "title": "Two securities in the running case",
+            "text": "This course uses two fictional listings. Rift Valley Cement S.C. trades on the Main Board around ETB 305 a share and trades most days. Sidama Coffee Processing S.C. trades on the Growth Board around ETB 52 and some days sees no trades at all. The difference in liquidity, not just the price, changes how Sheba Hill handles orders in each."
+          }
+        },
+        {
+          "id": "order-types",
+          "title": "Order types and the order ticket",
+          "body": [
+            "A market order buys or sells at the best price available now; a limit order sets the worst price the client accepts. In a thin market a market order can fill at a price far from the last trade, so first-time investors are usually better served by limit orders. Orders also carry a validity: for the day, or until a set date or until cancelled, as the ESX trading system allows.",
+            "Every order is recorded on a ticket before it is entered: client, account, security, buy or sell, quantity, order type and limit price, validity, time received, how it was received and who took it. The time stamp proves the firm handled orders in sequence."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Market order",
+              "items": [
+                "Fills fast at the best available price",
+                "Price uncertain, especially in thin stocks",
+                "Suits liquid Main Board shares in small size"
+              ]
+            },
+            "right": {
+              "title": "Limit order",
+              "items": [
+                "Fills only at the limit or better",
+                "May fill partly or not at all",
+                "Protects first-time investors in thin markets"
+              ]
+            }
+          },
+          "scenario": {
+            "title": "Tigist's first order",
+            "situation": "Tigist wants ETB 15,000 of Sidama Coffee Processing S.C. The last trade was ETB 52, but the best offer on the screen is ETB 58 for 80 shares, and the next is ETB 64. She says, \"Just buy them now.\"",
+            "question": "What should the adviser recommend?",
+            "options": [
+              "A market order, as she asked",
+              "Buy Rift Valley Cement instead without asking",
+              "A limit order around ETB 53, explaining it may take time to fill",
+              "Wait until the stock lists on the Main Board"
+            ],
+            "answer": 2,
+            "explain": "With offers well above the last trade and little depth, a market order for about 280 shares would sweep the book at rising prices. A limit order protects her; switching securities without instructions is unauthorised, and waiting for a board change is not a real option."
+          }
+        },
+        {
+          "id": "trading-day",
+          "title": "The ESX trading day",
+          "body": [
+            "The trading day has a fixed rhythm. Orders entered in the pre-open session from 9:00 to 9:30 are collected and matched at an opening price; continuous trading then runs to 15:00, matching orders as they arrive by price and then time. Brokers prepare before the bell and finish the day's paperwork after the close.",
+            "Operations staff work to the clock: client instructions confirmed before the pre-open, funds and holdings checked before orders go in, executions confirmed to clients the same day, and settlement instructions prepared for the depository."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Before 9:00",
+                "text": "Check overnight instructions, cash and holdings"
+              },
+              {
+                "label": "9:00 to 9:30",
+                "text": "Pre-open: orders collected, opening price set"
+              },
+              {
+                "label": "9:30 to 15:00",
+                "text": "Continuous trading: price, then time priority"
+              },
+              {
+                "label": "After 15:00",
+                "text": "Confirm trades, update ledgers, prepare settlement"
+              }
+            ]
+          },
+          "example": {
+            "title": "Sheba Hill's morning",
+            "text": "At 8:30 Meron's team checks that Dawit's converted Birr has reached the segregated client account and that the cooperative's two-signature instruction is on file. Both orders go in during the pre-open. Tigist's limit order goes in at 9:05 after she confirms the price by phone, and the call is recorded."
+          },
+          "tip": "Never enter an order you cannot fund or deliver. Check cash for buys and holdings for sells before the order reaches the exchange."
+        },
+        {
+          "id": "order-handling",
+          "title": "Priority, partial fills and fair allocation",
+          "body": [
+            "Client orders come first. A firm with a dealing licence must not trade ahead of a client order it holds in the same security, and staff must not trade on their own account ahead of clients. Orders are entered in the sequence received, and when one market order fills several client orders, the allocation follows a written, fair rule.",
+            "Limit orders in thin stocks often fill in pieces. The client is told the average price and the quantity still open, and the ticket shows each fill."
+          ],
+          "worked": {
+            "title": "The cooperative's partial fill: buy 1,000 Sidama Coffee at limit ETB 52",
+            "rows": [
+              {
+                "label": "Fill 1",
+                "value": "400 shares x ETB 51.50 = ETB 20,600"
+              },
+              {
+                "label": "Fill 2",
+                "value": "350 shares x ETB 52.00 = ETB 18,200"
+              },
+              {
+                "label": "Total filled",
+                "value": "750 shares for ETB 38,800"
+              },
+              {
+                "label": "Average price",
+                "value": "38,800 / 750 = ETB 51.73"
+              },
+              {
+                "label": "Still open",
+                "value": "250 shares at limit ETB 52, valid for the day"
+              }
+            ],
+            "note": "The confirmation shows both fills, the average and the open balance, so the union's treasurer can reconcile the trade to the cash."
+          },
+          "scenario": {
+            "title": "A colleague wants in first",
+            "situation": "While the cooperative's 1,000-share buy order is working, a Sheba Hill sales officer asks Meron to buy 200 Sidama shares for his own account \"before the price moves up\".",
+            "question": "What should Meron do?",
+            "options": [
+              "Enter the officer's order first since it is smaller",
+              "Refuse and report it under the firm's personal dealing rules",
+              "Enter both and split fills equally",
+              "Enter it after 15:00"
+            ],
+            "answer": 1,
+            "explain": "Trading ahead of a known client order is front-running, which is market abuse. Size does not matter, splitting fills still disadvantages the client, and delaying a few hours while the client order is open does not remove the conflict."
+          }
+        },
+        {
+          "id": "clearing-settlement",
+          "title": "Clearing and settlement in the depository",
+          "body": [
+            "A trade on the screen is a promise; settlement is when it becomes real. After execution, the trade is cleared: both sides are confirmed and each member's obligations computed. On settlement, the buyer's cash moves to the seller and the securities move from the seller's to the buyer's account at the central securities depository (CSD), ideally delivery versus payment, so neither side gives up value without receiving it.",
+            "Each client holds securities in a CSD account in the client's own name, opened through the broker. The settlement cycle is set by the CSD and exchange settlement rules, not the Rulebook, so staff should quote the current rule from the latest notice rather than from memory."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Execute",
+                "text": "Order matched on the ESX"
+              },
+              {
+                "label": "Confirm",
+                "text": "Trade details sent to client and checked"
+              },
+              {
+                "label": "Clear",
+                "text": "Obligations of each member computed"
+              },
+              {
+                "label": "Settle",
+                "text": "Cash and securities exchanged in the CSD"
+              },
+              {
+                "label": "Report",
+                "text": "Client statement and ledgers updated"
+              }
+            ]
+          },
+          "example": {
+            "title": "Dawit sees his shares",
+            "text": "Dawit bought 300 Rift Valley Cement shares at ETB 305. On settlement, ETB 91,500 plus fees left the segregated client account and 300 shares appeared in his own CSD account. Sheba Hill emailed him the confirmation and his updated holding statement the same day, which he checked from Washington DC."
+          }
+        },
+        {
+          "id": "fails-corporate-actions",
+          "title": "Failed trades and corporate actions",
+          "body": [
+            "A trade fails when one side cannot deliver on settlement: the buyer's cash has not arrived, the seller's shares are not in the right CSD account, or account details are wrong. Most fails are prevented by pre-trade checks. When one happens, the broker informs the client, follows the exchange and CSD procedure, records the cause and fixes the process.",
+            "Corporate actions change what the client holds: cash dividends, bonus shares, rights issues and share splits. Entitlement depends on holding the shares on the record date. The broker tells clients in time, collects decisions on voluntary actions such as rights, and checks that the CSD credits what each client is owed."
+          ],
+          "worked": {
+            "title": "Rights issue for the Lume cooperative: 1 new share for every 5 held",
+            "rows": [
+              {
+                "label": "Shares held on record date",
+                "value": "750 Sidama Coffee shares"
+              },
+              {
+                "label": "Rights entitlement",
+                "value": "750 / 5 = 150 new shares"
+              },
+              {
+                "label": "Subscription price",
+                "value": "ETB 40 per share"
+              },
+              {
+                "label": "Cash needed to take up in full",
+                "value": "150 x ETB 40 = ETB 6,000"
+              },
+              {
+                "label": "Holding after take-up",
+                "value": "900 shares"
+              }
+            ],
+            "note": "The union's resolution caps investment at ETB 1 million, so Meron checks the new total against the cap and asks the two signatories for a written decision before the deadline."
+          },
+          "scenario": {
+            "title": "The converted Birr is late",
+            "situation": "Dawit placed a buy order for 300 Rift Valley Cement shares after confirming that USD 4,000 had been sent. The trade executed, but his bank's conversion is delayed and the Birr will not reach the client account before settlement.",
+            "question": "What is the right response?",
+            "options": [
+              "Use another client's cash to settle and repay it later",
+              "Cancel the trade quietly",
+              "Ignore it; the seller will wait",
+              "Follow the ESX and CSD procedure for a cash shortfall, inform Dawit, and tighten the rule to require cleared funds before ordering"
+            ],
+            "answer": 3,
+            "explain": "Client money belongs to each client and cannot fund another client's trade. Trades cannot be cancelled unilaterally, and ignoring a fail breaches settlement rules. The lasting fix is a cleared-funds rule before buy orders."
+          }
+        }
+      ],
+      "takeaways": [
+        "The ESX has a Main Board, a Growth Board and a Fixed Income Market; the lot size is one share and many listings trade thinly.",
+        "The trading day runs a pre-open from 9:00 to 9:30, then continuous trading to 15:00.",
+        "Limit orders protect first-time investors in thin markets; every order needs a complete, time-stamped ticket.",
+        "Client orders come before the firm's and staff's own trades; trading ahead of them is front-running.",
+        "Settlement moves cash and securities in the CSD; quote the settlement cycle from the current CSD rules and prevent fails with pre-trade checks."
+      ],
+      "quiz": [
+        {
+          "q": "What is the ESX lot size for shares?",
+          "options": [
+            "100 shares",
+            "10 shares",
+            "One share",
+            "ETB 10,000 of value"
+          ],
+          "answer": 2,
+          "explain": "The ESX Rulebook sets a lot size of one share."
+        },
+        {
+          "q": "When is the ESX pre-open session?",
+          "options": [
+            "9:00 to 9:30",
+            "8:30 to 9:00",
+            "9:30 to 10:00",
+            "14:30 to 15:00"
+          ],
+          "answer": 0,
+          "explain": "Pre-open runs from 9:00 to 9:30, then continuous trading to 15:00."
+        },
+        {
+          "q": "A client buys 400 shares at ETB 51.50 and 350 at ETB 52.00. Average price?",
+          "options": [
+            "ETB 51.75",
+            "ETB 51.50",
+            "ETB 52.00",
+            "ETB 51.73"
+          ],
+          "answer": 3,
+          "explain": "38,800 divided by 750 shares is ETB 51.73."
+        },
+        {
+          "q": "Which order best protects a first-time investor buying a thinly traded Growth Board share?",
+          "options": [
+            "Market order",
+            "Limit order",
+            "Order with no price",
+            "Phone order without a ticket"
+          ],
+          "answer": 1,
+          "explain": "A limit order caps the price paid."
+        },
+        {
+          "q": "Where does the ESX Rulebook say the settlement cycle is?",
+          "options": [
+            "It does not state one; other rules set it",
+            "T+1",
+            "T+3",
+            "Same day"
+          ],
+          "answer": 0,
+          "explain": "The Rulebook sets no settlement cycle; check CSD and exchange settlement rules."
+        },
+        {
+          "q": "A client holds 1,000 shares; a rights issue offers 1 for 4 at ETB 20. Cost to take up in full?",
+          "options": [
+            "ETB 4,000",
+            "ETB 20,000",
+            "ETB 5,000",
+            "ETB 250"
+          ],
+          "answer": 2,
+          "explain": "1,000 / 4 = 250 rights x ETB 20 = ETB 5,000."
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "slug": "client-assets-fees-first-advice",
+      "icon": "shield",
+      "minutes": 65,
+      "title": "Client assets, fees and first advice",
+      "summary": "Keep client money and securities safe and reconciled, explain every Birr of cost, give sound first advice, and run the simulated trading day for three clients.",
+      "objectives": [
+        "Apply client money and securities segregation and reconcile the client account daily",
+        "Compute and explain commission, ECMA transaction fees and exchange fees for share and bond trades",
+        "Explain risk, diversification and suitability to a first-time investor without promising returns",
+        "Complete onboarding, orders and settlement paperwork for three clients in a simulated trading day"
+      ],
+      "lessons": [
+        {
+          "id": "segregation",
+          "title": "Segregation: the client's money is not the firm's",
+          "body": [
+            "When a client sends money to buy shares, that money still belongs to the client. A broker must keep it in a separate client account, apart from the firm's operating account, and use it only for that client's instructions. Securities are held in each client's own CSD account, never in the firm's.",
+            "Segregation protects clients if the firm fails, is sued or is short of cash. It also protects clients from each other: one client's balance never pays for another client's trade."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Firm's own money",
+              "items": [
+                "Operating account",
+                "Pays salaries, rent and ECMA fees",
+                "Receives commission once earned",
+                "Counts toward the firm's capital and liquid assets"
+              ]
+            },
+            "right": {
+              "title": "Client money and securities",
+              "items": [
+                "Designated client bank account",
+                "Used only on each client's instruction",
+                "Tracked client by client in a ledger",
+                "Securities in each client's own CSD account"
+              ]
+            }
+          },
+          "regulation": {
+            "source": "Capital Market Proclamation No. 1248/2021 and ECMA Directive No. 980/2024",
+            "text": "The Proclamation sets the framework for service provider conduct and client assets, and Directive No. 980/2024 requires licensed service providers to segregate client money from the firm's own funds as part of their conduct and supervision rules."
+          },
+          "example": {
+            "title": "A borrowed Birr is still a breach",
+            "text": "At a fictional broker, Gelan Hills Brokers PLC, the finance officer moved ETB 400,000 from the client account to pay staff salaries two days before commission income was due, intending to return it on Monday. It was returned, but the internal auditor reported it as a serious breach: for two days clients' money was exposed to the firm's creditors."
+          }
+        },
+        {
+          "id": "reconciliation",
+          "title": "Daily reconciliation and client statements",
+          "body": [
+            "Segregation only works if it is checked. Every day the operations team compares the client ledger, the sum of what the firm owes each client, with the balance in the client bank account, and the firm's securities records with the CSD records. Differences are explained the same day.",
+            "Clients also check. Regular statements show each trade, fee, cash movement and holding, so a client can spot anything wrong. A statement is a control, not just a courtesy."
+          ],
+          "worked": {
+            "title": "Sheba Hill client money reconciliation, end of day",
+            "rows": [
+              {
+                "label": "Tigist Alemu, ledger balance",
+                "value": "ETB 45,180"
+              },
+              {
+                "label": "Dawit Haile, ledger balance",
+                "value": "ETB 107,300"
+              },
+              {
+                "label": "Lume Cooperative Union, ledger balance",
+                "value": "ETB 960,700"
+              },
+              {
+                "label": "Total owed to clients",
+                "value": "ETB 1,113,180"
+              },
+              {
+                "label": "Client bank account balance",
+                "value": "ETB 1,103,180"
+              },
+              {
+                "label": "Difference",
+                "value": "ETB 10,000 short"
+              }
+            ],
+            "note": "The shortfall traces to a bank charge debited to the client account. The firm pays ETB 10,000 in from its own funds the same day, asks the bank to move charges to the operating account, and records the incident."
+          },
+          "scenario": {
+            "title": "A shortfall at 16:00",
+            "situation": "Meron's reconciliation shows the client account ETB 10,000 below the total owed to clients. The cause is not yet clear and the finance manager suggests waiting until next week's review.",
+            "question": "What should happen today?",
+            "options": [
+              "Wait for the weekly review",
+              "Top up the shortfall from the firm's own funds now, investigate and record it, and escalate under the firm's reporting procedure",
+              "Reduce each client's ledger balance pro rata",
+              "Ask clients to deposit more"
+            ],
+            "answer": 1,
+            "explain": "A client money shortfall is fixed immediately with the firm's money, then investigated and recorded. Waiting leaves clients exposed, cutting their balances shifts the firm's error to them, and asking clients to pay is plainly wrong."
+          }
+        },
+        {
+          "id": "fees-explained",
+          "title": "Explaining fees on a share trade",
+          "body": [
+            "First-time investors are often surprised by costs, and surprise breeds complaints. Explain three layers before the trade: the broker's commission under the firm's published tariff; the ECMA transaction fee, set by Directive No. 996/2024 at 0.15% of value for shares; and ESX fees under the current ESX fee schedule.",
+            "Show the fees in Birr, not only in percentages, and show the round-trip cost: what it costs to buy and later sell. A small investor who buys ETB 10,000 of shares needs the price to rise by more than the round-trip cost just to break even."
+          ],
+          "visual": {
+            "type": "equation",
+            "parts": [
+              {
+                "label": "Total cost"
+              },
+              {
+                "label": "Trade value",
+                "op": "="
+              },
+              {
+                "label": "Commission",
+                "op": "+"
+              },
+              {
+                "label": "ECMA fee",
+                "op": "+"
+              },
+              {
+                "label": "ESX fee",
+                "op": "+"
+              }
+            ],
+            "caption": "For a sale the fees are deducted from the proceeds instead"
+          },
+          "worked": {
+            "title": "Tigist buys 48 Rift Valley Cement shares at ETB 305",
+            "rows": [
+              {
+                "label": "Trade value",
+                "value": "48 x 305 = ETB 14,640"
+              },
+              {
+                "label": "Commission at Sheba Hill's tariff of 1.0% (illustrative)",
+                "value": "ETB 146.40"
+              },
+              {
+                "label": "ECMA transaction fee, 0.15% of value",
+                "value": "ETB 21.96"
+              },
+              {
+                "label": "ESX fee",
+                "value": "Per current ESX fee schedule, added on the contract note"
+              },
+              {
+                "label": "Total before ESX fee",
+                "value": "ETB 14,808.36"
+              },
+              {
+                "label": "Known fees as % of value",
+                "value": "1.15%"
+              }
+            ],
+            "note": "If selling costs about the same, the shares must rise more than about 2.3% before Tigist makes any gain. Confirm how the current schedule allocates the ECMA fee between buyer and seller before quoting it."
+          },
+          "regulation": {
+            "source": "ECMA Directive No. 996/2024, ECMA fees",
+            "text": "ECMA transaction fees are 0.15% of value for shares and 0.005% of value for fixed income securities."
+          },
+          "tip": "Give every first-time client a one-page fee sheet with a worked example in Birr."
+        },
+        {
+          "id": "fixed-income-diaspora",
+          "title": "Bonds, diaspora costs and the exchange rate",
+          "body": [
+            "Fixed income carries a far lower ECMA transaction fee, 0.005% of value, which makes government bonds cheap to trade and suitable for cautious investors. Their main risks are interest rate and inflation risk rather than company risk.",
+            "For a diaspora client, the real cost includes the foreign exchange conversion. The client thinks in dollars, so show the Birr amount received, the rate and date of conversion, and what the investment is worth in both currencies. Never quote a future exchange rate as if it were known."
+          ],
+          "worked": {
+            "title": "Dawit's ETB 600,000 split between bonds and shares",
+            "rows": [
+              {
+                "label": "USD 4,000 at an illustrative ETB 150 per USD",
+                "value": "ETB 600,000 received"
+              },
+              {
+                "label": "Government bonds purchased",
+                "value": "ETB 400,000"
+              },
+              {
+                "label": "ECMA fee on bonds, 0.005%",
+                "value": "ETB 20"
+              },
+              {
+                "label": "Shares purchased",
+                "value": "ETB 91,500 (300 Rift Valley Cement at ETB 305)"
+              },
+              {
+                "label": "ECMA fee on shares, 0.15%",
+                "value": "ETB 137.25"
+              },
+              {
+                "label": "Cash left in client account",
+                "value": "ETB 108,500 less commissions"
+              }
+            ],
+            "note": "The regulatory fee on ETB 400,000 of bonds is ETB 20, less than on ETB 14,640 of shares. Dawit's statement shows the conversion rate and date so he can track his return in dollars."
+          },
+          "example": {
+            "title": "Explaining FX risk to Dawit",
+            "text": "Yonas, Sheba Hill's adviser, shows Dawit that if his bonds earn their coupon in Birr but the Birr weakens against the dollar, his dollar return falls. He does not forecast the rate; he explains that FX movement is a separate risk that Dawit is taking on, and records the conversation in the file."
+          }
+        },
+        {
+          "id": "first-advice",
+          "title": "First advice: risk, diversification and suitability",
+          "body": [
+            "First-time investors usually ask two questions: what should I buy, and how much will I make? A good answer starts with the client's goal and profile, explains that share prices go down as well as up, and spreads the money across instruments so one bad outcome does not wreck the plan.",
+            "Use current context honestly. At MPC meeting No. 7 in July 2026 the NBE reported a 91-day T-bill yield of 11.0% and headline inflation of 13.4% in May 2026, so even safe instruments were not beating inflation at that time. Update these figures from the latest release before quoting them."
+          ],
+          "visual": {
+            "type": "acronym",
+            "items": [
+              {
+                "letter": "S",
+                "label": "Suitable",
+                "text": "Fits the goal, horizon and profile"
+              },
+              {
+                "letter": "A",
+                "label": "Affordable",
+                "text": "Emergency savings stay untouched"
+              },
+              {
+                "letter": "F",
+                "label": "Fees understood",
+                "text": "Round-trip cost shown in Birr"
+              },
+              {
+                "letter": "E",
+                "label": "Exit known",
+                "text": "How and how fast it can be sold"
+              }
+            ]
+          },
+          "scenario": {
+            "title": "A tip from the staff room",
+            "situation": "Tigist's colleague says Sidama Coffee Processing \"will double this year\". Tigist wants to put her whole ETB 60,000 into it. Her profile is moderate and she has no other investments.",
+            "question": "What is the most suitable response?",
+            "options": [
+              "Buy as instructed; it is her money",
+              "Tell her the stock will not double",
+              "Refuse to deal with her",
+              "Explain concentration and liquidity risk and suggest a spread, for example bonds plus a small share position, and record her decision"
+            ],
+            "answer": 3,
+            "explain": "The adviser explains the risk of putting everything in one thinly traded Growth Board stock and offers a diversified alternative, then documents her choice. Forecasting the price is as unfounded as the tip, and refusing service is unnecessary."
+          },
+          "tip": "Never say \"guaranteed\" about any listed share. Even government bonds carry inflation and interest rate risk."
+        },
+        {
+          "id": "conduct-basics",
+          "title": "Best execution and confidentiality",
+          "body": [
+            "Best execution means taking reasonable steps to get the best overall result for the client, considering price, cost, speed and likelihood of execution. In a young market it often means patience: working a limit order rather than rushing a thin stock.",
+            "Confidentiality means a client's identity, holdings and orders are shared only with the client, authorised persons and regulators who are entitled to them. Callers who say they are relatives, journalists who ask who is buying a stock and colleagues outside the deal all get the same answer."
+          ],
+          "points": [
+            "Verify identity before discussing any account by phone",
+            "Do not reveal pending client orders to anyone",
+            "Share information with ECMA or the Financial Intelligence Service only through the firm's official channel",
+            "Keep printed files locked and screens locked"
+          ],
+          "scenario": {
+            "title": "A call from \"Dawit's brother\"",
+            "situation": "A caller says he is Dawit Haile's brother in Mekelle and asks how many shares Dawit bought and how much cash is left, because \"the family is worried\". Dawit has signed no authority for him.",
+            "question": "How should the officer respond?",
+            "options": [
+              "Give the figures, since he is family",
+              "Confirm only that Dawit has an account",
+              "Decline to give any information and offer to pass a message to Dawit",
+              "Ask for the brother's Fayda number and then disclose"
+            ],
+            "answer": 2,
+            "explain": "Without the client's written authority, nothing is disclosed, not even that an account exists. Verifying the caller's own identity does not give him any right to Dawit's information."
+          }
+        },
+        {
+          "id": "simulated-trading-day",
+          "title": "Capstone: a simulated trading day",
+          "body": [
+            "The Foundational capstone puts the whole cycle together. Learners onboard three clients, Tigist the teacher in Adama, Dawit the engineer in Washington DC and the Lume cooperative union, place their orders, explain fees and complete settlement paperwork.",
+            "The simulation is assessed on completeness and control, not speed: a complete KYC file, a documented profile, a time-stamped ticket, a fee explanation, a correct contract note and a reconciled client account at the end of the day."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "Onboard",
+                "text": "KYC, CDD, risk profile, signed agreement for each client"
+              },
+              {
+                "label": "Instruct",
+                "text": "Confirm order, fees and risks; write the ticket"
+              },
+              {
+                "label": "Execute",
+                "text": "Enter in pre-open or continuous trading; record fills"
+              },
+              {
+                "label": "Confirm",
+                "text": "Contract note to each client the same day"
+              },
+              {
+                "label": "Settle and reconcile",
+                "text": "CSD holdings and client cash agree with ledgers"
+              }
+            ]
+          },
+          "worked": {
+            "title": "End-of-day summary for the three clients",
+            "rows": [
+              {
+                "label": "Tigist: buy 48 Rift Valley Cement at ETB 305",
+                "value": "ETB 14,640 plus fees; profile moderate"
+              },
+              {
+                "label": "Dawit: buy 300 Rift Valley Cement at ETB 305 and ETB 400,000 bonds",
+                "value": "ETB 491,500 plus fees; FX conversion recorded"
+              },
+              {
+                "label": "Lume Cooperative: buy 750 Sidama Coffee at average ETB 51.73",
+                "value": "ETB 38,800 plus fees; two signatures on file"
+              },
+              {
+                "label": "Client account reconciled to ledger",
+                "value": "Yes, after ETB 10,000 bank charge corrected"
+              },
+              {
+                "label": "Open items",
+                "value": "250 Sidama shares unfilled; client informed"
+              }
+            ],
+            "note": "Every line traces to a signed instruction, a ticket and a contract note: that audit trail is what the operations simulation checks."
+          },
+          "example": {
+            "title": "What assessors look for",
+            "text": "In one practice run a learner executed all three orders correctly but filed the cooperative's order with one signature. The assessor marked the file incomplete: a correct trade on an invalid instruction is still a control failure."
+          }
+        }
+      ],
+      "takeaways": [
+        "Client money sits in a separate client account and client securities in each client's own CSD account; one client's money never funds another's trade.",
+        "Reconcile the client ledger to the bank and CSD every day and fix any shortfall immediately from the firm's own funds.",
+        "Explain commission, the ECMA transaction fee (0.15% shares, 0.005% fixed income) and ESX fees in Birr, including the round-trip cost.",
+        "First advice starts from the client's goal and profile, explains risk and diversification and never promises returns.",
+        "Best execution and confidentiality apply to every order and every phone call."
+      ],
+      "quiz": [
+        {
+          "q": "What is the ECMA transaction fee on ETB 200,000 of shares?",
+          "options": [
+            "ETB 300",
+            "ETB 10",
+            "ETB 3,000",
+            "ETB 150"
+          ],
+          "answer": 0,
+          "explain": "0.15% of ETB 200,000 is ETB 300."
+        },
+        {
+          "q": "What is the ECMA transaction fee on ETB 1,000,000 of government bonds?",
+          "options": [
+            "ETB 500",
+            "ETB 1,500",
+            "ETB 5",
+            "ETB 50"
+          ],
+          "answer": 3,
+          "explain": "0.005% of ETB 1,000,000 is ETB 50."
+        },
+        {
+          "q": "The client account is ETB 10,000 below the client ledger. What comes first?",
+          "options": [
+            "Wait for month end",
+            "Firm tops up from its own funds and investigates",
+            "Reduce client balances",
+            "Ask clients to deposit"
+          ],
+          "answer": 1,
+          "explain": "Shortfalls are made good immediately by the firm, then investigated."
+        },
+        {
+          "q": "Which is a breach of segregation?",
+          "options": [
+            "Using client money briefly to pay salaries",
+            "Paying commission to the firm after it is earned",
+            "Holding securities in clients' own CSD accounts",
+            "Sending monthly statements"
+          ],
+          "answer": 0,
+          "explain": "Client money cannot be used for the firm's expenses, even briefly."
+        },
+        {
+          "q": "Known fees on a purchase are 1.15% of value and selling costs the same. Roughly what rise is needed to break even?",
+          "options": [
+            "0.15%",
+            "1.15%",
+            "About 2.3%",
+            "15%"
+          ],
+          "answer": 2,
+          "explain": "Round-trip costs are about 1.15% x 2."
+        },
+        {
+          "q": "A caller claims to be a client's relative. What may you disclose without written authority?",
+          "options": [
+            "Holdings only",
+            "Nothing",
+            "Cash balance only",
+            "That an account exists"
+          ],
+          "answer": 1,
+          "explain": "Without authority no information is disclosed."
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "slug": "advisory-model-portfolios-growth",
+      "icon": "target",
+      "minutes": 70,
+      "title": "Advisory process, model portfolios and growing the client book",
+      "summary": "Run a full advisory process for a retiree, a young professional and a family business owner, build segment model portfolios with T-bills, bonds, shares and funds, and grow the book through ethical education and outreach.",
+      "objectives": [
+        "Conduct a fact-find and apply suitability and appropriateness tests to a recommendation",
+        "Write a suitability report that a compliance reviewer can follow and defend",
+        "Build and rebalance model portfolios for client segments, testing returns against inflation and liquidity",
+        "Design investor education, diaspora outreach and bank partnership activity that stays within ethical marketing rules"
+      ],
+      "lessons": [
+        {
+          "id": "advisory-process",
+          "title": "The advisory process from fact-find to review",
+          "body": [
+            "Advanced advice is a process, not a product pitch. It starts with a fact-find: goals, time horizons, income, assets, debts, dependants, tax position, existing investments and attitudes to risk. Then the adviser analyses needs, recommends, documents the reasons, implements and reviews.",
+            "The fact-find is where most bad advice begins, because a missing fact cannot be analysed. Ask open questions, verify what can be verified, and record what the client declined to share."
+          ],
+          "visual": {
+            "type": "cycle",
+            "items": [
+              {
+                "label": "Fact-find"
+              },
+              {
+                "label": "Analyse needs"
+              },
+              {
+                "label": "Recommend"
+              },
+              {
+                "label": "Document"
+              },
+              {
+                "label": "Implement"
+              },
+              {
+                "label": "Review"
+              }
+            ]
+          },
+          "example": {
+            "title": "Ato Bekele's fact-find",
+            "text": "Bekele Tadesse, 63, retired from the civil service in Dire Dawa with a monthly pension of ETB 9,500 and a lump sum of ETB 1.8 million from selling a plot. He supports a grandson at university for three more years at about ETB 60,000 a year. His goals: income to top up his pension, and keeping the capital intact. He has never held a share. Yonas records all of this, plus his wish to leave the house to his children, which rules out drawing on it."
+          },
+          "tip": "Separate the client's goals into buckets by date: money needed within a year, in one to five years, and later. Each bucket gets its own risk level."
+        },
+        {
+          "id": "suitability-appropriateness",
+          "title": "Suitability and appropriateness",
+          "body": [
+            "Suitability applies when the firm advises: the recommendation must fit the client's objectives, financial situation, and knowledge and experience. Appropriateness applies when the client asks to buy something on their own initiative: the firm checks whether the client understands the product and its risks and warns them if not.",
+            "Passing an appropriateness check is not a recommendation. If a client insists on a product that is inappropriate, the firm may proceed only with a clear written warning and the client's signed acknowledgement, and should decline where the firm's policy says so."
+          ],
+          "visual": {
+            "type": "compare",
+            "left": {
+              "title": "Suitability (advised)",
+              "items": [
+                "Firm recommends",
+                "Tests objectives, finances, knowledge",
+                "Firm owns the recommendation",
+                "Reasons documented in a suitability report"
+              ]
+            },
+            "right": {
+              "title": "Appropriateness (client-initiated)",
+              "items": [
+                "Client chooses",
+                "Tests knowledge and experience of the product",
+                "Firm warns if inappropriate",
+                "Warning and acknowledgement on file"
+              ]
+            }
+          },
+          "scenario": {
+            "title": "Hanna's own idea",
+            "situation": "Hanna Girma, now with ETB 500,000 of long-term savings separate from her apartment deposit, asks Sheba Hill to put ETB 200,000 into a newly listed Growth Board company she read about online. She has no experience of unlisted or newly listed shares and Yonas did not recommend it.",
+            "question": "Which approach is right?",
+            "options": [
+              "Run a suitability test and refuse if it fails",
+              "Execute without any checks because it is her idea",
+              "Recommend a different stock instead without telling her why",
+              "Run an appropriateness check, explain the risks, warn her in writing if it is inappropriate and record her acknowledgement, under firm policy"
+            ],
+            "answer": 3,
+            "explain": "A client-initiated order calls for an appropriateness check and, where needed, a written warning. Treating it as advised confuses who owns the decision; skipping checks ignores the firm's duty; switching stocks silently is unauthorised."
+          }
+        },
+        {
+          "id": "documenting-advice",
+          "title": "Documenting advice so it survives review",
+          "body": [
+            "If it is not written down, it was not advised. A suitability report states the client's circumstances, the need identified, the recommendation, why it fits, the risks and costs, the alternatives considered and why they were rejected. It is written for the client in plain language and for a reviewer who never met the client.",
+            "A compliance reviewer reads the file cold and asks: could another adviser reach this recommendation from these facts? Gaps, generic wording and recommendations that ignore a recorded fact are the usual reasons a file is sent back."
+          ],
+          "points": [
+            "Client facts and goals, with dates and amounts",
+            "Risk profile, with any adjustment and its reason",
+            "Recommendation: instruments, amounts, percentages",
+            "Why it fits: link each part to a goal",
+            "Risks, costs and liquidity in plain words",
+            "Alternatives considered and why rejected",
+            "Client signature and date; review date set"
+          ],
+          "regulation": {
+            "source": "Capital Market Proclamation No. 1248/2021 and ECMA Directive No. 980/2024",
+            "text": "Licensed service providers, including investment advisers, operate under ECMA's conduct and supervision rules, which require them to act in clients' interests and keep records that ECMA can inspect. A documented suitability file is how a firm shows that it met those duties."
+          },
+          "example": {
+            "title": "A file sent back",
+            "text": "Hirut Mekonnen, Sheba Hill's compliance reviewer, returned a file for a young client because it said \"client happy with risk\" and recommended 70% in shares, while the fact-find recorded a bank loan due in 18 months. The adviser rewrote it with a separate cash and T-bill bucket for the loan and 50% in shares for the long-term balance, with reasons."
+          }
+        },
+        {
+          "id": "model-portfolios",
+          "title": "Model portfolios for client segments",
+          "body": [
+            "Model portfolios give advisers a consistent starting point for each segment, which speeds advice and makes review easier. In the Ethiopian market they draw on T-bills, government bonds, listed shares and, where available, collective investment schemes, with cash for liquidity.",
+            "Test each model against two hard realities. First, inflation: with the 91-day T-bill at 11.0% and headline inflation at 13.4% (MPC No. 7, July 2026), a portfolio can lose purchasing power even while earning a positive yield. Second, liquidity: few listings and thin trading mean a model must not depend on selling shares quickly."
+          ],
+          "visual": {
+            "type": "bars",
+            "unit": "% in shares",
+            "items": [
+              {
+                "label": "Income (retiree)",
+                "value": 20
+              },
+              {
+                "label": "Balanced (family business)",
+                "value": 40
+              },
+              {
+                "label": "Growth (young professional)",
+                "value": 60
+              }
+            ],
+            "caption": "Sheba Hill's illustrative share allocation by model; the rest sits in T-bills, bonds, funds and cash"
+          },
+          "worked": {
+            "title": "Ato Bekele's income model on ETB 1.8 million",
+            "rows": [
+              {
+                "label": "T-bills, 50% at 11.0%",
+                "value": "ETB 900,000 earning 5.5% of the portfolio"
+              },
+              {
+                "label": "Government bonds, 30% at an illustrative 13.0%",
+                "value": "ETB 540,000 earning 3.9%"
+              },
+              {
+                "label": "Listed shares, 20% at an illustrative 16.0% expected",
+                "value": "ETB 360,000 earning 3.2%"
+              },
+              {
+                "label": "Expected portfolio return",
+                "value": "5.5% + 3.9% + 3.2% = 12.6%"
+              },
+              {
+                "label": "Less inflation of 13.4% (May 2026)",
+                "value": "Real return about -0.8%"
+              },
+              {
+                "label": "Income needed for grandson",
+                "value": "ETB 60,000 a year, about 3.3% of capital"
+              }
+            ],
+            "note": "The model covers his cash need comfortably but does not preserve purchasing power at current inflation. The report must say so plainly rather than call the capital \"intact\"."
+          },
+          "scenario": {
+            "title": "Bekele wants more yield",
+            "situation": "After seeing the -0.8% real return, Bekele asks to move 60% into listed shares \"to beat inflation\". He needs ETB 60,000 a year for three years and has no other savings.",
+            "question": "What should Yonas recommend?",
+            "options": [
+              "Move 60% into shares as asked",
+              "Put everything in T-bills and stop reviewing",
+              "Keep the cash need fully in T-bills and bonds, consider a modest rise in shares within his profile, and explain the trade-off in writing",
+              "Tell him inflation will fall soon"
+            ],
+            "answer": 2,
+            "explain": "Shares may beat inflation over time but can fall when he needs the money. Ring-fencing three years of cash need and documenting the trade-off fits his profile; forecasting inflation or locking in a static plan does not."
+          }
+        },
+        {
+          "id": "concentration-fx",
+          "title": "Concentration, liquidity and FX exposure",
+          "body": [
+            "Three risks need special handling in Ethiopian portfolios. Concentration: with few listings, a portfolio can end up in two or three companies, sometimes in the client's own industry. Liquidity: thinly traded shares and unlisted holdings may take weeks to sell. FX exposure: diaspora clients measure success in dollars, so a weakening Birr can erase a Birr gain.",
+            "Set written limits in each model, for example a maximum per single company and per sector, a minimum share of the portfolio in instruments that can be sold or will mature within a year, and an explicit note of FX exposure for diaspora clients."
+          ],
+          "scenario": {
+            "title": "Almaz and her own sector",
+            "situation": "Almaz Woldemariam runs a family coffee trading business in Hawassa and has ETB 2 million to invest. She wants 60% in Sidama Coffee Processing S.C. because \"I know coffee\". Her business income already depends on coffee prices, and the stock trades thinly.",
+            "question": "What is the best advice?",
+            "options": [
+              "Explain that this doubles her exposure to coffee and to illiquidity, propose a small position within the model's single-company limit, and document her decision",
+              "Agree, since she knows the industry",
+              "Refuse any coffee shares",
+              "Buy 60% in another coffee company to diversify"
+            ],
+            "answer": 0,
+            "explain": "Her income and her portfolio would fall together if coffee prices drop. A limited position respects her view while managing concentration; banning the sector or buying another coffee company does not solve the problem."
+          },
+          "example": {
+            "title": "Dawit's dollar view",
+            "text": "Dawit's Birr bonds yield well, but Yonas shows him a simple table: if the Birr weakens by 10% against the dollar over the year, a 13% Birr return becomes roughly 2% in dollars. Dawit decides to keep some savings in the US and treat his Ethiopian portfolio as a long-term stake at home, and the file records this."
+          }
+        },
+        {
+          "id": "rebalancing",
+          "title": "Rebalancing back to the model",
+          "body": [
+            "Markets move portfolios away from their targets. Rebalancing restores the target mix, which controls risk and enforces buying low and selling high. Set a rule, such as reviewing every six months and rebalancing when any asset class drifts more than 5 points from target.",
+            "Rebalancing has costs: commission, ECMA and ESX fees, and the price impact of selling thin stocks. In Ethiopia it is often cheaper to rebalance with new money, coupons and maturing T-bills than by selling shares."
+          ],
+          "worked": {
+            "title": "Hanna's growth model after one year (target 60% shares, 30% bonds, 10% cash)",
+            "rows": [
+              {
+                "label": "Shares",
+                "value": "ETB 380,000 (68%)"
+              },
+              {
+                "label": "Bonds",
+                "value": "ETB 150,000 (27%)"
+              },
+              {
+                "label": "Cash and T-bills",
+                "value": "ETB 28,000 (5%)"
+              },
+              {
+                "label": "Total",
+                "value": "ETB 558,000"
+              },
+              {
+                "label": "Shares at target 60%",
+                "value": "ETB 334,800, so ETB 45,200 above"
+              },
+              {
+                "label": "Plan",
+                "value": "Direct ETB 30,000 of new savings and coupons to bonds and cash; sell about ETB 15,000 of shares"
+              }
+            ],
+            "note": "Using new money for most of the shift keeps trading costs and price impact low while bringing the mix back near target."
+          },
+          "tip": "Write the rebalancing rule into the suitability report so the client expects it."
+        },
+        {
+          "id": "business-development",
+          "title": "Growing the client book ethically",
+          "body": [
+            "Most Ethiopians have never owned a share, so the market grows through education. Strong firms run investor education sessions in schools, cooperatives and religious and community associations, diaspora webinars, and digital onboarding using Fayda verification. Partnerships with banks let branch staff refer customers to the licensed broker.",
+            "Marketing must be fair, clear and not misleading: no guaranteed returns, risks as prominent as benefits, fees disclosed, and past performance not presented as a promise. Referral partners must be trained not to give advice and the payments they receive must be disclosed to clients."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "book",
+                "label": "Investor education",
+                "text": "Free sessions on how shares, bonds and fees work"
+              },
+              {
+                "icon": "phone",
+                "label": "Digital onboarding",
+                "text": "Fayda verification and app-based account opening"
+              },
+              {
+                "icon": "people",
+                "label": "Diaspora outreach",
+                "text": "Webinars on FX rules, remote KYC and statements"
+              },
+              {
+                "icon": "handshake",
+                "label": "Bank partnerships",
+                "text": "Trained referrers, disclosed fees, no advice"
+              }
+            ]
+          },
+          "scenario": {
+            "title": "A bold advertisement",
+            "situation": "A marketing agency drafts a Facebook advertisement for Sheba Hill: \"Earn 25% guaranteed on ESX shares. Join thousands of winners.\" The campaign targets Telegram groups of young professionals.",
+            "question": "What should compliance require?",
+            "options": [
+              "Approve it; the market is growing",
+              "Approve if the 25% is changed to 20%",
+              "Approve it for diaspora audiences only",
+              "Reject it: remove the guarantee and the unsupported claims, show risks and fees, and re-submit for approval"
+            ],
+            "answer": 3,
+            "explain": "No listed share return can be guaranteed and \"thousands of winners\" is unsupported. Lowering the number or changing the audience leaves the advertisement misleading."
+          },
+          "example": {
+            "title": "A Hawassa education evening",
+            "text": "Sheba Hill and Bank A's Hawassa branch co-host an evening for 120 coffee traders and teachers. Yonas explains the ESX, risk and fees with no product pitch. Thirty-five attendees later open accounts, each through full KYC and profiling, and Bank A's referral fee is shown on every new client's fee sheet."
+          }
+        }
+      ],
+      "takeaways": [
+        "Advice is a cycle: fact-find, analyse, recommend, document, implement, review.",
+        "Suitability applies to advice; appropriateness applies to client-initiated orders and leads to a written warning when failed.",
+        "A suitability report must let a reviewer reach the same recommendation from the recorded facts.",
+        "Test model portfolios against inflation and liquidity; at 11.0% T-bills and 13.4% inflation, real returns can be negative.",
+        "Grow the book through education and partnerships, never through guarantees or undisclosed referral payments."
+      ],
+      "quiz": [
+        {
+          "q": "A client asks to buy a product the firm did not recommend. Which test applies?",
+          "options": [
+            "Suitability",
+            "Appropriateness",
+            "No test",
+            "Capital adequacy"
+          ],
+          "answer": 1,
+          "explain": "Client-initiated orders call for an appropriateness check."
+        },
+        {
+          "q": "A portfolio is 50% at 11%, 30% at 13% and 20% at 16%. Expected return?",
+          "options": [
+            "12.6%",
+            "13.3%",
+            "11.9%",
+            "14.0%"
+          ],
+          "answer": 0,
+          "explain": "5.5% + 3.9% + 3.2% = 12.6%."
+        },
+        {
+          "q": "Expected return 12.6%, inflation 13.4%. Approximate real return?",
+          "options": [
+            "+0.8%",
+            "+12.6%",
+            "-0.8%",
+            "-13.4%"
+          ],
+          "answer": 2,
+          "explain": "12.6% minus 13.4% is about -0.8%."
+        },
+        {
+          "q": "Which is the main reason a compliance reviewer returns an advice file?",
+          "options": [
+            "The report is in plain language",
+            "The recommendation ignores a fact recorded in the fact-find",
+            "The client signed it",
+            "A review date is set"
+          ],
+          "answer": 1,
+          "explain": "Recommendations must follow from the recorded facts."
+        },
+        {
+          "q": "Hanna's shares are 68% against a 60% target in a ETB 558,000 portfolio. Roughly how much is above target?",
+          "options": [
+            "ETB 15,000",
+            "ETB 80,000",
+            "ETB 334,800",
+            "ETB 45,200"
+          ],
+          "answer": 3,
+          "explain": "380,000 minus 60% of 558,000 (334,800) is ETB 45,200."
+        },
+        {
+          "q": "Which advertisement claim is acceptable?",
+          "options": [
+            "Guaranteed 25% return",
+            "Past winners prove future gains",
+            "Share prices can fall; fees are shown on our fee sheet",
+            "No risk with ESX shares"
+          ],
+          "answer": 2,
+          "explain": "Fair marketing shows risks and fees and makes no guarantees."
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "slug": "operations-risk-conduct-capstone",
+      "icon": "lock",
+      "minutes": 70,
+      "title": "Operations control, firm risk and conduct",
+      "summary": "Run a brokerage with sound controls: reconcile trades, handle errors, keep the firm's capital and 40% liquid assets in line, prevent conflicts and market abuse, handle complaints, and defend three advisory files to compliance.",
+      "objectives": [
+        "Design trade reconciliation, error handling and business continuity controls for a brokerage",
+        "Test the firm's liquid asset ratio under Directive No. 980/2024 and manage dealer inventory and credit risk",
+        "Identify conflicts of interest, churning and front-running and handle complaints and ECMA reporting",
+        "Defend documented recommendations for three clients and review your own firm's operations controls"
+      ],
+      "lessons": [
+        {
+          "id": "oms-reconciliation",
+          "title": "Order management and trade reconciliation",
+          "body": [
+            "An order management system (OMS) records every order from receipt to settlement: who entered it, when, any changes and each fill. It is the firm's memory and its first control. Access rights should match roles: advisers enter client orders, operations confirms and settles, and no one can change a ticket without a logged reason.",
+            "Every day, operations runs a three-way reconciliation: the OMS against the exchange's trade report, and both against the CSD and the client bank account. Any break, a difference in quantity, price, client or amount, is investigated before the next settlement."
+          ],
+          "visual": {
+            "type": "steps",
+            "items": [
+              {
+                "label": "OMS",
+                "text": "Orders and fills as the firm recorded them"
+              },
+              {
+                "label": "Exchange report",
+                "text": "Trades as the ESX matched them"
+              },
+              {
+                "label": "CSD and bank",
+                "text": "Securities and cash as actually settled"
+              },
+              {
+                "label": "Breaks",
+                "text": "Every difference listed with owner and deadline"
+              },
+              {
+                "label": "Sign-off",
+                "text": "Operations manager approves the day"
+              }
+            ]
+          },
+          "worked": {
+            "title": "Sheba Hill's reconciliation breaks, one day",
+            "rows": [
+              {
+                "label": "Trades in OMS",
+                "value": "42"
+              },
+              {
+                "label": "Trades in ESX report",
+                "value": "43"
+              },
+              {
+                "label": "Break 1",
+                "value": "One ESX trade of 50 Rift Valley Cement shares not in the OMS: phone order entered without a ticket"
+              },
+              {
+                "label": "Break 2",
+                "value": "Price ETB 52.00 in OMS, ETB 51.50 in ESX report for 400 Sidama shares: ETB 200 difference"
+              },
+              {
+                "label": "Resolution",
+                "value": "Ticket created and approved late; OMS price corrected to the exchange record; both logged"
+              }
+            ],
+            "note": "The exchange record is the reference for what traded. Break 1 is a control failure, a phone order bypassing the ticket, and goes to the monthly risk report."
+          },
+          "tip": "Age every break. A break older than one day needs a manager's name against it."
+        },
+        {
+          "id": "errors-continuity",
+          "title": "Errors, operational risk and business continuity",
+          "body": [
+            "Errors happen: a wrong quantity, the wrong client, a buy entered as a sell. A sound firm corrects them so the client is put where they would have been, books any loss to the firm's error account, never to the client, and records the cause so the process can be fixed.",
+            "Operational risk also includes system outages, power cuts, network failure and key staff absence, all real in Ethiopian operations. A business continuity plan names backup power and connectivity, a fallback way to enter orders as the exchange permits, off-site copies of records, and who decides what during an outage."
+          ],
+          "scenario": {
+            "title": "A zero too many",
+            "situation": "A dealer at Sheba Hill entered the cooperative's buy order as 10,000 Sidama shares instead of 1,000 and 2,400 extra shares filled before he noticed. Selling them back will likely lose about ETB 9,000.",
+            "question": "How should the error be handled?",
+            "options": [
+              "Move the excess to the firm's error account, sell it down, book the loss to the firm, confirm the correct 1,000 to the client and record the incident",
+              "Allocate the extra shares to the cooperative, which can afford them",
+              "Spread the extra shares across several clients",
+              "Cancel the whole trade with the exchange unilaterally"
+            ],
+            "answer": 0,
+            "explain": "The client gets exactly what it ordered and the firm bears its own error. Pushing shares onto clients is unauthorised trading, and a firm cannot cancel matched trades on its own."
+          },
+          "example": {
+            "title": "A power cut at 10:15",
+            "text": "On a busy morning the Bole office lost power and the generator failed to start. Under its continuity plan, Sheba Hill switched to its backup connection at a second site within 40 minutes, informed clients with pending orders by SMS and logged every order received during the outage with times. The incident review led to a monthly generator test."
+          }
+        },
+        {
+          "id": "firm-capital-liquidity",
+          "title": "The firm's capital, liquidity and dealer risk",
+          "body": [
+            "A brokerage must stay solvent and liquid to protect clients and markets. Directive No. 980/2024 sets minimum capital by licence category and requires liquid assets of at least 40% of total assets. The test uses the firm's own assets only: client money held in segregated accounts is not the firm's and should not be counted.",
+            "Dealer inventory, shares a dealer holds for its own book, can push the ratio down, because thinly traded shares are not liquid. Margin lending and other credit to clients, where the firm's licence permits them at all, create credit risk and need limits, collateral rules and daily monitoring."
+          ],
+          "worked": {
+            "title": "Liquid asset test for a dealer, Gibe Valley Dealers PLC (fictional, Birr thousands)",
+            "rows": [
+              {
+                "label": "Firm's own total assets",
+                "value": "40,000"
+              },
+              {
+                "label": "Liquid assets: cash and T-bills",
+                "value": "18,000"
+              },
+              {
+                "label": "Liquid asset ratio",
+                "value": "18,000 / 40,000 = 45%: passes the 40% minimum"
+              },
+              {
+                "label": "Planned purchase of thinly traded shares for inventory",
+                "value": "4,000 from cash"
+              },
+              {
+                "label": "Ratio after purchase",
+                "value": "14,000 / 40,000 = 35%: breach"
+              },
+              {
+                "label": "Largest purchase that keeps 40%",
+                "value": "18,000 minus 16,000 = 2,000"
+              }
+            ],
+            "note": "Total assets stay the same because cash turns into shares, but liquid assets fall. The dealing desk's inventory limit must be set from this test, not from appetite."
+          },
+          "regulation": {
+            "source": "ECMA Directive No. 980/2024, Licensing and supervision of capital market service providers",
+            "text": "Licensed capital market service providers must hold at least the minimum capital set for their licence category, from Birr 100,000 for an individual investment adviser to Birr 100 million for a bank-group investment bank or custodian, and must keep liquid assets of at least 40% of total assets."
+          },
+          "scenario": {
+            "title": "Counting client money",
+            "situation": "Gibe's finance manager suggests adding the ETB 25 million in the segregated client account to both liquid assets and total assets, which would lift the ratio well above 40%.",
+            "question": "What should the compliance manager say?",
+            "options": [
+              "Agree; it is cash in the firm's name",
+              "Agree for month-end reporting only",
+              "Count half of it",
+              "Disagree: segregated client money belongs to clients and should not be used to pass the firm's own liquidity test"
+            ],
+            "answer": 3,
+            "explain": "Segregated client money is not available to the firm's creditors and cannot support the firm's own liquidity. Counting any part of it overstates the firm's position."
+          }
+        },
+        {
+          "id": "conflicts-abuse",
+          "title": "Conflicts of interest, churning and front-running",
+          "body": [
+            "Conflicts arise wherever the firm or its staff can gain at the client's expense: commission that rewards trading volume, a dealer selling its own inventory to advised clients, staff dealing in the same securities as clients, or referral fees that tempt partners to push products. The firm identifies them, avoids those it cannot manage and discloses the rest.",
+            "Two abuses matter most in brokerage. Churning is excessive trading in a client account to generate commission. Front-running is trading ahead of a client order using knowledge of it. The Capital Market Proclamation No. 1248/2021 prohibits market abuse, and firms should monitor accounts and staff dealing to detect both."
+          ],
+          "worked": {
+            "title": "Churning check on a client account over 12 months",
+            "rows": [
+              {
+                "label": "Average account value",
+                "value": "ETB 500,000"
+              },
+              {
+                "label": "Purchases in the year",
+                "value": "ETB 2,400,000"
+              },
+              {
+                "label": "Turnover",
+                "value": "2,400,000 / 500,000 = 4.8 times"
+              },
+              {
+                "label": "Commissions and fees paid",
+                "value": "ETB 52,000"
+              },
+              {
+                "label": "Cost as % of average value",
+                "value": "52,000 / 500,000 = 10.4%"
+              },
+              {
+                "label": "Client profile",
+                "value": "Moderate, long-term income goal"
+              }
+            ],
+            "note": "The portfolio must earn more than 10.4% a year just to cover costs, and nearly five full turnovers do not fit a long-term income goal. The firm's own review trigger is breached: compliance reviews every trade's reason with the adviser."
+          },
+          "scenario": {
+            "title": "Inventory for advised clients",
+            "situation": "Sheba Hill opens a dealing affiliate holding 20,000 Sidama Coffee shares. The affiliate suggests advisers recommend Sidama to all moderate clients and offers advisers a bonus for each sale.",
+            "question": "What is the right response?",
+            "options": [
+              "Accept; the shares may be good value",
+              "Decline the bonus, disclose the affiliate's holding in any recommendation, and recommend Sidama only where it is suitable on its own merits",
+              "Accept but tell clients nothing",
+              "Sell the shares to clients at a discount"
+            ],
+            "answer": 1,
+            "explain": "The bonus creates a conflict that cannot be managed, so it goes. The holding must be disclosed and suitability decides. Hiding it is a breach, and a discount still pushes inventory regardless of suitability."
+          }
+        },
+        {
+          "id": "complaints-reporting",
+          "title": "Complaints handling and ECMA reporting",
+          "body": [
+            "A complaint is any expression of dissatisfaction, written or spoken. Handled well, it keeps a client and reveals a weak control. A firm's procedure acknowledges quickly, investigates independently of the person complained about, responds in writing with reasons and a remedy, tells the client how to escalate, including to ECMA, and records the root cause.",
+            "Complaint data and incidents feed regulatory reporting. Firms report to ECMA as its rules and licence conditions require, and serious matters such as client money shortfalls or suspected market abuse should be escalated promptly rather than held for the periodic report. Suspicious transactions go to the Financial Intelligence Service."
+          ],
+          "visual": {
+            "type": "timeline",
+            "items": [
+              {
+                "label": "Receive",
+                "text": "Log the complaint, any channel, with date and details"
+              },
+              {
+                "label": "Acknowledge",
+                "text": "Confirm receipt and name a contact, within the firm's set time"
+              },
+              {
+                "label": "Investigate",
+                "text": "Someone independent reviews tickets, calls and statements"
+              },
+              {
+                "label": "Respond",
+                "text": "Written outcome, reasons, remedy and escalation route"
+              },
+              {
+                "label": "Learn",
+                "text": "Root cause fixed; trends reported to management and ECMA as required"
+              }
+            ]
+          },
+          "example": {
+            "title": "Tigist's fee complaint",
+            "text": "Tigist complained that her first contract note showed fees she had not expected. The investigation found the adviser had explained commission but not the ECMA and ESX fees. Sheba Hill refunded its commission on that trade, apologised in writing, and added the one-page fee sheet with a worked Birr example to every onboarding pack."
+          },
+          "tip": "Track complaints by root cause, not just by number. Five fee complaints from one adviser point to a training gap."
+        },
+        {
+          "id": "capstone-advisory-files",
+          "title": "Capstone: defend three advisory files",
+          "body": [
+            "The Advanced capstone tests the whole advisory chain. Advisers meet three role-played clients, Bekele the retiree, Hanna the young professional and Almaz the family business owner, build documented recommendations, then defend them to a compliance reviewer playing Hirut.",
+            "The reviewer tests each file against the facts: does the profile follow from the fact-find, does each allocation link to a goal, are inflation, liquidity, concentration and FX risks addressed, are fees and conflicts disclosed, and is there a review date and rebalancing rule."
+          ],
+          "visual": {
+            "type": "cards",
+            "items": [
+              {
+                "icon": "umbrella",
+                "label": "Bekele, retiree",
+                "text": "Income model: cash need ring-fenced in T-bills and bonds, 20% shares, negative real return disclosed"
+              },
+              {
+                "icon": "growth",
+                "label": "Hanna, young professional",
+                "text": "Apartment deposit kept separate; growth model for long-term savings with rebalancing rule"
+              },
+              {
+                "icon": "store",
+                "label": "Almaz, family business",
+                "text": "Balanced model; coffee exposure capped; business liquidity buffer kept outside the portfolio"
+              }
+            ]
+          },
+          "scenario": {
+            "title": "The reviewer's challenge",
+            "situation": "Hirut asks why Bekele's file holds 20% in listed shares when his stated goal is to keep capital intact. The adviser has shown that the cash need is covered by T-bills and bonds.",
+            "question": "Which defence is strongest?",
+            "options": [
+              "The 20% is for the long-term part of his capital to offset inflation, his three-year cash need is fully covered by T-bills and bonds, and the risk of falls was explained and signed",
+              "Shares always beat inflation",
+              "Bekele asked for shares",
+              "Other advisers use 20%"
+            ],
+            "answer": 0,
+            "explain": "A defence ties the allocation to a recorded goal and shows the binding need is protected and the risk disclosed. Claims that shares always win, client preference alone or peer practice are not reasons."
+          },
+          "example": {
+            "title": "A file that passed first time",
+            "text": "One learner's file for Almaz kept ETB 400,000, three months of business payments, outside the portfolio, capped Sidama at 10% under the model's single-company limit, and recorded her signed choice to hold it despite the advice to diversify further. The reviewer passed it without changes."
+          }
+        },
+        {
+          "id": "operations-control-review",
+          "title": "Work assignment: review your own firm's controls",
+          "body": [
+            "The work assignment asks each learner to review the operations controls of their own firm and write a short report for management. It turns the course into practice: find the gaps that this course has shown can hurt clients and the firm.",
+            "A good review tests evidence, not policy statements. Pick a sample of recent client files, tickets and reconciliations and check whether each control actually operated."
+          ],
+          "points": [
+            "Onboarding: KYC, source of funds, risk profile and signed agreement in a sample of 10 files",
+            "Orders: every executed trade has a time-stamped ticket and an authorised instruction",
+            "Reconciliation: daily client money and CSD reconciliations signed, breaks aged and closed",
+            "Segregation: no transfers from client accounts except for client instructions and earned fees",
+            "Firm liquidity: liquid asset ratio computed monthly against the 40% minimum",
+            "Conduct: personal dealing records, conflicts register, complaints log and root causes",
+            "Continuity: last test of backup power, connectivity and record recovery"
+          ],
+          "example": {
+            "title": "What one review found",
+            "text": "A learner from a fictional Bahir Dar broker, Zege Peninsula Securities PLC, sampled ten files: two lacked source-of-funds evidence, phone orders on three trades had no recorded call, and the generator had not been tested in four months. Management approved a fix plan with owners and dates within the week."
+          },
+          "tip": "Rate each finding high, medium or low by its impact on clients, and propose an owner and a date for every fix."
+        }
+      ],
+      "takeaways": [
+        "Reconcile the OMS, the exchange trade report, the CSD and the client bank account every day, and age every break.",
+        "Errors are corrected at the firm's cost through an error account; the client gets exactly what was ordered.",
+        "Keep liquid assets at 40% or more of the firm's own total assets under Directive No. 980/2024, without counting segregated client money.",
+        "Identify, avoid or disclose conflicts; monitor for churning and front-running, which the Capital Market Proclamation treats as abuse.",
+        "Complaints are handled independently, answered in writing with an escalation route, and fixed at the root cause."
+      ],
+      "quiz": [
+        {
+          "q": "A dealer has own total assets of ETB 30 million and liquid assets of ETB 11 million. Does it meet the 40% rule?",
+          "options": [
+            "Yes, 40%",
+            "Yes, 45%",
+            "No, about 36.7%",
+            "No, 11%"
+          ],
+          "answer": 2,
+          "explain": "11 / 30 is about 36.7%, below 40%."
+        },
+        {
+          "q": "Who bears the loss when a dealer enters a wrong quantity?",
+          "options": [
+            "The client",
+            "The firm, through its error account",
+            "The exchange",
+            "Shared equally"
+          ],
+          "answer": 1,
+          "explain": "Firms bear their own errors."
+        },
+        {
+          "q": "Purchases of ETB 2.4 million in an account averaging ETB 500,000. Turnover?",
+          "options": [
+            "2.4 times",
+            "0.2 times",
+            "10.4 times",
+            "4.8 times"
+          ],
+          "answer": 3,
+          "explain": "2,400,000 / 500,000 = 4.8."
+        },
+        {
+          "q": "Which is front-running?",
+          "options": [
+            "Executing client orders in sequence",
+            "Rebalancing a portfolio",
+            "A staff member buying before a large client order they know about",
+            "Disclosing a conflict"
+          ],
+          "answer": 2,
+          "explain": "Trading ahead of a known client order is front-running."
+        },
+        {
+          "q": "In the three-way reconciliation, which record shows what actually traded?",
+          "options": [
+            "The ESX trade report",
+            "The adviser's notes",
+            "The client's memory",
+            "The marketing plan"
+          ],
+          "answer": 0,
+          "explain": "The exchange record is the reference for executed trades."
+        },
+        {
+          "q": "Who should investigate a complaint against an adviser?",
+          "options": [
+            "The adviser concerned",
+            "The client",
+            "No one if the client calms down",
+            "Someone independent of the adviser"
+          ],
+          "answer": 3,
+          "explain": "Independent investigation is a core principle of complaints handling."
+        }
+      ]
+    }
+  ],
+  "simulation": {
+    "title": "A month as broker and client adviser at Bank A Capital",
+    "role": "Licensed representative, brokerage desk",
+    "setting": [
+      "You are a licensed representative on the brokerage desk of Bank A Capital S.C., Bank A's ECMA-licensed investment bank and an ESX trading member. You open accounts, take and work client orders, explain costs, give advice linked to the broking service and make sure every trade settles cleanly in each client's own CSD account.",
+      "The desk serves about 1,400 clients: teachers and civil servants buying their first shares, diaspora investors, a few cooperatives and associations, and retirees looking for income. Many come through Bank A's branches under a referral arrangement. The two most traded names on your screen are the fictional Rift Valley Cement S.C. on the Main Board, around Birr 305, and Sidama Coffee Processing S.C. on the Growth Board, around Birr 52, which often goes a day without a trade.",
+      "You report to the head of brokerage, Ato Yonas Tekle, and every file you open can be pulled by the compliance reviewer, W/ro Hirut Mekonnen. This month the desk has a target of 150 new accounts. Items arrive in order, and some decisions will come back to you."
+    ],
+    "authority": {
+      "title": "Your desk's rules",
+      "rows": [
+        {
+          "label": "Who may take orders and money",
+          "value": "Only the licensed firm and its representatives; Bank A branch staff refer clients, never take orders, cash or give advice"
+        },
+        {
+          "label": "Onboarding",
+          "value": "Identify and verify (Fayda speeds it), beneficial owner, source of funds with evidence, risk rating; diaspora funds through the formal banking system into the client's own account (FXD/01/2024 as amended)"
+        },
+        {
+          "label": "Risk profile bands (desk questionnaire, out of 30)",
+          "value": "Up to 12 conservative; 13 to 21 moderate; 22 and over growth. Where tolerance and capacity differ, the lower wins, with reasons"
+        },
+        {
+          "label": "ESX trading",
+          "value": "Pre-open 9:00 to 9:30, continuous to 15:00; lot size one share; settlement cycle from current CSD rules only"
+        },
+        {
+          "label": "Orders",
+          "value": "Time-stamped ticket for every order; client orders before staff and firm orders; limit orders for first-time clients in thin stocks"
+        },
+        {
+          "label": "Costs on a share trade",
+          "value": "Commission 1.0% (desk tariff, illustrative); ECMA fee 0.15% (0.005% on fixed income); ESX fee per current schedule"
+        },
+        {
+          "label": "Client money",
+          "value": "Segregated; reconciled daily to the ledger and CSD; any shortfall topped up from firm funds the same day; one client's cash never funds another's trade"
+        },
+        {
+          "label": "Errors and conduct",
+          "value": "Errors go to the firm's error account at the firm's cost; churning review when turnover exceeds 3 times a year or costs exceed 5% of average account value (desk rule)"
+        }
+      ],
+      "note": "These follow the course, the ESX Rulebook and the ECMA and NBE texts it cites. Fee and rate figures must be checked against the current schedules. Your own institution's policy always comes first."
+    },
+    "meters": [
+      {
+        "id": "clients",
+        "label": "Client outcomes",
+        "help": "Rises when clients get suitable advice, fair prices and clear costs; falls when they lose money they did not need to or are surprised."
+      },
+      {
+        "id": "compliance",
+        "label": "Compliance",
+        "help": "Falls sharply with any breach of ECMA, ESX, NBE or AML/CFT rules, or a file that cannot be defended."
+      },
+      {
+        "id": "operations",
+        "label": "Operations control",
+        "help": "Rises when tickets, reconciliations and settlements are clean and root causes are fixed; falls with breaks, fails and workarounds."
+      },
+      {
+        "id": "book",
+        "label": "Client book",
+        "help": "Rises with new accounts and sound business; falls when good clients are lost or the firm pays for avoidable mistakes."
+      }
+    ],
+    "tasks": [
+      {
+        "id": "branch-cash",
+        "when": "Week 1, Monday 09:10",
+        "from": "Customer service officer, Bank A Hawassa branch",
+        "channel": "call",
+        "subject": "I have Birr 80,000 cash from a customer to buy Rift Valley Cement",
+        "body": [
+          "A branch officer who refers clients to your desk says a long-standing depositor, Ato Ashenafi Lemma, handed her Birr 80,000 in cash this morning to \"buy Rift Valley Cement shares today\". She is holding the cash in her drawer and asks you to place the order by phone in her name so it is done before the pre-open closes.",
+          "Ato Ashenafi has no account with Bank A Capital yet."
+        ],
+        "ask": "What do you tell her?",
+        "options": [
+          {
+            "text": "She cannot take orders or client money. Return the cash or credit his own account with a receipt, and book his onboarding: KYC, profile and agreement first.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "clients": 6,
+              "operations": 4,
+              "book": 4
+            },
+            "outcome": "Right. A referrer without a license cannot accept orders or client money. Onboarding first keeps his money inside the regulated, segregated system, and you still win the account."
+          },
+          {
+            "text": "Place the order now in her own brokerage account so he does not miss today's price, then transfer the shares to his CSD account once his KYC and client agreement are complete this week.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "operations": -8,
+              "book": 3
+            },
+            "outcome": "The shares would sit in the wrong CSD account, with no KYC on the real owner. Using a staff member's account for a client's trade puts his assets outside the regulated system."
+          },
+          {
+            "text": "Take the order by phone from her before the pre-open closes, note his name on the ticket, and open his account later this week when he comes in with his Fayda ID and statements.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "operations": -6,
+              "book": 4
+            },
+            "outcome": "An order needs a client with a complete file and his own authorized instruction. Trading before KYC and a signed agreement is a control failure even if the trade itself is fine."
+          },
+          {
+            "text": "Tell her the desk does not deal with branch referrals that arrive with cash, and that Ato Ashenafi should find another broker himself.",
+            "score": 1,
+            "effects": {
+              "book": -8,
+              "clients": -4
+            },
+            "outcome": "Referrals are how the desk grows. The problem is only the cash and the order; the referral itself is welcome."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "profile-capacity",
+        "when": "Week 1, Monday 14:00",
+        "from": "W/ro Betelhem Kassa, new client",
+        "channel": "visit",
+        "subject": "Questionnaire says growth: put my Birr 400,000 in shares",
+        "body": [
+          "W/ro Betelhem, 29, a pharmacist, completed the desk questionnaire and scored 23. She wants the whole Birr 400,000 in listed shares. Later in the meeting she mentions that the money is the down payment for a house she plans to buy in ten months, and she has about Birr 30,000 of other savings."
+        ],
+        "exhibit": {
+          "title": "Her profile inputs",
+          "rows": [
+            {
+              "label": "Questionnaire score",
+              "value": "23 out of 30"
+            },
+            {
+              "label": "Desk bands",
+              "value": "Up to 12 conservative; 13 to 21 moderate; 22 and over growth"
+            },
+            {
+              "label": "Amount and purpose",
+              "value": "Birr 400,000, house down payment"
+            },
+            {
+              "label": "When needed",
+              "value": "In about 10 months"
+            },
+            {
+              "label": "Other savings",
+              "value": "About Birr 30,000"
+            }
+          ]
+        },
+        "ask": "Which profile do you record for this money?",
+        "options": [
+          {
+            "text": "Conservative for this money: she scores growth, but needs it in ten months, so capacity is low. Record why and suggest T-bills that mature in time.",
+            "score": 3,
+            "effects": {
+              "clients": 10,
+              "compliance": 8,
+              "book": 2
+            },
+            "outcome": "Right. Where risk tolerance and risk capacity disagree, the lower wins. Money needed in ten months cannot ride out a fall in share prices, and the written reason lets a reviewer reach the same answer."
+          },
+          {
+            "text": "Growth: her score of 23 is in the desk's growth band of 22 and over, she is young with a stable income, and the questionnaire is the firm's approved method, so the file follows the score.",
+            "score": 0,
+            "effects": {
+              "clients": -12,
+              "compliance": -8,
+              "book": 4
+            },
+            "outcome": "The score measures tolerance only. Ignoring a recorded fact, the ten-month horizon, is the most common reason a file is sent back."
+          },
+          {
+            "text": "Growth, as the score shows, with a signed note that she was warned shares could fall before the house purchase, so the file records that she made an informed choice.",
+            "score": 1,
+            "effects": {
+              "clients": -6,
+              "compliance": -3,
+              "book": 3
+            },
+            "outcome": "A warning does not make an unsuitable profile suitable. When the firm advises, the recommendation itself must fit her situation."
+          },
+          {
+            "text": "Moderate, as a fair compromise between her growth score and her short horizon, with about half in shares and half in T-bills and bonds.",
+            "score": 1,
+            "effects": {
+              "clients": -4,
+              "compliance": -2
+            },
+            "outcome": "A compromise still puts house money into share price risk. Capacity, not an average, decides the profile for this money."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "diaspora-funding",
+        "when": "Week 1, Wednesday 08:15",
+        "from": "Ato Henok Desta, diaspora client in Seattle",
+        "channel": "email",
+        "subject": "Faster funding through my cousin in Gondar",
+        "body": [
+          "Ato Henok, an Ethiopian-born nurse in Seattle, has passed KYC remotely. To avoid waiting for a bank transfer, he plans to give USD 5,000 to an informal transfer agent in Seattle and have his cousin in Gondar deposit the Birr into Bank A Capital's client account.",
+          "\"It is my money and the amount is small,\" he writes. \"My cousin can sign a letter.\""
+        ],
+        "ask": "How do you reply?",
+        "options": [
+          {
+            "text": "Decline the route: funds must come through the formal banking system from an account in his own name under the FX rules. Send him the bank transfer steps.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "clients": 4,
+              "operations": 4,
+              "book": 2
+            },
+            "outcome": "Correct. Third-party and informal funding hides the true source of funds and breaks the FX route that FXD/01/2024 requires. Showing the conversion rate and date lets him track his return in dollars."
+          },
+          {
+            "text": "Accept, as long as the cousin signs a letter confirming the money is Henok's and attaches a copy of his Fayda ID, so the file shows where the Birr came from.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "operations": -6,
+              "book": 3
+            },
+            "outcome": "A letter does not cure an informal transfer. The firm would accept third-party cash with an unverifiable source, a clear AML/CFT and FX problem."
+          },
+          {
+            "text": "Accept this once, because USD 5,000 is a small amount, Henok has already passed full KYC remotely, and a bank transfer from Seattle could take more than a week.",
+            "score": 0,
+            "effects": {
+              "compliance": -18,
+              "book": 3
+            },
+            "outcome": "The rule does not depend on size. Small informal flows are exactly how weak controls start."
+          },
+          {
+            "text": "Suggest the cousin opens the account in Gondar instead, since he is in Ethiopia and can deposit Birr directly, and Henok can give him instructions by phone.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "clients": -4
+            },
+            "outcome": "That misstates the beneficial owner. The account must be in the name of the person whose money it is."
+          }
+        ],
+        "module": "s1"
+      },
+      {
+        "id": "thin-book",
+        "when": "Week 1, Thursday 09:05",
+        "from": "W/ro Selam Getachew, first-time investor",
+        "channel": "call",
+        "subject": "Just buy Birr 26,000 of Sidama Coffee now",
+        "body": [
+          "W/ro Selam, a moderate-profile teacher, wants Birr 26,000 of Sidama Coffee Processing. The last trade was Birr 52. She says: \"Just buy them now, at whatever price.\" You look at the order book."
+        ],
+        "exhibit": {
+          "title": "Sidama Coffee Processing: offers on the screen",
+          "rows": [
+            {
+              "label": "Last trade",
+              "value": "Birr 52"
+            },
+            {
+              "label": "Best offer",
+              "value": "100 shares at Birr 58"
+            },
+            {
+              "label": "Next offer",
+              "value": "200 shares at Birr 64"
+            },
+            {
+              "label": "Next offer",
+              "value": "300 shares at Birr 70"
+            },
+            {
+              "label": "Her budget",
+              "value": "Birr 26,000 before fees"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Recommend a limit near Birr 53. A market order would buy about 405 shares for Birr 25,950, an average near Birr 64, 23% above the last trade. Record her choice on the ticket.",
+            "score": 3,
+            "effects": {
+              "clients": 12,
+              "compliance": 4,
+              "operations": 4,
+              "book": 2
+            },
+            "outcome": "Correct: 5,800 + 12,800 + 7,350 = 25,950 for 405 shares, average 64.07. In a thin market a limit order protects a first-time investor, and best execution often means patience."
+          },
+          {
+            "text": "Enter a market order as she instructed: she is an adult, it is her money and her clear instruction, and the ticket will show that the order type was her own choice.",
+            "score": 1,
+            "effects": {
+              "clients": -10,
+              "book": 3
+            },
+            "outcome": "She would pay an average of about Birr 64 against a last trade of 52. Taking the instruction without explaining the price impact fails the duty to seek the best result.",
+            "next": "order-later"
+          },
+          {
+            "text": "Enter a market order now: with the last trade at Birr 52 she will get about 500 shares for her Birr 26,000, and the order will fill at once before the price moves.",
+            "score": 0,
+            "effects": {
+              "clients": -12,
+              "operations": -4,
+              "book": 2
+            },
+            "outcome": "The last trade is not an available price. The offers start at 58, and her money buys only about 405 shares.",
+            "next": "order-later"
+          },
+          {
+            "text": "Buy Birr 26,000 of Rift Valley Cement instead, which trades every day at a fair price, and explain to her afterwards that it was the better choice for a first-time investor.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "clients": -8
+            },
+            "outcome": "Switching securities without the client's instruction is unauthorized trading, whatever the intention."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "partial-fill",
+        "when": "Week 2, Monday 11:20",
+        "from": "Sales officer, Bank A Capital",
+        "channel": "meeting",
+        "subject": "Let me buy 300 Sidama for myself before it moves",
+        "body": [
+          "The Gibe Teachers' Savings Association has a working order to buy 2,000 Sidama Coffee at a limit of Birr 52, valid for the day, signed by two authorized signatories. Part has filled. A sales officer who sits next to you asks you to buy 300 Sidama for his own account \"before the association's order pushes the price up\".",
+          "The association's treasurer also wants a confirmation of what has been done so far."
+        ],
+        "exhibit": {
+          "title": "Fills so far on the association's order",
+          "rows": [
+            {
+              "label": "Fill 1",
+              "value": "900 shares at Birr 51.50"
+            },
+            {
+              "label": "Fill 2",
+              "value": "600 shares at Birr 52.00"
+            },
+            {
+              "label": "Order",
+              "value": "Buy 2,000 at limit Birr 52, day order"
+            }
+          ]
+        },
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Refuse the colleague and report it under the personal dealing rules. Confirm 1,500 shares filled for Birr 77,550, average Birr 51.70, with 500 open at Birr 52.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "clients": 8,
+              "operations": 6
+            },
+            "outcome": "Correct: 900 x 51.50 = 46,350 and 600 x 52.00 = 31,200, total 77,550 for 1,500 shares, average 51.70. Trading ahead of a known client order is front-running, which the proclamation treats as market abuse."
+          },
+          {
+            "text": "Enter the colleague's 300 shares first, since his order is small next to the association's 2,000 and will hardly move the price, then confirm 1,500 shares to the treasurer.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "clients": -8
+            },
+            "outcome": "Size does not matter. Using knowledge of a client's order to trade ahead of it is front-running."
+          },
+          {
+            "text": "Enter both orders and split the next fills equally between the colleague and the association, so neither is favored, and confirm 1,500 shares filled so far to the treasurer.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "clients": -6
+            },
+            "outcome": "Client orders come first. Splitting fills still takes shares and price away from the client."
+          },
+          {
+            "text": "Refuse the colleague's order, and confirm to the treasurer 1,500 shares filled at an average of Birr 51.75, the midpoint of the two fill prices, with 500 still open.",
+            "score": 2,
+            "effects": {
+              "compliance": 8,
+              "operations": -3,
+              "clients": 2
+            },
+            "outcome": "The refusal is right, but the average must be weighted by quantity: 77,550 / 1,500 = 51.70, not the midpoint. The treasurer reconciles the trade to the cash, so the figure must be exact."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "late-funds",
+        "when": "Week 2, Tuesday 15:40",
+        "from": "Settlements officer, Bank A Capital",
+        "channel": "system",
+        "subject": "Ato Henok's buy will fail: his converted Birr is late",
+        "body": [
+          "Ato Henok bought 300 Rift Valley Cement at Birr 305 after confirming he had sent the money. The trade executed, but his bank's conversion is delayed and the Birr will not reach the client account before settlement.",
+          "The settlements officer suggests: \"The client account has Birr 1.6 million. Let us settle from it today and take his money when it lands.\""
+        ],
+        "ask": "What do you do?",
+        "options": [
+          {
+            "text": "Do not use other clients' money. Follow the ESX and CSD shortfall procedure, inform Ato Henok and your head, record the cause, and propose a cleared-funds rule.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "operations": 10,
+              "clients": 2
+            },
+            "outcome": "Right. Client money belongs to each client and cannot fund another client's trade. The lasting fix is a pre-trade check: never enter an order you cannot fund."
+          },
+          {
+            "text": "Settle today from the pooled client account, which holds Birr 1.6 million, and repay it as soon as Henok's converted Birr arrives, so the trade does not fail and the counterparty is not hurt.",
+            "score": 0,
+            "effects": {
+              "compliance": -25,
+              "operations": -10
+            },
+            "outcome": "This uses other clients' money for his trade, a serious breach of segregation even for a day.",
+            "next": "settle-later"
+          },
+          {
+            "text": "Ask the counterparty broker to cancel the trade quietly and re-enter it next week once Henok's money has arrived, so no fail is recorded at the CSD.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "operations": -6,
+              "clients": -4
+            },
+            "outcome": "A matched trade cannot be canceled unilaterally. The exchange and CSD procedure exists for exactly this case."
+          },
+          {
+            "text": "Do nothing for now: the seller's broker will wait a day or two, and the trade will settle as soon as the conversion is complete.",
+            "score": 1,
+            "effects": {
+              "compliance": -8,
+              "operations": -8
+            },
+            "outcome": "Ignoring a fail breaches settlement rules and hurts the counterparty. Follow the procedure and tell the client."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "recon-short",
+        "when": "Week 2, Thursday 16:30",
+        "from": "Operations officer, Bank A Capital",
+        "channel": "system",
+        "subject": "End-of-day client money reconciliation does not agree",
+        "body": [
+          "The daily reconciliation compares what the firm owes each client with the client bank account. The cause of today's difference is not yet clear. The finance manager says: \"Leave it for next week's review; it is probably a bank charge.\""
+        ],
+        "exhibit": {
+          "title": "Client money reconciliation, end of day (Birr)",
+          "rows": [
+            {
+              "label": "Client 1 ledger",
+              "value": "52,400"
+            },
+            {
+              "label": "Client 2 ledger",
+              "value": "218,650"
+            },
+            {
+              "label": "Client 3 (association) ledger",
+              "value": "1,240,000"
+            },
+            {
+              "label": "Client 4 ledger",
+              "value": "87,950"
+            },
+            {
+              "label": "Client bank account balance",
+              "value": "1,591,500"
+            }
+          ]
+        },
+        "ask": "What happens today?",
+        "options": [
+          {
+            "text": "Total owed is Birr 1,599,000, so the account is Birr 7,500 short. Top it up from firm funds today, investigate, record it and escalate under the firm's procedure.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "operations": 10,
+              "clients": 4,
+              "book": -1
+            },
+            "outcome": "Correct: 52,400 + 218,650 + 1,240,000 + 87,950 = 1,599,000, less 1,591,500 = 7,500 short. A client money shortfall is fixed immediately with the firm's money, then investigated; waiting leaves clients exposed."
+          },
+          {
+            "text": "Wait for next week's review, as the finance manager suggests: a Birr 7,500 gap is almost certainly a bank charge, and the weekly review will find it with the bank statement.",
+            "score": 0,
+            "effects": {
+              "compliance": -12,
+              "operations": -10
+            },
+            "outcome": "Segregation only works if it is checked and fixed daily. A week of shortfall is a week of client money exposed."
+          },
+          {
+            "text": "Reduce each client's ledger balance pro rata until the cause is found, so the ledger matches the bank account today and no client is paid out more than the account holds.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "clients": -10
+            },
+            "outcome": "Cutting client balances shifts the firm's error onto clients. The firm makes the account whole, not the clients."
+          },
+          {
+            "text": "Top up Birr 75,000 from firm funds to be safe, leave the extra in the client account as a buffer, and look into the cause at next week's review.",
+            "score": 1,
+            "effects": {
+              "operations": -4,
+              "compliance": 2
+            },
+            "outcome": "The shortfall is Birr 7,500, and an over-funded client account mixes firm money with client money. Fix the exact amount and investigate now."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "weekly-trader",
+        "when": "Week 3, Monday 10:00",
+        "from": "Ato Biruk Alemayehu, new client",
+        "channel": "visit",
+        "subject": "I will buy and sell every week to catch small moves",
+        "body": [
+          "Ato Biruk, a moderate-profile civil servant, plans to buy 120 Rift Valley Cement at Birr 305 and sell whenever the price rises 1%, \"probably every week\". He asks what one purchase costs and whether his plan works.",
+          "The ESX fee is added per the current ESX schedule on the contract note."
+        ],
+        "exhibit": {
+          "title": "One purchase",
+          "rows": [
+            {
+              "label": "Order",
+              "value": "Buy 120 Rift Valley Cement at Birr 305"
+            },
+            {
+              "label": "Desk commission (illustrative tariff)",
+              "value": "1.0% of value"
+            },
+            {
+              "label": "ECMA transaction fee",
+              "value": "0.15% of value"
+            },
+            {
+              "label": "ESX fee",
+              "value": "Per current schedule"
+            }
+          ]
+        },
+        "ask": "What do you tell him?",
+        "options": [
+          {
+            "text": "Birr 36,600 plus 366 commission and 54.90 ECMA fee is Birr 37,020.90 before the ESX fee, about 1.15%. The round trip is about 2.3%, so selling on a 1% rise loses money.",
+            "score": 3,
+            "effects": {
+              "clients": 12,
+              "compliance": 4,
+              "book": 2
+            },
+            "outcome": "Correct: 120 x 305 = 36,600; 1% = 366; 0.15% = 54.90. The shares must rise more than about 2.3% before he makes any gain, so selling on every 1% rise guarantees losses after costs."
+          },
+          {
+            "text": "Only the ECMA transaction fee of 0.15% applies to a share trade, Birr 54.90 here, so selling each time the price rises 1% gives him a clear profit of about 0.85% a week.",
+            "score": 0,
+            "effects": {
+              "clients": -10,
+              "compliance": -6,
+              "book": 4
+            },
+            "outcome": "Leaving out commission and ESX fees misstates his cost. Unexpected fees are the commonest first complaint."
+          },
+          {
+            "text": "Quote the total of Birr 37,020.90 before the ESX fee and process the plan: frequent trading is his choice, it is good for the desk's commission, and he signed the agreement.",
+            "score": 1,
+            "effects": {
+              "clients": -8,
+              "compliance": -4,
+              "book": 6
+            },
+            "outcome": "The figure is right, but encouraging a plan that cannot cover its own costs, for commission, moves toward churning."
+          },
+          {
+            "text": "Refuse to open his account: weekly trading is not allowed on ESX for retail clients, who must hold listed shares for at least a month.",
+            "score": 1,
+            "effects": {
+              "clients": -4,
+              "book": -6
+            },
+            "outcome": "Nothing forbids frequent trading. The job is to show him the round-trip cost so he can decide with the facts."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "retiree-model",
+        "when": "Week 3, Wednesday 14:00",
+        "from": "Ato Tadele Worku, retired teacher in Dire Dawa",
+        "channel": "meeting",
+        "subject": "I want 70% in shares to beat inflation",
+        "body": [
+          "Ato Tadele, 64, has Birr 2.4 million from selling a plot and a small pension. He needs Birr 90,000 a year for three years for his granddaughter's university fees and wants his capital \"kept intact\". You prepared the desk's income model; after seeing it, he asks to move 70% into listed shares \"to beat inflation\".",
+          "Latest NBE figures (MPC No. 7, July 2026): 91-day T-bill 11.0%, headline inflation 13.4% (May 2026)."
+        ],
+        "exhibit": {
+          "title": "Income model on Birr 2.4 million (illustrative yields)",
+          "rows": [
+            {
+              "label": "T-bills",
+              "value": "40% at 11.0%"
+            },
+            {
+              "label": "Government bonds",
+              "value": "40% at 13.0%"
+            },
+            {
+              "label": "Listed shares",
+              "value": "20% at 16.0% expected"
+            },
+            {
+              "label": "Annual cash need",
+              "value": "Birr 90,000 for 3 years"
+            },
+            {
+              "label": "Inflation",
+              "value": "13.4%"
+            }
+          ]
+        },
+        "ask": "What do you recommend?",
+        "options": [
+          {
+            "text": "Expected return is about 12.8%, a real return near minus 0.5%, so say plainly the capital is not inflation-proof. Ring-fence the Birr 270,000 of fees in T-bills and bonds; raise shares only modestly.",
+            "score": 3,
+            "effects": {
+              "clients": 12,
+              "compliance": 8,
+              "book": 2
+            },
+            "outcome": "Correct: 0.4 x 11 + 0.4 x 13 + 0.2 x 16 = 12.8%; 1.128 / 1.134 minus 1 = minus 0.5%. The cash need is 90,000 / 2,400,000 = 3.75% a year. Shares may beat inflation over time but can fall when he needs the money."
+          },
+          {
+            "text": "Move 70% into listed shares as he asks: it is his money and his signed instruction, shares beat inflation over time, and the remaining 30% in T-bills will cover the fees.",
+            "score": 0,
+            "effects": {
+              "clients": -12,
+              "compliance": -10,
+              "book": 5
+            },
+            "outcome": "Shares do not always beat inflation, and a fall could hit the fees he must pay in the next three years. An adviser recommends what is suitable, not what is asked.",
+            "next": "model-later"
+          },
+          {
+            "text": "Tell him the model keeps his capital intact at 12.8% a year, well above the Birr 90,000 he needs, so no change is needed and the shares can stay at 20%.",
+            "score": 1,
+            "effects": {
+              "clients": -6,
+              "compliance": -6
+            },
+            "outcome": "12.8% is nominal. At 13.4% inflation his real return is about minus 0.5%, and the report must say so plainly rather than call the capital intact."
+          },
+          {
+            "text": "Put the whole Birr 2.4 million in rolling T-bills at 11.0% for safety, and agree to review the plan in five years when the market is deeper.",
+            "score": 1,
+            "effects": {
+              "clients": -6,
+              "book": -2
+            },
+            "outcome": "All bills at 11.0% lose more to inflation, and a five-year gap in reviews ignores the advice cycle. Advice is reviewed on a set date."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "error-account",
+        "when": "Week 4, Monday 09:50",
+        "from": "Dealer on the desk",
+        "channel": "call",
+        "subject": "A zero too many on the association's order",
+        "body": [
+          "Entering a new order for the Gibe Teachers' Savings Association, a dealer typed 5,000 Sidama Coffee shares instead of 500. Before he noticed, 1,800 extra shares filled at about Birr 52. Selling them back in the thin market will probably lose the firm about Birr 4,000.",
+          "He suggests: \"The association has plenty of cash. Let us just allocate all 2,300 to them; Sidama is a good company.\""
+        ],
+        "ask": "How do you handle it?",
+        "options": [
+          {
+            "text": "Confirm exactly 500 shares to the association. Move the 1,800 extra to the error account, sell them down carefully, book any loss to the firm and record the cause.",
+            "score": 3,
+            "effects": {
+              "compliance": 10,
+              "operations": 10,
+              "clients": 6,
+              "book": -2
+            },
+            "outcome": "Right. The client gets exactly what it ordered and the firm bears its own error. The incident record and a system alert fix the cause, not just the symptom."
+          },
+          {
+            "text": "Allocate all 2,300 shares to the association: it has plenty of cash, Sidama is a sound company it already wanted, and this avoids a loss of about Birr 4,000 for the firm.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "clients": -10,
+              "book": 2
+            },
+            "outcome": "Pushing shares the client did not order onto its account is unauthorized trading, and the association's resolution only permits signed instructions.",
+            "next": "error-later"
+          },
+          {
+            "text": "Spread the extra 1,800 shares across several moderate-profile clients who already hold Sidama, in small lots, so no single account is affected much and the firm avoids the loss.",
+            "score": 0,
+            "effects": {
+              "compliance": -20,
+              "clients": -8
+            },
+            "outcome": "Allocating an error to clients who never ordered it is unauthorized trading many times over."
+          },
+          {
+            "text": "Ask the exchange to cancel the whole 2,300-share trade as a keying error, then re-enter the association's 500 shares tomorrow.",
+            "score": 1,
+            "effects": {
+              "operations": -4,
+              "clients": -2
+            },
+            "outcome": "A firm cannot cancel matched trades on its own. The error account exists so the firm absorbs its own mistakes."
+          }
+        ],
+        "module": "s5"
+      },
+      {
+        "id": "churn-check",
+        "when": "Week 4, Wednesday 15:00",
+        "from": "Compliance reviewer, Bank A Capital",
+        "channel": "memo",
+        "subject": "Monthly surveillance: account managed by a senior colleague",
+        "body": [
+          "Compliance asks you, as the second representative on the account, to comment on a client account run by a top-earning senior colleague. The client is a moderate-profile widow with a long-term income goal.",
+          "The colleague says: \"She trusts me and she signs every ticket. Leave it alone.\""
+        ],
+        "exhibit": {
+          "title": "Account over the last 12 months (Birr)",
+          "rows": [
+            {
+              "label": "Average account value",
+              "value": "800,000"
+            },
+            {
+              "label": "Purchases in the year",
+              "value": "4,000,000"
+            },
+            {
+              "label": "Commissions and fees paid",
+              "value": "76,000"
+            },
+            {
+              "label": "Desk review trigger",
+              "value": "Turnover above 3 times or costs above 5% of average value"
+            }
+          ]
+        },
+        "ask": "What do you tell compliance?",
+        "options": [
+          {
+            "text": "Turnover of 5.0 times and costs of 9.5% both breach the trigger and do not fit an income goal. Recommend a trade-by-trade review and an independent client call.",
+            "score": 3,
+            "effects": {
+              "compliance": 12,
+              "clients": 10,
+              "operations": 4,
+              "book": -3
+            },
+            "outcome": "Correct: 4,000,000 / 800,000 = 5.0; 76,000 / 800,000 = 9.5%. The portfolio must earn more than 9.5% a year just to cover costs. A signed ticket does not make excessive trading suitable."
+          },
+          {
+            "text": "Leave it: the client signs every ticket, she has never complained, and the colleague knows her goals better than compliance, so the trading reflects her own wishes.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "clients": -12,
+              "book": 4
+            },
+            "outcome": "Churning is about the pattern, not the signatures. Excessive trading to generate commission is a conflict and potential market abuse."
+          },
+          {
+            "text": "Report that turnover is only 0.2 times (800,000 / 4,000,000), well within the 3-times trigger, so the costs of 9.5% are the only point to note.",
+            "score": 0,
+            "effects": {
+              "compliance": -10,
+              "clients": -6
+            },
+            "outcome": "The ratio is upside down. Turnover is purchases divided by average value: 5.0 times."
+          },
+          {
+            "text": "Agree there is a problem, but suggest compliance raise it at the colleague's annual review rather than now, to avoid upsetting a top earner during a busy month.",
+            "score": 1,
+            "effects": {
+              "compliance": -4,
+              "clients": -6
+            },
+            "outcome": "Every month of delay costs the client more in fees. A breached trigger calls for review now."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "followUps": [
+      {
+        "id": "order-later",
+        "when": "Week 1, Friday 10:30",
+        "from": "W/ro Selam Getachew",
+        "channel": "call",
+        "subject": "I paid Birr 64 a share when the price was 52",
+        "body": [
+          "W/ro Selam's contract note shows 405 Sidama shares at an average of Birr 64.07. Today Sidama traded at Birr 53. Her holding of Birr 25,950 is worth about Birr 21,500, and she says nobody told her a market order could cost so much. She is threatening to close her account and post about it."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Log it as a complaint for independent investigation, explain how the order swept the book, offer a fair remedy, tell her how to escalate, including to ECMA, and add a limit-order rule.",
+            "score": 3,
+            "effects": {
+              "clients": 6,
+              "compliance": 6,
+              "operations": 4
+            },
+            "outcome": "A complaint handled independently, in writing, with an escalation route, keeps clients and fixes the root cause. The lesson: in thin markets, limit orders protect first-time investors."
+          },
+          {
+            "text": "Explain politely that she gave a clear market order instruction, which the recorded call confirms, so the price she paid is her responsibility and no remedy is due.",
+            "score": 1,
+            "effects": {
+              "clients": -8,
+              "book": -4
+            },
+            "outcome": "Technically true, but the duty of best execution includes explaining what a market order will do in a thin book."
+          },
+          {
+            "text": "Offer to buy her 405 shares back at Birr 64 from your own account, so she gets her money back and no complaint reaches compliance or ECMA.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "clients": 2
+            },
+            "outcome": "Personal dealing with a client outside the firm's procedure creates a conflict and hides the problem. Remedies go through the complaints process."
+          }
+        ],
+        "module": "s2"
+      },
+      {
+        "id": "settle-later",
+        "when": "Week 2, Thursday 09:00",
+        "from": "Head of brokerage",
+        "channel": "meeting",
+        "subject": "The association cannot withdraw: client account short",
+        "body": [
+          "Ato Henok's Birr is still not in. Yesterday the Gibe Teachers' Savings Association asked to withdraw part of its cash, and the payment was held because the client account was Birr 91,500 below what the ledger owes. The treasurer wants an explanation in writing."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Tell your head exactly what happened, have the firm top up the Birr 91,500 today, pay the association, report the breach and adopt the cleared-funds rule.",
+            "score": 3,
+            "effects": {
+              "compliance": 8,
+              "operations": 8,
+              "clients": 4
+            },
+            "outcome": "Making clients whole and reporting honestly is the only recovery. The lesson: one client's money never funds another's trade."
+          },
+          {
+            "text": "Tell the association in writing that its bank delayed the payment, and pay it as soon as Henok's money arrives, so the firm avoids a difficult conversation.",
+            "score": 0,
+            "effects": {
+              "compliance": -15,
+              "clients": -10
+            },
+            "outcome": "A false explanation to a client turns a segregation breach into a conduct breach."
+          },
+          {
+            "text": "Ask the association's treasurer to wait a few more days until Henok's converted Birr arrives, then release the full withdrawal with an apology.",
+            "score": 1,
+            "effects": {
+              "clients": -8,
+              "compliance": -6
+            },
+            "outcome": "The association's money is its own and must be available now. The firm fills the gap, not the client."
+          }
+        ],
+        "module": "s3"
+      },
+      {
+        "id": "model-later",
+        "when": "Five months later",
+        "from": "Ato Tadele Worku",
+        "channel": "visit",
+        "subject": "Shares fell 18% and the fees are due next month",
+        "body": [
+          "Listed shares in Ato Tadele's portfolio have fallen about 18%, and the 70% share holding is now worth much less than he put in. His granddaughter's Birr 90,000 fee is due next month, and he would have to sell shares in a thin market to pay it. He has asked for a copy of his suitability report."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Report it to your head and compliance, give him the file, ring-fence three years of fees in T-bills and bonds, and sell only what is needed.",
+            "score": 3,
+            "effects": {
+              "clients": 8,
+              "compliance": 6
+            },
+            "outcome": "Escalation and a rebuilt plan are the right recovery. The original lesson: ring-fence dated needs before any share exposure."
+          },
+          {
+            "text": "Tell him to hold the shares and wait for the market to recover, and to borrow the Birr 90,000 for the fees from a bank so he does not sell at a loss.",
+            "score": 0,
+            "effects": {
+              "clients": -12,
+              "compliance": -8
+            },
+            "outcome": "Adding debt to an unsuitable allocation compounds the harm and ignores his stated need."
+          },
+          {
+            "text": "Point out, with his signed instruction, that he asked for 70% in shares against the model, so the loss reflects his own choice.",
+            "score": 1,
+            "effects": {
+              "clients": -8,
+              "compliance": -4
+            },
+            "outcome": "Client preference alone is not a defense of an advised file. The report must show why the recommendation fitted his goals."
+          }
+        ],
+        "module": "s4"
+      },
+      {
+        "id": "error-later",
+        "when": "The following Monday",
+        "from": "Treasurer, Gibe Teachers' Savings Association",
+        "channel": "email",
+        "subject": "Why do we hold 2,300 Sidama shares when we signed for 500?",
+        "body": [
+          "The association's statement shows 2,300 Sidama Coffee shares and Birr 93,600 more spent than its signed instruction allowed. Its board has asked for the extra shares to be removed and is considering moving its account."
+        ],
+        "ask": "What do you do now?",
+        "options": [
+          {
+            "text": "Apologize in writing, move the 1,800 shares to the error account, refund the Birr 93,600 and fees, book the loss to the firm and explain the new controls.",
+            "score": 3,
+            "effects": {
+              "clients": 6,
+              "compliance": 6,
+              "operations": 4,
+              "book": -2
+            },
+            "outcome": "The client gets exactly what it ordered and the firm bears its own error. That rule applies however late the error is found."
+          },
+          {
+            "text": "Explain that Sidama has risen slightly since the purchase, so the association is better off holding all 2,300 shares, and offer to sell them later if it still wishes.",
+            "score": 0,
+            "effects": {
+              "clients": -10,
+              "compliance": -12
+            },
+            "outcome": "The association never authorized the purchase. A gain does not make unauthorized trading acceptable."
+          },
+          {
+            "text": "Offer to sell the extra 1,800 shares for the association on the market at their cost price, crediting whatever the sale raises back to its account.",
+            "score": 1,
+            "effects": {
+              "clients": -4,
+              "compliance": -4
+            },
+            "outcome": "Any loss on the sale would still fall on the client. The firm must take the shares into its error account."
+          }
+        ],
+        "module": "s5"
+      }
+    ],
+    "memo": {
+      "prompt": "Write your end-of-month hand-over note to the head of brokerage.",
+      "guide": [
+        "New accounts opened, and any file you are not yet satisfied with and why.",
+        "Every incident this month (fails, breaks, errors, complaints), its root cause and the control now in place.",
+        "Open orders and corporate actions clients must act on next month, with dates.",
+        "One conduct or suitability risk on the desk you want the head of brokerage to watch."
+      ]
+    }
+  },
+  "exam": [
+    {
+      "q": "A bank branch officer with no ECMA licence is handed cash by a customer to buy shares. What is correct?",
+      "options": [
+        "She may take it if she passes it on the same day",
+        "She declines the cash and refers the customer to the licensed broker to open an account",
+        "She buys through her own account",
+        "She gives advice but not the order"
+      ],
+      "answer": 1,
+      "explain": "Unlicensed referrers cannot take orders, client money or give advice."
+    },
+    {
+      "q": "A new broker plans for three years of ECMA licensing. Total fees under Directive No. 996/2024?",
+      "options": [
+        "ETB 324,000",
+        "ETB 192,000",
+        "ETB 258,000",
+        "ETB 396,000"
+      ],
+      "answer": 0,
+      "explain": "60,000 + 132,000 + 66,000 + 66,000 = ETB 324,000."
+    },
+    {
+      "q": "A diaspora client asks to fund his account through a relative's Birr deposit after an informal transfer. The best response?",
+      "options": [
+        "Accept with a letter from the relative",
+        "Accept below ETB 100,000",
+        "Decline and require funds through the formal banking system from his own account",
+        "Open the account in the relative's name"
+      ],
+      "answer": 2,
+      "explain": "Third-party, informal funding breaks the source-of-funds and FX rules."
+    },
+    {
+      "q": "A client scores 25 (growth) but will need the money for school fees in nine months. Which profile do you record for it?",
+      "options": [
+        "Growth",
+        "Conservative, with the reason documented",
+        "Moderate",
+        "Growth with a warning"
+      ],
+      "answer": 1,
+      "explain": "Capacity based on the short horizon overrides tolerance."
+    },
+    {
+      "q": "A thin Growth Board share last traded at ETB 40; best offers are ETB 46 and ETB 51. A first-time client wants ETB 20,000 of it now. Best instruction?",
+      "options": [
+        "Market order",
+        "Buy a different share",
+        "Split into 20 market orders",
+        "Limit order near the last trade, explaining it may fill slowly"
+      ],
+      "answer": 3,
+      "explain": "A limit order protects the client from sweeping a thin order book."
+    },
+    {
+      "q": "Fills of 600 shares at ETB 30.00 and 400 at ETB 30.50. Average price?",
+      "options": [
+        "ETB 30.25",
+        "ETB 30.30",
+        "ETB 30.20",
+        "ETB 30.10"
+      ],
+      "answer": 2,
+      "explain": "(18,000 + 12,200) / 1,000 = ETB 30.20."
+    },
+    {
+      "q": "A client holds 600 shares; a 1-for-3 rights issue is priced at ETB 25. What does full take-up cost and what is the new holding?",
+      "options": [
+        "ETB 5,000; 800 shares",
+        "ETB 15,000; 1,200 shares",
+        "ETB 5,000; 600 shares",
+        "ETB 7,500; 900 shares"
+      ],
+      "answer": 0,
+      "explain": "600 / 3 = 200 rights x ETB 25 = ETB 5,000, giving 800 shares."
+    },
+    {
+      "q": "What does the ESX Rulebook state about the settlement cycle?",
+      "options": [
+        "T+2",
+        "T+3",
+        "Same-day settlement for all trades",
+        "Nothing; it comes from CSD and other settlement rules"
+      ],
+      "answer": 3,
+      "explain": "The Rulebook sets no settlement cycle, tick size or price limits."
+    },
+    {
+      "q": "A client buys ETB 80,000 of shares and ETB 600,000 of government bonds. Total ECMA transaction fees?",
+      "options": [
+        "ETB 120",
+        "ETB 150",
+        "ETB 1,020",
+        "ETB 30"
+      ],
+      "answer": 1,
+      "explain": "0.15% x 80,000 = 120, plus 0.005% x 600,000 = 30, total ETB 150."
+    },
+    {
+      "q": "Client ledgers total ETB 2,350,000; the client bank account holds ETB 2,330,000. What is required today?",
+      "options": [
+        "Pay ETB 20,000 in from the firm's own funds, investigate and record it",
+        "Note it for month end",
+        "Reduce the largest client's balance",
+        "Ask clients to top up"
+      ],
+      "answer": 0,
+      "explain": "Shortfalls are corrected immediately with the firm's money."
+    },
+    {
+      "q": "A first-time investor's known costs are 1.2% to buy and 1.2% to sell. She buys at ETB 100. Roughly what sale price breaks even?",
+      "options": [
+        "ETB 101.20",
+        "ETB 100.00",
+        "ETB 102.40",
+        "ETB 112.00"
+      ],
+      "answer": 2,
+      "explain": "Round-trip costs of about 2.4% need a price near ETB 102.40."
+    },
+    {
+      "q": "A client chooses, unadvised, a product he does not understand. The firm should:",
+      "options": [
+        "Run a suitability test and sign off",
+        "Run an appropriateness check and give a written warning, recording his acknowledgement",
+        "Refuse all client-initiated orders",
+        "Execute without records"
+      ],
+      "answer": 1,
+      "explain": "Client-initiated orders call for appropriateness checks and warnings."
+    },
+    {
+      "q": "Model: 60% T-bills at 11%, 40% bonds at 13%. With inflation at 13.4%, the approximate real return is:",
+      "options": [
+        "+1.0%",
+        "-0.6%",
+        "+11.8%",
+        "-1.6%"
+      ],
+      "answer": 3,
+      "explain": "6.6% + 5.2% = 11.8%; 11.8% minus 13.4% is about -1.6%."
+    },
+    {
+      "q": "A family business owner wants most of her portfolio in a listed company from her own sector. The main concern is:",
+      "options": [
+        "Her knowledge of the sector",
+        "Fees",
+        "Her income and portfolio would fall together, plus illiquidity",
+        "The lot size"
+      ],
+      "answer": 2,
+      "explain": "Concentration in the client's own sector doubles her exposure."
+    },
+    {
+      "q": "A ETB 1,000,000 portfolio targets 50% shares and holds ETB 580,000 in shares. With ETB 50,000 of new money going to bonds, the shares then are:",
+      "options": [
+        "About 55.2% of the portfolio",
+        "50.0%",
+        "58.0%",
+        "61.0%"
+      ],
+      "answer": 0,
+      "explain": "580,000 / 1,050,000 is about 55.2%: new money narrows the drift without selling."
+    },
+    {
+      "q": "Which marketing line meets ethical standards?",
+      "options": [
+        "\"Guaranteed returns above inflation\"",
+        "\"No risk with government-backed ESX shares\"",
+        "\"Join thousands of winners\"",
+        "\"Share prices can rise and fall; see our fee sheet before investing\""
+      ],
+      "answer": 3,
+      "explain": "Fair marketing shows risk and fees and makes no guarantees."
+    },
+    {
+      "q": "A firm has own total assets of ETB 50 million and liquid assets of ETB 23 million. What is the most it can move from cash into thin inventory and still hold 40%?",
+      "options": [
+        "ETB 5 million",
+        "ETB 3 million",
+        "ETB 20 million",
+        "ETB 23 million"
+      ],
+      "answer": 1,
+      "explain": "40% of 50 million is 20 million; 23 minus 20 leaves ETB 3 million."
+    },
+    {
+      "q": "A finance manager wants to count segregated client money in the 40% liquid asset test. The correct view?",
+      "options": [
+        "Do not count it; it belongs to clients",
+        "Count all of it",
+        "Count half",
+        "Count it only at year end"
+      ],
+      "answer": 0,
+      "explain": "Client money is not the firm's and cannot support its own liquidity."
+    },
+    {
+      "q": "An account averaging ETB 300,000 paid ETB 36,000 in commission and fees over a year for a long-term client. Cost ratio and likely concern?",
+      "options": [
+        "1.2%; none",
+        "3.6%; front-running",
+        "12%; possible churning",
+        "12%; best execution met"
+      ],
+      "answer": 2,
+      "explain": "36,000 / 300,000 = 12%, a churning warning for a long-term profile."
+    },
+    {
+      "q": "A compliance reviewer challenges shares in a retiree's income file. Which defence is strongest?",
+      "options": [
+        "Shares always beat inflation",
+        "The cash need is covered by T-bills and bonds, the share part serves a long-term goal, and the risk was disclosed and signed",
+        "The client asked",
+        "Our models always include shares"
+      ],
+      "answer": 1,
+      "explain": "A defence links the allocation to recorded goals and disclosed risk."
+    }
+  ],
+  "sources": [
+    "Erudite Africa course specification 2.e: Brokerage Operations and Client Advisory, Levels 1 and 2 (October 2026)",
+    "Erudite Africa: Ethiopian Context programme overview and regulatory register (October 2026)",
+    "Capital Market Proclamation No. 1248/2021; ECMA Directives No. 980/2024 (licensing and supervision) and No. 996/2024 (fees)",
+    "ESX Rulebook (December 2024)",
+    "NBE Directive No. FXD/01/2024 as amended, and the NBE Monetary Policy Committee release No. 7 (July 2026)",
+    "AML/CFT and personal data protection laws as reported in the regulatory register (numbers to be confirmed)"
+  ]
+}

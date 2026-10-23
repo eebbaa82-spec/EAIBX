@@ -40,3 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 member-downloads/
+
+# OCR engine copied from node_modules at build time
+/public/vendor/ocr/
+/public/vendor/pdfjs/

@@ -1,0 +1,398 @@
+{
+  "id": "m01",
+  "slug": "business-and-entrepreneurship",
+  "icon": "store",
+  "minutes": 12,
+  "en": {
+    "title": "Introduction to Business and Entrepreneurship",
+    "summary": "Learn what a business is, what makes an entrepreneur, and how to plan a business on paper.",
+    "objectives": [
+      "Describe what entrepreneurship means and the qualities of entrepreneurs.",
+      "List your own business ideas.",
+      "Understand what a business plan is.",
+      "Develop a simple business plan."
+    ],
+    "lessons": [
+      {
+        "id": "what-is-business",
+        "title": "What is a business?",
+        "body": [
+          "A business is also called an enterprise or a firm. It sells goods, services, or both to customers. Its aim is to make a profit.",
+          "Ethiopia's Commercial Code (2021) lists seven types of business organizations. They differ in who owns them and who is liable. Liable means responsible for paying the business's debts.",
+          "In some types, partners pay debts with their own money. In others, owners risk only the money they put in. This is called their contribution."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "people", "label": "General partnership", "text": "All partners are fully responsible for the debts, together and each alone." },
+            { "icon": "scale", "label": "Limited partnership", "text": "Some partners are fully liable; others only up to their contribution." },
+            { "icon": "book", "label": "Limited liability partnership", "text": "Two or more professionals; liability limited to their contributions." },
+            { "icon": "handshake", "label": "Joint venture", "text": "An agreement between people; no legal personality or registration." },
+            { "icon": "chart", "label": "Share company", "text": "Capital divided into shares; debts paid only from company assets." },
+            { "icon": "shield", "label": "Private limited company", "text": "Members who paid in are not liable for debts. Shares are not public." },
+            { "icon": "store", "label": "One-person private limited company", "text": "Set up by one person; the company is legally separate from them." }
+          ]
+        }
+      },
+      {
+        "id": "entrepreneur",
+        "title": "What makes an entrepreneur?",
+        "body": [
+          "Being an entrepreneur is different from being a businessperson. A businessperson usually works with existing ideas.",
+          "Entrepreneurs are innovators and leaders. They look forward and spot opportunities. They picture how the business will grow, try new ideas, and take risks."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "heart", "label": "Has a dream", "text": "Has a dream and a vision." },
+            { "icon": "idea", "label": "Spots opportunities", "text": "Finds a business opportunity and goes after it." },
+            { "icon": "store", "label": "Starts a venture", "text": "Actually starts and runs a business." },
+            { "icon": "coins", "label": "Gathers resources", "text": "Brings together tools, money, and people." },
+            { "icon": "target", "label": "Sets goals", "text": "Sets goals for self and for others." },
+            { "icon": "check", "label": "Takes action", "text": "Takes the right steps to make the business succeed." },
+            { "icon": "warning", "label": "Takes risks", "text": "Carries all or most of the risk." },
+            { "icon": "people", "label": "Creates jobs", "text": "A job creator, not a job seeker." }
+          ]
+        },
+        "tip": "Think of an entrepreneur you admire. Which of these qualities do they have?"
+      },
+      {
+        "id": "business-plan",
+        "title": "Why you need a business plan",
+        "body": [
+          "Putting your ideas and information together is called making a business plan. It is a guide, so you do not forget anything when you prepare to open your business.",
+          "A plan changes with your type of business and who will read it. It maps out the business, its timeline, and who does what. It also shows if the business can work. For a loan, it must show how you will repay.",
+          "You can get information for your plan from these sources:"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "check", "label": "Decide", "text": "Judge if starting this business is the right choice." },
+            { "icon": "book", "label": "Organize ideas", "text": "See the road ahead, step by step." },
+            { "icon": "bank", "label": "Get a loan", "text": "Show your plan to investors, banks, or microfinance institutions." }
+          ]
+        },
+        "points": [
+          "Business development services providers",
+          "Industry associations",
+          "Accountants, lawyers, and business consultants",
+          "Financial institutions",
+          "Government and non-governmental organizations"
+        ]
+      },
+      {
+        "id": "plan-contents",
+        "title": "What goes into a business plan",
+        "body": [
+          "A business plan follows a standard order of topics. Here are its eight main parts.",
+          "Some words you will meet: working capital is the money for daily running costs, like raw materials, rent, and transport. A cash flow projection estimates the money coming in and going out.",
+          "A break-even analysis shows how much you must sell to cover all your costs."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "General description", "text": "Name, location, activity, and type of business." },
+            { "label": "Personal background", "text": "The owners, their education, and their experience." },
+            { "label": "Market plan", "text": "Customers, competitors, demand, suppliers, and how you will sell." },
+            { "label": "Management plan", "text": "Who does what, and working hours or shifts." },
+            { "label": "Operational plan", "text": "How you produce, get your products, and run each day." },
+            { "label": "Financial need", "text": "Equipment, license fees, start-up costs, and working capital." },
+            { "label": "Sources of funds", "text": "Your money, family, friends, loans, and the funding gap." },
+            { "label": "Financial forecast", "text": "Projected income statement, break-even analysis, and cash flow." }
+          ]
+        },
+        "tip": "Add your market research survey report to the plan as an annex (an extra section at the end)."
+      },
+      {
+        "id": "business-model-canvas",
+        "title": "The Business Model Canvas",
+        "body": [
+          "A business model explains how a business creates and delivers value, and earns from it. Value means what customers gain from your product or service.",
+          "The Business Model Canvas (BMC) is a one-page template with nine blocks. It gives a quick picture of your business. You can show it to partners without a full business plan."
+        ],
+        "points": [
+          "Customer segments: Who are your most important customers?",
+          "Value propositions: Which customer problem do you solve?",
+          "Channels: How do you reach your customers?",
+          "Customer relationships: What relationship does each customer group expect?",
+          "Revenue streams: What will customers pay for, and how?",
+          "Key resources: What resources does your offer need?",
+          "Key activities: What must you do to deliver your offer?",
+          "Key partners: Who are your key partners and suppliers?",
+          "Cost structure: What are your most important costs?"
+        ],
+        "example": {
+          "title": "The Coffee Hub",
+          "text": "Hana and Kuma are young entrepreneurs. They plan to open The Coffee Hub. It will offer a unique coffee experience to busy professionals around Sengatera, Addis Ababa. Try filling in the nine blocks of the canvas for their business. Who are their customers? What will they pay for?"
+        }
+      }
+    ],
+    "takeaways": [
+      "A business sells goods or services to make a profit.",
+      "Ethiopia's Commercial Code lists seven types of business organizations.",
+      "Entrepreneurs spot opportunities, take risks, and create jobs.",
+      "A business plan helps you decide, organize your ideas, and get a loan.",
+      "The Business Model Canvas shows your whole business on one page."
+    ],
+    "quiz": [
+      {
+        "q": "What is the main aim of a business?",
+        "options": [
+          "To make a profit by selling goods or services",
+          "To lend money to other businesses only",
+          "To spend money without earning any"
+        ],
+        "answer": 0,
+        "explain": "A business trades goods, services, or both to customers to make a profit."
+      },
+      {
+        "q": "How is an entrepreneur different from a businessperson?",
+        "options": [
+          "An entrepreneur only works with existing ideas",
+          "An entrepreneur innovates, spots opportunities, and takes risks",
+          "An entrepreneur avoids all risks",
+          "There is no difference"
+        ],
+        "answer": 1,
+        "explain": "Entrepreneurs are innovators and leaders who look forward and take risks."
+      },
+      {
+        "q": "Why would you show your business plan to a bank or microfinance institution?",
+        "options": [
+          "To get a loan",
+          "To register a joint venture",
+          "To avoid buying equipment"
+        ],
+        "answer": 0,
+        "explain": "The plan shows the lender how your business will make money to repay the loan."
+      },
+      {
+        "q": "In a private limited company, members who paid their contributions are...",
+        "options": [
+          "Personally liable for all company debts",
+          "Not liable for the company's debts",
+          "Required to sell shares to the public"
+        ],
+        "answer": 1,
+        "explain": "Members are not liable for the company's debts once they have paid their contributions."
+      },
+      {
+        "q": "Which part of a business plan covers customers, competitors, and suppliers?",
+        "options": [
+          "Personal background",
+          "Market plan",
+          "Financial forecast",
+          "General description"
+        ],
+        "answer": 1,
+        "explain": "The market plan describes your customers, your competitors, demand, and your suppliers."
+      },
+      {
+        "q": "What does the Business Model Canvas give you?",
+        "options": [
+          "A one-page picture of your business",
+          "A tax form",
+          "A loan contract"
+        ],
+        "answer": 0,
+        "explain": "The BMC is a nine-block template that shows your business at a glance."
+      }
+    ]
+  },
+  "am": {
+    "title": "የንግድ እና ሥራ ፈጠራ መግቢያ",
+    "summary": "ንግድ ምን እንደ ሆነ፣ ሥራ ፈጣሪን ምን እንደሚለየው እና ንግድን በወረቀት እንዴት እንደሚያቅዱ ይማሩ።",
+    "objectives": [
+      "ሥራ ፈጣሪነት ምን ማለት እንደ ሆነ እና የሥራ ፈጣሪዎችን ባሕርያት መግለጽ።",
+      "የራስዎን የንግድ ሐሳቦች ዝርዝር ማዘጋጀት።",
+      "የንግድ ሥራ ዕቅድ ምን እንደ ሆነ መረዳት።",
+      "ቀላል የንግድ ዕቅድ ማዘጋጀት።"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-business",
+        "title": "ንግድ ምንድን ነው?",
+        "body": [
+          "ንግድ ድርጅት ወይም ተቋም በመባልም ይታወቃል። ዕቃዎችን፣ አገልግሎቶችን ወይም ሁለቱንም ለደንበኞች ያቀርባል። ዓላማውም ትርፍ ማግኘት ነው።",
+          "የ2013 ዓ.ም. (2021 እ.አ.አ.) የንግድ ሕግ ሰባት የንግድ ድርጅት አይነቶችን ይዘረዝራል። የሚለያዩት በባለቤትነት እና በተጠያቂነት ነው። ተጠያቂነት ማለት የድርጅቱን ዕዳ የመክፈል ኃላፊነት ነው።",
+          "በአንዳንዶቹ አጋሮች ዕዳን በራሳቸው ገንዘብ ይከፍላሉ። በሌሎቹ ደግሞ ባለቤቶች የሚያጡት ያስገቡትን ገንዘብ ብቻ ነው። ይህ ገንዘብ መዋጮ ይባላል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "people", "label": "አጠቃላይ ሽርክና", "text": "አጋሮች ለሁሉም ዕዳ በጋራ እና በግል ሙሉ ተጠያቂ ናቸው።" },
+            { "icon": "scale", "label": "የተገደበ ሽርክና", "text": "አንዳንድ አጋሮች ሙሉ ተጠያቂ ናቸው፤ ሌሎች እስከ መዋጯቸው ብቻ።" },
+            { "icon": "book", "label": "የተገደበ ተጠያቂነት ሽርክና", "text": "ሙያዊ አገልግሎት የሚሰጡ አጋሮች፤ ተጠያቂነታቸው በመዋጮ የተገደበ ነው።" },
+            { "icon": "handshake", "label": "የጋራ ሽርክና", "text": "በስምምነት የሚቋቋም፤ ሕጋዊ ሰውነት እና ምዝገባ የለውም።" },
+            { "icon": "chart", "label": "አክሲዮን ማህበር", "text": "ካፒታሉ በአክሲዮን የተከፋፈለ፤ ዕዳው በኩባንያው ሀብት ብቻ ይከፈላል።" },
+            { "icon": "shield", "label": "ኃላፊነቱ የተወሰነ የግል ማኅበር", "text": "መዋጯቸውን የከፈሉ አባላት ለዕዳ ተጠያቂ አይደሉም፤ አክሲዮኑ ለሕዝብ አይሸጥም።" },
+            { "icon": "store", "label": "የአንድ ሰው ኃላፊነቱ የተወሰነ የግል ማህበር", "text": "በአንድ ሰው ይቋቋማል፤ ድርጅቱ ከባለቤቱ የተለየ ሕጋዊ ሰውነት አለው።" }
+          ]
+        }
+      },
+      {
+        "id": "entrepreneur",
+        "title": "ሥራ ፈጣሪን ምን ይለየዋል?",
+        "body": [
+          "ሥራ ፈጣሪ መሆን ነጋዴ ከመሆን ይለያል። ነጋዴዎች ብዙ ጊዜ በነባር ሐሳቦች ይሠራሉ።",
+          "ሥራ ፈጣሪዎች አዲስ ነገር የሚፈጥሩ መሪዎች ናቸው። ስለ ወደ ፊቱ ያስባሉ፤ ዕድሎችን ይለያሉ። ንግዱ እንዴት እንደሚያድግ ራእይ ይፈጥራሉ፤ አደጋንም ይጋፈጣሉ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "heart", "label": "ሕልም አለው", "text": "ሕልም እና ራእይ አለው።" },
+            { "icon": "idea", "label": "ዕድልን ይለያል", "text": "የንግድ ሥራ ዕድልን ይለያል፤ ይከታተላልም።" },
+            { "icon": "store", "label": "ንግድ ይጀምራል", "text": "የንግድ ሥራ ይጀምራል፤ ያካሂዳልም።" },
+            { "icon": "coins", "label": "ሀብት ያሰባስባል", "text": "የአካል፣ የፋይናንስ እና የሰው ኃይል ያሰባስባል።" },
+            { "icon": "target", "label": "ግብ ያወጣል", "text": "ለራሱ እና ለሌሎች ግቦች ያወጣል።" },
+            { "icon": "check", "label": "ርምጃ ይወስዳል", "text": "ስኬትን ለማረጋገጥ ተገቢ ርምጃዎችን ይወስዳል።" },
+            { "icon": "warning", "label": "አደጋን ይሸከማል", "text": "ሁሉንም ወይም አብዛኛውን አደጋ ይሸከማል።" },
+            { "icon": "people", "label": "ሥራ ይፈጥራል", "text": "ሥራ ፈላጊ ሳይሆን ሥራ ፈጣሪ ነው።" }
+          ]
+        },
+        "tip": "አርአያ አድርገው የሚያዩትን አንድ ሥራ ፈጣሪ ያስቡ። ከእነዚህ ባሕርያት የትኞቹ አሉት?"
+      },
+      {
+        "id": "business-plan",
+        "title": "የንግድ ሥራ ዕቅድ ለምን ያስፈልጋል?",
+        "body": [
+          "ሐሳብዎን እና መረጃዎን ማቀናጀት የንግድ ሥራ ዕቅድ ማውጣት ይባላል። ንግድዎን ለመክፈት ሲዘጋጁ ምንም ነገር እንዳያመልጥዎ የሚረዳ መመሪያ ነው።",
+          "ዕቅዱ እንደ ንግድዎ ባሕርይ እና እንደ አንባቢው ይለያያል። የሥራዎን ቅደም ተከተል እና ማን ምን እንደሚሠራ ይቀርጻል። ንግዱ ተግባራዊ መሆኑንም ያሳያል። ለብድር ከሆነ ብድሩን እንዴት እንደሚመልሱ ማሳየት አለበት።",
+          "ለዕቅድዎ መረጃ ከሚከተሉት ምንጮች ማግኘት ይችላሉ፦"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "check", "label": "መወሰን", "text": "ንግዱን መጀመር ትክክለኛ ውሳኔ መሆኑን ይመዝኑ።" },
+            { "icon": "book", "label": "ሐሳብን ማደራጀት", "text": "ወደ ፊት ያለውን መንገድ በቅደም ተከተል ይመልከቱ።" },
+            { "icon": "bank", "label": "ብድር ማግኘት", "text": "ዕቅድዎን ለባለሀብቶች፣ ለባንክ ወይም ለማይክሮፋይናንስ ተቋም ያቅርቡ።" }
+          ]
+        },
+        "points": [
+          "የንግድ ልማት አገልግሎት ሰጭዎች",
+          "ኢንዱስትሪ ተኮር ማህበራት",
+          "የሒሳብ ባለሙያዎች፣ የሕግ እና የንግድ አማካሪዎች",
+          "የገንዘብ ተቋማት",
+          "መንግሥታዊ እና መንግሥታዊ ያልሆኑ ድርጅቶች"
+        ]
+      },
+      {
+        "id": "plan-contents",
+        "title": "የንግድ ዕቅድ ይዘቶች",
+        "body": [
+          "የንግድ ዕቅድ መደበኛ የርእሶች ቅደም ተከተል ይከተላል። ስምንቱ ዋና ዋና ክፍሎች የሚከተሉት ናቸው።",
+          "አንዳንድ ቃላት፦ የሥራ ካፒታል ለዕለት ተዕለት ወጭዎች የሚያስፈልግ ገንዘብ ነው፤ ለምሳሌ ጥሬ ዕቃ፣ ኪራይ እና መጓጓዣ። የገንዘብ ፍሰት ትንበያ የሚገባውን እና የሚወጣውን ገንዘብ ይገምታል።",
+          "አማካይ የማግኘት ጥናት ሁሉንም ወጭዎች ለመሸፈን ምን ያህል መሸጥ እንዳለብዎ ያሳያል።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "የንግዱ አጠቃላይ መግለጫ", "text": "ስም፣ ቦታ፣ የንግዱ ባሕርይ እና የድርጅቱ አይነት።" },
+            { "label": "የግል ዳራ", "text": "የባለቤቶች ስም፣ ትምህርታቸው እና ልምዳቸው።" },
+            { "label": "ገበያ ዕቅድ", "text": "ደንበኞች፣ ተፎካካሪዎች፣ ፍላጎት፣ አቅራቢዎች እና የሽያጭ መንገድ።" },
+            { "label": "የንግድ አስተዳደር ዕቅድ", "text": "ማን ምን እንደሚሠራ፣ የሥራ ፈረቃ እና የሥራ ሰዓት።" },
+            { "label": "የሥራ ዕቅድ", "text": "የምርት ሂደት፣ ምርትን ማግኘት እና የዕለት ተዕለት ሥራ።" },
+            { "label": "የገንዘብ ፍላጎት", "text": "መሣሪያዎች፣ የፍቃድ ክፍያ፣ መነሻ ወጭዎች እና የሥራ ካፒታል።" },
+            { "label": "የገንዘብ ማሰባሰቢያ ምንጮች", "text": "የግል መዋጮ፣ ቤተሰብ፣ ጓደኞች፣ ብድር እና የገንዘብ ክፍተት።" },
+            { "label": "የፋይናንስ ትንበያ", "text": "የታቀደ የገቢ መግለጫ፣ አማካይ የማግኘት ጥናት እና የገንዘብ ፍሰት።" }
+          ]
+        },
+        "tip": "የገበያ ጥናት ዘገባዎን እንደ አባሪ (በመጨረሻ የሚጨመር ክፍል) ከዕቅዱ ጋር ያካትቱ።"
+      },
+      {
+        "id": "business-model-canvas",
+        "title": "የቢዝነስ ሞዴል መገለጫ (ቢኤምሲ)",
+        "body": [
+          "የቢዝነስ ሞዴል አንድ ድርጅት እንዴት ዕሴት እንደሚፈጥር፣ እንደሚያቀርብ እና ገቢ እንደሚያገኝበት ይገልጻል። ዕሴት ማለት ደንበኞች ከምርትዎ ወይም ከአገልግሎትዎ የሚያገኙት ጥቅም ነው።",
+          "የቢዝነስ ሞዴል መገለጫ (ቢኤምሲ) ዘጠኝ ብሎኮች ያሉት የአንድ ገጽ አብነት ነው። ስለ ንግድዎ ፈጣን ምስል ይሰጣል። ሙሉ የንግድ ዕቅድ ሳያቀርቡ ለባለ ድርሻ አካላት ማሳየት ይችላሉ።"
+        ],
+        "points": [
+          "የደንበኛ አይነቶች፦ በጣም አስፈላጊ ደንበኞችዎ እነማን ናቸው?",
+          "የዕሴት አቅርቦት፦ የደንበኞችዎን የትኛውን ችግር ይፈታሉ?",
+          "ቻናሎች፦ ደንበኞችዎን በየትኛው መንገድ ያገኟቸዋል?",
+          "የደንበኞች መስተጋብር፦ እያንዳንዱ የደንበኛ ቡድን ምን አይነት ግንኙነት ይጠብቃል?",
+          "የገቢ ፍሰት፦ ደንበኞች ለምን ይከፍላሉ፤ እንዴትስ ይከፍላሉ?",
+          "ቁልፍ ሀብቶች፦ አቅርቦትዎ ምን ቁልፍ ሀብቶች ያስፈልጉታል?",
+          "ቁልፍ ተግባሮች፦ አቅርቦትዎን ለማድረስ ምን መሥራት አለብዎ?",
+          "ቁልፍ አጋሮች፦ ቁልፍ አጋሮችዎ እና አቅራቢዎችዎ እነማን ናቸው?",
+          "የወጭ መዋቅር፦ በጣም አስፈላጊዎቹ ወጭዎች የትኞቹ ናቸው?"
+        ],
+        "example": {
+          "title": "የቡና ማእከል (ካፌው)",
+          "text": "ሐና እና ኩማ ወጣት ሥራ ፈጣሪዎች ናቸው። ካፌ ለመክፈት አቅደዋል። በአዲስ አበባ ሰንጋ ተራ አካባቢ ላሉ ባለሙያዎች የተለየ የቡና ጣዕም ማቅረብ ይፈልጋሉ። የካፌውን ቢኤምሲ ዘጠኝ ብሎኮች ለመሙላት ይሞክሩ። ደንበኞቻቸው እነማን ናቸው? ለምንስ ይከፍላሉ?"
+        }
+      }
+    ],
+    "takeaways": [
+      "ንግድ ትርፍ ለማግኘት ዕቃዎችን ወይም አገልግሎቶችን ያቀርባል።",
+      "የኢትዮጵያ የንግድ ሕግ ሰባት የንግድ ድርጅት አይነቶችን ይዘረዝራል።",
+      "ሥራ ፈጣሪዎች ዕድሎችን ይለያሉ፣ አደጋን ይጋፈጣሉ፣ ሥራም ይፈጥራሉ።",
+      "የንግድ ሥራ ዕቅድ ለመወሰን፣ ሐሳብን ለማደራጀት እና ብድር ለማግኘት ይረዳል።",
+      "የቢዝነስ ሞዴል መገለጫ ንግድዎን በአንድ ገጽ ያሳያል።"
+    ],
+    "quiz": [
+      {
+        "q": "የንግድ ዋና ዓላማ ምንድን ነው?",
+        "options": [
+          "ዕቃዎችን ወይም አገልግሎቶችን በማቅረብ ትርፍ ማግኘት",
+          "ለሌሎች ንግዶች ብቻ ገንዘብ ማበደር",
+          "ምንም ገቢ ሳያገኙ ገንዘብ ማውጣት"
+        ],
+        "answer": 0,
+        "explain": "ንግድ ትርፍ ለማግኘት ዕቃዎችን፣ አገልግሎቶችን ወይም ሁለቱንም ለደንበኞች ያቀርባል።"
+      },
+      {
+        "q": "ሥራ ፈጣሪ ከነጋዴ በምን ይለያል?",
+        "options": [
+          "ሥራ ፈጣሪ በነባር ሐሳቦች ብቻ ይሠራል",
+          "ሥራ ፈጣሪ አዲስ ነገር ይፈጥራል፣ ዕድሎችን ይለያል፣ አደጋን ይጋፈጣል",
+          "ሥራ ፈጣሪ ማንኛውንም አደጋ ይሸሻል",
+          "ምንም ልዩነት የለም"
+        ],
+        "answer": 1,
+        "explain": "ሥራ ፈጣሪዎች ስለ ወደ ፊቱ የሚያስቡ፣ አደጋን የሚጋፈጡ አዲስ ነገር ፈጣሪዎች እና መሪዎች ናቸው።"
+      },
+      {
+        "q": "የንግድ ሥራ ዕቅድዎን ለባንክ ወይም ለማይክሮፋይናንስ ተቋም ለምን ያቀርባሉ?",
+        "options": [
+          "ብድር ለማግኘት",
+          "የጋራ ሽርክና ለማስመዝገብ",
+          "መሣሪያ ከመግዛት ለመዳን"
+        ],
+        "answer": 0,
+        "explain": "ዕቅዱ ንግድዎ ብድሩን ለመመለስ እንዴት ገንዘብ እንደሚያገኝ ለአበዳሪው ያሳያል።"
+      },
+      {
+        "q": "ኃላፊነቱ በተወሰነ የግል ማኅበር ውስጥ መዋጯቸውን የከፈሉ አባላት…",
+        "options": [
+          "ለድርጅቱ ዕዳ ሁሉ በግል ተጠያቂ ናቸው",
+          "ለድርጅቱ ዕዳ ተጠያቂ አይደሉም",
+          "አክሲዮናቸውን ለሕዝብ መሸጥ አለባቸው"
+        ],
+        "answer": 1,
+        "explain": "አባላቱ መዋጯቸውን እስከ ከፈሉ ድረስ ለድርጅቱ ዕዳ ተጠያቂ አይደሉም።"
+      },
+      {
+        "q": "ደንበኞችን፣ ተፎካካሪዎችን እና አቅራቢዎችን የሚገልጸው የንግድ ዕቅድ ክፍል የትኛው ነው?",
+        "options": [
+          "የግል ዳራ",
+          "ገበያ ዕቅድ",
+          "የፋይናንስ ትንበያ",
+          "የንግዱ አጠቃላይ መግለጫ"
+        ],
+        "answer": 1,
+        "explain": "ገበያ ዕቅድ ደንበኞችዎን፣ ተፎካካሪዎችዎን፣ ፍላጎትን እና አቅራቢዎችዎን ይገልጻል።"
+      },
+      {
+        "q": "የቢዝነስ ሞዴል መገለጫ ምን ይሰጥዎታል?",
+        "options": [
+          "የንግድዎን የአንድ ገጽ ምስል",
+          "የታክስ ቅጽ",
+          "የብድር ውል"
+        ],
+        "answer": 0,
+        "explain": "ቢኤምሲ ንግድዎን በአጭሩ የሚያሳይ ዘጠኝ ብሎኮች ያሉት አብነት ነው።"
+      }
+    ]
+  }
+}

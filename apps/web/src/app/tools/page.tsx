@@ -31,6 +31,18 @@ const tools = [
     href: "/tools/loan-calculator",
   },
   {
+    name: "Borrower Profile Builder",
+    body: "Build a lender-ready profile from your company profile, check your readiness and get the document checklist for your loan.",
+    button: "Build my profile",
+    href: "/credit-center/profile-builder",
+  },
+  {
+    name: "Credit Analysis Workspace",
+    body: "For loan officers and credit analysts: spread five periods of statements, get the ratios, add sector and regional context and print a credit analysis report.",
+    button: "Open the workspace",
+    href: "/credit-center/credit-analysis",
+  },
+  {
     name: "Investopia AI Assistant",
     body: "Ask questions about your business, your listing or Ethiopian business rules, in Amharic or English.",
     button: "Ask the assistant",

@@ -87,6 +87,7 @@ export default function PartnersPage() {
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
           <div className="rounded-xl border border-line bg-white p-6">
             <PreviewForm
+              formName="partnership"
               submitLabel="Request a call"
               confirmation="Thank you. A member of our partnerships team will contact you within two working days."
               fields={[
@@ -113,7 +114,7 @@ export default function PartnersPage() {
             </p>
             <p className="mt-4">
               <a
-                href="/downloads/Investopia-Partner-Brochure.pdf"
+                href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/downloads/Investopia-Partner-Brochure.pdf`}
                 download
                 className="inline-flex rounded-lg bg-brand-700 px-4 py-2 font-semibold text-white hover:bg-brand-600"
               >

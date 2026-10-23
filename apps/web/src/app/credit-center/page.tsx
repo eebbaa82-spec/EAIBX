@@ -62,8 +62,16 @@ export default function CreditCenterPage() {
             },
           ]}
         />
-        <div className="mt-8">
-          <ButtonLink href="/join">Build my credit profile</ButtonLink>
+        <div className="mt-8 rounded-2xl border border-brand-200 bg-brand-50 p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">Free tool</p>
+          <h3 className="mt-1 text-xl font-bold text-ink">Borrower profile builder</h3>
+          <p className="mt-2 max-w-2xl text-muted">
+            Upload your company profile, answer a few questions about your loan, finances and collateral, and get a lender-ready profile, a
+            readiness check and the document checklist for your loan type, from working capital to project and lease financing.
+          </p>
+          <div className="mt-5">
+            <ButtonLink href="/credit-center/profile-builder">Build my borrower profile</ButtonLink>
+          </div>
         </div>
       </Section>
 
@@ -116,8 +124,20 @@ export default function CreditCenterPage() {
             },
           ]}
         />
-        <div className="mt-8">
-          <ButtonLink href="/contact">Request a demo for your institution</ButtonLink>
+        <div className="mt-8 rounded-2xl border border-brand-200 bg-white p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">For loan officers and credit analysts</p>
+          <h3 className="mt-1 text-xl font-bold text-ink">Credit analysis workspace</h3>
+          <p className="mt-2 max-w-2xl text-muted">
+            Spread up to five periods of financial statements in the standard financial analysis form and get the totals, trend and analytical ratios at once. Add the loan
+            application details, sector and regional context from official sources and your own findings and documents, and print a credit analysis report in the loan
+            application annex format.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <ButtonLink href="/credit-center/credit-analysis">Open the workspace</ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">
+              Request a demo for your institution
+            </ButtonLink>
+          </div>
         </div>
       </Section>
 
