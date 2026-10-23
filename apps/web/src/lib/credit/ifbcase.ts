@@ -1,4 +1,4 @@
-import { ifbProducts, modeById, productById, screen, type IfbMode, type IfbModeId, type IfbProduct, type IfbProductId } from "@/data/credit/ifb";
+import { ifbProducts, modeById, productById, screen, termModeNote, type IfbMode, type IfbModeId, type IfbProduct, type IfbProductId } from "@/data/credit/ifb";
 import type { Column } from "./spread";
 
 /**
@@ -12,14 +12,17 @@ export type IfbInput = {
   mode: IfbModeId | "";
   activity: "" | "Permissible" | "Prohibited";
   activityNote: string;
-  /** Interest-bearing debt and non-permissible income, in the statements' unit; blank uses the spread. */
-  interestDebt: string;
+  /** Whether most of the business's existing financing is from conventional banks. */
+  mainlyConventional: "" | "Yes" | "No";
+  /** Non-Halal income, in the statements' unit; blank uses interest income from the spread. */
   nonPermissibleIncome: string;
   asset: string;
   supplier: string;
   possession: "" | "Physical" | "Constructive (title documents)" | "Not applicable";
   agent: boolean;
   sacApproved: boolean;
+  /** The customer holds an interest-free deposit account with the lender. */
+  account: boolean;
 };
 
 export const emptyIfb = (): IfbInput => ({
@@ -28,13 +31,14 @@ export const emptyIfb = (): IfbInput => ({
   mode: "",
   activity: "",
   activityNote: "",
-  interestDebt: "",
+  mainlyConventional: "",
   nonPermissibleIncome: "",
   asset: "",
   supplier: "",
   possession: "",
   agent: false,
   sacApproved: false,
+  account: false,
 });
 
 export const ifbFacilityTypes = [...ifbProducts.map((p) => p.name), "Other"];
@@ -53,28 +57,28 @@ const num = (v: string) => {
   return String(v).trim() !== "" && Number.isFinite(n) ? n : NaN;
 };
 
-/** The screening ratios, from the analyst's figures or else the latest spread. */
+/** The screening, with non-Halal income from the analyst's figure or else the latest spread. */
 export function ifbScreening(f: IfbInput, L: Column | undefined) {
-  const debt = Number.isFinite(num(f.interestDebt)) ? num(f.interestDebt) : L ? L.bankDebt : NaN;
   const income = Number.isFinite(num(f.nonPermissibleIncome)) ? num(f.nonPermissibleIncome) : L ? L.interestIncome : NaN;
-  const debtRatio = L && L.totalAssets > 0 && Number.isFinite(debt) ? debt / L.totalAssets : NaN;
   const incomeRatio = L && L.sales > 0 && Number.isFinite(income) ? income / L.sales : NaN;
-  return { debt, income, debtRatio, incomeRatio, ...screen(f.activity, debtRatio, incomeRatio) };
+  return { income, incomeRatio, ...screen(f.activity, incomeRatio, f.mainlyConventional) };
 }
 
 /** The Sharia'h points the analyst documents for an IFB financing. */
-export function ifbChecklist(f: IfbInput, L: Column | undefined, priced: boolean) {
-  const { mode } = ifbProduct(f);
+export function ifbChecklist(f: IfbInput, L: Column | undefined, priced: boolean, months = NaN) {
+  const { product, mode } = ifbProduct(f);
   const s = ifbScreening(f, L);
   const needsAsset = mode.pricing === "sale" || mode.pricing === "rent";
   const points = [
     { point: "Product approved by the Sharia'h Advisory Committee", done: f.sacApproved },
-    { point: "Business activity and financial ratios screened as permissible", done: s.decision === "Eligible" || s.decision === "Eligible with conditions" },
+    { point: "Business activity and non-Halal income screened as permissible", done: s.decision === "Eligible" || s.decision === "Eligible with conditions" },
+    { point: "Interest-free deposit account opened with the lender", done: f.account },
   ];
   if (needsAsset) {
     points.push({ point: "Asset identified, existing, permissible and clearly specified", done: !!f.asset.trim() });
     points.push({ point: "The bank owns and possesses the asset before it sells or leases it", done: !!f.possession && f.possession !== "Not applicable" });
   }
   if (mode.pricing === "sale") points.push({ point: "Cost, profit and sale price disclosed and fixed in the contract", done: priced });
+  if (product.group === "Term" && mode.id === "murabaha") points.push({ point: "Murabaha term of three years or less, or a longer term directed by the head of IFB", done: !termModeNote(product, mode.id, months) });
   return points;
 }

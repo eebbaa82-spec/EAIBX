@@ -20,7 +20,7 @@ import {
   type CollateralTypeId,
   type LoanTypeId,
 } from "@/data/credit/profile";
-import { ifbDocs, ifbProducts, modeById, productById, prohibitedActivities, saleProfit, screen, type IfbModeId, type IfbProductId } from "@/data/credit/ifb";
+import { ifbDocs, ifbProducts, modeById, productById, prohibitedActivities, saleProfit, screen, termModeNote, type IfbModeId, type IfbProductId } from "@/data/credit/ifb";
 import { frequencies, installmentCount, installmentFor, type Frequency } from "@/lib/calc/loan";
 import { findDetails, readText, type Found } from "@/lib/docs/extract";
 import { clearFiles, deleteFile, getFile, putFile } from "@/lib/docs/store";
@@ -64,7 +64,8 @@ export type Profile = {
   ifbProduct: IfbProductId;
   ifbMode: IfbModeId;
   activity: "" | "Permissible" | "Prohibited";
-  interestDebt: string;
+  /** Whether most of the business's existing financing is from conventional banks. */
+  mainlyConventional: "" | "Yes" | "No";
   nonPermissibleIncome: string;
   amount: string;
   purpose: string;
@@ -125,7 +126,7 @@ const emptyProfile = (): Profile => ({
   ifbProduct: "murabaha-merchandise",
   ifbMode: "murabaha",
   activity: "",
-  interestDebt: "",
+  mainlyConventional: "",
   nonPermissibleIncome: "",
   amount: "",
   purpose: "",
@@ -357,9 +358,8 @@ export function analyse(p: Profile) {
   if (latest && has(latest.profit) && annualService > 0) ratios.push({ label: "Profit cover of repayments", value: times(latest.profit / annualService), note: "Yearly net profit over yearly loan repayments (new and existing). Lenders want comfortably above 1." });
 
   const ownShare = has(totalCost) && totalCost > 0 && has(amount) ? (totalCost - amount) / totalCost : NaN;
-  const debtRatio = has(num(p.interestDebt)) && has(ta) && ta > 0 ? num(p.interestDebt) / ta : NaN;
   const incomeRatio = has(num(p.nonPermissibleIncome)) && latest && has(latest.sales) && latest.sales > 0 ? num(p.nonPermissibleIncome) / latest.sales : NaN;
-  const screening = ifb ? screen(p.activity, debtRatio, incomeRatio) : null;
+  const screening = ifb ? screen(p.activity, incomeRatio, p.mainlyConventional) : null;
 
   let counted = 0;
   let estimated = 0;
@@ -385,7 +385,10 @@ export function analyse(p: Profile) {
     else if (screening.decision === "Not screened") fix("Confirm that your main business activity is permissible, so the lender can screen it for interest-free financing.");
     else if (screening.decision === "Eligible with conditions") check(`Sharia'h screening: eligible with conditions. ${screening.conditions.join(" ")}`);
     else good("Sharia'h screening: your business activity is permissible.");
-    if (isBusiness && (!has(debtRatio) || !has(incomeRatio))) check("Enter your interest-bearing borrowing and any interest or other non-permissible income, with total assets and sales, so the screening ratios can be checked.");
+    if (isBusiness && (!has(incomeRatio) || !p.mainlyConventional)) check("Enter any interest or other non-Halal income, with your sales, and say whether most of your existing financing is from conventional banks, so the screening can be completed.");
+    const note = mode ? termModeNote(productById(p.ifbProduct) ?? ifbProducts[0], mode.id, term) : "";
+    if (note) check(note);
+    check("Open an interest-free deposit account with the lender; it is required for interest-free financing.");
     if (mode?.id === "murabaha" || mode?.id === "tijarah") check("The lender buys and owns the goods before selling them to you, so have supplier proforma invoices ready and expect the goods or their title documents to pass through the lender.");
   }
   if (!p.repaymentSource.trim()) fix("Explain where repayments will come from. Lenders weigh your ability to repay above your collateral.");
@@ -452,7 +455,7 @@ export function analyse(p: Profile) {
   }
   if (p.viaAgent) check("An agent applying for you needs a power of attorney authenticated by the Documents Authentication and Registration Service that clearly allows borrowing and mortgaging.");
 
-  return { loan, mode, words: w, amount, exposure, installment, n, profit, salePrice, newAnnual, annualService, ratios, ownShare, debtRatio, incomeRatio, screening, counted, estimated, flags, latest };
+  return { loan, mode, words: w, amount, exposure, installment, n, profit, salePrice, newAnnual, annualService, ratios, ownShare, incomeRatio, screening, counted, estimated, flags, latest };
 }
 
 export function documents(p: Profile) {
@@ -875,7 +878,7 @@ export function ProfileBuilder() {
               <fieldset className="mt-8 space-y-4">
                 <legend className="font-semibold text-ink">Sharia&apos;h screening</legend>
                 <p className="text-sm text-muted">
-                  Lenders check that the business and the transaction are permissible. A business whose main activity involves {prohibitedActivities.map((x) => x.toLowerCase()).join(", ")} is not eligible. For other businesses, widely used benchmarks are interest-bearing debt up to 30% of total assets and non-permissible income up to 5% of revenue; each lender&apos;s Sharia&apos;h Advisory Committee sets its own.
+                  Lenders check that the business and the transaction are permissible. A business whose main activity involves {prohibitedActivities.map((x) => x.toLowerCase()).join(", ")} is not eligible. For other businesses, non-Halal income such as interest on deposits should be no more than 5% of total income, and a business that mainly borrows from conventional banks is referred for a special decision.
                 </p>
                 <Grid>
                   <Choice
@@ -889,7 +892,18 @@ export function ProfileBuilder() {
                     ]}
                     wide
                   />
-                  {isBusiness && <Money label="Interest-bearing borrowing (conventional loans)" value={p.interestDebt} onChange={(v) => set({ interestDebt: v })} hint="Compared with total assets in the next step." />}
+                  {isBusiness && (
+                    <Choice
+                      label="Is most of your existing financing from conventional banks?"
+                      value={p.mainlyConventional}
+                      onChange={(v) => set({ mainlyConventional: v })}
+                      options={[
+                        { value: "", label: "Select" },
+                        { value: "No", label: "No, or no existing financing" },
+                        { value: "Yes", label: "Yes" },
+                      ]}
+                    />
+                  )}
                   {isBusiness && <Money label="Interest and other non-permissible income a year" value={p.nonPermissibleIncome} onChange={(v) => set({ nonPermissibleIncome: v })} hint="For example interest on conventional deposits. Compared with sales." />}
                 </Grid>
                 {a.screening && (

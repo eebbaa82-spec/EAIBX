@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, overallVerdict, periodLabel, questions, riskAreas, scorecard, stressTests, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { titleCase } from "./CreditCrb";
 import { lineLabel, projectionLines } from "./CreditProjection";
-import { saleProfit } from "@/data/credit/ifb";
+import { saleProfit, screeningLimits } from "@/data/credit/ifb";
 import { ifbProduct, ifbScreening, productByName } from "@/lib/credit/ifbcase";
 import { projection } from "@/lib/credit/projection";
 import { appraise } from "@/lib/credit/project";
@@ -527,12 +527,13 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         <>
           <p className="mt-3 font-semibold">Sharia&apos;h screening</p>
           <Table
-            head={["Test", `Figure (${k.unit})`, "Ratio", "Benchmark"]}
+            head={["Test", `Figure (${k.unit})`, "Ratio", "Limit"]}
             right={[1, 2]}
             rows={[
               ["Main business activity", k.ifb.activity || "Not screened", "", "Permissible"],
-              ["Interest-bearing debt to total assets", Number.isFinite(screening.debt) ? fmt(screening.debt, "amount") : "-", pctOr(screening.debtRatio), "30% or less"],
-              ["Non-permissible income to revenue", Number.isFinite(screening.income) ? fmt(screening.income, "amount") : "-", pctOr(screening.incomeRatio), "5% or less"],
+              ["Non-Halal income to total income", Number.isFinite(screening.income) ? fmt(screening.income, "amount") : "-", pctOr(screening.incomeRatio), `${screeningLimits.nonPermissibleIncome * 100}% or less`],
+              ["Existing financing mainly from conventional banks", k.ifb.mainlyConventional || "Not checked", "", "No, or referred"],
+              ["Interest-free deposit account", k.ifb.account ? "Opened" : "Not yet", "", "Required"],
             ]}
           />
           <P>{`${screening.decision}. ${screening.reasons.join(" ")}${k.ifb.activityNote.trim() ? ` ${k.ifb.activityNote.trim().replace(/\.?$/, ".")}` : ""}${screening.conditions.length ? ` Conditions: ${screening.conditions.join(" ")}` : ""}`}</P>

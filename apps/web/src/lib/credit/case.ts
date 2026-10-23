@@ -1,4 +1,5 @@
 import { bankKey, isClosed, worse, type CrbReport } from "./crb";
+import { ifbCollateralCover } from "@/data/credit/ifb";
 import { emptyIfb, ifbChecklist, ifbScreening, type IfbInput } from "./ifbcase";
 import { appraise, emptyProject, type ProjectInput } from "./project";
 import { emptyProjection, projection, type ProjectionInput } from "./projection";
@@ -598,9 +599,10 @@ export function suggestedRisks(k: CreditCase, a: CaseAnalysis): Partial<Record<R
   // Sharia'h compliance risk, for interest-free financing.
   if (k.ifb.on) {
     const sc = ifbScreening(k.ifb, L);
-    if (sc.decision === "Not eligible") note("sharia", "High", sc.reasons.join(" ").replace(/\.$/, "").toLowerCase());
-    else if (sc.decision === "Eligible with conditions") note("sharia", "Medium", "eligible with conditions: " + sc.conditions.join(" ").replace(/\.$/, "").toLowerCase());
-    else if (sc.decision === "Eligible") note("sharia", "Low", "the business activity and the screening ratios are permissible");
+    const lower = (t: string) => t.charAt(0).toLowerCase() + t.slice(1).replace(/\.$/, "");
+    if (sc.decision === "Not eligible") note("sharia", "High", lower(sc.reasons.join(" ")));
+    else if (sc.decision === "Eligible with conditions") note("sharia", "Medium", "eligible with conditions: " + lower(sc.conditions.join(" ")));
+    else if (sc.decision === "Eligible") note("sharia", "Low", "the business activity and its non-Halal income are within the screening rules");
     else note("sharia", "Medium", "the business activity has not been screened");
     if (!k.ifb.sacApproved) note("sharia", "Medium", "the product's approval by the Sharia'h Advisory Committee is not confirmed");
   }
@@ -631,7 +633,14 @@ export function originationChecklist(k: CreditCase, a: CaseAnalysis) {
     { point: "Terms and conditions to limit future changes in risk", done: !!k.conditions.trim() },
     { point: "Adequacy and enforceability of collateral, registration and insurance", done: a.collateral > 0 && insured },
     { point: "Credit risk grade", done: !!k.gradeNow },
-    ...(k.ifb.on ? ifbChecklist(k.ifb, a.latest, k.recommendations.some((x) => amount(x.amount) > 0 && amount(x.rate) >= 0)) : []),
+    ...(k.ifb.on
+      ? ifbChecklist(
+          k.ifb,
+          a.latest,
+          k.recommendations.some((x) => amount(x.amount) > 0 && amount(x.rate) >= 0),
+          Math.max(...k.recommendations.map((x) => amount(x.tenure)).filter(Number.isFinite), ...k.requests.map((x) => amount(x.tenor)).filter(Number.isFinite), 0),
+        )
+      : []),
   ];
 }
 
@@ -675,6 +684,11 @@ export function scorecard(k: CreditCase, a: CaseAnalysis): Scored[] {
   if (combined) add("Stress test", `Combined scenario: ${combined.result.toLowerCase()}`, combined.result === "Fails" ? "Concern" : combined.result === "Weakens" ? "Watch" : "Meets");
   if (Number.isFinite(a.coverRecommended)) add("Collateral coverage", pctText(a.coverRecommended), a.coverRecommended < 1 ? "Concern" : a.coverRecommended < 1.25 ? "Watch" : "Meets");
   else add("Collateral coverage", "No collateral entered", "Not assessed");
+  const grade = Number(/[1-9]/.exec(k.gradeNow)?.[0]);
+  if (k.ifb.on && Number.isFinite(a.coverRecommended) && grade >= 1) {
+    const need = ifbCollateralCover[Math.min(grade, 5)];
+    add("Collateral cover for the risk grade", `${pctText(a.coverRecommended)} against ${need}% for grade ${grade}`, a.coverRecommended * 100 < need ? "Watch" : "Meets");
+  }
   const ob = otherBanks(k);
   if (ob) add("Conduct at other banks", ob.inArrears ? `${ob.inArrears} facilit${ob.inArrears === 1 ? "y" : "ies"} in arrears` : ob.active.length ? "All facilities current" : "No active facilities", ob.inArrears ? "Concern" : "Meets");
   else add("Conduct at other banks", "No credit reference report", "Not assessed");
