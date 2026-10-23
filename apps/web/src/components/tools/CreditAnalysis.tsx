@@ -29,6 +29,7 @@ import { contextSwot, isPicked, regionNames, selection, slugOf } from "@/lib/cre
 import { deleteFile, getFile, putFile } from "@/lib/docs/store";
 import { Area, AnythingToAdd, Block, Check, Grid, Pick, smallButton, TableEditor, Text, inputClass } from "./creditFields";
 import { CrbUpload } from "./CreditCrb";
+import { CreditProjection } from "./CreditProjection";
 import { CreditReport } from "./CreditReport";
 import { StatementsImport } from "./StatementsImport";
 import { SpreadEntry, SpreadOutcomes } from "./CreditSpread";
@@ -72,7 +73,7 @@ function merge(raw: Partial<CreditCase>): CreditCase {
   if (raw.sector && raw.sectorReport === undefined && !sectors.includes(raw.sector)) {
     raw = { ...raw, sectorReport: raw.sector, sector: "" };
   }
-  return { ...base, ...raw, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
+  return { ...base, ...raw, projection: { ...base.projection, ...(raw.projection ?? {}) }, spread: { ...base.spread, ...(raw.spread ?? {}) }, risks: { ...base.risks, ...(raw.risks ?? {}) }, swot: { ...base.swot, ...(raw.swot ?? {}) }, assessment: { ...(raw.assessment ?? {}) } };
 }
 function save(k: CreditCase) {
   try {
@@ -503,6 +504,9 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
             hint="The annex asks for the improvement expected, and how, when the current credit risk grade is above 3."
           />
         )}
+      </Block>
+      <Block title="8.9 Cash flow projection and repayment capacity" intro="Projected cash flows for the life of the proposed facilities, and the borrower's capacity to repay them in a base case and two stress scenarios.">
+        <CreditProjection k={k} a={a} set={set} />
       </Block>
       <Block title="9. Summary (SWOT)" intro="The SWOT is written automatically from the figures, the credit reference report, your business assessment and the sector and region. Add your own points under each heading.">
         <Grid>

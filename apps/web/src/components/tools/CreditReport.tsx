@@ -3,6 +3,8 @@
 import type { ReactNode } from "react";
 import { amount, autoSwot, birr, discounted, otherBanks, originationChecklist, overallVerdict, periodLabel, questions, riskKeys, scorecard, stressTests, suggestedRisks, type CaseAnalysis, type CreditCase } from "@/lib/credit/case";
 import { titleCase } from "./CreditCrb";
+import { projectionLines } from "./CreditProjection";
+import { projection } from "@/lib/credit/projection";
 import type { AnalysisContext } from "@/lib/credit/context";
 import { contextSwot, outlookFacts, selection } from "@/lib/credit/select";
 import { balanceSheet, fmt, profitLoss, ratioRows, type Column } from "@/lib/credit/spread";
@@ -209,6 +211,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
   const text = (n: string) => (k.notes[n]?.trim() ? k.notes[n] : drafts[n] ?? "");
   const suggested = suggestedRisks(k, a);
   const stress = stressTests(k, a);
+  const proj = projection(k, a);
   const checklist = originationChecklist(k, a);
   const swot = autoSwot(k, a, contextSwot(sel));
   const card = scorecard(k, a);
@@ -477,6 +480,35 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
         </>
       )}
       <Note text={[k.additions.statements, k.additions.outcomes, k.additions.analysis].filter((x) => x?.trim()).join("\n\n")} />
+
+      {proj && (
+        <div>
+          <H3>8.9 Cash flow projection and repayment capacity</H3>
+          <P>
+            {`Cash flows are projected for ${proj.years} year${proj.years === 1 ? "" : "s"}, the life of the proposed facilities, from the latest period's annualized figures. Assumptions: sales growth of ${(proj.input.growth * 100).toFixed(1)}% a year, gross margin before depreciation of ${(proj.input.margin * 100).toFixed(1)}%, operating expenses of ${(proj.input.opex * 100).toFixed(1)}% of sales, profit tax at ${(proj.input.tax * 100).toFixed(0)}%, and capital expenditure of ${fmt(proj.input.capex, "amount")} (${k.unit}) a year. Term loans are repaid in equal yearly installments; revolving facilities pay interest only.`}
+          </P>
+          <Table
+            head={["Scenario", "Shock", "Lowest cover", "Average cover", "Years short", "Repayment capacity"]}
+            right={[2, 3, 4]}
+            rows={proj.scenarios.map((s) => [s.name, s.shock, timesOr(s.minDscr), timesOr(s.avgDscr), String(s.shortYears), s.result])}
+          />
+          <p className="mt-3 font-semibold">Base case ({k.unit})</p>
+          <Table
+            head={["", ...proj.scenarios[0].rows.map((r) => `Year ${r.year}`)]}
+            right={proj.scenarios[0].rows.map((_, i) => i + 1)}
+            rows={projectionLines.map((line) => [line.label, ...proj.scenarios[0].rows.map((r) => (line.ratio ? timesOr(r[line.key] as number) : fmt(r[line.key] as number, "amount")))])}
+          />
+          <p className="mt-3 font-semibold">Debt service cover and closing cash by scenario</p>
+          <Table
+            head={["", ...proj.scenarios[0].rows.map((r) => `Year ${r.year}`)]}
+            right={proj.scenarios[0].rows.map((_, i) => i + 1)}
+            rows={proj.scenarios.flatMap((s) => [
+              [`${s.name}: cover`, ...s.rows.map((r) => timesOr(r.dscr))],
+              [`${s.name}: closing cash`, ...s.rows.map((r) => fmt(r.cash, "amount"))],
+            ])}
+          />
+        </div>
+      )}
 
       <H n="9">Summary (SWOT)</H>
       <table className="mt-2 w-full break-inside-avoid border-collapse text-[9.5pt]">

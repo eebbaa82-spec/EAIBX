@@ -1,4 +1,5 @@
 import { bankKey, isClosed, worse, type CrbReport } from "./crb";
+import { emptyProjection, projection, type ProjectionInput } from "./projection";
 import { computeSpread, fmt, PERIODS, unbalanced, type Column, type SpreadInput } from "./spread";
 
 /**
@@ -135,6 +136,7 @@ export type CreditCase = {
   risks: Record<RiskKey, { level: Level; note: string }>;
   importShare: string;
   lenderCapital: string;
+  projection: ProjectionInput;
   assessment: Partial<Record<QuestionKey, { rating: Rating; note: string }>>;
   gradeJustification: string;
   swot: { s: string; w: string; o: string; t: string };
@@ -208,6 +210,7 @@ export const emptyCase = (): CreditCase => ({
   assessment: {},
   importShare: "",
   lenderCapital: "",
+  projection: emptyProjection(),
   gradeJustification: "",
   swot: { s: "", w: "", o: "", t: "" },
   recommendations: [{ type: "Term loan", amount: "", rate: "", tenure: "", repayment: "", collateral: "" }],
@@ -594,7 +597,7 @@ export function originationChecklist(k: CreditCase, a: CaseAnalysis) {
     { point: "Integrity and reputation of the borrower", done: r("character") },
     { point: "Risk profile and sensitivity to economic and market developments", done: !!a.latest && (!!k.sectorReport || !!k.contextUpdate.trim()) },
     { point: "Repayment history and current capacity to repay", done: !!a.latest && (!!k.repaymentHistory.trim() || !!k.crb) },
-    { point: "Forward-looking analysis under various scenarios", done: !!a.latest },
+    { point: "Forward-looking analysis under various scenarios", done: !!projection(k, a) },
     { point: "Legal capacity of the borrower to borrow", done: !!k.ownership && r("compliance") },
     { point: "Business expertise and position in the sector", done: r("management") && r("market") },
     { point: "Terms and conditions to limit future changes in risk", done: !!k.conditions.trim() },
@@ -617,6 +620,16 @@ export function scorecard(k: CreditCase, a: CaseAnalysis): Scored[] {
     if (Number.isFinite(L.interestCover)) add("Interest cover", `${L.interestCover.toFixed(2)}x`, L.interestCover < 1 ? "Concern" : L.interestCover < 2 ? "Watch" : "Meets");
     if (Number.isFinite(L.salesGrowth)) add("Sales trend", `${L.salesGrowth >= 0 ? "Up" : "Down"} ${pctText(Math.abs(L.salesGrowth))} annualized`, L.salesGrowth < -0.1 ? "Concern" : L.salesGrowth < 0 ? "Watch" : "Meets");
   } else add("Financial statements", "Not entered", "Not assessed");
+  const proj = projection(k, a);
+  if (proj) {
+    const [b, , sev] = proj.scenarios;
+    const dscr = (n: number) => (Number.isFinite(n) ? `${n.toFixed(2)}x` : "no debt service");
+    add(
+      "Repayment capacity (projection)",
+      `Lowest debt service cover ${dscr(b.minDscr)} in the base case, ${dscr(sev.minDscr)} under severe stress`,
+      b.result === "Shortfall" ? "Concern" : b.result === "Tight" || sev.result === "Shortfall" ? "Watch" : "Meets",
+    );
+  }
   const combined = stressTests(k, a).find((x) => x.name === "Combined");
   if (combined) add("Stress test", `Combined scenario: ${combined.result.toLowerCase()}`, combined.result === "Fails" ? "Concern" : combined.result === "Weakens" ? "Watch" : "Meets");
   if (Number.isFinite(a.coverRecommended)) add("Collateral coverage", pctText(a.coverRecommended), a.coverRecommended < 1 ? "Concern" : a.coverRecommended < 1.25 ? "Watch" : "Meets");
