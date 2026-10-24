@@ -139,7 +139,7 @@ export function CoeFooter() {
         <Container className="space-y-4">
           <p>
             {company.address} · <a href={`tel:${company.phoneOffice.replace(/ /g, "")}`} className="hover:text-white">{company.phoneOffice}</a> ·{" "}
-            <a href={`mailto:${company.email}`} className="hover:text-white">{company.email}</a>
+            <a href={`mailto:${academy.email}`} className="hover:text-white">{academy.email}</a>
           </p>
           <p>
             © {new Date().getFullYear()} {brand.operator}. Registration {company.registrationNo}.

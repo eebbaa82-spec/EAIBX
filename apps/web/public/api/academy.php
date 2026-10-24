@@ -93,7 +93,7 @@ if ($action === 'login') {
         reply(403, ['ok' => false, 'error' => 'That institution ID and admin key do not match']);
     }
     if (!institution_active($inst)) {
-        reply(403, ['ok' => false, 'error' => 'This subscription has expired. Please contact investopia@eruditeafrica.com']);
+        reply(403, ['ok' => false, 'error' => 'This subscription has expired. Please contact training@eruditeafrica.com']);
     }
     $expires = time() + SESSION_HOURS * 3600;
     reply(200, ['ok' => true, 'session' => $id . '.' . $expires . '.' . sign('inst.' . $id . '.' . $expires, $dir), 'name' => $inst['name']]);

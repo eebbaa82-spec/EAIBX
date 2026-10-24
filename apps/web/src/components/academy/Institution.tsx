@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Fragment, useCallback, useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 import { liveHost } from "@/components/forms";
 import { passMark, proCourseHref, verifyUrl } from "@/data/academy/paths";
+import { academy } from "@/lib/site";
 import { api } from "./seat";
 
 /**
@@ -310,8 +311,8 @@ function SignIn({ onSignIn }: { onSignIn: (session: string) => void }) {
         </ol>
         <p className="mt-4 text-sm text-muted">
           To subscribe your institution, write to{" "}
-          <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 underline">
-            investopia@eruditeafrica.com
+          <a href={`mailto:${academy.email}`} className="text-brand-700 underline">
+            {academy.email}
           </a>
           .
         </p>

@@ -47,7 +47,7 @@ const organization = {
   name,
   url: siteUrl,
   slogan: isCoe ? academy.tagline : brand.tagline,
-  email: company.email,
+  email: isCoe ? academy.email : company.email,
   telephone: company.phoneOffice,
   parentOrganization: { "@type": "Organization", name: brand.operator, url: `https://${company.website}` },
   address: {

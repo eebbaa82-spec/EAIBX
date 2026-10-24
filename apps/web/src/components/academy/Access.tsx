@@ -1,6 +1,6 @@
 "use client";
 
-import { mainSite } from "@/lib/site";
+import { academy, mainSite } from "@/lib/site";
 import Link from "next/link";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { accessCodeHashes } from "@/data/academy/access";
@@ -335,7 +335,7 @@ function CodeForm() {
       )}
       {state === "wrong" && (
         <p role="alert" className="mt-2 text-sm text-gold-400">
-          That code is not valid. Check it and try again, or contact investopia@eruditeafrica.com.
+          That code is not valid. Check it and try again, or contact {academy.email}.
         </p>
       )}
       <button type="submit" disabled={state === "checking"} className="mt-4 rounded-lg bg-gold-400 px-5 py-2.5 font-semibold text-ink hover:bg-gold-500 disabled:opacity-60">
