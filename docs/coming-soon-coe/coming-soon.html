@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Erudite Africa Center of Excellence | Coming soon</title>
+<meta name="description" content="The Erudite Africa Center of Excellence, the training and development wing of Erudite Africa, is coming soon.">
+<style>
+  /* Colors from the Erudite Africa Investments PLC logo. */
+  :root { --green: #256c30; --green-dark: #103023; --leaf: #72aa49; --leaf-soft: #edf5e4; --ink: #11141b; --muted: #4b5563; --line: #d7e3d2; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body {
+    min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 48px 16px; text-align: center; color: var(--ink);
+    background: linear-gradient(180deg, #ffffff 0%, #ffffff 55%, var(--leaf-soft) 100%);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  .logo { width: 100%; max-width: 360px; height: auto; }
+  .unit { margin-top: 20px; display: inline-block; padding: 6px 14px; border-radius: 999px; background: var(--leaf-soft); color: var(--green); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; }
+  h1 { margin-top: 32px; font-size: clamp(2rem, 6vw, 3.5rem); line-height: 1.1; font-weight: 700; color: var(--green-dark); }
+  h1 span { color: var(--green); }
+  .bar { width: 72px; height: 4px; margin: 20px auto 0; border-radius: 2px; background: linear-gradient(90deg, var(--green-dark), var(--green), var(--leaf)); }
+  .tagline { margin-top: 20px; font-size: 1.15rem; color: var(--muted); }
+  .operator { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+  form { margin: 40px auto 0; width: 100%; max-width: 440px; }
+  form p { font-size: 1rem; margin-bottom: 12px; }
+  .row { display: flex; gap: 8px; }
+  input[type=email] { flex: 1; min-width: 0; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--line); background: #fff; color: var(--ink); font-size: 1rem; }
+  input[type=email]:focus { outline: 3px solid var(--leaf); outline-offset: 1px; }
+  button { padding: 12px 18px; border: 0; border-radius: 10px; background: var(--green); color: #fff; font-weight: 700; font-size: 1rem; cursor: pointer; }
+  button:hover { background: var(--green-dark); }
+  button:disabled { opacity: .6; }
+  .hp { position: absolute; left: -9999px; }
+  #status { margin-top: 12px; min-height: 1.4em; font-size: .95rem; color: var(--green); }
+  .contact { margin-top: 32px; font-size: 0.95rem; color: var(--muted); }
+  .contact a { color: var(--green); text-decoration: none; border-bottom: 1px solid currentColor; }
+  footer { margin-top: 64px; font-size: 0.8rem; color: var(--muted); }
+</style>
+</head>
+<body>
+  <img class="logo" src="/academy/brand/eai-logo.png" alt="Erudite Africa Investments PLC" width="720" height="234">
+  <p class="unit">Center of Excellence · Training and Development</p>
+  <h1>Our new learning home is <span>coming soon</span></h1>
+  <div class="bar" aria-hidden="true"></div>
+  <p class="tagline">Practical banking and finance training for Ethiopia.</p>
+  <p class="operator">The training and development wing of Erudite Africa Investments PLC.</p>
+  <form id="waitlist" action="/api/submit.php" method="post">
+    <p>Be the first to know when our courses open.</p>
+    <input type="hidden" name="form" value="waitlist">
+    <label class="hp" aria-hidden="true">Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+    <div class="row">
+      <label for="wl-email" class="hp">Email address</label>
+      <input id="wl-email" type="email" name="email" required placeholder="you@example.com">
+      <button type="submit">Notify me</button>
+    </div>
+    <p id="status" role="status"></p>
+  </form>
+  <p class="contact">Questions in the meantime? <a href="mailto:investopia@eruditeafrica.com">investopia@eruditeafrica.com</a></p>
+  <footer>&copy; 2026 Erudite Africa Investments PLC. Addis Ababa, Ethiopia.</footer>
+<script>
+  // Invisible robot check (see api/submit.php): solve a signed challenge in
+  // the background once the visitor starts on the form.
+  var check = null, started = 0;
+  function zeroBits(bytes) {
+    for (var i = 0, bits = 0; i < bytes.length; i++) {
+      if (bytes[i] === 0) { bits += 8; continue; }
+      return bits + Math.clz32(bytes[i]) - 24;
+    }
+    return bits;
+  }
+  async function solve() {
+    var res = await fetch("/api/submit.php?challenge=1", { cache: "no-store" });
+    var c = await res.json(), enc = new TextEncoder();
+    for (var nonce = 0; ; nonce++) {
+      var hash = await crypto.subtle.digest("SHA-256", enc.encode(c.challenge + ":" + nonce));
+      if (zeroBits(new Uint8Array(hash)) >= c.difficulty) return { challenge: c.challenge, nonce: String(nonce) };
+    }
+  }
+  function startCheck() {
+    if (check && Date.now() - started < 115 * 60 * 1000) return;
+    started = Date.now();
+    check = solve();
+    check.catch(function () { check = null; });
+  }
+  var form = document.getElementById("waitlist");
+  form.addEventListener("focusin", startCheck);
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    var status = document.getElementById("status"), button = form.querySelector("button");
+    button.disabled = true;
+    status.textContent = "Sending...";
+    try {
+      startCheck();
+      var solved = await check;
+      check = null;
+      var wait = started + 2500 - Date.now();
+      if (wait > 0) await new Promise(function (r) { setTimeout(r, wait); });
+      var data = new FormData(form);
+      data.set("pow_challenge", solved.challenge);
+      data.set("pow_nonce", solved.nonce);
+      var res = await fetch(form.action, { method: "POST", body: data });
+      var body = await res.json();
+      if (!res.ok || !body.ok) throw new Error();
+      form.querySelector(".row").remove();
+      status.textContent = "Thank you. We'll email you when our courses open.";
+    } catch (err) {
+      check = null;
+      button.disabled = false;
+      status.textContent = "Sorry, that didn't go through. Please try again.";
+    }
+  });
+</script>
+</body>
+</html>

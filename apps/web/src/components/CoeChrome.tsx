@@ -26,7 +26,8 @@ const nav = [
 function Mark() {
   return (
     <Link href="/academy/" className="flex shrink-0 items-center gap-2" aria-label={`${academy.name} home`}>
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-sm font-black text-white">{academy.mark}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/academy/brand/eai-mark.png" alt="" width={30} height={40} className="h-10 w-auto shrink-0" />
       <span className="leading-tight">
         <span className="block text-base font-extrabold tracking-tight text-brand-900">Erudite Africa</span>
         <span className="block text-xs font-semibold text-muted">{academy.short}</span>
