@@ -1,4 +1,4 @@
-// Content model for the Investopia Academy professional courses (subscribers).
+// Content model for the Erudite Africa Center of Excellence professional courses (subscribers).
 // Each course is one JSON file built from Erudite's training modules, enriched
 // with a commercial bank's credit procedure manual (never named) and NBE
 // directives. Visuals, icons and quiz questions reuse the Financial Literacy types.

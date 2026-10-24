@@ -11,7 +11,7 @@ import { api } from "./seat";
  * subscription (server side: public/api/academy.php). The department signs in
  * with its institution ID and admin key, adds staff (each gets a personal seat
  * code), assigns courses and due dates, revokes seats, and follows each
- * person's modules, exam, simulation and certificate. Off investopia.et there
+ * person's modules, exam, simulation and certificate. Off eruditeafrica.et there
  * is no server, so the page offers a demo with sample staff instead.
  */
 export type CatalogCourse = { slug: string; title: string; track: string; modules: string[]; simulation: boolean };
@@ -131,7 +131,7 @@ function demoData(catalog: CatalogCourse[]): Data {
         done: c.modules.slice(0, m),
         ...(k === 0 && exam >= 0 ? { exam } : {}),
         ...(k === 0 && sim >= 0 ? { sim } : {}),
-        ...(finished ? { certificate: `INV/ACAD/DEMO/2026/${code.slice(-5)}ABC`, completed: "2026-10-1" + (i % 9) } : {}),
+        ...(finished ? { certificate: `EACOE/DEMO/2026/${code.slice(-5)}ABC`, completed: "2026-10-1" + (i % 9) } : {}),
         last: `2026-10-${String(10 + i).padStart(2, "0")} 10:30`,
       };
     });
@@ -270,7 +270,7 @@ function SignIn({ onSignIn }: { onSignIn: (session: string) => void }) {
     <div className="grid gap-8 lg:grid-cols-2">
       <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-ink">Sign in for your institution</h2>
-        <p className="mt-2 text-muted">Use the institution ID and admin key Investopia sent your training department when your subscription started.</p>
+        <p className="mt-2 text-muted">Use the institution ID and admin key the Center of Excellence sent your training department when your subscription started.</p>
         {live ? (
           <form onSubmit={submit} className="mt-6 space-y-4">
             <label className={labelClass}>
@@ -302,7 +302,7 @@ function SignIn({ onSignIn }: { onSignIn: (session: string) => void }) {
       <section className="rounded-2xl bg-brand-50 p-6 sm:p-8">
         <h2 className="text-xl font-bold text-brand-900">How institutional subscriptions work</h2>
         <ol className="mt-4 list-decimal space-y-3 pl-5 text-ink">
-          <li>Your bank or MFI subscribes for a number of staff seats. Investopia sends the training department an institution ID and an admin key.</li>
+          <li>Your bank or MFI subscribes for a number of staff seats. The Center of Excellence sends the training department an institution ID and an admin key.</li>
           <li>The training department adds staff here, one by one or as a list, and assigns their courses and a completion date. Each person gets a personal seat code.</li>
           <li>Staff open any Academy course, enter their seat code once, and study: modules, quizzes, the officer simulation and the final exam.</li>
           <li>Their progress comes back here: who has started, modules finished, exam and simulation scores, certificates earned, and who is overdue.</li>
@@ -1077,7 +1077,7 @@ function NewCodes({ seats, institution, byCourse }: { seats: Seat[]; institution
     const rows = [["Name", "Staff ID", "Email", "Department", "Branch", "Seat code", "Courses", "Complete by"]].concat(
       seats.map((s) => [s.name, s.staff_id, s.email, s.department, s.branch, s.code, s.courses.map((c) => byCourse.get(c)?.title ?? c).join("; ") || "Any course", s.due]),
     );
-    save(rows, "Investopia-seat-codes.csv");
+    save(rows, "CoE-seat-codes.csv");
   }
   return (
     <section role="status" className="rounded-2xl border border-brand-200 bg-brand-50 p-6">
@@ -1111,11 +1111,11 @@ function inviteMail(seat: Seat, institution: string, byCourse: Map<string, Catal
   const body = [
     `Dear ${seat.name},`,
     "",
-    `${institution} has given you a seat in the Investopia Academy.`,
+    `${institution} has given you a seat in the Erudite Africa Center of Excellence.`,
     "",
     `Your personal seat code: ${seat.code}`,
     "",
-    "1. Go to https://investopia.et/academy/courses/ and open one of your courses.",
+    "1. Go to https://eruditeafrica.et/academy/courses/ and open one of your courses.",
     "2. Register once, then enter the seat code under \"Already subscribed?\".",
     "3. Work through the modules, the officer simulation and the final exam to earn your certificate.",
     "",
@@ -1125,7 +1125,7 @@ function inviteMail(seat: Seat, institution: string, byCourse: Map<string, Catal
     "",
     "Keep the code to yourself; your progress is reported to the training department.",
   ].join("\n");
-  return `mailto:${encodeURIComponent(seat.email)}?subject=${encodeURIComponent("Your Investopia Academy seat")}&body=${encodeURIComponent(body)}`;
+  return `mailto:${encodeURIComponent(seat.email)}?subject=${encodeURIComponent("Your Center of Excellence seat")}&body=${encodeURIComponent(body)}`;
 }
 
 function save(rows: string[][], file: string) {
@@ -1190,6 +1190,6 @@ function downloadCsv(data: Data, byCourse: Map<string, CatalogCourse>) {
       ]);
     }
   }
-  save(rows, `Investopia-Academy-${data.institution.id}-${today()}.csv`);
+  save(rows, `CoE-${data.institution.id}-${today()}.csv`);
 }
 

@@ -24,6 +24,7 @@ const am: Record<string, string> = {
   Mentors: "መካሪዎች",
   "Learn from people who have built it": "ንግድ ከገነቡ ሰዎች ይማሩ",
   Academy: "አካዳሚ",
+  "Center of Excellence": "የልህቀት ማዕከል",
   "Banking, credit and investment training": "የባንክ፣ የብድርና የኢንቨስትመንት ስልጠና",
   "EHIRA Assessment": "የEHIRA ግምገማ",
   "Health and investment readiness in 15 minutes": "የንግድ ጤናና የኢንቨስትመንት ዝግጁነት በ15 ደቂቃ",

@@ -1,5 +1,5 @@
 <?php
-// Institutional Academy subscriptions on the cPanel host (investopia.et); see
+// Institutional Academy subscriptions on the course site's cPanel host (eruditeafrica.et); see
 // _seats.php for how it fits together. POST only, with an "action":
 //   login    institution + admin key -> a signed session for the dashboard
 //   overview session -> the institution, its staff seats and their progress

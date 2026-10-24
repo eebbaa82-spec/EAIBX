@@ -12,7 +12,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ course: string }> }): Promise<Metadata> {
   const { course } = await params;
   const c = proCourses.find((x) => x.slug === course);
-  return c ? { title: `Final exam · ${c.title} · Investopia Academy`, description: `Final exam and certificate for ${c.title}.` } : {};
+  return c ? { title: `Final exam · ${c.title} · Erudite Africa Center of Excellence`, description: `Final exam and certificate for ${c.title}.` } : {};
 }
 
 export default async function ProExam({ params }: { params: Promise<{ course: string }> }) {

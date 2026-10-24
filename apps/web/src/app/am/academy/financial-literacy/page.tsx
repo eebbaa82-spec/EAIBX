@@ -3,7 +3,7 @@ import { CourseOverview } from "@/components/financial-literacy/CoursePages";
 import { courseCopy } from "@/data/financial-literacy";
 
 export const metadata: Metadata = {
-  title: "ነፃ የፋይናንስ ዕውቀት ኮርስ · ኢንቨስቶፒያ አካዳሚ",
+  title: "ነፃ የፋይናንስ ዕውቀት ኮርስ · ኢሩዳይት አፍሪካ የልህቀት ማዕከል",
   description: courseCopy.am.subhead,
   alternates: { languages: { en: "/academy/financial-literacy/", am: "/am/academy/financial-literacy/" } },
 };

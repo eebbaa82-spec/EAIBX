@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { folder } = await params;
   const f = folders.find((x) => x.id === folder);
   return f
-    ? { title: `${f.name} courses · Investopia Academy`, description: f.intro }
+    ? { title: `${f.name} courses · Erudite Africa Center of Excellence`, description: f.intro }
     : {};
 }
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { mainSite } from "@/lib/site";
 import Link from "next/link";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { accessCodeHashes } from "@/data/academy/access";
@@ -130,12 +131,12 @@ function Consent() {
     <label className="flex gap-3 text-sm text-ink sm:col-span-2">
       <input name="consent" type="checkbox" value="yes" required className="mt-1 h-4 w-4 shrink-0 accent-brand-600" />
       <span>
-        I agree to Investopia&apos;s{" "}
-        <Link href="/legal/terms" className="text-brand-700 underline">
+        I agree to Erudite Africa&apos;s{" "}
+        <Link href={mainSite("/legal/terms/")} className="text-brand-700 underline">
           terms
         </Link>{" "}
         and{" "}
-        <Link href="/legal/privacy" className="text-brand-700 underline">
+        <Link href={mainSite("/legal/privacy/")} className="text-brand-700 underline">
           privacy policy
         </Link>
         , and to be contacted about my registration and the Academy.
@@ -240,7 +241,7 @@ export function SubscribePanel({ course }: { course: string }) {
           <h3 className="text-lg font-bold">Request a subscription</h3>
           {requested ? (
             <p role="status" className="mt-3 text-brand-800">
-              Thank you. The Investopia Academy team will contact you with the subscription options and, once it is active, your access code.
+              Thank you. The Center of Excellence team will contact you with the subscription options and, once it is active, your access code.
             </p>
           ) : (
             <form onSubmit={onSubmit} onFocus={startRobotCheck} className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -329,7 +330,7 @@ function CodeForm() {
       </label>
       {state === "seat-preview" && (
         <p role="alert" className="mt-2 text-sm text-gold-400">
-          Staff seat codes from your training department work on investopia.et, not on this preview site.
+          Staff seat codes from your training department work on eruditeafrica.et, not on this preview site.
         </p>
       )}
       {state === "wrong" && (

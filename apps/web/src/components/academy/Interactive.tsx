@@ -17,7 +17,7 @@ import { simulationHref, useSimulationResult } from "./Simulation";
 const KEY = "investopia-academy-progress";
 const EVENT = "investopia-academy-progress";
 
-/** registered: the certificate number is on Investopia's register, so it can be verified. */
+/** registered: the certificate number is on the Center of Excellence register, so it can be verified. */
 type Result = { score: number; total: number; date: string; name?: string; id?: string; registered?: boolean };
 type Progress = Record<string, { done: string[]; exam?: Result }>;
 
@@ -226,7 +226,7 @@ const longDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { da
 function sampleId(course: ProCourse) {
   const a = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   const rnd = Array.from(crypto.getRandomValues(new Uint8Array(8)), (b) => a[b % 32]).join("");
-  return `INV/ACAD/${course.id.toUpperCase()}/${new Date().getFullYear()}/${rnd}`;
+  return `EACOE/${course.id.toUpperCase()}/${new Date().getFullYear()}/${rnd}`;
 }
 
 async function qrSvg(text: string) {
@@ -362,7 +362,7 @@ export function Certificate({ course }: { course: ProCourse }) {
     let registered = exam!.registered ?? false;
     setState({ busy: true });
     if (live && !(registered && exam!.name === full)) {
-      // Investopia's register gives the number, so a QR scan can confirm it.
+      // the Center of Excellence register gives the number, so a QR scan can confirm it.
       const data = new FormData(e.currentTarget);
       data.set("name", full);
       data.set("course", course.slug);
@@ -393,7 +393,7 @@ export function Certificate({ course }: { course: ProCourse }) {
         <h2 className="text-xl font-bold text-ink">Your certificate of completion</h2>
         <p className="mt-1 text-muted">
           Type your name as it should appear, then download the certificate (choose &ldquo;Save as PDF&rdquo; in the print window). Each certificate carries a
-          unique number and a QR code that anyone can scan to confirm it with Investopia.
+          unique number and a QR code that anyone can scan to confirm it with the Center of Excellence.
         </p>
         <form onSubmit={issue} onFocus={live ? startRobotCheck : undefined} className="mt-4 flex flex-wrap items-end gap-3">
           <label className="block min-w-64 flex-1 text-sm font-semibold text-ink">
@@ -434,7 +434,7 @@ export function Certificate({ course }: { course: ProCourse }) {
       </div>
       <div className="certificate hidden break-inside-avoid print:flex">
         <div className="flex h-[184mm] w-full flex-col items-center justify-center border-[6px] border-double border-brand-700 px-12 py-10 text-center font-serif text-black">
-          <p className="text-[11pt] uppercase tracking-[0.3em] text-brand-700">Investopia Academy</p>
+          <p className="text-[11pt] uppercase tracking-[0.3em] text-brand-700">Erudite Africa Center of Excellence</p>
           <p className="mt-5 text-[30pt] font-bold">{course.award ?? "Certificate of Completion"}</p>
           <p className="mt-5 text-[12pt]">This certifies that</p>
           <p className="mt-3 border-b border-black px-10 pb-1 text-[24pt] font-bold">{name || exam.name}</p>
@@ -444,18 +444,18 @@ export function Certificate({ course }: { course: ProCourse }) {
           </p>
           <div className="mt-10 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.6fr] items-end gap-10 text-[10pt]">
             <p className="border-t border-black pt-1">Date: {longDate(exam.date)}</p>
-            <p className="border-t border-black pt-1">Investopia Academy</p>
+            <p className="border-t border-black pt-1">Erudite Africa Center of Excellence</p>
             <div className="flex items-end gap-3 text-left">
               {qr && <div className="h-[26mm] w-[26mm] shrink-0 [&>svg]:h-full [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: qr }} />}
               <div className="text-[9pt] leading-snug">
                 <p className="font-bold">Certificate no.</p>
                 <p className="font-mono">{exam.id ?? ""}</p>
-                <p className="mt-1">Scan, or check the number at investopia.et/academy/verify</p>
+                <p className="mt-1">Scan, or check the number at eruditeafrica.et/academy/verify</p>
                 {!exam.registered && <p className="mt-1 font-bold">Sample: not on the register</p>}
               </div>
             </div>
           </div>
-          <p className="mt-8 text-[9pt]">Investopia is a platform by Erudite Africa Investments PLC · investopia.et</p>
+          <p className="mt-8 text-[9pt]">Erudite Africa Center of Excellence, by Erudite Africa Investments PLC · eruditeafrica.et</p>
         </div>
       </div>
     </section>

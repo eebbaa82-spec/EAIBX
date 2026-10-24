@@ -42,7 +42,7 @@ export async function api(action: string, fields: Record<string, string>) {
   return body;
 }
 
-/** Checks a seat code with Investopia, remembers the seat and brings back progress saved on other devices. */
+/** Checks a seat code with the course site, remembers the seat and brings back progress saved on other devices. */
 export async function claimSeat(code: string) {
   const body = await api("seat", { code });
   const seat: Seat = { institution: String(body.institution), name: String(body.name), courses: (body.courses as string[]) ?? [], due: String(body.due ?? "") };
@@ -89,7 +89,7 @@ export function reportProgress(course: string, sim?: { score: number; done: bool
 }
 
 /**
- * Re-checks a seat with Investopia at most once a day, so a seat the training
+ * Re-checks a seat with the course site at most once a day, so a seat the training
  * department revokes stops working. Returns false only when the seat is gone.
  */
 let checking: Promise<boolean> | null = null;

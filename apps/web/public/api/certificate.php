@@ -1,5 +1,5 @@
 <?php
-// Academy certificate register on the cPanel host (investopia.et).
+// Academy certificate register on the course site's cPanel host (eruditeafrica.et).
 // POST issues a certificate: the learner's browser sends the course, the name,
 // the exam score and the subscriber access code; the server checks the code,
 // creates a unique certificate number and keeps the record in the Academy
@@ -28,7 +28,7 @@ $method = $_SERVER['REQUEST_METHOD'] ?? '';
 
 if ($method === 'GET') {
     $id = strtoupper(clean((string) ($_GET['id'] ?? ''), 60));
-    if (!preg_match('#^INV/ACAD/[A-Z0-9-]{1,20}/[0-9]{4}/[A-Z0-9]{8}$#', $id)) {
+    if (!preg_match('#^(EACOE|INV/ACAD)/[A-Z0-9-]{1,20}/[0-9]{4}/[A-Z0-9]{8}$#', $id)) {
         reply(200, ['ok' => true, 'found' => false]);
     }
     // No pause needed: the 8 random characters give about a trillion possible
@@ -118,7 +118,7 @@ for ($try = 0; ; $try++) {
     for ($i = 0; $i < 8; $i++) {
         $suffix .= $alphabet[random_int(0, 31)];
     }
-    $id = 'INV/ACAD/' . $courseId . '/' . gmdate('Y') . '/' . $suffix;
+    $id = 'EACOE/' . $courseId . '/' . gmdate('Y') . '/' . $suffix;
     try {
         $insert->execute([$id, $issued, $name, $course, $title, $score, $codeHash, $email]);
         break;

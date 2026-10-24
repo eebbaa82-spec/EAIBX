@@ -12,7 +12,7 @@ export const passMark = 70;
 
 /** Where a certificate's QR code leads: the public check on the live site. */
 export const verifyUrl = (id: string) =>
-  `https://investopia.et/academy/verify/?id=${encodeURIComponent(id)}`;
+  `https://eruditeafrica.et/academy/verify/?id=${encodeURIComponent(id)}`;
 
 /** Bank and capital market courses put the learner in an officer's seat; business and workplace courses in a job at a fictional company. */
 export const simName = (c: { track: string; slug: string }) =>

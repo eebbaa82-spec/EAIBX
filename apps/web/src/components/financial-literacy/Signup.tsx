@@ -1,5 +1,6 @@
 "use client";
 
+import { mainSite } from "@/lib/site";
 import Link from "next/link";
 import { useEffect, useState, type FormEvent, type ReactNode } from "react";
 import { courseCopy, type CourseLocale } from "@/data/financial-literacy";
@@ -7,7 +8,7 @@ import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components
 
 /**
  * The course is free, but learners register once (name, occupation,
- * education, email, mobile) so Investopia can keep them on its mailing list.
+ * education, email, mobile) so Erudite Africa can keep them on its mailing list.
  * Registrations go to submit.php as the "course" form. Being registered is
  * remembered in this browser; if storage is blocked it lasts for the visit.
  */
@@ -158,7 +159,7 @@ function SignupForm({ locale, onDone, scroll = true }: { locale: CourseLocale; o
           >
             {state === "sending" ? t.sending : t.submit}
           </button>
-          <Link href="/legal/privacy" className="text-sm text-brand-700 underline">
+          <Link href={mainSite("/legal/privacy/")} className="text-sm text-brand-700 underline">
             {t.privacy}
           </Link>
         </div>

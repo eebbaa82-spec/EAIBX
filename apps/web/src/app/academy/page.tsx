@@ -1,3 +1,4 @@
+import { mainSite } from "@/lib/site";
 import type { Metadata } from "next";
 import { ProCatalog } from "@/components/academy/CoursePages";
 import {
@@ -10,7 +11,7 @@ import {
 } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Investopia Academy · Banking and Finance Training",
+  title: "Erudite Africa Center of Excellence · Banking and Finance Training",
   description:
     "Certified courses in banking, credit, capital markets and investment banking, with enterprise plans for banks and MFIs.",
 };
@@ -19,14 +20,14 @@ export default function AcademyPage() {
   return (
     <>
       <PageHero
-        eyebrow="Investopia Academy"
+        eyebrow="Erudite Africa Center of Excellence"
         title="Professional training for Ethiopia's finance and business leaders"
         subhead="Practical courses and certifications in banking, credit, capital markets, investment banking and business skills, built for the Ethiopian market and available in Amharic and English."
       >
         <ButtonLink href="#catalog" variant="light">
           Browse courses
         </ButtonLink>
-        <ButtonLink href="/contact" variant="light">
+        <ButtonLink href={mainSite("/contact")} variant="light">
           Get an enterprise quote
         </ButtonLink>
       </PageHero>
@@ -87,7 +88,7 @@ export default function AcademyPage() {
         intro={
           <>
             Structured learning paths that take credit staff from the basics to confident, independent decision-making. Each
-            path ends with an assessment and an Investopia certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
+            path ends with an assessment and a Center of Excellence certificate in the path&apos;s name, issued by Erudite Africa Investments PLC
             together with partner institutions.
           </>
         }
@@ -138,7 +139,7 @@ export default function AcademyPage() {
               title: "Custom content.",
               body: (
                 <>
-                  Add your institution&apos;s own policies and procedures alongside Investopia courses.
+                  Add your institution&apos;s own policies and procedures alongside our courses.
                 </>
               ),
             },
@@ -146,11 +147,11 @@ export default function AcademyPage() {
           ]}
         />
         <div className="mt-8 flex flex-wrap gap-3">
-          <ButtonLink href="/contact">Get an enterprise quote</ButtonLink>
+          <ButtonLink href={mainSite("/contact")}>Get an enterprise quote</ButtonLink>
           <ButtonLink href="/academy/institution/" variant="secondary">
             Institution dashboard (sign in or see the demo)
           </ButtonLink>
-          <ButtonLink href="/contact" variant="secondary">
+          <ButtonLink href={mainSite("/contact")} variant="secondary">
             Download the course catalog (PDF)
           </ButtonLink>
         </div>
@@ -161,7 +162,7 @@ export default function AcademyPage() {
           title="Learn what investors and lenders look for"
           body="Short courses for founders and SME managers on financial statements, building a financial model, pitching, cash flow and working with your bank. Your EHIRA report recommends courses for your weakest areas."
         >
-          <ButtonLink href="/join" variant="light">
+          <ButtonLink href={mainSite("/join")} variant="light">
             Explore courses for entrepreneurs
           </ButtonLink>
         </CtaBand>

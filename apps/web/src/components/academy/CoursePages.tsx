@@ -217,7 +217,7 @@ export function FolderPage({ id }: { id: FolderId }) {
               href="/academy/#catalog"
               className="text-brand-100 normal-case tracking-normal hover:text-white"
             >
-              ← Investopia Academy
+              ← Erudite Africa Center of Excellence
             </Link>
             <span>Course folder</span>
           </p>
@@ -247,7 +247,7 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
               href="/academy/#catalog"
               className="text-brand-100 normal-case tracking-normal hover:text-white"
             >
-              ← Investopia Academy
+              ← Erudite Africa Center of Excellence
             </Link>
             <Link
               href={folderHref(folderOf(c).id)}
@@ -318,8 +318,8 @@ export function ProCourseOverview({ course: c }: { course: ProCourse }) {
               [
                 "Certificate",
                 c.award
-                  ? `Investopia Academy ${c.award}`
-                  : "Investopia Academy certificate of completion",
+                  ? `Erudite Africa Center of Excellence ${c.award}`
+                  : "Erudite Africa Center of Excellence certificate of completion",
               ],
               [
                 "Access",

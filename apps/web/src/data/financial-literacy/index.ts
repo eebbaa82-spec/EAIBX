@@ -22,7 +22,7 @@ export const courseHref = (locale: CourseLocale, slug?: string) =>
 /** Interface words for the course pages; the lessons themselves live in m01.json ... m10.json. */
 export const courseCopy = {
   en: {
-    eyebrow: "Investopia Academy · Free course",
+    eyebrow: "Erudite Africa Center of Excellence · Free course",
     title: "Financial Literacy for Everyone",
     subhead:
       "Ten short, illustrated modules on running a business, setting goals, budgeting, saving, borrowing and staying safe with money. Free and open to everyone: register once with your name and contact details to start.",
@@ -80,7 +80,7 @@ export const courseCopy = {
       phone: "Mobile number",
       phoneHint: "For example: 0911 234 567",
       consent:
-        "I agree that Investopia may keep these details and contact me by email or phone about courses, resources and news. I can unsubscribe at any time.",
+        "I agree that Erudite Africa may keep these details and contact me by email or phone about courses, resources and news. I can unsubscribe at any time.",
       submit: "Start the course",
       sending: "Registering...",
       error: "Sorry, that didn't go through. Please check your details and try again.",
@@ -90,8 +90,8 @@ export const courseCopy = {
     credits: {
       title: "Declaration and acknowledgment of sources",
       declaration: [
-        "Investopia, a platform by Erudite Africa Investments PLC, declares that the content of this course is adapted from the Financial Education Module for the Youth and MSMEs (basic level), published by the National Bank of Ethiopia in May 2024, and from its Amharic edition (2016 E.C.).",
-        "The knowledge, concepts, examples and structure of this course belong to the authors and institutions credited below. Investopia has only simplified, shortened, illustrated and arranged the original for online learning. Any errors introduced in this adaptation are Investopia's own.",
+        "The Erudite Africa Center of Excellence, the training arm of Erudite Africa Investments PLC, declares that the content of this course is adapted from the Financial Education Module for the Youth and MSMEs (basic level), published by the National Bank of Ethiopia in May 2024, and from its Amharic edition (2016 E.C.).",
+        "The knowledge, concepts, examples and structure of this course belong to the authors and institutions credited below. The Center of Excellence has only simplified, shortened, illustrated and arranged the original for online learning. Any errors introduced in this adaptation are the Center of Excellence's own.",
         "This course is offered free of charge for public financial education. It is not an official publication of the National Bank of Ethiopia, and the institutions named here have not reviewed or endorsed this adaptation.",
       ],
       institutionsTitle: "Original authors and institutions",
@@ -115,7 +115,7 @@ export const courseCopy = {
     },
   },
   am: {
-    eyebrow: "ኢንቨስቶፒያ አካዳሚ · ነፃ ኮርስ",
+    eyebrow: "ኢሩዳይት አፍሪካ የልህቀት ማዕከል · ነፃ ኮርስ",
     title: "የፋይናንስ ዕውቀት ለሁሉም",
     subhead:
       "ስለ ንግድ፣ ግብ ማስቀመጥ፣ በጀት፣ ቁጠባ፣ ብድር እና ገንዘብን በጥንቃቄ ስለመያዝ የሚያስተምሩ፣ በሥዕል የተደገፉ አሥር አጫጭር ሞጁሎች። ለሁሉም ክፍት እና ነፃ ነው፤ ለመጀመር አንድ ጊዜ ስምዎን እና አድራሻዎን በመመዝገብ ይጀምሩ።",
@@ -172,7 +172,7 @@ export const courseCopy = {
       phone: "የሞባይል ስልክ ቍጥር",
       phoneHint: "ለምሳሌ፦ 0911 234 567",
       consent:
-        "ኢንቨስቶፒያ እነዚህን መረጃዎች እንዲይዝ እና ስለ ኮርሶች፣ መረጃዎች እና ዜናዎች በኢሜይል ወይም በስልክ እንዲያገኘኝ እስማማለሁ። በማንኛውም ጊዜ መውጣት እችላለሁ።",
+        "ኢሩዳይት አፍሪካ እነዚህን መረጃዎች እንዲይዝ እና ስለ ኮርሶች፣ መረጃዎች እና ዜናዎች በኢሜይል ወይም በስልክ እንዲያገኘኝ እስማማለሁ። በማንኛውም ጊዜ መውጣት እችላለሁ።",
       submit: "ኮርሱን ይጀምሩ",
       sending: "በመመዝገብ ላይ...",
       error: "ይቅርታ፣ አልተሳካም። እባክዎ መረጃዎን አረጋግጠው እንደገና ይሞክሩ።",
@@ -182,8 +182,8 @@ export const courseCopy = {
     credits: {
       title: "የምንጭ መግለጫ እና ምስጋና",
       declaration: [
-        "ኢንቨስቶፒያ፣ የኢሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ. መድረክ፣ የዚህ ኮርስ ይዘት በኢትዮጵያ ብሔራዊ ባንክ በግንቦት 2016 ዓ.ም. (May 2024) ከታተመው የወጣቶች እና የጥቃቅን፣ አነስተኛና መካከለኛ ኢንተርፕራይዞች መሠረታዊ ደረጃ የፋይናንስ ትምህርት ሞጁል እና ከአማርኛ ቅጂው የተወሰደ መሆኑን ያረጋግጣል።",
-        "የዚህ ኮርስ ዕውቀት፣ ፅንሰ ሐሳቦች፣ ምሳሌዎች እና አወቃቀር ከዚህ በታች ለተጠቀሱት አዘጋጆች እና ተቋማት የሚገቡ ናቸው። ኢንቨስቶፒያ ያደረገው ዋናውን ሰነድ ለኦንላይን ትምህርት እንዲመች ማቅለል፣ ማሳጠር፣ በሥዕል ማስደገፍ እና ማደራጀት ብቻ ነው። በዚህ ማስተካከያ ሂደት የተፈጠረ ማንኛውም ስሕተት የኢንቨስቶፒያ ኀላፊነት ነው።",
+        "የኢሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ. የሥልጠና ክፍል የሆነው ኢሩዳይት አፍሪካ የልህቀት ማዕከል፣ የዚህ ኮርስ ይዘት በኢትዮጵያ ብሔራዊ ባንክ በግንቦት 2016 ዓ.ም. (May 2024) ከታተመው የወጣቶች እና የጥቃቅን፣ አነስተኛና መካከለኛ ኢንተርፕራይዞች መሠረታዊ ደረጃ የፋይናንስ ትምህርት ሞጁል እና ከአማርኛ ቅጂው የተወሰደ መሆኑን ያረጋግጣል።",
+        "የዚህ ኮርስ ዕውቀት፣ ፅንሰ ሐሳቦች፣ ምሳሌዎች እና አወቃቀር ከዚህ በታች ለተጠቀሱት አዘጋጆች እና ተቋማት የሚገቡ ናቸው። የልህቀት ማዕከሉ ያደረገው ዋናውን ሰነድ ለኦንላይን ትምህርት እንዲመች ማቅለል፣ ማሳጠር፣ በሥዕል ማስደገፍ እና ማደራጀት ብቻ ነው። በዚህ ማስተካከያ ሂደት የተፈጠረ ማንኛውም ስሕተት የልህቀት ማዕከሉ ኀላፊነት ነው።",
         "ይህ ኮርስ ለሕዝብ የፋይናንስ ትምህርት በነፃ የቀረበ ነው። የኢትዮጵያ ብሔራዊ ባንክ ይፋዊ ኅትመት አይደለም፤ እዚህ የተጠቀሱት ተቋማትም ይህን ማስተካከያ አልገመገሙም ወይም አላጸደቁም።",
       ],
       institutionsTitle: "የዋናው ሞጁል አዘጋጆች እና ተቋማት",

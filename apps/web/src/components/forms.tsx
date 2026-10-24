@@ -14,7 +14,7 @@ import type { Locale } from "@/i18n/config";
 const SUBMIT_URL = "/api/submit.php";
 
 export function liveHost() {
-  return typeof window !== "undefined" && /(^|\.)investopia\.et$/.test(window.location.hostname);
+  return typeof window !== "undefined" && /(^|\.)(investopia|eruditeafrica)\.et$/.test(window.location.hostname);
 }
 
 /**

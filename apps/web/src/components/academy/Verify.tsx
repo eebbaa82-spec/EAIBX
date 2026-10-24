@@ -4,7 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import { liveHost } from "@/components/forms";
 
 /**
- * Looks a certificate number up on Investopia's register (certificate.php on
+ * Looks a certificate number up on the Center of Excellence register (certificate.php on
  * the live host). The QR code on a certificate opens this page with ?id=.
  */
 type Found = { id: string; name: string; course: string; score: number; issued: string };
@@ -60,7 +60,7 @@ export function VerifyCertificate() {
             required
             autoComplete="off"
             spellCheck={false}
-            placeholder="INV/ACAD/T-2C/2026/ABCD2345"
+            placeholder="EACOE/T-2C/2026/ABCD2345"
             className="mt-1 w-full rounded-lg border border-line bg-white px-3 py-2.5 font-mono uppercase text-ink focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
           />
         </label>
@@ -92,14 +92,14 @@ export function VerifyCertificate() {
           <div role="alert" className="rounded-2xl border border-red-200 bg-red-50 p-6">
             <p className="text-lg font-bold text-red-800">No certificate with this number</p>
             <p className="mt-2 text-ink">
-              <span className="font-mono">{state.id}</span> is not on Investopia&apos;s register. Check the number for typing errors. If it is correct, the
+              <span className="font-mono">{state.id}</span> is not on the Center of Excellence register. Check the number for typing errors. If it is correct, the
               certificate is not genuine; please tell us at investopia@eruditeafrica.com.
             </p>
           </div>
         )}
         {state.status === "offline" && (
           <p className="rounded-2xl border border-line bg-white p-6 text-ink">
-            Certificates are checked on investopia.et. This preview copy of the site has no register, so it cannot confirm a number.
+            Certificates are checked on eruditeafrica.et. This preview copy of the site has no register, so it cannot confirm a number.
           </p>
         )}
         {state.status === "error" && (

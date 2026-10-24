@@ -5,6 +5,25 @@ export const brand = {
   tagline: "Powering Smarter Business Decisions.",
 };
 
+/**
+ * The courses live on their own site, the Erudite Africa Center of Excellence at
+ * eruditeafrica.et. The same code builds both sites: NEXT_PUBLIC_SITE=coe builds
+ * the course site, anything else builds Investopia.
+ */
+export const isCoe = process.env.NEXT_PUBLIC_SITE === "coe";
+
+/** A link to an Investopia page: relative on Investopia, absolute from the course site. */
+export const mainSite = (path: string) => (isCoe ? `https://investopia.et${path}` : path);
+
+export const academy = {
+  name: "Erudite Africa Center of Excellence",
+  short: "Center of Excellence",
+  mark: "EA",
+  host: "eruditeafrica.et",
+  url: "https://eruditeafrica.et",
+  tagline: "Practical banking and finance training for Ethiopia.",
+};
+
 /** From the Erudite Africa Investments PLC corporate profile (2026). */
 export const company = {
   address: "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia",
@@ -36,7 +55,7 @@ export const mainNav: NavMenu[] = [
     items: [
       { label: "Programs", href: "/programs", description: "Incubation and acceleration cohorts" },
       { label: "Mentors", href: "/mentors", description: "Learn from people who have built it" },
-      { label: "Academy", href: "/academy", description: "Banking, credit and investment training" },
+      { label: "Center of Excellence", href: "/academy", description: "Banking, credit and investment training" },
     ],
   },
   {

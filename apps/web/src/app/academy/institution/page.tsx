@@ -4,7 +4,7 @@ import { folderOf, proCourses, tracks } from "@/data/academy";
 import { PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Institution Dashboard · Investopia Academy",
+  title: "Institution Dashboard · Erudite Africa Center of Excellence",
   description: "For banks and MFIs with an Academy subscription: give staff access, assign courses and follow enrollment, performance and completion.",
   robots: { index: false },
 };
@@ -22,7 +22,7 @@ export default function InstitutionPage() {
   return (
     <>
       <PageHero
-        eyebrow="Investopia Academy for institutions"
+        eyebrow="Erudite Africa Center of Excellence for institutions"
         title="Institution dashboard"
         subhead="For the training department of a subscribing bank or MFI: give your staff access, assign their courses, and follow enrollment, performance and completion in one place."
       />

@@ -18,7 +18,7 @@ function find(course: string, module: string) {
 export async function generateMetadata({ params }: { params: Promise<{ course: string; module: string }> }): Promise<Metadata> {
   const { course, module } = await params;
   const f = find(course, module);
-  return f ? { title: `${f.m.title} · ${f.c.title} · Investopia Academy`, description: f.m.summary } : {};
+  return f ? { title: `${f.m.title} · ${f.c.title} · Erudite Africa Center of Excellence`, description: f.m.summary } : {};
 }
 
 export default async function ProModule({ params }: { params: Promise<{ course: string; module: string }> }) {
