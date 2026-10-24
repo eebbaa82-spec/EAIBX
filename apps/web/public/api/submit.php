@@ -1,6 +1,6 @@
 <?php
 // Receives the public site's forms on the cPanel hosts (investopia.et and the
-// course site, eruditeafrica.et), emails each submission to the Investopia inbox and appends it to a CSV file kept
+// course site, eruditeafrica.et), emails each submission to that site's inbox and appends it to a CSV file kept
 // outside the web folder (~/investopia-submissions/<form>.csv).
 // The Next.js site is static, so this is the only server-side code it uses.
 //
@@ -10,12 +10,15 @@
 // pay that cost per message, and each challenge is signed, expires and works
 // once.
 
-const INBOX = 'investopia@eruditeafrica.com';
 // The same script runs on investopia.et and on the course site, eruditeafrica.et;
-// mail goes out from the site that received the form.
+// mail goes out from the site that received the form, to that site's inbox.
 const SITES = [
     'investopia.et' => 'Investopia',
     'eruditeafrica.et' => 'Erudite Africa Center of Excellence',
+];
+const INBOXES = [
+    'investopia.et' => 'investopia@eruditeafrica.com',
+    'eruditeafrica.et' => 'training@eruditeafrica.com',
 ];
 $host = strtolower(preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? ''));
 if (!isset(SITES[$host])) {
@@ -23,6 +26,7 @@ if (!isset(SITES[$host])) {
 }
 define('SENDER', 'no-reply@' . $host);
 define('SENDER_NAME', SITES[$host]);
+define('INBOX', INBOXES[$host]);
 const FORMS = [
     'contact' => 'Contact form',
     'partnership' => 'Partnership enquiry',

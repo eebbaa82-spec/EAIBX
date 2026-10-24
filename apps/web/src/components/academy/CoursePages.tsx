@@ -149,7 +149,7 @@ function FolderTracks({ folder: f }: { folder: (typeof folders)[number] }) {
 
 const folderTone: Record<FolderId, string> = {
   "bank-and-mfi": "from-brand-900 via-brand-700 to-brand-600",
-  "financial-management": "from-[#5a4310] via-[#9a7418] to-gold-400",
+  "financial-management": "from-[#5a4310] via-[#9a7418] to-[#c99a2e]",
   "capital-markets": "from-[#0d3550] via-[#1d5a7d] to-[#3b86a8]",
   general: "from-[#3c2a4d] via-[#5d4677] to-[#8a6fa8]",
 };

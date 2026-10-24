@@ -22,6 +22,12 @@ export const academy = {
   host: "eruditeafrica.et",
   url: "https://eruditeafrica.et",
   tagline: "Practical banking and finance training for Ethiopia.",
+  email: "training@eruditeafrica.com",
+  partner: {
+    name: "Kotebe University of Education",
+    role: "Curriculum Development Partner",
+    logo: "/academy/brand/kue-logo.png",
+  },
 };
 
 /** From the Erudite Africa Investments PLC corporate profile (2026). */
@@ -37,6 +43,9 @@ export const company = {
   registrationNo: "MT/AA/2/0063282/2018",
   officeHours: "Monday to Friday, 8:30 a.m. to 5:30 p.m.",
 };
+
+/** The inbox for the site being built: training@ on the course site, investopia@ on Investopia. */
+export const contactEmail = isCoe ? academy.email : company.email;
 
 export type NavItem = { label: string; href: string; description?: string };
 export type NavMenu = { label: string; href?: string; items?: NavItem[] };

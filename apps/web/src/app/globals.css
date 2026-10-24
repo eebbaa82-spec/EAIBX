@@ -23,6 +23,24 @@
   --font-sans: var(--font-inter), var(--font-ethiopic), ui-sans-serif, system-ui, sans-serif;
 }
 
+/*
+ * The course site (eruditeafrica.et) uses the Erudite Africa Investments PLC
+ * logo palette: forest greens from the logo bars and wordmark, with the light
+ * leaf green as the accent in place of gold.
+ */
+[data-site="coe"] {
+  --color-brand-50: #eff6ec;
+  --color-brand-100: #dbebd5;
+  --color-brand-200: #b5d6a8;
+  --color-brand-500: #2e7a39;
+  --color-brand-600: #256c30;
+  --color-brand-700: #1c5427;
+  --color-brand-900: #103023;
+  --color-gold-100: #edf5e4;
+  --color-gold-400: #72aa49;
+  --color-gold-500: #5c9338;
+}
+
 html {
   scroll-behavior: smooth;
 }

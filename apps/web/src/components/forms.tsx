@@ -3,6 +3,7 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { translator } from "@/i18n/chrome";
 import type { Locale } from "@/i18n/config";
+import { contactEmail } from "@/lib/site";
 
 /**
  * The platform back end (NestJS API) is not built yet. Forms given a
@@ -78,8 +79,8 @@ function SendError() {
   return (
     <p role="alert" className="text-sm text-red-700">
       Sorry, your message could not be sent. Please try again, or email us at{" "}
-      <a className="underline" href="mailto:investopia@eruditeafrica.com">
-        investopia@eruditeafrica.com
+      <a className="underline" href={`mailto:${contactEmail}`}>
+        {contactEmail}
       </a>
       .
     </p>

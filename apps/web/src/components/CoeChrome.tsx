@@ -26,7 +26,8 @@ const nav = [
 function Mark() {
   return (
     <Link href="/academy/" className="flex shrink-0 items-center gap-2" aria-label={`${academy.name} home`}>
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-600 text-sm font-black text-white">{academy.mark}</span>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/academy/brand/eai-mark.png" alt="" width={30} height={40} className="h-10 w-auto shrink-0" />
       <span className="leading-tight">
         <span className="block text-base font-extrabold tracking-tight text-brand-900">Erudite Africa</span>
         <span className="block text-xs font-semibold text-muted">{academy.short}</span>
@@ -103,6 +104,9 @@ export function CoeFooter() {
           <p className="text-xl font-extrabold text-white">{academy.name}</p>
           <p className="mt-2">{academy.tagline}</p>
           <p className="mt-2">By {brand.operator}.</p>
+          <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-slate-400">{academy.partner.role}</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={academy.partner.logo} alt={academy.partner.name} width={508} height={120} className="mt-2 h-12 w-auto rounded-md bg-white p-1.5" />
         </div>
         <div>
           <p className="mb-3 font-semibold text-white">Courses</p>
@@ -138,7 +142,7 @@ export function CoeFooter() {
         <Container className="space-y-4">
           <p>
             {company.address} · <a href={`tel:${company.phoneOffice.replace(/ /g, "")}`} className="hover:text-white">{company.phoneOffice}</a> ·{" "}
-            <a href={`mailto:${company.email}`} className="hover:text-white">{company.email}</a>
+            <a href={`mailto:${academy.email}`} className="hover:text-white">{academy.email}</a>
           </p>
           <p>
             © {new Date().getFullYear()} {brand.operator}. Registration {company.registrationNo}.
