@@ -5,6 +5,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import type { ProCourse, QuizQuestion, Scenario } from "@/data/academy/types";
 import { examHref, passMark, proCourseHref, simName, verifyUrl } from "@/data/academy/paths";
 import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components/forms";
+import { academy } from "@/lib/site";
 import { savedCode } from "./Access";
 import { reportProgress } from "./seat";
 import { simulationHref, useSimulationResult } from "./Simulation";
@@ -433,16 +434,18 @@ export function Certificate({ course }: { course: ProCourse }) {
         {!live && <p className="mt-3 text-sm text-muted">This is the preview site, so the certificate is a sample: its number is not on the register.</p>}
       </div>
       <div className="certificate hidden break-inside-avoid print:flex">
-        <div className="flex h-[184mm] w-full flex-col items-center justify-center border-[6px] border-double border-brand-700 px-12 py-10 text-center font-serif text-black">
-          <p className="text-[11pt] uppercase tracking-[0.3em] text-brand-700">Erudite Africa Center of Excellence</p>
-          <p className="mt-5 text-[30pt] font-bold">{course.award ?? "Certificate of Completion"}</p>
+        <div className="flex h-[184mm] w-full flex-col items-center justify-center border-[6px] border-double border-brand-700 px-12 py-8 text-center font-serif text-black">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/academy/brand/eai-logo.png" alt="Erudite Africa Investments PLC" className="h-[17mm] w-auto" />
+          <p className="mt-3 text-[11pt] uppercase tracking-[0.3em] text-brand-700">Erudite Africa Center of Excellence</p>
+          <p className="mt-4 text-[30pt] font-bold">{course.award ?? "Certificate of Completion"}</p>
           <p className="mt-5 text-[12pt]">This certifies that</p>
           <p className="mt-3 border-b border-black px-10 pb-1 text-[24pt] font-bold">{name || exam.name}</p>
           <p className="mt-5 max-w-[200mm] text-[12pt]">
             has completed the online course <strong>{course.title}</strong> ({course.subtitle}) and passed its final examination with a score of {pct}%
             {sim.required ? `, and its ${simName(course).toLowerCase()} as ${course.simulation!.role.toLowerCase()} with ${sim.score}%` : ""}.
           </p>
-          <div className="mt-10 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.6fr] items-end gap-10 text-[10pt]">
+          <div className="mt-8 grid w-full max-w-[240mm] grid-cols-[1fr_1fr_1.6fr] items-end gap-10 text-[10pt]">
             <p className="border-t border-black pt-1">Date: {longDate(exam.date)}</p>
             <p className="border-t border-black pt-1">Erudite Africa Center of Excellence</p>
             <div className="flex items-end gap-3 text-left">
@@ -455,7 +458,14 @@ export function Certificate({ course }: { course: ProCourse }) {
               </div>
             </div>
           </div>
-          <p className="mt-8 text-[9pt]">Erudite Africa Center of Excellence, by Erudite Africa Investments PLC · eruditeafrica.et</p>
+          <div className="mt-6 flex w-full max-w-[240mm] items-end justify-between gap-6 text-left text-[9pt]">
+            <p>Erudite Africa Center of Excellence, by Erudite Africa Investments PLC · eruditeafrica.et</p>
+            <div className="flex shrink-0 flex-col items-end">
+              <p className="mb-1 uppercase tracking-[0.15em] text-brand-700">{academy.partner.role}</p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={academy.partner.logo} alt={academy.partner.name} className="h-[12mm] w-auto" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

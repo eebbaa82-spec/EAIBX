@@ -104,6 +104,9 @@ export function CoeFooter() {
           <p className="text-xl font-extrabold text-white">{academy.name}</p>
           <p className="mt-2">{academy.tagline}</p>
           <p className="mt-2">By {brand.operator}.</p>
+          <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-slate-400">{academy.partner.role}</p>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={academy.partner.logo} alt={academy.partner.name} width={508} height={120} className="mt-2 h-12 w-auto rounded-md bg-white p-1.5" />
         </div>
         <div>
           <p className="mb-3 font-semibold text-white">Courses</p>
