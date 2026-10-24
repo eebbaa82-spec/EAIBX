@@ -26,7 +26,6 @@ const businessRows = [
   ],
   ["Data room", "5 documents", "Full data room", "Full data room with view analytics"],
   ["Deal Room eligibility", "No", "Yes", "Priority consideration"],
-  ["Academy", "Free courses", "All courses", "All courses plus certificates"],
   ["Support", "Help Center", "Email support", "Dedicated relationship manager"],
   [
     "",
@@ -121,8 +120,7 @@ export default function PricingPage() {
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
             <strong className="text-ink">
-              Program hosting for partner institutions, and Academy enterprise subscriptions for banks and MFIs (per seat,
-              billed annually):
+              Program hosting for partner institutions:
             </strong>{" "}
             Custom
           </li>

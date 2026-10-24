@@ -120,13 +120,6 @@ export function HomePage({ t, locale }: { t: HomeCopy; locale: Locale }) {
         </div>
       </Section>
 
-      <Section title={t.academyTitle}>
-        <p className="max-w-3xl text-lg text-muted">{t.academyBody}</p>
-        <div className="mt-6">
-          <ButtonLink href={href("/academy")}>{t.academyButton}</ButtonLink>
-        </div>
-      </Section>
-
       <CtaBand title={t.ctaTitle} body={t.ctaBody}>
         <ButtonLink href={href("/join")} variant="light">
           {t.ctaJoin}

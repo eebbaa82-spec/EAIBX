@@ -29,9 +29,6 @@ export type HomeCopy = {
   partnerTitle: string;
   partnerBody: string;
   partnerButton: string;
-  academyTitle: string;
-  academyBody: string;
-  academyButton: string;
   ctaTitle: string;
   ctaBody: string;
   ctaJoin: string;
@@ -92,7 +89,7 @@ const en: HomeCopy = {
     },
     {
       title: "Close and grow.",
-      body: "Share documents in a secure deal room, agree terms with expert support, and keep building with the Academy.",
+      body: "Share documents in a secure deal room, agree terms with expert support, and keep growing with mentors and programs.",
     },
   ],
   howButton: "See how it works",
@@ -123,10 +120,6 @@ const en: HomeCopy = {
   partnerBody:
     "We are working with banks, MFIs, development partners and universities to bring their programs and services to Ethiopian businesses. Partner announcements are coming soon.",
   partnerButton: "Become a partner",
-  academyTitle: "Training that builds careers and businesses",
-  academyBody:
-    "Professional courses and certifications in banking, credit, capital markets and investment banking, plus practical courses for founders, in Amharic and English. Banks and MFIs can enroll whole teams.",
-  academyButton: "Explore the Academy",
   ctaTitle: "Your next chapter starts here.",
   ctaBody: "Whether you are starting, scaling, investing or recovering, Investopia gives you the people, data and tools to move forward.",
   ctaJoin: "Join Investopia free",
@@ -188,7 +181,7 @@ const am: HomeCopy = {
     },
     {
       title: "ስምምነቱን ያጠናቅቁና ያድጉ።",
-      body: "ሰነዶችን ደህንነቱ በተጠበቀ የስምምነት ክፍል ውስጥ ያጋሩ፣ በባለሙያ ድጋፍ ውሎችን ይስማሙ፣ እንዲሁም በአካዳሚው አማካኝነት ማደግዎን ይቀጥሉ።",
+      body: "ሰነዶችን ደህንነቱ በተጠበቀ የስምምነት ክፍል ውስጥ ያጋሩ፣ በባለሙያ ድጋፍ ውሎችን ይስማሙ፣ እንዲሁም በመካሪዎችና በፕሮግራሞች ማደግዎን ይቀጥሉ።",
     },
   ],
   howButton: "እንዴት እንደሚሠራ ይመልከቱ",
@@ -219,10 +212,6 @@ const am: HomeCopy = {
   partnerBody:
     "ፕሮግራሞቻቸውንና አገልግሎቶቻቸውን ለኢትዮጵያ ንግዶች ለማድረስ ከባንኮች፣ ከአነስተኛ የፋይናንስ ተቋማት፣ ከልማት አጋሮችና ከዩኒቨርሲቲዎች ጋር እየሠራን ነው። የአጋርነት ማስታወቂያዎች በቅርቡ ይወጣሉ።",
   partnerButton: "አጋር ይሁኑ",
-  academyTitle: "ሙያንና ንግድን የሚገነባ ስልጠና",
-  academyBody:
-    "በባንክ፣ በብድር፣ በካፒታል ገበያና በኢንቨስትመንት ባንኪንግ የሙያ ኮርሶችና ሰርተፊኬቶች፣ እንዲሁም ለሥራ ፈጣሪዎች ተግባራዊ ኮርሶች፣ በአማርኛና በእንግሊዝኛ። ባንኮችና አነስተኛ የፋይናንስ ተቋማት መላ ቡድኖቻቸውን ማስመዝገብ ይችላሉ።",
-  academyButton: "አካዳሚውን ያስሱ",
   ctaTitle: "ቀጣዩ ምዕራፍዎ እዚህ ይጀምራል።",
   ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Investopia ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
   ctaJoin: "Investopiaን በነፃ ይቀላቀሉ",
@@ -284,7 +273,7 @@ const om: HomeCopy = {
     },
     {
       title: "Xumuraa fi guddadhaa.",
-      body: "Sanadoota kutaa waliigaltee nageenya qabu keessatti qoodaa, deggersa ogeessaatiin haalawwan irratti waliigalaa, Akkaadamii waliin ijaaruu itti fufaa.",
+      body: "Sanadoota kutaa waliigaltee nageenya qabu keessatti qoodaa, deggersa ogeessaatiin haalawwan irratti waliigalaa, gorsitootaa fi sagantaalee waliin guddachuu itti fufaa.",
     },
   ],
   howButton: "Akkamitti akka hojjetu ilaalaa",
@@ -315,10 +304,6 @@ const om: HomeCopy = {
   partnerBody:
     "Sagantaalee fi tajaajila isaanii daldaltoota Itoophiyaatiif dhiyeessuuf baankota, dhaabbilee maallaqaa xixiqqoo, michoota misoomaa fi yuunivarsiitiiwwan waliin hojjechaa jirra. Beeksisni michummaa dhiyootti ni dhufa.",
   partnerButton: "Michuu ta'aa",
-  academyTitle: "Leenjii ogummaa fi daldala ijaaru",
-  academyBody:
-    "Koorsiiwwan ogummaa fi ragaa baankii, liqii, gabaa kaappitaalaa fi baankii investimentii, akkasumas koorsiiwwan hojiirra oolan hundeessitootaaf, Afaan Amaaraa fi Ingiliziitiin. Baankonni fi dhaabbileen maallaqaa xixiqqoo gareewwan isaanii guutuu galmeessuu danda'u.",
-  academyButton: "Akkaadamii qoradhaa",
   ctaTitle: "Boqonnaan keessan itti aanu asitti jalqaba.",
   ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Investopia namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
   ctaJoin: "Investopia bilisaan makamaa",

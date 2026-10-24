@@ -74,7 +74,7 @@ export const audiences: Record<AudienceKey, Audience> = {
           },
           {
             title: "Get better, not just funded.",
-            body: "Every gap in your report links to a course, a mentor or an advisor who can fix it.",
+            body: "Every gap in your report links to a program, a mentor or an advisor who can help fix it.",
           },
         ],
       },

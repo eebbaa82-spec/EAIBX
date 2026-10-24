@@ -6,6 +6,7 @@ import { businessTypes, dimensions, questions, screening, typeWeights, type Answ
 import { isoDate, isVisible, score, taxClearance } from "@/lib/ehira/score";
 import { briQuestions } from "@/lib/bri/model";
 import { scoreBri, type BriResult } from "@/lib/bri/score";
+import { academy } from "@/lib/site";
 
 /** Plain yes/no stand-ins used only by the quick self-check, which takes no uploads. */
 const quickQuestions: Question[] = [
@@ -707,7 +708,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
           <li><Link href="/programs" className="hover:underline">Join a program</Link></li>
           <li><Link href="/credit-center" className="hover:underline">Credit Management Center</Link></li>
           <li><Link href="/recovery" className="hover:underline">Business Recovery</Link></li>
-          <li><Link href="/academy" className="hover:underline">Academy courses</Link></li>
+          <li><a href={`${academy.url}/academy/courses/`} className="hover:underline">Training at the Erudite Africa Center of Excellence</a></li>
         </ul>
       </section>
 

@@ -25,6 +25,6 @@ export function publicRoutes(): string[] {
     }
   };
   walk(appDir, "");
-  // The course site carries only the Academy; its other paths redirect to investopia.et.
-  return routes.filter((r) => !notForSearch.has(r) && (!isCoe || /^\/(am\/)?academy(\/|$)/.test(r))).sort();
+  // Each site lists only its own pages: the courses on eruditeafrica.et, the rest on investopia.et.
+  return routes.filter((r) => !notForSearch.has(r) && isCoe === /^\/(am\/)?academy(\/|$)/.test(r)).sort();
 }

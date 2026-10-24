@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const pillars = [
   {
     title: "Grow.",
-    body: "Incubation, acceleration, mentorship and an online Academy that turn ideas into investable companies.",
+    body: "Incubation, acceleration and mentorship that turn ideas into investable companies.",
   },
   {
     title: "Invest.",

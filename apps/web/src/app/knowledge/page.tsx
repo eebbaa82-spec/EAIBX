@@ -57,15 +57,6 @@ export default function KnowledgePage() {
         </div>
       </Section>
 
-      <Section title="Free financial literacy course">
-        <p className="max-w-3xl text-lg text-muted">
-          Learn the basics of budgeting, saving, borrowing, digital money and insurance in ten short, illustrated modules, in English or Amharic.
-        </p>
-        <div className="mt-6">
-          <ButtonLink href="/academy/financial-literacy/">Start the course</ButtonLink>
-        </div>
-      </Section>
-
       <Section tone="canvas" title="Featured guides">
         <ul className="grid gap-4 md:grid-cols-2">
           {featuredGuides.map((g) => (

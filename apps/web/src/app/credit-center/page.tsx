@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink, FeatureList, Note, PageHero, Section, Steps } from "@/components/ui";
+import { academy } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Credit Management Center · Investopia",
@@ -114,11 +115,11 @@ export default function CreditCenterPage() {
               title: "Staff training and certification.",
               body: (
                 <>
-                  Enroll your credit teams in the{" "}
-                  <Link href="/academy" className="text-brand-700 underline-offset-4 hover:underline">
-                    Investopia Academy
-                  </Link>{" "}
-                  through an enterprise subscription.
+                  Train and certify your credit teams at our sister service, the{" "}
+                  <a href={`${academy.url}/academy/`} className="text-brand-700 underline-offset-4 hover:underline">
+                    Erudite Africa Center of Excellence
+                  </a>
+                  .
                 </>
               ),
             },

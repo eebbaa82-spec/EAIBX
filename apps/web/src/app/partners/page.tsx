@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const partnerTypes: [string, string][] = [
   [
     "Banks and microfinance institutions",
-    "Find bankable SMEs with verified EHIRA grades, speed up client due diligence, monitor borrowers after disbursement, and train and certify staff through Academy enterprise subscriptions.",
+    "Find bankable SMEs with verified EHIRA grades, speed up client due diligence, monitor borrowers after disbursement, and manage credit relationships through the Credit Management Center.",
   ],
   [
     "Development finance institutions and donors",
@@ -28,7 +28,7 @@ const partnerTypes: [string, string][] = [
     "Corporates",
     "Find suppliers, acquisition targets and innovation partners, and run your own enterprise development programs.",
   ],
-  ["Professional firms", "Reach new clients as a listed advisor and co-host Academy courses."],
+  ["Professional firms", "Reach new clients as a listed advisor and support businesses through programs."],
 ];
 
 const ways = [
@@ -42,7 +42,7 @@ const ways = [
   },
   {
     title: "Co-create content.",
-    body: "Publish research, courses or toolkits in the Knowledge Hub and Academy.",
+    body: "Publish research, guides or toolkits in the Knowledge Hub.",
   },
   {
     title: "Integrate.",

@@ -55,7 +55,6 @@ export const mainNav: NavMenu[] = [
     items: [
       { label: "Programs", href: "/programs", description: "Incubation and acceleration cohorts" },
       { label: "Mentors", href: "/mentors", description: "Learn from people who have built it" },
-      { label: "Center of Excellence", href: "/academy", description: "Banking, credit and investment training" },
     ],
   },
   {
@@ -82,6 +81,7 @@ export const mainNav: NavMenu[] = [
       { label: "Regulations and Research", href: "/knowledge/regulations" },
       { label: "Events", href: "/events" },
       { label: "Blog", href: "/blog" },
+      { label: "Training: Center of Excellence", href: "https://eruditeafrica.et/academy/" },
     ],
   },
   { label: "Pricing", href: "/pricing" },
@@ -126,6 +126,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
       { label: "Careers", href: "/about/careers" },
       { label: "Press", href: "/about/press" },
       { label: "Blog", href: "/blog" },
+      { label: "Training: Center of Excellence", href: "https://eruditeafrica.et/academy/" },
     ],
   },
   {
