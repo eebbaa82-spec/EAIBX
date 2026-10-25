@@ -42,9 +42,16 @@ export default function DealRoomsPage() {
               title: "Due diligence.",
               body: "Interested investors get permissioned access to each business's private data room.",
             },
-            { title: "Follow-through.", body: "We support term sheet discussions and track outcomes for every room." },
+            {
+              title: "Follow-through.",
+              body: "Investors and businesses negotiate and close directly, with their own advisors. We track outcomes for every room.",
+            },
           ]}
         />
+        <p className="mt-8 max-w-3xl text-sm text-muted">
+          Deal Rooms make introductions; they are not investment advice. Kenna Ventures does not recommend investments, offer
+          shares to the public or hold investor money.
+        </p>
       </Section>
 
       <Section tone="canvas" title="Upcoming and open rooms">

@@ -107,7 +107,7 @@ export default function PricingPage() {
 
       <Section
         id="services"
-        title="Success fees and services"
+        title="Advisory and due diligence services"
         intro="Some services carry a one-off fee, always agreed in writing before work starts."
       >
         <ul className="space-y-3 text-muted">
@@ -115,8 +115,8 @@ export default function PricingPage() {
             <strong className="text-ink">Verified EHIRA (pay-as-you-go):</strong> announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
-            <strong className="text-ink">Success fee on completed transactions introduced through Kenna Ventures:</strong>{" "}
-            announced after the launch period
+            <strong className="text-ink">Advisory and due diligence fees:</strong> quoted per assignment, such as investor due diligence on a
+            business in a deal room
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
             <strong className="text-ink">
