@@ -27,9 +27,9 @@ export function Header() {
   return (
     <header lang={locale} className="print:hidden sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href={href("/")} className="flex items-center gap-2" aria-label={t("Investopia home")}>
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-black text-white">IN</span>
-          <span className="text-xl font-extrabold tracking-tight text-brand-900">Investopia</span>
+        <Link href={href("/")} className="flex items-center gap-2" aria-label={t("Kenna Ventures home")}>
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-sm font-black text-white">KV</span>
+          <span className="text-xl font-extrabold tracking-tight text-brand-900">Kenna Ventures</span>
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">
@@ -82,7 +82,7 @@ export function Header() {
             {t("Log in")}
           </Link>
           <Link href={href("/join")} className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700">
-            {t("Join Investopia")}
+            {t("Join Kenna Ventures")}
           </Link>
         </div>
 
@@ -127,7 +127,7 @@ export function Header() {
             ))}
             <div className="mt-4 flex items-center gap-3">
               <Link href={href("/join")} className="rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white">
-                {t("Join Investopia")}
+                {t("Join Kenna Ventures")}
               </Link>
               <Link href={href("/login")} className="text-sm font-medium text-ink">
                 {t("Log in")}

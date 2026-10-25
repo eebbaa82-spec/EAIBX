@@ -441,7 +441,7 @@ export function CreditAnalysis({ ctx, templateHref }: { ctx: AnalysisContext; te
     </div>,
 
     /* Project appraisal */
-    <CreditProject key="project" k={k} set={set} projectionsTemplate={templateHref.replace(/[^/]+$/, "Investopia-Project-Projections-Template.xlsx")} />,
+    <CreditProject key="project" k={k} set={set} projectionsTemplate={templateHref.replace(/[^/]+$/, "Kenna-Project-Projections-Template.xlsx")} />,
 
     /* Context */
     <ContextStep key="context" k={k} ctx={ctx} set={set} />,
@@ -645,7 +645,7 @@ function CaseFile({ k, onLoad }: { k: CreditCase; onLoad: (c: CreditCase) => voi
     const blob = new Blob([JSON.stringify(k, null, 1)], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = `Investopia-Credit-Analysis-${(k.borrower || "case").replace(/[^A-Za-z0-9]+/g, "-")}.json`;
+    link.download = `Kenna-Credit-Analysis-${(k.borrower || "case").replace(/[^A-Za-z0-9]+/g, "-")}.json`;
     link.click();
     URL.revokeObjectURL(link.href);
   };

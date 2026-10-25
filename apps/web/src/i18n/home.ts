@@ -38,8 +38,8 @@ export type HomeCopy = {
 const en: HomeCopy = {
   heroTitle: "Powering Smarter Business Decisions.",
   heroBody:
-    "Investopia is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
-  searchLabel: "Search Investopia",
+    "Kenna Ventures is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
+  searchLabel: "Search Kenna Ventures",
   searchPlaceholder: 'Search businesses, sectors or investors, for example "agro-processing in Oromia"',
   searchButton: "Search",
   heroButtons: ["I'm raising capital", "I'm investing", "I need to turn my business around"],
@@ -76,7 +76,7 @@ const en: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "How Investopia works",
+  howTitle: "How Kenna Ventures works",
   howSteps: [
     { title: "Create your profile.", body: "Tell us who you are and what you need. It takes about ten minutes." },
     {
@@ -85,7 +85,7 @@ const en: HomeCopy = {
     },
     {
       title: "Get matched.",
-      body: "Investopia introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
+      body: "Kenna Ventures introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
     },
     {
       title: "Close and grow.",
@@ -113,16 +113,16 @@ const en: HomeCopy = {
     },
   ],
   programsTitle: "Programs accepting applications",
-  programsIntro: "Incubators, accelerators and competitions run on Investopia by leading institutions.",
+  programsIntro: "Incubators, accelerators and competitions run on Kenna Ventures by leading institutions.",
   programsEmpty: "Open programs will be listed here with their organizer and deadline.",
   programsButton: "See all programs",
-  partnerTitle: "Partner with Investopia",
+  partnerTitle: "Partner with Kenna Ventures",
   partnerBody:
     "We are working with banks, MFIs, development partners and universities to bring their programs and services to Ethiopian businesses. Partner announcements are coming soon.",
   partnerButton: "Become a partner",
   ctaTitle: "Your next chapter starts here.",
-  ctaBody: "Whether you are starting, scaling, investing or recovering, Investopia gives you the people, data and tools to move forward.",
-  ctaJoin: "Join Investopia free",
+  ctaBody: "Whether you are starting, scaling, investing or recovering, Kenna Ventures gives you the people, data and tools to move forward.",
+  ctaJoin: "Join Kenna Ventures free",
   ctaTalk: "Talk to our team",
 };
 
@@ -130,8 +130,8 @@ const en: HomeCopy = {
 const am: HomeCopy = {
   heroTitle: "ብልህ የንግድ ውሳኔዎችን እናጎለብታለን።",
   heroBody:
-    "Investopia የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
-  searchLabel: "Investopiaን ይፈልጉ",
+    "Kenna Ventures የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
+  searchLabel: "Kenna Venturesን ይፈልጉ",
   searchPlaceholder: "ንግዶችን፣ ዘርፎችን ወይም ባለሀብቶችን ይፈልጉ፤ ለምሳሌ «በኦሮሚያ የግብርና ምርት ማቀነባበር»",
   searchButton: "ፈልግ",
   heroButtons: ["ካፒታል እያሰባሰብኩ ነው", "ኢንቨስት እያደረግኩ ነው", "ንግዴን መልሼ ማቋቋም እፈልጋለሁ"],
@@ -168,7 +168,7 @@ const am: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "Investopia እንዴት ይሠራል",
+  howTitle: "Kenna Ventures እንዴት ይሠራል",
   howSteps: [
     { title: "መገለጫዎን ይፍጠሩ።", body: "ማን እንደሆኑና ምን እንደሚፈልጉ ይንገሩን። አሥር ደቂቃ ገደማ ይወስዳል።" },
     {
@@ -177,7 +177,7 @@ const am: HomeCopy = {
     },
     {
       title: "ተገቢውን አጋር ያግኙ።",
-      body: "Investopia በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
+      body: "Kenna Ventures በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
     },
     {
       title: "ስምምነቱን ያጠናቅቁና ያድጉ።",
@@ -205,16 +205,16 @@ const am: HomeCopy = {
     },
   ],
   programsTitle: "ማመልከቻ የሚቀበሉ ፕሮግራሞች",
-  programsIntro: "ግንባር ቀደም ተቋማት በInvestopia ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
+  programsIntro: "ግንባር ቀደም ተቋማት በKenna Ventures ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
   programsEmpty: "ክፍት ፕሮግራሞች ከአዘጋጃቸውና ከማመልከቻ ማብቂያ ቀናቸው ጋር እዚህ ይዘረዘራሉ።",
   programsButton: "ሁሉንም ፕሮግራሞች ይመልከቱ",
-  partnerTitle: "ከInvestopia ጋር ይተባበሩ",
+  partnerTitle: "ከKenna Ventures ጋር ይተባበሩ",
   partnerBody:
     "ፕሮግራሞቻቸውንና አገልግሎቶቻቸውን ለኢትዮጵያ ንግዶች ለማድረስ ከባንኮች፣ ከአነስተኛ የፋይናንስ ተቋማት፣ ከልማት አጋሮችና ከዩኒቨርሲቲዎች ጋር እየሠራን ነው። የአጋርነት ማስታወቂያዎች በቅርቡ ይወጣሉ።",
   partnerButton: "አጋር ይሁኑ",
   ctaTitle: "ቀጣዩ ምዕራፍዎ እዚህ ይጀምራል።",
-  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Investopia ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
-  ctaJoin: "Investopiaን በነፃ ይቀላቀሉ",
+  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Kenna Ventures ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
+  ctaJoin: "Kenna Venturesን በነፃ ይቀላቀሉ",
   ctaTalk: "ቡድናችንን ያነጋግሩ",
 };
 
@@ -222,8 +222,8 @@ const am: HomeCopy = {
 const om: HomeCopy = {
   heroTitle: "Murtii Daldalaa Ogummaa Qabu Humneessina.",
   heroBody:
-    "Investopia waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
-  searchLabel: "Investopia keessa barbaadaa",
+    "Kenna Ventures waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
+  searchLabel: "Kenna Ventures keessa barbaadaa",
   searchPlaceholder: "Daldaltoota, dameewwan ykn invastaroota barbaadaa; fakkeenyaaf \"qindaa'ina oomisha qonnaa Oromiyaa keessatti\"",
   searchButton: "Barbaadi",
   heroButtons: ["Kaappitaala walitti qabaan jira", "Invest gochaan jira", "Daldala koo deebisee dandamachiisuun barbaada"],
@@ -260,7 +260,7 @@ const om: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "Investopia akkamitti hojjeta",
+  howTitle: "Kenna Ventures akkamitti hojjeta",
   howSteps: [
     { title: "Ibsa dhuunfaa keessan uumaa.", body: "Eenyu akka taatanii fi maal akka barbaaddan nutti himaa. Gara daqiiqaa kudhanii fudhata." },
     {
@@ -269,7 +269,7 @@ const om: HomeCopy = {
     },
     {
       title: "Wal-simsiifamaa.",
-      body: "Investopia ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
+      body: "Kenna Ventures ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
     },
     {
       title: "Xumuraa fi guddadhaa.",
@@ -297,16 +297,16 @@ const om: HomeCopy = {
     },
   ],
   programsTitle: "Sagantaalee iyyannoo fudhachaa jiran",
-  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Investopia irratti gaggeessan.",
+  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Kenna Ventures irratti gaggeessan.",
   programsEmpty: "Sagantaaleen banaa ta'an qindeessaa fi guyyaa xumuraa isaanii waliin asitti tarreeffamu.",
   programsButton: "Sagantaalee hunda ilaalaa",
-  partnerTitle: "Investopia waliin hojjedhaa",
+  partnerTitle: "Kenna Ventures waliin hojjedhaa",
   partnerBody:
     "Sagantaalee fi tajaajila isaanii daldaltoota Itoophiyaatiif dhiyeessuuf baankota, dhaabbilee maallaqaa xixiqqoo, michoota misoomaa fi yuunivarsiitiiwwan waliin hojjechaa jirra. Beeksisni michummaa dhiyootti ni dhufa.",
   partnerButton: "Michuu ta'aa",
   ctaTitle: "Boqonnaan keessan itti aanu asitti jalqaba.",
-  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Investopia namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
-  ctaJoin: "Investopia bilisaan makamaa",
+  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Kenna Ventures namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
+  ctaJoin: "Kenna Ventures bilisaan makamaa",
   ctaTalk: "Garee keenya haasofsiisaa",
 };
 

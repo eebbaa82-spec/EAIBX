@@ -35,7 +35,7 @@ const am: Record<string, string> = {
   "Deal Rooms": "የስምምነት ክፍሎች",
   "Curated, verified deal flow": "የተመረጡና የተረጋገጡ የኢንቨስትመንት ዕድሎች",
   "For Investors": "ለባለሀብቶች",
-  "How Investopia works for you": "Investopia ለእርስዎ እንዴት እንደሚሠራ",
+  "How Kenna Ventures works for you": "Kenna Ventures ለእርስዎ እንዴት እንደሚሠራ",
   "Valuation Tools": "የዋጋ ትመና መሣሪያዎች",
   "Price a business with confidence": "የንግድን ዋጋ በእርግጠኝነት ይገምቱ",
   "Knowledge Hub": "የዕውቀት ማዕከል",
@@ -45,13 +45,13 @@ const am: Record<string, string> = {
   Blog: "ብሎግ",
   // Header
   "Log in": "ይግቡ",
-  "Join Investopia": "Investopiaን ይቀላቀሉ",
+  "Join Kenna Ventures": "Kenna Venturesን ይቀላቀሉ",
   "Open menu": "ምናሌውን ክፈት",
   "Close menu": "ምናሌውን ዝጋ",
   "Skip to content": "ወደ ይዘቱ ይዝለሉ",
-  "Investopia home": "የInvestopia መነሻ ገጽ",
+  "Kenna Ventures home": "የKenna Ventures መነሻ ገጽ",
   // Footer
-  "The Investopia Brief": "የInvestopia ዜና መጽሔት",
+  "The Kenna Ventures Brief": "የKenna Ventures ዜና መጽሔት",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "ከኢትዮጵያ እያደገ ካለው ኢኮኖሚ የተገኙ ስምምነቶች፣ ፕሮግራሞችና ግንዛቤዎች፣ በየሁለት ሳምንቱ።",
   "Email address": "የኢሜይል አድራሻ",
@@ -76,10 +76,10 @@ const am: Record<string, string> = {
   "Sector reports": "የዘርፍ ሪፖርቶች",
   "Investor FAQ": "የባለሀብቶች ተደጋጋሚ ጥያቄዎች",
   "Partner with us": "ከእኛ ጋር ይተባበሩ",
-  "Run a program on Investopia": "በInvestopia ላይ ፕሮግራም ያካሂዱ",
+  "Run a program on Kenna Ventures": "በKenna Ventures ላይ ፕሮግራም ያካሂዱ",
   "Sponsor a cohort": "የሥልጠና ቡድን ስፖንሰር ያድርጉ",
   "List as an advisor": "እንደ አማካሪ ይመዝገቡ",
-  "About Investopia": "ስለ Investopia",
+  "About Kenna Ventures": "ስለ Kenna Ventures",
   "Our team": "ቡድናችን",
   Careers: "የሥራ ዕድሎች",
   Press: "ለሚዲያ",
@@ -95,7 +95,7 @@ const am: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "ረሆቦት አፓርትመንት ሕንፃ፣ 1ኛ ፎቅ፣ ቦሌ መድኃኔዓለም፣ አዲስ አበባ፣ ኢትዮጵያ",
   footerLegal:
-    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Investopia የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
+    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Kenna Ventures የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
   // Trust bar
   "Verified profiles": "የተረጋገጡ መገለጫዎች",
   "Secure deal rooms": "ደህንነታቸው የተጠበቀ የስምምነት ክፍሎች",
@@ -138,7 +138,7 @@ const om: Record<string, string> = {
   "Deal Rooms": "Kutaalee Waliigaltee",
   "Curated, verified deal flow": "Carraawwan investimentii filatamanii fi mirkanaa'an",
   "For Investors": "Invastarootaaf",
-  "How Investopia works for you": "Investopia akkamitti isiniif hojjeta",
+  "How Kenna Ventures works for you": "Kenna Ventures akkamitti isiniif hojjeta",
   "Valuation Tools": "Meeshaalee Madaallii Gatii",
   "Price a business with confidence": "Gatii daldalaa amanamummaan tilmaamaa",
   "Knowledge Hub": "Giddugala Beekumsaa",
@@ -148,13 +148,13 @@ const om: Record<string, string> = {
   Blog: "Bloogii",
   // Header
   "Log in": "Seeni",
-  "Join Investopia": "Investopia Makami",
+  "Join Kenna Ventures": "Kenna Ventures Makami",
   "Open menu": "Baafata bani",
   "Close menu": "Baafata cufi",
   "Skip to content": "Gara qabiyyeetti darbi",
-  "Investopia home": "Fuula jalqabaa Investopia",
+  "Kenna Ventures home": "Fuula jalqabaa Kenna Ventures",
   // Footer
-  "The Investopia Brief": "Odeessa Investopia",
+  "The Kenna Ventures Brief": "Odeessa Kenna Ventures",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "Waliigaltee, sagantaalee fi hubannoo dinagdee guddachaa jiru Itoophiyaa irraa, torban lama lamaan.",
   "Email address": "Teessoo imeelii",
@@ -179,10 +179,10 @@ const om: Record<string, string> = {
   "Sector reports": "Gabaasa damee",
   "Investor FAQ": "Gaaffilee irra deddeebiin invastarootaa",
   "Partner with us": "Nu waliin hojjedhaa",
-  "Run a program on Investopia": "Investopia irratti sagantaa gaggeessaa",
+  "Run a program on Kenna Ventures": "Kenna Ventures irratti sagantaa gaggeessaa",
   "Sponsor a cohort": "Garee leenjii deggeraa",
   "List as an advisor": "Akka gorsaatti galmaa'aa",
-  "About Investopia": "Waa'ee Investopia",
+  "About Kenna Ventures": "Waa'ee Kenna Ventures",
   "Our team": "Garee keenya",
   Careers: "Carraa hojii",
   Press: "Miidiyaaf",
@@ -198,7 +198,7 @@ const om: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "Gamoo Apaartimantii Rehobot, Darbii 1ffaa, Boolee Medhaneealem, Finfinnee (Addis Ababa), Itoophiyaa",
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Investopia waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
+    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Kenna Ventures waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
   // Trust bar
   "Verified profiles": "Ibsa dhuunfaa mirkanaa'e",
   "Secure deal rooms": "Kutaalee waliigaltee nageenya qaban",
@@ -213,7 +213,7 @@ const om: Record<string, string> = {
 
 const en: Record<string, string> = {
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Investopia is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
+    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Kenna Ventures is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
 };
 
 const dictionaries: Record<Locale, Record<string, string>> = { en, am, om };

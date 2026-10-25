@@ -26,4 +26,4 @@ export function getLibrary(): LibraryCategory[] {
     .sort((a, b) => rank(a.slug) - rank(b.slug));
 }
 
-export const libraryPdfHref = (slug: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/downloads/library/Investopia-Digest-${slug}.pdf`;
+export const libraryPdfHref = (slug: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/downloads/library/Kenna-Digest-${slug}.pdf`;

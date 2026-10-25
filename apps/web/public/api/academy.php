@@ -93,7 +93,7 @@ if ($action === 'login') {
         reply(403, ['ok' => false, 'error' => 'That institution ID and admin key do not match']);
     }
     if (!institution_active($inst)) {
-        reply(403, ['ok' => false, 'error' => 'This subscription has expired. Please contact investopia@eruditeafrica.com']);
+        reply(403, ['ok' => false, 'error' => 'This subscription has expired. Please contact info@kenna.et']);
     }
     $expires = time() + SESSION_HOURS * 3600;
     reply(200, ['ok' => true, 'session' => $id . '.' . $expires . '.' . sign('inst.' . $id . '.' . $expires, $dir), 'name' => $inst['name']]);
@@ -120,7 +120,7 @@ if ($action === 'add') {
     $free = (int) $inst['seats'] - active_seat_count($id);
     if (count($rows) > $free) {
         $pdo->rollBack();
-        reply(400, ['ok' => false, 'error' => "Only $free seats are left on your subscription. Revoke unused seats or contact Investopia for more."]);
+        reply(400, ['ok' => false, 'error' => "Only $free seats are left on your subscription. Revoke unused seats or contact Kenna Ventures for more."]);
     }
     $insert = $pdo->prepare('INSERT INTO academy_seats (code, institution, name, staff_id, email, department, branch, courses, due, status, added) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
     $added = [];

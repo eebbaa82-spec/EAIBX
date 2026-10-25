@@ -1,7 +1,7 @@
 <?php
 // Verification codes for the borrower profile builder's identity check, on the
-// cPanel host (investopia.et). After checking a business on the Ministry of
-// Trade register (etrade.et) and the requester's documents, the Investopia team
+// cPanel host (kenna.et). After checking a business on the Ministry of
+// Trade register (etrade.et) and the requester's documents, the Kenna Ventures team
 // emails the requester one unused code from the list Erudite keeps (the
 // hashes are in _identity-codes.php). The first time a code is entered it is
 // tied to that TIN for good (~/investopia-submissions/identity-codes.csv), so

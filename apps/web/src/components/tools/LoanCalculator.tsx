@@ -69,7 +69,7 @@ export function LoanCalculator() {
       ...result.rows.map((x) => [x.no, x.payment, x.interest, x.principal, x.balance].map((v) => (typeof v === "number" && !Number.isInteger(v) ? v.toFixed(2) : v)).join(",")),
     ];
     const url = URL.createObjectURL(new Blob([lines.join("\n")], { type: "text/csv" }));
-    const a = Object.assign(document.createElement("a"), { href: url, download: "Investopia-loan-schedule.csv" });
+    const a = Object.assign(document.createElement("a"), { href: url, download: "Kenna-loan-schedule.csv" });
     a.click();
     URL.revokeObjectURL(url);
   }

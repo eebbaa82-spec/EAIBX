@@ -93,7 +93,7 @@ export function VerifyCertificate() {
             <p className="text-lg font-bold text-red-800">No certificate with this number</p>
             <p className="mt-2 text-ink">
               <span className="font-mono">{state.id}</span> is not on the Center of Excellence register. Check the number for typing errors. If it is correct, the
-              certificate is not genuine; please tell us at investopia@eruditeafrica.com.
+              certificate is not genuine; please tell us at info@kenna.et.
             </p>
           </div>
         )}

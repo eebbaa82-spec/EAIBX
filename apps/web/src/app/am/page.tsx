@@ -6,7 +6,7 @@ import { translator } from "@/i18n/chrome";
 import { homeCopy } from "@/i18n/home";
 
 export const metadata: Metadata = {
-  title: "Investopia · ብልህ የንግድ ውሳኔዎችን እናጎለብታለን",
+  title: "Kenna Ventures · ብልህ የንግድ ውሳኔዎችን እናጎለብታለን",
   description: "ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ፣ አክስለሬተር ይቀላቀሉ ወይም ከችግር ያገግሙ። የተረጋገጡ የኢትዮጵያ ንግዶችና ባለሀብቶች በአንድ ቦታ።",
   alternates: { languages: { en: "/", am: "/am/", om: "/om/" } },
 };

@@ -4,14 +4,14 @@ import { Note, PageHero, Section } from "@/components/ui";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Investopia · Addis Ababa",
-  description: "Talk to the Investopia team about your business, investment or partnership.",
+  title: "Contact Kenna Ventures · Addis Ababa",
+  description: "Talk to the Kenna Ventures team about your business, investment or partnership.",
 };
 
 const options = [
   { label: "General inquiries", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
   { label: "Partnerships", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
-  { label: "Press", value: <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a> },
+  { label: "Press", value: <a href="mailto:info@kenna.et" className="text-brand-700 hover:underline">info@kenna.et</a> },
   { label: "Phone", value: <>Office {company.phoneOffice} · Mobile {company.phoneMobile}</> },
   {
     label: "Office",
@@ -52,8 +52,8 @@ export default function ContactPage() {
             </dl>
             <div className="mt-6">
               <Note>
-                Investopia staff will never ask for your password or ask you to send money to a personal account. Report suspicious
-                messages to <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a>.
+                Kenna Ventures staff will never ask for your password or ask you to send money to a personal account. Report suspicious
+                messages to <a href="mailto:info@kenna.et" className="text-brand-700 hover:underline">info@kenna.et</a>.
               </Note>
             </div>
           </div>

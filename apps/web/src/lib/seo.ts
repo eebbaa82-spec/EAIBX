@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { academy, isCoe } from "./site";
 
 /** The one public address the certificate covers; .htaccess redirects every other form here. */
-export const siteUrl = isCoe ? academy.url : "https://investopia.et";
+export const siteUrl = isCoe ? academy.url : "https://www.kenna.et";
 
 export const indexingAllowed = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 
@@ -25,6 +25,6 @@ export function publicRoutes(): string[] {
     }
   };
   walk(appDir, "");
-  // Each site lists only its own pages: the courses on eruditeafrica.et, the rest on investopia.et.
+  // Each site lists only its own pages: the courses on eruditeafrica.et, the rest on kenna.et.
   return routes.filter((r) => !notForSearch.has(r) && isCoe === /^\/(am\/)?academy(\/|$)/.test(r)).sort();
 }

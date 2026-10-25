@@ -1,5 +1,5 @@
 <?php
-// SHA-256 hashes of the identity verification codes the Investopia team sends
+// SHA-256 hashes of the identity verification codes the Kenna Ventures team sends
 // after checking a business (codes in the project files, never on the site).
 return [
     'b744432465f3608c28418bdc5d20b1ebd9899e4a9ec7a46479343384ceae4fbc',

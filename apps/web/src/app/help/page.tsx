@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "How can we help? · Investopia",
+  title: "How can we help? · Kenna Ventures",
   description:
-    "Investopia Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, payments and trust and safety.",
+    "Kenna Ventures Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, payments and trust and safety.",
 };
 
 const topics = [

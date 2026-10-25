@@ -15,7 +15,7 @@ const description = isCoe
   ? "Practical, certified training in banking, credit, interest-free finance, tax, capital markets and business skills, built for Ethiopia, with workplace simulations and institutional plans for banks and MFIs."
   : "Raise capital, sell a business, join an accelerator or recover from hard times. Verified Ethiopian businesses and investors in one place.";
 const name = isCoe ? academy.name : brand.name;
-const title = isCoe ? `${academy.name} · Banking and Finance Training` : "Investopia · Powering Smarter Business Decisions";
+const title = isCoe ? `${academy.name} · Banking and Finance Training` : "Kenna Ventures · Powering Smarter Business Decisions";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title,
     description,
-    ...(isCoe ? {} : { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Investopia: Powering Smarter Business Decisions" }] }),
+    ...(isCoe ? {} : { images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Kenna Ventures: Powering Smarter Business Decisions" }] }),
   },
   twitter: {
     card: isCoe ? "summary" : "summary_large_image",

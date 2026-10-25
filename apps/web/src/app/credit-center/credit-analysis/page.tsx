@@ -4,12 +4,12 @@ import { PageHero, Section } from "@/components/ui";
 import { getAnalysisContext } from "@/lib/credit/context";
 
 export const metadata: Metadata = {
-  title: "Credit Analysis Workspace · Credit Management Center · Investopia",
+  title: "Credit Analysis Workspace · Credit Management Center · Kenna Ventures",
   description:
     "For loan officers and credit analysts: spread five periods of financial statements, get the ratios and trends, add sector and regional context from official sources, and print a credit analysis report in the loan application annex format.",
 };
 
-const templateHref = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/credit-center/templates/Investopia-Financial-Analysis-Template.xlsx`;
+const templateHref = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/credit-center/templates/Kenna-Financial-Analysis-Template.xlsx`;
 
 export default function CreditAnalysisPage() {
   return (

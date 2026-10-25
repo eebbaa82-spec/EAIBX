@@ -3,7 +3,7 @@ import { ProfileBuilder } from "@/components/tools/ProfileBuilder";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Borrower Profile Builder · Credit Management Center · Investopia",
+  title: "Borrower Profile Builder · Credit Management Center · Kenna Ventures",
   description:
     "Build a lender-ready borrower profile in steps: upload your company profile, describe your loan, finances and collateral, and get a readiness check and the document checklist for your loan type.",
 };
@@ -24,7 +24,7 @@ export default function ProfileBuilderPage() {
       <div className="print:hidden">
         <CtaBand
           title="Want a second pair of eyes before you apply?"
-          body="Investopia credit advisors can review your profile and help you prepare for the lender's questions."
+          body="Kenna Ventures credit advisors can review your profile and help you prepare for the lender's questions."
         >
           <ButtonLink href="/contact" variant="light">
             Talk to a credit advisor

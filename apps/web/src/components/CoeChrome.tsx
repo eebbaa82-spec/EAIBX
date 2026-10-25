@@ -8,8 +8,8 @@ import { Container } from "./ui";
 
 /**
  * Header and footer of the course site, the Erudite Africa Center of
- * Excellence (eruditeafrica.et). Built from the same code as Investopia with
- * NEXT_PUBLIC_SITE=coe; pages outside the Academy redirect to investopia.et.
+ * Excellence (eruditeafrica.et). Built from the same code as Kenna Ventures with
+ * NEXT_PUBLIC_SITE=coe; pages outside the Academy redirect to kenna.et.
  */
 
 const nav = [
@@ -127,8 +127,8 @@ export function CoeFooter() {
               </li>
             ))}
             <li>
-              <a href="https://investopia.et" className="hover:text-white">
-                Investopia, our business and investment platform
+              <a href="https://www.kenna.et" className="hover:text-white">
+                Kenna Ventures, our business and investment platform
               </a>
             </li>
           </ul>
@@ -145,9 +145,9 @@ export function CoeFooter() {
           </p>
           <ul className="flex flex-wrap gap-4">
             {[
-              { label: "Terms", href: "https://investopia.et/legal/terms/" },
-              { label: "Privacy", href: "https://investopia.et/legal/privacy/" },
-              { label: "Cookies", href: "https://investopia.et/legal/cookies/" },
+              { label: "Terms", href: "https://www.kenna.et/legal/terms/" },
+              { label: "Privacy", href: "https://www.kenna.et/legal/privacy/" },
+              { label: "Cookies", href: "https://www.kenna.et/legal/cookies/" },
             ].map((l) => (
               <li key={l.href}>
                 <a href={l.href} className="hover:text-white">

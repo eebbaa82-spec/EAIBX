@@ -3,12 +3,12 @@ import { NewsletterForm } from "@/components/forms";
 import { Container, PageHero, Section, TagList } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Investopia Insights · Business and Investing",
+  title: "Kenna Ventures Insights · Business and Investing",
   description: "Founder stories, investor perspectives and market analysis from Ethiopia's growth economy.",
 };
 
 const upcoming = [
-  "Introducing Investopia: why Ethiopia needs a trusted platform for the whole business lifecycle",
+  "Introducing Kenna Ventures: why Ethiopia needs a trusted platform for the whole business lifecycle",
   "Five things investors check before they reply to your email",
   "Struggling is not failing: how early diagnosis saves good businesses",
   "What the Ethiopian Securities Exchange means for SMEs today",
@@ -21,11 +21,11 @@ export default function BlogPage() {
     <>
       <PageHero
         title="Insights from Ethiopia's growth economy"
-        subhead="Founder stories, investor perspectives, market analysis and Investopia news."
+        subhead="Founder stories, investor perspectives, market analysis and Kenna Ventures news."
       />
 
       <Section title="Categories">
-        <TagList items={["Founder stories", "Investing", "Recovery and resilience", "Policy and markets", "How-to", "Investopia news"]} />
+        <TagList items={["Founder stories", "Investing", "Recovery and resilience", "Policy and markets", "How-to", "Kenna Ventures news"]} />
       </Section>
 
       <Section tone="canvas" title="Coming soon">
@@ -41,7 +41,7 @@ export default function BlogPage() {
 
       <section className="bg-brand-900 py-16 text-white">
         <Container className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <h2 className="max-w-xl text-2xl font-bold">Found this useful? Get the Investopia Brief every two weeks.</h2>
+          <h2 className="max-w-xl text-2xl font-bold">Found this useful? Get the Kenna Ventures Brief every two weeks.</h2>
           <NewsletterForm />
         </Container>
       </section>
