@@ -37,7 +37,7 @@ function db(): PDO
         }
         db_setup($pdo);
     } catch (Throwable $e) {
-        error_log('Kenna Ventures academy database: ' . $e->getMessage());
+        error_log('Erudite Africa Connect academy database: ' . $e->getMessage());
         reply(503, ['ok' => false, 'error' => 'The Academy is busy. Please try again in a minute']);
     }
     return $pdo;

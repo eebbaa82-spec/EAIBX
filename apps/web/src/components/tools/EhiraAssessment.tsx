@@ -30,7 +30,7 @@ const allSteps: Step[] = [
   {
     id: "bri",
     title: "Finance and transaction readiness",
-    intro: "These questions feed the Kenna™ Bank Readiness Index: your readiness for bank, MFI and leasing finance, investors, due diligence and M&A. They do not change your EHIRA grade.",
+    intro: "These questions feed the Erudite™ Bank Readiness Index: your readiness for bank, MFI and leasing finance, investors, due diligence and M&A. They do not change your EHIRA grade.",
     ids: briQuestions.map((q) => q.id),
   },
   { id: "screening", title: "Legal and compliance screening", intro: "These answers do not add points, but some of them limit the highest grade a business can receive.", ids: screening.map((s) => s.id) },
@@ -279,7 +279,7 @@ function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: Field
         <div className="mt-5 space-y-4">
           <p className="text-sm text-ink">
             Request your commercial credit report from the National Bank of Ethiopia&apos;s credit reference system, through NBE or your bank. Attach it
-            here; Kenna Ventures analysts review it as part of due diligence.
+            here; Erudite Africa Connect analysts review it as part of due diligence.
           </p>
           <label className="block text-sm font-medium text-ink">
             Date of the report
@@ -303,7 +303,7 @@ function CreditInfoField({ q, answers, file, onAnswer, onFile, business }: Field
           </div>
         </div>
       )}
-      <p className="mt-4 text-xs text-muted">Nothing here is sent to Kenna Ventures until the verified EHIRA, where an analyst reviews it.</p>
+      <p className="mt-4 text-xs text-muted">Nothing here is sent to Erudite Africa Connect until the verified EHIRA, where an analyst reviews it.</p>
     </fieldset>
   );
 }
@@ -343,7 +343,7 @@ function TaxClearanceField({ q, answers, file, onAnswer, onFile }: FieldProps) {
         <p className="mt-4 rounded-lg bg-gold-100 p-3 text-sm text-ink">This certificate has expired. You can continue, but an expired certificate caps your grade at C.</p>
       )}
       <p className="mt-4 text-xs text-muted">
-        The file stays in this browser and is not sent to Kenna Ventures. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
+        The file stays in this browser and is not sent to Erudite Africa Connect. In the verified EHIRA, an analyst checks the certificate with the issuing tax authority.
       </p>
     </fieldset>
   );
@@ -462,7 +462,7 @@ export function EhiraAssessment() {
             </button>
           )}
         </div>
-        <p className="text-xs text-muted">One question at a time; your results appear at the end. Your answers stay in this browser only and are not sent to Kenna Ventures.</p>
+        <p className="text-xs text-muted">One question at a time; your results appear at the end. Your answers stay in this browser only and are not sent to Erudite Africa Connect.</p>
       </div>
     );
 
@@ -615,7 +615,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
           <div><dt className="text-muted">Valid until</dt><dd className="font-medium text-ink">{fmt(answers.G3_EXPIRY)}{tax === "expired" && <span className="text-red-700"> (expired)</span>}</dd></div>
           <div className="sm:col-span-2"><dt className="text-muted">File</dt><dd className="font-medium text-ink">{files.G3?.name ?? answers.G3_FILE ?? "–"}</dd></div>
         </dl>
-        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. Kenna Ventures verifies it with the issuing tax authority in the verified EHIRA.</p>
+        <p className="mt-3 text-xs text-muted">Status: attached, not yet verified. Erudite Africa Connect verifies it with the issuing tax authority in the verified EHIRA.</p>
       </section>
 
       <section className="rounded-xl border border-line bg-white p-5">
@@ -634,7 +634,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
             <div className="sm:col-span-2"><dt className="text-muted">Loan more than 90 days overdue</dt><dd className="font-medium text-ink">{answers.F8 === "yes" ? "Yes, reported" : "None reported"}</dd></div>
           </dl>
         )}
-        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. Kenna Ventures analysts review it in the verified EHIRA.</p>
+        <p className="mt-3 text-xs text-muted">Status: provided by the business, not yet reviewed. Erudite Africa Connect analysts review it in the verified EHIRA.</p>
       </section>
 
       <section>
@@ -702,7 +702,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
       <BriReport bri={bri} />
 
       <section className="rounded-xl border border-line bg-canvas p-5 print:hidden">
-        <h4 className="font-bold text-ink">Next steps on Kenna Ventures</h4>
+        <h4 className="font-bold text-ink">Next steps on Erudite Africa Connect</h4>
         <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-2 text-sm font-semibold text-brand-700">
           <li><Link href="/advisors" className="hover:underline">Find an advisor</Link></li>
           <li><Link href="/programs" className="hover:underline">Join a program</Link></li>
@@ -714,7 +714,7 @@ function Report({ result, bri, name, type, answers, files, onEdit, onRestart }: 
 
       <p className="text-xs text-muted">
         EHIRA is a decision-support and readiness tool. It does not replace a credit rating, an audit, legal due diligence or a lender&apos;s
-        decision. This report is based on your own answers and has not been verified by Kenna Ventures.
+        decision. This report is based on your own answers and has not been verified by Erudite Africa Connect.
       </p>
 
       <button type="button" onClick={onRestart} className="text-sm font-semibold text-brand-700 hover:underline print:hidden">
@@ -732,13 +732,13 @@ function BriReport({ bri }: { bri: BriResult }) {
   return (
     <section className="space-y-5 break-inside-avoid">
       <div>
-        <h4 className="text-lg font-bold text-ink">Kenna™ Bank Readiness Index</h4>
+        <h4 className="text-lg font-bold text-ink">Erudite™ Bank Readiness Index</h4>
         <p className="mt-1 text-sm text-muted">
-          Six readiness scores for credit, investment, due diligence and transactions, and the Kenna Enterprise Readiness Score (KERS™) that combines them.
+          Six readiness scores for credit, investment, due diligence and transactions, and the Erudite Enterprise Readiness Score (EERS™) that combines them.
         </p>
       </div>
       <div className="rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white">
-        <p className="text-sm opacity-80">Kenna Enterprise Readiness Score (KERS™)</p>
+        <p className="text-sm opacity-80">Erudite Enterprise Readiness Score (EERS™)</p>
         <p className="mt-1 text-5xl font-extrabold">
           {bri.kers === null ? "–" : Math.round(bri.kers)} <span className="text-xl font-semibold opacity-70">/ 100</span>
         </p>
@@ -793,7 +793,7 @@ function BriReport({ bri }: { bri: BriResult }) {
             );
           })}
           <p className="text-xs text-muted">
-            Gaps and actions are generated from your answers by Kenna Ventures&apos;s rules. Recommendations written by the Kenna Ventures AI engine will come with member accounts.
+            Gaps and actions are generated from your answers by Erudite Africa Connect&apos;s rules. Recommendations written by the Erudite Africa Connect AI engine will come with member accounts.
           </p>
         </div>
       )}
@@ -805,8 +805,8 @@ function BriReport({ bri }: { bri: BriResult }) {
 function PrintLocked() {
   return (
     <div className="hidden print:block">
-      <p className="text-lg font-bold">Downloadable Kenna Ventures reports are available with payment.</p>
-      <p className="mt-2">Please view your results on screen, or contact Kenna Ventures to obtain the full report.</p>
+      <p className="text-lg font-bold">Downloadable Erudite Africa Connect reports are available with payment.</p>
+      <p className="mt-2">Please view your results on screen, or contact Erudite Africa Connect to obtain the full report.</p>
     </div>
   );
 }
@@ -861,7 +861,7 @@ function QuickResult({ result, bri, name, onFull, onEdit }: { result: ReturnType
             </p>
           </div>
           <div className="rounded-xl bg-gradient-to-br from-brand-900 to-brand-700 p-6 text-white">
-            <p className="text-sm opacity-80">Kenna Enterprise Readiness Score (KERS™)</p>
+            <p className="text-sm opacity-80">Erudite Enterprise Readiness Score (EERS™)</p>
             <p className="mt-1 text-5xl font-extrabold">{bri.kers === null ? "–" : Math.round(bri.kers)}</p>
             <p className="mt-2 font-bold">{bri.maturity}</p>
           </div>
@@ -897,7 +897,7 @@ function QuickResult({ result, bri, name, onFull, onEdit }: { result: ReturnType
           <p className="mt-1 text-sm text-ink">
             This self-check uses {quickSteps.reduce((t, x) => t + x.ids.length, 0)} of the full assessment&apos;s questions, so the scores are indicative. The full EHIRA
             covers every dimension, your financial ratios, tax clearance and credit information, and gives the complete gap analysis. The verified EHIRA adds a
-            review by a Kenna Ventures analyst that lenders and investors can rely on.
+            review by an Erudite Africa Connect analyst that lenders and investors can rely on.
           </p>
           <button type="button" onClick={onFull} className="mt-3 rounded-lg bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700">
             Continue to the full assessment

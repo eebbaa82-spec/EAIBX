@@ -26,7 +26,7 @@ import type { Identity } from "./IdentityCheck";
  * annex of enclosed documents, laid out for A4 and saved as PDF through the browser's
  * print dialog (which keeps Amharic text and needs no library). It is for registered
  * users. Until member accounts open, registering means a one-time sign-up on this
- * device, sent to the Kenna Ventures inbox and user list as the "member" form.
+ * device, sent to the Erudite Africa Connect inbox and user list as the "member" form.
  */
 
 type Analysis = ReturnType<typeof analyse>;
@@ -75,7 +75,7 @@ function markRegistered() {
 
 /** Erudite's wording (2026-10-21): the applicant answers for the facts, the lender for its due diligence. */
 export const PACK_DISCLAIMER =
-  "This profile is built from information and documents supplied by the applicant. Kenna Ventures has not audited them and is not responsible for any erroneous or misleading information. The identity check confirms only that the business appears on the Ministry of Trade register and that the applicant may act for it. It is up to the lender to check whether the documents are genuine, and this profile does not in any way relieve the lender of its own due diligence. Kenna Ventures is not a lender; every credit decision is made by the lender under its own policies.";
+  "This profile is built from information and documents supplied by the applicant. Erudite Africa Connect has not audited them and is not responsible for any erroneous or misleading information. The identity check confirms only that the business appears on the Ministry of Trade register and that the applicant may act for it. It is up to the lender to check whether the documents are genuine, and this profile does not in any way relieve the lender of its own due diligence. Erudite Africa Connect is not a lender; every credit decision is made by the lender under its own policies.";
 
 const longDate = (d = new Date()) =>
   d.toLocaleDateString("en-GB", {
@@ -238,7 +238,7 @@ export function PackDownload({ p, verified, onVerify }: { p: Profile; verified: 
             Verify the business first
           </button>
           <p className="text-sm text-brand-100">
-            The pack opens once Kenna Ventures has confirmed the business on the Ministry of Trade register and that you may act for it
+            The pack opens once Erudite Africa Connect has confirmed the business on the Ministry of Trade register and that you may act for it
             {p.tin ? ` (TIN ${p.tin})` : ""}.
           </p>
         </div>
@@ -336,7 +336,7 @@ function RegisterForm({
       className="grid gap-4 sm:grid-cols-2"
     >
       <p className="text-sm text-muted sm:col-span-2">
-        Create your free Kenna Ventures registration to download bank-ready packs.
+        Create your free Erudite Africa Connect registration to download bank-ready packs.
         It takes a moment, and you only do it once on this device.
       </p>
       {input("name", "Full name", "text", defaults.name, {
@@ -371,7 +371,7 @@ function RegisterForm({
           className="mt-1 h-4 w-4 shrink-0 accent-brand-600"
         />
         <span>
-          I agree to Kenna Ventures&apos;s{" "}
+          I agree to Erudite Africa Connect&apos;s{" "}
           <Link href="/legal/terms" className="text-brand-700 underline">
             terms
           </Link>{" "}
@@ -457,7 +457,7 @@ export function BankPack({
     return (
       <div className="hidden print:block">
         <p className="text-lg font-bold">
-          The bank-ready pack is available to registered Kenna Ventures users.
+          The bank-ready pack is available to registered Erudite Africa Connect users.
         </p>
         <p className="mt-2">
           Register free on the borrower profile builder page, then choose
@@ -536,7 +536,7 @@ export function BankPack({
           </p>
           <p className="text-[9pt] font-bold">
             {identity
-              ? `Identity verified by Kenna Ventures${identity.verifiedOn ? ` on ${identity.verifiedOn}` : ""}: TIN ${identity.tin}${identity.licence ? `, licence ${identity.licence}` : ""}, checked against the Ministry of Trade register; requested by ${identity.requester} (${identity.role.split(" (")[0].toLowerCase()}).`
+              ? `Identity verified by Erudite Africa Connect${identity.verifiedOn ? ` on ${identity.verifiedOn}` : ""}: TIN ${identity.tin}${identity.licence ? `, licence ${identity.licence}` : ""}, checked against the Ministry of Trade register; requested by ${identity.requester} (${identity.role.split(" (")[0].toLowerCase()}).`
               : "Preview copy: business identity not verified."}
           </p>
         </div>
@@ -935,7 +935,7 @@ export function BankPack({
           </tbody>
         </table>
         <p className="mt-4 text-[9pt]">
-          Prepared with the Kenna Ventures Borrower Profile Builder (kenna.et).{" "}
+          Prepared with the Erudite Africa Connect Borrower Profile Builder (connect.eruditeafrica.et).{" "}
           {PACK_DISCLAIMER}
         </p>
       </section>

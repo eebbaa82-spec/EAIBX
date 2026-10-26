@@ -1,6 +1,6 @@
 <?php
-// Receives the public site's forms on the cPanel hosts (kenna.et and the
-// course site, eruditeafrica.et), emails each submission to the Kenna Ventures inbox and appends it to a CSV file kept
+// Receives the public site's forms on the cPanel hosts (connect.eruditeafrica.et
+// and the course site, eruditeafrica.et), emails each submission to the Erudite Africa Connect inbox and appends it to a CSV file kept
 // outside the web folder (~/investopia-submissions/<form>.csv).
 // The Next.js site is static, so this is the only server-side code it uses.
 //
@@ -10,16 +10,16 @@
 // pay that cost per message, and each challenge is signed, expires and works
 // once.
 
-const INBOX = 'info@kenna.et';
-// The same script runs on kenna.et and on the course site, eruditeafrica.et;
+const INBOX = 'connect@eruditeafrica.com';
+// The same script runs on connect.eruditeafrica.et and on the course site, eruditeafrica.et;
 // mail goes out from the site that received the form.
 const SITES = [
-    'kenna.et' => 'Kenna Ventures',
+    'connect.eruditeafrica.et' => 'Erudite Africa Connect',
     'eruditeafrica.et' => 'Erudite Africa Center of Excellence',
 ];
 $host = strtolower(preg_replace('/^www\./', '', $_SERVER['HTTP_HOST'] ?? ''));
 if (!isset(SITES[$host])) {
-    $host = 'kenna.et';
+    $host = 'connect.eruditeafrica.et';
 }
 define('SENDER', 'no-reply@' . $host);
 define('SENDER_NAME', SITES[$host]);
@@ -127,7 +127,7 @@ foreach ($fields as $key => $value) {
 $lines[] = '';
 $lines[] = 'Sent from ' . ($_SERVER['HTTP_REFERER'] ?? $host);
 
-$subject = '=?UTF-8?B?' . base64_encode('Kenna Ventures: ' . FORMS[$form]) . '?=';
+$subject = '=?UTF-8?B?' . base64_encode('Erudite Africa Connect: ' . FORMS[$form]) . '?=';
 $headers = implode("\r\n", [
     'From: ' . SENDER_NAME . ' <' . SENDER . '>',
     'Reply-To: ' . $email,

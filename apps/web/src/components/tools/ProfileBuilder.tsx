@@ -625,7 +625,7 @@ export function ProfileBuilder() {
         {at === "Identity check" && (
           <Panel
             title="Confirm who is applying"
-            intro="The bank-ready pack is only for the business itself or someone it has authorized. Give the business's TIN and licence and your own details; Kenna Ventures checks them against the Ministry of Trade register and sends you a verification code. You can fill in the rest of the profile meanwhile."
+            intro="The bank-ready pack is only for the business itself or someone it has authorized. Give the business's TIN and licence and your own details; Erudite Africa Connect checks them against the Ministry of Trade register and sends you a verification code. You can fill in the rest of the profile meanwhile."
           >
             <IdentityStep
               isBusiness={isBusiness}
@@ -1167,7 +1167,7 @@ export function ProfileBuilder() {
           Start over
         </button>
       </div>
-      <p className="mt-4 text-xs text-muted print:hidden">Your answers stay on this device. Only the identity check details are sent to Kenna Ventures; nothing is sent to any lender.</p>
+      <p className="mt-4 text-xs text-muted print:hidden">Your answers stay on this device. Only the identity check details are sent to Erudite Africa Connect; nothing is sent to any lender.</p>
     </div>
   );
 }
@@ -1228,7 +1228,7 @@ function Result({ p, a, docs, onToggle }: { p: Profile; a: ReturnType<typeof ana
         <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">Borrower profile</p>
         <h2 className="mt-1 text-2xl font-bold text-ink">{p.name || "Unnamed applicant"}</h2>
         <p className="mt-1 text-sm text-muted">
-          Prepared with Kenna Ventures on {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}. Figures are as stated by the applicant.
+          Prepared with Erudite Africa Connect on {new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}. Figures are as stated by the applicant.
         </p>
 
         <div className="mt-6 grid gap-8 lg:grid-cols-2 print:grid-cols-2">

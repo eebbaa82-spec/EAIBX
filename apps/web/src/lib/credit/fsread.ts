@@ -7,7 +7,7 @@ import type { LineId } from "./spread";
 /**
  * Browser loaders for financial statements. PDFs are read with pdf.js; pages with
  * no text layer (scans) are read with OCR. Excel files are read cell by cell, and
- * Kenna Ventures' own template is read row by row. Nothing leaves the browser; the OCR
+ * Erudite Africa Connect's own template is read row by row. Nothing leaves the browser; the OCR
  * engine downloads its program and English language data the first time it runs.
  */
 
@@ -161,7 +161,7 @@ async function loadWorkbook(buf: Uint8Array) {
 
 async function excelStatement(buf: Uint8Array): Promise<ParsedStatement | null> {
   const sheets = await loadWorkbook(buf);
-  // Kenna Ventures' financial analysis template (or the lender's original form).
+  // Erudite Africa Connect's financial analysis template (or the lender's original form).
   const sheetText = (c: Map<string, Cell>, ref: string) => c.get(ref)?.value ?? "";
   const found = sheets.find((c) => /land and building/i.test(sheetText(c, "A9")) && /net sales/i.test(sheetText(c, "A60")));
   if (found) {

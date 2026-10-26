@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ButtonLink, Card, CardGrid, DataTable, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "About Kenna Ventures · Erudite Africa Investments",
+  title: "About Erudite Africa Connect · Erudite Africa Investments",
   description:
-    "Kenna Ventures connects Ethiopian businesses with capital, expertise and knowledge across the full business lifecycle. Meet the team and our mission.",
+    "Erudite Africa Connect connects Ethiopian businesses with capital, expertise and knowledge across the full business lifecycle. Meet the team and our mission.",
 };
 
 const pillars = [
@@ -46,14 +46,14 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Kenna Ventures"
+        eyebrow="About Erudite Africa Connect"
         title="We are building the exchange Ethiopian business has been waiting for."
-        subhead="Ethiopia has one of Africa's fastest-growing economies, a young and ambitious generation of founders, and thousands of established businesses with real value. What it has lacked is one trusted place where ideas meet capital, where good businesses can find buyers, and where struggling businesses can find a way back. Kenna Ventures is that place."
+        subhead="Ethiopia has one of Africa's fastest-growing economies, a young and ambitious generation of founders, and thousands of established businesses with real value. What it has lacked is one trusted place where ideas meet capital, where good businesses can find buyers, and where struggling businesses can find a way back. Erudite Africa Connect is that place."
       />
 
       <Section title="Our story">
         <p className="max-w-3xl text-lg text-muted">
-          Kenna Ventures, Erudite Africa&apos;s business and investment platform, was founded by Erudite Africa Investments PLC to close
+          Erudite Africa Connect, Erudite Africa&apos;s business and investment platform, was founded by Erudite Africa Investments PLC to close
           the gap between Ethiopian enterprise and the capital, skills and networks it needs.
         </p>
         <p className="mt-4 max-w-3xl text-lg text-muted">
@@ -64,7 +64,7 @@ export default function AboutPage() {
         </p>
         <p className="mt-4 max-w-3xl text-lg text-muted">
           Through that work, the firm saw the same gaps again and again: good businesses that could not reach investors,
-          investors who could not find reliable information, and struggling businesses that asked for help too late. Kenna Ventures
+          investors who could not find reliable information, and struggling businesses that asked for help too late. Erudite Africa Connect
           brings Erudite Africa&apos;s investment facilitation, turnaround, market intelligence and training expertise onto one
           platform, so many more businesses can reach it.
         </p>
@@ -94,10 +94,10 @@ export default function AboutPage() {
       </Section>
 
       <Section title="Our values" tone="canvas">
-        <DataTable head={["Value", "What it means on Kenna Ventures"]} rows={values} />
+        <DataTable head={["Value", "What it means on Erudite Africa Connect"]} rows={values} />
       </Section>
 
-      <Section title="The company behind Kenna Ventures" intro="Kenna Ventures is operated by Erudite Africa Investments PLC, a strategic advisory, investment facilitation and capacity-building firm based in Addis Ababa.">
+      <Section title="The company behind Erudite Africa Connect" intro="Erudite Africa Connect is operated by Erudite Africa Investments PLC, a strategic advisory, investment facilitation and capacity-building firm based in Addis Ababa.">
         <DataTable head={["Item", "Details"]} rows={company} />
         <div className="mt-6">
           <ButtonLink href="/about/team" variant="secondary">
@@ -108,7 +108,7 @@ export default function AboutPage() {
 
       <Section tone="canvas">
         <div className="flex flex-wrap gap-3">
-          <ButtonLink href="/join">Join Kenna Ventures free</ButtonLink>
+          <ButtonLink href="/join">Join Erudite Africa Connect free</ButtonLink>
           <ButtonLink href="/partners" variant="secondary">
             Partner with us
           </ButtonLink>

@@ -13,11 +13,11 @@ ServerSignature Off
   RewriteEngine On
   # Let the host's certificate checks through untouched.
   RewriteRule ^\.well-known/ - [L]
-  # Always use https and the address the certificate covers (www.kenna.et).
-  # Other names this site answers to (kenna.et, investopia.et) redirect there.
+  # Always use https and the address the certificate covers (connect.eruditeafrica.et).
+  # Other names this site answers to (investopia.et, kenna.et) redirect there.
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\.kenna\.et$ [NC]
-  RewriteRule ^ https://www.kenna.et%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} !^connect\.eruditeafrica\.et$ [NC]
+  RewriteRule ^ https://connect.eruditeafrica.et%{REQUEST_URI} [R=301,L]
 </IfModule>
 
 # Compress pages, scripts and data: a course page and its scripts shrink from about

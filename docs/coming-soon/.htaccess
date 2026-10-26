@@ -13,10 +13,10 @@ ServerSignature Off
   RewriteEngine On
   # Let the host's certificate checks through untouched.
   RewriteRule ^\.well-known/ - [L]
-  # Send everyone to https://www.kenna.et (the address the certificate covers).
+  # Send everyone to https://connect.eruditeafrica.et (the address the certificate covers).
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^kenna\.et$ [NC]
-  RewriteRule ^ https://www.kenna.et%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} !^connect\.eruditeafrica\.et$ [NC]
+  RewriteRule ^ https://connect.eruditeafrica.et%{REQUEST_URI} [R=301,L]
   RewriteCond %{REQUEST_URI} !^/coming-soon\.html$
   RewriteCond %{REQUEST_URI} !^/api/submit\.php$
   # The course pages and the files they load.

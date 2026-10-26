@@ -4,7 +4,7 @@ import { PreviewForm } from "@/components/forms";
 import { CardAnatomy } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Business Advisors in Ethiopia · Kenna Ventures",
+  title: "Business Advisors in Ethiopia · Erudite Africa Connect",
   description:
     "Vetted valuers, lawyers, accountants and turnaround experts for Ethiopian deals. Request a quote today.",
 };
@@ -66,8 +66,8 @@ export default function AdvisorsPage() {
           />
           <div>
             <Note>
-              Kenna Ventures checks each advisor&apos;s licenses and references before listing. Engagements are agreed directly
-              between you and the advisor. Kenna Ventures receives a referral fee from the advisor for engagements introduced through the
+              Erudite Africa Connect checks each advisor&apos;s licenses and references before listing. Engagements are agreed directly
+              between you and the advisor. Erudite Africa Connect receives a referral fee from the advisor for engagements introduced through the
               platform.
             </Note>
           </div>

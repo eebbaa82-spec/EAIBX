@@ -1,4 +1,4 @@
-// Shared layout for Kenna Ventures PDF reports: cover page, typography and the two editions.
+// Shared layout for Erudite Africa Connect PDF reports: cover page, typography and the two editions.
 // Public edition: no source references. Member edition: full references and links,
 // written outside public/ so it is never served openly (it is for signed-in members).
 import { createRequire } from "node:module";
@@ -71,20 +71,20 @@ ol.sources li{font-size:8pt;color:#52606d;text-align:left;margin-bottom:1.2mm;wo
 `;
 
 export function documentHtml({ title, kicker, lede, edition, asOf, body }) {
-  const head = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(title)} · Kenna Ventures</title><style>${css}</style></head><body>`;
+  const head = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>${esc(title)} · Erudite Africa Connect</title><style>${css}</style></head><body>`;
   const editionLabel = edition === "member" ? "Member edition · with full references" : "Public edition";
-  const cover = `${head}<section class="cover"><div class="mark"><i>KV</i>Kenna Ventures</div>
+  const cover = `${head}<section class="cover"><div class="mark"><i>EC</i>Erudite Africa Connect</div>
 <div class="kicker">${esc(kicker)}</div><h1>${esc(title)}</h1><div class="rule"></div>
 <p class="lede">${esc(lede)}</p><div><span class="edition">${editionLabel}</span></div>
-<div class="foot"><span>Kenna Ventures · Powering Smarter Business Decisions<br>Erudite Africa Investments PLC · Addis Ababa</span><span style="text-align:right">Updated ${esc(longDate(asOf))}<br>Refreshed monthly</span></div></section></body></html>`;
+<div class="foot"><span>Erudite Africa Connect · Powering Smarter Business Decisions<br>Erudite Africa Investments PLC · Addis Ababa</span><span style="text-align:right">Updated ${esc(longDate(asOf))}<br>Refreshed monthly</span></div></section></body></html>`;
   const main = `${head}${body}
-<p class="disclaimer">Prepared by Erudite Africa Investments PLC for Kenna Ventures, Addis Ababa · info@kenna.et · Registration no. MT/AA/2/0063282/2018. This publication summarizes information published by international institutions and the Government of Ethiopia for general guidance only. It is not investment, legal or tax advice, nor an offer of securities. Reported returns do not guarantee future results. Verify figures against the original documents before making decisions.</p>
+<p class="disclaimer">Prepared by Erudite Africa Investments PLC for Erudite Africa Connect, Addis Ababa · connect@eruditeafrica.com · Registration no. MT/AA/2/0063282/2018. This publication summarizes information published by international institutions and the Government of Ethiopia for general guidance only. It is not investment, legal or tax advice, nor an offer of securities. Reported returns do not guarantee future results. Verify figures against the original documents before making decisions.</p>
 </body></html>`;
   return { cover, main };
 }
 
 export const membersBox = (what) =>
-  `<div class="members"><strong>References for members.</strong> Every figure and statement in this ${what} is drawn from documents published by international institutions and the Government of Ethiopia. The full list of sources, with document titles, dates, page references and direct links, is included in the member edition, available free to registered Kenna Ventures members on the platform.</div>`;
+  `<div class="members"><strong>References for members.</strong> Every figure and statement in this ${what} is drawn from documents published by international institutions and the Government of Ethiopia. The full list of sources, with document titles, dates, page references and direct links, is included in the member edition, available free to registered Erudite Africa Connect members on the platform.</div>`;
 
 export async function renderPdf(page, doc, htmlPath, pdfPath, footerLabel, writeFileSync) {
   const coverPdf = pdfPath + ".cover.pdf";
@@ -100,7 +100,7 @@ export async function renderPdf(page, doc, htmlPath, pdfPath, footerLabel, write
     printBackground: true,
     preferCSSPageSize: true,
     displayHeaderFooter: true,
-    headerTemplate: `<div style="font-size:6.8pt;color:#8a96a3;width:100%;padding:0 18mm;display:flex;justify-content:space-between;font-family:Helvetica,Arial"><span style="color:#0f5242;font-weight:700">Kenna Ventures</span><span>${esc(footerLabel)}</span></div>`,
+    headerTemplate: `<div style="font-size:6.8pt;color:#8a96a3;width:100%;padding:0 18mm;display:flex;justify-content:space-between;font-family:Helvetica,Arial"><span style="color:#0f5242;font-weight:700">Erudite Africa Connect</span><span>${esc(footerLabel)}</span></div>`,
     footerTemplate: `<div style="font-size:6.8pt;color:#8a96a3;width:100%;padding:0 18mm;display:flex;justify-content:space-between;font-family:Helvetica,Arial"><span>© 2026 Erudite Africa Investments PLC</span><span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span></div>`,
   });
   // Join cover and body (needs Python with pypdf).

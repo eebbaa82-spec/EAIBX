@@ -38,8 +38,8 @@ export type HomeCopy = {
 const en: HomeCopy = {
   heroTitle: "Powering Smarter Business Decisions.",
   heroBody:
-    "Kenna Ventures is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
-  searchLabel: "Search Kenna Ventures",
+    "Erudite Africa Connect is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
+  searchLabel: "Search Erudite Africa Connect",
   searchPlaceholder: 'Search businesses, sectors or investors, for example "agro-processing in Oromia"',
   searchButton: "Search",
   heroButtons: ["I'm raising capital", "I'm investing", "I need to turn my business around"],
@@ -76,7 +76,7 @@ const en: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "How Kenna Ventures works",
+  howTitle: "How Erudite Africa Connect works",
   howSteps: [
     { title: "Create your profile.", body: "Tell us who you are and what you need. It takes about ten minutes." },
     {
@@ -85,7 +85,7 @@ const en: HomeCopy = {
     },
     {
       title: "Get matched.",
-      body: "Kenna Ventures introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
+      body: "Erudite Africa Connect introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
     },
     {
       title: "Close and grow.",
@@ -113,16 +113,16 @@ const en: HomeCopy = {
     },
   ],
   programsTitle: "Programs accepting applications",
-  programsIntro: "Incubators, accelerators and competitions run on Kenna Ventures by leading institutions.",
+  programsIntro: "Incubators, accelerators and competitions run on Erudite Africa Connect by leading institutions.",
   programsEmpty: "Open programs will be listed here with their organizer and deadline.",
   programsButton: "See all programs",
-  partnerTitle: "Partner with Kenna Ventures",
+  partnerTitle: "Partner with Erudite Africa Connect",
   partnerBody:
     "We are working with banks, MFIs, development partners and universities to bring their programs and services to Ethiopian businesses. Partner announcements are coming soon.",
   partnerButton: "Become a partner",
   ctaTitle: "Your next chapter starts here.",
-  ctaBody: "Whether you are starting, scaling, investing or recovering, Kenna Ventures gives you the people, data and tools to move forward.",
-  ctaJoin: "Join Kenna Ventures free",
+  ctaBody: "Whether you are starting, scaling, investing or recovering, Erudite Africa Connect gives you the people, data and tools to move forward.",
+  ctaJoin: "Join Erudite Africa Connect free",
   ctaTalk: "Talk to our team",
 };
 
@@ -130,8 +130,8 @@ const en: HomeCopy = {
 const am: HomeCopy = {
   heroTitle: "ብልህ የንግድ ውሳኔዎችን እናጎለብታለን።",
   heroBody:
-    "Kenna Ventures የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
-  searchLabel: "Kenna Venturesን ይፈልጉ",
+    "Erudite Africa Connect የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
+  searchLabel: "Erudite Africa Connectን ይፈልጉ",
   searchPlaceholder: "ንግዶችን፣ ዘርፎችን ወይም ባለሀብቶችን ይፈልጉ፤ ለምሳሌ «በኦሮሚያ የግብርና ምርት ማቀነባበር»",
   searchButton: "ፈልግ",
   heroButtons: ["ካፒታል እያሰባሰብኩ ነው", "ኢንቨስት እያደረግኩ ነው", "ንግዴን መልሼ ማቋቋም እፈልጋለሁ"],
@@ -168,7 +168,7 @@ const am: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "Kenna Ventures እንዴት ይሠራል",
+  howTitle: "Erudite Africa Connect እንዴት ይሠራል",
   howSteps: [
     { title: "መገለጫዎን ይፍጠሩ።", body: "ማን እንደሆኑና ምን እንደሚፈልጉ ይንገሩን። አሥር ደቂቃ ገደማ ይወስዳል።" },
     {
@@ -177,7 +177,7 @@ const am: HomeCopy = {
     },
     {
       title: "ተገቢውን አጋር ያግኙ።",
-      body: "Kenna Ventures በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
+      body: "Erudite Africa Connect በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
     },
     {
       title: "ስምምነቱን ያጠናቅቁና ያድጉ።",
@@ -205,16 +205,16 @@ const am: HomeCopy = {
     },
   ],
   programsTitle: "ማመልከቻ የሚቀበሉ ፕሮግራሞች",
-  programsIntro: "ግንባር ቀደም ተቋማት በKenna Ventures ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
+  programsIntro: "ግንባር ቀደም ተቋማት በErudite Africa Connect ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
   programsEmpty: "ክፍት ፕሮግራሞች ከአዘጋጃቸውና ከማመልከቻ ማብቂያ ቀናቸው ጋር እዚህ ይዘረዘራሉ።",
   programsButton: "ሁሉንም ፕሮግራሞች ይመልከቱ",
-  partnerTitle: "ከKenna Ventures ጋር ይተባበሩ",
+  partnerTitle: "ከErudite Africa Connect ጋር ይተባበሩ",
   partnerBody:
     "ፕሮግራሞቻቸውንና አገልግሎቶቻቸውን ለኢትዮጵያ ንግዶች ለማድረስ ከባንኮች፣ ከአነስተኛ የፋይናንስ ተቋማት፣ ከልማት አጋሮችና ከዩኒቨርሲቲዎች ጋር እየሠራን ነው። የአጋርነት ማስታወቂያዎች በቅርቡ ይወጣሉ።",
   partnerButton: "አጋር ይሁኑ",
   ctaTitle: "ቀጣዩ ምዕራፍዎ እዚህ ይጀምራል።",
-  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Kenna Ventures ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
-  ctaJoin: "Kenna Venturesን በነፃ ይቀላቀሉ",
+  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Erudite Africa Connect ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
+  ctaJoin: "Erudite Africa Connectን በነፃ ይቀላቀሉ",
   ctaTalk: "ቡድናችንን ያነጋግሩ",
 };
 
@@ -222,8 +222,8 @@ const am: HomeCopy = {
 const om: HomeCopy = {
   heroTitle: "Murtii Daldalaa Ogummaa Qabu Humneessina.",
   heroBody:
-    "Kenna Ventures waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
-  searchLabel: "Kenna Ventures keessa barbaadaa",
+    "Erudite Africa Connect waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
+  searchLabel: "Erudite Africa Connect keessa barbaadaa",
   searchPlaceholder: "Daldaltoota, dameewwan ykn invastaroota barbaadaa; fakkeenyaaf \"qindaa'ina oomisha qonnaa Oromiyaa keessatti\"",
   searchButton: "Barbaadi",
   heroButtons: ["Kaappitaala walitti qabaan jira", "Invest gochaan jira", "Daldala koo deebisee dandamachiisuun barbaada"],
@@ -260,7 +260,7 @@ const om: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "Kenna Ventures akkamitti hojjeta",
+  howTitle: "Erudite Africa Connect akkamitti hojjeta",
   howSteps: [
     { title: "Ibsa dhuunfaa keessan uumaa.", body: "Eenyu akka taatanii fi maal akka barbaaddan nutti himaa. Gara daqiiqaa kudhanii fudhata." },
     {
@@ -269,7 +269,7 @@ const om: HomeCopy = {
     },
     {
       title: "Wal-simsiifamaa.",
-      body: "Kenna Ventures ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
+      body: "Erudite Africa Connect ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
     },
     {
       title: "Xumuraa fi guddadhaa.",
@@ -297,16 +297,16 @@ const om: HomeCopy = {
     },
   ],
   programsTitle: "Sagantaalee iyyannoo fudhachaa jiran",
-  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Kenna Ventures irratti gaggeessan.",
+  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Erudite Africa Connect irratti gaggeessan.",
   programsEmpty: "Sagantaaleen banaa ta'an qindeessaa fi guyyaa xumuraa isaanii waliin asitti tarreeffamu.",
   programsButton: "Sagantaalee hunda ilaalaa",
-  partnerTitle: "Kenna Ventures waliin hojjedhaa",
+  partnerTitle: "Erudite Africa Connect waliin hojjedhaa",
   partnerBody:
     "Sagantaalee fi tajaajila isaanii daldaltoota Itoophiyaatiif dhiyeessuuf baankota, dhaabbilee maallaqaa xixiqqoo, michoota misoomaa fi yuunivarsiitiiwwan waliin hojjechaa jirra. Beeksisni michummaa dhiyootti ni dhufa.",
   partnerButton: "Michuu ta'aa",
   ctaTitle: "Boqonnaan keessan itti aanu asitti jalqaba.",
-  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Kenna Ventures namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
-  ctaJoin: "Kenna Ventures bilisaan makamaa",
+  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Erudite Africa Connect namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
+  ctaJoin: "Erudite Africa Connect bilisaan makamaa",
   ctaTalk: "Garee keenya haasofsiisaa",
 };
 

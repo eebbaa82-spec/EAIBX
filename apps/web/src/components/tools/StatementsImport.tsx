@@ -105,7 +105,7 @@ export function StatementsImport({ k, set, onDone, templateHref }: { k: CreditCa
       <div>
         <p className="font-semibold text-ink">Upload the financial statements in Excel</p>
         <p className="mt-1 text-sm text-muted">
-          Upload the balance sheet and income statement as an Excel workbook (.xlsx), as prepared by the borrower or the auditor, or fill in the Kenna Ventures template. The workspace finds each
+          Upload the balance sheet and income statement as an Excel workbook (.xlsx), as prepared by the borrower or the auditor, or fill in the Erudite Africa Connect template. The workspace finds each
           statement line and each year, puts the figures into the form and calculates the analysis. Excel gives exact figures, so there is nothing to retype or check against a scan.
           Upload one workbook per set of statements; each fills the next empty periods. Files are read in this browser.
         </p>

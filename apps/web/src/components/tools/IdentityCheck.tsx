@@ -9,7 +9,7 @@ import { HoneypotField, liveHost, sendForm, startRobotCheck } from "@/components
  * pack opens the requester:
  * 1. gives the business's TIN and trade licence and their own name, role and ID,
  * 2. checks the business on the Ministry of Trade register (etrade.et),
- * 3. sends the request; the Kenna Ventures team checks the register and the
+ * 3. sends the request; the Erudite Africa Connect team checks the register and the
  *    documents the requester emails, then sends a one-time verification code,
  * 4. enters the code, which identity.php ties to that TIN for good.
  * The verified TIN is remembered in this browser; changing the profile's TIN
@@ -163,7 +163,7 @@ export function IdentityStep({
         <p className="text-lg font-bold text-brand-700">✓ Business identity verified</p>
         <p className="mt-2 text-ink">
           {id.business} · TIN {id.tin}
-          {id.licence ? ` · Licence ${id.licence}` : ""}. Requested by {id.requester} ({id.role.split(" (")[0].toLowerCase()}), verified by Kenna Ventures
+          {id.licence ? ` · Licence ${id.licence}` : ""}. Requested by {id.requester} ({id.role.split(" (")[0].toLowerCase()}), verified by Erudite Africa Connect
           {id.verifiedOn ? ` on ${id.verifiedOn}` : ""} against the Ministry of Trade register.
         </p>
         {mismatch && (
@@ -251,7 +251,7 @@ export function IdentityStep({
             </label>
             <label className="mt-3 flex gap-3">
               <input name="consent" type="checkbox" value="yes" required className="mt-1 h-4 w-4 shrink-0 accent-brand-600" />
-              <span>I agree that Kenna Ventures may check these details against the Ministry of Trade register and contact me about them.</span>
+              <span>I agree that Erudite Africa Connect may check these details against the Ministry of Trade register and contact me about them.</span>
             </label>
           </div>
           <HoneypotField />
@@ -270,10 +270,10 @@ export function IdentityStep({
           <p className="text-lg font-bold text-ink">Request sent: next steps</p>
           <ol className="mt-2 list-decimal space-y-1 pl-5 text-ink">
             <li>
-              Email these to info@kenna.et with TIN {id.tin} in the subject: the renewed trade licence, your ID
+              Email these to connect@eruditeafrica.com with TIN {id.tin} in the subject: the renewed trade licence, your ID
               {isBusiness ? ", and if you are a representative, the authorization letter or power of attorney" : ""}.
             </li>
-            <li>The Kenna Ventures team checks the business on the Ministry of Trade register and that you may act for it.</li>
+            <li>The Erudite Africa Connect team checks the business on the Ministry of Trade register and that you may act for it.</li>
             <li>You receive a verification code by email. Enter it below to open the bank-ready pack.</li>
           </ol>
           {live ? (
@@ -295,7 +295,7 @@ export function IdentityStep({
               </button>
             </form>
           ) : (
-            <p className="mt-4 text-sm text-muted">This is the preview site: requests are not sent and codes can only be checked on kenna.et.</p>
+            <p className="mt-4 text-sm text-muted">This is the preview site: requests are not sent and codes can only be checked on connect.eruditeafrica.et.</p>
           )}
           <button
             type="button"

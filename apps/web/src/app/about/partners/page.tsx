@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { ButtonLink, Card, CardGrid, EmptyState, PageHero, Section } from "@/components/ui";
 
 const intro =
-  "Kenna Ventures works with banks, development finance institutions, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.";
+  "Erudite Africa Connect works with banks, development finance institutions, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.";
 
 export const metadata: Metadata = {
-  title: "Partners · Kenna Ventures",
-  description: "Kenna Ventures works with banks, DFIs, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.",
+  title: "Partners · Erudite Africa Connect",
+  description: "Erudite Africa Connect works with banks, DFIs, government agencies, universities, incubators and corporates who share our goal of a thriving private sector.",
 };
 
 const categories = [
@@ -35,7 +35,7 @@ export default function AboutPartnersPage() {
       </Section>
       <Section tone="canvas">
         <EmptyState action={<ButtonLink href="/partners">Become a partner</ButtonLink>}>
-          Partner announcements are coming soon. We are working with banks, MFIs, development partners and universities to bring their programs and services to Kenna Ventures.
+          Partner announcements are coming soon. We are working with banks, MFIs, development partners and universities to bring their programs and services to Erudite Africa Connect.
         </EmptyState>
       </Section>
     </>

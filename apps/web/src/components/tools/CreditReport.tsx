@@ -788,7 +788,7 @@ export function CreditReport({ k, a, ctx, drafts }: { k: CreditCase; a: CaseAnal
 
       <footer className="mt-8 border-t border-slate-400 pt-2 text-[8.5pt] text-slate-700">
         <p className="text-justify">
-          Prepared with the Kenna Ventures credit analysis workspace from information supplied by the borrower and the analyst. The figures and judgments in this report are the analyst&apos;s
+          Prepared with the Erudite Africa Connect credit analysis workspace from information supplied by the borrower and the analyst. The figures and judgments in this report are the analyst&apos;s
           responsibility; the credit decision rests with the lending institution under its own credit policy.
         </p>
       </footer>

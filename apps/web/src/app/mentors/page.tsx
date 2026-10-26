@@ -4,7 +4,7 @@ import { PreviewForm } from "@/components/forms";
 import { CardAnatomy, FilterGroup, FilterPanel } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Find a Business Mentor in Ethiopia · Kenna Ventures",
+  title: "Find a Business Mentor in Ethiopia · Erudite Africa Connect",
   description: "Book free sessions with experienced founders, executives and investors in Amharic or English.",
 };
 
@@ -67,7 +67,7 @@ export default function MentorsPage() {
           <div>
             <Note>
               Mentors give their time for free and never ask for payment, equity or confidential information in return.
-              Report any concern to <a href="mailto:info@kenna.et" className="text-brand-700 hover:underline">info@kenna.et</a>.
+              Report any concern to <a href="mailto:connect@eruditeafrica.com" className="text-brand-700 hover:underline">connect@eruditeafrica.com</a>.
             </Note>
           </div>
         </div>

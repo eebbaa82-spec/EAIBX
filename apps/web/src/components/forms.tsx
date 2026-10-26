@@ -7,7 +7,7 @@ import type { Locale } from "@/i18n/config";
 /**
  * The platform back end (NestJS API) is not built yet. Forms given a
  * `formName` post to /api/submit.php on the live host, which emails the
- * submission to the Kenna Ventures inbox. Everywhere else (the preview site, and
+ * submission to the Erudite Africa Connect inbox. Everywhere else (the preview site, and
  * forms that need a member account) they show the copy's confirmation message
  * together with a clear preview notice.
  */
@@ -78,8 +78,8 @@ function SendError() {
   return (
     <p role="alert" className="text-sm text-red-700">
       Sorry, your message could not be sent. Please try again, or email us at{" "}
-      <a className="underline" href="mailto:info@kenna.et">
-        info@kenna.et
+      <a className="underline" href="mailto:connect@eruditeafrica.com">
+        connect@eruditeafrica.com
       </a>
       .
     </p>

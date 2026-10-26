@@ -1,10 +1,10 @@
 name: Preview on GitHub Pages
 
 # Publishes the full site, including pages hidden behind coming-soon on
-# kenna.et, to https://eebbaa82-spec.github.io/EAIBX/ for review.
+# connect.eruditeafrica.et, to https://eebbaa82-spec.github.io/EAIBX/ for review.
 # The build goes to the gh-pages branch; GitHub Pages serves that branch once
 # Settings > Pages > Source is set to "Deploy from a branch", gh-pages, / (root).
-# Forms only send from kenna.et, so the preview never posts anything.
+# Forms only send from connect.eruditeafrica.et, so the preview never posts anything.
 
 on:
   push:

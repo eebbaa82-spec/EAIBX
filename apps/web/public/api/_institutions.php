@@ -6,5 +6,5 @@
 // To renew, change expires; to add seats, change seats.
 
 return [
-    'DEMO-BANK' => ['name' => 'Demo Bank (Kenna Ventures test)', 'seats' => 25, 'expires' => '2027-12-31', 'key_hash' => 'cc16b8934eb8fbe71c36104e211f54453782bae84e21157fe8613e268a0bdf4a'],
+    'DEMO-BANK' => ['name' => 'Demo Bank (Erudite Africa Connect test)', 'seats' => 25, 'expires' => '2027-12-31', 'key_hash' => 'cc16b8934eb8fbe71c36104e211f54453782bae84e21157fe8613e268a0bdf4a'],
 ];

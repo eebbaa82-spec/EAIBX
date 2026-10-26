@@ -4,8 +4,8 @@ import { PreviewForm } from "@/components/forms";
 import { Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Log in · Kenna Ventures",
-  description: "Welcome back. Log in to your Kenna Ventures account for programs, investment, recovery and learning.",
+  title: "Log in · Erudite Africa Connect",
+  description: "Welcome back. Log in to your Erudite Africa Connect account for programs, investment, recovery and learning.",
 };
 
 export default function LoginPage() {
@@ -28,9 +28,9 @@ export default function LoginPage() {
               <p className="mt-1">Enter your email or phone and we will send you a reset link.</p>
             </div>
             <p className="mt-6 text-center text-sm text-muted">
-              New to Kenna Ventures?{" "}
+              New to Erudite Africa Connect?{" "}
               <Link href="/join" className="font-semibold text-brand-700 hover:underline">
-                Join Kenna Ventures free
+                Join Erudite Africa Connect free
               </Link>
             </p>
           </div>

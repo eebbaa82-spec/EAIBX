@@ -310,8 +310,8 @@ function SignIn({ onSignIn }: { onSignIn: (session: string) => void }) {
         </ol>
         <p className="mt-4 text-sm text-muted">
           To subscribe your institution, write to{" "}
-          <a href="mailto:info@kenna.et" className="text-brand-700 underline">
-            info@kenna.et
+          <a href="mailto:connect@eruditeafrica.com" className="text-brand-700 underline">
+            connect@eruditeafrica.com
           </a>
           .
         </p>

@@ -4,7 +4,7 @@ import { PreviewForm } from "@/components/forms";
 import { Container, PageHero } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Join Kenna Ventures free · Kenna Ventures",
+  title: "Join Erudite Africa Connect free · Erudite Africa Connect",
   description: "One account for everything: programs, investment, recovery and learning.",
 };
 
@@ -20,7 +20,7 @@ const roles = [
 export default function JoinPage() {
   return (
     <>
-      <PageHero title="Join Kenna Ventures free" subhead="One account for everything: programs, investment, recovery and learning." />
+      <PageHero title="Join Erudite Africa Connect free" subhead="One account for everything: programs, investment, recovery and learning." />
       <section className="bg-canvas py-16">
         <Container>
           <div className="mx-auto max-w-lg rounded-xl border border-line bg-white p-6 shadow-sm sm:p-8">
@@ -28,7 +28,7 @@ export default function JoinPage() {
               submitLabel="Create account"
               confirmation="We have sent a 6-digit code to your phone or email. Enter it below."
               fields={[
-                { name: "role", label: "What brings you to Kenna Ventures?", type: "select", options: roles, required: true },
+                { name: "role", label: "What brings you to Erudite Africa Connect?", type: "select", options: roles, required: true },
                 { name: "name", label: "Full name", required: true },
                 { name: "contact", label: "Email or phone number", required: true },
                 {

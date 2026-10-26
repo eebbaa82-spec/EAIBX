@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ButtonLink, Container, DataTable, Faq, Note, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Kenna Ventures Pricing · Plans for Businesses and Investors",
+  title: "Erudite Africa Connect Pricing · Plans for Businesses and Investors",
   description:
     "Start free. Upgrade for featured listings, verified EHIRA assessments and full deal room access. Pay in Birr.",
 };
@@ -42,7 +42,7 @@ const businessRows = [
 ];
 
 const investorRows = [
-  ["Tagline", "See what is out there", "Act on the best deals", "Run your pipeline on Kenna Ventures"],
+  ["Tagline", "See what is out there", "Act on the best deals", "Run your pipeline on Erudite Africa Connect"],
   [
     "Price",
     "Free",
@@ -78,7 +78,7 @@ export default function PricingPage() {
     <>
       <PageHero
         title="Simple plans. Start free."
-        subhead="Join Kenna Ventures at no cost, then upgrade when you are ready to reach more investors, buyers and experts. Pay in Birr with Chapa or Telebirr."
+        subhead="Join Erudite Africa Connect at no cost, then upgrade when you are ready to reach more investors, buyers and experts. Pay in Birr with Chapa or Telebirr."
       >
         <ButtonLink href="#business-plans" variant="light">
           For businesses
@@ -91,7 +91,7 @@ export default function PricingPage() {
       <div className="border-b border-line bg-white py-4">
         <Container>
           <p className="text-center text-sm text-muted">
-            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after Kenna Ventures launches.
+            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after Erudite Africa Connect launches.
             Prices in ETB, with monthly and yearly billing, will be announced before the launch period ends.
           </p>
         </Container>
@@ -138,7 +138,7 @@ export default function PricingPage() {
               q: "Do you take a share of my business?",
               a: (
                 <>
-                  Not by joining or using Kenna Ventures. Kenna Ventures takes equity in a business only when this is agreed in writing in advance with
+                  Not by joining or using Erudite Africa Connect. Erudite Africa Connect takes equity in a business only when this is agreed in writing in advance with
                   the business and its investors, as payment for advisory or capital-raising services.
                 </>
               ),
