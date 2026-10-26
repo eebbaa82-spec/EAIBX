@@ -24,6 +24,7 @@ const am: Record<string, string> = {
   Mentors: "መካሪዎች",
   "Learn from people who have built it": "ንግድ ከገነቡ ሰዎች ይማሩ",
   Academy: "አካዳሚ",
+  "Center of Excellence": "የልህቀት ማዕከል",
   "Banking, credit and investment training": "የባንክ፣ የብድርና የኢንቨስትመንት ስልጠና",
   "EHIRA Assessment": "የEHIRA ግምገማ",
   "Health and investment readiness in 15 minutes": "የንግድ ጤናና የኢንቨስትመንት ዝግጁነት በ15 ደቂቃ",
@@ -34,7 +35,7 @@ const am: Record<string, string> = {
   "Deal Rooms": "የስምምነት ክፍሎች",
   "Curated, verified deal flow": "የተመረጡና የተረጋገጡ የኢንቨስትመንት ዕድሎች",
   "For Investors": "ለባለሀብቶች",
-  "How Investopia works for you": "Investopia ለእርስዎ እንዴት እንደሚሠራ",
+  "How Erudite Africa Connect works for you": "Erudite Africa Connect ለእርስዎ እንዴት እንደሚሠራ",
   "Valuation Tools": "የዋጋ ትመና መሣሪያዎች",
   "Price a business with confidence": "የንግድን ዋጋ በእርግጠኝነት ይገምቱ",
   "Knowledge Hub": "የዕውቀት ማዕከል",
@@ -44,19 +45,22 @@ const am: Record<string, string> = {
   Blog: "ብሎግ",
   // Header
   "Log in": "ይግቡ",
-  "Join Investopia": "Investopiaን ይቀላቀሉ",
+  "Join Erudite Africa Connect": "Erudite Africa Connectን ይቀላቀሉ",
+  "Join now": "አሁን ይቀላቀሉ",
   "Open menu": "ምናሌውን ክፈት",
   "Close menu": "ምናሌውን ዝጋ",
   "Skip to content": "ወደ ይዘቱ ይዝለሉ",
-  "Investopia home": "የInvestopia መነሻ ገጽ",
+  "Erudite Africa Connect home": "የErudite Africa Connect መነሻ ገጽ",
   // Footer
-  "The Investopia Brief": "የInvestopia ዜና መጽሔት",
+  "The Erudite Africa Connect Brief": "የErudite Africa Connect ዜና መጽሔት",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "ከኢትዮጵያ እያደገ ካለው ኢኮኖሚ የተገኙ ስምምነቶች፣ ፕሮግራሞችና ግንዛቤዎች፣ በየሁለት ሳምንቱ።",
   "Email address": "የኢሜይል አድራሻ",
   Subscribe: "ይመዝገቡ",
   "No spam. Unsubscribe any time.": "አላስፈላጊ መልዕክት አንልክም። በማንኛውም ጊዜ ምዝገባዎን ማቋረጥ ይችላሉ።",
   "Thanks for subscribing. (Preview only: not connected yet.)": "ስለተመዘገቡ እናመሰግናለን። (ቅድመ ዕይታ ብቻ፤ ገና አልተገናኘም።)",
+  "Thanks for subscribing.": "ስለተመዘገቡ እናመሰግናለን።",
+  "Sorry, that didn't go through. Please try again.": "ይቅርታ፣ አልተላከም። እባክዎ እንደገና ይሞክሩ።",
   "Powering Smarter Business Decisions.": "ብልህ የንግድ ውሳኔዎችን እናጎለብታለን።",
   "A platform by Erudite Africa Investments PLC.": "በኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ. የቀረበ መድረክ።",
   "For Entrepreneurs": "ለሥራ ፈጣሪዎች",
@@ -73,10 +77,10 @@ const am: Record<string, string> = {
   "Sector reports": "የዘርፍ ሪፖርቶች",
   "Investor FAQ": "የባለሀብቶች ተደጋጋሚ ጥያቄዎች",
   "Partner with us": "ከእኛ ጋር ይተባበሩ",
-  "Run a program on Investopia": "በInvestopia ላይ ፕሮግራም ያካሂዱ",
+  "Run a program on Erudite Africa Connect": "በErudite Africa Connect ላይ ፕሮግራም ያካሂዱ",
   "Sponsor a cohort": "የሥልጠና ቡድን ስፖንሰር ያድርጉ",
   "List as an advisor": "እንደ አማካሪ ይመዝገቡ",
-  "About Investopia": "ስለ Investopia",
+  "About Erudite Africa Connect": "ስለ Erudite Africa Connect",
   "Our team": "ቡድናችን",
   Careers: "የሥራ ዕድሎች",
   Press: "ለሚዲያ",
@@ -92,7 +96,7 @@ const am: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "ረሆቦት አፓርትመንት ሕንፃ፣ 1ኛ ፎቅ፣ ቦሌ መድኃኔዓለም፣ አዲስ አበባ፣ ኢትዮጵያ",
   footerLegal:
-    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Investopia የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
+    "© 2026 ኤሩዳይት አፍሪካ ኢንቨስትመንትስ ኃ.የተ.የግ.ማ.። በኢትዮጵያ የተመዘገበ፣ የምዝገባ ቁጥር {reg}። Erudite Africa Connect የንግድ ማገናኛና የመረጃ መድረክ ነው። የኢንቨስትመንት ምክር አይሰጥም፤ የሰነደ ሙዓለ ንዋዮች ገበያም አይደለም።",
   // Trust bar
   "Verified profiles": "የተረጋገጡ መገለጫዎች",
   "Secure deal rooms": "ደህንነታቸው የተጠበቀ የስምምነት ክፍሎች",
@@ -135,7 +139,7 @@ const om: Record<string, string> = {
   "Deal Rooms": "Kutaalee Waliigaltee",
   "Curated, verified deal flow": "Carraawwan investimentii filatamanii fi mirkanaa'an",
   "For Investors": "Invastarootaaf",
-  "How Investopia works for you": "Investopia akkamitti isiniif hojjeta",
+  "How Erudite Africa Connect works for you": "Erudite Africa Connect akkamitti isiniif hojjeta",
   "Valuation Tools": "Meeshaalee Madaallii Gatii",
   "Price a business with confidence": "Gatii daldalaa amanamummaan tilmaamaa",
   "Knowledge Hub": "Giddugala Beekumsaa",
@@ -145,19 +149,22 @@ const om: Record<string, string> = {
   Blog: "Bloogii",
   // Header
   "Log in": "Seeni",
-  "Join Investopia": "Investopia Makami",
+  "Join Erudite Africa Connect": "Erudite Africa Connect Makami",
+  "Join now": "Amma makamaa",
   "Open menu": "Baafata bani",
   "Close menu": "Baafata cufi",
   "Skip to content": "Gara qabiyyeetti darbi",
-  "Investopia home": "Fuula jalqabaa Investopia",
+  "Erudite Africa Connect home": "Fuula jalqabaa Erudite Africa Connect",
   // Footer
-  "The Investopia Brief": "Odeessa Investopia",
+  "The Erudite Africa Connect Brief": "Odeessa Erudite Africa Connect",
   "Deals, programs and insights from Ethiopia's growth economy, every two weeks.":
     "Waliigaltee, sagantaalee fi hubannoo dinagdee guddachaa jiru Itoophiyaa irraa, torban lama lamaan.",
   "Email address": "Teessoo imeelii",
   Subscribe: "Galmaa'i",
   "No spam. Unsubscribe any time.": "Ergaa barbaachisaa hin taane hin erginu. Yeroo barbaaddanitti galmee dhaabuu ni dandeessu.",
   "Thanks for subscribing. (Preview only: not connected yet.)": "Galmaa'uu keessaniif galatoomaa. (Agarsiisa qofa: ammaaf hin walqabatne.)",
+  "Thanks for subscribing.": "Galmaa'uu keessaniif galatoomaa.",
+  "Sorry, that didn't go through. Please try again.": "Dhiifama, hin ergamne. Maaloo irra deebi'aa yaali.",
   "Powering Smarter Business Decisions.": "Murtii daldalaa ogummaa qabu humneessina.",
   "A platform by Erudite Africa Investments PLC.": "Waltajjii Erudite Africa Investments PLC'n dhiyaate.",
   "For Entrepreneurs": "Kalaqxota Daldalaatiif",
@@ -174,10 +181,10 @@ const om: Record<string, string> = {
   "Sector reports": "Gabaasa damee",
   "Investor FAQ": "Gaaffilee irra deddeebiin invastarootaa",
   "Partner with us": "Nu waliin hojjedhaa",
-  "Run a program on Investopia": "Investopia irratti sagantaa gaggeessaa",
+  "Run a program on Erudite Africa Connect": "Erudite Africa Connect irratti sagantaa gaggeessaa",
   "Sponsor a cohort": "Garee leenjii deggeraa",
   "List as an advisor": "Akka gorsaatti galmaa'aa",
-  "About Investopia": "Waa'ee Investopia",
+  "About Erudite Africa Connect": "Waa'ee Erudite Africa Connect",
   "Our team": "Garee keenya",
   Careers: "Carraa hojii",
   Press: "Miidiyaaf",
@@ -193,7 +200,7 @@ const om: Record<string, string> = {
   "Rehobot Apartment Building, 1st Floor, Bole Medhanealem, Addis Ababa, Ethiopia":
     "Gamoo Apaartimantii Rehobot, Darbii 1ffaa, Boolee Medhaneealem, Finfinnee (Addis Ababa), Itoophiyaa",
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Investopia waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
+    "© 2026 Erudite Africa Investments PLC. Itoophiyaa keessatti galmaa'e, lakkoofsa galmee {reg}. Erudite Africa Connect waltajjii walqunnamsiisaa fi odeeffannoo daldalaa ti. Gorsa investimentii hin kennu; gabaa waraqaalee qabeenyaas miti.",
   // Trust bar
   "Verified profiles": "Ibsa dhuunfaa mirkanaa'e",
   "Secure deal rooms": "Kutaalee waliigaltee nageenya qaban",
@@ -208,7 +215,7 @@ const om: Record<string, string> = {
 
 const en: Record<string, string> = {
   footerLegal:
-    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Investopia is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
+    "© 2026 Erudite Africa Investments PLC. Registered in Ethiopia, registration no. {reg}. Erudite Africa Connect is a business matching and information platform. It does not provide investment advice and is not a securities exchange.",
 };
 
 const dictionaries: Record<Locale, Record<string, string>> = { en, am, om };

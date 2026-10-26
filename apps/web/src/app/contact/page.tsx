@@ -4,14 +4,14 @@ import { Note, PageHero, Section } from "@/components/ui";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Investopia · Addis Ababa",
-  description: "Talk to the Investopia team about your business, investment or partnership.",
+  title: "Contact Erudite Africa Connect · Addis Ababa",
+  description: "Talk to the Erudite Africa Connect team about your business, investment or partnership.",
 };
 
 const options = [
   { label: "General inquiries", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
   { label: "Partnerships", value: <a href={`mailto:${company.email}`} className="text-brand-700 hover:underline">{company.email}</a> },
-  { label: "Press", value: <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a> },
+  { label: "Press", value: <a href="mailto:connect@eruditeafrica.com" className="text-brand-700 hover:underline">connect@eruditeafrica.com</a> },
   { label: "Phone", value: <>Office {company.phoneOffice} · Mobile {company.phoneMobile}</> },
   {
     label: "Office",
@@ -52,14 +52,15 @@ export default function ContactPage() {
             </dl>
             <div className="mt-6">
               <Note>
-                Investopia staff will never ask for your password or ask you to send money to a personal account. Report suspicious
-                messages to <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">investopia@eruditeafrica.com</a>.
+                Erudite Africa Connect staff will never ask for your password or ask you to send money to a personal account. Report suspicious
+                messages to <a href="mailto:connect@eruditeafrica.com" className="text-brand-700 hover:underline">connect@eruditeafrica.com</a>.
               </Note>
             </div>
           </div>
           <div>
             <h2 className="text-2xl font-bold tracking-tight">Send us a message</h2>
             <PreviewForm
+              formName="contact"
               className="mt-6"
               submitLabel="Send message"
               confirmation="Thank you. We have received your message and will reply within two working days."

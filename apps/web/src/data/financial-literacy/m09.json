@@ -1,0 +1,416 @@
+{
+  "id": "m09",
+  "slug": "digital-financial-services",
+  "icon": "phone",
+  "minutes": 12,
+  "en": {
+    "title": "Digital Financial Services",
+    "summary": "Learn how phones, cards, ATMs and POS devices help you manage money, and how to use them safely.",
+    "objectives": [
+      "Explain what digital finance and digital financial services are",
+      "Tell the difference between self-service and over-the-counter channels",
+      "Name common digital services, such as mobile money, ATM and POS",
+      "Withdraw cash from an ATM step by step",
+      "Describe the benefits and challenges of digital finance"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-digital-finance",
+        "title": "What is digital finance?",
+        "body": [
+          "Digital finance means using electronic money instead of cash. It offers financial services through digital tools, like mobile phones, cards, POS devices and online shopping.",
+          "It makes financial services easier, faster and cheaper to use. Access to technology is its foundation.",
+          "Digital financial services (DFS) let you save, borrow, buy insurance and pay from a distance. You do not need cash or a visit to a bank branch. Because DFS lowers costs, it helps bring more people into formal financial services. This is called financial inclusion."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "Traditional", "items": ["Pay in cash", "Visit a bank branch"] },
+          "right": { "title": "Digital", "items": ["E-money", "Mobile money", "Card payments", "Electronic transfers"] }
+        }
+      },
+      {
+        "id": "channels",
+        "title": "Channels: how you reach your bank",
+        "body": [
+          "A channel is your access point to a financial service provider, such as a bank. Through it you deposit, transfer, borrow or pay.",
+          "A channel can be an office, a tool, media or a phone application.",
+          "There are two types. A self-service channel needs no other person. An over-the-counter (OTC) channel needs bank staff, an agent or a merchant to help you."
+        ],
+        "points": [
+          "ATM (self-service): cash out, cash deposit, balance, payments",
+          "Internet and mobile banking (self-service): inquiries, transfers, payments",
+          "Agent banking (OTC): cash in, cash out, bill payments",
+          "Extension services, like field staff or a branch on wheels (OTC): account opening, cash, loan applications",
+          "E-wallet (both types): cash in, cash out, payments, transfers",
+          "Call center (OTC): inquiries, transfers, payments"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "Self-service", "items": ["ATM", "Internet banking", "Mobile banking"] },
+          "right": { "title": "Over-the-counter", "items": ["Agent banking", "Extension services", "Call center"] }
+        }
+      },
+      {
+        "id": "types-of-dfs",
+        "title": "Fintech and types of digital services",
+        "body": [
+          "Financial technology (fintech) is new technology that improves and automates financial services. It is special software used on computers and smartphones.",
+          "Fintech helps people like Hana and Kuma manage their money and business better. Here are common digital financial services."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "bank", "label": "Mobile banking", "text": "Use your phone for bank services. Also called m-banking." },
+            { "icon": "wallet", "label": "Mobile money", "text": "An e-wallet on your phone. It can reach rural communities." },
+            { "icon": "pos", "label": "POS", "text": "A device shops use to take card payments." },
+            { "icon": "phone", "label": "mPOS", "text": "A phone or tablet that works as a POS on the go." },
+            { "icon": "atm", "label": "ATM", "text": "A machine for cash and transactions, with no cashier." },
+            { "icon": "people", "label": "ITM", "text": "A teller machine with a touch screen and video call." },
+            { "icon": "card", "label": "E-money", "text": "Money value stored in an e-wallet or on a card." }
+          ]
+        },
+        "tip": "E-money is usually backed by money held in a bank. If the provider fails, users can recover their money."
+      },
+      {
+        "id": "atm-withdrawal",
+        "title": "Withdrawing cash from an ATM",
+        "body": [
+          "An ATM knows you by your card and your PIN. A PIN is a secret 4-digit number that proves the card is yours.",
+          "At an ATM you can also check your balance, get a mini statement, transfer money or change your PIN."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Insert card" },
+            { "label": "Choose language" },
+            { "label": "Enter PIN", "text": "Type your 4-digit PIN." },
+            { "label": "Choose service", "text": "For example, withdrawal." },
+            { "label": "Choose account" },
+            { "label": "Enter amount" },
+            { "label": "Collect cash" },
+            { "label": "Take receipt and card", "text": "Take a receipt if needed. Never leave your card." }
+          ]
+        },
+        "example": {
+          "title": "First-time card users",
+          "text": "Hana, Kuma, Meseret and Yohannes got ATM cards from their bank. They asked the bank staff how to withdraw cash. The staff showed them these steps."
+        },
+        "tip": "Keep your PIN secret, and always take your card before you leave the ATM."
+      },
+      {
+        "id": "pos-for-business",
+        "title": "How POS helps small businesses",
+        "body": [
+          "A POS (point of sale) device lets customers pay by card when they buy goods or services. The money moves electronically to the business account."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "Less cash handling", "text": "Payments move electronically, so cash costs go down." },
+            { "icon": "people", "label": "More customers", "text": "Attracts people who pay by card." },
+            { "icon": "growth", "label": "Higher sales", "text": "Sales volume can grow." },
+            { "icon": "shield", "label": "Fewer fake notes", "text": "Less risk from forged notes and bounced checks." },
+            { "icon": "receipt", "label": "Better control", "text": "POS reports and bank statements track daily sales." },
+            { "icon": "check", "label": "Modern image", "text": "A modern way to pay gives the shop a good image." }
+          ]
+        },
+        "example": {
+          "title": "The Coffee Hub",
+          "text": "Hana and Kuma's coffee shop has many busy customers. They asked a bank expert how a POS could help. The expert listed these benefits."
+        }
+      },
+      {
+        "id": "benefits",
+        "title": "Benefits of digital financial services",
+        "body": [
+          "As society goes digital, digital finance becomes more important. People expect easy access to services.",
+          "Digital finance can help businesses like The Coffee Hub work better and grow."
+        ],
+        "points": [
+          "It improves the customer experience.",
+          "It strengthens business productivity.",
+          "It reduces physical contact, which helps limit the spread of pandemics."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "lock", "label": "Safe storage", "text": "A safe place to keep money electronically." },
+            { "icon": "coins", "label": "Lower costs", "text": "Lowers business transaction costs." },
+            { "icon": "growth", "label": "New markets", "text": "Opens new markets and ways to earn a living." },
+            { "icon": "phone", "label": "Bank anywhere", "text": "Use banking services on your device, from anywhere." },
+            { "icon": "bank", "label": "Inclusion", "text": "A gateway to credit, insurance and other services." },
+            { "icon": "calculator", "label": "Money skills", "text": "Supports how you manage your money." },
+            { "icon": "chart", "label": "Better decisions", "text": "Transaction data helps estimate income and judge risks." },
+            { "icon": "shield", "label": "More security", "text": "Increases security and makes information clear." }
+          ]
+        }
+      },
+      {
+        "id": "challenges",
+        "title": "Challenges and how to overcome them",
+        "body": [
+          "Digital finance brings new risks. It also brings old ones, like fraud and too much debt. Fraud means someone tricks you to take your money.",
+          "Use of digital finance in Ethiopia is still low compared to other least-developed countries in East and Southern Africa. This is mainly because mobile money use is low.",
+          "Other challenges are fear about security and privacy, little information about DFS benefits, and gaps in laws and rules. Another is dormancy: registered users who do not use their accounts."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "Challenges", "items": ["Slow internet", "Few mobile phones", "Fraud and security", "Low digital skills"] },
+          "right": { "title": "Solutions", "items": ["Customer ID checks", "Build trust", "Faster 3G/4G networks", "Digital financial literacy", "Wider mobile coverage", "Reliable privacy tools", "Use DFS for transactions"] }
+        },
+        "tip": "Customer identification and verification (CIV) checks confirm that users are who they say they are."
+      }
+    ],
+    "takeaways": [
+      "Digital finance uses electronic money instead of cash, and makes services easier, faster and cheaper.",
+      "A channel is your access point to a bank. It can be self-service or over-the-counter.",
+      "Common services include mobile banking, mobile money, POS, ATM and e-money.",
+      "At an ATM, keep your PIN secret and always take your cash, receipt and card.",
+      "POS helps a business handle less cash, attract customers and track daily sales.",
+      "Challenges include slow internet, fraud and low digital skills. Trust and digital literacy help overcome them."
+    ],
+    "quiz": [
+      {
+        "q": "What does digital finance mean?",
+        "options": ["Using electronic money instead of cash", "Keeping all your money at home", "Only visiting a bank branch", "Paying every bill in cash"],
+        "answer": 0,
+        "explain": "Digital finance uses electronic money and digital tools instead of cash."
+      },
+      {
+        "q": "Which of these is a self-service channel?",
+        "options": ["Agent banking", "Mobile banking", "Call center", "Extension services"],
+        "answer": 1,
+        "explain": "With mobile banking you serve yourself on your phone, with no staff or agent."
+      },
+      {
+        "q": "At an ATM, what proves that the card is yours?",
+        "options": ["Your name", "The receipt", "Your secret 4-digit PIN", "The language you choose"],
+        "answer": 2,
+        "explain": "The ATM checks your identity after you enter your PIN."
+      },
+      {
+        "q": "How does a POS help The Coffee Hub?",
+        "options": ["It removes the need for customers", "It reduces the risk of forged notes", "It makes all sales free", "It replaces the bank"],
+        "answer": 1,
+        "explain": "Card payments through a POS reduce the risk of forged notes and bounced checks."
+      },
+      {
+        "q": "Which device lets a business take card payments on the go?",
+        "options": ["mPOS", "ITM", "Call center", "Bank branch"],
+        "answer": 0,
+        "explain": "An mPOS is a phone, tablet or wireless device that works as a mobile POS."
+      },
+      {
+        "q": "In digital finance, what is dormancy?",
+        "options": ["A fast internet network", "A type of insurance", "Registered users not using their accounts", "A new bank branch"],
+        "answer": 2,
+        "explain": "Dormancy means people register for digital services but do not use them."
+      }
+    ]
+  },
+  "am": {
+    "title": "ዲጂታል የፋይናንስ አገልግሎቶች",
+    "summary": "ስልክ፣ ካርድ፣ ኤቲኤም እና ፖስ ገንዘብዎን ለማስተዳደር እንዴት እንደሚረዱ እና በጥንቃቄ እንዴት እንደሚጠቀሙባቸው ይማሩ።",
+    "objectives": [
+      "ዲጂታል ፋይናንስ እና ዲጂታል የፋይናንስ አገልግሎቶች ምን እንደሆኑ ማብራራት",
+      "ራስን የማስተናገድ እና ኦቨር ዘካውንተር ቻናሎችን መለየት",
+      "እንደ ሞባይል ገንዘብ፣ ኤቲኤም እና ፖስ ያሉ የተለመዱ ዲጂታል አገልግሎቶችን መጥቀስ",
+      "ከኤቲኤም ገንዘብ ደረጃ በደረጃ ማውጣት",
+      "የዲጂታል ፋይናንስ ጥቅሞችንና ተግዳሮቶችን መግለጽ"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-digital-finance",
+        "title": "ዲጂታል ፋይናንስ ምንድን ነው?",
+        "body": [
+          "ዲጂታል ፋይናንስ ማለት በጥሬ ገንዘብ ምትክ የኤሌክትሮኒክ ገንዘብ መጠቀም ነው። እንደ ሞባይል ስልክ፣ ካርድ፣ ፖስ (POS) እና ኢ-ኮሜርስ ባሉ ዲጂታል መንገዶች የፋይናንስ አገልግሎት ይሰጣል።",
+          "የፋይናንስ አገልግሎትን ለአጠቃቀም ምቹ፣ ፈጣን እና ዝቅተኛ ወጭ ያደርገዋል። መሠረቱ የቴክኖሎጂ ተደራሽነት ነው።",
+          "ዲጂታል የፋይናንስ አገልግሎቶች (ዲኤፍኤስ) ቁጠባ፣ ብድር፣ ኢንሹራንስ እና ክፍያን በርቀት እንዲያገኙ ያስችላሉ። ጥሬ ገንዘብ ወይም ወደ ባንክ ቅርንጫፍ መሄድ አያስፈልግም። ዲኤፍኤስ ወጭን ስለሚቀንስ ብዙ ሰዎችን ወደ መደበኛ የፋይናንስ አገልግሎት ያመጣል። ይህ የፋይናንስ አካታችነት ይባላል።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "ተለምዷዊ", "items": ["በጥሬ ገንዘብ መክፈል", "ባንክ ቅርንጫፍ መሄድ"] },
+          "right": { "title": "ዲጂታል", "items": ["ኢ-ገንዘብ", "የሞባይል ገንዘብ", "የካርድ ክፍያ", "የኤሌክትሮኒክ ማስተላለፍ"] }
+        }
+      },
+      {
+        "id": "channels",
+        "title": "ቻናሎች፦ ባንክዎን የሚያገኙበት መንገድ",
+        "body": [
+          "ቻናል ማለት እንደ ባንክ ካሉ የፋይናንስ አገልግሎት ሰጭዎች ጋር የሚገናኙበት ቦታ ነው። በእሱ ገንዘብ ያስቀምጣሉ፣ ያስተላልፋሉ፣ ይበደራሉ ወይም ይከፍላሉ።",
+          "ቻናል ቢሮ፣ መሣሪያ፣ ሚዲያ ወይም የስልክ አፕሊኬሽን ሊሆን ይችላል።",
+          "ሁለት አይነት ቻናሎች አሉ። ራስን የማስተናገድ (self-service) ቻናል ሌላ ሰው አያስፈልገውም። ኦቨር ዘካውንተር (ኦቲሲ) ቻናል የባንክ ሠራተኛ፣ ወኪል ወይም ነጋዴ እንዲያግዝዎ ይጠይቃል።"
+        ],
+        "points": [
+          "ኤቲኤም (ራስን ማስተናገድ)፦ ገንዘብ ማውጣት፣ ማስቀመጥ፣ ቀሪ ሒሳብ ማወቅ፣ ክፍያ",
+          "የበይነ መረብ እና የሞባይል ባንኪንግ (ራስን ማስተናገድ)፦ ጥያቄዎች፣ ማስተላለፍ፣ ክፍያ",
+          "ወኪል ባንክ (ኦቲሲ)፦ ገንዘብ ማስቀመጥ፣ ማውጣት፣ የሒሳብ ክፍያ",
+          "እንደ የመስክ ሠራተኛ ወይም ተንቀሳቃሽ ቅርንጫፍ ያሉ ተጨማሪ አገልግሎቶች (ኦቲሲ)፦ አካውንት መክፈት፣ ገንዘብ፣ የብድር ማመልከቻ",
+          "ኢ-ዋሌት (ሁለቱም አይነት)፦ ገንዘብ ማስቀመጥ፣ ማውጣት፣ ክፍያ፣ ማስተላለፍ",
+          "የጥሪ ማዕከል (ኦቲሲ)፦ ጥያቄዎች፣ ማስተላለፍ፣ ክፍያ"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "ራስን ማስተናገድ", "items": ["ኤቲኤም", "የበይነ መረብ ባንክ", "ሞባይል ባንኪንግ"] },
+          "right": { "title": "ኦቨር ዘካውንተር", "items": ["ወኪል ባንክ", "ተጨማሪ አገልግሎቶች", "የጥሪ ማዕከል"] }
+        }
+      },
+      {
+        "id": "types-of-dfs",
+        "title": "ፊንቴክ እና የዲጂታል አገልግሎት አይነቶች",
+        "body": [
+          "የፋይናንስ ቴክኖሎጂ (ፊንቴክ) የፋይናንስ አገልግሎቶችን የሚያሻሽል እና አውቶማቲክ የሚያደርግ አዲስ ቴክኖሎጂ ነው። በኮምፒውተር እና በስማርት ስልክ የሚሠራ ልዩ ሶፍትዌር ነው።",
+          "ፊንቴክ እንደ ሐና እና ኩማ ያሉ ሰዎች ገንዘባቸውንና ቢዝነሳቸውን በተሻለ እንዲያስተዳድሩ ይረዳል። የተለመዱ ዲጂታል የፋይናንስ አገልግሎቶች እነዚህ ናቸው።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "bank", "label": "ሞባይል ባንኪንግ", "text": "በስልክዎ የባንክ አገልግሎት ማግኘት። ኤም-ባንኪንግም ይባላል።" },
+            { "icon": "wallet", "label": "የሞባይል ገንዘብ", "text": "በስልክ የሚገኝ ኢ-ዋሌት። ገጠር ያሉ ሰዎችን ይደርሳል።" },
+            { "icon": "pos", "label": "ፖስ (POS)", "text": "ሱቆች የካርድ ክፍያ የሚቀበሉበት መሣሪያ።" },
+            { "icon": "phone", "label": "ሞባይል ፖስ", "text": "በእንቅስቃሴ ላይ እንደ ፖስ የሚሠራ ስልክ ወይም ታብሌት።" },
+            { "icon": "atm", "label": "ኤቲኤም", "text": "ያለ ገንዘብ ተቀባይ ገንዘብና ግብይት የሚሠራ ማሽን።" },
+            { "icon": "people", "label": "አይቲኤም", "text": "የንክኪ ስክሪንና ቪድዮ ያለው የባንክ ማሽን።" },
+            { "icon": "card", "label": "ኢ-ገንዘብ", "text": "በኢ-ዋሌት ወይም በካርድ የተቀመጠ የገንዘብ ዕሴት።" }
+          ]
+        },
+        "tip": "ኢ-ገንዘብ በአብዛኛው በባንክ በተቀመጠ ገንዘብ ይደገፋል። አገልግሎት ሰጭው ቢወድቅ ተጠቃሚዎች ገንዘባቸውን ማግኘት ይችላሉ።"
+      },
+      {
+        "id": "atm-withdrawal",
+        "title": "ከኤቲኤም ገንዘብ ማውጣት",
+        "body": [
+          "ኤቲኤም እርስዎን በካርድዎ እና በፒንዎ ይለያል። ፒን ካርዱ የእርስዎ መሆኑን የሚያረጋግጥ ባለ 4 አሃዝ ምስጢራዊ ቍጥር ነው።",
+          "በኤቲኤም ቀሪ ሒሳብ ማወቅ፣ ዐጭር መግለጫ ማግኘት፣ ገንዘብ ማስተላለፍ ወይም ፒን መቀየርም ይችላሉ።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ካርዱን ያስገቡ" },
+            { "label": "ቋንቋ ይምረጡ" },
+            { "label": "ፒን ያስገቡ", "text": "ባለ 4 አሃዝ ፒንዎን ያስገቡ።" },
+            { "label": "አገልግሎት ይምረጡ", "text": "ለምሳሌ ገንዘብ ማውጣት።" },
+            { "label": "አካውንት ይምረጡ" },
+            { "label": "መጠኑን ያስገቡ" },
+            { "label": "ገንዘቡን ይውሰዱ" },
+            { "label": "ደረሰኝና ካርድ ይውሰዱ", "text": "ካስፈለገ ደረሰኝ ይውሰዱ። ካርድዎን አይርሱ።" }
+          ]
+        },
+        "example": {
+          "title": "አዲስ የካርድ ተጠቃሚዎች",
+          "text": "ሐና፣ ኩማ፣ መሰረት እና ዮሐንስ ከባንካቸው የኤቲኤም ካርድ ወሰዱ። ገንዘብ እንዴት እንደሚያወጡ የባንኩን ሠራተኞች ጠየቁ። ሠራተኞቹ እነዚህን ደረጃዎች አሳዩአቸው።"
+        },
+        "tip": "ፒንዎን ምስጢር ያድርጉ፤ ከኤቲኤም ከመሄድዎ በፊት ሁልጊዜ ካርድዎን ይውሰዱ።"
+      },
+      {
+        "id": "pos-for-business",
+        "title": "ፖስ አነስተኛ ቢዝነሶችን እንዴት ይረዳል",
+        "body": [
+          "ፖስ (Point of Sale) ደንበኞች ዕቃ ወይም አገልግሎት ሲገዙ በካርድ እንዲከፍሉ የሚያስችል መሣሪያ ነው። ገንዘቡ በኤሌክትሮኒክ መንገድ ወደ ቢዝነሱ አካውንት ይገባል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "ጥሬ ገንዘብ መቀነስ", "text": "ክፍያ በኤሌክትሮኒክ ስለሚተላለፍ የካሽ አያያዝ ወጭ ይቀንሳል።" },
+            { "icon": "people", "label": "ብዙ ደንበኞች", "text": "በካርድ የሚከፍሉ ደንበኞችን ይስባል።" },
+            { "icon": "growth", "label": "ሽያጭ መጨመር", "text": "የሽያጭ መጠን ያድጋል።" },
+            { "icon": "shield", "label": "ሐሰተኛ ብር መቀነስ", "text": "የሐሰተኛ ብርና የተጭበረበረ ቼክ አደጋ ይቀንሳል።" },
+            { "icon": "receipt", "label": "የተሻለ ቁጥጥር", "text": "የፖስ ሪፖርትና የባንክ መግለጫ የዕለት ሽያጭን ያሳያሉ።" },
+            { "icon": "check", "label": "ዘመናዊ ገጽታ", "text": "ዘመናዊ የመክፈያ መንገድ ለሱቁ ጥሩ ምስል ይሰጣል።" }
+          ]
+        },
+        "example": {
+          "title": "የሐና እና የኩማ ካፌ",
+          "text": "የሐና እና የኩማ ካፌ በሥራ የተወጠሩ ብዙ ደንበኞች አሉት። ፖስ እንዴት እንደሚረዳ የባንክ ባለሙያ ጠየቁ። ባለሙያው እነዚህን ጥቅሞች ነገራቸው።"
+        }
+      },
+      {
+        "id": "benefits",
+        "title": "የዲጂታል የፋይናንስ አገልግሎቶች ጥቅሞች",
+        "body": [
+          "ማኅበረሰቡ ወደ ዲጂታል ሲሸጋገር የዲጂታል ፋይናንስ አስፈላጊነትም ይጨምራል። ሰዎች አገልግሎትን በቀላሉ ማግኘት ይፈልጋሉ።",
+          "ዲጂታል ፋይናንስ እንደ ሐና እና ኩማ ካፌ ያሉ ቢዝነሶች በተሻለ እንዲሠሩና እንዲያድጉ ይረዳል።"
+        ],
+        "points": [
+          "የደንበኛ ልምድን ያሻሽላል።",
+          "የቢዝነስ ምርታማነትን ያጠናክራል።",
+          "የአካል ንክኪን ይቀንሳል፤ ይህም የወረርሽኝ ስርጭትን ለመቀነስ ይረዳል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "lock", "label": "አስተማማኝ ማከማቻ", "text": "ገንዘብን በኤሌክትሮኒክ ለማስቀመጥ አስተማማኝ ቦታ።" },
+            { "icon": "coins", "label": "ዝቅተኛ ወጭ", "text": "የቢዝነስ ግብይት ወጭን ይቀንሳል።" },
+            { "icon": "growth", "label": "አዲስ ገበያ", "text": "አዳዲስ ገበያና የመተዳደሪያ ዕድሎችን ይከፍታል።" },
+            { "icon": "phone", "label": "ከየትም ባንኪንግ", "text": "ከየትኛውም ቦታ በመሣሪያዎ የባንክ አገልግሎት ያገኛሉ።" },
+            { "icon": "bank", "label": "አካታችነት", "text": "ብድር፣ መድን እና ሌሎች አገልግሎቶችን ለማግኘት በር ይከፍታል።" },
+            { "icon": "calculator", "label": "የገንዘብ አያያዝ", "text": "የገንዘብ አያያዝ ችሎታዎን ይደግፋል።" },
+            { "icon": "chart", "label": "የተሻለ ውሳኔ", "text": "የግብይት መረጃ ገቢን ለመገመትና አደጋን ለመገምገም ይረዳል።" },
+            { "icon": "shield", "label": "ደኅንነት", "text": "ደኅንነትን ይጨምራል፤ የመረጃ ግልጽነትን ያመጣል።" }
+          ]
+        }
+      },
+      {
+        "id": "challenges",
+        "title": "ተግዳሮቶች እና እንዴት እንደሚታለፉ",
+        "body": [
+          "ዲጂታል ፋይናንስ አዳዲስ አደጋዎችን ያመጣል። እንደ ማጭበርበር እና በዕዳ መዘፈቅ ያሉ የቆዩ አደጋዎችንም ያስከትላል። ማጭበርበር ማለት አንድ ሰው አታሎ ገንዘብዎን ሲወስድ ነው።",
+          "በኢትዮጵያ የዲጂታል ፋይናንስ አጠቃቀም ከሌሎች የምሥራቅና የደቡብ አፍሪካ ያላደጉ አገሮች አንጻር ዝቅተኛ ነው። ዋናው ምክንያት የሞባይል ገንዘብ አጠቃቀም ዝቅተኛ መሆኑ ነው።",
+          "ሌሎች ተግዳሮቶች የደኅንነትና የግል ምስጢር ስጋት፣ ስለ ዲኤፍኤስ ጥቅሞች አነስተኛ መረጃ እና የሕግና የቁጥጥር ክፍተቶች ናቸው። ሌላው ያለመጠቀም ችግር ነው፤ ይህም የተመዘገቡ ተጠቃሚዎች አካውንታቸውን አለመጠቀማቸው ነው።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "ተግዳሮቶች", "items": ["ዝቅተኛ የኢንተርኔት ፍጥነት", "የሞባይል ቀፎ እጥረት", "ማጭበርበርና ደኅንነት", "ዝቅተኛ የዲጂታል ዕውቀት"] },
+          "right": { "title": "መፍትሔዎች", "items": ["የደንበኛ መለያና ማረጋገጫ", "እምነት መገንባት", "ፈጣን 3ጂ/4ጂ ኔትወርክ", "የዲጂታል ፋይናንስ ዕውቀት", "ሰፊ የሞባይል ሽፋን", "አስተማማኝ የግል ምስጢር ቴክኖሎጂ", "ለግብይት ዲኤፍኤስ መጠቀም"] }
+        },
+        "tip": "የደንበኛ መለያ እና ማረጋገጫ (CIV) ዘዴ ተጠቃሚዎች ራሳቸው መሆናቸውን ያረጋግጣል።"
+      }
+    ],
+    "takeaways": [
+      "ዲጂታል ፋይናንስ በጥሬ ገንዘብ ምትክ የኤሌክትሮኒክ ገንዘብ ይጠቀማል፤ አገልግሎቶችን ምቹ፣ ፈጣንና ርካሽ ያደርጋል።",
+      "ቻናል ከባንክዎ ጋር የሚገናኙበት ቦታ ነው። ራስን የማስተናገድ ወይም ኦቨር ዘካውንተር ሊሆን ይችላል።",
+      "የተለመዱ አገልግሎቶች ሞባይል ባንኪንግ፣ የሞባይል ገንዘብ፣ ፖስ፣ ኤቲኤም እና ኢ-ገንዘብ ናቸው።",
+      "በኤቲኤም ፒንዎን ምስጢር ያድርጉ፤ ገንዘብዎን፣ ደረሰኝዎንና ካርድዎን ሁልጊዜ ይውሰዱ።",
+      "ፖስ ቢዝነስ የጥሬ ገንዘብ አያያዝን እንዲቀንስ፣ ደንበኞችን እንዲስብ እና የዕለት ሽያጭን እንዲከታተል ይረዳል።",
+      "ተግዳሮቶች ዝቅተኛ የኢንተርኔት ፍጥነት፣ ማጭበርበር እና ዝቅተኛ የዲጂታል ዕውቀት ናቸው። እምነትና የዲጂታል ዕውቀት እነሱን ለማለፍ ይረዳሉ።"
+    ],
+    "quiz": [
+      {
+        "q": "ዲጂታል ፋይናንስ ማለት ምን ማለት ነው?",
+        "options": ["በጥሬ ገንዘብ ምትክ የኤሌክትሮኒክ ገንዘብ መጠቀም", "ገንዘብን ሁሉ ቤት ማስቀመጥ", "ባንክ ቅርንጫፍ ብቻ መሄድ", "ሁሉንም ሒሳብ በጥሬ ገንዘብ መክፈል"],
+        "answer": 0,
+        "explain": "ዲጂታል ፋይናንስ በጥሬ ገንዘብ ምትክ የኤሌክትሮኒክ ገንዘብና ዲጂታል መንገዶችን ይጠቀማል።"
+      },
+      {
+        "q": "ከእነዚህ ውስጥ ራስን የማስተናገድ ቻናል የትኛው ነው?",
+        "options": ["ወኪል ባንክ", "ሞባይል ባንኪንግ", "የጥሪ ማዕከል", "ተጨማሪ አገልግሎቶች"],
+        "answer": 1,
+        "explain": "በሞባይል ባንኪንግ ያለ ሠራተኛ ወይም ወኪል በስልክዎ ራስዎን ያስተናግዳሉ።"
+      },
+      {
+        "q": "በኤቲኤም ካርዱ የእርስዎ መሆኑን የሚያረጋግጠው ምንድን ነው?",
+        "options": ["ስምዎ", "ደረሰኙ", "ባለ 4 አሃዝ ምስጢራዊ ፒንዎ", "የመረጡት ቋንቋ"],
+        "answer": 2,
+        "explain": "ኤቲኤሙ ፒንዎን ካስገቡ በኋላ ማንነትዎን ያረጋግጣል።"
+      },
+      {
+        "q": "ፖስ የሐና እና የኩማን ካፌ እንዴት ይረዳል?",
+        "options": ["ደንበኞች እንዳያስፈልጉ ያደርጋል", "የሐሰተኛ ብር አደጋን ይቀንሳል", "ሽያጭን ሁሉ ነፃ ያደርጋል", "ባንክን ይተካል"],
+        "answer": 1,
+        "explain": "በፖስ የሚደረግ የካርድ ክፍያ የሐሰተኛ ብርና የተጭበረበረ ቼክ አደጋን ይቀንሳል።"
+      },
+      {
+        "q": "ቢዝነስ በእንቅስቃሴ ላይ የካርድ ክፍያ እንዲቀበል የሚያስችለው የትኛው መሣሪያ ነው?",
+        "options": ["ሞባይል ፖስ", "አይቲኤም", "የጥሪ ማዕከል", "የባንክ ቅርንጫፍ"],
+        "answer": 0,
+        "explain": "ሞባይል ፖስ እንደ ፖስ የሚሠራ ስልክ፣ ታብሌት ወይም ሽቦ አልባ መሣሪያ ነው።"
+      },
+      {
+        "q": "በዲጂታል ፋይናንስ ያለመጠቀም ችግር (dormancy) ምንድን ነው?",
+        "options": ["ፈጣን የኢንተርኔት ኔትወርክ", "የመድን አይነት", "የተመዘገቡ ተጠቃሚዎች አካውንታቸውን አለመጠቀም", "አዲስ የባንክ ቅርንጫፍ"],
+        "answer": 2,
+        "explain": "ያለመጠቀም ችግር ሰዎች ለዲጂታል አገልግሎት ተመዝግበው ሳይጠቀሙበት ሲቀሩ ነው።"
+      }
+    ]
+  }
+}

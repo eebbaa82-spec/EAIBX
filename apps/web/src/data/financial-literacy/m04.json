@@ -1,0 +1,490 @@
+{
+  "id": "m04",
+  "slug": "bookkeeping",
+  "icon": "book",
+  "minutes": 15,
+  "en": {
+    "title": "Basics of Bookkeeping",
+    "summary": "Learn to record your business money, read simple reports and manage your taxes.",
+    "objectives": [
+      "Explain what bookkeeping is and why it matters.",
+      "Understand basic accounting concepts and principles.",
+      "Name the key steps for keeping good financial records.",
+      "Use the accounting equation to understand your business.",
+      "Name the users of financial reports and what they need.",
+      "Understand what tax is and how to manage it."
+    ],
+    "lessons": [
+      {
+        "id": "what-is-bookkeeping",
+        "title": "What is bookkeeping?",
+        "body": [
+          "Bookkeeping means recording and tracking your business's money. Every sale, purchase or payment is a transaction, and each one is written down.",
+          "Small businesses often cannot hire a full-time accountant, so owners or staff keep the books. Good bookkeeping shows if you make a profit. It helps you manage costs and follow financial rules."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "wallet", "label": "Better money management", "text": "Track your income and expenses." },
+            { "icon": "coins", "label": "Better cash flow", "text": "Make better spending and investment choices." },
+            { "icon": "target", "label": "Better planning", "text": "Use real data for plans and forecasts." },
+            { "icon": "bank", "label": "Easier loans", "text": "Good records help you get financing." },
+            { "icon": "clock", "label": "More efficiency", "text": "Spend less time managing money." },
+            { "icon": "handshake", "label": "More trust", "text": "Customers and suppliers trust you more." },
+            { "icon": "receipt", "label": "Accurate taxes", "text": "File tax returns easily and avoid penalties." }
+          ]
+        }
+      },
+      {
+        "id": "concepts",
+        "title": "Basic accounting concepts",
+        "body": [
+          "A few simple ideas guide how you keep your books. They make your records clear and reliable, so you can make good decisions."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "store", "label": "Separate entity", "text": "The business is separate from its owners." },
+            { "icon": "coins", "label": "Money measurement", "text": "Record everything in money terms." },
+            { "icon": "growth", "label": "Going concern", "text": "Assume the business will keep running." },
+            { "icon": "scale", "label": "Matching", "text": "Match costs with income from the same period." },
+            { "icon": "check", "label": "Consistency", "text": "Use the same methods every period." },
+            { "icon": "receipt", "label": "Historical cost", "text": "Record assets at the price you paid." },
+            { "icon": "chart", "label": "Fair value", "text": "The price you would get if you sold it." }
+          ]
+        },
+        "example": {
+          "title": "Matching at The Coffee Hub",
+          "text": "The cost of coffee beans and supplies should be matched with the coffee sales of the same period. This shows the true profit for that period."
+        },
+        "tip": "Keep the business's money separate from your personal money."
+      },
+      {
+        "id": "key-steps",
+        "title": "Key steps for good records",
+        "body": [
+          "Record and organize every transaction in a clear system. Start with a chart of accounts: a list of all your account types, like sales, expenses, inventory (goods in stock) and assets.",
+          "Then follow these steps every day, week and month."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Chart of accounts", "text": "List and group all your accounts." },
+            { "label": "Record sales", "text": "Note date, time, product and payment method." },
+            { "label": "Track expenses", "text": "Group costs and keep all receipts." },
+            { "label": "Manage cash", "text": "Check the cash drawer every day." },
+            { "label": "Reconcile the bank", "text": "Compare bank statements with your own records." },
+            { "label": "Track inventory", "text": "Update stock for purchases, sales and waste." },
+            { "label": "Keep payroll records", "text": "Record staff wages, benefits and deductions." }
+          ]
+        },
+        "points": [
+          "Back up your records and keep them safe from loss.",
+          "Review your records regularly to spot trends and problems.",
+          "Ask an accountant or bookkeeper for advice when needed."
+        ],
+        "example": {
+          "title": "The Coffee Hub's records",
+          "text": "Sales: on one morning, Hana and Kuma recorded 10 sales, such as 10 cappuccinos at 40 Birr (400 Birr). The total was 949 Birr. Expenses: in one month they recorded costs such as shop rent (2,500 Birr) and barista wages (800 Birr). The total was 4,520 Birr."
+        },
+        "tip": "A point-of-sale (POS) system can record each sale for you."
+      },
+      {
+        "id": "statements-and-profit",
+        "title": "Financial statements and profit",
+        "body": [
+          "Prepare financial statements regularly. The income statement (profit and loss) shows revenues, expenses and the net income or loss for a period. The statement of financial position (balance sheet) shows assets, liabilities and equity on one date.",
+          "A very small business can use a simple record: money in on one side, money out on the other.",
+          "Gross profit is sales minus the cost of goods sold. Net profit is what is left after all operating costs, like rent and salaries."
+        ],
+        "points": [
+          "Net income: revenues are more than expenses.",
+          "Net loss: revenues are less than expenses.",
+          "In a balance sheet, total assets equal total liabilities plus equity."
+        ],
+        "visual": {
+          "type": "bars",
+          "unit": "Birr",
+          "items": [
+            { "label": "Revenue", "value": 75000 },
+            { "label": "Cost of goods", "value": 24000 },
+            { "label": "Gross profit", "value": 51000 },
+            { "label": "Operating costs", "value": 29000 },
+            { "label": "Net profit", "value": 22000 }
+          ],
+          "caption": "One month at a small coffee business (worked example)."
+        },
+        "example": {
+          "title": "Profit step by step",
+          "text": "Assume 100 customers a day pay 25 Birr each, for 30 days. Revenue: 2,500 × 30 = 75,000 Birr. If 80% of revenue is coffee, 2,400 coffees are sold. At 10 Birr each, cost of goods sold is 24,000 Birr. Gross profit: 75,000 − 24,000 = 51,000 Birr. Rent, utilities, salaries and other costs: 29,000 Birr. Net profit: 51,000 − 29,000 = 22,000 Birr."
+        },
+        "tip": "These figures are assumptions. Review your own costs and prices often."
+      },
+      {
+        "id": "report-users",
+        "title": "Who uses financial reports?",
+        "body": [
+          "Financial reports give useful information to people who make decisions. They are the language a business uses to talk with others.",
+          "Users can be inside the business (internal) or outside it (external). Because many people rely on your reports, build a strong accounting system."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "Internal users",
+            "items": [
+              "Managers: check performance and plan",
+              "Employees: see if the business is stable"
+            ]
+          },
+          "right": {
+            "title": "External users",
+            "items": [
+              "Investors: decide whether to invest",
+              "Lenders: check ability to repay loans",
+              "Suppliers: check ability to pay on time",
+              "Customers: check for ongoing service",
+              "Government: tax and policy decisions",
+              "Others: public, competitors, analysts, unions"
+            ]
+          }
+        }
+      },
+      {
+        "id": "accounting-equation",
+        "title": "The accounting equation",
+        "body": [
+          "The basic accounting equation keeps your books balanced. What the business owns equals what it owes plus what belongs to the owners.",
+          "Profit is revenue minus expenses. If expenses are more than revenue, the result is a loss."
+        ],
+        "visual": {
+          "type": "equation",
+          "parts": [
+            { "label": "Assets" },
+            { "op": "=", "label": "Liabilities" },
+            { "op": "+", "label": "Owner's equity" }
+          ],
+          "caption": "Equity grows with the owner's investment and profits."
+        },
+        "points": [
+          "Assets: things of value the business owns, like cash, stock, equipment and buildings.",
+          "Current assets are used within 12 months. Fixed assets last a long time.",
+          "Liabilities: debts owed to others, like suppliers or a bank.",
+          "Owner's equity: what is left after paying all debts, including the owner's investment and profits.",
+          "Revenue: money from selling goods or services, like a taxi driver's fares.",
+          "Expenses: costs of running the business, like materials, rent, transport and wages."
+        ],
+        "tip": "Depreciation is the loss of an asset's value through wear and tear."
+      },
+      {
+        "id": "tax",
+        "title": "Tax and tax management",
+        "body": [
+          "Tax is a required payment that the government collects from people and businesses for public use.",
+          "Every business needs a Tax Identification Number (TIN), a unique number for tax purposes. It helps you meet tax duties and follow the law. You may need it to open a business bank account, pay staff and use some government services.",
+          "Taxes fund public services like health care, education and defense. They also support social programs, reduce inequality, guide the economy and pay government debt."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "book", "label": "Keep records", "text": "Use accounting software or a bookkeeper." },
+            { "icon": "lock", "label": "Separate finances", "text": "Keep business and personal money apart." },
+            { "icon": "idea", "label": "Know your duties", "text": "Know your taxes, deadlines and payment dates." },
+            { "icon": "receipt", "label": "Use deductions", "text": "Claim allowed costs like rent and salaries." },
+            { "icon": "phone", "label": "File online", "text": "Online filing is simpler, with fewer errors." },
+            { "icon": "people", "label": "Get advice", "text": "Ask a tax specialist or accountant." },
+            { "icon": "calendar", "label": "Plan ahead", "text": "Set money aside and pay on time." }
+          ]
+        },
+        "tip": "Paying taxes on time helps you avoid penalties and interest."
+      }
+    ],
+    "takeaways": [
+      "Bookkeeping means recording and tracking every money transaction.",
+      "Good records help with planning, loans, trust and taxes.",
+      "Keep the business separate from its owners, and record everything in money.",
+      "The income statement shows profit or loss. The balance sheet shows what you own and owe.",
+      "Assets = Liabilities + Owner's equity.",
+      "Get a TIN, keep records and plan ahead to pay taxes on time."
+    ],
+    "quiz": [
+      {
+        "q": "What is bookkeeping?",
+        "options": ["Recording and tracking financial transactions", "Selling goods on credit", "Borrowing money from a bank", "Hiring new staff"],
+        "answer": 0,
+        "explain": "Bookkeeping is the process of recording and tracking financial transactions."
+      },
+      {
+        "q": "Which concept says the business is separate from its owners?",
+        "options": ["Going concern", "Entity concept", "Matching concept", "Fair value"],
+        "answer": 1,
+        "explain": "The entity concept treats the business as separate from its owners."
+      },
+      {
+        "q": "Revenue is 75,000 Birr, cost of goods sold is 24,000 Birr and operating costs are 29,000 Birr. What is the net profit?",
+        "options": ["51,000 Birr", "29,000 Birr", "22,000 Birr", "75,000 Birr"],
+        "answer": 2,
+        "explain": "Gross profit is 51,000 Birr, and 51,000 − 29,000 = 22,000 Birr."
+      },
+      {
+        "q": "Which is the basic accounting equation?",
+        "options": ["Profit = Assets + Expenses", "Revenue = Liabilities − Equity", "Assets = Liabilities + Owner's equity"],
+        "answer": 2,
+        "explain": "What a business owns equals what it owes plus the owner's equity."
+      },
+      {
+        "q": "Why do lenders look at your financial reports?",
+        "options": ["To choose your products", "To check your ability to repay loans", "To set your prices"],
+        "answer": 1,
+        "explain": "Lenders use reports to decide if you can repay loans and interest."
+      },
+      {
+        "q": "What is a TIN?",
+        "options": ["A unique number for tax purposes", "A type of bank loan", "A daily sales record", "A business license fee"],
+        "answer": 0,
+        "explain": "A Tax Identification Number is a unique number given to a business for tax purposes."
+      }
+    ]
+  },
+  "am": {
+    "title": "የሒሳብ መዝገብ አያያዝ መሠረታዊ ነጥቦች",
+    "summary": "የቢዝነስዎን ገንዘብ መመዝገብ፣ ቀላል ሪፖርቶችን ማንበብ እና ግብርዎን ማስተዳደር ይማሩ።",
+    "objectives": [
+      "የሒሳብ መዝገብ አያያዝ ምን እንደ ሆነና ለምን እንደሚጠቅም ማብራራት",
+      "መሠረታዊ የአካውንቲንግ ጽንሰ ሐሳቦችንና መርሆዎችን መረዳት",
+      "ጥሩ የፋይናንስ መዝገብ ለመያዝ ቁልፍ ደረጃዎችን መለየት",
+      "ቢዝነስዎን ለመረዳት የአካውንቲንግ ቀመርን መጠቀም",
+      "የፋይናንስ ሪፖርት ተጠቃሚዎችንና ፍላጎታቸውን መለየት",
+      "ግብር ምን እንደ ሆነና እንዴት እንደሚተዳደር መረዳት"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-bookkeeping",
+        "title": "የሒሳብ አያያዝ ምንድን ነው?",
+        "body": [
+          "የሒሳብ አያያዝ የቢዝነስዎን ገንዘብ የመመዝገብና የመከታተል ሂደት ነው። እያንዳንዱ ሽያጭ፣ ግዢ ወይም ክፍያ ግብይት ይባላል፤ እያንዳንዱም ይመዘገባል።",
+          "ትንንሽ ቢዝነሶች ብዙ ጊዜ የሙሉ ጊዜ አካውንታንት መቅጠር አይችሉም፤ ስለዚህ ባለቤቶች ወይም ሠራተኞች ሒሳቡን ይይዛሉ። ጥሩ የሒሳብ አያያዝ ትርፍ እያገኙ መሆኑን ያሳያል። ወጭን ለመቆጣጠርና የፋይናንስ ደንቦችን ለማክበር ይረዳል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "wallet", "label": "የተሻለ የፋይናንስ አስተዳደር", "text": "ገቢና ወጭዎን ይከታተሉ።" },
+            { "icon": "coins", "label": "የተሻለ የገንዘብ ፍሰት", "text": "በወጭና በኢንቨስትመንት ላይ የተሻለ ውሳኔ ይወስኑ።" },
+            { "icon": "target", "label": "የተሻለ ዕቅድ", "text": "ለዕቅድና ለትንበያ እውነተኛ መረጃ ይጠቀሙ።" },
+            { "icon": "bank", "label": "ቀላል ብድር", "text": "ትክክለኛ መዝገብ ፋይናንስ ለማግኘት ይረዳል።" },
+            { "icon": "clock", "label": "ብቃት መጨመር", "text": "ገንዘብን ለማስተዳደር የሚፈጀው ጊዜ ይቀንሳል።" },
+            { "icon": "handshake", "label": "ተኣማኒነት", "text": "ደንበኞችና አቅራቢዎች የበለጠ ያምኑዎታል።" },
+            { "icon": "receipt", "label": "ትክክለኛ ግብር", "text": "የግብር ሪፖርትን በቀላሉ ያቀርባሉ፤ ቅጣትን ያስወግዳሉ።" }
+          ]
+        }
+      },
+      {
+        "id": "concepts",
+        "title": "መሠረታዊ የአካውንቲንግ ጽንሰ ሐሳቦች",
+        "body": [
+          "ጥቂት ቀላል ሐሳቦች የሒሳብ አያያዝዎን ይመራሉ። መዝገብዎ ግልጽና አስተማማኝ እንዲሆን ያደርጋሉ፤ በዚህም ጥሩ ውሳኔ መወሰን ይችላሉ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "store", "label": "የድርጅት ጽንሰ ሐሳብ", "text": "ቢዝነሱ ከባለቤቶቹ የተለየ አካል ነው።" },
+            { "icon": "coins", "label": "የገንዘብ መለኪያ", "text": "ሁሉንም ነገር በገንዘብ ይመዝግቡ።" },
+            { "icon": "growth", "label": "ቀጣይነት", "text": "ቢዝነሱ ሥራውን እንደሚቀጥል ይታሰባል።" },
+            { "icon": "scale", "label": "ማዛመድ", "text": "ወጭን በዚያው ጊዜ ከተገኘው ገቢ ጋር ያዛምዱ።" },
+            { "icon": "check", "label": "ወጥነት", "text": "በሁሉም ጊዜ ተመሳሳይ ዘዴ ይጠቀሙ።" },
+            { "icon": "receipt", "label": "ታሪካዊ ወጭ", "text": "ንብረትን በገዙበት ዋጋ ይመዝግቡ።" },
+            { "icon": "chart", "label": "ፍትሐዊ ዕሴት", "text": "ንብረቱን ቢሸጡት የሚያገኙት ዋጋ።" }
+          ]
+        },
+        "example": {
+          "title": "በካፌው ማዛመድ",
+          "text": "ጥሬ ቡናና ሌሎች አቅርቦቶችን ለመግዛት የወጣው ወጭ በዚያው ጊዜ ከቡና ሽያጭ ከተገኘው ገቢ ጋር መዛመድ አለበት። ይህም የዚያን ጊዜ ትክክለኛ ትርፍ ያሳያል።"
+        },
+        "tip": "የቢዝነሱን ገንዘብ ከግል ገንዘብዎ ለይተው ይያዙ።"
+      },
+      {
+        "id": "key-steps",
+        "title": "ለጥሩ መዝገብ ቁልፍ ደረጃዎች",
+        "body": [
+          "እያንዳንዱን ግብይት በግልጽ ሥርዓት ይመዝግቡና ያደራጁ። በአካውንት ቻርት ይጀምሩ፤ ይህም እንደ ሽያጭ፣ ወጭ፣ ክምችት (በእጅ ያሉ ዕቃዎች) እና ንብረት ያሉ የሁሉም ሒሳቦች ዝርዝር ነው።",
+          "ከዚያም እነዚህን ደረጃዎች በየቀኑ፣ በየሳምንቱና በየወሩ ይከተሉ።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "የአካውንት ቻርት", "text": "ሁሉንም ሒሳቦች ዘርዝረው ይመድቡ።" },
+            { "label": "ሽያጭን ይመዝግቡ", "text": "ቀን፣ ሰዓት፣ ምርትና የአከፋፈል ዘዴ ይያዙ።" },
+            { "label": "ወጭን ይከታተሉ", "text": "ወጭዎችን ይመድቡ፤ ደረሰኞችን ያስቀምጡ።" },
+            { "label": "ገንዘብን ያስተዳድሩ", "text": "የገንዘብ መሳቢያውን በየቀኑ ያረጋግጡ።" },
+            { "label": "ከባንክ ያስታርቁ", "text": "የባንክ መግለጫን ከመዝገብዎ ጋር ያነፃፅሩ።" },
+            { "label": "ክምችትን ይከታተሉ", "text": "ግዢን፣ ሽያጭንና ብክነትን ያስተካክሉ።" },
+            { "label": "የደመወዝ መዝገብ", "text": "ደመወዝ፣ ጥቅማ ጥቅምና ተቀናሽ ይመዝግቡ።" }
+          ]
+        },
+        "points": [
+          "መረጃዎ እንዳይጠፋ በየጊዜው ምትክ ያስቀምጡ፤ በደህና ይጠብቁት።",
+          "አዝማሚያና ችግርን ለማወቅ መዝገቦችዎን በየጊዜው ይመልከቱ።",
+          "ሲያስፈልግ አካውንታንት ወይም የሒሳብ አያያዝ ባለሙያ ያማክሩ።"
+        ],
+        "example": {
+          "title": "የካፌው መዝገቦች",
+          "text": "ሽያጭ፦ ሐና እና ኩማ በአንድ ጠዋት 10 ሽያጮችን መዘገቡ፤ ለምሳሌ 10 ካፑቺኖ በ40 ብር (400 ብር)። ድምሩ 949 ብር ነበር። ወጭ፦ በአንድ ወር እንደ የሱቅ ኪራይ (2,500 ብር) እና የባሪስታ ደሞዝ (800 ብር) ያሉ ወጭዎችን መዘገቡ። ድምሩ 4,520 ብር ነበር።"
+        },
+        "tip": "የፖይንት ኦፍ ሴል (PoS) ዘዴ እያንዳንዱን ሽያጭ ሊመዘግብልዎ ይችላል።"
+      },
+      {
+        "id": "statements-and-profit",
+        "title": "የሒሳብ መግለጫዎችና ትርፍ",
+        "body": [
+          "የሒሳብ መግለጫዎችን በመደበኛነት ያዘጋጁ። የገቢ መግለጫ (የትርፍ እና ኪሳራ መግለጫ) በአንድ ጊዜ ውስጥ ገቢን፣ ወጭን እና የተጣራ ገቢ ወይም ኪሳራን ያሳያል። የፋይናንስ አቋም መግለጫ (ባላንስ ሺት) በአንድ ቀን ንብረትን፣ ዕዳን እና ኤኲቲን ያሳያል።",
+          "በጣም ትንሽ ቢዝነስ ቀላል መዝገብ መጠቀም ይችላል፤ በአንድ በኩል ገቢ፣ በሌላ በኩል ወጭ።",
+          "ጠቅላላ ትርፍ ማለት ሽያጭ ሲቀነስ የተሸጡ ዕቃዎች ዋጋ ነው። የተጣራ ትርፍ እንደ ኪራይና ደመወዝ ያሉ የሥራ ማስኬጃ ወጭዎች ከተቀነሱ በኋላ የሚቀረው ነው።"
+        ],
+        "points": [
+          "የተጣራ ገቢ፦ ገቢዎች ከወጭዎች ሲበልጡ",
+          "የተጣራ ኪሳራ፦ ገቢዎች ከወጭዎች ሲያንሱ",
+          "በባላንስ ሺት ጠቅላላ ንብረት ከጠቅላላ ዕዳና ኤኲቲ ድምር ጋር እኩል ነው።"
+        ],
+        "visual": {
+          "type": "bars",
+          "unit": "ብር",
+          "items": [
+            { "label": "ገቢ", "value": 75000 },
+            { "label": "የተሸጡ ዕቃዎች ዋጋ", "value": 24000 },
+            { "label": "ጠቅላላ ትርፍ", "value": 51000 },
+            { "label": "የሥራ ማስኬጃ ወጭ", "value": 29000 },
+            { "label": "የተጣራ ትርፍ", "value": 22000 }
+          ],
+          "caption": "የአንድ ትንሽ የቡና ቢዝነስ የአንድ ወር ሒሳብ (የመልመጃ ምሳሌ)።"
+        },
+        "example": {
+          "title": "ትርፍን ደረጃ በደረጃ ማስላት",
+          "text": "በቀን 100 ደንበኞች እያንዳንዳቸው 25 ብር ለ30 ቀናት ይከፍላሉ እንበል። ገቢ፦ 2,500 × 30 = 75,000 ብር። 80% ገቢው ከቡና ቢሆን 2,400 ቡና ይሸጣል። አንዱ 10 ብር ቢያወጣ የተሸጡ ዕቃዎች ዋጋ 24,000 ብር ነው። ጠቅላላ ትርፍ፦ 75,000 − 24,000 = 51,000 ብር። ኪራይ፣ መገልገያ፣ ደመወዝና ሌሎች ወጭዎች፦ 29,000 ብር። የተጣራ ትርፍ፦ 51,000 − 29,000 = 22,000 ብር።"
+        },
+        "tip": "እነዚህ ቍጥሮች ግምቶች ናቸው። የራስዎን ወጭና ዋጋ በየጊዜው ይገምግሙ።"
+      },
+      {
+        "id": "report-users",
+        "title": "የፋይናንስ ሪፖርትን የሚጠቀሙት እነማን ናቸው?",
+        "body": [
+          "የፋይናንስ ሪፖርት ለውሳኔ ሰጭዎች ጠቃሚ መረጃ ይሰጣል። ቢዝነሱ ከባለድርሻ አካላት ጋር የሚነጋገርበት ቋንቋ ነው።",
+          "ተጠቃሚዎች ከድርጅቱ ውስጥ (የውስጥ) ወይም ከውጭ (የውጭ) ሊሆኑ ይችላሉ። ብዙ ሰዎች በሪፖርትዎ ስለሚተማመኑ ጠንካራ የሒሳብ አሠራር ይዘርጉ።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "የውስጥ ተጠቃሚዎች",
+            "items": [
+              "ሥራ አስኪያጆች፦ አፈጻጸምን ለመገምገምና ለማቀድ",
+              "ሠራተኞች፦ የድርጅቱን መረጋጋት ለማወቅ"
+            ]
+          },
+          "right": {
+            "title": "የውጭ ተጠቃሚዎች",
+            "items": [
+              "ባለሀብቶች፦ ኢንቨስት ለማድረግ ለመወሰን",
+              "አበዳሪዎች፦ ብድር የመክፈል አቅምን ለማወቅ",
+              "አቅራቢዎች፦ በወቅቱ የመክፈል ችሎታን ለማወቅ",
+              "ደንበኞች፦ ቀጣይ አገልግሎትን ለማረጋገጥ",
+              "መንግሥት፦ ለግብርና ለፖሊሲ ውሳኔ",
+              "ሌሎች፦ ሕዝብ፣ ተፎካካሪዎች፣ ተንታኞች፣ ማህበራት"
+            ]
+          }
+        }
+      },
+      {
+        "id": "accounting-equation",
+        "title": "የአካውንቲንግ ቀመር",
+        "body": [
+          "መሠረታዊው የአካውንቲንግ ቀመር ሒሳብዎን ሚዛናዊ ያደርጋል። ቢዝነሱ ያለው ንብረት ካለበት ዕዳና ለባለቤቶቹ ከሚገባው ድርሻ ድምር ጋር እኩል ነው።",
+          "ትርፍ ማለት ገቢ ሲቀነስ ወጭ ነው። ወጭ ከገቢ ከበለጠ ውጤቱ ኪሳራ ነው።"
+        ],
+        "visual": {
+          "type": "equation",
+          "parts": [
+            { "label": "ንብረት" },
+            { "op": "=", "label": "ዕዳዎች" },
+            { "op": "+", "label": "የባለቤት ኤኲቲ" }
+          ],
+          "caption": "ኤኲቲ በባለቤቱ ኢንቨስትመንትና በትርፍ ያድጋል።"
+        },
+        "points": [
+          "ንብረቶች፦ ቢዝነሱ ያሉት ዋጋ ያላቸው ነገሮች፤ ለምሳሌ ገንዘብ፣ ክምችት፣ መሣሪያና ሕንጻ።",
+          "ወቅታዊ ንብረቶች በ12 ወራት ውስጥ ጥቅም ላይ ይውላሉ። ቋሚ ንብረቶች ለረጅም ጊዜ ይቆያሉ።",
+          "ዕዳዎች፦ ለሌሎች የሚከፈሉ ዕዳዎች፤ ለምሳሌ ለአቅራቢዎች ወይም ለባንክ።",
+          "የባለቤት ኤኲቲ፦ ዕዳ ሁሉ ከተከፈለ በኋላ የሚቀረው፤ የባለቤቱን ኢንቨስትመንትና ትርፍን ያካትታል።",
+          "ገቢ፦ ዕቃ ወይም አገልግሎት በመሸጥ የሚገኝ ገንዘብ፤ ለምሳሌ የታክሲ ሹፌር ክፍያ።",
+          "ወጭ፦ ቢዝነሱን ለማስኬድ የሚወጣ ገንዘብ፤ ለምሳሌ ግብኣት፣ ኪራይ፣ መጓጓዣና ደሞዝ።"
+        ],
+        "tip": "የዋጋ ቅነሳ ማለት በማርጀትና በመበላሸት ምክንያት የንብረት ዋጋ መቀነስ ነው።"
+      },
+      {
+        "id": "tax",
+        "title": "ግብር እና የግብር አስተዳደር",
+        "body": [
+          "ግብር መንግሥት ለሕዝብ ጥቅም ከግለሰቦችና ከድርጅቶች የሚሰበስበው አስገዳጅ ክፍያ ነው።",
+          "እያንዳንዱ ቢዝነስ የታክስ መለያ ቍጥር (TIN) ያስፈልገዋል፤ ይህም ለታክስ ዓላማ የሚሰጥ ልዩ ቍጥር ነው። የግብር ግዴታዎን ለመወጣትና ሕግን ለማክበር ይረዳል። የቢዝነስ ባንክ ሒሳብ ለመክፈት፣ ሠራተኞችን ለመክፈልና አንዳንድ የመንግሥት አገልግሎቶችን ለማግኘት ሊያስፈልግ ይችላል።",
+          "ግብር እንደ ጤና፣ ትምህርትና የሀገር መከላከያ ያሉ የሕዝብ አገልግሎቶችን ይደግፋል። የማህበራዊ ደህንነት ፕሮግራሞችን ይደግፋል፣ ልዩነትን ይቀንሳል፣ ኢኮኖሚውን ይቆጣጠራል፣ የመንግሥትን ዕዳም ይከፍላል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "book", "label": "መዝገብ ይያዙ", "text": "የአካውንቲንግ ሶፍትዌር ወይም ባለሙያ ይጠቀሙ።" },
+            { "icon": "lock", "label": "ፋይናንስን ይለዩ", "text": "የቢዝነስና የግል ገንዘብን ለይተው ይያዙ።" },
+            { "icon": "idea", "label": "ግዴታዎን ይወቁ", "text": "የግብር ዓይነቶችን፣ የጊዜ ገደቦችንና የክፍያ ቀናትን ይወቁ።" },
+            { "icon": "receipt", "label": "ተቀናሾችን ይጠቀሙ", "text": "እንደ ኪራይና ደመወዝ ያሉ የሚፈቀዱ ወጭዎችን ይቀንሱ።" },
+            { "icon": "phone", "label": "በኢንተርኔት ይክፈሉ", "text": "ሂደቱን ያቃልላል፤ ስሕተትን ይቀንሳል።" },
+            { "icon": "people", "label": "ባለሙያ ያማክሩ", "text": "የግብር ባለሙያ ወይም አካውንታንት ይጠይቁ።" },
+            { "icon": "calendar", "label": "አስቀድመው ያቅዱ", "text": "ገንዘብ ይመድቡ፤ በወቅቱ ይክፈሉ።" }
+          ]
+        },
+        "tip": "ግብርን በወቅቱ መክፈል ቅጣትንና የወለድ ክፍያን ለማስወገድ ይረዳል።"
+      }
+    ],
+    "takeaways": [
+      "የሒሳብ አያያዝ እያንዳንዱን የገንዘብ ግብይት መመዝገብና መከታተል ነው።",
+      "ጥሩ መዝገብ ለዕቅድ፣ ለብድር፣ ለተኣማኒነትና ለግብር ይረዳል።",
+      "ቢዝነሱን ከባለቤቶቹ ለይተው ይያዙ፤ ሁሉንም ነገር በገንዘብ ይመዝግቡ።",
+      "የገቢ መግለጫ ትርፍን ወይም ኪሳራን ያሳያል። ባላንስ ሺት ያለዎትን ንብረትና ዕዳ ያሳያል።",
+      "ንብረት = ዕዳዎች + የባለቤት ኤኲቲ",
+      "TIN ያውጡ፣ መዝገብ ይያዙ፣ ግብርን በወቅቱ ለመክፈል አስቀድመው ያቅዱ።"
+    ],
+    "quiz": [
+      {
+        "q": "የሒሳብ አያያዝ ምንድን ነው?",
+        "options": ["የፋይናንስ ግብይቶችን መመዝገብና መከታተል", "ዕቃን በዱቤ መሸጥ", "ከባንክ ገንዘብ መበደር", "አዲስ ሠራተኛ መቅጠር"],
+        "answer": 0,
+        "explain": "የሒሳብ አያያዝ የፋይናንስ ግብይቶችን የመመዝገብና የመከታተል ሂደት ነው።"
+      },
+      {
+        "q": "ቢዝነሱ ከባለቤቶቹ የተለየ ነው የሚለው የትኛው ጽንሰ ሐሳብ ነው?",
+        "options": ["ቀጣይነት", "የድርጅት ጽንሰ ሐሳብ", "ማዛመድ", "ፍትሐዊ ዕሴት"],
+        "answer": 1,
+        "explain": "የድርጅት ጽንሰ ሐሳብ ቢዝነሱን ከባለቤቶቹ የተለየ አካል አድርጎ ይመለከታል።"
+      },
+      {
+        "q": "ገቢ 75,000 ብር፣ የተሸጡ ዕቃዎች ዋጋ 24,000 ብር፣ የሥራ ማስኬጃ ወጭ 29,000 ብር ነው። የተጣራ ትርፍ ስንት ነው?",
+        "options": ["51,000 ብር", "29,000 ብር", "22,000 ብር", "75,000 ብር"],
+        "answer": 2,
+        "explain": "ጠቅላላ ትርፍ 51,000 ብር ነው፤ 51,000 − 29,000 = 22,000 ብር።"
+      },
+      {
+        "q": "መሠረታዊው የአካውንቲንግ ቀመር የትኛው ነው?",
+        "options": ["ትርፍ = ንብረት + ወጭ", "ገቢ = ዕዳዎች − ኤኲቲ", "ንብረት = ዕዳዎች + የባለቤት ኤኲቲ"],
+        "answer": 2,
+        "explain": "ቢዝነሱ ያለው ንብረት ከዕዳውና ከባለቤቱ ኤኲቲ ድምር ጋር እኩል ነው።"
+      },
+      {
+        "q": "አበዳሪዎች የፋይናንስ ሪፖርትዎን የሚመለከቱት ለምንድን ነው?",
+        "options": ["ምርቶችዎን ለመምረጥ", "ብድር የመክፈል አቅምዎን ለማወቅ", "ዋጋዎን ለመወሰን"],
+        "answer": 1,
+        "explain": "አበዳሪዎች ብድርና ወለድ የመክፈል አቅምዎን ለመወሰን ሪፖርቱን ይጠቀማሉ።"
+      },
+      {
+        "q": "TIN ምንድን ነው?",
+        "options": ["ለታክስ ዓላማ የሚሰጥ ልዩ መለያ ቍጥር", "የባንክ ብድር ዓይነት", "የዕለት ሽያጭ መዝገብ", "የንግድ ፈቃድ ክፍያ"],
+        "answer": 0,
+        "explain": "የታክስ መለያ ቍጥር (TIN) ለታክስ ዓላማ ለቢዝነስ የሚሰጥ ልዩ ቍጥር ነው።"
+      }
+    ]
+  }
+}

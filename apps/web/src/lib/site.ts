@@ -1,8 +1,27 @@
 export const brand = {
-  name: "Investopia",
-  fullName: "Investopia by Erudite Africa",
+  name: "Erudite Africa Connect",
+  fullName: "Erudite Africa Connect",
   operator: "Erudite Africa Investments PLC",
   tagline: "Powering Smarter Business Decisions.",
+};
+
+/**
+ * The courses live on their own site, the Erudite Africa Center of Excellence at
+ * eruditeafrica.et. The same code builds both sites: NEXT_PUBLIC_SITE=coe builds
+ * the course site, anything else builds Erudite Africa Connect.
+ */
+export const isCoe = process.env.NEXT_PUBLIC_SITE === "coe";
+
+/** A link to an Erudite Africa Connect page: relative on Erudite Africa Connect, absolute from the course site. */
+export const mainSite = (path: string) => (isCoe ? `https://connect.eruditeafrica.et${path}` : path);
+
+export const academy = {
+  name: "Erudite Africa Center of Excellence",
+  short: "Center of Excellence",
+  mark: "EA",
+  host: "eruditeafrica.et",
+  url: "https://eruditeafrica.et",
+  tagline: "Practical banking and finance training for Ethiopia.",
 };
 
 /** From the Erudite Africa Investments PLC corporate profile (2026). */
@@ -12,8 +31,8 @@ export const company = {
   poBox: "P.O. Box 25378/1000",
   phoneOffice: "+251 11 668 7093",
   phoneMobile: "+251 911 249 844",
-  email: "investopia@eruditeafrica.com",
-  careersEmail: "investopia@eruditeafrica.com",
+  email: "connect@eruditeafrica.com",
+  careersEmail: "connect@eruditeafrica.com",
   website: "www.eruditeafrica.com",
   registrationNo: "MT/AA/2/0063282/2018",
   officeHours: "Monday to Friday, 8:30 a.m. to 5:30 p.m.",
@@ -36,7 +55,6 @@ export const mainNav: NavMenu[] = [
     items: [
       { label: "Programs", href: "/programs", description: "Incubation and acceleration cohorts" },
       { label: "Mentors", href: "/mentors", description: "Learn from people who have built it" },
-      { label: "Academy", href: "/academy", description: "Banking, credit and investment training" },
     ],
   },
   {
@@ -51,7 +69,7 @@ export const mainNav: NavMenu[] = [
     label: "Invest",
     items: [
       { label: "Deal Rooms", href: "/deal-rooms", description: "Curated, verified deal flow" },
-      { label: "For Investors", href: "/for-investors", description: "How Investopia works for you" },
+      { label: "For Investors", href: "/for-investors", description: "How Erudite Africa Connect works for you" },
       { label: "Valuation Tools", href: "/tools", description: "Price a business with confidence" },
     ],
   },
@@ -63,6 +81,7 @@ export const mainNav: NavMenu[] = [
       { label: "Regulations and Research", href: "/knowledge/regulations" },
       { label: "Events", href: "/events" },
       { label: "Blog", href: "/blog" },
+      { label: "Training: Center of Excellence", href: "https://eruditeafrica.et/academy/" },
     ],
   },
   { label: "Pricing", href: "/pricing" },
@@ -94,7 +113,7 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
     heading: "For Partners",
     links: [
       { label: "Partner with us", href: "/partners" },
-      { label: "Run a program on Investopia", href: "/for-partners" },
+      { label: "Run a program on Erudite Africa Connect", href: "/for-partners" },
       { label: "Sponsor a cohort", href: "/partners#ways-to-partner" },
       { label: "List as an advisor", href: "/for-advisors" },
     ],
@@ -102,11 +121,12 @@ export const footerColumns: { heading: string; links: NavItem[] }[] = [
   {
     heading: "Company",
     links: [
-      { label: "About Investopia", href: "/about" },
+      { label: "About Erudite Africa Connect", href: "/about" },
       { label: "Our team", href: "/about/team" },
       { label: "Careers", href: "/about/careers" },
       { label: "Press", href: "/about/press" },
       { label: "Blog", href: "/blog" },
+      { label: "Training: Center of Excellence", href: "https://eruditeafrica.et/academy/" },
     ],
   },
   {

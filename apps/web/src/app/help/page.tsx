@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ButtonLink, CtaBand, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "How can we help? · Investopia",
+  title: "How can we help? · Erudite Africa Connect",
   description:
-    "Investopia Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, Academy, payments and trust and safety.",
+    "Erudite Africa Connect Help Center: getting started, accounts, listings, EHIRA assessment, deal rooms, programs, payments and trust and safety.",
 };
 
 const topics = [
@@ -14,7 +14,6 @@ const topics = [
   "EHIRA assessment",
   "Deal rooms and data rooms",
   "Programs and mentoring",
-  "Academy and certificates",
   "Payments and plans",
   "Trust and safety",
 ];

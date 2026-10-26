@@ -4,7 +4,7 @@ import { CardAnatomy, FilterGroup, FilterPanel } from "@/components/group-b/Filt
 
 export const metadata: Metadata = {
   title: "Incubators and Accelerators in Ethiopia",
-  description: "Apply to incubation, acceleration and competition programs for Ethiopian founders, all on Investopia.",
+  description: "Apply to incubation, acceleration and competition programs for Ethiopian founders, all on Erudite Africa Connect.",
 };
 
 export default function ProgramsPage() {
@@ -12,7 +12,7 @@ export default function ProgramsPage() {
     <>
       <PageHero
         title="Programs that turn ideas into investable businesses"
-        subhead="Apply to incubators, accelerators, competitions and fellowships run on Investopia by leading Ethiopian and international organizations."
+        subhead="Apply to incubators, accelerators, competitions and fellowships run on Erudite Africa Connect by leading Ethiopian and international organizations."
       >
         <ButtonLink href="/join" variant="light">
           Get notified
@@ -22,14 +22,14 @@ export default function ProgramsPage() {
       <Section title="Our flagship programs">
         <CardGrid cols={2}>
           <Card
-            title="Investopia Launchpad"
+            title="Connect Launchpad"
             footer={<ButtonLink href="/join" variant="secondary">Get notified</ButtonLink>}
           >
             Our own incubation program for early-stage Ethiopian founders. Validate your idea, build your first financial
             model, meet mentors every week and pitch to investors on Demo Day. Dates for the first cohort are announced soon.
           </Card>
           <Card
-            title="Investopia Scale"
+            title="Connect Scale"
             footer={<ButtonLink href="/join" variant="secondary">Get notified</ButtonLink>}
           >
             An acceleration program for businesses with revenue that are ready to grow. Sharpen strategy, fix systems, get

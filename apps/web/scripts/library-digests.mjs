@@ -41,7 +41,7 @@ for (const file of readdirSync(dataDir).filter((f) => f.endsWith(".json"))) {
       asOf: c.asOf,
       body: body(c, edition),
     });
-    const base = `Investopia-Digest-${c.slug}${edition === "member" ? "-member" : ""}`;
+    const base = `Erudite-Connect-Digest-${c.slug}${edition === "member" ? "-member" : ""}`;
     const htmlPath = path.join(outDirs[edition], `${base}.html`);
     await renderPdf(page, doc, htmlPath, path.join(outDirs[edition], `${base}.pdf`), `Digest · ${c.name}`, writeFileSync);
     rmSync(htmlPath);

@@ -26,7 +26,7 @@ export function getSectorReports(): SectorReport[] {
     .sort((a, b) => (a.slug === "economy-overview" ? -1 : b.slug === "economy-overview" ? 1 : a.name.localeCompare(b.name)));
 }
 
-export const sectorPdfHref = (slug: string) => `/downloads/sectors/Investopia-Sector-Report-${slug}.pdf`;
+export const sectorPdfHref = (slug: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/downloads/sectors/Erudite-Connect-Sector-Report-${slug}.pdf`;
 
 export const formatDate = (iso: string) =>
   new Date(iso + "T00:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });

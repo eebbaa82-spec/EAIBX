@@ -29,9 +29,6 @@ export type HomeCopy = {
   partnerTitle: string;
   partnerBody: string;
   partnerButton: string;
-  academyTitle: string;
-  academyBody: string;
-  academyButton: string;
   ctaTitle: string;
   ctaBody: string;
   ctaJoin: string;
@@ -41,8 +38,8 @@ export type HomeCopy = {
 const en: HomeCopy = {
   heroTitle: "Powering Smarter Business Decisions.",
   heroBody:
-    "Investopia is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
-  searchLabel: "Search Investopia",
+    "Erudite Africa Connect is Ethiopia's first complete business and investment platform. Raise capital, sell or buy a business, join an accelerator, fix what is holding you back, and meet investors who are ready to act, all in one trusted place.",
+  searchLabel: "Search Erudite Africa Connect",
   searchPlaceholder: 'Search businesses, sectors or investors, for example "agro-processing in Oromia"',
   searchButton: "Search",
   heroButtons: ["I'm raising capital", "I'm investing", "I need to turn my business around"],
@@ -79,7 +76,7 @@ const en: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "How Investopia works",
+  howTitle: "How Erudite Africa Connect works",
   howSteps: [
     { title: "Create your profile.", body: "Tell us who you are and what you need. It takes about ten minutes." },
     {
@@ -88,11 +85,11 @@ const en: HomeCopy = {
     },
     {
       title: "Get matched.",
-      body: "Investopia introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
+      body: "Erudite Africa Connect introduces you to the right programs, mentors, advisors, investors or buyers based on your profile and score.",
     },
     {
       title: "Close and grow.",
-      body: "Share documents in a secure deal room, agree terms with expert support, and keep building with the Academy.",
+      body: "Share documents in a secure deal room, agree terms with expert support, and keep growing with mentors and programs.",
     },
   ],
   howButton: "See how it works",
@@ -116,20 +113,16 @@ const en: HomeCopy = {
     },
   ],
   programsTitle: "Programs accepting applications",
-  programsIntro: "Incubators, accelerators and competitions run on Investopia by leading institutions.",
+  programsIntro: "Incubators, accelerators and competitions run on Erudite Africa Connect by leading institutions.",
   programsEmpty: "Open programs will be listed here with their organizer and deadline.",
   programsButton: "See all programs",
-  partnerTitle: "Partner with Investopia",
+  partnerTitle: "Partner with Erudite Africa Connect",
   partnerBody:
     "We are working with banks, MFIs, development partners and universities to bring their programs and services to Ethiopian businesses. Partner announcements are coming soon.",
   partnerButton: "Become a partner",
-  academyTitle: "Training that builds careers and businesses",
-  academyBody:
-    "Professional courses and certifications in banking, credit, capital markets and investment banking, plus practical courses for founders, in Amharic and English. Banks and MFIs can enroll whole teams.",
-  academyButton: "Explore the Academy",
   ctaTitle: "Your next chapter starts here.",
-  ctaBody: "Whether you are starting, scaling, investing or recovering, Investopia gives you the people, data and tools to move forward.",
-  ctaJoin: "Join Investopia free",
+  ctaBody: "Whether you are starting, scaling, investing or recovering, Erudite Africa Connect gives you the people, data and tools to move forward.",
+  ctaJoin: "Join Erudite Africa Connect free",
   ctaTalk: "Talk to our team",
 };
 
@@ -137,8 +130,8 @@ const en: HomeCopy = {
 const am: HomeCopy = {
   heroTitle: "ብልህ የንግድ ውሳኔዎችን እናጎለብታለን።",
   heroBody:
-    "Investopia የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
-  searchLabel: "Investopiaን ይፈልጉ",
+    "Erudite Africa Connect የኢትዮጵያ የመጀመሪያው የተሟላ የንግድና የኢንቨስትመንት መድረክ ነው። ካፒታል ያሰባስቡ፣ ንግድ ይሽጡ ወይም ይግዙ፣ አክስለሬተር ፕሮግራም ይቀላቀሉ፣ ወደኋላ የሚያስቀርዎትን ችግር ይፍቱ፣ እንዲሁም ለመንቀሳቀስ ዝግጁ ከሆኑ ባለሀብቶች ጋር ይገናኙ፤ ሁሉንም በአንድ ታማኝ ቦታ።",
+  searchLabel: "Erudite Africa Connectን ይፈልጉ",
   searchPlaceholder: "ንግዶችን፣ ዘርፎችን ወይም ባለሀብቶችን ይፈልጉ፤ ለምሳሌ «በኦሮሚያ የግብርና ምርት ማቀነባበር»",
   searchButton: "ፈልግ",
   heroButtons: ["ካፒታል እያሰባሰብኩ ነው", "ኢንቨስት እያደረግኩ ነው", "ንግዴን መልሼ ማቋቋም እፈልጋለሁ"],
@@ -175,7 +168,7 @@ const am: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "Investopia እንዴት ይሠራል",
+  howTitle: "Erudite Africa Connect እንዴት ይሠራል",
   howSteps: [
     { title: "መገለጫዎን ይፍጠሩ።", body: "ማን እንደሆኑና ምን እንደሚፈልጉ ይንገሩን። አሥር ደቂቃ ገደማ ይወስዳል።" },
     {
@@ -184,11 +177,11 @@ const am: HomeCopy = {
     },
     {
       title: "ተገቢውን አጋር ያግኙ።",
-      body: "Investopia በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
+      body: "Erudite Africa Connect በመገለጫዎና በውጤትዎ መሠረት ተገቢ ከሆኑ ፕሮግራሞች፣ መካሪዎች፣ አማካሪዎች፣ ባለሀብቶች ወይም ገዢዎች ጋር ያገናኝዎታል።",
     },
     {
       title: "ስምምነቱን ያጠናቅቁና ያድጉ።",
-      body: "ሰነዶችን ደህንነቱ በተጠበቀ የስምምነት ክፍል ውስጥ ያጋሩ፣ በባለሙያ ድጋፍ ውሎችን ይስማሙ፣ እንዲሁም በአካዳሚው አማካኝነት ማደግዎን ይቀጥሉ።",
+      body: "ሰነዶችን ደህንነቱ በተጠበቀ የስምምነት ክፍል ውስጥ ያጋሩ፣ በባለሙያ ድጋፍ ውሎችን ይስማሙ፣ እንዲሁም በመካሪዎችና በፕሮግራሞች ማደግዎን ይቀጥሉ።",
     },
   ],
   howButton: "እንዴት እንደሚሠራ ይመልከቱ",
@@ -212,20 +205,16 @@ const am: HomeCopy = {
     },
   ],
   programsTitle: "ማመልከቻ የሚቀበሉ ፕሮግራሞች",
-  programsIntro: "ግንባር ቀደም ተቋማት በInvestopia ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
+  programsIntro: "ግንባር ቀደም ተቋማት በErudite Africa Connect ላይ የሚያካሂዷቸው ኢንኩቤተሮች፣ አክስለሬተሮችና ውድድሮች።",
   programsEmpty: "ክፍት ፕሮግራሞች ከአዘጋጃቸውና ከማመልከቻ ማብቂያ ቀናቸው ጋር እዚህ ይዘረዘራሉ።",
   programsButton: "ሁሉንም ፕሮግራሞች ይመልከቱ",
-  partnerTitle: "ከInvestopia ጋር ይተባበሩ",
+  partnerTitle: "ከErudite Africa Connect ጋር ይተባበሩ",
   partnerBody:
     "ፕሮግራሞቻቸውንና አገልግሎቶቻቸውን ለኢትዮጵያ ንግዶች ለማድረስ ከባንኮች፣ ከአነስተኛ የፋይናንስ ተቋማት፣ ከልማት አጋሮችና ከዩኒቨርሲቲዎች ጋር እየሠራን ነው። የአጋርነት ማስታወቂያዎች በቅርቡ ይወጣሉ።",
   partnerButton: "አጋር ይሁኑ",
-  academyTitle: "ሙያንና ንግድን የሚገነባ ስልጠና",
-  academyBody:
-    "በባንክ፣ በብድር፣ በካፒታል ገበያና በኢንቨስትመንት ባንኪንግ የሙያ ኮርሶችና ሰርተፊኬቶች፣ እንዲሁም ለሥራ ፈጣሪዎች ተግባራዊ ኮርሶች፣ በአማርኛና በእንግሊዝኛ። ባንኮችና አነስተኛ የፋይናንስ ተቋማት መላ ቡድኖቻቸውን ማስመዝገብ ይችላሉ።",
-  academyButton: "አካዳሚውን ያስሱ",
   ctaTitle: "ቀጣዩ ምዕራፍዎ እዚህ ይጀምራል።",
-  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Investopia ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
-  ctaJoin: "Investopiaን በነፃ ይቀላቀሉ",
+  ctaBody: "እየጀመሩ፣ እያሰፉ፣ ኢንቨስት እያደረጉ ወይም እያገገሙ ቢሆንም Erudite Africa Connect ወደፊት ለመራመድ የሚያስፈልጉዎትን ሰዎች፣ መረጃዎችና መሣሪያዎች ይሰጥዎታል።",
+  ctaJoin: "Erudite Africa Connectን በነፃ ይቀላቀሉ",
   ctaTalk: "ቡድናችንን ያነጋግሩ",
 };
 
@@ -233,8 +222,8 @@ const am: HomeCopy = {
 const om: HomeCopy = {
   heroTitle: "Murtii Daldalaa Ogummaa Qabu Humneessina.",
   heroBody:
-    "Investopia waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
-  searchLabel: "Investopia keessa barbaadaa",
+    "Erudite Africa Connect waltajjii daldalaa fi investimentii guutuu Itoophiyaa isa jalqabaa ti. Kaappitaala walitti qabaa, daldala gurgurraa ykn bitadhaa, sagantaa saffisiisaa makamaa, rakkoo isin duubatti hambisu furaa, akkasumas invastaroota tarkaanfii fudhachuuf qophaa'an waliin wal-baraa; hunda isaanii bakka amanamaa tokko keessatti.",
+  searchLabel: "Erudite Africa Connect keessa barbaadaa",
   searchPlaceholder: "Daldaltoota, dameewwan ykn invastaroota barbaadaa; fakkeenyaaf \"qindaa'ina oomisha qonnaa Oromiyaa keessatti\"",
   searchButton: "Barbaadi",
   heroButtons: ["Kaappitaala walitti qabaan jira", "Invest gochaan jira", "Daldala koo deebisee dandamachiisuun barbaada"],
@@ -271,7 +260,7 @@ const om: HomeCopy = {
       href: "/recovery",
     },
   ],
-  howTitle: "Investopia akkamitti hojjeta",
+  howTitle: "Erudite Africa Connect akkamitti hojjeta",
   howSteps: [
     { title: "Ibsa dhuunfaa keessan uumaa.", body: "Eenyu akka taatanii fi maal akka barbaaddan nutti himaa. Gara daqiiqaa kudhanii fudhata." },
     {
@@ -280,11 +269,11 @@ const om: HomeCopy = {
     },
     {
       title: "Wal-simsiifamaa.",
-      body: "Investopia ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
+      body: "Erudite Africa Connect ibsa dhuunfaa fi qabxii keessan irratti hundaa'uun sagantaalee, gorsitoota, ogeeyyii gorsaa, invastaroota ykn bittoota sirrii ta'an isin wajjin wal-barsiisa.",
     },
     {
       title: "Xumuraa fi guddadhaa.",
-      body: "Sanadoota kutaa waliigaltee nageenya qabu keessatti qoodaa, deggersa ogeessaatiin haalawwan irratti waliigalaa, Akkaadamii waliin ijaaruu itti fufaa.",
+      body: "Sanadoota kutaa waliigaltee nageenya qabu keessatti qoodaa, deggersa ogeessaatiin haalawwan irratti waliigalaa, gorsitootaa fi sagantaalee waliin guddachuu itti fufaa.",
     },
   ],
   howButton: "Akkamitti akka hojjetu ilaalaa",
@@ -308,20 +297,16 @@ const om: HomeCopy = {
     },
   ],
   programsTitle: "Sagantaalee iyyannoo fudhachaa jiran",
-  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Investopia irratti gaggeessan.",
+  programsIntro: "Inkubeetaroota, saffisiistota fi dorgommiiwwan dhaabbileen hangafoonni Erudite Africa Connect irratti gaggeessan.",
   programsEmpty: "Sagantaaleen banaa ta'an qindeessaa fi guyyaa xumuraa isaanii waliin asitti tarreeffamu.",
   programsButton: "Sagantaalee hunda ilaalaa",
-  partnerTitle: "Investopia waliin hojjedhaa",
+  partnerTitle: "Erudite Africa Connect waliin hojjedhaa",
   partnerBody:
     "Sagantaalee fi tajaajila isaanii daldaltoota Itoophiyaatiif dhiyeessuuf baankota, dhaabbilee maallaqaa xixiqqoo, michoota misoomaa fi yuunivarsiitiiwwan waliin hojjechaa jirra. Beeksisni michummaa dhiyootti ni dhufa.",
   partnerButton: "Michuu ta'aa",
-  academyTitle: "Leenjii ogummaa fi daldala ijaaru",
-  academyBody:
-    "Koorsiiwwan ogummaa fi ragaa baankii, liqii, gabaa kaappitaalaa fi baankii investimentii, akkasumas koorsiiwwan hojiirra oolan hundeessitootaaf, Afaan Amaaraa fi Ingiliziitiin. Baankonni fi dhaabbileen maallaqaa xixiqqoo gareewwan isaanii guutuu galmeessuu danda'u.",
-  academyButton: "Akkaadamii qoradhaa",
   ctaTitle: "Boqonnaan keessan itti aanu asitti jalqaba.",
-  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Investopia namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
-  ctaJoin: "Investopia bilisaan makamaa",
+  ctaBody: "Jalqabaa, babal'isaa, invest gochaa ykn deebi'aa dandamachaa jirtanis, Erudite Africa Connect namoota, daataa fi meeshaalee fuulduratti isin tarkaanfachiisan isiniif kenna.",
+  ctaJoin: "Erudite Africa Connect bilisaan makamaa",
   ctaTalk: "Garee keenya haasofsiisaa",
 };
 

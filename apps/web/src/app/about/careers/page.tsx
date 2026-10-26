@@ -5,7 +5,7 @@ const intro =
   "We are a small team with a big mandate. If you want your work to move capital, create jobs and give businesses a second chance, we would like to hear from you.";
 
 export const metadata: Metadata = {
-  title: "Careers · Investopia",
+  title: "Careers · Erudite Africa Connect",
   description: "We are a small team with a big mandate. Help move capital, create jobs and give Ethiopian businesses a second chance.",
 };
 
@@ -24,8 +24,8 @@ export default function CareersPage() {
       <Section title="Open roles" tone="canvas">
         <EmptyState>
           No open roles right now. Send your resume to{" "}
-          <a href="mailto:investopia@eruditeafrica.com" className="text-brand-700 hover:underline">
-            investopia@eruditeafrica.com
+          <a href="mailto:connect@eruditeafrica.com" className="text-brand-700 hover:underline">
+            connect@eruditeafrica.com
           </a>{" "}
           and we will keep you in mind.
         </EmptyState>
