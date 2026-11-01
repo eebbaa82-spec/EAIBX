@@ -3,14 +3,14 @@ import { ButtonLink, DataTable, FeatureList, PageHero, Section } from "@/compone
 import { PreviewForm } from "@/components/forms";
 
 export const metadata: Metadata = {
-  title: "Partner With Investopia · Programs and Deal Flow",
-  description: "Banks, DFIs, government and corporates use Investopia to run programs, source deals and measure impact.",
+  title: "Partner With Erudite Africa Connect · Programs and Deal Flow",
+  description: "Banks, DFIs, government and corporates use Erudite Africa Connect to run programs, source deals and measure impact.",
 };
 
 const partnerTypes: [string, string][] = [
   [
     "Banks and microfinance institutions",
-    "Find bankable SMEs with verified EHIRA grades, speed up client due diligence, monitor borrowers after disbursement, and train and certify staff through Academy enterprise subscriptions.",
+    "Find bankable SMEs with verified EHIRA grades, speed up client due diligence, monitor borrowers after disbursement, and manage credit relationships through the Credit Management Center.",
   ],
   [
     "Development finance institutions and donors",
@@ -28,13 +28,13 @@ const partnerTypes: [string, string][] = [
     "Corporates",
     "Find suppliers, acquisition targets and innovation partners, and run your own enterprise development programs.",
   ],
-  ["Professional firms", "Reach new clients as a listed advisor and co-host Academy courses."],
+  ["Professional firms", "Reach new clients as a listed advisor and support businesses through programs."],
 ];
 
 const ways = [
   {
     title: "Host a program.",
-    body: "Launch a branded incubator, accelerator or competition on Investopia with application, selection and cohort tools included.",
+    body: "Launch a branded incubator, accelerator or competition on Erudite Africa Connect with application, selection and cohort tools included.",
   },
   {
     title: "Sponsor a Deal Room.",
@@ -42,13 +42,13 @@ const ways = [
   },
   {
     title: "Co-create content.",
-    body: "Publish research, courses or toolkits in the Knowledge Hub and Academy.",
+    body: "Publish research, guides or toolkits in the Knowledge Hub.",
   },
   {
     title: "Integrate.",
     body: (
       <>
-        Connect your systems to Investopia for referrals and reporting. API access for partners is planned after launch.
+        Connect your systems to Erudite Africa Connect for referrals and reporting. API access for partners is planned after launch.
       </>
     ),
   },
@@ -60,7 +60,7 @@ export default function PartnersPage() {
       <PageHero
         eyebrow="Partner with us"
         title="Reach, support and fund Ethiopian businesses at scale."
-        subhead="Investopia gives institutions a ready-made platform to run programs, source deals and measure impact, without building technology from scratch."
+        subhead="Erudite Africa Connect gives institutions a ready-made platform to run programs, source deals and measure impact, without building technology from scratch."
       >
         <ButtonLink href="#lets-talk" variant="light">
           Request a call
@@ -71,7 +71,7 @@ export default function PartnersPage() {
       </PageHero>
 
       <Section title="Who we partner with">
-        <DataTable head={["Partner type", "What Investopia does for you"]} rows={partnerTypes} />
+        <DataTable head={["Partner type", "What Erudite Africa Connect does for you"]} rows={partnerTypes} />
       </Section>
 
       <Section id="ways-to-partner" title="Ways to partner" tone="canvas">
@@ -87,6 +87,7 @@ export default function PartnersPage() {
         <div className="grid gap-10 lg:grid-cols-[2fr_1fr]">
           <div className="rounded-xl border border-line bg-white p-6">
             <PreviewForm
+              formName="partnership"
               submitLabel="Request a call"
               confirmation="Thank you. A member of our partnerships team will contact you within two working days."
               fields={[
@@ -109,11 +110,11 @@ export default function PartnersPage() {
           <div>
             <h3 className="font-semibold text-ink">Download</h3>
             <p className="mt-2 text-muted">
-              A four-page overview of Investopia for banks, development partners, government agencies, universities and corporates.
+              A four-page overview of Erudite Africa Connect for banks, development partners, government agencies, universities and corporates.
             </p>
             <p className="mt-4">
               <a
-                href="/downloads/Investopia-Partner-Brochure.pdf"
+                href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/downloads/Erudite-Connect-Partner-Brochure.pdf`}
                 download
                 className="inline-flex rounded-lg bg-brand-700 px-4 py-2 font-semibold text-white hover:bg-brand-600"
               >

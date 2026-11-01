@@ -16,7 +16,7 @@ export default function EventsPage() {
 
       <Section title="Signature event" tone="canvas">
         <Card
-          title="Investopia Investment Forum"
+          title="Erudite Africa Investment Forum"
         >
           Our flagship gathering of founders, investors, lenders and policymakers, featuring live deal room pitches and sector
           panels. The date of the first forum is announced soon.
@@ -28,11 +28,11 @@ export default function EventsPage() {
           <TagList items={["Events", "Funding calls and grants", "Competitions and awards", "Tenders and partnerships"]} />
         </div>
         <EmptyState action={<ButtonLink href="/join">Submit an opportunity</ButtonLink>}>
-          Events and opportunities will appear here once they are listed on Investopia.
+          Events and opportunities will appear here once they are listed on Erudite Africa Connect.
         </EmptyState>
       </Section>
 
-      <CtaBand title="Running an event or funding call for Ethiopian businesses?" body="List it on Investopia free.">
+      <CtaBand title="Running an event or funding call for Ethiopian businesses?" body="List it on Erudite Africa Connect free.">
         <ButtonLink href="/join" variant="light">
           Submit an opportunity
         </ButtonLink>

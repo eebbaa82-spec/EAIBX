@@ -2,8 +2,20 @@
   "slug": "world-bank-research",
   "name": "World Bank research on Ethiopia",
   "intro": "World Bank Group diagnostics, outlooks, policy documents and working papers on Ethiopia's economy, reforms, markets and firms. They give investors independent data on growth, the 2024 exchange rate and banking reforms, the sectors drawing World Bank Group support, and the practical factors businesses plan around.",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "documents": [
+    {
+      "title": "Ethiopia Macro Poverty Outlook, October 2026",
+      "number": "",
+      "issuer": "World Bank",
+      "date": "2026-10",
+      "status": "Published (research)",
+      "topic": "Macroeconomic outlook",
+      "summary": "The World Bank reports that Ethiopia's macroeconomic conditions improved two years into the reform program, with strong growth, rising exports and revenues, and growing reserves. It estimates GDP growth at 9.2 percent in FY2025/26 and forecasts 7.8 percent in FY2026/27 and 8.2 percent in FY2027/28. Exports grew 34 percent year on year, tax revenue rose 68 percent year on year in the first nine months of FY2025/26, and reserves reached US$7.1 billion (2.4 months of imports) by end-August 2026. The parallel market premium narrowed to 13 percent in August 2026 from about 18 percent at the start of the year, and the National Bank of Ethiopia raised the policy rate to 16 percent in July 2026.",
+      "relevance": "This is the latest World Bank view of the planning numbers investors use: growth, inflation, reserves and the parallel-market gap. The narrowing premium and rising reserves point to easier FX access, while the 16 percent policy rate and inflation (11.7 percent estimated for FY2025/26, 12.3 percent forecast for FY2026/27) are the benchmarks for financing and pricing assumptions.",
+      "url": "https://thedocs.worldbank.org/en/doc/bae48ff2fefc5a869546775b3f010735-0500062021/related/mpo-eth.pdf",
+      "accessed": "2026-11-01"
+    },
     {
       "title": "Country Partnership Framework for the Federal Democratic Republic of Ethiopia for the Period FY27-FY36: Building Strong Foundations for More and Better Jobs",
       "number": "Report No. CPF0000018",
@@ -17,16 +29,16 @@
       "accessed": "2026-10-16"
     },
     {
-      "title": "Ethiopia Macro Poverty Outlook, April 2026",
-      "number": "",
+      "title": "Ethiopia - Building Opportunities for Optimized Trade and Investment for Growth (P515564): Project Information Document, Concept Stage",
+      "number": "Report No. PIDDC01643",
       "issuer": "World Bank",
-      "date": "2026-04",
+      "date": "2026-06-09",
       "status": "Published (research)",
-      "topic": "Macroeconomic outlook",
-      "summary": "The World Bank estimates GDP growth at 9.2 percent in FY25 and forecasts 8.0 percent for FY26. Inflation fell to just under 10 percent in February 2026, and reserves reached US$6.4 billion (2.8 months of imports) at end-December 2025. The parallel market premium is in the high teens, the policy rate has been 15 percent since July 2024, and Eurobond negotiations are ongoing. The outlook highlights completing the FX reform, removing remaining investment barriers, state-owned enterprise finances and fuel prices as the factors to watch.",
-      "relevance": "This is the latest official World Bank view of the numbers investors use for planning: growth, inflation, FX reserves and the parallel-market gap. Imports rose 23 percent as FX became easier to get, so FX availability is improving for businesses. The high-teens premium and the 15 percent policy rate are the benchmarks for currency and financing assumptions.",
-      "url": "https://thedocs.worldbank.org/en/doc/bae48ff2fefc5a869546775b3f010735-0500062021/related/mpo-eth.pdf",
-      "accessed": "2026-10-16"
+      "topic": "Trade and investment",
+      "summary": "This concept-stage document describes a proposed US$185 million IDA project to increase trade efficiency, improve access to markets, mobilize private investment and expand export finance. US$75 million would support trade and investment commitments, corridor and value chain efficiency, investment reform and services trade reform, and US$100 million would fund a facility that helps exporters get working capital through trade finance and credit insurance. The project is linked to Ethiopia's reform agenda, WTO accession and African Continental Free Trade Area commitments.",
+      "relevance": "The Ethiopian Investment Commission and the Ministry of Trade and Regional Integration would implement it, so it signals continued investment-climate reform and corridor improvements such as the Ethio-Djibouti Corridor. The planned export finance facility is directly relevant to exporters looking for working capital and credit insurance.",
+      "url": "https://documents1.worldbank.org/curated/en/099060926031036358/pdf/P515564-9ba292c1-c82d-4fcb-bd66-4e3a0557fe6d.pdf",
+      "accessed": "2026-11-01"
     },
     {
       "title": "From Policy to Practice: Lessons from the Implementation of the Refugee Work Rights Policy in Ethiopia",

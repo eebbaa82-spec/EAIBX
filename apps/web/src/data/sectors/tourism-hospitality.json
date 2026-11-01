@@ -1,25 +1,25 @@
 {
   "slug": "tourism-hospitality",
   "name": "Tourism and hospitality",
-  "asOf": "2026-10-16",
-  "summary": "Tourism is gaining momentum: the Ministry of Tourism reported more than 1.2 million international tourists and upwards of 2 billion US dollars in revenue over the nine months reported on April 1, 2026, alongside over 30 million domestic travelers. Ethiopian Airlines carried 19.0 million passengers and earned $7.6 billion in the fiscal year to June 2025, and the African Development Bank is lead arranger for nearly $8 billion of the $10 billion Bishoftu airport, a project it describes as set to be Africa's largest airport by 2029. Star-rated hotels, lodges, MICE facilities and tourist transport are open to foreign investors, with income tax exemptions and duty-free import of capital goods available for new enterprises.",
+  "asOf": "2026-11-01",
+  "summary": "Tourism is gaining momentum: Ethiopia welcomed 1.4 million international visitors over the year reported on July 1, 2026, generating a record USD 5.2 billion in revenue, and the Ministry of Tourism counted over 30 million domestic travelers in the nine months reported on April 1, 2026. Ethiopian Airlines carried 19.0 million passengers and earned $7.6 billion in the fiscal year to June 2025, and the African Development Bank is lead arranger for nearly $8 billion of the $10 billion Bishoftu airport, a project it describes as set to be Africa's largest airport by 2029. Star-rated hotels, lodges, MICE facilities and tourist transport are open to foreign investors, with income tax exemptions and duty-free import of capital goods available for new enterprises.",
   "indicators": [
     {
       "label": "International tourist arrivals",
-      "value": "More than 1.2 million",
-      "period": "Past nine months, reported April 1, 2026 (Ministry of Tourism)",
-      "source": "S1"
+      "value": "1.4 million international visitors",
+      "period": "Past year, reported July 1, 2026 (Office of the Prime Minister monthly review)",
+      "source": "S12"
     },
     {
       "label": "International tourism revenue",
-      "value": "Upwards of 2 billion US dollars",
-      "period": "Past nine months, reported April 1, 2026 (Ministry of Tourism)",
-      "source": "S1"
+      "value": "A record USD 5.2 billion",
+      "period": "Past year, reported July 1, 2026 (Office of the Prime Minister monthly review)",
+      "source": "S12"
     },
     {
       "label": "Domestic tourism",
-      "value": "Over 30 million local travelers, more than 60 billion Birr",
-      "period": "Past nine months, reported April 1, 2026",
+      "value": "Over 30 million local travelers, contributing more than 60 billion Birr to the economy",
+      "period": "Past nine months, reported April 1, 2026 (Ministry of Tourism)",
       "source": "S1"
     },
     {
@@ -70,13 +70,13 @@
     },
     {
       "label": "Bank lending interest rate (all sectors)",
-      "value": "Simple average 14.25 percent; range 7.00 to 21.50 percent",
-      "period": "2023/24",
-      "basis": "Commercial bank lending rates across the economy (Table 4.4), not specific to tourism or hotels",
-      "source": "S4"
+      "value": "average 15.8 percent (14.8 percent a year earlier); range 7.0 to 24.5 percent",
+      "period": "Fourth quarter 2024/25 (quarter ending June 2025)",
+      "basis": "Average, minimum and maximum commercial bank lending rates across the economy (Table 4.4), not specific to tourism or hotels",
+      "source": "S13"
     }
   ],
-  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are National Bank of Ethiopia Treasury bill yields (12.3 percent for all tenors and 11.0 percent for 91-day bills in May 2026) and the economy-wide bank lending rate (average 14.25 percent, range 7.00 to 21.50 percent, in 2023/24).",
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are National Bank of Ethiopia Treasury bill yields (12.3 percent for all tenors and 11.0 percent for 91-day bills in May 2026) and the economy-wide average bank lending rate (15.8 percent, range 7.0 to 24.5 percent, in the fourth quarter of 2024/25).",
   "opportunities": [
     {
       "title": "Star-rated hotels and lodges",
@@ -124,8 +124,8 @@
       "source": "S5"
     },
     {
-      "detail": "Institutional set-up is being updated: a draft proclamation discussed in parliament in October 2026 would re-establish the Ministry of Tourism as the Ministry of Culture and Tourism, so investors should confirm their counterpart ministry.",
-      "source": "S11"
+      "detail": "Institutional set-up is being updated: parliament endorsed a Minister of Culture and Tourism on October 8, 2026, so investors should confirm their counterpart ministry.",
+      "source": "S14"
     },
     {
       "detail": "Bishoftu airport timelines depend on financing approvals and site preparation: the AfDB financing remained subject to Board approval at signing, and the project includes a $350 million resettlement and livelihood restoration allocation.",
@@ -140,7 +140,7 @@
       "date": "2026-04",
       "url": "https://www.ena.et/web/eng/w/eng_8583415",
       "location": "Article body, statements by Ministry of Tourism and Teshome Teklu, Lead Executive Officer for Promotion",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S2",
@@ -176,7 +176,7 @@
       "date": "2026",
       "url": "https://mot.gov.et/investment-opportunities/",
       "location": "Reserved, joint and open investment areas",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S6",
@@ -215,13 +215,31 @@
       "accessed": "2026-10-16"
     },
     {
-      "id": "S11",
-      "title": "HPR Discusses Draft Proclamation to Restructure Four Federal Ministries",
-      "publisher": "Ethiopian News Agency",
+      "id": "S12",
+      "title": "PM Abiy Leads Major Advances in Democracy, Digital Transformation and Infrastructure Dev't",
+      "publisher": "Ethiopian News Agency (Office of the Prime Minister monthly review)",
+      "date": "2026-07",
+      "url": "https://www.ena.et/web/eng/w/eng_9141642",
+      "location": "Article dated July 1, 2026 (tourism paragraph)",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": "S13",
+      "title": "Quarterly Bulletin, Fourth Quarter 2024/25 (Fourth Quarter Report)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-05",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/05/Fourth_Quarter_Report_2024-25.pdf",
+      "location": "p. 2 (Section 1.2.2.2, interest rates); p. 23 (Table 4.4: interest rate development)",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": "S14",
+      "title": "House of People's Representatives Endorses New Cabinet Appointment",
+      "publisher": "Ethiopian News Agency (House of Peoples' Representatives)",
       "date": "2026-10",
-      "url": "https://www.ena.et/web/eng/w/eng_9700633",
-      "location": "Article body",
-      "accessed": "2026-10-16"
+      "url": "https://www.ena.et/web/eng/w/eng_9707597",
+      "location": "Article dated October 8, 2026 (list of endorsed ministers)",
+      "accessed": "2026-11-01"
     }
   ]
 }

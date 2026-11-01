@@ -1,0 +1,472 @@
+{
+  "id": "m03",
+  "slug": "budgeting",
+  "icon": "wallet",
+  "minutes": 12,
+  "en": {
+    "title": "Budgeting",
+    "summary": "Learn to plan your money with a budget and stay within it.",
+    "objectives": [
+      "Explain what a budget is.",
+      "Describe why a realistic budget helps you and your business.",
+      "Follow the steps to create a budget.",
+      "Use a budget to manage your business well.",
+      "Explain why it matters to stay within your budget."
+    ],
+    "lessons": [
+      {
+        "id": "what-is-a-budget",
+        "title": "What is a budget?",
+        "body": [
+          "Hana and Kuma run a small café called The Coffee Hub. Before they make a budget, they need to know what one is and why it matters.",
+          "A budget is a plan for your money. It shows what you will do with the money you expect to earn.",
+          "A budget turns your business goals into money terms. It divides your income among expenses, savings and investment for a set period. It should be part of your overall business plan."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "target", "label": "Forecast and control", "text": "Helps you plan ahead and control spending." },
+            { "icon": "calendar", "label": "Made in advance", "text": "Prepared before the business activity starts." },
+            { "icon": "clock", "label": "Set period", "text": "Has a clear start and end date." },
+            { "icon": "check", "label": "Approved first", "text": "Management approves it before it is used." },
+            { "icon": "coins", "label": "Shows spending", "text": "Lists big purchases and regular costs." }
+          ]
+        },
+        "tip": "A budget also helps you measure how well your business is doing."
+      },
+      {
+        "id": "benefits",
+        "title": "Why a budget helps",
+        "body": [
+          "A good budget helps you pay for what you need and save for what you want.",
+          "A budget is also critical for business success. It helps you:"
+        ],
+        "points": [
+          "Predict cash flow (money in and out) and avoid surprises.",
+          "Show a plan to repay loans.",
+          "Quickly see areas that need improvement.",
+          "Keep your business running smoothly.",
+          "Look ahead and take practical steps."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "wallet", "label": "Control your money", "text": "You run your business, not the other way." },
+            { "icon": "piggy", "label": "Save with discipline", "text": "Encourages regular saving." },
+            { "icon": "idea", "label": "Easier decisions", "text": "Helps you choose between spending and saving." },
+            { "icon": "calendar", "label": "Planning tool", "text": "Helps you plan and take action." },
+            { "icon": "chart", "label": "Spot problems", "text": "Shows cash flow or spending problems early." },
+            { "icon": "target", "label": "Meet your goals", "text": "If you follow it, you reach your goals." },
+            { "icon": "check", "label": "Remember your plan", "text": "Reminds you what you planned to spend." },
+            { "icon": "shield", "label": "Careful spending", "text": "Encourages you to spend with care." }
+          ]
+        },
+        "example": {
+          "title": "A budget and your loan",
+          "text": "A budget helps you show lenders how you will repay a loan. It helps you find possible lenders and plan what it takes to pay back. You can compare your income and expense plans with industry norms. Then you can prepare a payback plan backed by real facts."
+        }
+      },
+      {
+        "id": "types",
+        "title": "Types of budgets",
+        "body": [
+          "There are several kinds of budgets. They can be grouped by function (what they cover), by flexibility and by time.",
+          "A small business like The Coffee Hub may use a sales forecast, a production budget or a cash budget. Larger firms usually prepare a master budget (one overall budget)."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "chart", "label": "Sales budget", "text": "An estimate of total sales." },
+            { "icon": "store", "label": "Production budget", "text": "How much to produce to meet sales targets." },
+            { "icon": "coins", "label": "Cash budget", "text": "Expected cash coming in and going out." },
+            { "icon": "lock", "label": "Fixed budget", "text": "Targets set for one level of activity." },
+            { "icon": "scale", "label": "Flexible budget", "text": "Changes as the level of activity changes." },
+            { "icon": "calendar", "label": "Long-term budget", "text": "A long-range plan for three to ten years." },
+            { "icon": "clock", "label": "Short-term budget", "text": "A more detailed plan, usually in money." }
+          ]
+        },
+        "tip": "Choose the type of budget that fits what you want to track."
+      },
+      {
+        "id": "steps",
+        "title": "Steps to make a budget",
+        "body": [
+          "A budget shows where your money comes from and where it goes. An annual (yearly) budget is often broken down by quarter, month or week.",
+          "Hana and Kuma follow these six steps for The Coffee Hub."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Review goals", "text": "Look again at your financial goals." },
+            { "label": "Estimate income", "text": "Estimate the money from each source." },
+            { "label": "List expenses", "text": "Write down all costs and amounts." },
+            { "label": "Check the balance", "text": "Make sure expenses are not more than income." },
+            { "label": "Decide savings", "text": "Choose how much you will save." },
+            { "label": "Review and adjust", "text": "Change the budget when needed." }
+          ]
+        },
+        "points": [
+          "Group income and expenses into clear, useful categories.",
+          "Break down any category that is over 50% of the total.",
+          "Combine small, similar items that are under 2% of the total.",
+          "Compare your budget with industry averages. If it is different, find out why."
+        ]
+      },
+      {
+        "id": "budget-template",
+        "title": "Your budget template",
+        "body": [
+          "A simple budget template has three parts. Income is money coming in, like a salary or the sale of livestock. Expenses are money going out, like rent, utility bills or transport.",
+          "Savings are money set aside for later, like a bank balance or cash on hand. Each month, compare the totals and adjust them until the budget balances."
+        ],
+        "visual": {
+          "type": "equation",
+          "parts": [
+            { "label": "Income" },
+            { "op": "=", "label": "Expenses" },
+            { "op": "+", "label": "Savings" }
+          ],
+          "caption": "A balanced budget: money in equals money out plus savings."
+        },
+        "example": {
+          "title": "Sample monthly budget lines",
+          "text": "Income: employment, petty trade, farm, friends, social assistance and others. Expenses: housing rent, food, transport, health, education and others. Savings: emergency fund and financial goals. For each line, write the amount in Birr, how often it comes per month, and the monthly total."
+        },
+        "tip": "Use your income after taxes and deductions."
+      },
+      {
+        "id": "best-practices",
+        "title": "Good budgeting habits",
+        "body": [
+          "Effective budgeting needs support from leaders, teamwork, realistic goals and a good reporting system. A good budget is realistic, flexible, measurable, accurate and ongoing.",
+          "You can think of budgeting as a cycle of four steps that repeats every year."
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "Prepare" },
+            { "label": "Create" },
+            { "label": "Implement" },
+            { "label": "Review" }
+          ]
+        },
+        "points": [
+          "Timeliness: start early and gather all the information you need.",
+          "Accuracy: make sure the budget truly reflects your goals.",
+          "Inclusiveness: involve everyone who shares business duties.",
+          "Clear roles: tell each person their budget duties early.",
+          "Collaboration: encourage everyone involved to work together.",
+          "Scenarios: plan for different situations, good and bad.",
+          "Control: monitor and check how the budget is used."
+        ],
+        "example": {
+          "title": "The four steps of the cycle",
+          "text": "Prepare: estimate money in, money out and savings. Create: make money in equal money out plus savings. Implement: use the budget when you make decisions. Review: compare what happened with the plan, and adjust for next time."
+        }
+      },
+      {
+        "id": "stay-within",
+        "title": "Stay within your budget",
+        "body": [
+          "At the end of the period, your results will show how well you made, followed and adjusted your budget.",
+          "Compare your actual results with your budget every week, month and year. Tracking the differences helps you plan better for the future."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "check", "label": "Remember the plan", "text": "Remind yourself often what you planned to spend." },
+            { "icon": "umbrella", "label": "Plan for surprises", "text": "Add a line for unexpected spending." },
+            { "icon": "lock", "label": "Protect savings", "text": "Keep savings out of easy reach." },
+            { "icon": "receipt", "label": "Track spending", "text": "Keep a record of what you spend." },
+            { "icon": "warning", "label": "Do not overspend", "text": "Never spend more than the budgeted amount." },
+            { "icon": "scale", "label": "Balance it out", "text": "Spent more on one item? Spend less on another." },
+            { "icon": "coins", "label": "Cut costs", "text": "List ways to cut planned expenses." }
+          ]
+        },
+        "example": {
+          "title": "Simple ways to keep track",
+          "text": "Use a spreadsheet or a phone app. Keep a notebook to record all money in and out. You can also split cash into separate containers for different needs, like weddings and funerals, transport or school fees."
+        }
+      }
+    ],
+    "takeaways": [
+      "A budget is a plan that turns your goals into money terms.",
+      "A budget helps you control money, save and make better decisions.",
+      "Follow six steps: goals, income, expenses, check, savings, review.",
+      "A balanced budget means income equals expenses plus savings.",
+      "Budgeting is a cycle: prepare, create, implement and review.",
+      "Track your spending and compare it with your budget often."
+    ],
+    "quiz": [
+      {
+        "q": "What is a budget?",
+        "options": ["A list of your customers", "A plan for how you will use your money", "A loan from a bank", "A record of last year's sales only"],
+        "answer": 1,
+        "explain": "A budget is a plan that shows what you will do with your money."
+      },
+      {
+        "q": "Which type of budget changes as the level of activity changes?",
+        "options": ["Fixed budget", "Long-term budget", "Flexible budget", "Sales budget"],
+        "answer": 2,
+        "explain": "A flexible budget is designed to change with the level of activity."
+      },
+      {
+        "q": "After you list your expenses, what should you check?",
+        "options": ["That expenses are not more than income", "That you have a bank loan", "That prices are lower than last year"],
+        "answer": 0,
+        "explain": "Step four is to make sure your expenses do not exceed your income."
+      },
+      {
+        "q": "What are the four steps of the budgeting cycle?",
+        "options": ["Buy, sell, save, spend", "Plan, borrow, spend, repay", "Count, record, report, close", "Prepare, create, implement, review"],
+        "answer": 3,
+        "explain": "Budgeting is a repeating cycle: prepare, create, implement and review."
+      },
+      {
+        "q": "One category is over 50% of your total budget. What should you do?",
+        "options": ["Remove it from the budget", "Break it down into smaller categories", "Combine it with small items"],
+        "answer": 1,
+        "explain": "Categories over 50% of the total should be broken down further."
+      },
+      {
+        "q": "You spent more than planned on one item. What does the budget tip say?",
+        "options": ["Borrow money to cover it", "Stop tracking your spending", "Spend less on something else", "Use your savings first"],
+        "answer": 2,
+        "explain": "If you spend more on one item, spend less on something else."
+      }
+    ]
+  },
+  "am": {
+    "title": "በጀት አዘገጃጀት",
+    "summary": "በጀት በማዘጋጀት ገንዘብዎን ማቀድና ከበጀትዎ ሳያልፉ መቆየትን ይማሩ።",
+    "objectives": [
+      "በጀት ምን እንደ ሆነ ማብራራት",
+      "ተጨባጭ በጀት ለእርስዎና ለቢዝነስዎ እንዴት እንደሚጠቅም መግለጽ",
+      "በጀት ለማዘጋጀት የሚወሰዱ ርምጃዎችን መከተል",
+      "ቢዝነስዎን በብቃት ለማስተዳደር በጀትን እንደ መሣሪያ መጠቀም",
+      "ከበጀት አለማለፍ ለምን አስፈላጊ እንደ ሆነ ማብራራት"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-a-budget",
+        "title": "በጀት ምንድን ነው?",
+        "body": [
+          "ሐና እና ኩማ ትንሽ ካፌ ይመራሉ። ለካፌው በጀት ከማዘጋጀታቸው በፊት በጀት ምን እንደ ሆነና ለምን እንደሚጠቅም ማወቅ አለባቸው።",
+          "በጀት የገንዘብ ዕቅድ ነው። በሚያገኙት ገንዘብ ምን እንደሚሠሩ ያሳያል።",
+          "በጀት የቢዝነስ ግቦችን ወደ ገንዘብ ይቀይራል። በተወሰነ ጊዜ ውስጥ ገቢዎን ለወጭ፣ ለቁጠባ እና ለኢንቨስትመንት ይከፋፍላል። የአጠቃላይ ቢዝነስ ዕቅድዎ አካል መሆን አለበት።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "target", "label": "ትንበያና ቁጥጥር", "text": "አስቀድመው እንዲያቅዱና ወጭን እንዲቆጣጠሩ ይረዳል።" },
+            { "icon": "calendar", "label": "አስቀድሞ ይዘጋጃል", "text": "የቢዝነሱ ሥራ ከመጀመሩ በፊት ይዘጋጃል።" },
+            { "icon": "clock", "label": "የተወሰነ ጊዜ", "text": "ግልጽ መጀመሪያና መጨረሻ አለው።" },
+            { "icon": "check", "label": "አስቀድሞ ይጸድቃል", "text": "ከመተግበሩ በፊት በአስተዳደሩ ይጸድቃል።" },
+            { "icon": "coins", "label": "ወጭን ያሳያል", "text": "ትላልቅ ግዢዎችንና ተደጋጋሚ ወጭዎችን ይዘረዝራል።" }
+          ]
+        },
+        "tip": "በጀት የቢዝነስዎን ስኬት ለመለካትም ይረዳል።"
+      },
+      {
+        "id": "benefits",
+        "title": "በጀት ለምን ይጠቅማል?",
+        "body": [
+          "ጥሩ በጀት ለሚያስፈልግዎ ነገር ለመክፈል እና የሚፈልጉትን ለመቆጠብ ይረዳል።",
+          "በጀት ለቢዝነስ ስኬትም ወሳኝ ነው። የሚከተሉትን ለማድረግ ይረዳዎታል፦"
+        ],
+        "points": [
+          "የገንዘብ ፍሰትን (የሚገባና የሚወጣ ገንዘብ) ለመተንበይና ድንገተኛ ክስተትን ለማስወገድ",
+          "የብድር መክፈያ ዕቅድን ለማሳየት",
+          "መሻሻል የሚያስፈልጋቸውን ቦታዎች በፍጥነት ለማየት",
+          "ሥራዎ በጥሩ ሁኔታ እንዲቀጥል ለማገዝ",
+          "የወደፊቱን አይተው ተግባራዊ ርምጃ ለመውሰድ"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "wallet", "label": "ገንዘብዎን ይቆጣጠሩ", "text": "ቢዝነሱ ከሚመራዎት እርስዎ ቢዝነሱን ይመራሉ።" },
+            { "icon": "piggy", "label": "ዲስፕሊናዊ ቁጠባ", "text": "አዘውትሮ መቆጠብን ያበረታታል።" },
+            { "icon": "idea", "label": "ቀላል ውሳኔ", "text": "ስለ ወጭና ቁጠባ ውሳኔን ቀላል ያደርጋል።" },
+            { "icon": "calendar", "label": "የዕቅድ መሣሪያ", "text": "እንዲያቅዱና ርምጃ እንዲወስዱ ይረዳል።" },
+            { "icon": "chart", "label": "ችግርን ቀድሞ ማየት", "text": "የገንዘብ ፍሰት ወይም የወጭ ችግርን ያሳያል።" },
+            { "icon": "target", "label": "ግብን ማሳካት", "text": "ከተከተሉት ግቦችዎን ያሳካሉ።" },
+            { "icon": "check", "label": "ዕቅድን ማስታወስ", "text": "ወጭ ለማድረግ ያቀዱትን ያስታውሰዎታል።" },
+            { "icon": "shield", "label": "ጥንቃቄ ያለው ወጭ", "text": "በጥንቃቄ እንዲያወጡ ያበረታታል።" }
+          ]
+        },
+        "example": {
+          "title": "በጀትና ብድር",
+          "text": "በጀት ብድርን እንዴት እንደሚመልሱ ለአበዳሪዎች ለማሳየት ይረዳል። ሊያበድሩዎት የሚችሉ አበዳሪዎችን ለመለየትና ብድርን ለመመለስ የሚያስፈልገውን ለማቀድ ያግዛል። የገቢና የወጭ ዕቅድዎን ከኢንዱስትሪው ደንቦች ጋር ማነፃፀር ይችላሉ። ከዚያም በእውነታ የተደገፈ የብድር መመለሻ ዕቅድ ያዘጋጃሉ።"
+        }
+      },
+      {
+        "id": "types",
+        "title": "የበጀት ዓይነቶች",
+        "body": [
+          "ብዙ ዓይነት በጀቶች አሉ። በጀቶች በተግባር (የሚሸፍኑት ነገር)፣ በተለዋዋጭነት እና በጊዜ ሊመደቡ ይችላሉ።",
+          "እንደ ካፌው ያለ ትንሽ ቢዝነስ የሽያጭ ትንበያ፣ የምርት በጀት ወይም የጥሬ ገንዘብ በጀት ሊኖረው ይችላል። ትልልቅ ድርጅቶች በአጠቃላይ ዋና በጀት (አንድ አጠቃላይ በጀት) ያዘጋጃሉ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "chart", "label": "የሽያጭ በጀት", "text": "የጠቅላላ ሽያጭ ግምት ነው።" },
+            { "icon": "store", "label": "የምርት በጀት", "text": "የሽያጭ ግብን ለማሳካት የሚመረተው መጠን።" },
+            { "icon": "coins", "label": "የጥሬ ገንዘብ በጀት", "text": "የሚገባና የሚወጣ ገንዘብ ግምት።" },
+            { "icon": "lock", "label": "ቋሚ በጀት", "text": "ለአንድ የሥራ ደረጃ የተወሰኑ ዒላማዎች።" },
+            { "icon": "scale", "label": "ተለዋዋጭ በጀት", "text": "ከሥራው መጠን ጋር ይቀያየራል።" },
+            { "icon": "calendar", "label": "የረጅም ጊዜ በጀት", "text": "ከሦስት እስከ አሥር ዓመት የሚሸፍን ዕቅድ።" },
+            { "icon": "clock", "label": "የዐጭር ጊዜ በጀት", "text": "የበለጠ ዝርዝር፣ በአብዛኛው በገንዘብ የሚዘጋጅ።" }
+          ]
+        },
+        "tip": "ሊከታተሉት የሚፈልጉትን ነገር የሚመጥን የበጀት ዓይነት ይምረጡ።"
+      },
+      {
+        "id": "steps",
+        "title": "በጀት ለማዘጋጀት የሚወሰዱ ርምጃዎች",
+        "body": [
+          "በጀት ገንዘብ ከየት እንደሚገባና ወዴት እንደሚወጣ ያሳያል። ዓመታዊ በጀት ተዘጋጅቶ በሩብ ዓመት፣ በወር ወይም በሳምንት ይከፋፈላል።",
+          "ሐና እና ኩማ ለካፌው በጀት ሲያዘጋጁ እነዚህን ስድስት ርምጃዎች ይከተላሉ።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ግቦችን ይገምግሙ", "text": "የገንዘብ ግቦችዎን እንደገና ይመልከቱ።" },
+            { "label": "ገቢን ይገምቱ", "text": "ከእያንዳንዱ ምንጭ የሚገኘውን ገቢ ይገምቱ።" },
+            { "label": "ወጭዎችን ይዘርዝሩ", "text": "ሁሉንም ወጭዎችና መጠናቸውን ይጻፉ።" },
+            { "label": "ሚዛኑን ያረጋግጡ", "text": "ወጭዎ ከገቢዎ በላይ አለመሆኑን ያረጋግጡ።" },
+            { "label": "ቁጠባን ይወስኑ", "text": "ምን ያህል እንደሚቆጥቡ ይወስኑ።" },
+            { "label": "ይገምግሙና ያስተካክሉ", "text": "እንደ አስፈላጊነቱ በጀቱን ያስተካክሉ።" }
+          ]
+        },
+        "points": [
+          "ገቢንና ወጭን ግልጽና ትርጕም ያላቸው ምድቦች ውስጥ ይመድቡ።",
+          "ከጠቅላላው ከ50% በላይ የሆነን ምድብ ይከፋፍሉ።",
+          "ከጠቅላላው ከ2% በታች የሆኑ ተመሳሳይ ትንንሽ ነገሮችን አንድ ላይ ያቀላቅሉ።",
+          "በጀትዎን ከኢንዱስትሪው አማካይ ጋር ያነፃፅሩ። ልዩነት ካለ ምክንያቱን ይወቁ።"
+        ]
+      },
+      {
+        "id": "budget-template",
+        "title": "የበጀት አብነትዎ",
+        "body": [
+          "ቀላል የበጀት አብነት ሦስት ክፍሎች አሉት። ገቢ የሚገባ ገንዘብ ነው፤ ለምሳሌ ደመወዝ ወይም የእንስሳት ሽያጭ። ወጭ የሚወጣ ገንዘብ ነው፤ ለምሳሌ ኪራይ፣ የአገልግሎት ክፍያ ወይም ትራንስፖርት።",
+          "ቁጠባ ለኋላ ጥቅም የሚቀመጥ ገንዘብ ነው፤ ለምሳሌ የባንክ ሒሳብ ወይም በእጅ ያለ ገንዘብ። በየወሩ ድምሮቹን ያነፃፅሩ፤ በጀቱ እስኪመጣጠን ድረስ ያስተካክሉ።"
+        ],
+        "visual": {
+          "type": "equation",
+          "parts": [
+            { "label": "ገቢ" },
+            { "op": "=", "label": "ወጭ" },
+            { "op": "+", "label": "ቁጠባ" }
+          ],
+          "caption": "የተመጣጠነ በጀት፦ የሚገባው ገንዘብ ከወጭና ከቁጠባ ድምር ጋር እኩል ነው።"
+        },
+        "example": {
+          "title": "የወርሀዊ በጀት ናሙና መስመሮች",
+          "text": "ገቢ፦ ቅጥር፣ ጥቃቅን ንግድ፣ እርሻ፣ ጓደኞች፣ ማህበራዊ እርዳታ እና ሌሎች። ወጭ፦ የቤት ኪራይ፣ ምግብ፣ መጓጓዣ፣ ጤና፣ ትምህርት እና ሌሎች። ቁጠባ፦ የአደጋ ጊዜ ፈንድ እና የገንዘብ ግቦች። ለእያንዳንዱ መስመር መጠኑን በብር፣ በወር ስንት ጊዜ እንደሚመጣ እና ወርሀዊ ድምሩን ይጻፉ።"
+        },
+        "tip": "ከታክስና ከተቀናሽ በኋላ ያለውን ገቢ ይጠቀሙ።"
+      },
+      {
+        "id": "best-practices",
+        "title": "ጥሩ የበጀት ልምዶች",
+        "body": [
+          "ውጤታማ በጀት የአመራር ድጋፍ፣ የቡድን ሥራ፣ ተጨባጭ ዓላማዎች እና የተዋጣለት የሪፖርት ሥርዓት ይፈልጋል። ጥሩ በጀት ተጨባጭ፣ ተለዋዋጭ፣ ሊለካ የሚችል፣ ትክክለኛ እና ቀጣይ ሂደት ነው።",
+          "በጀት ማውጣትን በየዓመቱ የሚደጋገም አራት ደረጃዎች ያሉት ዑደት አድርገው ሊያዩት ይችላሉ።"
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "አዘጋጅ" },
+            { "label": "ፍጠር" },
+            { "label": "ተግብር" },
+            { "label": "ገምግም" }
+          ]
+        },
+        "points": [
+          "ወቅታዊነት፦ ቀድመው ይጀምሩ፤ የሚያስፈልገውን መረጃ ሁሉ ይሰብስቡ።",
+          "ትክክለኛነት፦ በጀቱ ግቦችዎን በትክክል እንዲያንፀባርቅ ያድርጉ።",
+          "አካታችነት፦ የቢዝነስ ኃላፊነት የሚጋሩ ሁሉ እንዲሳተፉ ያድርጉ።",
+          "ግልጽ ሚናዎች፦ ለእያንዳንዱ ሰው የበጀት ኃላፊነቱን አስቀድመው ያሳውቁ።",
+          "ትብብር፦ የሚመለከታቸው ሁሉ አብረው እንዲሠሩ ያበረታቱ።",
+          "የተለያዩ ሁኔታዎች፦ ለአዲስ ዕድልም ለችግርም ዕቅድ ይኑርዎ።",
+          "ተገቢ ቁጥጥር፦ በጀቱ እንዴት እንደሚተገበር ይከታተሉና ይገምግሙ።"
+        ],
+        "example": {
+          "title": "የዑደቱ አራት ደረጃዎች",
+          "text": "አዘጋጅ፦ የሚገባውን፣ የሚወጣውንና የሚቆጠበውን ገንዘብ ይገምቱ። ፍጠር፦ የሚገባው ገንዘብ ከወጭና ከቁጠባ ድምር ጋር እኩል እንዲሆን ያድርጉ። ተግብር፦ ውሳኔ ሲወስኑ በጀቱን ይጠቀሙ። ገምግም፦ የሆነውን ከዕቅዱ ጋር ያነፃፅሩና ለቀጣዩ ጊዜ ያስተካክሉ።"
+        }
+      },
+      {
+        "id": "stay-within",
+        "title": "ከበጀትዎ አይለፉ",
+        "body": [
+          "በበጀት ዘመኑ መጨረሻ ውጤትዎ በጀቱን ምን ያህል በደንብ እንዳዘጋጁ፣ እንደተከተሉና እንዳስተካከሉ ያሳያል።",
+          "ትክክለኛ ውጤትዎን በየሳምንቱ፣ በየወሩ እና በየዓመቱ ከበጀትዎ ጋር ያነፃፅሩ። ልዩነቶቹን መከታተል ለወደፊቱ የተሻለ ዕቅድ ለማውጣት ይረዳል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "check", "label": "ዕቅድዎን ያስታውሱ", "text": "ያቀዱትን ወጭ ደጋግመው ራስዎን ያስታውሱ።" },
+            { "icon": "umbrella", "label": "ለድንገተኛ ወጭ", "text": "ላልተጠበቁ ወጭዎች በበጀቱ ቦታ ይያዙ።" },
+            { "icon": "lock", "label": "ቁጠባን ይጠብቁ", "text": "ቁጠባዎን በቀላሉ በማይደረስበት ቦታ ያስቀምጡ።" },
+            { "icon": "receipt", "label": "ወጭን ይመዝግቡ", "text": "የሚያወጡትን ሁሉ መዝግበው ይከታተሉ።" },
+            { "icon": "warning", "label": "ከበጀት አይለፉ", "text": "ከተመደበው በጀት በላይ አያውጡ።" },
+            { "icon": "scale", "label": "ያመጣጥኑ", "text": "ለአንዱ ብዙ ካወጡ ለሌላው ይቀንሱ።" },
+            { "icon": "coins", "label": "ወጭን ይቀንሱ", "text": "ወጭ የሚቀንሱባቸውን መንገዶች ይዘርዝሩ።" }
+          ]
+        },
+        "example": {
+          "title": "ለመከታተል ቀላል መንገዶች",
+          "text": "ስፕሬድ ሺት ወይም መተግበሪያ (አፕሊኬሽን) ይጠቀሙ። የሚገባውንና የሚወጣውን ሁሉ ለመመዝገብ ማስታወሻ ደብተር ይያዙ። ለተለያዩ ነገሮች ገንዘብን በተለያዩ ማጠራቀሚያዎች ከፋፍለው ማስቀመጥ ይችላሉ፤ ለምሳሌ ለሠርግ/ለቀብር፣ ለመጓጓዣ ወይም ለትምህርት ቤት ክፍያ።"
+        }
+      }
+    ],
+    "takeaways": [
+      "በጀት ግቦችዎን ወደ ገንዘብ የሚቀይር ዕቅድ ነው።",
+      "በጀት ገንዘብዎን ለመቆጣጠር፣ ለመቆጠብ እና የተሻለ ውሳኔ ለመወሰን ይረዳል።",
+      "ስድስቱን ርምጃዎች ይከተሉ፦ ግብ፣ ገቢ፣ ወጭ፣ ማረጋገጥ፣ ቁጠባ፣ ግምገማ።",
+      "የተመጣጠነ በጀት ማለት ገቢ ከወጭና ከቁጠባ ድምር ጋር እኩል ሲሆን ነው።",
+      "በጀት ማውጣት ዑደት ነው፦ ማዘጋጀት፣ መፍጠር፣ መተግበር እና መገምገም።",
+      "ወጭዎን ይከታተሉ፤ ከበጀትዎ ጋር በየጊዜው ያነፃፅሩ።"
+    ],
+    "quiz": [
+      {
+        "q": "በጀት ምንድን ነው?",
+        "options": ["የደንበኞች ዝርዝር", "ገንዘብዎን እንዴት እንደሚጠቀሙ የሚያሳይ ዕቅድ", "ከባንክ የሚወሰድ ብድር", "የአምናው ሽያጭ መዝገብ ብቻ"],
+        "answer": 1,
+        "explain": "በጀት በገንዘብዎ ምን እንደሚሠሩ የሚያሳይ ዕቅድ ነው።"
+      },
+      {
+        "q": "ከሥራው መጠን ጋር የሚቀያየረው የትኛው የበጀት ዓይነት ነው?",
+        "options": ["ቋሚ በጀት", "የረጅም ጊዜ በጀት", "ተለዋዋጭ በጀት", "የሽያጭ በጀት"],
+        "answer": 2,
+        "explain": "ተለዋዋጭ በጀት ከሥራው መጠን ጋር እንዲቀያየር ሆኖ የተነደፈ ነው።"
+      },
+      {
+        "q": "ወጭዎችዎን ከዘረዘሩ በኋላ ምን ማረጋገጥ አለብዎት?",
+        "options": ["ወጭዎ ከገቢዎ በላይ አለመሆኑን", "የባንክ ብድር እንዳለዎት", "ዋጋዎች ከአምናው ያነሱ መሆናቸውን"],
+        "answer": 0,
+        "explain": "አራተኛው ርምጃ ወጭዎ ከገቢዎ በላይ አለመሆኑን ማረጋገጥ ነው።"
+      },
+      {
+        "q": "የበጀት ዑደት አራቱ ደረጃዎች የትኞቹ ናቸው?",
+        "options": ["መግዛት፣ መሸጥ፣ መቆጠብ፣ ማውጣት", "ማቀድ፣ መበደር፣ ማውጣት፣ መመለስ", "መቁጠር፣ መመዝገብ፣ ሪፖርት ማድረግ፣ መዝጋት", "ማዘጋጀት፣ መፍጠር፣ መተግበር፣ መገምገም"],
+        "answer": 3,
+        "explain": "በጀት ማውጣት የሚደጋገም ዑደት ነው፦ ማዘጋጀት፣ መፍጠር፣ መተግበር እና መገምገም።"
+      },
+      {
+        "q": "አንድ ምድብ ከጠቅላላ በጀትዎ ከ50% በላይ ነው። ምን ማድረግ አለብዎት?",
+        "options": ["ከበጀቱ ማስወጣት", "ወደ ትንንሽ ምድቦች መከፋፈል", "ከትንንሽ ነገሮች ጋር ማቀላቀል"],
+        "answer": 1,
+        "explain": "ከጠቅላላው ከ50% በላይ የሆኑ ምድቦች መከፋፈል አለባቸው።"
+      },
+      {
+        "q": "ለአንድ ነገር ካቀዱት በላይ አወጡ። የበጀት ምክሩ ምን ይላል?",
+        "options": ["ገንዘብ ተበድረው ይሸፍኑ", "ወጭዎን መከታተል ያቁሙ", "ለሌላ ነገር ያነሰ ያውጡ", "መጀመሪያ ቁጠባዎን ይጠቀሙ"],
+        "answer": 2,
+        "explain": "ለአንድ ነገር ብዙ ካወጡ ለሌላው ያነሰ ገንዘብ ያውጡ።"
+      }
+    ]
+  }
+}

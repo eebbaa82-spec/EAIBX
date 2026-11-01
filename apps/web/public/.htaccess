@@ -2,13 +2,28 @@
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 Options -Indexes
+ServerSignature Off
+
+# Never serve backups, dotfiles or source maps if one is ever uploaded by mistake.
+<FilesMatch "(^\.|^_.*\.php$|\.(bak|old|orig|sql|log|ini|sh|env|map)$)">
+  Require all denied
+</FilesMatch>
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Always use https and the www address.
+  # Let the host's certificate checks through untouched.
+  RewriteRule ^\.well-known/ - [L]
+  # Always use https and the address the certificate covers (connect.eruditeafrica.et).
+  # Other names this site answers to (investopia.et, kenna.et) redirect there.
   RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteRule ^ https://www.investopia.et%{REQUEST_URI} [R=301,L]
+  RewriteCond %{HTTP_HOST} !^connect\.eruditeafrica\.et$ [NC]
+  RewriteRule ^ https://connect.eruditeafrica.et%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+# Compress pages, scripts and data: a course page and its scripts shrink from about
+# 1 MB to under 300 KB, which matters most on mobile connections.
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/javascript application/javascript application/json image/svg+xml
 </IfModule>
 
 <IfModule mod_headers.c>
@@ -16,6 +31,11 @@ Options -Indexes
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  # Only this site's own files may load. Next.js needs inline scripts and styles.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+  Header always unset X-Powered-By
   <FilesMatch "\.(js|css|woff2|png|jpg|svg)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>

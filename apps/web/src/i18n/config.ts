@@ -1,3 +1,5 @@
+import { courseModules } from "@/data/financial-literacy";
+
 export const locales = ["en", "am", "om"] as const;
 export type Locale = (typeof locales)[number];
 
@@ -10,7 +12,7 @@ export const localeNames: Record<Locale, { short: string; name: string }> = {
 /** Pages that exist in each language. Everything else links to the English page. */
 export const translatedPaths: Record<Locale, string[]> = {
   en: [],
-  am: ["/"],
+  am: ["/", "/academy/financial-literacy", ...courseModules.map((m) => `/academy/financial-literacy/${m.slug}`)],
   om: ["/"],
 };
 

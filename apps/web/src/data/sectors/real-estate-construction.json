@@ -1,7 +1,7 @@
 {
   "slug": "real-estate-construction",
   "name": "Real estate, housing and construction",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Construction is Ethiopia's largest industrial activity: the National Bank of Ethiopia reports it contributed around 23 percent of GDP and grew 9.0 percent in 2023/24. Urban population is growing by about 4.6 percent a year, and the World Bank estimates the country needs nearly 400,000 new housing units a year. The government has opened residential ownership to foreign nationals, signed affordable-housing PPPs, and is tendering more mixed-use housing PPP sites in Addis Ababa.",
   "indicators": [
     {
@@ -56,10 +56,10 @@
   "returns": [
     {
       "label": "Treasury bill weighted average yield (benchmark)",
-      "value": "9.74 percent",
-      "period": "2023/24",
-      "basis": "Average weighted yield on nominal Treasury bills, NBE Table 4.4 and statistical annex",
-      "source": "S1"
+      "value": "16.8 percent (up from 10.6 percent a year earlier)",
+      "period": "Fourth quarter 2024/25 (quarter ending June 2025)",
+      "basis": "Weighted average yield on Treasury bills for the quarter, NBE Quarterly Bulletin p. 2 and Table 4.4",
+      "source": "S16"
     },
     {
       "label": "Treasury bill yield on new issuances (benchmark)",
@@ -70,13 +70,13 @@
     },
     {
       "label": "Bank lending interest rate (all sectors)",
-      "value": "simple average 14.25 percent; range 7.00 to 21.50 percent",
-      "period": "2023/24",
-      "basis": "Commercial bank lending rates across the economy, not specific to construction or real estate",
-      "source": "S1"
+      "value": "average 15.8 percent (14.8 percent a year earlier); range 7.0 to 24.5 percent",
+      "period": "Fourth quarter 2024/25 (quarter ending June 2025)",
+      "basis": "Average, minimum and maximum commercial bank lending rates across the economy (Table 4.4), not specific to construction or real estate",
+      "source": "S16"
     }
   ],
-  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are Treasury bill yields (9.74 percent in 2023/24; 14.4 percent on new issuances in April 2026) and the economy-wide bank lending rate (average 14.25 percent, range 7.00 to 21.50 percent, in 2023/24).",
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators included are Treasury bill yields (16.8 percent in the fourth quarter of 2024/25; 14.4 percent on new issuances in April 2026) and the economy-wide average bank lending rate (15.8 percent, range 7.0 to 24.5 percent, in the fourth quarter of 2024/25).",
   "opportunities": [
     {
       "title": "Affordable housing PPPs in Addis Ababa",
@@ -104,9 +104,9 @@
       "source": "S11"
     },
     {
-      "title": "Housing finance build-out",
-      "detail": "A framework agreement between the National Bank of Ethiopia and IFC, witnessed by the Prime Minister in September 2026, aims to support the construction of 1.5 million affordable homes.",
-      "source": "S15"
+      "title": "Mortgage refinance company",
+      "detail": "The National Bank of Ethiopia and IFC signed a cooperation framework in September 2026 to create a wholesale mortgage refinance company with registered capital of 100 billion birr and an IFC contribution of at least 200 million USD, supporting the government's goal of delivering 1.5 million affordable homes.",
+      "source": "S17"
     }
   ],
   "incentives": [
@@ -269,13 +269,22 @@
       "accessed": "2026-10-16"
     },
     {
-      "id": "S15",
-      "title": "Ethiopia Advances Logistics, Housing, Energy and Regional Cooperation",
-      "publisher": "Ethiopian News Agency (Office of the Prime Minister)",
-      "date": "2026-10",
-      "url": "https://www.ena.et/web/eng/w/eng_9654763",
-      "location": "Article dated October 1, 2026 (housing paragraph)",
-      "accessed": "2026-10-16"
+      "id": "S16",
+      "title": "Quarterly Bulletin, Fourth Quarter 2024/25 (Fourth Quarter Report)",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-05",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/05/Fourth_Quarter_Report_2024-25.pdf",
+      "location": "p. 2 (Section 1.2.2.2, interest rates); p. 23 (Table 4.4: interest rate development)",
+      "accessed": "2026-11-01"
+    },
+    {
+      "id": "S17",
+      "title": "Prime Minister Abiy Oversees Ethiopia-IFC Deal to Establish Mortgage Refinance Company",
+      "publisher": "Ethiopian News Agency (Office of the Prime Minister; National Bank of Ethiopia and IFC)",
+      "date": "2026-09",
+      "url": "https://www.ena.et/web/eng/w/eng_9493581",
+      "location": "Article dated September 3, 2026",
+      "accessed": "2026-11-01"
     }
   ]
 }

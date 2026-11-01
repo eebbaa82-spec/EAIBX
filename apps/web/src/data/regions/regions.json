@@ -1,0 +1,1900 @@
+{
+  "asOf": "2026-10-22",
+  "regions": [
+    {
+      "slug": "addis-ababa",
+      "name": "Addis Ababa",
+      "type": "City administration",
+      "capital": "Addis Ababa (federal capital)",
+      "capitalSource": "S1",
+      "summary": "Addis Ababa is Ethiopia's capital and largest city, with a services-led economy and several federal industrial parks. It hosts specialized zones for pharmaceuticals, textiles and light manufacturing, plus a container terminal at Kality that links the city to the Djibouti corridor.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "3,602,000",
+          "period": "2019",
+          "source": "S1"
+        },
+        {
+          "label": "Services share of city GDP (seven-year average)",
+          "value": "78.4%",
+          "period": "FY2011 to FY2017",
+          "source": "S2"
+        },
+        {
+          "label": "City GDP",
+          "value": "ETB 164.77 billion",
+          "period": "FY2017",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "The city economy is driven mainly by services; over the seven years to FY2017, services made up 78.4% of city GDP, industry 20.4% and agriculture 1.2%.",
+          "source": "S2"
+        },
+        {
+          "detail": "Addis Ababa is the only Ethiopian city with more than 1 million residents and hosts the African Union and many international organizations.",
+          "source": "S1"
+        },
+        {
+          "detail": "A malt factory in Bole Lemi Industrial Park, together with one in Debre Birhan, supplies the malt needs of local beer producers, replacing imports.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Bole Lemi Special Economic Zone",
+          "detail": "Operational since 2014; multi-sectoral zone for textile, garment and leather with 20 factory sheds.",
+          "source": "S4"
+        },
+        {
+          "name": "Kilinto Industry Park",
+          "detail": "Pharmaceutical hub of 279 hectares near Bole International Airport, operating since 2019, with serviced land available.",
+          "source": "S5"
+        },
+        {
+          "name": "Addis Industry Village",
+          "detail": "About 8 hectares in the city center, suited to fast-moving consumer goods manufacturing, with airport and rail access.",
+          "source": "S6"
+        },
+        {
+          "name": "Kality Port and Terminal",
+          "detail": "Dry port in Kality sub-city, established 2014, 37 hectares with capacity of 1,241 TEU at a time.",
+          "source": "S7"
+        },
+        {
+          "name": "ICT Industrial Park and Huajian Light Industrial Park",
+          "detail": "Listed by EIC among operational parks in Addis Ababa (ICT and ICT-enabled services; leather and leather products).",
+          "source": "S8"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Pharmaceutical manufacturing",
+          "detail": "IPDC invites domestic and foreign companies to invest in the Kilinto pharmaceutical hub, which has serviced land available.",
+          "source": "S5"
+        },
+        {
+          "title": "Consumer goods manufacturing",
+          "detail": "Addis Industry Village is positioned for fast-moving consumer products manufacturing in central Addis Ababa.",
+          "source": "S6"
+        },
+        {
+          "title": "Textile, garment and leather",
+          "detail": "Bole Lemi is an operational multi-sectoral zone for textile, garment and leather producers.",
+          "source": "S4"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "The economy is services-heavy (about 78% of city GDP), so borrower cash flows tend to track trade, construction and services demand more than harvest cycles.",
+          "source": "S2"
+        },
+        {
+          "detail": "Import and export cargo can move on the 756 km Addis Ababa to Djibouti electrified railway via the Modjo dry port, which affects lead times for importers.",
+          "source": "S9"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Situation Analysis of Children and Women: Addis Ababa",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2316/file/Addis%20Ababa.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "PEFA Assessment: The City of Addis Ababa, Performance Assessment Report (Report No. AUS0001398)",
+          "publisher": "World Bank",
+          "date": "2019-12-02",
+          "url": "https://documents1.worldbank.org/curated/en/547031593089393140/pdf/The-City-of-Addis-Ababa.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Ethiopia's Industrial Parks Driving Import Substitution, Export Diversification",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-01-25",
+          "url": "https://www.ena.et/web/eng/w/eng_3920617",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Bole Lemi Special Economic Zone",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/6/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Kilinto Industry Park",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://ipdc.gov.et/news/post/71/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Addis Industry Village",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/16/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "Dry Port Services",
+          "publisher": "Ethiopian Shipping and Logistics Services Enterprise",
+          "date": "",
+          "url": "https://www.eslse.et/dryport.php",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S8",
+          "title": "Time to Invest in Ethiopia: Investment Guide (updated Feb. 2023)",
+          "publisher": "Ethiopian Investment Commission (hosted by UNIDO ITPO Tokyo)",
+          "date": "2023-02",
+          "url": "https://itpo-tokyo.unido.org/files/EIC-Investment-Guide-FINAL-IP-Updated-Feb.-2023.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S9",
+          "title": "Chinese Supported Ethio-Djibouti Railway Providing Crucial Economic, Social Benefits",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-09-24",
+          "url": "https://www.ena.et/web/eng/w/eng_3374174",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "afar",
+      "name": "Afar",
+      "type": "Regional state",
+      "capital": "Semera",
+      "capitalSource": "S1",
+      "summary": "Afar sits closest to the Port of Djibouti among Ethiopia's regions and hosts the Semera industrial park and dry port. Pastoral livestock is the economic backbone, while irrigated wheat, salt processing and agro-processing are expanding.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "1,902,000",
+          "period": "2019",
+          "source": "S2"
+        },
+        {
+          "label": "Distance from Semera dry port to Djibouti",
+          "value": "About 270 km",
+          "period": "Current listing",
+          "source": "S3"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Pastoralism is the main livelihood for over 90% of the population; other income comes from sorghum, maize, barley, teff, cotton and honey, and irrigation is expanding agro-pastoralism.",
+          "source": "S2"
+        },
+        {
+          "detail": "An iodized salt plant producing 15 tons per hour began operating in 2024, alongside a flour and bread factory that mills 420 quintals of wheat a day.",
+          "source": "S4"
+        },
+        {
+          "detail": "The Tendaho dam on the Awash River is designed to irrigate 60,000 hectares and supports year-round production, including summer wheat.",
+          "source": "S5"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Semera Industrial Park",
+          "detail": "Multi-sectoral park of 50 hectares with 8 planned sheds for textiles and garments, leather products, packaging and chemicals.",
+          "source": "S6"
+        },
+        {
+          "name": "Semera Industrial Park (inauguration)",
+          "detail": "Inaugurated in May 2021 with about US$59 million investment; its proximity to the Port of Djibouti is expected to support exports.",
+          "source": "S1"
+        },
+        {
+          "name": "Semera Port and Terminal",
+          "detail": "Dry port established 2010 on 160 hectares, about 592 km from Addis Ababa and about 270 km from Djibouti.",
+          "source": "S3"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Export-oriented light manufacturing",
+          "detail": "Semera Industrial Park targets textiles, leather goods, packaging and chemical products such as potassium chloride and magnesium chloride.",
+          "source": "S6"
+        },
+        {
+          "title": "Irrigated agriculture",
+          "detail": "Tendaho dam command area of 60,000 hectares supports irrigated wheat and year-round cropping.",
+          "source": "S5"
+        },
+        {
+          "title": "Livestock feed and processing",
+          "detail": "The Ayrolaaf animal feed bank and new salt and flour plants show growing demand for livestock and food processing inputs.",
+          "source": "S4"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Pastoral incomes depend on the Diraac-Sugum (February to May) and Karan/Karma (July to September) rains; size repayment schedules to livestock sale seasons.",
+          "source": "S7"
+        },
+        {
+          "detail": "Semera dry port is about 270 km from Djibouti, giving traders and processors a shorter export route than central regions.",
+          "source": "S3"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "PM Inaugurates Industrial Park in Afar Regional Capital",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2021-05-15",
+          "url": "https://www.ena.et/web/eng/w/en_24382",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Situation Analysis of Children and Women: Afar Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2521/file/Afar%20region%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Dry Port Services",
+          "publisher": "Ethiopian Shipping and Logistics Services Enterprise",
+          "date": "",
+          "url": "https://www.eslse.et/dryport.php",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Prime Minister Abiy, First Lady Zinash Review Key Development Projects in Afar Region",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-03-22",
+          "url": "https://www.ena.et/web/eng/w/eng_6227702",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Officials Vow to Take Concerted Effort to Bring Tendaho Irrigation Dam into Full Operation",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-05-19",
+          "url": "https://www.ena.et/web/eng/w/eng_4456657",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Semera Industrial Park",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/15/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "amhara",
+      "name": "Amhara",
+      "type": "Regional state",
+      "capital": "Bahir Dar",
+      "capitalSource": "S1",
+      "summary": "Amhara is a major grain basket with large teff, wheat, maize and barley output, and Lake Tana offers strong irrigation and tourism potential. The region hosts several federal special economic zones, an integrated agro-industrial park and two dry ports.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "21,842,000",
+          "period": "2019 (EFY 2011)",
+          "source": "S1"
+        },
+        {
+          "label": "Cropland planned for the main season",
+          "value": "5.1 million hectares",
+          "period": "2024/25 season",
+          "source": "S2"
+        },
+        {
+          "label": "Expected main-season harvest",
+          "value": "About 169 million quintals",
+          "period": "2024/25 season",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Agriculture is the main livelihood; key crops are teff, barley, wheat, oilseeds, sorghum, maize, oats, beans and peas, and households hold large livestock herds.",
+          "source": "S1"
+        },
+        {
+          "detail": "Lake Tana and several rivers offer irrigation potential, and the regional government promotes flower and horticulture production with smallholders.",
+          "source": "S1"
+        },
+        {
+          "detail": "Over the past four years, 496 new and existing industries became operational and more than 125,000 jobs were created in industry and investment.",
+          "source": "S3"
+        },
+        {
+          "detail": "Lalibela's 11 rock-hewn churches, a UNESCO World Heritage Site, draw hundreds of thousands of visitors each year.",
+          "source": "S4"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Bahir Dar Special Economic Zone",
+          "detail": "150 hectares with eight warehouses, three vacant sheds and 96 hectares for expansion; tenants include castor oil and edible oil processing and transformer production.",
+          "source": "S5"
+        },
+        {
+          "name": "Kombolcha Special Economic Zone",
+          "detail": "75 hectares with 9 sheds for textile and apparel, operational since 2017, about 380 km from Addis Ababa.",
+          "source": "S6"
+        },
+        {
+          "name": "Debre Birhan Special Economic Zone",
+          "detail": "Upgraded to SEZ status in 2024; its malt factory supplies domestic beer producers.",
+          "source": "S7"
+        },
+        {
+          "name": "Bure Integrated Agro-Industrial Park",
+          "detail": "Agro-processing park in south-western Amhara of about 155 hectares, served by rural transformation centers.",
+          "source": "S8"
+        },
+        {
+          "name": "Kombolcha and Woreta Port and Terminals",
+          "detail": "Kombolcha dry port (15 hectares, established 2013) is operational; Woreta dry port is under construction.",
+          "source": "S9"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Agro-processing in Bahir Dar SEZ",
+          "detail": "Vacant sheds and 96 hectares of expansion land are available; an existing oil processor sources from 9,500 contract castor farmers.",
+          "source": "S5"
+        },
+        {
+          "title": "Tourism and hospitality",
+          "detail": "Major hotel and eco-resort projects are under way around Lake Tana, and the government urges investors with land in Bahir Dar to start implementation.",
+          "source": "S10"
+        },
+        {
+          "title": "Agro-industrial supply chains",
+          "detail": "Bure IAIP is served by rural transformation centers, including one established at Motta, that aggregate farm produce.",
+          "source": "S11"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Main-season (meher) crops in western Amhara are planted in June and July and harvested through December, while eastern Amhara also relies on the belg rains; align repayment with post-harvest sales.",
+          "source": "S12"
+        },
+        {
+          "detail": "Kombolcha dry port, about 380 km from Addis Ababa, shortens import clearance for northern borrowers.",
+          "source": "S9"
+        }
+      ],
+      "investmentOffice": "Amhara Industry and Investment Bureau",
+      "investmentOfficeSource": "S3",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Situation Analysis of Children and Women: Amhara Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2551/file/Amhara%20region%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Some 98 Percent of Farmland Covered with Seeds in Amhara Region of Ethiopia",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-09-01",
+          "url": "https://www.ena.et/web/eng/w/eng_5081635",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Made in Ethiopia Movement Playing Essential Role in Meeting Domestic Demand, Generating Foreign Exchange",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-06-08",
+          "url": "https://www.ena.et/web/eng/w/eng_9001918",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Where History Meets Renewal: Ethiopia's Tourism Revival and the Christmas Miracle of Lalibela",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-01-07",
+          "url": "https://www.ena.et/web/eng/w/eng_8073864",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Ethiopia's Bahir Dar Industrial Park Companies Driving Economic Growth with Value-added Production",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-12-09",
+          "url": "https://www.ena.et/web/eng/w/eng_5597985",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Kombolcha Special Economic Zone",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/13/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "Ethiopia's Industrial Parks Driving Import Substitution, Export Diversification",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-01-25",
+          "url": "https://www.ena.et/web/eng/w/eng_3920617",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S8",
+          "title": "Integrated Agro-Industrial Parks (IAIPs) in Ethiopia",
+          "publisher": "UNIDO",
+          "date": "2018-08",
+          "url": "https://www.unido.org/sites/default/files/files/2018-08/Integrated-Agro-Industrial-Parks-in-Ethiopia-booklet.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S9",
+          "title": "Dry Port Services",
+          "publisher": "Ethiopian Shipping and Logistics Services Enterprise",
+          "date": "",
+          "url": "https://www.eslse.et/dryport.php",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S10",
+          "title": "Bahir Dar Undergoes Tourism Revolution as Mega Investments Take Shape: Deputy PM",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-05-04",
+          "url": "https://www.ena.et/web/eng/w/eng_8774993",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S11",
+          "title": "Integrated Agro-industrial Parks",
+          "publisher": "Ethiopian Investment Commission",
+          "date": "",
+          "url": "https://investethiopia.gov.et/key-sectors/special-economic-zones/integrated-agro-industrial-parks/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S12",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "benishangul-gumuz",
+      "name": "Benishangul-Gumuz",
+      "type": "Regional state",
+      "capital": "Assosa",
+      "capitalSource": "S1",
+      "summary": "Benishangul-Gumuz is home to the Grand Ethiopian Renaissance Dam, with 5,150 MW of installed capacity, and has wide gold and farmland potential. A new automated gold facility and a fast-growing reservoir fishery add to its opportunity base.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "1,127,000",
+          "period": "2019",
+          "source": "S1"
+        },
+        {
+          "label": "Area cultivated in the main season",
+          "value": "About 1.1 million hectares",
+          "period": "2023/24",
+          "source": "S2"
+        },
+        {
+          "label": "Fish harvest from GERD reservoir (Lake Nigat)",
+          "value": "10,799 tons",
+          "period": "Ethiopian fiscal year ended 2026",
+          "source": "S3"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "The economy is largely based on agriculture, including crops, livestock and forestry.",
+          "source": "S1"
+        },
+        {
+          "detail": "About 1.1 million hectares were cultivated in 2023/24, yielding 28 million quintals, with 1.2 million hectares planned for 2024/25.",
+          "source": "S2"
+        },
+        {
+          "detail": "The Kumruk gold factory, about 100 km from Assosa, is a modern automated facility expected to reach about half of capacity in 2026.",
+          "source": "S4"
+        },
+        {
+          "detail": "The Grand Ethiopian Renaissance Dam at Guba has 5,150 MW of installed hydropower capacity and was inaugurated in September 2025.",
+          "source": "S5"
+        }
+      ],
+      "industrialParks": [],
+      "opportunities": [
+        {
+          "title": "Fruit juice processing",
+          "detail": "EIC names Assosa as a high-potential area for fruit juice production.",
+          "source": "S6"
+        },
+        {
+          "title": "Gold mining and processing",
+          "detail": "National leadership highlights the region's wide gold potential and the new Kumruk facility.",
+          "source": "S4"
+        },
+        {
+          "title": "Fisheries and lake transport",
+          "detail": "Lake Nigat supports 46 fishing associations, and fishery development, tourism and inland water transport are noted benefits.",
+          "source": "S3"
+        },
+        {
+          "title": "Bamboo",
+          "detail": "The region is among those where the Ministry of Agriculture is developing bamboo nurseries and farms.",
+          "source": "S7"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Main-season crops in Benishangul-Gumuz are planted in June and July and harvested through December; agricultural loans should match this cycle.",
+          "source": "S8"
+        },
+        {
+          "detail": "Gold projects are still ramping up (Kumruk expected at about half capacity in 2026), so mining-linked borrowers may have back-loaded cash flows.",
+          "source": "S4"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Situation Analysis of Children and Women: Benishangul-Gumuz Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2020",
+          "url": "https://www.unicef.org/ethiopia/media/2396/file/Benishangul-Gumuz%20region.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Ethiopia's Benishangul-Gumuz Region to Cultivate Over 1.2 Million Hectares This Rainy Season",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-07-02",
+          "url": "https://www.ena.et/web/eng/w/eng_4701026",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "More Than 10,700 Tons of Fish Harvested from Lake Created by GERD",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-07-16",
+          "url": "https://www.ena.et/web/eng/w/eng_9229487",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "PM Abiy Reviews Key Development Projects in Assosa, Benishangul-Gumuz Region",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-08-23",
+          "url": "https://www.ena.et/web/eng/w/eng_7187674",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "US Analyst Says GERD Inauguration Marks a Major Injection of Energy for Africa",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-09-09",
+          "url": "https://www.ena.et/web/eng/w/eng_7309057",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Time to Invest in Ethiopia: Investment Guide (updated Feb. 2023)",
+          "publisher": "Ethiopian Investment Commission (hosted by UNIDO ITPO Tokyo)",
+          "date": "2023-02",
+          "url": "https://itpo-tokyo.unido.org/files/EIC-Investment-Guide-FINAL-IP-Updated-Feb.-2023.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "Ethiopia Needs to Turn Untapped Bamboo Resources into Use",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2019-06-07",
+          "url": "https://www.ena.et/web/eng/w/en_8164",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S8",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "central-ethiopia",
+      "name": "Central Ethiopia",
+      "type": "Regional state",
+      "capital": "Multi-center region; its first council session convened in Wolkite (2023)",
+      "capitalSource": "S1",
+      "summary": "Central Ethiopia, formed in 2023 from the Gurage, Silte, Kambata Tambaro, Halaba and Hadiya zones and Yem special district, is courting agricultural investment. Oilseed farming and heritage tourism, including the Tiya World Heritage site, are early opportunity areas.",
+      "indicators": [],
+      "economy": [
+        {
+          "detail": "The region comprises the Gurage, Silte, Kambata Tambaro, Halaba and Hadiya zones plus the Yem special district.",
+          "source": "S1"
+        },
+        {
+          "detail": "Commercial oilseed farming (soybean, sunflower and sesame) is under way, including a 5,000-hectare allocation near the Gibe River in Enor Wereda, Gurage Zone.",
+          "source": "S2"
+        },
+        {
+          "detail": "The Tiya prehistoric site in Gurage zone has been on the UNESCO World Heritage List since 1980.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [],
+      "opportunities": [
+        {
+          "title": "Commercial agriculture",
+          "detail": "The regional administration says it offers favorable conditions for private agricultural investors, with oilseeds a current focus.",
+          "source": "S2"
+        },
+        {
+          "title": "Heritage tourism",
+          "detail": "The UNESCO-listed Tiya site in Gurage zone supports heritage tourism services.",
+          "source": "S3"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Central Ethiopia is a belg (February to May rains) growing area as well as a main-season area; belg yields vary with rainfall, so seasonal cash-flow buffers matter.",
+          "source": "S4"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Central Ethiopia, Southern Ethiopia Regional States Established",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-08-19",
+          "url": "https://www.ena.et/web/eng/w/eng_3222547",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Central Ethiopia Region Striving to Attract Investments in Agriculture: Chief Administrator",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-10-14",
+          "url": "https://www.ena.et/web/eng/w/eng_3456227",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Tiya",
+          "publisher": "UNESCO World Heritage Centre",
+          "date": "",
+          "url": "https://whc.unesco.org/en/list/12/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "dire-dawa",
+      "name": "Dire Dawa",
+      "type": "City administration",
+      "capital": "Dire Dawa",
+      "capitalSource": "S1",
+      "summary": "Dire Dawa is Ethiopia's eastern logistics hub, hosting the country's first free trade zone, a rail-linked dry port and the Djibouti railway. New investors are arriving fast, supported by corridor upgrades and a new expressway.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "493,000 (63% urban)",
+          "period": "2019",
+          "source": "S1"
+        },
+        {
+          "label": "Distance from Dire Dawa parks to Djibouti",
+          "value": "321 km",
+          "period": "2023",
+          "source": "S2"
+        },
+        {
+          "label": "Registered capital of newly permitted investors",
+          "value": "Over ETB 35 billion",
+          "period": "Q1 of fiscal year 2025/26",
+          "source": "S3"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Dire Dawa was chosen for Ethiopia's first free trade zone because of its nearness to ports, market potential, cargo volumes and multimodal road, rail and air links.",
+          "source": "S4"
+        },
+        {
+          "detail": "The free trade zone supports warehousing, distribution, trade, transshipment and re-export, and IPDC reports it is in full operation.",
+          "source": "S5"
+        },
+        {
+          "detail": "The city's railway heritage of about 130 years is drawing more tourists alongside corridor development.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Dire Dawa Free Trade Zone",
+          "detail": "150 hectares, multi-sectoral with a focus on export garments and textiles, 15 rented sheds, and access to an international airport.",
+          "source": "S6"
+        },
+        {
+          "name": "Free Trade Zone expansion",
+          "detail": "Started with 150 hectares with room to expand to 4,000 hectares.",
+          "source": "S5"
+        },
+        {
+          "name": "Dire Dawa Dry Port",
+          "detail": "34-hectare dry port inaugurated in 2023, connected by rail to the Ethio-Djibouti line, handling more than 150 trucks a day.",
+          "source": "S7"
+        },
+        {
+          "name": "Upcoming parks",
+          "detail": "EIC lists the Redwa and CCECC parks in Dire Dawa as upcoming mixed-use parks.",
+          "source": "S2"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Free trade zone logistics and trade",
+          "detail": "Warehousing, re-export and trade services inside the free trade zone, with foreign currency access and simplified customs.",
+          "source": "S4"
+        },
+        {
+          "title": "Export manufacturing",
+          "detail": "Garment and textile manufacturing for export in the free trade zone sheds.",
+          "source": "S6"
+        },
+        {
+          "title": "Tourism",
+          "detail": "Railway heritage and the new corridor are positioning Dire Dawa as an investment and tourism hub.",
+          "source": "S3"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Borrowers benefit from 321 km to Djibouti and a rail-linked dry port, which lowers transit time for import and export businesses.",
+          "source": "S2"
+        },
+        {
+          "detail": "The World Bank funded 144 km Mieso to Dire Dawa expressway, due in about four years, should cut freight costs on the eastern trade route.",
+          "source": "S8"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Situation Analysis of Children and Women: Dire Dawa",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2556/file/Dire%20Dawa.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Time to Invest in Ethiopia: Investment Guide (updated Feb. 2023)",
+          "publisher": "Ethiopian Investment Commission (hosted by UNIDO ITPO Tokyo)",
+          "date": "2023-02",
+          "url": "https://itpo-tokyo.unido.org/files/EIC-Investment-Guide-FINAL-IP-Updated-Feb.-2023.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Corridor Development Boosts Dire Dawa as Premier Investment, Tourist Hub",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-11-09",
+          "url": "https://www.ena.et/web/eng/w/eng_7674805",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Free Trade Zone Will Provide Efficient Services, Attract Investors: Maritime Authority",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2022-08-23",
+          "url": "https://www.ena.et/web/eng/w/en_37964",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Ethiopia's Dire Dawa Free Trade Zone Enters in to Full Operation",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-11-12",
+          "url": "https://www.ena.et/web/eng/w/eng_5446308",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Dire Dawa Free Trade Zone",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/8/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "Dire Dawa Dry Port Inaugurated to Streamlining Ethiopia's Logistics Services",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-02-02",
+          "url": "https://www.ena.et/web/eng/w/en_42498",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S8",
+          "title": "DPM Temesgen Launches 62.6 Billion Birr Mieso-Dire Dawa Expressway Project",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-08-19",
+          "url": "https://www.ena.et/web/eng/w/eng_7163939",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "gambella",
+      "name": "Gambella",
+      "type": "Regional state",
+      "capital": "Gambella",
+      "capitalSource": "S1",
+      "summary": "Gambella has abundant arable land and river systems (Baro, Akobo and Gilo) suited to irrigated farming and fisheries. A new long-term partnership for Gambella National Park supports ecotourism growth.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "463,000",
+          "period": "2019",
+          "source": "S1"
+        },
+        {
+          "label": "Annual fish potential, Baro, Akobo and Sobat basins",
+          "value": "Over 21,000 tons",
+          "period": "2023",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Livelihoods include farming, livestock, beekeeping and fishing; key crops include cotton, coffee and mango.",
+          "source": "S1"
+        },
+        {
+          "detail": "The Akobo, Baro and Gilo rivers and several lakes offer strong potential for irrigation-based agriculture.",
+          "source": "S1"
+        },
+        {
+          "detail": "A 10-year partnership signed in December 2024 aims to upgrade Gambella National Park infrastructure and attract visitors.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [],
+      "opportunities": [
+        {
+          "title": "Fisheries and cold chain",
+          "detail": "The basins could yield over 21,000 tons of fish a year, while current catch is below 3% of that, pointing to room for processing and market investment.",
+          "source": "S2"
+        },
+        {
+          "title": "Irrigated agriculture",
+          "detail": "River systems support irrigation-based farming of crops such as cotton, coffee and mango.",
+          "source": "S1"
+        },
+        {
+          "title": "Ecotourism",
+          "detail": "Park infrastructure upgrades are planned to attract domestic and international visitors.",
+          "source": "S3"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "About 70% of fish catch is reported lost because of limited markets and handling, so fishery borrowers need cold storage and offtake plans.",
+          "source": "S2"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Situation Analysis of Children and Women: Gambella Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2020",
+          "url": "https://www.unicef.org/ethiopia/media/2311/file/Gambella%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Ethiopia, S. Sudan to Tap into over 21,000 Tons of Annual Fish Potential in three Basins",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023",
+          "url": "https://www.ena.et/web/eng/w/en_31884",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Collaborative Mgt Partnership Signed for Sustainable Management of Gambella National Park",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-12-11",
+          "url": "https://www.ena.et/web/eng/w/eng_5611100",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "harari",
+      "name": "Harari",
+      "type": "Regional state",
+      "capital": "Harar",
+      "capitalSource": "S1",
+      "summary": "Harari centers on Harar, a UNESCO World Heritage city with a long history as a trade hub between the coast and the highlands. Heritage tourism, urban trade and local manufacturing are growing.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "257,000 (56% urban)",
+          "period": "2019",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Trade is a major urban livelihood, while rural residents mainly depend on rain-fed, small-scale farming.",
+          "source": "S2"
+        },
+        {
+          "detail": "Harar Jugol, inscribed by UNESCO in 2006, lies about 525 km from Addis Ababa and was a commercial hub linking the coast and the interior.",
+          "source": "S1"
+        },
+        {
+          "detail": "Corridor development has created jobs, and local manufacturers produce electric poles and other goods that reduce imports.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [],
+      "opportunities": [
+        {
+          "title": "Heritage tourism and hospitality",
+          "detail": "Harar's walled old town, with its museums and living traditions, is promoted as a must-visit destination.",
+          "source": "S4"
+        },
+        {
+          "title": "Local manufacturing",
+          "detail": "Local producers of electric poles and other essential goods are replacing imports.",
+          "source": "S3"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Rural borrowers rely on rain-fed small-scale farming, so agricultural cash flow follows the rainy seasons.",
+          "source": "S2"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Harar Jugol, the Fortified Historic Town",
+          "publisher": "UNESCO World Heritage Centre",
+          "date": "",
+          "url": "https://whc.unesco.org/en/list/1189/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Situation Analysis of Children and Women: Harari",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2546/file/Harari%20region%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "4th Region featured in this visual series is the Harari Region",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-02-07",
+          "url": "https://www.ena.et/web/eng/w/eng_5918656",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Ethiopia's Fortified Historic Town of Harar Stands out as A Must-visit Destination",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-03-16",
+          "url": "https://www.ena.et/web/eng/w/eng_6184478",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "oromia",
+      "name": "Oromia",
+      "type": "Regional state",
+      "capital": "Addis Ababa (Finfinne)",
+      "capitalSource": "S1",
+      "summary": "Oromia is Ethiopia's largest region by area and population and produces a large share of the country's crops, coffee and livestock. It hosts the Modjo dry port, which handles most national imports, along with Adama and Jimma special economic zones and the Bulbula agro-industrial park.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "About 37.27 million",
+          "period": "2019 (EFY 2011)",
+          "source": "S2"
+        },
+        {
+          "label": "Share of national imports via Modjo dry port",
+          "value": "More than 78%",
+          "period": "Current listing",
+          "source": "S3"
+        },
+        {
+          "label": "Main-season (meher) farmland plan",
+          "value": "12.4 million hectares",
+          "period": "2024/25 plan",
+          "source": "S4"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Highland areas practice rain-fed farming; lowland areas are mainly pastoral and livestock-based.",
+          "source": "S2"
+        },
+        {
+          "detail": "Major coffee areas include Jimma, Illubabor, Guji, the Wollega zones, Bale and Borena; Bale Zone alone has over 68,000 hectares of coffee.",
+          "source": "S5"
+        },
+        {
+          "detail": "The region plans 4 million hectares of dry-season irrigated wheat and prioritizes coffee for export.",
+          "source": "S4"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Adama Special Economic Zone",
+          "detail": "365.5 hectares, multi-sectoral (machinery, apparel and garment), operational since 2018, about 74 km from Addis Ababa.",
+          "source": "S6"
+        },
+        {
+          "name": "Bulbula Integrated Agro-Industrial Park",
+          "detail": "271 hectares near the Modjo dry port and the Modjo to Hawassa highway, for fruits, vegetables, dairy, meat, poultry, coffee and cereals.",
+          "source": "S7"
+        },
+        {
+          "name": "Jimma Special Economic Zone",
+          "detail": "75 hectares with nine sheds focused on agro-processing, including avocado oil, using local coffee, honey and fruit.",
+          "source": "S8"
+        },
+        {
+          "name": "Modjo Port and Terminal",
+          "detail": "150-hectare dry port connected to the Ethio-Djibouti railway, with annual capacity of up to 136,038 TEU.",
+          "source": "S3"
+        },
+        {
+          "name": "Other parks",
+          "detail": "EIC also lists George Shoe and Eastern Industrial Park as operational, with Woda and East African parks upcoming.",
+          "source": "S9"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Agro-processing at Bulbula",
+          "detail": "Companies have signed on for tomato processing, avocado oil, animal fodder and dairy production.",
+          "source": "S10"
+        },
+        {
+          "title": "Priority sectors promoted by the region",
+          "detail": "Agro-processing, horticulture, textile and garment, and hotel and tourism.",
+          "source": "S11"
+        },
+        {
+          "title": "Avocado value chain",
+          "detail": "Jimma's avocado oil plant sources from neighboring farmers, benefiting up to 70,000 avocado growers.",
+          "source": "S12"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Main-season crops in western Oromia are planted in June and July and harvested through December; eastern Oromia also depends on the belg rains. Time repayments to harvest sales.",
+          "source": "S13"
+        },
+        {
+          "detail": "Southern Oromia pastoral areas depend on the gu/genna (March to May) and deyr/hageya (October to December) rains, which drive livestock condition and sales.",
+          "source": "S13"
+        },
+        {
+          "detail": "Modjo dry port links directly to the Djibouti railway, giving central Oromia importers a logistics advantage.",
+          "source": "S3"
+        }
+      ],
+      "investmentOffice": "Oromiya Investment Bureau",
+      "investmentOfficeSource": "S14",
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Oromia Regional Brief",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2022-04",
+          "url": "https://www.unicef.org/ethiopia/media/6511/file/Oromia%20regional%20brief.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Situation Analysis of Children and Women: Oromia Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2391/file/Oromia%20region%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Dry Port Services",
+          "publisher": "Ethiopian Shipping and Logistics Services Enterprise",
+          "date": "",
+          "url": "https://www.eslse.et/dryport.php",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Oromia Prioritizes Rainy Season Crops, Irrigated Wheat for Export Boost: President Shimelis",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-06-21",
+          "url": "https://www.ena.et/web/eng/w/eng_4820101",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Jimma Coffee Productivity Surge Draws Growing Tourism Interest",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-01-03",
+          "url": "https://www.ena.et/web/eng/w/eng_8051378",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Adama Special Economic Zone",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/4/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "Premier Inaugurates Integrated Agro-Industrial Park",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2021-05-08",
+          "url": "https://www.ena.et/web/eng/w/en_24180",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S8",
+          "title": "Jimma Industrial Park",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://ipdc.gov.et/news/post/113/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S9",
+          "title": "Time to Invest in Ethiopia: Investment Guide (updated Feb. 2023)",
+          "publisher": "Ethiopian Investment Commission (hosted by UNIDO ITPO Tokyo)",
+          "date": "2023-02",
+          "url": "https://itpo-tokyo.unido.org/files/EIC-Investment-Guide-FINAL-IP-Updated-Feb.-2023.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S10",
+          "title": "Eight Companies to Start work in Bulbula Integrated Agro Industrial Park With 1.7 Bil Birr Combined Capital",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-02-10",
+          "url": "https://www.ena.et/web/eng/w/en_42787",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S11",
+          "title": "Oromia Region Working To Attract More Investors in Coming Ethiopian Budget Year",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2022-05-28",
+          "url": "https://www.ena.et/web/eng/w/en_36085",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S12",
+          "title": "Ethiopia's Industrial Parks Driving Import Substitution, Export Diversification",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-01-25",
+          "url": "https://www.ena.et/web/eng/w/eng_3920617",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S13",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S14",
+          "title": "Oromiyaa.gov.et Home",
+          "publisher": "Oromia Regional Government",
+          "date": "",
+          "url": "http://www.oromiyaa.gov.et/web/guest",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "sidama",
+      "name": "Sidama",
+      "type": "Regional state",
+      "capital": "Hawassa",
+      "capitalSource": "S1",
+      "summary": "Sidama is a renowned coffee and avocado region whose capital, Hawassa, hosts one of Ethiopia's flagship textile and apparel special economic zones. The Yirgalem agro-industrial park links over 100,000 farmers to processors and export markets.",
+      "indicators": [
+        {
+          "label": "Farmers linked to markets via Yirgalem IAIP",
+          "value": "About 130,000",
+          "period": "2024",
+          "source": "S2"
+        },
+        {
+          "label": "Yirgalem IAIP export earnings",
+          "value": "About US$16.7 million",
+          "period": "Four years to 2024",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Sidama is one of Ethiopia's major coffee areas.",
+          "source": "S3"
+        },
+        {
+          "detail": "Processors at Yirgalem IAIP handle coffee, avocado, soybean, milk, honey, animal feed and nutrient-dense foods for children.",
+          "source": "S2"
+        },
+        {
+          "detail": "Avocado oil from Yirgalem earned over US$2.5 million in European sales in the nine months to May 2026.",
+          "source": "S4"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Hawassa Special Economic Zone",
+          "detail": "Textile and apparel zone operational since 2016, about 275 km from Addis Ababa, with 52 factory sheds (46 rented) and a domestic airport.",
+          "source": "S1"
+        },
+        {
+          "name": "Yirgalem Integrated Agro-Industrial Park",
+          "detail": "294 hectares inaugurated in 2021 with over US$60 million investment; first tenants were in avocado oil and coffee.",
+          "source": "S5"
+        },
+        {
+          "name": "Hawassa Port and Terminal",
+          "detail": "Dry port service operating through a satellite office at Hawassa Industrial Park.",
+          "source": "S6"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Textile and apparel in Hawassa SEZ",
+          "detail": "IPDC offers serviced sheds, land and incentives, and new apparel investors are exploring entry.",
+          "source": "S7"
+        },
+        {
+          "title": "Agro-processing at Yirgalem",
+          "detail": "34 companies have signed agreements at the park and 10 are fully operational, sourcing through farmer cooperatives.",
+          "source": "S4"
+        },
+        {
+          "title": "Renewable energy manufacturing",
+          "detail": "A solar energy company with US$100 million registered capital has started operations in Hawassa.",
+          "source": "S8"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Sidama is a belg (February to May rains) area; belg yields vary with rainfall, so allow seasonal flexibility for smallholder-linked borrowers.",
+          "source": "S9"
+        },
+        {
+          "detail": "Export-oriented tenants (avocado oil, apparel) earn foreign currency, which can support repayment capacity for import-dependent inputs.",
+          "source": "S4"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Hawassa Industrial Park (Hawassa Special Economic Zone)",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/9/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Yirgalem Integrated-Agro Industrial Park Creates 17,000 Jobs, 130,000 Market Linkages",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-09-23",
+          "url": "https://www.ena.et/web/eng/w/eng_5187546",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Jimma Coffee Productivity Surge Draws Growing Tourism Interest",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-01-03",
+          "url": "https://www.ena.et/web/eng/w/eng_8051378",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Avocado Oil Export from Yirgalem Integrated Agro-Industrial Park Generates 2.5 Million USD",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-05-23",
+          "url": "https://www.ena.et/web/eng/w/eng_8904676",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Prime Minister Abiy Ahmed inaugurates Yirgalem Integrated Agro-Industrial Park in Sidama State, Ethiopia",
+          "publisher": "UNIDO",
+          "date": "2021-03-13",
+          "url": "https://www.unido.org/news/prime-minister-abiy-ahmed-inaugurates-yirgalem-integrated-agro-industrial-park-sidama-state-ethiopia",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Dry Port Services",
+          "publisher": "Ethiopian Shipping and Logistics Services Enterprise",
+          "date": "",
+          "url": "https://www.eslse.et/dryport.php",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "Turkish Investors Eye Ethiopia's Hawassa Special Economic Zone",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-07-25",
+          "url": "https://www.ena.et/web/eng/w/eng_7007882",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S8",
+          "title": "SEZ's Driving Diverse Investments, Sustainable Market Linkages for Farmers: IPDC Deputy CEO",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-05-11",
+          "url": "https://www.ena.et/web/eng/w/eng_6572813",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S9",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "somali",
+      "name": "Somali",
+      "type": "Regional state",
+      "capital": "Jigjiga",
+      "capitalSource": "S1",
+      "summary": "Somali Region combines a large livestock economy with fast-growing irrigated farming along the Shabelle River and major natural gas resources. Manufacturing is emerging in Jigjiga, including Ethiopia's first car assembly plant.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "About 6 million",
+          "period": "2019",
+          "source": "S2"
+        },
+        {
+          "label": "Natural gas reserves (third-party confirmed)",
+          "value": "21 trillion cubic feet",
+          "period": "2025",
+          "source": "S3"
+        },
+        {
+          "label": "Small, medium and large industries established",
+          "value": "About 300",
+          "period": "Six years to 2024",
+          "source": "S4"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Pastoralism is the predominant occupation, followed by agro-pastoralism; incomes come from livestock and livestock products, crops, petty trade and remittances.",
+          "source": "S2"
+        },
+        {
+          "detail": "Large-scale irrigation projects worth at least ETB 8 billion are under way in two zones, supporting wheat and rice.",
+          "source": "S5"
+        },
+        {
+          "detail": "Rice is being grown on the Shabelle River, with a 300-hectare pilot within a 3,000-hectare program.",
+          "source": "S6"
+        },
+        {
+          "detail": "Natural gas and crude oil development is progressing, and a 1,000 MW gas-fired power project is planned.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [],
+      "opportunities": [
+        {
+          "title": "Irrigated rice and wheat",
+          "detail": "Officials invite domestic, foreign and diaspora investors to scale the Shabelle rice program.",
+          "source": "S6"
+        },
+        {
+          "title": "Manufacturing in Jigjiga",
+          "detail": "An ETB 250 million car assembly plant (up to 10 cars a day) opened in 2024, and the region pledges support for private investors.",
+          "source": "S4"
+        },
+        {
+          "title": "Tourism",
+          "detail": "The Dine project in Jigjiga is presented as a source of new tourism opportunities for eastern Ethiopia.",
+          "source": "S1"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Pastoral cash flows depend on the gu/genna (March to May) and deyr/hageya (October to December) rains in southern Somali; size livestock-linked loans around these seasons.",
+          "source": "S7"
+        },
+        {
+          "detail": "Irrigated farming on the Shabelle reduces reliance on rainfall for crop borrowers compared with rain-fed areas.",
+          "source": "S6"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Somali Region Unlocking New Opportunities through Tourism Bringing Fresh Value to Eastern Part of Ethiopia: PM Abiy",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-10-01",
+          "url": "https://www.ena.et/web/eng/w/eng_7436036",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Situation Analysis of Children and Women: Somali Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2020",
+          "url": "https://www.unicef.org/ethiopia/media/2401/file/Somali%20region%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "PM Abiy Describes Gas-Oil, Fertilizer Projects as Macroeconomic Stabilizers",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-10-28",
+          "url": "https://www.ena.et/web/eng/w/eng_7607818",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "First Car Assembly Plant Inaugurated in Jigjiga, Somali Region of Ethiopia",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-05-14",
+          "url": "https://www.ena.et/web/eng/w/eng_4432608",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Prevailing Peace, Stability in Somali Region Following Reform Attracting Huge Investments",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-05-06",
+          "url": "https://www.ena.et/web/eng/w/eng_4398416",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Somali Region of Ethiopia Making Strides in Rice Production",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-08-28",
+          "url": "https://www.ena.et/web/eng/w/eng_5059780",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "south-ethiopia",
+      "name": "South Ethiopia",
+      "type": "Regional state",
+      "capital": "Multi-center region; centers include Wolayta Sodo, Arba Minch, Dilla, Jinka, Sawla and Karat",
+      "capitalSource": "S1",
+      "summary": "South Ethiopia, formed in 2023, is home to the Gedeo coffee landscape (source of Yirgacheffe coffee) and the Arba Minch tourism hub. A dedicated industrial park in Dilla targets coffee, fruit and honey processing.",
+      "indicators": [],
+      "economy": [
+        {
+          "detail": "The Gedeo Cultural Landscape, inscribed by UNESCO in 2023, is a multilayer agroforestry system where enset and Yirgacheffe coffee are grown under shade trees.",
+          "source": "S2"
+        },
+        {
+          "detail": "Corridor development is upgrading seven urban centers: Wolayta Sodo, Arba Minch, Dilla, Sawla, Jinka, Karat and Yirga Chefe.",
+          "source": "S3"
+        },
+        {
+          "detail": "Arba Minch is described as a growing development hub with major investment and infrastructure projects.",
+          "source": "S4"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Dilla Industrial Park",
+          "detail": "20-hectare park completed in 2021, giving priority to coffee processing, animal husbandry, and fruit and honey production, with farmer training centers.",
+          "source": "S5"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Coffee processing",
+          "detail": "Dilla Industrial Park prioritizes investors and associations in coffee processing.",
+          "source": "S5"
+        },
+        {
+          "title": "Fruit juice processing",
+          "detail": "EIC names Arba Minch as a high-potential area for fruit juice production.",
+          "source": "S6"
+        },
+        {
+          "title": "Tourism and hospitality",
+          "detail": "A 53-villa resort is under development in Arba Minch, and investors are urged to strengthen tourism.",
+          "source": "S4"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Coffee in the Gedeo landscape is a shade-grown smallholder crop, so cooperative aggregation and harvest timing shape borrower cash flow.",
+          "source": "S2"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Central Ethiopia, Southern Ethiopia Regional States Established",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-08-19",
+          "url": "https://www.ena.et/web/eng/w/eng_3222547",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "UNESCO Inscribes Gedeo Cultural Landscape as World Heritage",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-09-17",
+          "url": "https://www.ena.et/web/eng/w/eng_3345334",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Corridor Development Reinforced in Seven Administrative Cities South Ethiopia Regional",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-02-10",
+          "url": "https://www.ena.et/web/eng/w/eng_5933720",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Arba Minch Continues to Flourish as Hub of Development, Says PM Abiy",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-07-03",
+          "url": "https://www.ena.et/web/eng/w/eng_9155365",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Construction of Dilla Industrial Park Completed: Corporation",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2021-01-07",
+          "url": "https://www.ena.et/en/?p=20318",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Time to Invest in Ethiopia: Investment Guide (updated Feb. 2023)",
+          "publisher": "Ethiopian Investment Commission (hosted by UNIDO ITPO Tokyo)",
+          "date": "2023-02",
+          "url": "https://itpo-tokyo.unido.org/files/EIC-Investment-Guide-FINAL-IP-Updated-Feb.-2023.pdf",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "south-west-ethiopia",
+      "name": "South West Ethiopia Peoples'",
+      "type": "Regional state",
+      "capital": "Bonga",
+      "capitalSource": "S1",
+      "summary": "South West Ethiopia Peoples' Region, established in 2021, is a forest coffee heartland that includes the Kafa zone, recognized by UNESCO as the birthplace of wild Arabica coffee. Coffee, forest products and nature tourism are its leading opportunities.",
+      "indicators": [
+        {
+          "label": "Kafa Biosphere Reserve area",
+          "value": "About 760,144 hectares",
+          "period": "UNESCO listing",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "The region comprises the Kaffa, Sheka, Bench Sheko, Dawuro and West Omo zones and the Konta special district.",
+          "source": "S3"
+        },
+        {
+          "detail": "Bench Sheko, Kaffa and Sheka are among Ethiopia's major coffee areas.",
+          "source": "S4"
+        },
+        {
+          "detail": "The Kafa Biosphere Reserve, about 460 km southwest of Addis Ababa, holds close to 5,000 wild varieties of Arabica coffee.",
+          "source": "S2"
+        }
+      ],
+      "industrialParks": [],
+      "opportunities": [
+        {
+          "title": "Specialty and forest coffee",
+          "detail": "Kafa zone is the center of origin and genetic diversity of wild Arabica coffee, supporting premium coffee value chains.",
+          "source": "S2"
+        },
+        {
+          "title": "Coffee and nature tourism",
+          "detail": "Kafa is recognized under UNESCO's Man and the Biosphere Programme, with tourism among local economic activities.",
+          "source": "S2"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Coffee is the core cash crop, so borrower income is concentrated around the annual coffee harvest and export prices.",
+          "source": "S4"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Channeling GERD's Spirit Crucial for Ethiopia's Development: Deputy Chief Administrator Negash",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2025-09-19",
+          "url": "https://www.ena.et/web/eng/w/eng_7358966",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Kafa Biosphere Reserve",
+          "publisher": "UNESCO Man and the Biosphere Programme",
+          "date": "",
+          "url": "https://www.unesco.org/en/mab/kafa",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Official Formation of South West Ethiopia Regional State Underway",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2021-11-23",
+          "url": "https://www.ena.et/web/eng/w/en_30758",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Jimma Coffee Productivity Surge Draws Growing Tourism Interest",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2026-01-03",
+          "url": "https://www.ena.et/web/eng/w/eng_8051378",
+          "accessed": "2026-10-22"
+        }
+      ]
+    },
+    {
+      "slug": "tigray",
+      "name": "Tigray",
+      "type": "Regional state",
+      "capital": "Mekelle",
+      "capitalSource": "S1",
+      "summary": "Tigray has an agriculture and services based economy with mining resources including gold and cement. Mekelle hosts a federal special economic zone for textiles and apparel, an international airport and a dry port.",
+      "indicators": [
+        {
+          "label": "Population (CSA projection from 2007 census, cited by UNICEF)",
+          "value": "5,443,000",
+          "period": "2019",
+          "source": "S2"
+        },
+        {
+          "label": "Agriculture share of regional GDP",
+          "value": "40%",
+          "period": "2015",
+          "source": "S2"
+        },
+        {
+          "label": "Services share of regional GDP",
+          "value": "39%",
+          "period": "2015",
+          "source": "S2"
+        }
+      ],
+      "economy": [
+        {
+          "detail": "Agriculture accounted for 40% of regional GDP and services 39% in 2015, with average annual growth of 11% between 2011 and 2015.",
+          "source": "S2"
+        },
+        {
+          "detail": "Mining activity includes gold, and the Messobo cement factory is operating.",
+          "source": "S3"
+        }
+      ],
+      "industrialParks": [
+        {
+          "name": "Mekelle Special Economic Zone",
+          "detail": "75 hectares with 15 sheds for textile and apparel, near an international airport; IPDC currently lists the park as non-operational.",
+          "source": "S1"
+        },
+        {
+          "name": "Mekelle Port and Terminal",
+          "detail": "3-hectare dry port established 2013, about 783 km from Addis Ababa, with annual capacity up to 7,789 TEU.",
+          "source": "S4"
+        },
+        {
+          "name": "Velocity apparel park",
+          "detail": "Listed by EIC as an upcoming apparel and garment park in Tigray.",
+          "source": "S5"
+        }
+      ],
+      "opportunities": [
+        {
+          "title": "Textile and apparel",
+          "detail": "Mekelle was among 10 parks upgraded to special economic zone status in 2024, with ready-built sheds.",
+          "source": "S6"
+        },
+        {
+          "title": "Gold mining and processing",
+          "detail": "Gold is the main mining focus, with procurement handled through a gold bank in Shire.",
+          "source": "S3"
+        },
+        {
+          "title": "Construction materials",
+          "detail": "Cement production at the Messobo factory supports construction supply chains.",
+          "source": "S3"
+        }
+      ],
+      "considerations": [
+        {
+          "detail": "Southern Tigray is a belg (February to May rains) area, so crop yields and farm cash flow vary with seasonal rainfall.",
+          "source": "S7"
+        },
+        {
+          "detail": "Check the current operating status of the Mekelle SEZ with IPDC before relying on park-based tenant revenue.",
+          "source": "S1"
+        }
+      ],
+      "investmentOffice": null,
+      "sources": [
+        {
+          "id": "S1",
+          "title": "Mekelle Special Economic Zone",
+          "publisher": "Industrial Parks Development Corporation (IPDC)",
+          "date": "",
+          "url": "https://www.ipdc.gov.et/service/parks/14/",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S2",
+          "title": "Situation Analysis of Children and Women: Tigray Region",
+          "publisher": "UNICEF Ethiopia",
+          "date": "2019",
+          "url": "https://www.unicef.org/ethiopia/media/2351/file/Tigray%20region%20.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S3",
+          "title": "Mining Companies In Tigray to Resume Exploration, Production Work Soon",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2023-07-20",
+          "url": "https://www.ena.et/web/eng/w/eng_3100881",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S4",
+          "title": "Dry Port Services",
+          "publisher": "Ethiopian Shipping and Logistics Services Enterprise",
+          "date": "",
+          "url": "https://www.eslse.et/dryport.php",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S5",
+          "title": "Time to Invest in Ethiopia: Investment Guide (updated Feb. 2023)",
+          "publisher": "Ethiopian Investment Commission (hosted by UNIDO ITPO Tokyo)",
+          "date": "2023-02",
+          "url": "https://itpo-tokyo.unido.org/files/EIC-Investment-Guide-FINAL-IP-Updated-Feb.-2023.pdf",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S6",
+          "title": "Ethiopia Upgrades 10 Industrial Parks to Special Economic Zones for Attracting More FDI",
+          "publisher": "Ethiopian News Agency (ENA)",
+          "date": "2024-12-03",
+          "url": "https://www.ena.et/web/eng/w/eng_5560716",
+          "accessed": "2026-10-22"
+        },
+        {
+          "id": "S7",
+          "title": "GIEWS Country Brief: Ethiopia",
+          "publisher": "FAO Global Information and Early Warning System",
+          "date": "2025-10-03",
+          "url": "https://www.fao.org/giews/countrybrief/country.jsp?code=ETH",
+          "accessed": "2026-10-22"
+        }
+      ]
+    }
+  ]
+}

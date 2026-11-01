@@ -1,7 +1,7 @@
 {
   "slug": "manufacturing",
   "name": "Manufacturing",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Ethiopia's manufacturing sector is gaining momentum: the Ministry of Industry reports export earnings of 607 million USD in the 2018 Ethiopian fiscal year (2025/26), up from 385 million USD before the Made in Ethiopia initiative, and targets 1 billion USD in the year that follows. Manufacturing employment has passed 433,000, industrial capacity utilization stands at 69.2 percent, and about 5.9 billion USD in import substitution was reported over the past fiscal year. Investors can draw on IPDC's 13 serviced parks and economic zones, tax holidays of up to 10 years in industrial parks, and preferential access to markets under Everything But Arms, the AfCFTA and COMESA.",
   "indicators": [
     {
@@ -69,9 +69,9 @@
       "source": "S8"
     },
     {
-      "label": "91-day Treasury bill weighted average yield (benchmark)",
-      "value": "12.4 percent",
-      "period": "February 2026",
+      "label": "91-day Treasury bill yield (benchmark)",
+      "value": "11.0 percent (16.1 percent in the same period a year earlier); weighted average for all T-bills 12.3 percent",
+      "period": "May 2026",
       "basis": "Risk-free local-currency benchmark yield",
       "source": "S9"
     }
@@ -171,7 +171,7 @@
       "date": "2026-10",
       "url": "https://www.ipdc.gov.et/",
       "location": "Statistics panel and 'Our Parks' list (the page also says '11 special economic zones, and 3 industrial parks' and '14 parks')",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S7",
@@ -193,12 +193,12 @@
     },
     {
       "id": "S9",
-      "title": "Press Release: Monetary Policy Committee Meeting No. 6",
+      "title": "Press Release: Monetary Policy Committee Meeting No. 7",
       "publisher": "National Bank of Ethiopia",
-      "date": "2026-03",
-      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
-      "location": "p. 2 (T-bill yields)",
-      "accessed": "2026-10-16"
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/07/PR_0713_MPC_E.pdf",
+      "location": "p. 2, Interest Rate Developments (T-bill yields, May 2026)",
+      "accessed": "2026-11-01"
     },
     {
       "id": "S10",

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ButtonLink, Container, DataTable, Faq, Note, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Investopia Pricing · Plans for Businesses and Investors",
+  title: "Erudite Africa Connect Pricing · Plans for Businesses and Investors",
   description:
     "Start free. Upgrade for featured listings, verified EHIRA assessments and full deal room access. Pay in Birr.",
 };
@@ -26,7 +26,6 @@ const businessRows = [
   ],
   ["Data room", "5 documents", "Full data room", "Full data room with view analytics"],
   ["Deal Room eligibility", "No", "Yes", "Priority consideration"],
-  ["Academy", "Free courses", "All courses", "All courses plus certificates"],
   ["Support", "Help Center", "Email support", "Dedicated relationship manager"],
   [
     "",
@@ -43,7 +42,7 @@ const businessRows = [
 ];
 
 const investorRows = [
-  ["Tagline", "See what is out there", "Act on the best deals", "Run your pipeline on Investopia"],
+  ["Tagline", "See what is out there", "Act on the best deals", "Run your pipeline on Erudite Africa Connect"],
   [
     "Price",
     "Free",
@@ -79,7 +78,7 @@ export default function PricingPage() {
     <>
       <PageHero
         title="Simple plans. Start free."
-        subhead="Join Investopia at no cost, then upgrade when you are ready to reach more investors, buyers and experts. Pay in Birr with Chapa or Telebirr."
+        subhead="Join Erudite Africa Connect at no cost, then upgrade when you are ready to reach more investors, buyers and experts. Pay in Birr with Chapa or Telebirr."
       >
         <ButtonLink href="#business-plans" variant="light">
           For businesses
@@ -92,7 +91,7 @@ export default function PricingPage() {
       <div className="border-b border-line bg-white py-4">
         <Container>
           <p className="text-center text-sm text-muted">
-            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after Investopia launches.
+            <strong className="text-ink">Launch offer:</strong> every plan is free for the first 45 days after Erudite Africa Connect launches.
             Prices in ETB, with monthly and yearly billing, will be announced before the launch period ends.
           </p>
         </Container>
@@ -108,7 +107,7 @@ export default function PricingPage() {
 
       <Section
         id="services"
-        title="Success fees and services"
+        title="Advisory and due diligence services"
         intro="Some services carry a one-off fee, always agreed in writing before work starts."
       >
         <ul className="space-y-3 text-muted">
@@ -116,13 +115,12 @@ export default function PricingPage() {
             <strong className="text-ink">Verified EHIRA (pay-as-you-go):</strong> announced after the launch period
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
-            <strong className="text-ink">Success fee on completed transactions introduced through Investopia:</strong>{" "}
-            announced after the launch period
+            <strong className="text-ink">Advisory and due diligence fees:</strong> quoted per assignment, such as investor due diligence on a
+            business in a deal room
           </li>
           <li className="rounded-lg border border-line bg-white p-4">
             <strong className="text-ink">
-              Program hosting for partner institutions, and Academy enterprise subscriptions for banks and MFIs (per seat,
-              billed annually):
+              Program hosting for partner institutions:
             </strong>{" "}
             Custom
           </li>
@@ -140,7 +138,7 @@ export default function PricingPage() {
               q: "Do you take a share of my business?",
               a: (
                 <>
-                  Not by joining or using Investopia. Investopia takes equity in a business only when this is agreed in writing in advance with
+                  Not by joining or using Erudite Africa Connect. Erudite Africa Connect takes equity in a business only when this is agreed in writing in advance with
                   the business and its investors, as payment for advisory or capital-raising services.
                 </>
               ),

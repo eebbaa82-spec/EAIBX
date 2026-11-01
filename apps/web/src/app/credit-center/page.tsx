@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ButtonLink, FeatureList, Note, PageHero, Section, Steps } from "@/components/ui";
+import { academy } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Credit Management Center · Investopia",
+  title: "Credit Management Center · Erudite Africa Connect",
   description:
     "Manage bank and MFI credit relationships, and give lenders faster, consent-based client due diligence. Built for Ethiopia.",
 };
@@ -14,7 +15,7 @@ export default function CreditCenterPage() {
       <PageHero
         eyebrow="Credit Management Center"
         title="Better credit relationships between businesses and lenders."
-        subhead="The Investopia Credit Management Center of Excellence helps businesses manage their relationships with banks and microfinance institutions (MFIs), and helps banks and MFIs carry out faster, better-documented client due diligence."
+        subhead="The Erudite Africa Connect Credit Management Center of Excellence helps businesses manage their relationships with banks and microfinance institutions (MFIs), and helps banks and MFIs carry out faster, better-documented client due diligence."
       >
         <ButtonLink href="#for-businesses" variant="light">
           I&apos;m a business
@@ -28,7 +29,7 @@ export default function CreditCenterPage() {
         id="for-businesses"
         eyebrow="For businesses"
         title="Be the borrower every lender wants."
-        intro="Getting credit is only the start. Keeping a strong relationship with your bank or MFI means clear records, on-time reporting and early, honest conversations. Investopia gives you the tools to do all three."
+        intro="Getting credit is only the start. Keeping a strong relationship with your bank or MFI means clear records, on-time reporting and early, honest conversations. Erudite Africa Connect gives you the tools to do all three."
       >
         <FeatureList
           items={[
@@ -52,7 +53,7 @@ export default function CreditCenterPage() {
               title: "Early warning.",
               body: (
                 <>
-                  If repayments or covenants come under pressure, Investopia flags it early and connects you with{" "}
+                  If repayments or covenants come under pressure, Erudite Africa Connect flags it early and connects you with{" "}
                   <Link href="/recovery" className="text-brand-700 underline-offset-4 hover:underline">
                     Business Recovery
                   </Link>{" "}
@@ -62,8 +63,16 @@ export default function CreditCenterPage() {
             },
           ]}
         />
-        <div className="mt-8">
-          <ButtonLink href="/join">Build my credit profile</ButtonLink>
+        <div className="mt-8 rounded-2xl border border-brand-200 bg-brand-50 p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">Free tool</p>
+          <h3 className="mt-1 text-xl font-bold text-ink">Borrower profile builder</h3>
+          <p className="mt-2 max-w-2xl text-muted">
+            Upload your company profile, answer a few questions about your loan, finances and collateral, and get a lender-ready profile, a
+            readiness check and the document checklist for your loan type, from working capital to project and lease financing.
+          </p>
+          <div className="mt-5">
+            <ButtonLink href="/credit-center/profile-builder">Build my borrower profile</ButtonLink>
+          </div>
         </div>
       </Section>
 
@@ -72,7 +81,7 @@ export default function CreditCenterPage() {
         tone="canvas"
         eyebrow="For banks and MFIs"
         title="Faster due diligence. Healthier portfolios."
-        intro="Investopia gives credit teams a secure, consent-based way to collect, review and verify client information, and to follow borrowers after disbursement."
+        intro="Erudite Africa Connect gives credit teams a secure, consent-based way to collect, review and verify client information, and to follow borrowers after disbursement."
       >
         <FeatureList
           items={[
@@ -88,7 +97,7 @@ export default function CreditCenterPage() {
             },
             {
               title: "Verified business data.",
-              body: "With the client's consent, see their EHIRA grade, diagnostic report and financial summaries, reviewed by Investopia analysts.",
+              body: "With the client's consent, see their EHIRA grade, diagnostic report and financial summaries, reviewed by Erudite Africa Connect analysts.",
             },
             {
               title: "Structured appraisal support.",
@@ -100,24 +109,36 @@ export default function CreditCenterPage() {
             },
             {
               title: "Pre-screened deal flow.",
-              body: "Receive referrals of businesses from the Investopia marketplace and programs that match your lending criteria.",
+              body: "Receive referrals of businesses from the Erudite Africa Connect marketplace and programs that match your lending criteria.",
             },
             {
               title: "Staff training and certification.",
               body: (
                 <>
-                  Enroll your credit teams in the{" "}
-                  <Link href="/academy" className="text-brand-700 underline-offset-4 hover:underline">
-                    Investopia Academy
-                  </Link>{" "}
-                  through an enterprise subscription.
+                  Train and certify your credit teams at our sister service, the{" "}
+                  <a href={`${academy.url}/academy/`} className="text-brand-700 underline-offset-4 hover:underline">
+                    Erudite Africa Center of Excellence
+                  </a>
+                  .
                 </>
               ),
             },
           ]}
         />
-        <div className="mt-8">
-          <ButtonLink href="/contact">Request a demo for your institution</ButtonLink>
+        <div className="mt-8 rounded-2xl border border-brand-200 bg-white p-6 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-wide text-brand-600">For loan officers and credit analysts</p>
+          <h3 className="mt-1 text-xl font-bold text-ink">Credit analysis workspace</h3>
+          <p className="mt-2 max-w-2xl text-muted">
+            Spread up to five periods of financial statements in the standard financial analysis form and get the totals, trend and analytical ratios at once. Add the loan
+            application details, sector and regional context from official sources and your own findings and documents, and print a credit analysis report in the loan
+            application annex format.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <ButtonLink href="/credit-center/credit-analysis">Open the workspace</ButtonLink>
+            <ButtonLink href="/contact" variant="secondary">
+              Request a demo for your institution
+            </ButtonLink>
+          </div>
         </div>
       </Section>
 
@@ -136,7 +157,7 @@ export default function CreditCenterPage() {
             access is logged.
           </Note>
           <Note>
-            Investopia is not a lender or a credit reference bureau. Every credit decision is made by the bank or MFI under its
+            Erudite Africa Connect is not a lender or a credit reference bureau. Every credit decision is made by the bank or MFI under its
             own policies and the applicable National Bank of Ethiopia directives.
           </Note>
         </div>

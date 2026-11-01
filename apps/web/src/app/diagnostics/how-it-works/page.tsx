@@ -4,7 +4,7 @@ import { businessTypes, dimensions, gradeBands, typeWeights } from "@/lib/ehira/
 import { indices, kersWeights, maturityBands } from "@/lib/bri/model";
 
 export const metadata: Metadata = {
-  title: "How EHIRA works · Investopia",
+  title: "How EHIRA works · Erudite Africa Connect",
   description: "The dimensions, weights, grades and red flags behind the Enterprise Health & Investment Readiness Assessment.",
 };
 
@@ -61,13 +61,13 @@ export default function EhiraMethodPage() {
 
       <Section
         tone="canvas"
-        eyebrow="Investopia™ Bank Readiness Index (BRI)"
-        title="Six readiness scores and IERS™"
+        eyebrow="Erudite™ Bank Readiness Index (BRI)"
+        title="Six readiness scores and EERS™"
         intro="The same answers also produce six independent readiness scores from 0 to 100, for credit, investment, due diligence and transactions. They do not change the EHIRA grade."
       >
         <div className="grid gap-6 lg:grid-cols-2">
           {indices.map((ix) => (
-            <div key={ix.id}>
+            <div key={ix.id} className="min-w-0">
               <h3 className="text-lg font-bold text-ink">
                 {ix.name} ({ix.id})
               </h3>
@@ -82,24 +82,24 @@ export default function EhiraMethodPage() {
           ))}
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <div>
-            <h3 className="text-lg font-bold text-ink">Investopia Enterprise Readiness Score (IERS™)</h3>
+          <div className="min-w-0">
+            <h3 className="text-lg font-bold text-ink">Erudite Enterprise Readiness Score (EERS™)</h3>
             <div className="mt-3">
               <DataTable head={["Index", "Weight"]} rows={indices.map((ix) => [ix.name, `${kersWeights[ix.id]}%`])} />
             </div>
           </div>
-          <div>
+          <div className="min-w-0">
             <h3 className="text-lg font-bold text-ink">Enterprise maturity classification</h3>
             <div className="mt-3">
               <DataTable
-                head={["IERS™", "Classification"]}
+                head={["EERS™", "Classification"]}
                 rows={maturityBands.map((b, i) => [i === 0 ? "90 to 100" : i === maturityBands.length - 1 ? `Below ${maturityBands[i - 1].min}` : `${b.min} to ${maturityBands[i - 1].min - 1}`, b.label])}
               />
             </div>
           </div>
         </div>
         <p className="mt-6 text-ink">
-          After scoring, Investopia lists the key gaps holding back each index below 80 and the actions that close them, such as obtaining a tax
+          After scoring, Erudite Africa Connect lists the key gaps holding back each index below 80 and the actions that close them, such as obtaining a tax
           clearance certificate, registering movable assets in the collateral registry or preparing an investment memorandum.
         </p>
       </Section>
@@ -111,7 +111,7 @@ export default function EhiraMethodPage() {
             indicative grade, readiness scores and actions on screen. Downloadable reports are available with payment.
           </Card>
           <Card title="Verified EHIRA (price announced after the launch period)">
-            Upload your financial statements, tax clearance certificate and supporting documents. An Investopia analyst reviews them and issues a
+            Upload your financial statements, tax clearance certificate and supporting documents. An Erudite Africa Connect analyst reviews them and issues a
             verified grade that investors and lenders can rely on, valid for 12 months.
           </Card>
         </CardGrid>

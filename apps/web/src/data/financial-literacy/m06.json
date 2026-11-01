@@ -1,0 +1,346 @@
+{
+  "id": "m06",
+  "slug": "investment",
+  "icon": "growth",
+  "minutes": 7,
+  "en": {
+    "title": "Investment",
+    "summary": "Learn what investing is, the main types, what to check before you invest, and how to spread your risk.",
+    "objectives": [
+      "Explain what an investment is",
+      "Describe different types of investment",
+      "List the factors to check before investing",
+      "Understand diversification as a way to manage risk"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-investment",
+        "title": "What is an investment?",
+        "body": [
+          "An investment is something you buy, not to use up today, but to create wealth later. You hope it will bring income or grow in value.",
+          "Investing means putting money into a productive activity. You give up some spending today so you can earn more in the future."
+        ],
+        "points": [
+          "Investing puts money into a productive activity.",
+          "The goal is to multiply what you have today.",
+          "It means spending less today to earn more later."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "Spend today", "items": ["Used up now", "No future income"] },
+          "right": { "title": "Invest today", "items": ["Used to create wealth", "Can bring income later"] }
+        }
+      },
+      {
+        "id": "types-of-investment",
+        "title": "Types of investment",
+        "body": [
+          "There are many ways to invest. Here are five common types.",
+          "A share, or stock, is a small part of a company that you own. A dividend is your part of the company's profit."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "store", "label": "Business", "text": "Salons, restaurants, retail and wholesale shops." },
+            { "icon": "leaf", "label": "Farming", "text": "Poultry, flowers, crops, fruit or a vegetable stall." },
+            { "icon": "house", "label": "Real estate", "text": "Property, a good business when the market is right." },
+            { "icon": "chart", "label": "Shares", "text": "Own part of a company and receive dividends." },
+            { "icon": "bank", "label": "Fixed deposit", "text": "Lend money to a financial institution and earn fixed interest." }
+          ]
+        },
+        "tip": "Ethiopia has an agricultural economy, so most investments are in farming."
+      },
+      {
+        "id": "before-you-invest",
+        "title": "What to check before you invest",
+        "body": [
+          "Before you start any business, do a feasibility study. This means checking if the business can make a profit.",
+          "Then ask yourself some key questions about the investment."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "target", "label": "Goals", "text": "Quick capital, or long-term security?" },
+            { "icon": "book", "label": "Knowledge", "text": "Do we know how it works?" },
+            { "icon": "wallet", "label": "Cost", "text": "What does it cost? Do we have the money?" },
+            { "icon": "coins", "label": "Income", "text": "Will it earn enough for our goal?" },
+            { "icon": "clock", "label": "Time", "text": "Short, medium or long-term returns?" },
+            { "icon": "warning", "label": "Risks", "text": "What are the risks? Can we accept them?" }
+          ]
+        },
+        "example": {
+          "title": "Hana and Kuma plan to invest",
+          "text": "Before putting more money into the Coffee Hub, Hana and Kuma should go through these questions. They need to check the cost, the income it can bring and the risks."
+        }
+      },
+      {
+        "id": "investment-risk",
+        "title": "Every investment has risk",
+        "body": [
+          "Risk is the chance that something goes wrong and you lose. Every investment comes with some risk.",
+          "Watch your investments closely. Make sure they are not wasting your money and time."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "Loss", "text": "The money may be lost." },
+            { "icon": "lock", "label": "Theft", "text": "It may be stolen." },
+            { "icon": "people", "label": "Mismanagement", "text": "It may be badly managed." },
+            { "icon": "warning", "label": "Damage", "text": "It may be destroyed or damaged." }
+          ]
+        }
+      },
+      {
+        "id": "diversification",
+        "title": "Diversification: don't put all your eggs in one basket",
+        "body": [
+          "Diversification means spreading your money across several investments. You do not put it all in one place.",
+          "Each investment has its own risks. Each reacts differently when the economy or market changes. Spreading your money lowers the chance of losing all of it."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "One basket", "items": ["All money in one place", "One problem can lose it all"] },
+          "right": { "title": "Many baskets", "items": ["Money spread out", "Some money stays safe"] }
+        },
+        "example": {
+          "title": "The egg baskets",
+          "text": "Put all your eggs in one basket and drop it, and every egg breaks. Put some in Basket A, B and C. If you drop Basket A, you still have eggs in B and C."
+        },
+        "points": [
+          "You can spread across different companies.",
+          "You can spread across different sectors.",
+          "You can even spread across different countries."
+        ]
+      }
+    ],
+    "takeaways": [
+      "Investment means putting money into a productive activity to multiply it in the future.",
+      "Common types are business, farming, real estate, shares and fixed deposits.",
+      "Do a feasibility study before starting any business.",
+      "Check your goals, cost, income potential, knowledge, time and risks before you invest.",
+      "Diversification spreads your money across investments to lower your risk."
+    ],
+    "quiz": [
+      {
+        "q": "What is an investment?",
+        "options": [
+          "Buying food for today",
+          "Putting money into a productive activity to earn more later",
+          "Keeping cash under the bed",
+          "Paying off a loan"
+        ],
+        "answer": 1,
+        "explain": "Investing uses money today to create more income or value in the future."
+      },
+      {
+        "q": "When you buy shares in a company, what do you become?",
+        "options": ["A lender", "A shareholder", "An employee", "A customer"],
+        "answer": 1,
+        "explain": "A share makes you a part owner of the company, with a right to dividends."
+      },
+      {
+        "q": "What is a feasibility study?",
+        "options": [
+          "A check of whether a business can make a profit",
+          "A bank statement",
+          "A type of savings group",
+          "A tax form"
+        ],
+        "answer": 0,
+        "explain": "A feasibility study checks if a business is profitable before you start."
+      },
+      {
+        "q": "Which of these should you check before investing?",
+        "options": [
+          "Only what your friends are doing",
+          "The cost, income potential and risks",
+          "Only the color of the shop",
+          "Nothing, just start"
+        ],
+        "answer": 1,
+        "explain": "Cost, income potential and risks are key factors in any investment decision."
+      },
+      {
+        "q": "What does \"don't put all your eggs in one basket\" mean?",
+        "options": [
+          "Buy more baskets",
+          "Spread your money across several investments",
+          "Keep all your money in one place",
+          "Never invest"
+        ],
+        "answer": 1,
+        "explain": "Spreading money across investments means one loss does not take everything."
+      }
+    ]
+  },
+  "am": {
+    "title": "ኢንቨስትመንት",
+    "summary": "ኢንቨስትመንት ምን እንደሆነ፣ ዋና ዋና አይነቶቹን፣ ከኢንቨስትመንት በፊት የሚታዩ ጉዳዮችን እና አደጋን ማከፋፈልን ይማሩ።",
+    "objectives": [
+      "ኢንቨስትመንት ምን እንደሆነ ማብራራት",
+      "የተለያዩ የኢንቨስትመንት አይነቶችን መግለጽ",
+      "ኢንቨስት ከማድረግ በፊት የሚታሰቡ ጉዳዮችን መዘርዘር",
+      "ብዝኀነትን እንደ ስጋት አስተዳደር መሣሪያ መረዳት"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-investment",
+        "title": "ኢንቨስትመንት ምንድን ነው?",
+        "body": [
+          "ኢንቨስትመንት ዛሬ ለመጠቀም ሳይሆን ወደፊት ሀብት ለመፍጠር የሚገዛ ነገር ነው። ገቢ ያስገኛል ወይም ዋጋው ያድጋል የሚል ተስፋ አለ።",
+          "ኢንቨስት ማድረግ ገንዘብን በአዋጭ እንቅስቃሴ ላይ ማዋል ነው። ወደፊት ተጨማሪ ገቢ ለማግኘት የዛሬን ፍጆታ ይቀንሳሉ።"
+        ],
+        "points": [
+          "ኢንቨስትመንት ገንዘብን በአዋጭ እንቅስቃሴ ላይ ማዋል ነው።",
+          "ዓላማው ዛሬ ያለዎትን ወደፊት ማብዛት ነው።",
+          "ለወደፊት ገቢ ሲባል የዛሬን ፍጆታ ማስቀረት ነው።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "ዛሬ መጠቀም", "items": ["አሁን ያልቃል", "የወደፊት ገቢ የለውም"] },
+          "right": { "title": "ዛሬ ኢንቨስት ማድረግ", "items": ["ሀብት ለመፍጠር ይውላል", "ወደፊት ገቢ ያስገኛል"] }
+        }
+      },
+      {
+        "id": "types-of-investment",
+        "title": "የኢንቨስትመንት አይነቶች",
+        "body": [
+          "ኢንቨስት የማድረጊያ ብዙ መንገዶች አሉ። አምስቱ የተለመዱት እነዚህ ናቸው።",
+          "አክሲዮን (ሼር) የአንድ ኩባንያ ከፊል ባለቤትነት ነው። ትርፍ ድርሻ ከኩባንያው ትርፍ የሚደርስዎ ክፍል ነው።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "store", "label": "ቢዝነስ", "text": "የውበት ሳሎን፣ ሬስቶራንት፣ የችርቻሮና የጅምላ ሱቅ።" },
+            { "icon": "leaf", "label": "ግብርና", "text": "ዶሮ እርባታ፣ አበባ፣ ሰብል፣ ፍራፍሬ ወይም የአትክልት መሸጫ።" },
+            { "icon": "house", "label": "የማይንቀሳቀስ ንብረት", "text": "ሪል እስቴት፤ ገበያው ሲመች ጥሩ ቢዝነስ ነው።" },
+            { "icon": "chart", "label": "አክሲዮን", "text": "የኩባንያ ባለ ድርሻ ሆነው ትርፍ ድርሻ ያገኛሉ።" },
+            { "icon": "bank", "label": "ቋሚ ተቀማጭ", "text": "ለፋይናንስ ተቋም አበድረው የተወሰነ ወለድ ያገኛሉ።" }
+          ]
+        },
+        "tip": "ኢትዮጵያ የግብርና ኢኮኖሚ ስላላት አብዛኞቹ ኢንቨስትመንቶች በግብርና ዘርፍ ናቸው።"
+      },
+      {
+        "id": "before-you-invest",
+        "title": "ኢንቨስት ከማድረግዎ በፊት የሚያጣሩት",
+        "body": [
+          "ወደ ማንኛውም ቢዝነስ ከመግባትዎ በፊት የአዋጭነት ጥናት ያድርጉ። ይህም ቢዝነሱ ትርፋማ መሆኑን ማጣራት ነው።",
+          "ከዚያም ስለ ኢንቨስትመንቱ ቁልፍ ጥያቄዎችን ራስዎን ይጠይቁ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "target", "label": "ግቦች", "text": "የዐጭር ጊዜ ካፒታል ወይስ የረጅም ጊዜ ዋስትና?" },
+            { "icon": "book", "label": "ዕውቀት", "text": "እንዴት እንደሚሠራ እናውቃለን?" },
+            { "icon": "wallet", "label": "ወጭ", "text": "ስንት ያስፈልጋል? ገንዘቡ አለን?" },
+            { "icon": "coins", "label": "ገቢ", "text": "ለግባችን በቂ ገቢ ያስገኛል?" },
+            { "icon": "clock", "label": "ጊዜ", "text": "የዐጭር፣ መካከለኛ ወይስ የረጅም ጊዜ ተመላሽ?" },
+            { "icon": "warning", "label": "አደጋዎች", "text": "ምን አደጋዎች አሉ? ልንቀበላቸው ፈቃደኞች ነን?" }
+          ]
+        },
+        "example": {
+          "title": "ሐና እና ኩማ ኢንቨስት ለማድረግ ያቅዳሉ",
+          "text": "ሐና እና ኩማ በቡና ማእከላቸው ላይ ተጨማሪ ገንዘብ ከማዋላቸው በፊት እነዚህን ጥያቄዎች መመልከት አለባቸው። ወጭውን፣ የሚያስገኘውን ገቢ እና አደጋዎቹን ማጣራት ያስፈልጋቸዋል።"
+        }
+      },
+      {
+        "id": "investment-risk",
+        "title": "እያንዳንዱ ኢንቨስትመንት አደጋ አለው",
+        "body": [
+          "አደጋ (ስጋት) ማለት አንድ ነገር ተበላሽቶ የመክሰር ዕድል ነው። እያንዳንዱ ኢንቨስትመንት ከአደጋ ጋር አብሮ ይመጣል።",
+          "ኢንቨስትመንቶችዎን በቅርበት ይከታተሉ። ገንዘብዎና ጊዜዎ እንዳይባክን ያረጋግጡ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "ማጣት", "text": "ገንዘቡ ሊጠፋ ይችላል።" },
+            { "icon": "lock", "label": "ስርቆት", "text": "ሊሰረቅ ይችላል።" },
+            { "icon": "people", "label": "የአስተዳደር ችግር", "text": "በአግባቡ ላይተዳደር ይችላል።" },
+            { "icon": "warning", "label": "ብልሽት", "text": "ሊወድም ወይም ሊበላሽ ይችላል።" }
+          ]
+        }
+      },
+      {
+        "id": "diversification",
+        "title": "ብዝኀነት፦ እንቁላሎችዎን ሁሉ በአንድ ቅርጫት አያስቀምጡ",
+        "body": [
+          "ብዝኀነት (ዳይቨርሲፊኬሽን) ገንዘብዎን በበርካታ ኢንቨስትመንቶች ላይ ማከፋፈል ነው። ሁሉንም በአንድ ቦታ አያስቀምጡም።",
+          "እያንዳንዱ ኢንቨስትመንት የራሱ አደጋ አለው። ኢኮኖሚው ወይም ገበያው ሲቀየር የተለያየ ምላሽ ይሰጣል። ገንዘብን ማከፋፈል ሁሉንም የማጣት ዕድልን ይቀንሳል።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "አንድ ቅርጫት", "items": ["ገንዘብ ሁሉ በአንድ ቦታ", "አንድ ችግር ሁሉንም ያሳጣል"] },
+          "right": { "title": "ብዙ ቅርጫቶች", "items": ["ገንዘብ ተከፋፍሏል", "የተወሰነው ገንዘብ ይተርፋል"] }
+        },
+        "example": {
+          "title": "የእንቁላል ቅርጫቶች",
+          "text": "እንቁላሎችን ሁሉ በአንድ ቅርጫት አድርገው ቢጥሉት ሁሉም ይሰበራሉ። የተወሰኑትን በ“ሀ”፣ በ“ለ” እና በ“ሐ” ቅርጫት ቢያስቀምጡ፣ “ሀ” ቢወድቅም በ“ለ” እና በ“ሐ” ያሉት ይተርፋሉ።"
+        },
+        "points": [
+          "በተለያዩ ኩባንያዎች ማከፋፈል ይቻላል።",
+          "በተለያዩ ዘርፎች ማከፋፈል ይቻላል።",
+          "በተለያዩ አገሮችም ጭምር ማከፋፈል ይቻላል።"
+        ]
+      }
+    ],
+    "takeaways": [
+      "ኢንቨስትመንት ገንዘብን ወደፊት ለማብዛት በአዋጭ እንቅስቃሴ ላይ ማዋል ነው።",
+      "የተለመዱ አይነቶች ቢዝነስ፣ ግብርና፣ የማይንቀሳቀስ ንብረት፣ አክሲዮን እና ቋሚ ተቀማጭ ናቸው።",
+      "ማንኛውንም ቢዝነስ ከመጀመርዎ በፊት የአዋጭነት ጥናት ያድርጉ።",
+      "ኢንቨስት ከማድረግዎ በፊት ግብዎን፣ ወጭውን፣ የገቢ አቅሙን፣ ዕውቀትዎን፣ ጊዜውንና አደጋዎቹን ያጣሩ።",
+      "ብዝኀነት ገንዘብዎን በተለያዩ ኢንቨስትመንቶች በማከፋፈል አደጋን ይቀንሳል።"
+    ],
+    "quiz": [
+      {
+        "q": "ኢንቨስትመንት ምንድን ነው?",
+        "options": [
+          "ለዛሬ ምግብ መግዛት",
+          "ወደፊት ብዙ ለማግኘት ገንዘብን በአዋጭ እንቅስቃሴ ላይ ማዋል",
+          "ገንዘብን ከአልጋ ሥር ማስቀመጥ",
+          "ብድር መክፈል"
+        ],
+        "answer": 1,
+        "explain": "ኢንቨስትመንት የዛሬን ገንዘብ ለወደፊት ገቢ ወይም ዋጋ ለመፍጠር ይጠቀማል።"
+      },
+      {
+        "q": "የአንድ ኩባንያ አክሲዮን ሲገዙ ምን ይሆናሉ?",
+        "options": ["አበዳሪ", "ባለ ድርሻ", "ሠራተኛ", "ደንበኛ"],
+        "answer": 1,
+        "explain": "አክሲዮን የኩባንያው ከፊል ባለቤት ያደርግዎታል፤ ትርፍ ድርሻም የማግኘት መብት ይሰጥዎታል።"
+      },
+      {
+        "q": "የአዋጭነት ጥናት ምንድን ነው?",
+        "options": [
+          "ቢዝነሱ ትርፋማ መሆኑን ማጣራት",
+          "የባንክ መግለጫ",
+          "የቁጠባ ማህበር አይነት",
+          "የግብር ቅጽ"
+        ],
+        "answer": 0,
+        "explain": "የአዋጭነት ጥናት ቢዝነስ ከመጀመርዎ በፊት ትርፋማነቱን ያጣራል።"
+      },
+      {
+        "q": "ኢንቨስት ከማድረግዎ በፊት ከእነዚህ የትኛውን ማጣራት አለብዎ?",
+        "options": [
+          "ጓደኞችዎ የሚያደርጉትን ብቻ",
+          "ወጭውን፣ የገቢ አቅሙን እና አደጋዎቹን",
+          "የሱቁን ቀለም ብቻ",
+          "ምንም፤ ዝም ብሎ መጀመር"
+        ],
+        "answer": 1,
+        "explain": "ወጭ፣ የገቢ አቅምና አደጋዎች በማንኛውም የኢንቨስትመንት ውሳኔ ቁልፍ ጉዳዮች ናቸው።"
+      },
+      {
+        "q": "“እንቁላሎችህን ሁሉ በአንድ ቅርጫት አታስቀምጥ” ማለት ምን ማለት ነው?",
+        "options": [
+          "ተጨማሪ ቅርጫቶች ግዛ",
+          "ገንዘብህን በበርካታ ኢንቨስትመንቶች ላይ አከፋፍል",
+          "ገንዘብህን ሁሉ በአንድ ቦታ አስቀምጥ",
+          "በፍጹም ኢንቨስት አታድርግ"
+        ],
+        "answer": 1,
+        "explain": "ገንዘብን ማከፋፈል አንድ ኪሳራ ሁሉንም እንዳይወስድ ያደርጋል።"
+      }
+    ]
+  }
+}

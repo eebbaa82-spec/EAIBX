@@ -1,7 +1,7 @@
 {
   "slug": "financial-services",
   "name": "Financial services",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Ethiopia's 32 banks grew deposits 40.7 percent to ETB 3.5 trillion in the year to end-June 2025 and earned a return on equity of 27.4 percent, while microfinance institutions posted a 27.5 percent return on equity. The 2025 Banking Business Proclamation opens banking to foreign investors through subsidiaries, branches or stakes in domestic banks, and the Ethiopian Securities Exchange has listed seven companies since January 2025. With insurance penetration at 0.3 percent, premiums growing 43.1 percent, and 135.9 million mobile money accounts, insurance and digital payments offer substantial room to grow.",
   "indicators": [
     {
@@ -48,7 +48,7 @@
     },
     {
       "label": "Capital market",
-      "value": "7 companies listed on the ESX (Wegagen Bank, Gadaa Bank, Awash Bank, Ethio Telecom, Abay Bank, Bank of Abyssinia, Sidama Bank); 21 licensed capital market service providers including 8 investment banks and 11 securities investment advisors",
+      "value": "7 companies listed on the ESX (six banks and Ethio Telecom), the most recent on September 28, 2026; 21 licensed capital market service providers including 8 investment banks and 11 securities investment advisors",
       "period": "Listings January 2025 to September 2026; CMSP count July 2026",
       "source": "S5"
     }
@@ -208,7 +208,7 @@
       "date": "2026-07",
       "url": "https://esx.et/equity-market/listed-companies/",
       "location": "ESX listed companies table; ECMA release of 13 July 2026 at https://ecma.gov.et/2026/07/ethiopian-capital-market-authority-ecma-grants-licenses-to-three-new-capital-market-service-providers/",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S6",
@@ -217,7 +217,7 @@
       "date": "2026-07",
       "url": "https://nbe.gov.et/mpc7/",
       "location": "Money market and T-bill section",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S7",

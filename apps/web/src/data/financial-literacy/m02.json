@@ -1,0 +1,532 @@
+{
+  "id": "m02",
+  "slug": "goal-setting",
+  "icon": "target",
+  "minutes": 14,
+  "en": {
+    "title": "Goal Setting",
+    "summary": "Turn your dreams into clear financial goals with a timeframe, a plan, and people who support you.",
+    "objectives": [
+      "Explain the reasons for setting goals.",
+      "Tell the difference between short-term, medium-term, and long-term goals.",
+      "Set financial goals and explain how to reach them.",
+      "Describe what a financial plan is and how it helps your financial wellbeing."
+    ],
+    "lessons": [
+      {
+        "id": "understanding-goals",
+        "title": "Dreams and goals",
+        "body": [
+          "A goal is a statement about what you want to be, do, or have. It points your plan of action toward a set time in the future.",
+          "Goals help you decide what comes first and how to use your time and resources. A dream stays a fantasy until you take steps to make it real. The difference is your level of commitment.",
+          "Goal setting means deciding what you want to achieve and making an action plan to get there. A goal without a plan is just a wish."
+        ],
+        "points": [
+          "If you walk without knowing where to go, you will not end up in the right place.",
+          "Goals change during your life and differ from person to person.",
+          "You can have personal, family, financial, and business goals."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "Dream",
+            "items": [
+              "Stays a fantasy without action",
+              "No plan yet",
+              "Low commitment"
+            ]
+          },
+          "right": {
+            "title": "Goal",
+            "items": [
+              "Has an action plan",
+              "Has a set time",
+              "Strong commitment",
+              "Gives motivation and confidence"
+            ]
+          }
+        },
+        "tip": "The perfect time to start planning will likely never come. There is no better time than now."
+      },
+      {
+        "id": "financial-goals",
+        "title": "Financial goals",
+        "body": [
+          "A financial goal is a money target that a person or a business sets out to reach. Setting financial goals is key to success and to financial freedom.",
+          "Hana and Kuma want to open The Coffee Hub. Financial goals will help them in four ways."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "check", "label": "Set priorities", "text": "Decide what to spend on first in the future." },
+            { "icon": "piggy", "label": "Build discipline", "text": "Stay disciplined in spending and saving." },
+            { "icon": "shield", "label": "Avoid shortages", "text": "Avoid running out of money unexpectedly." },
+            { "icon": "heart", "label": "Less stress", "text": "Feel less worried about money." }
+          ]
+        },
+        "example": {
+          "title": "The Coffee Hub Dream",
+          "text": "Hana and Kuma graduated from Addis Ababa University. They want to open The Coffee Hub for busy professionals around Sengatera, Addis Ababa. They plan to take entrepreneurship training and buy equipment. They also want to help their friends Yohannes and Meseret open a barbershop, and to buy a car for home delivery. What must they do to turn these dreams into goals?"
+        }
+      },
+      {
+        "id": "timeframes",
+        "title": "Short, medium, and long term",
+        "body": [
+          "Financial goals are a guide. They help you choose your path and stay on it. So give each goal a timeframe.",
+          "Some goals can be reached quickly. Some take a few years. Others take longer, even decades."
+        ],
+        "visual": {
+          "type": "timeline",
+          "items": [
+            { "label": "Short term", "text": "Two years or less. Your immediate priorities." },
+            { "label": "Medium term", "text": "Two to five years." },
+            { "label": "Long term", "text": "More than five years. Most need regular saving." }
+          ]
+        },
+        "tip": "Ask yourself: what do I want for myself and my family in the short, medium, and long term?"
+      },
+      {
+        "id": "personal-finance",
+        "title": "Managing your money",
+        "body": [
+          "Personal financial management means planning and managing your money activities. It covers five areas: income, spending, saving, investing, and protection.",
+          "It starts with knowing your financial situation. Then you can make the most of what you have today and plan for the future.",
+          "If you spend more than your income, you face a deficit, which means a shortfall. If you earn more than you spend, the extra can go to saving or investing."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "Income", "text": "Money coming in, like from crops, trade, salary, or pension." },
+            { "icon": "wallet", "label": "Spending", "text": "Money paid for goods and services, like rent and food." },
+            { "icon": "piggy", "label": "Saving", "text": "Extra money kept for future spending or investing." },
+            { "icon": "growth", "label": "Investing", "text": "Buying assets that are expected to earn a return." },
+            { "icon": "umbrella", "label": "Protection", "text": "Life or health insurance to guard against bad events." }
+          ]
+        },
+        "points": [
+          "Income is the first step on your personal finance roadmap.",
+          "Common ways to save: cash and bank accounts.",
+          "Common investments: stocks (shares in a company), bonds, and buying a house."
+        ],
+        "tip": "Managing your expenses is just as important as earning income."
+      },
+      {
+        "id": "why-people-fail",
+        "title": "Why some people miss their goals",
+        "body": [
+          "There are about 15 common reasons why people do not reach their financial goals. These five are the main ones.",
+          "The other reasons are listed below. Knowing them helps you avoid them."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "warning", "label": "Unknown start", "text": "They don't know where they are financially now." },
+            { "icon": "target", "label": "Unclear destination", "text": "They don't know where they want to be." },
+            { "icon": "scale", "label": "Unrealistic goals", "text": "Their goals are not realistic for them." },
+            { "icon": "clock", "label": "Too big or far", "text": "Their goals are too big or seem too far away." },
+            { "icon": "book", "label": "No strategy", "text": "They have no plan to reach their goals." }
+          ]
+        },
+        "points": [
+          "Their reason is weak, so they lose interest.",
+          "Their goals keep changing.",
+          "They don't measure their progress.",
+          "They have no support, or people close to them are negative.",
+          "They have limiting beliefs about themselves or money.",
+          "Someone else made their goals or plan for them.",
+          "They make excuses, or spend time with people who only talk about money problems.",
+          "They don't take action."
+        ],
+        "tip": "Pick the five reasons that fit you best, then plan how to beat them."
+      },
+      {
+        "id": "map-your-route",
+        "title": "Map your route to success",
+        "body": [
+          "Think of your goals as a journey. You cannot plan a route unless you know your starting point and your destination.",
+          "Without a map, you take wrong turns and meet obstacles. With a clear route, you are in the driver's seat and can move forward with confidence."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "List your goals", "text": "Write down all your financial goals." },
+            { "label": "Sort by time", "text": "Group them as short, medium, or long term." },
+            { "label": "Set a date", "text": "Choose when you want to reach each goal." },
+            { "label": "Find obstacles", "text": "List what could slow you down or stop you." },
+            { "label": "Plan around them", "text": "Decide how you will get past each obstacle." }
+          ]
+        },
+        "tip": "\"With a solid and sensible route for your financial journey, you will find the journey much easier.\" (Susan Fay)"
+      },
+      {
+        "id": "smartest-goals",
+        "title": "SMARTEST goals in ten steps",
+        "body": [
+          "Use the SMARTEST formula to make each goal strong. Each letter is a check for your goal.",
+          "Then follow these ten steps to set and reach your financial goals."
+        ],
+        "visual": {
+          "type": "acronym",
+          "items": [
+            { "letter": "S", "label": "Specific", "text": "Make your goal as specific as possible." },
+            { "letter": "M", "label": "Measurable", "text": "Find a way to measure your progress." },
+            { "letter": "A", "label": "Achievable", "text": "Make an action plan with clear steps." },
+            { "letter": "R", "label": "Realistic", "text": "Check that the goal is realistic for you." },
+            { "letter": "T", "label": "Target", "text": "Identify obstacles on the way to success." },
+            { "letter": "E", "label": "Exhibit", "text": "Write goals down and put them where you see them." },
+            { "letter": "S", "label": "Support", "text": "Find people who support you and keep you accountable." },
+            { "letter": "T", "label": "Time", "text": "Set a realistic timeframe." }
+          ]
+        },
+        "points": [
+          "Step 1: Know where you are and where you want to be. Look at your net worth (what you own minus what you owe), debt, income, and spending.",
+          "Step 2: Find your whys. Your reasons give you motivation. Financial goals are dreams with deadlines.",
+          "Step 3: Decide how to get there. List all the steps, and review your goals often.",
+          "Step 4: Name possible obstacles and find solutions.",
+          "Step 5: Write your goals down. Post them where you see them, or make a vision board (a board with pictures of your goals).",
+          "Step 6: Imagine. Write a story about the person you want to be, and read it every day.",
+          "Step 7: Be accountable. Find a trusted friend, mentor, or coach. Every great athlete has a coach!",
+          "Step 8: Make your goals SMARTEST.",
+          "Step 9: Stop making excuses. Replace negative self-talk with positive statements.",
+          "Step 10: Balance your life. Set goals for your health, relationships, and spiritual life too."
+        ],
+        "tip": "Use a worksheet: for each goal, write the reasons, obstacles, action plan, and expected completion date."
+      }
+    ],
+    "takeaways": [
+      "A goal without a plan is just a wish.",
+      "Financial goals help you set priorities, stay disciplined, and feel less stress.",
+      "Sort goals by time: short (2 years or less), medium (2 to 5), long (over 5).",
+      "Personal finance covers income, spending, saving, investing, and protection.",
+      "Know where you are and where you want to go, then plan around obstacles.",
+      "Make goals SMARTEST, write them down, and find people who support you."
+    ],
+    "quiz": [
+      {
+        "q": "What is the main difference between a dream and a goal?",
+        "options": [
+          "The level of commitment and a plan of action",
+          "The amount of money involved",
+          "The age of the person"
+        ],
+        "answer": 0,
+        "explain": "A dream stays a fantasy until you commit and take planned steps to make it real."
+      },
+      {
+        "q": "A goal you can reach in two years or less is...",
+        "options": [
+          "A short-term goal",
+          "A medium-term goal",
+          "A long-term goal"
+        ],
+        "answer": 0,
+        "explain": "Short-term goals are immediate priorities reached in two years or less."
+      },
+      {
+        "q": "What happens if your spending is more than your income?",
+        "options": [
+          "You have extra money to save",
+          "You face a deficit",
+          "Your investments grow"
+        ],
+        "answer": 1,
+        "explain": "When expenses exceed income, you face a deficit, or shortfall."
+      },
+      {
+        "q": "Which of these is an example of protection?",
+        "options": [
+          "Health insurance",
+          "Rent",
+          "Salary",
+          "Stocks"
+        ],
+        "answer": 0,
+        "explain": "Protection products, like life and health insurance, guard against bad events you did not expect."
+      },
+      {
+        "q": "In the SMARTEST formula, what does E for \"Exhibit\" mean?",
+        "options": [
+          "Write your goals down and put them where you can see them",
+          "Exercise every day",
+          "Expect quick results"
+        ],
+        "answer": 0,
+        "explain": "Exhibit means keeping your written goals in view so you remember them."
+      },
+      {
+        "q": "What is the first step in mapping your route to financial success?",
+        "options": [
+          "Buy new equipment",
+          "Know where you are now and where you want to go",
+          "Copy someone else's financial plan"
+        ],
+        "answer": 1,
+        "explain": "You cannot plan a route without knowing your starting point and your destination."
+      }
+    ]
+  },
+  "am": {
+    "title": "ግብ ማስቀመጥ",
+    "summary": "ሕልሞችዎን የጊዜ ገደብ፣ ዕቅድ እና ደጋፊ ሰዎች ወዳሏቸው ግልጽ የፋይናንስ ግቦች ይለውጡ።",
+    "objectives": [
+      "ግቦችን የማውጣት ምክንያቶችን መግለጽ።",
+      "በዐጭር ጊዜ፣ በመካከለኛ ጊዜ እና በረጅም ጊዜ ግቦች መካከል ያለውን ልዩነት መረዳት።",
+      "የገንዘብ ግቦችን ማውጣት እና እንዴት እንደሚደርሱባቸው ማስረዳት።",
+      "የፋይናንሺያል ዕቅድ ምን እንደ ሆነ እና የፋይናንሺያል ደህንነትን ለማሳካት እንዴት እንደሚረዳ መግለጽ።"
+    ],
+    "lessons": [
+      {
+        "id": "understanding-goals",
+        "title": "ሕልም እና ግብ",
+        "body": [
+          "ግብ ማለት መሆን፣ ማድረግ ወይም እንዲኖርዎ የሚፈልጉትን የሚገልጽ መግለጫ ነው። ለወደ ፊቱ በተወሰነ ጊዜ ምን ማሳካት እንደሚፈልጉ አቅጣጫ ይሰጣል።",
+          "ግብ ምን ቅድሚያ መስጠት እንዳለብዎ እና ጊዜዎን እና ሀብትዎን እንዴት እንደሚጠቀሙ ይጠቁማል። ርምጃ እስካልወሰዱ ድረስ ሕልም ቅዠት ሆኖ ይቀራል። በሕልም እና በግብ መካከል ያለው ልዩነት የቁርጠኝነት ደረጃ ነው።",
+          "ግብ መንደፍ ማለት ምን ማሳካት እንደሚፈልጉ መወሰን እና ወደዚያ የሚያደርስ የድርጊት መርሐ ግብር ማዘጋጀት ነው። ያለ ዕቅድ ግብ ምኞት ብቻ ነው።"
+        ],
+        "points": [
+          "የት መሄድ እንደሚፈልጉ ሳያውቁ ከተራመዱ በትክክለኛው ቦታ ላይ አይደርሱም።",
+          "ግቦች በሕይወት ሂደት ይለወጣሉ፤ ከሰው ሰውም ይለያያሉ።",
+          "የግል፣ የቤተሰብ፣ የገንዘብ ወይም የቢዝነስ ግቦች ሊኖሩዎት ይችላሉ።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "ሕልም",
+            "items": [
+              "ያለ ርምጃ ቅዠት ሆኖ ይቀራል",
+              "ገና ዕቅድ የለውም",
+              "ቁርጠኝነቱ ዝቅተኛ ነው"
+            ]
+          },
+          "right": {
+            "title": "ግብ",
+            "items": [
+              "የድርጊት መርሐ ግብር አለው",
+              "የተወሰነ ጊዜ አለው",
+              "ጠንካራ ቁርጠኝነት አለው",
+              "መነሣሣትና መተማመን ይሰጣል"
+            ]
+          }
+        },
+        "tip": "ዕቅድ ለማውጣት “ፍጹም” የሆነ ጊዜ ምናልባት አይመጣም። ለመጀመር ከአሁኑ የተሻለ ጊዜ የለም።"
+      },
+      {
+        "id": "financial-goals",
+        "title": "የፋይናንስ ግቦች",
+        "body": [
+          "የፋይናንስ ግብ አንድ ሰው ወይም ተቋም የተወሰነ የገንዘብ ደረጃ ላይ ለመድረስ የሚያስቀምጠው ዓላማ ነው። የፋይናንስ ግብ ማውጣት ለስኬት እና ለገንዘብ ነጻነት ቁልፍ ነው።",
+          "ሐና እና ኩማ ካፌ መክፈት ይፈልጋሉ። የፋይናንስ ግቦች በአራት መንገዶች ይጠቅሟቸዋል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "check", "label": "ቅድሚያ መወሰን", "text": "ለወደ ፊቱ በቅድሚያ ምን ላይ እንደሚያወጡ ይወስኑ።" },
+            { "icon": "piggy", "label": "ዲሲፕሊን", "text": "በወጭ እና በቁጠባ ዲሲፕሊን ይኑርዎ።" },
+            { "icon": "shield", "label": "ዕጥረትን ማስወገድ", "text": "ያልተጠበቀ የገንዘብ ዕጥረትን ያስወግዱ።" },
+            { "icon": "heart", "label": "ጭንቀት መቀነስ", "text": "የፋይናንስ ጭንቀት ይቀንሳል።" }
+          ]
+        },
+        "example": {
+          "title": "የካፌው ሕልም",
+          "text": "ሐና እና ኩማ ከአዲስ አበባ ዩኒቨርሲቲ ተመርቀዋል። በአዲስ አበባ ሰንጋ ተራ አካባቢ ላሉ ባለሙያዎች ካፌ መክፈት ይፈልጋሉ። የሥራ ፈጠራ ሥልጠና ወስደው አስፈላጊ ቁሳቁሶችን መግዛት አቅደዋል። ጓደኞቻቸው ዮሐንስ እና መሰረት ፀጕር ቤት እንዲከፍቱ መርዳት ይፈልጋሉ። ከቤት ለማድረስ አገልግሎት መኪና ለመግዛትም አልመዋል። እነዚህን ሕልሞች ግብ ለማድረግ ምን ማድረግ አለባቸው?"
+        }
+      },
+      {
+        "id": "timeframes",
+        "title": "የዐጭር፣ የመካከለኛ እና የረጅም ጊዜ",
+        "body": [
+          "የፋይናንስ ግቦች መመሪያ ናቸው። አቅጣጫዎን እንዲወስኑ እና በዚያ ላይ እንዲቆዩ ይረዳሉ። ስለዚህ ለእያንዳንዱ ግብ የጊዜ ገደብ ያስቀምጡ።",
+          "አንዳንድ ግቦች በፍጥነት ሊሳኩ ይችላሉ። አንዳንዶቹ ጥቂት ዓመታት ይወስዳሉ። ሌሎች ደግሞ ረዘም ያለ ጊዜ፣ እንዲያውም አሥርት ዓመታት ይወስዳሉ።"
+        ],
+        "visual": {
+          "type": "timeline",
+          "items": [
+            { "label": "የዐጭር ጊዜ", "text": "ሁለት ዓመት ወይም ከዚያ ያነሰ። አስቸኳይ ቅድሚያዎች።" },
+            { "label": "የመካከለኛ ጊዜ", "text": "ከሁለት እስከ አምስት ዓመታት።" },
+            { "label": "የረጅም ጊዜ", "text": "ከአምስት ዓመታት በላይ። አብዛኞቹ መደበኛ ቁጠባ ይፈልጋሉ።" }
+          ]
+        },
+        "tip": "ራስዎን ይጠይቁ፦ በዐጭር፣ በመካከለኛ እና በረጅም ጊዜ ለራሴ እና ለቤተሰቤ ምን እፈልጋለሁ?"
+      },
+      {
+        "id": "personal-finance",
+        "title": "ገንዘብዎን ማስተዳደር",
+        "body": [
+          "የግል ፋይናንሺያል አስተዳደር የገንዘብ ተግባራትዎን የማቀድ እና የማስተዳደር ሂደት ነው። አምስት ዐውዶች አሉት፦ ገቢ፣ ወጭ፣ ቁጠባ፣ ኢንቨስት ማድረግ እና ጥበቃ።",
+          "የሚጀምረው የፋይናንስ ሁኔታዎን በመረዳት ነው። ከዚያ ያለዎትን ዛሬ በአግባቡ መጠቀም እና ለወደ ፊት ማቀድ ይችላሉ።",
+          "ወጭዎ ከገቢዎ የበለጠ ከሆነ ጉድለት ይገጥምዎታል፤ ጉድለት ማለት የገንዘብ ማነስ ነው። ከሚያወጡት በላይ ካገኙ ትርፉ ወደ ቁጠባ ወይም ኢንቨስትመንት ሊሄድ ይችላል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "ገቢ", "text": "የሚገባ ገንዘብ፤ ለምሳሌ ከሰብል ምርት፣ ከንግድ፣ ከደሞዝ ወይም ከጡረታ።" },
+            { "icon": "wallet", "label": "ወጭ", "text": "ለዕቃና አገልግሎት የሚወጣ ገንዘብ፤ ለምሳሌ ኪራይ እና ምግብ።" },
+            { "icon": "piggy", "label": "ቁጠባ", "text": "ለወደ ፊት ወጭ ወይም ኢንቨስትመንት የሚቀመጥ ትርፍ ገንዘብ።" },
+            { "icon": "growth", "label": "ኢንቨስት ማድረግ", "text": "ትርፍ ያስገኛሉ ተብለው የሚጠበቁ ንብረቶችን መግዛት።" },
+            { "icon": "umbrella", "label": "ጥበቃ", "text": "ከአሉታዊ ክስተቶች የሚጠብቁ የሕይወት ወይም የጤና ኢንሹራንስ።" }
+          ]
+        },
+        "points": [
+          "ገቢ በግል ፋይናንስ ፍኖተ ካርታ ውስጥ የመጀመሪያው ርምጃ ነው።",
+          "የተለመዱ የቁጠባ አይነቶች፦ ጥሬ ገንዘብ እና የባንክ ሒሳቦች።",
+          "የተለመዱ የኢንቨስትመንት አይነቶች፦ አክሲዮኖች (በኩባንያ ውስጥ ድርሻ)፣ ቦንዶች እና የቤት ግዥ።"
+        ],
+        "tip": "ወጭዎችን ማስተዳደር ልክ ገቢ እንደ መፍጠር ሁሉ አስፈላጊ ነው።"
+      },
+      {
+        "id": "why-people-fail",
+        "title": "አንዳንድ ሰዎች ግባቸው ላይ የማይደርሱት ለምንድን ነው?",
+        "body": [
+          "ሰዎች የፋይናንስ ግባቸው ላይ የማይደርሱባቸው 15 የሚያህሉ የተለመዱ ምክንያቶች አሉ። ዋና ዋናዎቹ እነዚህ አምስቱ ናቸው።",
+          "ሌሎቹ ምክንያቶች ከዚህ በታች ተዘርዝረዋል። እነርሱን ማወቅ ለማስወገድ ይረዳዎታል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "warning", "label": "መነሻን አለማወቅ", "text": "በፋይናንስ በኩል አሁን የት እንዳሉ አያውቁም።" },
+            { "icon": "target", "label": "ግልጽ ያልሆነ መድረሻ", "text": "የት መሆን እንደሚፈልጉ ግልጽ ግንዛቤ የላቸውም።" },
+            { "icon": "scale", "label": "የማይጨበጡ ግቦች", "text": "ግቦቻቸው ለእነርሱ ተጨባጭ አይደሉም።" },
+            { "icon": "clock", "label": "በጣም ትልቅ ወይም ሩቅ", "text": "ግባቸው በጣም ትልቅ ነው ወይም በጣም ሩቅ ይመስላል።" },
+            { "icon": "book", "label": "ስትራቴጂ የለም", "text": "ግባቸውን ለማሳካት ስትራቴጂ የላቸውም።" }
+          ]
+        },
+        "points": [
+          "ምክንያታቸው በቂ ስላልሆነ ፍላጎታቸውን ያጣሉ።",
+          "ግባቸው ይለዋወጣል።",
+          "ዕድገታቸውን አይለኩም።",
+          "የድጋፍ ሥርዓት የላቸውም፤ ወይም የቅርብ ሰዎቻቸው አሉታዊ ናቸው።",
+          "ስለ ራሳቸው ወይም ስለ ገንዘብ ያላቸው እምነት ውስን ነው።",
+          "ግባቸው ወይም ዕቅዳቸው በሌላ ሰው ተዘጋጅቷል።",
+          "ሰበብ ያቀርባሉ፤ ወይም ስለ ገንዘብ ችግር ብቻ ከሚናገሩ ሰዎች ጋር ይውላሉ።",
+          "ርምጃ አይወስዱም።"
+        ],
+        "tip": "ለእርስዎ የሚስማሙትን አምስት ምክንያቶች ይምረጡ፤ ከዚያ እንዴት እንደሚያሸንፏቸው ያቅዱ።"
+      },
+      {
+        "id": "map-your-route",
+        "title": "ወደ ስኬት የሚወስደውን መንገድ ይንደፉ",
+        "body": [
+          "ግቦችዎን እንደ ጕዞ ያስቧቸው። መነሻውን እና መድረሻውን ካላወቁ መንገዱን ማቀድ አይችሉም።",
+          "ያለ ካርታ ብዙ የተሳሳቱ አቅጣጫዎችን ይከተላሉ፤ መሰናክሎችም ይገጥሙዎታል። ግልጽ መንገድ ሲኖርዎ በሾፌር መቀመጫ ላይ ይሆናሉ፤ በድፍረትም ወደ ፊት ይሄዳሉ።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ግቦችን ይዘርዝሩ", "text": "ሁሉንም የፋይናንስ ግቦችዎን ይጻፉ።" },
+            { "label": "በጊዜ ይመድቡ", "text": "በዐጭር፣ በመካከለኛ እና በረጅም ጊዜ ይመድቧቸው።" },
+            { "label": "ቀን ይወስኑ", "text": "እያንዳንዱ ግብ ላይ የሚደርሱበትን ቀን ይወስኑ።" },
+            { "label": "መሰናክሎችን ይለዩ", "text": "ሊያዘገዩዎ ወይም ሊያስቆሙዎ የሚችሉትን ይዘርዝሩ።" },
+            { "label": "መፍትሔ ያቅዱ", "text": "እያንዳንዱን መሰናክል እንዴት እንደሚሻገሩ ይወስኑ።" }
+          ]
+        },
+        "tip": "“ለፋይናንስ ጕዞዎ ጠንካራ እና አስተዋይ መንገድ ካለዎት ጕዞዎ በጣም ቀላል ይሆናል።” (ሱዛን ፌይ)"
+      },
+      {
+        "id": "smartest-goals",
+        "title": "SMARTEST ግቦች በዐሥር ደረጃዎች",
+        "body": [
+          "እያንዳንዱን ግብ ጠንካራ ለማድረግ የSMARTEST (ስማርቴስት) የፋይናንስ ግብ አቀማመጥ ቀመርን ይጠቀሙ። እያንዳንዱ ፊደል ለግብዎ መፈተሻ ነው።",
+          "ከዚያ የፋይናንስ ግቦችዎን ለማውጣት እና ለማሳካት እነዚህን ዐሥር ደረጃዎች ይከተሉ።"
+        ],
+        "visual": {
+          "type": "acronym",
+          "items": [
+            { "letter": "S", "label": "የተወሰነ", "text": "ግብዎን በተቻለ መጠን የተወሰነ/የተዘረዘረ ያድርጉ።" },
+            { "letter": "M", "label": "የሚለካ", "text": "ዕድገትዎን የሚለኩበትን ዘዴ ይፈልጉ።" },
+            { "letter": "A", "label": "የሚተገበር", "text": "ሊተገብሩት የሚችሉትን የተግባር ዕቅድ ያዘጋጁ።" },
+            { "letter": "R", "label": "ተጨባጭ", "text": "ግብዎ ለእርስዎ ተጨባጭ መሆኑን ይወስኑ።" },
+            { "letter": "T", "label": "ዒላማ", "text": "የስኬት መሰናክሎችንና እንቅፋቶችን ይለዩ።" },
+            { "letter": "E", "label": "አሳይ", "text": "ግቦችዎን ይጻፉ፤ በሚያዩት ቦታ ላይ ያስቀምጡ።" },
+            { "letter": "S", "label": "ድጋፍ", "text": "የሚደግፉዎትንና ተጠያቂ የሚያደርጉዎትን ሰዎች ያግኙ።" },
+            { "letter": "T", "label": "ጊዜ", "text": "ተጨባጭ የጊዜ ገደብ ያስቀምጡ።" }
+          ]
+        },
+        "points": [
+          "ደረጃ 1፦ አሁን የት እንዳሉ እና የት መሆን እንደሚፈልጉ ይወስኑ። የተጣራ ዋጋዎን (ያለዎት ንብረት ሲቀነስ ዕዳዎ)፣ ዕዳዎን፣ ገቢዎን እና የወጭ ልማዶችዎን ይመልከቱ።",
+          "ደረጃ 2፦ ለምን እንደሚሉ ይወስኑ። ምክንያቶችዎ ተነሣሽነት ይሰጡዎታል። የፋይናንስ ግቦች የጊዜ ገደብ ያላቸው ሕልሞች ናቸው።",
+          "ደረጃ 3፦ እንዴት እንደሚደርሱ ይወስኑ። ሁሉንም ርምጃዎች ይዘርዝሩ፤ ግቦችዎንም በተደጋጋሚ ይገምግሙ።",
+          "ደረጃ 4፦ ሊገጥሙዎ የሚችሉትን እንቅፋቶች ለይተው መፍትሔ ይፈልጉ።",
+          "ደረጃ 5፦ ግቦችዎን ይጻፉ። በሚያዩት ቦታ ይለጥፏቸው፤ ወይም የዕይታ ሰሌዳ (የግቦችዎ ሥዕሎች ያሉበት ሰሌዳ) ይፍጠሩ።",
+          "ደረጃ 6፦ ያስቡ። መሆን ስለሚፈልጉት ሰው ታሪክ ይጻፉ፤ በየቀኑም ያንብቡት።",
+          "ደረጃ 7፦ ተጠያቂ ይሁኑ። የሚያምኑትን ጓደኛ፣ አማካሪ ወይም አሠልጣኝ ይፈልጉ። እያንዳንዱ ታዋቂ አትሌት አሠልጣኝ አለው!",
+          "ደረጃ 8፦ ግቦችዎን SMARTEST ያድርጉ።",
+          "ደረጃ 9፦ ሰበብ ማቅረብ ያቁሙ። አሉታዊ የራስን ንግግር በአዎንታዊ መግለጫዎች ይተኩ።",
+          "ደረጃ 10፦ ሕይወትዎን ሚዛናዊ ያድርጉ። ለጤና፣ ለግንኙነት እና ለመንፈሳዊ ሕይወትም ግቦችን ይንደፉ።"
+        ],
+        "tip": "ቅጽ ይጠቀሙ፦ ለእያንዳንዱ ግብ ምክንያቶቹን፣ እንቅፋቶቹን፣ የድርጊት መርሐ ግብሩን እና የሚጠበቀውን የማጠናቀቂያ ቀን ይጻፉ።"
+      }
+    ],
+    "takeaways": [
+      "ያለ ዕቅድ ግብ ምኞት ብቻ ነው።",
+      "የፋይናንስ ግቦች ቅድሚያ ለመወሰን፣ ዲሲፕሊን ለመያዝ እና ጭንቀትን ለመቀነስ ይረዳሉ።",
+      "ግቦችን በጊዜ ይመድቡ፦ ዐጭር (2 ዓመት ወይም ያነሰ)፣ መካከለኛ (ከ2 እስከ 5)፣ ረጅም (ከ5 በላይ)።",
+      "የግል ፋይናንስ ገቢን፣ ወጭን፣ ቁጠባን፣ ኢንቨስት ማድረግን እና ጥበቃን ያካትታል።",
+      "የት እንዳሉ እና ወዴት መሄድ እንደሚፈልጉ ይወቁ፤ ከዚያ መሰናክሎችን የሚያልፉበትን ያቅዱ።",
+      "ግቦችዎን SMARTEST ያድርጉ፣ ይጻፏቸው፣ ደጋፊ ሰዎችንም ያግኙ።"
+    ],
+    "quiz": [
+      {
+        "q": "በሕልም እና በግብ መካከል ያለው ዋና ልዩነት ምንድን ነው?",
+        "options": [
+          "የቁርጠኝነት ደረጃ እና የድርጊት ዕቅድ",
+          "የገንዘቡ መጠን",
+          "የሰውየው ዕድሜ"
+        ],
+        "answer": 0,
+        "explain": "ቁርጠኛ ሆነው በዕቅድ ርምጃ እስካልወሰዱ ድረስ ሕልም ቅዠት ሆኖ ይቀራል።"
+      },
+      {
+        "q": "በሁለት ዓመት ወይም ከዚያ ባነሰ ጊዜ ሊደርሱበት የሚችሉት ግብ…",
+        "options": [
+          "የዐጭር ጊዜ ግብ ነው",
+          "የመካከለኛ ጊዜ ግብ ነው",
+          "የረጅም ጊዜ ግብ ነው"
+        ],
+        "answer": 0,
+        "explain": "የዐጭር ጊዜ ግቦች በሁለት ዓመት ወይም ከዚያ ባነሰ ጊዜ የሚከናወኑ ቅድሚያዎች ናቸው።"
+      },
+      {
+        "q": "ወጭዎ ከገቢዎ የበለጠ ከሆነ ምን ይሆናል?",
+        "options": [
+          "የሚቆጥቡት ትርፍ ገንዘብ ይኖርዎታል",
+          "ጉድለት ይገጥምዎታል",
+          "ኢንቨስትመንትዎ ያድጋል"
+        ],
+        "answer": 1,
+        "explain": "ወጭ ከገቢ ሲበልጥ ጉድለት ወይም የገንዘብ ማነስ ይገጥማል።"
+      },
+      {
+        "q": "ከሚከተሉት ውስጥ የጥበቃ ምሳሌ የትኛው ነው?",
+        "options": [
+          "የጤና ኢንሹራንስ",
+          "ኪራይ",
+          "ደሞዝ",
+          "አክሲዮኖች"
+        ],
+        "answer": 0,
+        "explain": "እንደ ሕይወት እና ጤና ኢንሹራንስ ያሉ የጥበቃ ምርቶች ካልተጠበቁ አሉታዊ ክስተቶች ይጠብቃሉ።"
+      },
+      {
+        "q": "በSMARTEST ቀመር ውስጥ E (“አሳይ”) ምን ማለት ነው?",
+        "options": [
+          "ግቦችዎን ጽፈው በሚያዩት ቦታ ማስቀመጥ",
+          "በየቀኑ የአካል ብቃት እንቅስቃሴ ማድረግ",
+          "ፈጣን ውጤት መጠበቅ"
+        ],
+        "answer": 0,
+        "explain": "“አሳይ” ማለት እንዳይረሱ የተጻፉ ግቦችዎን በዐይንዎ ፊት ማቆየት ነው።"
+      },
+      {
+        "q": "ወደ ፋይናንስ ስኬት የሚወስደውን መንገድ ለማቀድ የመጀመሪያው ርምጃ ምንድን ነው?",
+        "options": [
+          "አዲስ መሣሪያ መግዛት",
+          "አሁን የት እንዳሉ እና ወዴት መሄድ እንደሚፈልጉ ማወቅ",
+          "የሌላ ሰውን የፋይናንስ ዕቅድ መቅዳት"
+        ],
+        "answer": 1,
+        "explain": "መነሻውን እና መድረሻውን ሳያውቁ መንገዱን ማቀድ አይችሉም።"
+      }
+    ]
+  }
+}

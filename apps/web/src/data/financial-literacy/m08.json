@@ -1,0 +1,478 @@
+{
+  "id": "m08",
+  "slug": "financial-services",
+  "icon": "bank",
+  "minutes": 13,
+  "en": {
+    "title": "Financial Services",
+    "summary": "Learn who provides financial services, how to open an account, and the pros and cons of formal and informal finance.",
+    "objectives": [
+      "Explain what financial services are",
+      "Identify formal financial service providers",
+      "Identify informal financial service providers",
+      "Compare the advantages and disadvantages of formal and informal services"
+    ],
+    "lessons": [
+      {
+        "id": "providers",
+        "title": "What are financial services?",
+        "body": [
+          "Financial services help people, businesses and organizations manage and carry out their money activities. Banks, credit unions, insurance companies, investment firms and other financial institutions offer them.",
+          "Formal financial services come from institutions that are legally recognized and regulated by the national financial regulator. People generally see them as more trustworthy."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "bank", "label": "Commercial banks", "text": "Loans, overdrafts and credit cards." },
+            { "icon": "growth", "label": "Development banks", "text": "Affordable finance for development projects." },
+            { "icon": "coins", "label": "Microfinance", "text": "Small loans for micro-enterprises." },
+            { "icon": "people", "label": "Credit cooperatives", "text": "Member-owned, with reasonable interest rates." },
+            { "icon": "umbrella", "label": "Insurance companies", "text": "Risk protection and pension plans." },
+            { "icon": "truck", "label": "Lease companies", "text": "Use assets without buying them." },
+            { "icon": "chart", "label": "Venture capital funds", "text": "Equity finance for high-growth start-ups." },
+            { "icon": "phone", "label": "Payments and fintech", "text": "Digital payments and online services." }
+          ]
+        },
+        "tip": "Fintech (financial technology) companies use technology to offer services like digital payments and online banking."
+      },
+      {
+        "id": "services",
+        "title": "Types of formal financial services",
+        "body": [
+          "Hana and Kuma will need several formal financial services to run and grow The Coffee Hub. The common types are shown below.",
+          "Other services include wealth management, retirement planning and risk management. What is offered can vary by country and its rules. New technology has also brought many fintech services."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "bank", "label": "Banking", "text": "Deposit accounts, loans and cards." },
+            { "icon": "chart", "label": "Investment", "text": "Investing in stocks, bonds and mutual funds." },
+            { "icon": "umbrella", "label": "Insurance", "text": "Life, health, property and vehicle cover." },
+            { "icon": "coins", "label": "Credit and lending", "text": "Personal, business and home (mortgage) loans." },
+            { "icon": "phone", "label": "Payments", "text": "Card, online and mobile payments." },
+            { "icon": "scale", "label": "Foreign exchange", "text": "Change one currency into another." },
+            { "icon": "truck", "label": "Leasing", "text": "Use equipment or vehicles for regular payments." },
+            { "icon": "people", "label": "Financial advice", "text": "Guidance on investing, tax and planning." }
+          ]
+        }
+      },
+      {
+        "id": "savings-account",
+        "title": "Opening a savings account",
+        "body": [
+          "Opening a savings account at a bank or other financial institution usually follows these steps."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Visit a branch", "text": "Ask to open a savings account." },
+            { "label": "Show your ID", "text": "National ID or passport." },
+            { "label": "Fill in the form", "text": "Personal details, contacts and first deposit." },
+            { "label": "Submit it", "text": "Hand in the form and documents." },
+            { "label": "Bank verifies", "text": "The bank checks and approves it." },
+            { "label": "Get your details", "text": "Account number and debit card, if offered." },
+            { "label": "Go digital", "text": "Set up online banking if you want." }
+          ]
+        },
+        "tip": "A debit card lets you pay or withdraw cash directly from your account."
+      },
+      {
+        "id": "loan-digital-accounts",
+        "title": "Opening a loan or digital account",
+        "body": [
+          "To get a loan, a credit (loan) account is opened for you. The usual steps are shown below.",
+          "To open a digital account, such as mobile money or a digital wallet:"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Choose the loan", "text": "Personal, business or other loan." },
+            { "label": "Gather documents", "text": "ID, proof of income, collateral papers." },
+            { "label": "Apply", "text": "State the purpose, amount and repayment plan." },
+            { "label": "Assessment", "text": "The lender checks your ability to repay." },
+            { "label": "Sign the agreement", "text": "If approved, sign the loan documents." },
+            { "label": "Receive the loan", "text": "Provide collateral or security if required." },
+            { "label": "Start repaying", "text": "Pay installments on the agreed schedule." }
+          ]
+        },
+        "points": [
+          "Download the institution's mobile banking app or visit its website",
+          "Choose the option to open a digital account",
+          "Enter your name, national ID and contact details",
+          "Set a secure username and password, and possibly a biometric check such as a fingerprint",
+          "Link it to your savings or current account, if needed",
+          "Turn on services like transfers, bill payments and airtime top-ups, then learn the app"
+        ]
+      },
+      {
+        "id": "formal-pros-cons",
+        "title": "Pros and cons of formal services",
+        "body": [
+          "Formal financial services bring many benefits to people, businesses and the country. They give reliable, regulated finance and support economic growth and international trade.",
+          "But they can be hard to reach, especially for small businesses with no credit history or collateral."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "Advantages",
+            "items": [
+              "Professionally managed",
+              "Access to capital",
+              "Risk management",
+              "Wealth creation",
+              "Easy payments",
+              "Financial inclusion",
+              "Economic growth",
+              "Financial education"
+            ]
+          },
+          "right": {
+            "title": "Disadvantages",
+            "items": [
+              "Usually need collateral",
+              "Long process, much paperwork",
+              "Fixed repayment schedules"
+            ]
+          }
+        },
+        "tip": "Financial inclusion means making financial services available to all parts of society."
+      },
+      {
+        "id": "informal",
+        "title": "Informal finance: equb and idir",
+        "body": [
+          "Informal finance is money from friends, family, relatives or private moneylenders. The financial regulator does not closely supervise it.",
+          "Common informal sources are personal savings, friends and family, equb and idir. An equb is a group that pools money regularly, often weekly or monthly. Each member takes the total in turn.",
+          "Equb members trust each other and agree on the rules and the order. Often there is no written contract. Idir is a community group for mutual aid that works like shared insurance."
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "Members contribute" },
+            { "label": "Group meets" },
+            { "label": "One member collects" },
+            { "label": "Next member's turn" }
+          ]
+        },
+        "example": {
+          "title": "An 8-member equb",
+          "text": "Each of 8 members pays ETB 1,000 a month, so ETB 8,000 is collected. The equb lasts eight months. Each member receives ETB 8,000 in turn."
+        },
+        "tip": "Equb money can help start a small business, buy household items or land, or cover medical costs."
+      },
+      {
+        "id": "informal-pros-cons",
+        "title": "Choosing between formal and informal",
+        "body": [
+          "Informal finance helps people who cannot reach formal services. It also builds social bonds and support. Still, formal services are recommended for businesses because of their advantages.",
+          "The right choice depends on your needs, risk, eligibility and ownership wishes. You can combine both. As your business builds a track record and grows, formal finance may offer lower costs and larger amounts."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "Informal: advantages",
+            "items": [
+              "Easy to access",
+              "Quick, little paperwork",
+              "Often no collateral",
+              "Flexible repayment"
+            ]
+          },
+          "right": {
+            "title": "Informal: disadvantages",
+            "items": [
+              "Often higher interest",
+              "Smaller amounts",
+              "Can hurt relationships",
+              "No professional management",
+              "Higher risk, no formal agreement"
+            ]
+          }
+        },
+        "tip": "Community groups like equb and idir can be a safety net and a path to formal financial institutions."
+      }
+    ],
+    "takeaways": [
+      "Financial services help people and businesses manage money. They can be formal or informal.",
+      "Formal providers, like banks, microfinance and insurance companies, are legally recognized and regulated.",
+      "Opening a savings, loan or digital account follows clear steps and needs ID.",
+      "Formal services offer capital, safety and growth, but often need collateral and paperwork.",
+      "Informal finance, like equb and idir, is quick and flexible, but amounts are small and risks higher.",
+      "Choose by your needs and risk. You can combine formal and informal options."
+    ],
+    "quiz": [
+      {
+        "q": "What makes a financial service formal?",
+        "options": ["It is offered by a friend", "It is legally recognized and regulated", "It needs no paperwork", "It is only online"],
+        "answer": 1,
+        "explain": "Formal services come from institutions recognized and regulated by the national financial regulator."
+      },
+      {
+        "q": "Which institution gives small loans to micro-enterprises that cannot get bank loans?",
+        "options": ["Microfinance institution", "Venture capital fund", "Foreign exchange office", "Payment processor"],
+        "answer": 0,
+        "explain": "Microfinance institutions provide small loans to micro-enterprises without access to bank financing."
+      },
+      {
+        "q": "What is usually the first step to open a savings account?",
+        "options": ["Sign a loan agreement", "Visit a branch and ask to open one", "Provide collateral", "Pay loan installments"],
+        "answer": 1,
+        "explain": "You start by visiting a branch and asking to open a savings account."
+      },
+      {
+        "q": "In an 8-member equb where each pays ETB 1,000 a month, how much does each member receive?",
+        "options": ["ETB 1,000", "ETB 4,000", "ETB 8,000", "ETB 16,000"],
+        "answer": 2,
+        "explain": "Eight members pay ETB 1,000 each, so each member receives ETB 8,000 in turn."
+      },
+      {
+        "q": "Which is a disadvantage of informal finance?",
+        "options": ["Often no collateral", "Quick to access", "Often higher interest rates", "Flexible repayment"],
+        "answer": 2,
+        "explain": "Informal lenders often charge higher interest rates than formal institutions."
+      },
+      {
+        "q": "Which is a disadvantage of formal financial services?",
+        "options": ["Professional management", "They usually require collateral", "Access to capital", "Payment convenience"],
+        "answer": 1,
+        "explain": "Formal services usually require collateral and a lengthy application."
+      }
+    ]
+  },
+  "am": {
+    "title": "የፋይናንስ አገልግሎቶች",
+    "summary": "የፋይናንስ አገልግሎት ሰጭዎችን፣ ሂሳብ እንዴት እንደሚከፈት እና የመደበኛና ኢ-መደበኛ ፋይናንስ ጥቅምና ጉዳትን ይማሩ።",
+    "objectives": [
+      "የፋይናንስ አገልግሎት ምን እንደሆነ መረዳት",
+      "የመደበኛ ፋይናንስ አገልግሎት አቅራቢዎችን መለየት",
+      "የኢ-መደበኛ ፋይናንስ አገልግሎት አቅራቢዎችን መለየት",
+      "የመደበኛና ኢ-መደበኛ አገልግሎቶችን ጥቅምና ጉዳት ማወዳደር"
+    ],
+    "lessons": [
+      {
+        "id": "providers",
+        "title": "የፋይናንስ አገልግሎት ምንድን ነው?",
+        "body": [
+          "የፋይናንስ አገልግሎቶች ግለሰቦች፣ ቢዝነሶችና ድርጅቶች የገንዘብ እንቅስቃሴያቸውን እንዲያስተዳድሩና እንዲያሳልጡ ይረዳሉ። ባንኮች፣ የብድር ማህበራት፣ የኢንሹራንስ ኩባንያዎች፣ የኢንቨስትመንት ድርጅቶችና ሌሎች የፋይናንስ ተቋማት ይሰጧቸዋል።",
+          "መደበኛ የፋይናንስ አገልግሎት በብሔራዊ የፋይናንስ ተቆጣጣሪ አካል ሕጋዊ ዕውቅናና ቁጥጥር ባላቸው ተቋማት ይሰጣል። በአጠቃላይ የበለጠ ተኣማኒ እንደሆኑ ይቆጠራሉ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "bank", "label": "ንግድ ባንኮች", "text": "ብድር፣ ኦቨርድራፍትና ክሬዲት ካርድ።" },
+            { "icon": "growth", "label": "ልማት ባንኮች", "text": "ለልማት ፕሮጀክቶች ተመጣጣኝ ፋይናንስ።" },
+            { "icon": "coins", "label": "ማይክሮ ፋይናንስ", "text": "ለጥቃቅን ኢንተርፕራይዞች አነስተኛ ብድር።" },
+            { "icon": "people", "label": "የብድር ማህበራት", "text": "የአባላት ንብረት፤ ምክንያታዊ ወለድ።" },
+            { "icon": "umbrella", "label": "የኢንሹራንስ ኩባንያዎች", "text": "ከአደጋ ጥበቃና የጡረታ ዕቅዶች።" },
+            { "icon": "truck", "label": "የሊዝ ኩባንያዎች", "text": "ንብረትን ሳይገዙ መጠቀም።" },
+            { "icon": "chart", "label": "ቬንቸር ካፒታል ፈንድ", "text": "ፈጣን ዕድገት ላላቸው ጀማሪዎች የኤኲቲ ፋይናንስ።" },
+            { "icon": "phone", "label": "ክፍያና ፊንቴክ", "text": "ዲጂታል ክፍያና የኦንላይን አገልግሎቶች።" }
+          ]
+        },
+        "tip": "ፊንቴክ (የፋይናንስ ቴክኖሎጂ) ኩባንያዎች እንደ ዲጂታል ክፍያና ኦንላይን ባንኪንግ ያሉ አገልግሎቶችን በቴክኖሎጂ ያቀርባሉ።"
+      },
+      {
+        "id": "services",
+        "title": "የመደበኛ ፋይናንስ አገልግሎት አይነቶች",
+        "body": [
+          "ሐና እና ኩማ ካፌውን ለማስኬድና ለማሳደግ ብዙ መደበኛ የፋይናንስ አገልግሎቶች ያስፈልጓቸዋል። የተለመዱት አይነቶች ከታች ቀርበዋል።",
+          "ሌሎች አገልግሎቶች የሀብት አስተዳደር፣ የጡረታ ዕቅድና የአደጋ አስተዳደርን ያካትታሉ። አገልግሎቶቹ እንደየአገሩና እንደ ቁጥጥር ሁኔታው ይለያያሉ። የቴክኖሎጂ ዕድገትም ብዙ የፊንቴክ አገልግሎቶችን አምጥቷል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "bank", "label": "የባንክ አገልግሎት", "text": "የተቀማጭ ሒሳብ፣ ብድርና ካርዶች።" },
+            { "icon": "chart", "label": "ኢንቨስትመንት", "text": "በስቶክ፣ በቦንድና በጋራ ፈንድ ኢንቨስት ማድረግ።" },
+            { "icon": "umbrella", "label": "የመድን አገልግሎት", "text": "የሕይወት፣ የጤና፣ የንብረትና የመኪና መድን።" },
+            { "icon": "coins", "label": "ዕዳና ብድር", "text": "የግል፣ የቢዝነስና የቤት (ሞርጌጅ) ብድር።" },
+            { "icon": "phone", "label": "የክፍያ አገልግሎት", "text": "የካርድ፣ የኦንላይንና የሞባይል ክፍያ።" },
+            { "icon": "scale", "label": "የውጭ ምንዛሬ", "text": "አንዱን ገንዘብ ወደ ሌላው መቀየር።" },
+            { "icon": "truck", "label": "ማከራየት (ሊዝ)", "text": "መሣሪያ ወይም ተሽከርካሪን በመደበኛ ክፍያ መጠቀም።" },
+            { "icon": "people", "label": "የፋይናንስ ምክር", "text": "በኢንቨስትመንት፣ በግብርና በዕቅድ ላይ ምክር።" }
+          ]
+        }
+      },
+      {
+        "id": "savings-account",
+        "title": "የቁጠባ ሂሳብ መክፈት",
+        "body": [
+          "በባንክ ወይም በሌላ የፋይናንስ ተቋም የቁጠባ ሂሳብ መክፈት ብዙውን ጊዜ የሚከተሉትን ደረጃዎች ይከተላል።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ቅርንጫፍ ይሂዱ", "text": "የቁጠባ ሂሳብ ለመክፈት ይጠይቁ።" },
+            { "label": "መታወቂያ ያቅርቡ", "text": "ብሔራዊ መታወቂያ፣ ቀበሌ መታወቂያ ወይም ፓስፖርት።" },
+            { "label": "ቅጹን ይሙሉ", "text": "የግል መረጃ፣ አድራሻና የመነሻ ተቀማጭ።" },
+            { "label": "ያስገቡ", "text": "ቅጹን ከሰነዶቹ ጋር ያቅርቡ።" },
+            { "label": "ባንኩ ያረጋግጣል", "text": "መረጃውን አረጋግጦ ያጸድቃል።" },
+            { "label": "መለያዎን ይቀበሉ", "text": "የሂሳብ ቁጥር፣ ደብተርና ዴቢት ካርድ (ካለ)።" },
+            { "label": "ዲጂታል ይጀምሩ", "text": "ከፈለጉ የኦንላይን አገልግሎት ይክፈቱ።" }
+          ]
+        },
+        "tip": "ዴቢት ካርድ ከሂሳብዎ በቀጥታ ለመክፈል ወይም ገንዘብ ለማውጣት ያስችላል።"
+      },
+      {
+        "id": "loan-digital-accounts",
+        "title": "የብድር ወይም የዲጂታል ሂሳብ መክፈት",
+        "body": [
+          "ብድር ለማግኘት የብድር ሂሳብ ይከፈትልዎታል። የተለመዱት ደረጃዎች ከታች ቀርበዋል።",
+          "እንደ ሞባይል ገንዘብ ወይም ዲጂታል ቦርሳ ያለ የዲጂታል መለያ ለመክፈት፦"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "የብድር አይነት ይምረጡ", "text": "የግል፣ የንግድ ወይም ሌላ ብድር።" },
+            { "label": "ሰነዶችን ይሰብስቡ", "text": "መታወቂያ፣ የገቢ ማረጋገጫ፣ የመያዣ ሰነድ።" },
+            { "label": "ያመልክቱ", "text": "ዓላማ፣ መጠንና የአከፋፈል ዕቅድ ይግለጹ።" },
+            { "label": "ግምገማ", "text": "ተቋሙ የመክፈል አቅምዎን ይገመግማል።" },
+            { "label": "ስምምነቱን ይፈርሙ", "text": "ከጸደቀ የብድር ሰነዶቹን ይፈርሙ።" },
+            { "label": "ብድሩን ይቀበሉ", "text": "ካስፈለገ መያዣ ወይም ዋስትና ያቅርቡ።" },
+            { "label": "መክፈል ይጀምሩ", "text": "በተስማሙት ጊዜ መደበኛ ክፍያ ይክፈሉ።" }
+          ]
+        },
+        "points": [
+          "የፋይናንስ ተቋሙን የሞባይል ባንኪንግ መተግበሪያ ያውርዱ ወይም ድረ-ገጹን ይጎብኙ",
+          "የዲጂታል መለያ መክፈቻ አማራጩን ይምረጡ",
+          "ስም፣ ስልክ ቁጥር፣ አድራሻና የነዋሪ ወይም ብሔራዊ መታወቂያ ያስገቡ",
+          "ደህንነቱ የተጠበቀ የተጠቃሚ ስምና የይለፍ ቃል ያዘጋጁ፤ የባዮሜትሪክ ማረጋገጫም ሊኖር ይችላል",
+          "አስፈላጊ ከሆነ ከቁጠባ ወይም ከተንቀሳቃሽ ሂሳብዎ ጋር ያገናኙት",
+          "እንደ ገንዘብ ማስተላለፍ፣ የአገልግሎት ክፍያና የአየር ሰዓት መሙላት ያሉ አገልግሎቶችን ያስጀምሩ፤ መተግበሪያውን ይለማመዱ"
+        ]
+      },
+      {
+        "id": "formal-pros-cons",
+        "title": "የመደበኛ አገልግሎቶች ጥቅምና ጉዳት",
+        "body": [
+          "መደበኛ የፋይናንስ አገልግሎቶች ለግለሰቦች፣ ለቢዝነሶችና ለአገር ብዙ ጥቅሞች አሏቸው። አስተማማኝና ቁጥጥር የሚደረግበት ፋይናንስ ይሰጣሉ፤ የኢኮኖሚ ዕድገትንና ዓለም አቀፍ ንግድን ያግዛሉ።",
+          "ነገር ግን የብድር ታሪክ ወይም መያዣ ለሌላቸው አነስተኛ ቢዝነሶች ማግኘት አስቸጋሪ ሊሆን ይችላል።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "ጥቅሞች",
+            "items": [
+              "በባለሙያ የሚተዳደሩ",
+              "የካፒታል አቅርቦት",
+              "የአደጋ አስተዳደር",
+              "ሀብት መፍጠር",
+              "ምቹ ክፍያ",
+              "የፋይናንስ አካታችነት",
+              "የኢኮኖሚ ዕድገት",
+              "የፋይናንስ ትምህርት"
+            ]
+          },
+          "right": {
+            "title": "ጉዳቶች",
+            "items": [
+              "ብዙ ጊዜ መያዣ ይፈልጋሉ",
+              "ረጅም ሂደትና ብዙ ወረቀት",
+              "ቋሚ የመክፈያ መርሐ ግብር"
+            ]
+          }
+        },
+        "tip": "የፋይናንስ አካታችነት ማለት የፋይናንስ አገልግሎቶች ለሁሉም የህብረተሰብ ክፍሎች ተደራሽ እንዲሆኑ ማድረግ ነው።"
+      },
+      {
+        "id": "informal",
+        "title": "ኢ-መደበኛ ፋይናንስ፦ እቁብና እድር",
+        "body": [
+          "ኢ-መደበኛ ፋይናንስ ከጓደኞች፣ ከቤተሰብ፣ ከዘመዶች ወይም ከግል ገንዘብ አበዳሪዎች የሚገኝ ገንዘብ ነው። የፋይናንስ ተቆጣጣሪ አካል የቅርብ ክትትል አያደርግበትም።",
+          "የተለመዱ ኢ-መደበኛ ምንጮች የግል ቁጠባ፣ ጓደኞችና ቤተሰብ፣ እቁብ እና እድር ናቸው። እቁብ ሰዎች በየሳምንቱ ወይም በየወሩ ገንዘብ የሚያዋጡበት ቡድን ነው። እያንዳንዱ አባል በተራው ጠቅላላውን ገንዘብ ይወስዳል።",
+          "የእቁብ አባላት እርስ በርሳቸው ይተማመናሉ፤ ደንቡንና ተራውን በጋራ ይስማማሉ። ብዙ ጊዜ የጽሑፍ ውል የለም። እድር ደግሞ በማህበረሰቡ ውስጥ ለጋራ መረዳጃ የሚያገለግልና እንደ የትብብር መድን የሚሠራ ማህበራዊ ተቋም ነው።"
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "አባላት ያዋጣሉ" },
+            { "label": "ቡድኑ ይሰበሰባል" },
+            { "label": "አንድ አባል ይወስዳል" },
+            { "label": "የቀጣዩ አባል ተራ" }
+          ]
+        },
+        "example": {
+          "title": "የስምንት አባላት እቁብ",
+          "text": "እያንዳንዱ አባል በወር 1,000 ብር ያዋጣል፤ በአጠቃላይ 8,000 ብር ይሰበሰባል። እቁቡ ስምንት ወር ይቆያል። እያንዳንዱ አባል በተራው 8,000 ብር ይወስዳል።"
+        },
+        "tip": "የእቁብ ገንዘብ ትንሽ ቢዝነስ ለመጀመር፣ የቤት ዕቃ ወይም መሬት ለመግዛት፣ ወይም የሕክምና ወጭ ለመሸፈን ይረዳል።"
+      },
+      {
+        "id": "informal-pros-cons",
+        "title": "በመደበኛና በኢ-መደበኛ መካከል መምረጥ",
+        "body": [
+          "ኢ-መደበኛ ፋይናንስ መደበኛ አገልግሎት ለማያገኙ ሰዎች ጠቃሚ መንገድ ነው። ማህበራዊ ትስስርና ድጋፍንም ይገነባል። ይሁን እንጂ በጥቅሞቹ ምክንያት ለቢዝነሶች መደበኛ የፋይናንስ አገልግሎት ይመከራል።",
+          "ትክክለኛው ምርጫ በፍላጎትዎ፣ በአደጋው፣ በብቁነትዎና በባለቤትነት ምርጫዎ ይወሰናል። ሁለቱንም ማጣመር ይቻላል። ቢዝነስዎ ሪከርድ ሲያዳብርና ሲያድግ መደበኛ ፋይናንስ በዝቅተኛ ወጭ ከፍተኛ ካፒታል ሊያቀርብ ይችላል።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": {
+            "title": "ኢ-መደበኛ፦ ጥቅሞች",
+            "items": [
+              "ለማግኘት ቀላል",
+              "ፈጣን፣ ትንሽ የቢሮ ሥራ",
+              "ብዙ ጊዜ መያዣ አያስፈልግም",
+              "ተለዋዋጭ የክፍያ ውሎች"
+            ]
+          },
+          "right": {
+            "title": "ኢ-መደበኛ፦ ጉዳቶች",
+            "items": [
+              "ብዙ ጊዜ ከፍ ያለ ወለድ",
+              "አነስተኛ የብድር መጠን",
+              "ግንኙነትን ሊያበላሽ ይችላል",
+              "ሙያዊ አስተዳደር የለም",
+              "መደበኛ ስምምነት ስለሌለ ከፍተኛ ስጋት"
+            ]
+          }
+        },
+        "tip": "እንደ እቁብና እድር ያሉ የማህበረሰብ ተቋማት ማህበራዊ ሴፍቲኔት ሊሆኑና ወደ መደበኛ የፋይናንስ ተቋማት መንገድ ሊከፍቱ ይችላሉ።"
+      }
+    ],
+    "takeaways": [
+      "የፋይናንስ አገልግሎቶች ግለሰቦችና ቢዝነሶች ገንዘባቸውን እንዲያስተዳድሩ ይረዳሉ። መደበኛ ወይም ኢ-መደበኛ ሊሆኑ ይችላሉ።",
+      "እንደ ባንኮች፣ ማይክሮ ፋይናንስና የኢንሹራንስ ኩባንያዎች ያሉ መደበኛ አቅራቢዎች ሕጋዊ ዕውቅናና ቁጥጥር አላቸው።",
+      "የቁጠባ፣ የብድር ወይም የዲጂታል ሂሳብ መክፈት ግልጽ ደረጃዎችን ይከተላል፤ መታወቂያም ያስፈልጋል።",
+      "መደበኛ አገልግሎቶች ካፒታል፣ ደህንነትና ዕድገት ያስገኛሉ፤ ነገር ግን ብዙ ጊዜ መያዣና ብዙ ወረቀት ይፈልጋሉ።",
+      "እንደ እቁብና እድር ያሉ ኢ-መደበኛ ፋይናንስ ፈጣንና ተለዋዋጭ ነው፤ ነገር ግን መጠኑ አነስተኛ፣ ስጋቱም ከፍ ያለ ነው።",
+      "እንደ ፍላጎትዎና እንደ አደጋው ይምረጡ። መደበኛና ኢ-መደበኛ አማራጮችን ማጣመር ይቻላል።"
+    ],
+    "quiz": [
+      {
+        "q": "የፋይናንስ አገልግሎትን መደበኛ የሚያደርገው ምንድን ነው?",
+        "options": ["በጓደኛ መሰጠቱ", "ሕጋዊ ዕውቅናና ቁጥጥር ያለው መሆኑ", "ምንም ወረቀት አለመፈለጉ", "በኦንላይን ብቻ መሆኑ"],
+        "answer": 1,
+        "explain": "መደበኛ አገልግሎቶች በብሔራዊ የፋይናንስ ተቆጣጣሪ አካል ዕውቅናና ቁጥጥር ባላቸው ተቋማት ይሰጣሉ።"
+      },
+      {
+        "q": "የባንክ ብድር ማግኘት ለማይችሉ ጥቃቅን ኢንተርፕራይዞች አነስተኛ ብድር የሚሰጠው የትኛው ተቋም ነው?",
+        "options": ["የማይክሮ ፋይናንስ ተቋም", "ቬንቸር ካፒታል ፈንድ", "የውጭ ምንዛሬ ቢሮ", "ክፍያ አሳላጭ"],
+        "answer": 0,
+        "explain": "የማይክሮ ፋይናንስ ተቋማት የባንክ ፋይናንስ ለማያገኙ ጥቃቅን ኢንተርፕራይዞች አነስተኛ ብድር ይሰጣሉ።"
+      },
+      {
+        "q": "የቁጠባ ሂሳብ ለመክፈት ብዙውን ጊዜ የመጀመሪያው ደረጃ ምንድን ነው?",
+        "options": ["የብድር ስምምነት መፈረም", "ቅርንጫፍ ሄዶ ሂሳብ ለመክፈት መጠየቅ", "መያዣ ማቅረብ", "የብድር ክፍያ መክፈል"],
+        "answer": 1,
+        "explain": "መጀመሪያ ቅርንጫፍ ሄደው የቁጠባ ሂሳብ ለመክፈት ይጠይቃሉ።"
+      },
+      {
+        "q": "እያንዳንዱ አባል በወር 1,000 ብር በሚያዋጣበት የስምንት አባላት እቁብ እያንዳንዱ አባል ስንት ብር ይወስዳል?",
+        "options": ["1,000 ብር", "4,000 ብር", "8,000 ብር", "16,000 ብር"],
+        "answer": 2,
+        "explain": "ስምንት አባላት እያንዳንዳቸው 1,000 ብር ስለሚያዋጡ እያንዳንዱ አባል በተራው 8,000 ብር ይወስዳል።"
+      },
+      {
+        "q": "ከሚከተሉት የኢ-መደበኛ ፋይናንስ ጉዳት የትኛው ነው?",
+        "options": ["ብዙ ጊዜ መያዣ አያስፈልግም", "በፍጥነት ይገኛል", "ብዙ ጊዜ ከፍ ያለ የወለድ ተመን", "ተለዋዋጭ የክፍያ ውሎች"],
+        "answer": 2,
+        "explain": "ኢ-መደበኛ አበዳሪዎች ብዙ ጊዜ ከመደበኛ ተቋማት የበለጠ ወለድ ያስከፍላሉ።"
+      },
+      {
+        "q": "ከሚከተሉት የመደበኛ ፋይናንስ አገልግሎቶች ጉዳት የትኛው ነው?",
+        "options": ["በባለሙያ መተዳደር", "ብዙ ጊዜ መያዣ ይፈልጋሉ", "የካፒታል አቅርቦት", "የክፍያ ምቹነት"],
+        "answer": 1,
+        "explain": "መደበኛ አገልግሎቶች ብዙ ጊዜ መያዣና ረጅም የማመልከቻ ሂደት ይፈልጋሉ።"
+      }
+    ]
+  }
+}

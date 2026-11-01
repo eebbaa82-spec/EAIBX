@@ -1,0 +1,428 @@
+{
+  "id": "m05",
+  "slug": "savings",
+  "icon": "piggy",
+  "minutes": 10,
+  "en": {
+    "title": "Savings",
+    "summary": "Learn why saving matters, where to save, and how to make a savings plan.",
+    "objectives": [
+      "Explain what saving is and why it is important",
+      "Recognize short-term and long-term saving goals",
+      "Compare formal, semi-formal and informal ways of saving",
+      "Choose a good place to save",
+      "Make a simple savings plan"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-saving",
+        "title": "What are savings?",
+        "body": [
+          "Savings are the money left over after you pay for goods and services. Saving means putting aside part of what you earn today for later.",
+          "Saving is not done once. You keep doing it over time. It is a key part of managing money well."
+        ],
+        "points": [
+          "Savings help you deal with emergencies.",
+          "They help you manage risk and even out your income.",
+          "They help you build assets and reach your money goals."
+        ],
+        "visual": {
+          "type": "equation",
+          "parts": [
+            { "label": "Income" },
+            { "label": "Spending", "op": "-" },
+            { "label": "Savings", "op": "=" }
+          ],
+          "caption": "Savings are what is left after spending."
+        }
+      },
+      {
+        "id": "why-save",
+        "title": "Why do people save?",
+        "body": [
+          "There are many reasons to save. Most of them fit into three groups.",
+          "An asset is something you own that keeps its value for a long time. You can sell it for money if needed. Some assets, like a house you rent out, also bring income."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "umbrella", "label": "Emergencies", "text": "Accidents, illness, fire or floods you did not expect." },
+            { "icon": "calendar", "label": "Expected events", "text": "Weddings, school costs and food for the family." },
+            { "icon": "house", "label": "Building assets", "text": "Buying a house or starting a business." }
+          ]
+        },
+        "tip": "Without savings, you may have to borrow in an emergency. That adds money worries and stress.",
+        "example": {
+          "title": "More reasons from an economist",
+          "text": "The economist Keynes (1936) listed eight reasons to save. They include being ready for surprises, feeling independent, enjoying interest, funding a business and leaving an inheritance."
+        }
+      },
+      {
+        "id": "saving-goals",
+        "title": "Saving goals",
+        "body": [
+          "A saving goal is the thing you are saving for. Goals can be short-term or long-term.",
+          "Knowing how long a goal will take helps you plan how much to save."
+        ],
+        "visual": {
+          "type": "timeline",
+          "items": [
+            { "label": "Short-term", "text": "Less than one year, like paying school fees." },
+            { "label": "Long-term", "text": "More than one year, like buying a house." }
+          ]
+        },
+        "tip": "In general, saving protects your health, safety, happiness and stability over the long term."
+      },
+      {
+        "id": "ways-to-save",
+        "title": "Ways to save your money",
+        "body": [
+          "You can save in cash or in things you own. You can save at home, in a group, or at a financial institution.",
+          "Each way has good and bad sides. Saving at a formal institution is generally safe and earns interest. Interest is extra money paid to you for keeping your savings there."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "leaf", "label": "Non-cash", "text": "Land or animals you can sell for cash." },
+            { "icon": "house", "label": "Informal", "text": "Cash at home. Easy to reach, but easy to spend or steal." },
+            { "icon": "people", "label": "Semi-formal", "text": "Savings groups. Members get a lump sum, with no interest." },
+            { "icon": "bank", "label": "Formal", "text": "Banks, cooperatives, microfinance. Safe and pays interest, but has fees." }
+          ]
+        },
+        "example": {
+          "title": "Hana and Kuma choose a way to save",
+          "text": "Hana wants to hide the Coffee Hub money at home. Meseret says a microfinance savings account pays interest and may lead to a loan. Yohannes says join an ekub, a group where members put in a small amount each week."
+        },
+        "tip": "Land is harder to sell quickly than animals."
+      },
+      {
+        "id": "where-to-save",
+        "title": "Choosing where to save",
+        "body": [
+          "Before you open an account, ask questions. Look at the rules, the costs and how easy the service is to use.",
+          "Liquidity means how easily you can take your money out when you need it."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "Deposit rules", "text": "Minimum deposit? Are small amounts accepted?" },
+            { "icon": "book", "label": "Terms of use", "text": "Rules on how much and when to deposit or withdraw." },
+            { "icon": "receipt", "label": "Cost", "text": "Fees, and value lost to rising prices." },
+            { "icon": "atm", "label": "Access", "text": "Distance, opening hours, service, ATMs." },
+            { "icon": "shield", "label": "Safety", "text": "Good name, insurance, safe transactions." },
+            { "icon": "wallet", "label": "Liquidity", "text": "Can you withdraw the full amount easily?" },
+            { "icon": "growth", "label": "Interest", "text": "How much interest, and when is it paid?" }
+          ]
+        },
+        "points": [
+          "Choose a place that is safe and secure.",
+          "It should be easy to reach and easy to open an account.",
+          "It should pay good interest with few or no charges.",
+          "It should value and treat you well as a client."
+        ],
+        "tip": "Make sure your monthly interest is more than your monthly charges."
+      },
+      {
+        "id": "savings-plan",
+        "title": "Making a savings plan",
+        "body": [
+          "A savings plan helps you manage money to reach your goals. Follow these seven steps.",
+          "To save, you must spend less than you earn. Save regularly and with discipline. It is slow, but it pays off."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Set goals", "text": "Decide what you are saving for." },
+            { "label": "Set a target", "text": "How much, and by when?" },
+            { "label": "Check income", "text": "How much you earn and how regularly." },
+            { "label": "Cut costs", "text": "Spend less on tea breaks or alcohol. Save it." },
+            { "label": "Choose a place", "text": "Compare places and savings products." },
+            { "label": "Plan how often", "text": "Save a set amount on set days." },
+            { "label": "Track progress", "text": "Check statements or your passbook often." }
+          ]
+        },
+        "example": {
+          "title": "A simple saving habit",
+          "text": "When you are paid, or at the end of each business day, put a set amount in an envelope. Keep it safe. Take it to the bank on a set day each week or month."
+        },
+        "tip": "If your employer pays through a bank, ask to send part of your pay straight to your savings account."
+      }
+    ],
+    "takeaways": [
+      "Saving means putting aside part of your earnings for future use, again and again over time.",
+      "People save for emergencies, for expected events, and to build assets.",
+      "Saving goals can be short-term (under a year) or long-term (over a year).",
+      "When choosing where to save, think about safety, interest, liquidity, charges and access.",
+      "A savings plan and discipline help you reach your goals. No savings means less security."
+    ],
+    "quiz": [
+      {
+        "q": "What is saving?",
+        "options": [
+          "Spending all your income every month",
+          "Putting aside part of your earnings for future use",
+          "Borrowing money from friends",
+          "Paying school fees"
+        ],
+        "answer": 1,
+        "explain": "Saving means keeping part of what you earn today for later."
+      },
+      {
+        "q": "Buying a house is an example of which kind of goal?",
+        "options": ["Short-term goal", "Long-term goal", "No goal"],
+        "answer": 1,
+        "explain": "Long-term goals take more than one year to reach."
+      },
+      {
+        "q": "What are two big problems with saving cash at home?",
+        "options": [
+          "High fees and long lines",
+          "The temptation to spend it and the risk of theft",
+          "Minimum deposits and paperwork",
+          "It earns too much interest"
+        ],
+        "answer": 1,
+        "explain": "Cash at home is easy to spend and can be stolen."
+      },
+      {
+        "q": "An ekub is an example of which type of saving?",
+        "options": ["Formal", "Semi-formal", "Non-cash", "Fixed deposit"],
+        "answer": 1,
+        "explain": "An ekub is a savings group, which is a semi-formal way to save."
+      },
+      {
+        "q": "What does liquidity mean?",
+        "options": [
+          "How much interest you earn",
+          "How far the bank is from home",
+          "How easily you can take your money out",
+          "How many fees the bank charges"
+        ],
+        "answer": 2,
+        "explain": "Liquidity is how easy it is to withdraw your money when you need it."
+      },
+      {
+        "q": "What is the first step in making a savings plan?",
+        "options": [
+          "Track your savings",
+          "Choose a bank",
+          "Set savings goals",
+          "Cut back on expenses"
+        ],
+        "answer": 2,
+        "explain": "You start by deciding what you are saving for."
+      }
+    ]
+  },
+  "am": {
+    "title": "ቁጠባ",
+    "summary": "የቁጠባን አስፈላጊነት፣ የት መቆጠብ እንዳለብዎ እና የቁጠባ ዕቅድ እንዴት እንደሚያወጡ ይማሩ።",
+    "objectives": [
+      "ቁጠባ ምን እንደሆነና ለምን እንደሚያስፈልግ ማብራራት",
+      "የዐጭር እና የረጅም ጊዜ የቁጠባ ግቦችን መለየት",
+      "መደበኛ፣ ከፊል መደበኛ እና ኢ-መደበኛ የቁጠባ መንገዶችን ማወዳደር",
+      "ጥሩ የመቆጠቢያ ቦታ መምረጥ",
+      "ቀላል የቁጠባ ዕቅድ ማውጣት"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-saving",
+        "title": "ቁጠባ ምንድን ነው?",
+        "body": [
+          "ቁጠባ ማለት ገቢዎ ለዕቃዎችና ለአገልግሎቶች ከዋለ በኋላ የሚቀረው ገንዘብ ነው። አሁን ከሚያገኙት የተወሰነውን ለወደፊት ማስቀመጥ ነው።",
+          "ቁጠባ አንድ ጊዜ ብቻ የሚደረግ አይደለም። በጊዜ ሂደት የሚቀጥል ልማድ ነው። የጥሩ የገንዘብ አስተዳደር ቁልፍ ነው።"
+        ],
+        "points": [
+          "ቁጠባ ድንገተኛ ሁኔታዎችን ለመቋቋም ይረዳል።",
+          "አደጋዎችን ለመቆጣጠርና ገቢን ለማመጣጠን ይረዳል።",
+          "ንብረት ለማፍራትና የፋይናንስ ግቦችን ለማሳካት ይረዳል።"
+        ],
+        "visual": {
+          "type": "equation",
+          "parts": [
+            { "label": "ገቢ" },
+            { "label": "ወጭ", "op": "-" },
+            { "label": "ቁጠባ", "op": "=" }
+          ],
+          "caption": "ቁጠባ ከወጭ በኋላ የሚቀረው ገንዘብ ነው።"
+        }
+      },
+      {
+        "id": "why-save",
+        "title": "ሰዎች ለምን ይቆጥባሉ?",
+        "body": [
+          "ለቁጠባ ብዙ ምክንያቶች አሉ። አብዛኞቹ ከሦስት ምድቦች በአንዱ ይካተታሉ።",
+          "ንብረት ማለት እርስዎ የያዙትና የረጅም ጊዜ ዋጋ ያለው ነገር ነው። ሲያስፈልግ ተሽጦ ወደ ገንዘብ ይቀየራል። እንደ ቤት ያሉ ንብረቶች ሲከራዩ ገቢ ያመጣሉ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "umbrella", "label": "ድንገተኛ ሁኔታዎች", "text": "ያልተጠበቀ አደጋ፣ ሕመም፣ እሳት ወይም ጎርፍ።" },
+            { "icon": "calendar", "label": "የሚጠበቁ ክስተቶች", "text": "ጋብቻ፣ የቤተሰብ ትምህርት እና ምግብ።" },
+            { "icon": "house", "label": "ንብረት ማፍራት", "text": "ቤት መግዛት ወይም ቢዝነስ መጀመር።" }
+          ]
+        },
+        "tip": "ቁጠባ ከሌለ በድንገተኛ ጊዜ መበደር ይኖርብዎታል። ይህ የገንዘብና የስሜት ጫና ይጨምራል።",
+        "example": {
+          "title": "ከምጣኔ ሀብት ባለሙያ ተጨማሪ ምክንያቶች",
+          "text": "የምጣኔ ሀብት ባለሙያው ኬይንስ (1936) ለቁጠባ ስምንት ምክንያቶችን ለይቷል። ከእነዚህም ውስጥ ለድንገተኛ ሁኔታ መዘጋጀት፣ ነጻነት፣ ወለድ ማግኘት፣ ለቢዝነስ ግብዓት እና ውርስ መተው ይገኙበታል።"
+        }
+      },
+      {
+        "id": "saving-goals",
+        "title": "የቁጠባ ግቦች",
+        "body": [
+          "የቁጠባ ግብ የሚቆጥቡለት ዓላማ ነው። ግቦች የዐጭር ወይም የረጅም ጊዜ ሊሆኑ ይችላሉ።",
+          "ግቡ ምን ያህል ጊዜ እንደሚወስድ ማወቅ ምን ያህል መቆጠብ እንዳለብዎ ለማቀድ ይረዳል።"
+        ],
+        "visual": {
+          "type": "timeline",
+          "items": [
+            { "label": "የዐጭር ጊዜ", "text": "ከአንድ ዓመት በታች፤ ለምሳሌ የትምህርት ቤት ክፍያ።" },
+            { "label": "የረጅም ጊዜ", "text": "ከአንድ ዓመት በላይ፤ ለምሳሌ ቤት መግዛት።" }
+          ]
+        },
+        "tip": "በአጠቃላይ ቁጠባ የረጅም ጊዜ ጤንነታችንን፣ ደህንነታችንን፣ ደስታችንን እና መረጋጋታችንን ያረጋግጣል።"
+      },
+      {
+        "id": "ways-to-save",
+        "title": "ገንዘብዎን የመቆጠቢያ መንገዶች",
+        "body": [
+          "በጥሬ ገንዘብ ወይም በንብረት መቆጠብ ይችላሉ። በቤት፣ በቡድን ወይም በፋይናንስ ተቋም መቆጠብ ይቻላል።",
+          "እያንዳንዱ መንገድ ጥቅምና ጉዳት አለው። በመደበኛ ተቋም መቆጠብ በአጠቃላይ ደህንነቱ የተጠበቀ ነው፤ ወለድም ያስገኛል። ወለድ ገንዘብዎን በማስቀመጥዎ የሚከፈልዎ ተጨማሪ ገንዘብ ነው።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "leaf", "label": "ጥሬ ገንዘብ ያልሆነ", "text": "ተሽጠው ገንዘብ የሚሆኑ መሬት ወይም እንስሳት።" },
+            { "icon": "house", "label": "ኢ-መደበኛ", "text": "በቤት የሚቀመጥ ገንዘብ። ተደራሽ ነው፤ ግን ሊወጣ ወይም ሊሰረቅ ይችላል።" },
+            { "icon": "people", "label": "ከፊል መደበኛ", "text": "የቁጠባ ማህበራት። አባላት ያለ ወለድ ጠርቀም ያለ ገንዘብ ያገኛሉ።" },
+            { "icon": "bank", "label": "መደበኛ", "text": "ባንክ፣ ህብረት ሥራ፣ ማይክሮ ፋይናንስ። ደህና ነው፣ ወለድ አለው፤ ግን ክፍያ አለው።" }
+          ]
+        },
+        "example": {
+          "title": "ሐና እና ኩማ የመቆጠቢያ መንገድ ይመርጣሉ",
+          "text": "ሐና የቡና ማእከሉን ገንዘብ በቤት መደበቅ ትፈልጋለች። መሠረት በማይክሮ ፋይናንስ የቁጠባ አካውንት ወለድ እንደሚያስገኝና ብድር ሊያስገኝ እንደሚችል ትመክራለች። ዮሐንስ አባላት በየሳምንቱ መጠነኛ ገንዘብ የሚያስቀምጡበትን ዕቁብ እንዲቀላቀሉ ይመክራል።"
+        },
+        "tip": "መሬት ከእንስሳት ይልቅ በፍጥነት ለመሸጥ ያስቸግራል።"
+      },
+      {
+        "id": "where-to-save",
+        "title": "የመቆጠቢያ ቦታን መምረጥ",
+        "body": [
+          "አካውንት ከመክፈትዎ በፊት ጥያቄዎችን ይጠይቁ። ደንቦቹን፣ ወጭውን እና የአገልግሎቱን ቀላልነት ይመልከቱ።",
+          "ሊኲዲቲ (liquidity) ማለት ሲያስፈልግዎ ገንዘብዎን ምን ያህል በቀላሉ ማውጣት እንደሚችሉ ነው።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "coins", "label": "ተቀማጭ መስፈርት", "text": "መነሻ ተቀማጭ ያስፈልጋል? ትንሽ መጠን ይቀበላሉ?" },
+            { "icon": "book", "label": "የአገልግሎት ውል", "text": "ስለማስገባትና ስለማውጣት መጠንና ጊዜ ደንቦች።" },
+            { "icon": "receipt", "label": "ወጭ", "text": "ክፍያዎች፣ እና በዋጋ ግሽበት የሚጠፋ ዋጋ።" },
+            { "icon": "atm", "label": "ተደራሽነት", "text": "ርቀት፣ የሥራ ሰዓት፣ አገልግሎት፣ ኤቲኤም።" },
+            { "icon": "shield", "label": "ደህንነት", "text": "ጥሩ ስም፣ ኢንሹራንስ፣ ደህና ግብይት።" },
+            { "icon": "wallet", "label": "ሊኲዲቲ", "text": "ሙሉ ገንዘቡን በቀላሉ ማውጣት ይቻላል?" },
+            { "icon": "growth", "label": "ወለድ", "text": "ወለዱ ስንት ነው? መቼ ይከፈላል?" }
+          ]
+        },
+        "points": [
+          "ደህንነቱ የተጠበቀና አስተማማኝ ተቋም ይምረጡ።",
+          "በቀላሉ ተደራሽና አካውንት ለመክፈት ቀላል መሆን አለበት።",
+          "ጥሩ ወለድ የሚከፍልና ትንሽ ወይም ምንም ክፍያ የሌለው መሆን አለበት።",
+          "እንደ ደንበኛ ክብር የሚሰጥዎና በአግባቡ የሚያስተናግድዎ መሆን አለበት።"
+        ],
+        "tip": "ወርሀዊ ወለድዎ ከወርሀዊ ክፍያዎች የበለጠ መሆኑን ያረጋግጡ።"
+      },
+      {
+        "id": "savings-plan",
+        "title": "የቁጠባ ዕቅድ ማውጣት",
+        "body": [
+          "የቁጠባ ዕቅድ ግቦችዎን ለማሳካት ገንዘብዎን ለማስተዳደር ይረዳል። እነዚህን ሰባት ርምጃዎች ይከተሉ።",
+          "ለመቆጠብ ከምናገኘው ያነሰ ማውጣት አለብን። በመደበኛነትና በዲሲፕሊን ይቆጥቡ። ሂደቱ አዝጋሚ ነው፤ ግን ይክሳል።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ግብ ያስቀምጡ", "text": "ለምን እንደሚቆጥቡ ይወስኑ።" },
+            { "label": "ዒላማ ያዘጋጁ", "text": "ምን ያህል፣ እስከ መቼ?" },
+            { "label": "ገቢዎን ይወቁ", "text": "ምን ያህልና በምን ያህል መደበኛነት እንደሚያገኙ።" },
+            { "label": "ወጭ ይቀንሱ", "text": "የሻይ ዕረፍት ወይም አልኮል ቀንሰው ይቆጥቡ።" },
+            { "label": "ቦታ ይምረጡ", "text": "ቦታዎችንና የቁጠባ ምርቶችን ያወዳድሩ።" },
+            { "label": "ድግግሞሽ ያቅዱ", "text": "በተወሰነ ቀን የተወሰነ መጠን ይቆጥቡ።" },
+            { "label": "ይከታተሉ", "text": "የባንክ መግለጫ ወይም ደብተርዎን በየጊዜው ይፈትሹ።" }
+          ]
+        },
+        "example": {
+          "title": "ቀላል የቁጠባ ልማድ",
+          "text": "ደመወዝ ሲቀበሉ ወይም በየቢዝነስ ቀኑ መጨረሻ የተወሰነ ገንዘብ በፖስታ ያድርጉ። ደህንነቱ በተጠበቀ ቦታ ያስቀምጡት። በሳምንቱ ወይም በወሩ በተወሰነ ቀን ወደ ባንክ ይውሰዱት።"
+        },
+        "tip": "አሠሪዎ በባንክ የሚከፍልዎ ከሆነ፣ ከደመወዝዎ የተወሰነው በቀጥታ ወደ ቁጠባ አካውንትዎ እንዲገባ ያድርጉ።"
+      }
+    ],
+    "takeaways": [
+      "ቁጠባ ከገቢዎ የተወሰነውን ለወደፊት በጊዜ ሂደት ደጋግሞ ማስቀመጥ ነው።",
+      "ሰዎች ለድንገተኛ ሁኔታዎች፣ ለሚጠበቁ ክስተቶች እና ንብረት ለማፍራት ይቆጥባሉ።",
+      "የቁጠባ ግቦች የዐጭር ጊዜ (ከአንድ ዓመት በታች) ወይም የረጅም ጊዜ (ከአንድ ዓመት በላይ) ናቸው።",
+      "የት እንደሚቆጥቡ ሲወስኑ ደህንነትን፣ ወለድን፣ ሊኲዲቲን፣ የአገልግሎት ክፍያን እና ተደራሽነትን ያስቡ።",
+      "የቁጠባ ዕቅድና ዲሲፕሊን ግብዎ ላይ ያደርሱዎታል። ቁጠባ የለም ማለት የደህንነት ማነስ ነው።"
+    ],
+    "quiz": [
+      {
+        "q": "ቁጠባ ምንድን ነው?",
+        "options": [
+          "በየወሩ ገቢን በሙሉ ማውጣት",
+          "ከገቢ የተወሰነውን ለወደፊት ማስቀመጥ",
+          "ከጓደኞች ገንዘብ መበደር",
+          "የትምህርት ቤት ክፍያ መክፈል"
+        ],
+        "answer": 1,
+        "explain": "ቁጠባ ዛሬ ከሚያገኙት የተወሰነውን ለወደፊት ማስቀመጥ ነው።"
+      },
+      {
+        "q": "ቤት መግዛት የትኛው ዓይነት ግብ ምሳሌ ነው?",
+        "options": ["የዐጭር ጊዜ ግብ", "የረጅም ጊዜ ግብ", "ግብ አይደለም"],
+        "answer": 1,
+        "explain": "የረጅም ጊዜ ግቦች ለመድረስ ከአንድ ዓመት በላይ ይፈጃሉ።"
+      },
+      {
+        "q": "ገንዘብን በቤት መቆጠብ ሁለቱ ዋና ጉዳቶች ምንድን ናቸው?",
+        "options": [
+          "ከፍተኛ ክፍያ እና ረጅም ሰልፍ",
+          "ገንዘቡን የማውጣት ፍላጎት እና የስርቆት አደጋ",
+          "መነሻ ተቀማጭ እና ወረቀት ሥራ",
+          "በጣም ብዙ ወለድ ማስገኘቱ"
+        ],
+        "answer": 1,
+        "explain": "በቤት የሚቀመጥ ገንዘብ በቀላሉ ይወጣል፤ ሊሰረቅም ይችላል።"
+      },
+      {
+        "q": "ዕቁብ የትኛው የቁጠባ ዓይነት ምሳሌ ነው?",
+        "options": ["መደበኛ", "ከፊል መደበኛ", "ጥሬ ገንዘብ ያልሆነ", "ቋሚ ተቀማጭ"],
+        "answer": 1,
+        "explain": "ዕቁብ የቡድን ቁጠባ ሲሆን ከፊል መደበኛ የቁጠባ መንገድ ነው።"
+      },
+      {
+        "q": "ሊኲዲቲ ማለት ምን ማለት ነው?",
+        "options": [
+          "የሚያገኙት የወለድ መጠን",
+          "ባንኩ ከቤት ያለው ርቀት",
+          "ገንዘብዎን ምን ያህል በቀላሉ ማውጣት እንደሚችሉ",
+          "ባንኩ የሚያስከፍለው የክፍያ ብዛት"
+        ],
+        "answer": 2,
+        "explain": "ሊኲዲቲ ሲያስፈልግዎ ገንዘብዎን የማውጣት ቀላልነት ነው።"
+      },
+      {
+        "q": "የቁጠባ ዕቅድ ለማውጣት የመጀመሪያው ርምጃ ምንድን ነው?",
+        "options": [
+          "ቁጠባዎን መከታተል",
+          "ባንክ መምረጥ",
+          "የቁጠባ ግቦችን ማስቀመጥ",
+          "ወጭን መቀነስ"
+        ],
+        "answer": 2,
+        "explain": "በመጀመሪያ ለምን እንደሚቆጥቡ መወሰን ያስፈልጋል።"
+      }
+    ]
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "id": "m10",
+  "slug": "risk-and-insurance",
+  "icon": "umbrella",
+  "minutes": 12,
+  "en": {
+    "title": "Risk Management and Insurance",
+    "summary": "Learn to spot the risks to your life and business, handle them step by step, and use insurance and retirement planning.",
+    "objectives": [
+      "Explain what risk is and name common business risks",
+      "Follow the four steps of the risk management process",
+      "Choose between the four ways to handle a risk",
+      "Describe the main types of insurance and how to get a policy",
+      "Understand planning for old age and retirement"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-risk",
+        "title": "What is risk?",
+        "body": [
+          "Many people know little about the risks they face, or about the tools to manage them. Knowing your risks is a key part of managing money.",
+          "Risk is the possibility of loss or injury. Not all risk comes from bad events. Good chances, like expanding or growing your business, also carry some risk.",
+          "Your business faces internal risks (weaknesses inside it) and external risks (threats from outside). External risks can include a major disaster or a global pandemic."
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "Internal risks", "items": ["Weaknesses", "Mostly in your control", "Can be reduced or removed"] },
+          "right": { "title": "External risks", "items": ["Threats", "Often out of your control", "Can come without warning"] }
+        },
+        "tip": "Ask yourself: can I name the common risks for my business and their warning signs?"
+      },
+      {
+        "id": "business-risks",
+        "title": "Common risks for a small business",
+        "body": [
+          "Risk can come from many parts of a business. Here are six main areas. Think about which ones apply to your business."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "people", "label": "Human risks", "text": "Illness, death, theft, fraud or unhappy workers." },
+            { "icon": "store", "label": "Market and competition", "text": "New competitors, rising costs and rent, changing customer tastes." },
+            { "icon": "truck", "label": "Equipment and IT", "text": "Broken computers, machines or vehicles cost money." },
+            { "icon": "scale", "label": "Business environment", "text": "New laws, zoning or health and safety rules." },
+            { "icon": "warning", "label": "Physical risks", "text": "Fire, flood, power cuts and storms." },
+            { "icon": "coins", "label": "Financial risks", "text": "Unexpected costs, lower income or new debt." }
+          ]
+        },
+        "points": [
+          "Make a replacement schedule for computers, machines and vehicles.",
+          "Add fire extinguishers, flood protection and generators.",
+          "Check your workplace to reduce work injuries.",
+          "Protect your trade secrets.",
+          "Plan for cash flow risks. Cash flow is the money moving in and out of your business."
+        ],
+        "example": {
+          "title": "A forgotten order",
+          "text": "An unhappy worker forgets to order stock. Customers cannot get what they want, so they cancel their orders. The business loses sales."
+        }
+      },
+      {
+        "id": "risk-process",
+        "title": "The risk management process",
+        "body": [
+          "Risk management means finding the losses you could face and choosing the best way to handle each one. It has four steps that repeat.",
+          "First, identify all big and small possible losses: property loss, lost business income, staff problems and liability. Liability means legal responsibility for harm to others.",
+          "Second, assess how often a loss may happen (frequency) and how big it may be (severity). Third, choose a way to treat it. Fourth, put the plan into action, then monitor and report."
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "Identify" },
+            { "label": "Assess" },
+            { "label": "Treat" },
+            { "label": "Monitor and report" }
+          ]
+        }
+      },
+      {
+        "id": "risk-techniques",
+        "title": "Four ways to handle risk",
+        "body": [
+          "After you identify and assess a risk, choose how to handle it. There are four basic methods.",
+          "Risk transfer, the fourth method, has four forms. They are listed below."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "warning", "label": "Avoid", "text": "Stop, or never start, the risky activity." },
+            { "icon": "shield", "label": "Control", "text": "Keep the activity, but reduce the chance or cost of loss." },
+            { "icon": "piggy", "label": "Retain", "text": "Accept and pay part or all of the loss yourself." },
+            { "icon": "handshake", "label": "Transfer", "text": "Pay another party to carry the risk." }
+          ]
+        },
+        "points": [
+          "Hold-harmless agreements: contract terms pass some losses to another party.",
+          "Incorporation: the owners' personal assets are not used to pay business losses.",
+          "Hedging: the risk of price changes passes to another party.",
+          "Insurance: an insurance company takes on the risk."
+        ],
+        "example": {
+          "title": "The paint factory",
+          "text": "A paint factory could avoid all paint-making losses by stopping production. But then it would have no business. So it must use other methods."
+        },
+        "tip": "Retaining a risk can be planned or unplanned. Unplanned retention happens when you fail to spot a risk."
+      },
+      {
+        "id": "insurance",
+        "title": "Insurance: how it works",
+        "body": [
+          "Insurance is one of the most important parts of a risk plan. With it, you transfer your risk to an insurance company.",
+          "You pay an agreed amount in advance, called a premium. A covered loss might be a bad season, an accident, a fire or a death. Then the company pays you compensation.",
+          "Insurance can become expensive if you buy cover you do not need, or pay more premium than you should."
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "people", "label": "Life insurance", "text": "Replaces lost income for others after your death." },
+            { "icon": "heart", "label": "Health insurance", "text": "Helps pay doctor, hospital and medicine costs." },
+            { "icon": "umbrella", "label": "Disability insurance", "text": "Pays part of your income if illness or injury stops work." },
+            { "icon": "house", "label": "Property and liability", "text": "Covers damage, theft and legal liability losses." }
+          ]
+        }
+      },
+      {
+        "id": "buying-insurance",
+        "title": "Steps to get an insurance policy",
+        "body": [
+          "A policy is your written insurance agreement. Read it with care. Exclusions are things the policy does not cover. A deductible is the part of a loss you pay yourself."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Know your needs", "text": "Choose health, property or business cover." },
+            { "label": "Research providers", "text": "Compare price, reputation and financial stability." },
+            { "label": "Contact companies", "text": "By phone, email or website." },
+            { "label": "Get quotes", "text": "A quote shows the cover and the premium." },
+            { "label": "Review the policy", "text": "Check cover, exclusions, deductibles and terms." },
+            { "label": "Fill in forms" },
+            { "label": "Submit documents", "text": "For example, ID and proof of ownership." },
+            { "label": "Pay, keep a copy", "text": "Pay the premium and keep the policy papers." }
+          ]
+        },
+        "example": {
+          "title": "Hana and Kuma buy a policy",
+          "text": "Hana and Kuma want to buy insurance. They follow these steps, from knowing their needs to paying and keeping a copy of the policy."
+        }
+      },
+      {
+        "id": "retirement",
+        "title": "Planning for old age",
+        "body": [
+          "Retirement is the stage of life when a person stops working.",
+          "Retirement planning means setting your income goals for that time. It also means deciding the actions needed to reach those goals."
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "Find income sources" },
+            { "label": "Estimate expenses" },
+            { "label": "Start saving" },
+            { "label": "Manage assets" }
+          ]
+        },
+        "tip": "Life insurance can also be used for retirement planning and investing."
+      }
+    ],
+    "takeaways": [
+      "Risk is the possibility of loss or injury. Even growth carries some risk.",
+      "Internal risks are mostly in your control. External risks often are not.",
+      "Risk management has four steps: identify, assess, treat, and monitor and report.",
+      "The four ways to handle risk are avoid, control, retain and transfer.",
+      "Insurance transfers your risk to an insurer for a premium. Buy only the cover you need.",
+      "Plan for retirement: find income sources, estimate expenses, save and manage assets."
+    ],
+    "quiz": [
+      {
+        "q": "What is risk?",
+        "options": ["A sure profit", "The possibility of loss or injury", "A type of bank account", "A government tax"],
+        "answer": 1,
+        "explain": "Risk is the possibility of loss or injury."
+      },
+      {
+        "q": "Which of these is an external risk?",
+        "options": ["An employee forgets to order stock", "A new competitor opens across the street", "A worker steals from the shop", "A machine is not repaired on time"],
+        "answer": 1,
+        "explain": "A new competitor comes from the market outside your business."
+      },
+      {
+        "q": "What is the first step in the risk management process?",
+        "options": ["Buy insurance", "Monitor and report", "Identify possible losses", "Treat the risk"],
+        "answer": 2,
+        "explain": "You cannot handle a loss until you have identified it."
+      },
+      {
+        "q": "Paying an insurance company to carry your risk is an example of which method?",
+        "options": ["Risk avoidance", "Risk retention", "Loss control", "Risk transfer"],
+        "answer": 3,
+        "explain": "Insurance is a form of risk transfer to another party."
+      },
+      {
+        "q": "What is an insurance premium?",
+        "options": ["The amount you pay in advance for cover", "The money the insurer pays after a loss", "A loan from the bank", "A fine for late payment"],
+        "answer": 0,
+        "explain": "The premium is the agreed amount you pay in advance to be covered."
+      },
+      {
+        "q": "When reviewing a policy, what should you check?",
+        "options": ["Only the company's logo", "Cover, exclusions, deductibles and terms", "Nothing, just sign it", "Only the color of the papers"],
+        "answer": 1,
+        "explain": "Check the details so the policy matches your needs and you understand its terms."
+      }
+    ]
+  },
+  "am": {
+    "title": "የአደጋ አስተዳደር እና ኢንሹራንስ",
+    "summary": "በሕይወትዎና በቢዝነስዎ ላይ ያሉ አደጋዎችን መለየት፣ ደረጃ በደረጃ መቆጣጠር፣ እንዲሁም መድንና የጡረታ ዕቅድን መጠቀም ይማሩ።",
+    "objectives": [
+      "አደጋ ምን እንደሆነ ማብራራት እና የተለመዱ የቢዝነስ አደጋዎችን መጥቀስ",
+      "የአደጋ አስተዳደር ሂደትን አራት ደረጃዎች መከተል",
+      "አደጋን ለመቆጣጠር ከአራቱ ዘዴዎች መምረጥ",
+      "ዋና ዋና የመድን አይነቶችንና ፖሊሲ እንዴት እንደሚገኝ መግለጽ",
+      "ለእርጅና እና ለጡረታ ማቀድን መረዳት"
+    ],
+    "lessons": [
+      {
+        "id": "what-is-risk",
+        "title": "አደጋ ምንድን ነው?",
+        "body": [
+          "ብዙ ሰዎች ስለሚያጋጥሟቸው አደጋዎች እና ስለ አደጋ አስተዳደር መሣሪያዎች ያላቸው ዕውቀት ዝቅተኛ ነው። አደጋን ማወቅ የገንዘብ አያያዝ ወሳኝ አካል ነው።",
+          "አደጋ ማለት የመክሰር ወይም የመጎዳት አጋጣሚ ነው። ሁሉም አደጋዎች ከመጥፎ ነገሮች አይመጡም። እንደ ቢዝነስ ማስፋፋትና ማሳደግ ያሉ ጥሩ ዕድሎችም የተወሰነ አደጋ አላቸው።",
+          "ቢዝነስዎ ለውስጣዊ አደጋዎች (ድክመቶች) እና ለውጫዊ አደጋዎች (ስጋቶች) የተጋለጠ ነው። ውጫዊ አደጋዎች ትልቅ ጥፋትን ወይም ዓለም አቀፍ ወረርሽኝን ሊያካትቱ ይችላሉ።"
+        ],
+        "visual": {
+          "type": "compare",
+          "left": { "title": "ውስጣዊ አደጋዎች", "items": ["ድክመቶች", "በአብዛኛው በቁጥጥርዎ ሥር", "ሊቀነሱ ወይም ሊወገዱ ይችላሉ"] },
+          "right": { "title": "ውጫዊ አደጋዎች", "items": ["ስጋቶች", "ብዙ ጊዜ ከቁጥጥርዎ ውጭ", "ያለማስጠንቀቂያ ሊመጡ ይችላሉ"] }
+        },
+        "tip": "ራስዎን ይጠይቁ፦ የቢዝነሴን የተለመዱ አደጋዎችና የማስጠንቀቂያ ምልክቶቻቸውን መለየት እችላለሁ?"
+      },
+      {
+        "id": "business-risks",
+        "title": "ለአነስተኛ ቢዝነስ የተለመዱ አደጋዎች",
+        "body": [
+          "አደጋ ከብዙ የቢዝነስ ክፍሎች ሊመጣ ይችላል። ስድስቱ ዋና ዋና ዘርፎች እነዚህ ናቸው። የትኞቹ ቢዝነስዎን እንደሚመለከቱ ያስቡ።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "people", "label": "ከሰው ጋር የተያያዘ", "text": "ሕመም፣ ሞት፣ ስርቆት፣ ማጭበርበር ወይም ደስተኛ ያልሆኑ ሠራተኞች።" },
+            { "icon": "store", "label": "ገበያና ውድድር", "text": "አዲስ ተፎካካሪ፣ የወጭና የኪራይ ጭማሪ፣ የደንበኞች ፍላጎት መቀየር።" },
+            { "icon": "truck", "label": "መሣሪያና የመረጃ ቴክኖሎጂ", "text": "የተበላሹ ኮምፒውተሮች፣ ማሽኖች ወይም ተሽከርካሪዎች ገንዘብ ያስወጣሉ።" },
+            { "icon": "scale", "label": "የቢዝነስ አካባቢ", "text": "አዳዲስ ሕጎች፣ የቦታ ድንጋጌዎች ወይም የጤናና ደኅንነት ደንቦች።" },
+            { "icon": "warning", "label": "ቁስ አካላዊ አደጋዎች", "text": "እሳት፣ ጎርፍ፣ የመብራት መቆራረጥ እና አውሎ ንፋስ።" },
+            { "icon": "coins", "label": "የገንዘብ አደጋዎች", "text": "ያልተጠበቀ ወጭ፣ የገቢ መቀነስ ወይም አዲስ ዕዳ።" }
+          ]
+        },
+        "points": [
+          "ለኮምፒውተሮች፣ ለማሽኖችና ለተሽከርካሪዎች የምትክ መርሐ ግብር ያውጡ።",
+          "የእሳት ማጥፊያ፣ የጎርፍ መከላከያ እና ጀኔሬተር ያዘጋጁ።",
+          "ከሥራ ጋር የተያያዘ ጉዳትን ለመቀነስ የሥራ ቦታዎን ይፈትሹ።",
+          "የንግድ ምስጢሮችዎን ይጠብቁ።",
+          "ለጥሬ ገንዘብ ፍሰት አደጋ ዕቅድ ያውጡ። የጥሬ ገንዘብ ፍሰት ወደ ቢዝነስዎ የሚገባና የሚወጣ ገንዘብ ነው።"
+        ],
+        "example": {
+          "title": "የተረሳ ትእዛዝ",
+          "text": "ደስተኛ ያልሆነ ሠራተኛ ዕቃ ማዘዝ ይረሳል። ደንበኞች የሚፈልጉትን ስለማያገኙ ትእዛዛቸውን ይሰርዛሉ። ቢዝነሱ ሽያጭ ያጣል።"
+        }
+      },
+      {
+        "id": "risk-process",
+        "title": "የአደጋ አስተዳደር ሂደት",
+        "body": [
+          "የአደጋ አስተዳደር ሊደርሱ የሚችሉ ኪሳራዎችን መለየት እና እያንዳንዱን ለመቆጣጠር ተገቢውን ዘዴ መምረጥ ነው። የሚደጋገሙ አራት ደረጃዎች አሉት።",
+          "መጀመሪያ ትልቅና ትንሽ ኪሳራዎችን ሁሉ ይለዩ፦ የንብረት ኪሳራ፣ የቢዝነስ ገቢ ኪሳራ፣ የሰው ሀብት ችግሮች እና ተጠያቂነት። ተጠያቂነት ማለት በሌሎች ላይ ለደረሰ ጉዳት ሕጋዊ ኃላፊነት ነው።",
+          "ሁለተኛ ኪሳራው ምን ያህል ጊዜ እንደሚደርስ (ድግግሞሽ) እና ምን ያህል ትልቅ እንደሚሆን (ክብደት) ይገምግሙ። ሦስተኛ የማከሚያ ዘዴ ይምረጡ። አራተኛ ዕቅዱን ይተግብሩ፣ ይቆጣጠሩ እና ሪፖርት ያድርጉ።"
+        ],
+        "visual": {
+          "type": "cycle",
+          "items": [
+            { "label": "መለየት" },
+            { "label": "መገምገም" },
+            { "label": "ማከም" },
+            { "label": "መቆጣጠርና ሪፖርት" }
+          ]
+        }
+      },
+      {
+        "id": "risk-techniques",
+        "title": "አደጋን የመቆጣጠሪያ አራት ዘዴዎች",
+        "body": [
+          "አደጋን ከለዩና ከገመገሙ በኋላ እንዴት እንደሚቆጣጠሩት ይምረጡ። አራት መሠረታዊ ዘዴዎች አሉ።",
+          "አራተኛው ዘዴ፣ አደጋን ማስተላለፍ፣ አራት አይነቶች አሉት። ከዚህ በታች ተዘርዝረዋል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "warning", "label": "ማስወገድ", "text": "አደገኛውን ሥራ ማቆም ወይም ጨርሶ አለመጀመር።" },
+            { "icon": "shield", "label": "ኪሳራን መቆጣጠር", "text": "ሥራውን መቀጠል፣ ግን የኪሳራ ዕድልን ወይም ወጭን መቀነስ።" },
+            { "icon": "piggy", "label": "ማቆየት", "text": "ኪሳራውን በከፊል ወይም በሙሉ ራስዎ መቀበልና መክፈል።" },
+            { "icon": "handshake", "label": "ማስተላለፍ", "text": "አደጋውን እንዲሸከም ለሌላ ወገን መክፈል።" }
+          ]
+        },
+        "points": [
+          "ጉዳት የሌላቸው ስምምነቶች (hold-harmless)፦ የውል ድንጋጌዎች አንዳንድ ኪሳራዎችን ወደ ሌላ ወገን ያስተላልፋሉ።",
+          "ማዋሐድ (incorporation)፦ የባለቤቶቹ የግል ንብረት የቢዝነስ ኪሳራን ለመክፈል አይውልም።",
+          "መከላከል (hedging)፦ የዋጋ መዋዠቅ አደጋ ወደ ሌላ ወገን ይተላለፋል።",
+          "መድን፦ የመድን ኩባንያ አደጋውን ይወስዳል።"
+        ],
+        "example": {
+          "title": "የቀለም ፋብሪካው",
+          "text": "የቀለም ፋብሪካ ማምረት በማቆም ከቀለም ምርት የሚመጣውን ኪሳራ ማስወገድ ይችላል። ያለ ቀለም ምርት ግን ቢዝነስ አይኖረውም። ስለዚህ ሌሎች ዘዴዎችን መጠቀም አለበት።"
+        },
+        "tip": "አደጋን ማቆየት የታቀደ ወይም ያልታቀደ ሊሆን ይችላል። ያልታቀደ ማቆየት የሚሆነው አደጋን ሳይለዩ ሲቀሩ ነው።"
+      },
+      {
+        "id": "insurance",
+        "title": "መድን እንዴት ይሠራል?",
+        "body": [
+          "መድን (ኢንሹራንስ) ከአደጋ አስተዳደር ዕቅድዎ በጣም አስፈላጊ ክፍሎች አንዱ ነው። በእሱ አደጋዎን ወደ መድን ኩባንያ ያስተላልፋሉ።",
+          "አስቀድመው የተስማሙበትን ገንዘብ ይከፍላሉ፤ ይህ አረቦን (ፕሪሚየም) ይባላል። እንደ መጥፎ የአየር ሁኔታ፣ አደጋ፣ እሳት ወይም ሞት ያለ የተሸፈነ ኪሳራ ቢደርስ ኩባንያው ካሳ ይከፍልዎታል።",
+          "የማያስፈልግዎትን ሽፋን ከገዙ ወይም ከሚገባው በላይ አረቦን ከከፈሉ መድን ውድ ሊሆን ይችላል።"
+        ],
+        "visual": {
+          "type": "cards",
+          "items": [
+            { "icon": "people", "label": "የሕይወት መድን", "text": "ከሞትዎ በኋላ ለሌሎች የጠፋውን ገቢ ይተካል።" },
+            { "icon": "heart", "label": "የጤና መድን", "text": "የሐኪም፣ የሆስፒታልና የመድኃኒት ወጭን ለመክፈል ይረዳል።" },
+            { "icon": "umbrella", "label": "የአካል ጉዳት መድን", "text": "ሕመም ወይም ጉዳት ከሥራ ካስቀረዎት የገቢዎን ከፊል ይከፍላል።" },
+            { "icon": "house", "label": "ንብረትና ተጠያቂነት", "text": "የብልሽት፣ የስርቆትና የሕግ ተጠያቂነት ኪሳራን ይሸፍናል።" }
+          ]
+        }
+      },
+      {
+        "id": "buying-insurance",
+        "title": "የመድን ፖሊሲ ለማግኘት የሚወሰዱ ርምጃዎች",
+        "body": [
+          "ፖሊሲ የተጻፈው የመድን ስምምነትዎ ነው። በጥንቃቄ ያንብቡት። የማይካተቱት ፖሊሲው የማይሸፍናቸው ነገሮች ናቸው። ተቀናሽ ክፍያ ከኪሳራው ራስዎ የሚከፍሉት ክፍል ነው።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "ፍላጎትዎን ይወስኑ", "text": "የጤና፣ የንብረት ወይም የቢዝነስ ሽፋን ይምረጡ።" },
+            { "label": "አቅራቢዎችን ይመርምሩ", "text": "ዋጋን፣ ስምንና የፋይናንስ መረጋጋትን ያወዳድሩ።" },
+            { "label": "ኩባንያዎችን ያነጋግሩ", "text": "በስልክ፣ በኢሜል ወይም በድረ-ገጽ።" },
+            { "label": "የዋጋ ግምት ያግኙ", "text": "ግምቱ ሽፋኑንና የአረቦን መጠኑን ያሳያል።" },
+            { "label": "ፖሊሲውን ይመርምሩ", "text": "ሽፋን፣ የማይካተቱትን፣ ተቀናሽ ክፍያንና ውሎችን ይዩ።" },
+            { "label": "ቅጾችን ይሙሉ" },
+            { "label": "ሰነዶችን ያቅርቡ", "text": "ለምሳሌ መታወቂያና የባለቤትነት ማረጋገጫ።" },
+            { "label": "ይክፈሉ፤ ቅጂ ይያዙ", "text": "አረቦኑን ይክፈሉ፤ የፖሊሲ ሰነዶችን ይያዙ።" }
+          ]
+        },
+        "example": {
+          "title": "ሐና እና ኩማ ፖሊሲ ይገዛሉ",
+          "text": "ሐና እና ኩማ መድን መግዛት ይፈልጋሉ። ፍላጎታቸውን ከመወሰን ጀምሮ እስከ መክፈልና የፖሊሲ ቅጂ መያዝ ድረስ እነዚህን ደረጃዎች ይከተላሉ።"
+        }
+      },
+      {
+        "id": "retirement",
+        "title": "ለእርጅና ማቀድ",
+        "body": [
+          "ጡረታ አንድ ሰው ሥራውን የሚያቆምበት የሕይወት ደረጃ ነው።",
+          "የጡረታ ዕቅድ ማለት ለዚያ ጊዜ የገቢ ግቦችን መወሰን ነው። እነዚያን ግቦች ለማሳካት የሚያስፈልጉ ድርጊቶችን መወሰንንም ያካትታል።"
+        ],
+        "visual": {
+          "type": "steps",
+          "items": [
+            { "label": "የገቢ ምንጮችን ይለዩ" },
+            { "label": "ወጭዎችን ይገምቱ" },
+            { "label": "መቆጠብ ይጀምሩ" },
+            { "label": "ንብረቶችን ያስተዳድሩ" }
+          ]
+        },
+        "tip": "የሕይወት መድን ለጡረታ ዕቅድና ለኢንቨስትመንትም ሊያገለግል ይችላል።"
+      }
+    ],
+    "takeaways": [
+      "አደጋ የመክሰር ወይም የመጎዳት አጋጣሚ ነው። ዕድገትም ቢሆን የተወሰነ አደጋ አለው።",
+      "ውስጣዊ አደጋዎች በአብዛኛው በቁጥጥርዎ ሥር ናቸው። ውጫዊ አደጋዎች ግን ብዙ ጊዜ አይደሉም።",
+      "የአደጋ አስተዳደር አራት ደረጃዎች አሉት፦ መለየት፣ መገምገም፣ ማከም እና መቆጣጠርና ሪፖርት ማድረግ።",
+      "አደጋን የመቆጣጠሪያ አራቱ ዘዴዎች ማስወገድ፣ ኪሳራን መቆጣጠር፣ ማቆየት እና ማስተላለፍ ናቸው።",
+      "መድን በአረቦን ምትክ አደጋዎን ወደ መድን ሰጭው ያስተላልፋል። የሚያስፈልግዎትን ሽፋን ብቻ ይግዙ።",
+      "ለጡረታ ያቅዱ፦ የገቢ ምንጮችን ይለዩ፣ ወጭዎችን ይገምቱ፣ ይቆጥቡ እና ንብረቶችን ያስተዳድሩ።"
+    ],
+    "quiz": [
+      {
+        "q": "አደጋ ምንድን ነው?",
+        "options": ["እርግጠኛ ትርፍ", "የመክሰር ወይም የመጎዳት አጋጣሚ", "የባንክ አካውንት አይነት", "የመንግሥት ግብር"],
+        "answer": 1,
+        "explain": "አደጋ የመክሰር ወይም የመጎዳት አጋጣሚ ነው።"
+      },
+      {
+        "q": "ከእነዚህ ውስጥ ውጫዊ አደጋ የትኛው ነው?",
+        "options": ["ሠራተኛ ዕቃ ማዘዝ ይረሳል", "ፊት ለፊት አዲስ ተፎካካሪ ይከፈታል", "ሠራተኛ ከሱቁ ይሰርቃል", "ማሽን በጊዜው አይጠገንም"],
+        "answer": 1,
+        "explain": "አዲስ ተፎካካሪ ከቢዝነስዎ ውጭ ካለው ገበያ የሚመጣ ነው።"
+      },
+      {
+        "q": "በአደጋ አስተዳደር ሂደት የመጀመሪያው ደረጃ ምንድን ነው?",
+        "options": ["መድን መግዛት", "መቆጣጠርና ሪፖርት ማድረግ", "ሊደርሱ የሚችሉ ኪሳራዎችን መለየት", "አደጋውን ማከም"],
+        "answer": 2,
+        "explain": "ኪሳራን ሳይለዩ ሊቆጣጠሩት አይችሉም።"
+      },
+      {
+        "q": "አደጋዎን እንዲሸከም ለመድን ኩባንያ መክፈል የየትኛው ዘዴ ምሳሌ ነው?",
+        "options": ["አደጋን ማስወገድ", "አደጋን ማቆየት", "ኪሳራን መቆጣጠር", "አደጋን ማስተላለፍ"],
+        "answer": 3,
+        "explain": "መድን አደጋን ወደ ሌላ ወገን የማስተላለፍ አይነት ነው።"
+      },
+      {
+        "q": "የመድን አረቦን (ፕሪሚየም) ምንድን ነው?",
+        "options": ["ለሽፋን አስቀድመው የሚከፍሉት ገንዘብ", "ከኪሳራ በኋላ መድን ሰጭው የሚከፍለው ገንዘብ", "ከባንክ የሚወሰድ ብድር", "ለዘገየ ክፍያ የሚጣል ቅጣት"],
+        "answer": 0,
+        "explain": "አረቦን ሽፋን ለማግኘት አስቀድመው የሚከፍሉት የተስማሙበት ገንዘብ ነው።"
+      },
+      {
+        "q": "ፖሊሲን ሲመረምሩ ምን ማየት አለብዎት?",
+        "options": ["የኩባንያውን አርማ ብቻ", "ሽፋን፣ የማይካተቱት፣ ተቀናሽ ክፍያና ውሎች", "ምንም፤ መፈረም ብቻ", "የወረቀቱን ቀለም ብቻ"],
+        "answer": 1,
+        "explain": "ፖሊሲው ከፍላጎትዎ ጋር እንዲጣጣምና ውሎቹን እንዲረዱ ዝርዝሩን ይመርምሩ።"
+      }
+    ]
+  }
+}

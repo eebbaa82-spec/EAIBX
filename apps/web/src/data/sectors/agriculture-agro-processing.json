@@ -1,7 +1,7 @@
 {
   "slug": "agriculture-agro-processing",
   "name": "Agriculture and agro-processing",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Coffee export earnings reached a record 3 billion USD in the budget year that ended in July 2026, and agriculture accounted for 32.8 percent of Ethiopia's GDP and 60.1 percent of employment in 2025 (World Bank). The Ethiopian Investment Commission promotes agro-processing in edible oil, juices, animal feed, tomato and poultry, where large shares of demand are currently met by imports, and integrated agro-industrial parks offer ready-made sheds with income and export tax exemptions. FAO-hosted investment cases presented in 2025 and 2026 project internal rates of return of 20.8 to 32 percent for animal feed, ranching, poultry and coffee projects.",
   "indicators": [
     {
@@ -45,6 +45,12 @@
       "value": "60.1432419652977 percent of total employment",
       "period": "2025",
       "source": "S7"
+    },
+    {
+      "label": "Agriculture, real growth",
+      "value": "6.2 percent (estimate); 7.3 percent in 2024/25",
+      "period": "FY2025/26",
+      "source": "S19"
     },
     {
       "label": "Yirgalem integrated agro-industrial park",
@@ -111,9 +117,9 @@
       "source": "S15"
     },
     {
-      "label": "91-day Treasury bill weighted average yield (benchmark)",
-      "value": "12.4 percent",
-      "period": "February 2026",
+      "label": "91-day Treasury bill yield (benchmark)",
+      "value": "11.0 percent (16.1 percent in the same period a year earlier); weighted average for all T-bills 12.3 percent",
+      "period": "May 2026",
       "basis": "Risk-free local-currency benchmark yield",
       "source": "S14"
     }
@@ -258,7 +264,7 @@
       "date": "2026-08",
       "url": "https://investethiopia.gov.et/key-sectors/manufacturing/agro-processing/",
       "location": "Investment opportunities sections (edible oil, juice, animal feed, tomato); page last modified 2026-08-18",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S9",
@@ -307,12 +313,12 @@
     },
     {
       "id": "S14",
-      "title": "Press Release: Monetary Policy Committee Meeting No. 6",
+      "title": "Press Release: Monetary Policy Committee Meeting No. 7",
       "publisher": "National Bank of Ethiopia",
-      "date": "2026-03",
-      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
-      "location": "p. 2 (T-bill yields)",
-      "accessed": "2026-10-16"
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/07/PR_0713_MPC_E.pdf",
+      "location": "p. 2, Interest Rate Developments (T-bill yields, May 2026)",
+      "accessed": "2026-11-01"
     },
     {
       "id": "S15",
@@ -349,6 +355,15 @@
       "url": "https://investethiopia.gov.et/why-ethiopia/",
       "location": "Dynamic Policy / incentives section; page last modified 2023-09-06",
       "accessed": "2026-10-16"
+    },
+    {
+      "id": "S19",
+      "title": "Macro Poverty Outlook: Ethiopia, October 2026",
+      "publisher": "World Bank",
+      "date": "2026-10",
+      "url": "https://thedocs.worldbank.org/en/doc/bae48ff2fefc5a869546775b3f010735-0500062021/related/mpo-eth.pdf",
+      "location": "Recent history and projections table, Agriculture row",
+      "accessed": "2026-11-01"
     }
   ]
 }

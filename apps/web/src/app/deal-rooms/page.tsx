@@ -3,7 +3,7 @@ import { ButtonLink, EmptyState, FeatureList, PageHero, Section, Steps } from "@
 import { CardAnatomy } from "@/components/group-b/Filters";
 
 export const metadata: Metadata = {
-  title: "Curated Deal Rooms for Investors · Investopia",
+  title: "Curated Deal Rooms for Investors · Erudite Africa Connect",
   description:
     "Themed showcases of verified, diagnosed Ethiopian businesses, with secure data rooms for due diligence.",
 };
@@ -13,7 +13,7 @@ export default function DealRoomsPage() {
     <>
       <PageHero
         title="Curated deal rooms for serious investors"
-        subhead="Each Investopia Deal Room brings together a hand-picked group of verified, diagnosed businesses around a sector or theme, and opens them to qualified investors for a set period."
+        subhead="Each Erudite Africa Connect Deal Room brings together a hand-picked group of verified, diagnosed businesses around a sector or theme, and opens them to qualified investors for a set period."
       >
         <ButtonLink href="/join" variant="light">
           Request access
@@ -42,9 +42,16 @@ export default function DealRoomsPage() {
               title: "Due diligence.",
               body: "Interested investors get permissioned access to each business's private data room.",
             },
-            { title: "Follow-through.", body: "We support term sheet discussions and track outcomes for every room." },
+            {
+              title: "Follow-through.",
+              body: "Investors and businesses negotiate and close directly, with their own advisors. We track outcomes for every room.",
+            },
           ]}
         />
+        <p className="mt-8 max-w-3xl text-sm text-muted">
+          Deal Rooms make introductions; they are not investment advice. Erudite Africa Connect does not recommend investments, offer
+          shares to the public or hold investor money.
+        </p>
       </Section>
 
       <Section tone="canvas" title="Upcoming and open rooms">
@@ -80,7 +87,7 @@ export default function DealRoomsPage() {
       <Section
         tone="canvas"
         title="A secure data room for every deal"
-        intro="Every business on Investopia gets its own private data room. Share financial statements, legal documents and contracts with the investors you approve, and nobody else."
+        intro="Every business on Erudite Africa Connect gets its own private data room. Share financial statements, legal documents and contracts with the investors you approve, and nobody else."
       >
         <FeatureList
           items={[

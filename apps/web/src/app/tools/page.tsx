@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ButtonLink, Card, CardGrid, CtaBand, Note, PageHero, Section } from "@/components/ui";
 
 export const metadata: Metadata = {
-  title: "Free Business Valuation Calculator · Investopia",
+  title: "Free Business Valuation Calculator · Erudite Africa Connect",
   description: "Estimate what your business is worth, test your investment readiness and forecast cash flow, free.",
 };
 
@@ -31,7 +31,19 @@ const tools = [
     href: "/tools/loan-calculator",
   },
   {
-    name: "Investopia AI Assistant",
+    name: "Borrower Profile Builder",
+    body: "Build a lender-ready profile from your company profile, check your readiness and get the document checklist for your loan.",
+    button: "Build my profile",
+    href: "/credit-center/profile-builder",
+  },
+  {
+    name: "Credit Analysis Workspace",
+    body: "For loan officers and credit analysts: spread five periods of statements, get the ratios, add sector and regional context and print a credit analysis report.",
+    button: "Open the workspace",
+    href: "/credit-center/credit-analysis",
+  },
+  {
+    name: "Erudite Africa Connect AI Assistant",
     body: "Ask questions about your business, your listing or Ethiopian business rules, in Amharic or English.",
     button: "Ask the assistant",
   },
@@ -95,9 +107,9 @@ export default function ToolsPage() {
         </div>
       </Section>
 
-      <Section title="Investopia AI Assistant">
+      <Section title="Erudite Africa Connect AI Assistant">
         <blockquote className="max-w-3xl rounded-xl border border-line bg-canvas p-6 text-ink">
-          Hello, I am the Investopia assistant. I can help you understand your EHIRA report, improve your listing, find
+          Hello, I am the Erudite Africa Connect assistant. I can help you understand your EHIRA report, improve your listing, find
           programs or explain business terms. I do not give financial or legal advice. What would you like to do today?
         </blockquote>
         <div className="mt-6">
