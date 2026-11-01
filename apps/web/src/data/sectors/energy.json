@@ -1,7 +1,7 @@
 {
   "slug": "energy",
   "name": "Energy and renewables",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Ethiopia had 9,761 MW of installed generating capacity in 2025, more than 95% of it renewable, and targets up to 14,000 MW by 2030, including the 5,150 MW Grand Ethiopian Renaissance Dam. The government's National Energy Compact calls for at least US$3.06 billion of private investment in 2026 to 2030, with solar, wind and off-grid power open to independent power producers. Tariffs are being raised toward full cost recovery by 2028, and power exports to neighboring countries earned 366 million USD in the first nine months of the current fiscal year.",
   "indicators": [
     {
@@ -91,8 +91,8 @@
     },
     {
       "label": "91-day Treasury bill weighted average yield (benchmark)",
-      "value": "12.4 percent (from 15.2 percent in February 2025)",
-      "period": "February 2026",
+      "value": "11.0 percent (from 16.1 percent a year earlier)",
+      "period": "May 2026",
       "basis": "National Bank of Ethiopia risk-free benchmark, not a sector return",
       "source": "S6"
     }
@@ -123,6 +123,11 @@
       "title": "Geothermal development",
       "detail": "Geothermal potential is about 10 GW with less than 1% exploited so far, and the Aluto-Langano expansion, Corbetti and Tulu Moye projects are still to be advanced.",
       "source": "S2"
+    },
+    {
+      "title": "Power for data centers and mining",
+      "detail": "The President told the Annual Investment Meeting that nearly 1,000 MW has been allocated to data-center and mining enterprises, and that Ethiopia is targeting 15,000 MW of generation capacity by 2030.",
+      "source": "S8"
     }
   ],
   "incentives": [
@@ -201,12 +206,12 @@
     },
     {
       "id": "S6",
-      "title": "Press Release, Monetary Policy Committee Meeting No. 6",
+      "title": "Monetary Policy Committee Meeting No. 7 (press release)",
       "publisher": "National Bank of Ethiopia",
-      "date": "2026-03",
-      "url": "https://nbe.gov.et/wp-content/uploads/2026/03/PR_MPC6_E.pdf",
-      "location": "Financial markets section",
-      "accessed": "2026-10-16"
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/mpc7/",
+      "location": "Money market and T-bill section",
+      "accessed": "2026-11-01"
     },
     {
       "id": "S7",
@@ -216,6 +221,15 @@
       "url": "https://www.worldbank.org/en/news/press-release/2025/08/04/new-world-bank-program-to-expand-electricity-access-to-six-million-people-across-ethiopia",
       "location": "Press release",
       "accessed": "2026-10-16"
+    },
+    {
+      "id": "S8",
+      "title": "Ethiopia Positions Clean Energy as Engine of Growth, Regional Power Exports: President Taye",
+      "publisher": "Ethiopian News Agency (statement by the President of Ethiopia)",
+      "date": "2026-09",
+      "url": "https://www.ena.et/web/eng/w/eng_9515448",
+      "location": "Article text, Annual Investment Meeting remarks",
+      "accessed": "2026-11-01"
     }
   ]
 }

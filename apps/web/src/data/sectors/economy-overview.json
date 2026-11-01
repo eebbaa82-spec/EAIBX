@@ -1,14 +1,20 @@
 {
   "slug": "economy-overview",
   "name": "Ethiopia economy and return benchmarks",
-  "asOf": "2026-10-16",
-  "summary": "Ethiopia's real GDP grew 9.2 percent in FY2024/25, and FDI reached a record reported USD 4.32 billion in FY2025/26, up 8 percent from the previous year. The IMF-supported reform program moved the birr to a market-based exchange rate in July 2024 and introduced an interest-rate-based monetary policy framework, and the National Bank of Ethiopia continued FX liberalization in July 2026 by cutting the FX commission and the export surrender requirement. Average inflation has come down from 26.6 percent in FY2023/24 to an estimated 11.7 percent in FY2025/26, and gross reserves rose from 0.7 to 2.1 months of imports.",
+  "asOf": "2026-11-01",
+  "summary": "Ethiopia's real GDP grew 9.2 percent in FY2024/25, and the World Bank estimates growth of 9.2 percent again in FY2025/26, while FDI reached a record reported USD 4.32 billion in FY2025/26, up 8 percent from the previous year. The IMF-supported reform program moved the birr to a market-based exchange rate in July 2024 and introduced an interest-rate-based monetary policy framework, and the National Bank of Ethiopia continued FX liberalization in July 2026 by cutting the FX commission and the export surrender requirement. Average inflation has come down from 26.6 percent in FY2023/24 to an estimated 11.7 percent in FY2025/26, and gross reserves rose from 0.7 to 2.1 months of imports.",
   "indicators": [
     {
       "label": "Real GDP growth",
       "value": "9.2 percent (FY2024/25); IMF projects 7.8 percent for FY2025/26 and 8.2 percent for FY2026/27",
       "period": "FY2024/25 actual; FY2025/26-2026/27 projections",
       "source": "S1"
+    },
+    {
+      "label": "Real GDP growth (World Bank)",
+      "value": "9.2 percent (FY2024/25); 9.2 percent estimated for FY2025/26; forecasts of 7.8 percent (FY2026/27) and 8.2 percent (FY2027/28)",
+      "period": "FY2024/25 to FY2027/28",
+      "source": "S10"
     },
     {
       "label": "Real GDP growth projection (NBE)",
@@ -18,9 +24,9 @@
     },
     {
       "label": "Headline inflation (year-on-year)",
-      "value": "13.4 percent (food 15.0 percent, non-food 11.1 percent), up from 11.7 percent in April 2026 and 9.7 percent in December 2025",
-      "period": "May 2026",
-      "source": "S3"
+      "value": "15.1 percent, up from 9.4 percent in March 2026",
+      "period": "August 2026",
+      "source": "S10"
     },
     {
       "label": "Average inflation (IMF)",
@@ -57,7 +63,7 @@
     {
       "label": "NBE policy rate (National Bank Rate)",
       "value": "16 percent",
-      "period": "As displayed on NBE homepage, accessed 2026-10-16",
+      "period": "As displayed on NBE homepage, accessed 2026-11-01",
       "basis": "Central bank policy rate; standing facilities at NBR plus or minus 3 percentage points",
       "source": "S5"
     },
@@ -105,13 +111,13 @@
     },
     {
       "label": "Average lending and deposit rates",
-      "value": "Average lending rate 15.0 percent (range 7.0-23.0 percent); weighted average time deposit rate 7.8 percent; average savings rate 8.0 percent",
-      "period": "Q1 FY2024/25 (July-September 2024)",
+      "value": "Average lending rate 15.8 percent (range 7.0-24.5 percent); weighted average time deposit rate 7.7 percent; average savings rate 8.0 percent (range 7.0-9.0 percent)",
+      "period": "Q4 FY2024/25 (April-June 2025)",
       "basis": "Interest rate structure of the banking system, NBE Table 4.4",
       "source": "S4"
     }
   ],
-  "returnsNote": "Benchmark yields and rates above are published by the National Bank of Ethiopia and the IMF; NBE liberalized deposit and lending rates in January 2026 (no floors or caps), so the Q1 FY2024/25 average lending and deposit rates are the latest full interest-rate structure we found.",
+  "returnsNote": "Benchmark yields and rates above are published by the National Bank of Ethiopia and the IMF; NBE liberalized deposit and lending rates in January 2026 (no floors or caps), so the Q4 FY2024/25 average lending and deposit rates are the latest full interest-rate structure we found.",
   "opportunities": [
     {
       "title": "Agriculture",
@@ -206,25 +212,25 @@
       "date": "2026-07",
       "url": "https://nbe.gov.et/mpc7/",
       "location": "Policy decision, inflation, money market, T-bill and FX sections",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S4",
-      "title": "Quarterly Bulletin, First Quarter 2024/25 Fiscal Year",
+      "title": "Quarterly Bulletin, Fourth Quarter 2024/25 Fiscal Year",
       "publisher": "National Bank of Ethiopia",
-      "date": "2025-11",
-      "url": "https://nbe.gov.et/wp-content/uploads/2025/11/First-Quarter-Report-2024-25.pdf",
-      "location": "Section 1.2.5(b) p. 5; Section 4.4 and Table 4.4, pp. 25-26",
-      "accessed": "2026-10-16"
+      "date": "2026-05",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/05/Fourth_Quarter_Report_2024-25.pdf",
+      "location": "Section 4.4, p. 22; Table 4.4, p. 23",
+      "accessed": "2026-11-01"
     },
     {
       "id": "S5",
       "title": "National Bank of Ethiopia homepage (NBE Policy Rate panel)",
       "publisher": "National Bank of Ethiopia",
-      "date": "2026-10",
+      "date": "2026-11",
       "url": "https://nbe.gov.et/",
       "location": "Homepage indicator panel 'NBE POLICY RATE (NBR)'",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S6",
@@ -261,6 +267,15 @@
       "url": "https://investethiopia.gov.et/resources/faqs/",
       "location": "Incentives, repatriation and minimum capital answers",
       "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Macro Poverty Outlook: Ethiopia",
+      "publisher": "World Bank",
+      "date": "2026-10",
+      "url": "https://thedocs.worldbank.org/en/doc/bae48ff2fefc5a869546775b3f010735-0500062021/related/mpo-eth.pdf",
+      "location": "p. 1 (recent developments); p. 2 table 'Real GDP growth, at constant market prices'",
+      "accessed": "2026-11-01"
     }
   ]
 }

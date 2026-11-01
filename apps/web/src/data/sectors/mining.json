@@ -1,7 +1,7 @@
 {
   "slug": "mining",
   "name": "Mining and minerals",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Mining, led by gold, has become a major source of foreign exchange: the Minister of Mines reported over USD 5.7 billion in mining export earnings in the 2018 Ethiopian fiscal year, with 44 tons of gold generating USD 5.65 billion, and the IMF reports gold export volumes rising from just over 4 metric tons in 2023/24 to nearly 39 metric tons in 2024/25. The government is promoting untapped potash, iron ore, natural gas and gemstone resources and signed US$4.2 billion of iron ore, potash and gold agreements in March 2026. Investors benefit from lower income tax, duty-free import of capital goods, favorable depreciation rates and a one-stop investment service.",
   "indicators": [
     {
@@ -54,7 +54,7 @@
     }
   ],
   "returns": [],
-  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators we included are the statutory royalty and mining income tax rates and the reported gold export earnings. For a benchmark, the 91-day Treasury bill yielded a weighted average of 12.4 percent in February 2026 (National Bank of Ethiopia).",
+  "returnsNote": "No international institution or Ethiopian government source we reviewed publishes an average return on investment for this sector. The closest published indicators we included are the statutory royalty and mining income tax rates and the reported gold export earnings. For a benchmark, the 91-day Treasury bill yielded 11.0 percent in May 2026 (National Bank of Ethiopia, Monetary Policy Committee Meeting No. 7, source S14).",
   "opportunities": [
     {
       "title": "Potash, iron ore and gold deals",
@@ -140,7 +140,7 @@
       "date": "2026-08",
       "url": "https://investethiopia.gov.et/key-sectors/mining/",
       "location": "Mining sector page (reserves, opportunities, incentives)",
-      "accessed": "2026-10-16"
+      "accessed": "2026-11-01"
     },
     {
       "id": "S4",
@@ -231,6 +231,15 @@
       "url": "https://eiti.org/ethiopia",
       "location": "Status and overview",
       "accessed": "2026-10-16"
+    },
+    {
+      "id": "S14",
+      "title": "Press Release: Monetary Policy Committee Meeting No. 7",
+      "publisher": "National Bank of Ethiopia",
+      "date": "2026-07",
+      "url": "https://nbe.gov.et/wp-content/uploads/2026/07/PR_0713_MPC_E.pdf",
+      "location": "p. 2, Interest Rate Developments (T-bill yields, May 2026)",
+      "accessed": "2026-11-01"
     }
   ]
 }

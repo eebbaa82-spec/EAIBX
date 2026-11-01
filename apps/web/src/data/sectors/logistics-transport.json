@@ -1,7 +1,7 @@
 {
   "slug": "logistics-transport",
   "name": "Logistics and transport",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Ethiopia plans to invest over USD 70 billion in transport and logistics infrastructure over the next decade, and the first phase of the Modjo modern logistics hub, with capacity of up to one million 20-foot containers a year, was inaugurated in September 2026. About 95 percent of import-export cargo moves along the Addis-Djibouti corridor and the World Bank estimates logistics costs at nearly a third of GDP, so efficiency gains in truck terminals, dry ports and freight services offer a large opportunity. Ethiopian Airlines carried 897,000 tons of cargo in fiscal year 2025/2026, serving 44 freighter destinations.",
   "indicators": [
     {
@@ -63,8 +63,8 @@
     },
     {
       "label": "364-day Treasury bill weighted average yield (benchmark)",
-      "value": "19.10% (annual)",
-      "period": "Auction 974th/25, April 2, 2025 (latest auction with complete weighted average results shown on the NBE page)",
+      "value": "20.538% (annual)",
+      "period": "Auction 975th/25, April 16, 2025 (latest auction with complete weighted average results shown on the NBE page)",
       "basis": "Weighted average annual yield on government 364-day Treasury bills; a risk-free birr benchmark, not a sector return",
       "source": "S10"
     }
@@ -222,8 +222,8 @@
       "publisher": "National Bank of Ethiopia",
       "date": "2025-04",
       "url": "https://nbe.gov.et/treasury-bills/",
-      "location": "Auction results, 974th/25 (April 2, 2025), weighted average yield row",
-      "accessed": "2026-10-16"
+      "location": "Auction results, 975th/25 (April 16, 2025), weighted average yield row",
+      "accessed": "2026-11-01"
     },
     {
       "id": "S11",

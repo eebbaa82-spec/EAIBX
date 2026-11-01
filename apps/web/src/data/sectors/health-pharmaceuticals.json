@@ -1,7 +1,7 @@
 {
   "slug": "health-pharmaceuticals",
   "name": "Health and pharmaceuticals",
-  "asOf": "2026-10-16",
+  "asOf": "2026-11-01",
   "summary": "Ethiopia's local pharmaceutical industry is scaling up quickly: the government says local suppliers now cover more than 44 percent of national procurement of drugs and medical equipment, up from about 8 percent five or six years earlier, and it aims to raise the share of locally produced medicines and medical supplies above 50 percent by 2030. The World Bank reports that the national regulator has reached WHO Maturity Level 3, opening new export opportunities, and that the dedicated Kilinto pharmaceutical zone already hosts nearly 30 investors, supported by tax holidays and price preferences for domestic manufacturers. In services, the Ethiopian Investment Commission points to strong demand for hospital capacity, with only 17% of tertiary hospitals private and more than $120 million a year spent by Ethiopians on treatment abroad.",
   "indicators": [
     {
@@ -47,6 +47,12 @@
       "source": "S2"
     },
     {
+      "label": "Projected pharmaceutical market size",
+      "value": "exceed 4 billion USD",
+      "period": "by 2030 (Health State Minister, stated October 27, 2026)",
+      "source": "S10"
+    },
+    {
       "label": "Earlier medium-term target: local pharmaceutical industry market share",
       "value": "47 percent (share stated at 36 percent, up from 8 percent)",
       "period": "Medium-term health sector development and investment plan (stated June 22, 2024)",
@@ -63,8 +69,8 @@
     },
     {
       "label": "364-day Treasury bill weighted average yield (benchmark)",
-      "value": "19.10% (annual)",
-      "period": "Auction 974th/25, April 2, 2025 (latest auction with complete weighted average results shown on the NBE page)",
+      "value": "20.538% (annual)",
+      "period": "Auction 975th/25, April 16, 2025 (latest auction with complete weighted average results shown on the NBE page)",
       "basis": "Weighted average annual yield on government 364-day Treasury bills; a risk-free birr benchmark, not a sector return",
       "source": "S7"
     }
@@ -191,8 +197,8 @@
       "publisher": "National Bank of Ethiopia",
       "date": "2025-04",
       "url": "https://nbe.gov.et/treasury-bills/",
-      "location": "Auction results, 974th/25 (April 2, 2025), weighted average yield row",
-      "accessed": "2026-10-16"
+      "location": "Auction results, 975th/25 (April 16, 2025), weighted average yield row",
+      "accessed": "2026-11-01"
     },
     {
       "id": "S8",
@@ -211,6 +217,15 @@
       "url": "https://www.ena.et/web/eng/w/eng_4645648",
       "location": "Article body (June 22, 2024): 36 percent current share, 47 percent target",
       "accessed": "2026-10-16"
+    },
+    {
+      "id": "S10",
+      "title": "Ethiopia Working to Become Continental Pharmaceutical Manufacturing, Says Health State Minister",
+      "publisher": "Ethiopian News Agency (Ministry of Health statement)",
+      "date": "2026-10",
+      "url": "https://www.ena.et/web/eng/w/eng_9824649",
+      "location": "Article body (October 27, 2026), remarks of Health State Minister Dr. Muluken Argaw at AHMTEC 2026",
+      "accessed": "2026-11-01"
     }
   ]
 }
